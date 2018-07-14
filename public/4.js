@@ -113,8 +113,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     components: {
         VuesticWizard: __WEBPACK_IMPORTED_MODULE_0__vuestic_components_vuestic_wizard_VuesticWizard___default.a,
-        VuesticSimpleSelect: __WEBPACK_IMPORTED_MODULE_1__vuestic_components_vuestic_simple_select_VuesticSimpleSelect___default.a,
-        'el-upload': __WEBPACK_IMPORTED_MODULE_2_element_ui__["Upload"]
+        VuesticSimpleSelect: __WEBPACK_IMPORTED_MODULE_1__vuestic_components_vuestic_simple_select_VuesticSimpleSelect___default.a
     },
     data: function data() {
         var _this = this;
@@ -130,24 +129,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     return _this.isFormFieldValid('filename');
                 }
             }, {
-                label: 'Step 2. Upload Video',
-                slot: 'page2'
-            }, {
-                label: 'Step 3. Add Description',
-                slot: 'page3',
+                label: 'Step 2. Add Description',
+                slot: 'page2',
                 onNext: function onNext() {
                     _this.validateFormField('description');
                 },
                 isValid: function isValid() {
                     _this.validateFormField('description');
                 }
-
+            }, {
+                label: 'Step 3. Upload Video',
+                slot: 'page3',
+                onNext: function onNext() {
+                    return true;
+                },
+                isValid: function isValid() {
+                    return true;
+                }
             }, {
                 label: 'Step 4. Confirm',
                 slot: 'page4'
             }],
 
             form: {},
+            filename: '',
             VideoName: '',
             file: '',
             description: '',
@@ -228,8 +233,8 @@ var render = function() {
                               {
                                 name: "model",
                                 rawName: "v-model",
-                                value: _vm.form.filename,
-                                expression: "form.filename"
+                                value: _vm.filename,
+                                expression: "filename"
                               },
                               {
                                 name: "validate",
@@ -243,17 +248,13 @@ var render = function() {
                               required: "",
                               title: ""
                             },
-                            domProps: { value: _vm.form.filename },
+                            domProps: { value: _vm.filename },
                             on: {
                               input: function($event) {
                                 if ($event.target.composing) {
                                   return
                                 }
-                                _vm.$set(
-                                  _vm.form,
-                                  "filename",
-                                  $event.target.value
-                                )
+                                _vm.filename = $event.target.value
                               }
                             }
                           }),
@@ -302,57 +303,6 @@ var render = function() {
                     slot: "page2"
                   },
                   [
-                    _c("p", [_vm._v('Attach the file!"')]),
-                    _vm._v(" "),
-                    _c(
-                      "el-upload",
-                      {
-                        staticClass: "upload-demo",
-                        attrs: {
-                          drag: "",
-                          "auto-upload": false,
-                          action: "https://jsonplaceholder.typicode.com/posts/"
-                        }
-                      },
-                      [
-                        _c("i", { staticClass: "el-icon-upload" }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "el-upload__text" }, [
-                          _vm._v("Drop your Video here or "),
-                          _c("em", [_vm._v("click to upload")])
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "el-upload__tip",
-                            attrs: { slot: "tip" },
-                            slot: "tip"
-                          },
-                          [
-                            _vm._v(
-                              "mp4/mpeg4 files with a size less than 500mb"
-                            )
-                          ]
-                        )
-                      ]
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "form-wizard-tab-content",
-                    class: {
-                      "has-error": _vm.errors.has("description"),
-                      valid: _vm.isFormFieldValid("description")
-                    },
-                    attrs: { slot: "page3" },
-                    slot: "page3"
-                  },
-                  [
                     _c("p", [
                       _vm._v(
                         'To capture your audience attention, It is advisable you provide a short naration to introduce the viewer to the video. In this section, you can also provide any explanation or apologize for any shortcomings that might occur in the video!"'
@@ -366,8 +316,8 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.form.description,
-                              expression: "form.description"
+                              value: _vm.description,
+                              expression: "description"
                             },
                             {
                               name: "validate",
@@ -381,17 +331,13 @@ var render = function() {
                             name: "description",
                             id: "simple-textarea"
                           },
-                          domProps: { value: _vm.form.description },
+                          domProps: { value: _vm.description },
                           on: {
                             input: function($event) {
                               if ($event.target.composing) {
                                 return
                               }
-                              _vm.$set(
-                                _vm.form,
-                                "description",
-                                $event.target.value
-                              )
+                              _vm.description = $event.target.value
                             }
                           }
                         }),
@@ -424,6 +370,64 @@ var render = function() {
                       ])
                     ])
                   ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "form-wizard-tab-content",
+                    class: {
+                      "has-error": _vm.errors.has("file"),
+                      valid: _vm.isFormFieldValid("file")
+                    },
+                    attrs: { slot: "page3" },
+                    slot: "page3"
+                  },
+                  [
+                    _c("p", [_vm._v('Attach the file!"')]),
+                    _vm._v(" "),
+                    _c(
+                      "el-upload",
+                      {
+                        staticClass: "upload-demo",
+                        attrs: {
+                          drag: "",
+                          "auto-upload": false,
+                          action: "https://jsonplaceholder.typicode.com/posts/"
+                        },
+                        model: {
+                          value: _vm.file,
+                          callback: function($$v) {
+                            _vm.file = $$v
+                          },
+                          expression: "file"
+                        }
+                      },
+                      [
+                        _c("i", { staticClass: "el-icon-upload" }),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "el-upload__text" }, [
+                          _vm._v("Drop your Video here or "),
+                          _c("em", [_vm._v("click to upload")])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "el-upload__tip",
+                            attrs: { slot: "tip" },
+                            slot: "tip"
+                          },
+                          [
+                            _vm._v(
+                              "mp4/mpeg4 files with a size less than 500mb"
+                            )
+                          ]
+                        )
+                      ]
+                    )
+                  ],
+                  1
                 ),
                 _vm._v(" "),
                 _c(

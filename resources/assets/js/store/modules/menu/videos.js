@@ -28,7 +28,7 @@ export default {
             component: lazyLoading('pages/videos/create'),
             meta: {
                 default: false,
-                title: 'Login'
+                title: 'Add Video'
             }
         },
         {

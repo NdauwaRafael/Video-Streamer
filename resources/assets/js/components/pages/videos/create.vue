@@ -5,8 +5,7 @@
     export default {
         components: {
             VuesticWizard,
-            VuesticSimpleSelect,
-            'el-upload': Upload
+            VuesticSimpleSelect
         },
         data () {
             return {
@@ -22,21 +21,26 @@
                         }
                     },
                     {
-                        label: 'Step 2. Upload Video',
-                        slot: 'page2'
-                    },
-                    {
-                        label: 'Step 3. Add Description',
-                        slot: 'page3',
+                        label: 'Step 2. Add Description',
+                        slot: 'page2',
                         onNext: () => {
                             this.validateFormField('description')
                         },
                         isValid: () => {
                             this.validateFormField('description')
                         }
-
-
                     },
+                    {
+                        label: 'Step 3. Upload Video',
+                        slot: 'page3',
+                        onNext: () => {
+                            return true;
+                        },
+                        isValid: () => {
+                            return true;
+                        }
+                    },
+
                     {
                         label: 'Step 4. Confirm',
                         slot: 'page4'
@@ -44,6 +48,7 @@
                 ],
 
                 form: {},
+                filename:'',
                 VideoName: '',
                 file: '',
                 description: '',
@@ -78,6 +83,7 @@
                 <vuestic-widget class="no-h-padding" headerText="Simple Wizard">
                     <vuestic-wizard
                             :steps="hsSteps">
+
                         <div slot="page1" class="form-wizard-tab-content">
                             <p>In order to identify your specified tutorial Video it is advisable to provide your videos with unique names that are easy to remember and identify with.
                                 Kindly provide a relevant name for the tutorial you are about to add in the specified field below!"</p>
@@ -85,7 +91,7 @@
                                 <div class="input-group">
                                     <input
                                             name="filename"
-                                            v-model="form.filename"
+                                            v-model="filename"
                                             v-validate="'required'"
                                             required title=""/>
                                     <i class="fa fa-exclamation-triangle error-icon icon-right input-icon"></i>
@@ -95,11 +101,26 @@
                                 </div>
                             </div>
                         </div>
+
                         <div slot="page2" class="form-wizard-tab-content" >
+                            <p>To capture your audience attention, It is advisable you provide a short naration to introduce the viewer to the video. In this section, you can also provide any explanation or apologize for any shortcomings that might occur in the video!"</p>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <textarea type="text" name="description" v-model="description" id="simple-textarea" v-validate="'required'"></textarea>
+                                    <label class="control-label" for="simple-textarea">Textarea</label><i class="bar"></i>
+                                    <small v-show="errors.has('description')" class="help text-danger">{{ errors.first('description') }}</small>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div slot="page3" class="form-wizard-tab-content" :class="{'has-error': errors.has('file'), 'valid': isFormFieldValid('file')}">
                             <p>Attach the file!"</p>
                             <el-upload
                                     class="upload-demo"
                                     drag
+                                    v-model="file"
                                     :auto-upload = 'false'
                                     action="https://jsonplaceholder.typicode.com/posts/" >
                                 <i class="el-icon-upload"></i>
@@ -108,18 +129,6 @@
                             </el-upload>
                         </div>
 
-                        <div slot="page3" class="form-wizard-tab-content" :class="{'has-error': errors.has('description'), 'valid': isFormFieldValid('description')}">
-                            <p>To capture your audience attention, It is advisable you provide a short naration to introduce the viewer to the video. In this section, you can also provide any explanation or apologize for any shortcomings that might occur in the video!"</p>
-
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <textarea type="text" name="description" v-model="form.description" id="simple-textarea" v-validate="'required'"></textarea>
-                                    <label class="control-label" for="simple-textarea">Textarea</label><i class="bar"></i>
-                                    <small v-show="errors.has('description')" class="help text-danger">{{ errors.first('description') }}</small>
-                                </div>
-                            </div>
-
-                        </div>
                         <div slot="page4" class="form-wizard-tab-content">
                             <h4>Confirm selection</h4>
                             <p>
@@ -128,6 +137,7 @@
                                 but to the individual who published it. If you agree, proceed!"
                             </p>
                         </div>
+
                         <div slot="wizardCompleted" class="form-wizard-tab-content">
                             <h4>Wizard completed!</h4>
                         </div>
