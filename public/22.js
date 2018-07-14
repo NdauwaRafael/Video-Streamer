@@ -1,18 +1,18 @@
 webpackJsonp([22],{
 
-/***/ 563:
+/***/ 601:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(699)
+  __webpack_require__(624)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(701)
+var __vue_script__ = __webpack_require__(626)
 /* template */
-var __vue_template__ = __webpack_require__(702)
+var __vue_template__ = __webpack_require__(627)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -29,7 +29,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/ui/buttons/Buttons.vue"
+Component.options.__file = "resources/assets/js/components/pages/videos/create.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
@@ -39,9 +39,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-216168a2", Component.options)
+    hotAPI.createRecord("data-v-0f66b17e", Component.options)
   } else {
-    hotAPI.reload("data-v-216168a2", Component.options)
+    hotAPI.reload("data-v-0f66b17e", Component.options)
 ' + '  }
   module.hot.dispose(function (data) {
     disposed = true
@@ -53,23 +53,23 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 699:
+/***/ 624:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(700);
+var content = __webpack_require__(625);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(3)("2208f391", content, false);
+var update = __webpack_require__(4)("980812a8", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-216168a2\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/sass-loader/lib/loader.js!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Buttons.vue", function() {
-     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-216168a2\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/sass-loader/lib/loader.js!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Buttons.vue");
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0f66b17e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/sass-loader/lib/loader.js!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./create.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0f66b17e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/sass-loader/lib/loader.js!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./create.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -80,563 +80,282 @@ if(false) {
 
 /***/ }),
 
-/***/ 700:
-/***/ (function(module, exports) {
+/***/ 625:
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
+exports = module.exports = __webpack_require__(2)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n.widget.simple-vertical-wizard-widget .widget-body {\n  padding: 0 1.5625rem;\n}\n@media (max-width: 767px) {\n.widget.simple-vertical-wizard-widget .widget-body {\n      padding: 1.5625rem 0;\n}\n}\n.form-wizard-page .form-group {\n  min-width: 200px;\n  max-width: 360px;\n  width: 80%;\n}\n", ""]);
+
+// exports
+
 
 /***/ }),
 
-/***/ 701:
+/***/ 626:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_Dropdown__ = __webpack_require__(28);
-
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vuestic_components_vuestic_wizard_VuesticWizard__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vuestic_components_vuestic_wizard_VuesticWizard___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__vuestic_components_vuestic_wizard_VuesticWizard__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vuestic_components_vuestic_simple_select_VuesticSimpleSelect__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vuestic_components_vuestic_simple_select_VuesticSimpleSelect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__vuestic_components_vuestic_simple_select_VuesticSimpleSelect__);
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'buttons',
-  directives: {
-    Dropdown: __WEBPACK_IMPORTED_MODULE_2__directives_Dropdown__["a" /* default */]
-  },
-  computed: __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default()({}, Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["c" /* mapGetters */])(['sidebarOpened']))
+    components: {
+        VuesticWizard: __WEBPACK_IMPORTED_MODULE_0__vuestic_components_vuestic_wizard_VuesticWizard___default.a,
+        VuesticSimpleSelect: __WEBPACK_IMPORTED_MODULE_1__vuestic_components_vuestic_simple_select_VuesticSimpleSelect___default.a
+    },
+    data: function data() {
+        var _this = this;
+
+        return {
+            hsSteps: [{
+                label: 'Step 1. File Name',
+                slot: 'page1',
+                onNext: function onNext() {
+                    _this.validateFormField('hsName');
+                },
+                isValid: function isValid() {
+                    return _this.isFormFieldValid('hsName');
+                }
+            }, {
+                label: 'Step 2. File',
+                slot: 'page2',
+                onNext: function onNext() {
+                    _this.$refs.hsCountrySelect.validate();
+                },
+                isValid: function isValid() {
+                    return _this.$refs.hsCountrySelect.isValid();
+                }
+            }, {
+                label: 'Step 3. Description',
+                slot: 'page3'
+            }, {
+                label: 'Step 4. Confirm',
+                slot: 'page3'
+            }],
+            hsName: '',
+            hsCountry: '',
+            hrName: '',
+            hrCountry: '',
+            vrName: '',
+            vrCountry: '',
+            vsName: '',
+            vsCountry: '',
+            email: '',
+            countriesList: CountriesList,
+            chosenCountry: ''
+        };
+    },
+
+    methods: {
+        isFormFieldValid: function isFormFieldValid(field) {
+            var isValid = false;
+            if (this.formFields[field]) {
+                isValid = this.formFields[field].validated && this.formFields[field].valid;
+            }
+            return isValid;
+        },
+        validateFormField: function validateFormField(fieldName) {
+            this.$validator.validate(fieldName, this[fieldName]);
+        }
+    }
 });
 
 /***/ }),
 
-/***/ 702:
+/***/ 627:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "buttons-page" }, [
-    _c(
-      "div",
-      { staticClass: "row" },
-      [
-        _c(
-          "vuestic-widget",
-          {
-            staticClass: "col-sm-12 primary-secondary-buttons larger-padding",
-            attrs: { headerText: "Primary & Secondary Buttons" }
-          },
-          [
-            _c("div", { staticClass: "row btn-margin-row" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "col-sm-6 d-flex justify-content-center",
-                  class: {
-                    "col-lg-6 col-xl-3": _vm.sidebarOpened,
-                    "col-lg-3": !_vm.sidebarOpened
-                  }
-                },
-                [
-                  _c("button", { staticClass: "btn btn-primary" }, [
-                    _vm._v("\n            BUTTON\n          ")
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "col-sm-6 d-flex justify-content-center",
-                  class: {
-                    "col-lg-6 col-xl-3": _vm.sidebarOpened,
-                    "col-lg-3": !_vm.sidebarOpened
-                  }
-                },
-                [
-                  _c("button", { staticClass: "btn btn-primary hover" }, [
-                    _vm._v("\n            HOVER\n          ")
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "col-sm-6 d-flex justify-content-center",
-                  class: {
-                    "col-lg-6 col-xl-3": _vm.sidebarOpened,
-                    "col-lg-3": !_vm.sidebarOpened
-                  }
-                },
-                [
-                  _c("button", { staticClass: "btn btn-primary focus" }, [
-                    _vm._v("\n            PRESSED\n          ")
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "col-sm-6 d-flex justify-content-center",
-                  class: {
-                    "col-lg-6 col-xl-3": _vm.sidebarOpened,
-                    "col-lg-3": !_vm.sidebarOpened
-                  }
-                },
-                [
-                  _c(
-                    "button",
-                    { staticClass: "btn btn-primary", attrs: { disabled: "" } },
-                    [_vm._v("\n            DISABLED\n          ")]
-                  )
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "row btn-margin-row" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "col-sm-6 d-flex justify-content-center",
-                  class: {
-                    "col-lg-6 col-xl-3": _vm.sidebarOpened,
-                    "col-lg-3": !_vm.sidebarOpened
-                  }
-                },
-                [
-                  _c("button", { staticClass: "btn btn-secondary" }, [
-                    _vm._v("\n            BUTTON\n          ")
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "col-sm-6 d-flex justify-content-center",
-                  class: {
-                    "col-lg-6 col-xl-3": _vm.sidebarOpened,
-                    "col-lg-3": !_vm.sidebarOpened
-                  }
-                },
-                [
-                  _c("button", { staticClass: "btn btn-secondary hover" }, [
-                    _vm._v("\n            HOVER\n          ")
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "col-sm-6 d-flex justify-content-center",
-                  class: {
-                    "col-lg-6 col-xl-3": _vm.sidebarOpened,
-                    "col-lg-3": !_vm.sidebarOpened
-                  }
-                },
-                [
-                  _c("button", { staticClass: "btn btn-secondary focus" }, [
-                    _vm._v("\n            PRESSED\n          ")
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "col-sm-6 d-flex justify-content-center",
-                  class: {
-                    "col-lg-6 col-xl-3": _vm.sidebarOpened,
-                    "col-lg-3": !_vm.sidebarOpened
-                  }
-                },
-                [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-secondary",
-                      attrs: { disabled: "" }
-                    },
-                    [_vm._v("\n            DISABLED\n          ")]
-                  )
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "row btn-margin-row" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "col-sm-6 d-flex justify-content-center",
-                  class: {
-                    "col-lg-6 col-xl-3": _vm.sidebarOpened,
-                    "col-lg-3": !_vm.sidebarOpened
-                  }
-                },
-                [
-                  _c("button", { staticClass: "btn btn-primary btn-sm" }, [
-                    _vm._v("\n            SMALL\n          ")
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "col-sm-6 d-flex justify-content-center align-items-center",
-                  class: {
-                    "col-lg-6 col-xl-3": _vm.sidebarOpened,
-                    "col-lg-3": !_vm.sidebarOpened
-                  }
-                },
-                [
-                  _c("button", { staticClass: "btn btn-primary btn-micro" }, [
-                    _vm._v("\n            MICRO\n          ")
-                  ])
-                ]
-              )
-            ])
-          ]
-        )
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "row" },
-      [
-        _c(
-          "vuestic-widget",
-          {
-            staticClass: "col-sm-12 color-buttons",
-            attrs: { headerText: "Icons, Groups, Dropdowns" }
-          },
-          [
-            _c("div", { staticClass: "row" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "col-sm-6  d-flex justify-content-center",
-                  class: {
-                    "col-lg-6 col-xl-3": _vm.sidebarOpened,
-                    "col-lg-3": !_vm.sidebarOpened
-                  }
-                },
-                [
-                  _c(
-                    "button",
-                    { staticClass: "btn btn-primary btn-with-icon" },
-                    [
-                      _c("div", { staticClass: "btn-with-icon-content" }, [
-                        _c("i", { staticClass: "ion-android-close ion" }),
-                        _vm._v("\n              BUTTON\n            ")
-                      ])
-                    ]
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "col-sm-6  d-flex justify-content-center",
-                  class: {
-                    "col-lg-6 col-xl-3": _vm.sidebarOpened,
-                    "col-lg-3": !_vm.sidebarOpened
-                  }
-                },
-                [
-                  _c(
-                    "div",
-                    {
-                      directives: [{ name: "dropdown", rawName: "v-dropdown" }],
-                      staticClass: "dropdown d-inline-flex"
-                    },
-                    [
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "btn btn-primary dropdown-toggle theme-toggle ",
-                          attrs: {
-                            type: "button",
-                            id: "dropdownMenuButton",
-                            "data-toggle": "dropdown"
-                          }
-                        },
-                        [
-                          _vm._v("\n              DROPDOWN\n              "),
+  return _c("div", { staticClass: "form-wizard-page" }, [
+    _c("div", { staticClass: "row" }, [
+      _c(
+        "div",
+        { staticClass: "col-md-12" },
+        [
+          _c(
+            "vuestic-widget",
+            {
+              staticClass: "no-h-padding",
+              attrs: { headerText: "Simple Wizard" }
+            },
+            [
+              _c("vuestic-wizard", { attrs: { steps: _vm.hsSteps } }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "form-wizard-tab-content",
+                    attrs: { slot: "page1" },
+                    slot: "page1"
+                  },
+                  [
+                    _c("p", [
+                      _vm._v(
+                        'Zebras communicate with facial expressions and sounds. They make loud braying or barking sounds and\n                            soft snorting sounds. The position of their ears, how wide open their eyes are, and whether they show\n                            their teeth all send a signal. For example, ears flat back means trouble, or "you better follow orders!"'
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "form-group with-icon-right",
+                        class: {
+                          "has-error": _vm.errors.has("hsName"),
+                          valid: _vm.isFormFieldValid("hsName")
+                        }
+                      },
+                      [
+                        _c("div", { staticClass: "input-group" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.hsName,
+                                expression: "hsName"
+                              },
+                              {
+                                name: "validate",
+                                rawName: "v-validate",
+                                value: "required",
+                                expression: "'required'"
+                              }
+                            ],
+                            attrs: { name: "hsName", required: "", title: "" },
+                            domProps: { value: _vm.hsName },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.hsName = $event.target.value
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
                           _c("i", {
-                            staticClass: "ion-chevron-down arrow-down"
-                          })
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass: "dropdown-menu",
-                          attrs: { "aria-labelledby": "dropdownMenuButton" }
-                        },
-                        [
-                          _c("div", { staticClass: "dropdown-menu-content" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "dropdown-item",
-                                attrs: { href: "#" }
-                              },
-                              [_vm._v("Action")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "a",
-                              {
-                                staticClass: "dropdown-item",
-                                attrs: { href: "#" }
-                              },
-                              [_vm._v("Another action")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "a",
-                              {
-                                staticClass: "dropdown-item",
-                                attrs: { href: "#" }
-                              },
-                              [_vm._v("Something else here")]
-                            )
-                          ])
-                        ]
-                      )
-                    ]
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "col-sm-6  d-flex justify-content-center",
-                  class: {
-                    "col-lg-6 col-xl-4": _vm.sidebarOpened,
-                    "col-lg-4": !_vm.sidebarOpened
-                  }
-                },
-                [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "btn-toolbar  d-inline-flex",
-                      attrs: {
-                        role: "toolbar",
-                        "aria-label": "Toolbar with button groups"
-                      }
-                    },
-                    [
-                      _c(
-                        "div",
-                        {
-                          staticClass: "btn-group",
-                          attrs: { role: "group", "aria-label": "First group" }
-                        },
-                        [
-                          _c(
-                            "button",
-                            {
-                              staticClass: "btn btn-primary",
-                              attrs: { type: "button" }
-                            },
-                            [_vm._v("1")]
-                          ),
+                            staticClass:
+                              "fa fa-exclamation-triangle error-icon icon-right input-icon"
+                          }),
+                          _vm._v(" "),
+                          _c("i", {
+                            staticClass:
+                              "fa fa-check valid-icon icon-right input-icon"
+                          }),
+                          _vm._v(" "),
+                          _c("label", { staticClass: "control-label" }, [
+                            _vm._v("Name")
+                          ]),
+                          _c("i", { staticClass: "bar" }),
                           _vm._v(" "),
                           _c(
-                            "button",
+                            "small",
                             {
-                              staticClass: "btn btn-primary focus",
-                              attrs: { type: "button" }
+                              directives: [
+                                {
+                                  name: "show",
+                                  rawName: "v-show",
+                                  value: _vm.errors.has("hsName"),
+                                  expression: "errors.has('hsName')"
+                                }
+                              ],
+                              staticClass: "help text-danger"
                             },
-                            [_vm._v("2")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "button",
-                            {
-                              staticClass: "btn btn-primary",
-                              attrs: { type: "button" }
-                            },
-                            [_vm._v("3")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "button",
-                            {
-                              staticClass: "btn btn-primary",
-                              attrs: { type: "button" }
-                            },
-                            [_vm._v("4")]
+                            [_vm._v(_vm._s(_vm.errors.first("hsName")))]
                           )
-                        ]
+                        ])
+                      ]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "form-wizard-tab-content",
+                    attrs: { slot: "page2" },
+                    slot: "page2"
+                  },
+                  [
+                    _c("p", [
+                      _vm._v(
+                        'Zebras communicate with facial expressions and sounds. They make loud braying or barking sounds and\n                            soft snorting sounds. The position of their ears, how wide open their eyes are, and whether they show\n                            their teeth all send a signal. For example, ears flat back means trouble, or "you better follow orders!"'
                       )
-                    ]
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "col-sm-6  d-flex justify-content-center",
-                  class: {
-                    "col-lg-6 col-xl-2": _vm.sidebarOpened,
-                    "col-lg-2": !_vm.sidebarOpened
-                  }
-                },
-                [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-primary btn-with-icon rounded-icon"
-                    },
-                    [
-                      _c("div", { staticClass: "btn-with-icon-content" }, [
-                        _c("i", { staticClass: "ion-android-close ion" })
-                      ])
-                    ]
-                  )
-                ]
-              )
-            ])
-          ]
-        )
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "row" },
-      [
-        _c(
-          "vuestic-widget",
-          {
-            staticClass: "col-sm-12 color-buttons",
-            attrs: { headerText: "Colors" }
-          },
-          [
-            _c("div", { staticClass: "row btn-margin-row" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "col-sm-6  d-flex justify-content-center",
-                  class: {
-                    "col-lg-6 col-xl-3": _vm.sidebarOpened,
-                    "col-lg-3": !_vm.sidebarOpened
-                  }
-                },
-                [
-                  _c("button", { staticClass: "btn btn-danger" }, [
-                    _vm._v("\n            BUTTON\n          ")
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "col-sm-6  d-flex justify-content-center",
-                  class: {
-                    "col-lg-6 col-xl-3": _vm.sidebarOpened,
-                    "col-lg-3": !_vm.sidebarOpened
-                  }
-                },
-                [
-                  _c("button", { staticClass: "btn btn-info" }, [
-                    _vm._v("\n            BUTTON\n          ")
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "col-sm-6  d-flex justify-content-center",
-                  class: {
-                    "col-lg-6 col-xl-3": _vm.sidebarOpened,
-                    "col-lg-3": !_vm.sidebarOpened
-                  }
-                },
-                [
-                  _c("button", { staticClass: "btn btn-dark" }, [
-                    _vm._v("\n            BUTTON\n          ")
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "col-sm-6  d-flex justify-content-center",
-                  class: {
-                    "col-lg-6 col-xl-3": _vm.sidebarOpened,
-                    "col-lg-3": !_vm.sidebarOpened
-                  }
-                },
-                [
-                  _c("button", { staticClass: "btn btn-warning" }, [
-                    _vm._v("\n            BUTTON\n          ")
-                  ])
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "row btn-margin-row" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "col-sm-6  d-flex justify-content-center",
-                  class: {
-                    "col-lg-6 col-xl-3": _vm.sidebarOpened,
-                    "col-lg-3": !_vm.sidebarOpened
-                  }
-                },
-                [
-                  _c("button", { staticClass: "btn btn-success" }, [
-                    _vm._v("\n            BUTTON\n          ")
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "col-sm-6  d-flex justify-content-center",
-                  class: {
-                    "col-lg-6 col-xl-3": _vm.sidebarOpened,
-                    "col-lg-3": !_vm.sidebarOpened
-                  }
-                },
-                [
-                  _c("button", { staticClass: "btn btn-pale" }, [
-                    _vm._v("\n            BUTTON\n          ")
-                  ])
-                ]
-              )
-            ])
-          ]
-        )
-      ],
-      1
-    )
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "form-wizard-tab-content",
+                    attrs: { slot: "page3" },
+                    slot: "page3"
+                  },
+                  [
+                    _c("p", [
+                      _vm._v(
+                        'Zebras communicate with facial expressions and sounds. They make loud braying or barking sounds and\n                            soft snorting sounds. The position of their ears, how wide open their eyes are, and whether they show\n                            their teeth all send a signal. For example, ears flat back means trouble, or "you better follow orders!"'
+                      )
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "form-wizard-tab-content",
+                    attrs: { slot: "page4" },
+                    slot: "page4"
+                  },
+                  [
+                    _c("h4", [_vm._v("Confirm selection")]),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm._v(
+                        '\n                            Zebras communicate with facial expressions and sounds. They make loud braying or barking sounds and\n                            soft snorting sounds. The position of their ears, how wide open their eyes are, and whether they show\n                            their teeth all send a signal. For example, ears flat back means trouble, or "you better follow orders!"\n                        '
+                      )
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "form-wizard-tab-content",
+                    attrs: { slot: "wizardCompleted" },
+                    slot: "wizardCompleted"
+                  },
+                  [
+                    _c("h4", [_vm._v("Wizard completed!")]),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm._v(
+                        '\n                            Zebras communicate with facial expressions and sounds. They make loud braying or barking sounds and\n                            soft snorting sounds. The position of their ears, how wide open their eyes are, and whether they show\n                            their teeth all send a signal. For example, ears flat back means trouble, or "you better follow orders!"\n                        '
+                      )
+                    ])
+                  ]
+                )
+              ])
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ])
   ])
 }
 var staticRenderFns = []
@@ -645,7 +364,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-216168a2", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-0f66b17e", module.exports)
   }
 }
 
