@@ -1,8 +1,7 @@
 <template>
   <div id="app" class="app">
-    <slot>
-
-    </slot>
+    <auth-layout v-if="isAuth"></auth-layout>
+    <layout v-else></layout>
   </div>
 </template>
 

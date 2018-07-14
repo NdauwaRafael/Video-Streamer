@@ -1,18 +1,18 @@
 webpackJsonp([1,5,6],{
 
-/***/ 692:
+/***/ 695:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(708)
+  __webpack_require__(711)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(710)
+var __vue_script__ = __webpack_require__(713)
 /* template */
-var __vue_template__ = __webpack_require__(711)
+var __vue_template__ = __webpack_require__(714)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -53,19 +53,19 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 698:
+/***/ 701:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(735)
+  __webpack_require__(737)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(737)
+var __vue_script__ = __webpack_require__(739)
 /* template */
-var __vue_template__ = __webpack_require__(738)
+var __vue_template__ = __webpack_require__(740)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -106,19 +106,19 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 703:
+/***/ 706:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(753)
+  __webpack_require__(755)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(755)
+var __vue_script__ = __webpack_require__(757)
 /* template */
-var __vue_template__ = __webpack_require__(756)
+var __vue_template__ = __webpack_require__(759)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -159,13 +159,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 708:
+/***/ 711:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(709);
+var content = __webpack_require__(712);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -186,7 +186,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 709:
+/***/ 712:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(undefined);
@@ -201,7 +201,7 @@ exports.push([module.i, "\n.circle[data-v-153ca07c] {\n  width: .75rem;\n  heigh
 
 /***/ }),
 
-/***/ 710:
+/***/ 713:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -235,7 +235,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 711:
+/***/ 714:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -256,41 +256,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 733:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony default export */ var _unused_webpack_default_export = ({
-  tableFields: [{
-    name: '__component:badge-column',
-    title: '',
-    dataClass: 'text-center'
-  }, {
-    name: 'name',
-    sortField: 'name'
-  }, {
-    name: 'email',
-    sortField: 'email'
-  }, {
-    name: 'address.line2',
-    title: 'city'
-  }, {
-    name: 'salary',
-    title: 'score'
-  }],
-  sortFunctions: {
-    'name': function name(item1, item2) {
-      return item1 >= item2 ? 1 : -1;
-    },
-    'email': function email(item1, item2) {
-      return item1 >= item2 ? 1 : -1;
-    }
-  }
-});
-
-/***/ }),
-
-/***/ 734:
+/***/ 736:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -306,13 +272,13 @@ if (false) {
 
 /***/ }),
 
-/***/ 735:
+/***/ 737:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(736);
+var content = __webpack_require__(738);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -333,7 +299,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 736:
+/***/ 738:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(undefined);
@@ -348,7 +314,7 @@ exports.push([module.i, "\n.abc-checkbox, .abc-radio {\n  display: -webkit-box !
 
 /***/ }),
 
-/***/ 737:
+/***/ 739:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -375,7 +341,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 738:
+/***/ 740:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -467,13 +433,13 @@ if (false) {
 
 /***/ }),
 
-/***/ 753:
+/***/ 755:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(754);
+var content = __webpack_require__(756);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -494,7 +460,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 754:
+/***/ 756:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(undefined);
@@ -509,22 +475,22 @@ exports.push([module.i, "\n.add_role_row {\n  padding-bottom: 15px;\n}\n.color-i
 
 /***/ }),
 
-/***/ 755:
+/***/ 757:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vuestic_components_vuestic_widget_VuesticWidget__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vuestic_components_vuestic_widget_VuesticWidget__ = __webpack_require__(78);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vuestic_components_vuestic_widget_VuesticWidget___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__vuestic_components_vuestic_widget_VuesticWidget__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vuestic_components_vuestic_datatable_VuesticDataTable__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vuestic_components_vuestic_datatable_VuesticDataTable__ = __webpack_require__(86);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vuestic_components_vuestic_datatable_VuesticDataTable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__vuestic_components_vuestic_datatable_VuesticDataTable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_BadgeColumn_vue__ = __webpack_require__(692);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_BadgeColumn_vue__ = __webpack_require__(695);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_BadgeColumn_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__utils_BadgeColumn_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__vuestic_components_vuestic_datatable_data_fields_definition__ = __webpack_require__(733);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vuestic_components_vuestic_datatable_data_items_per_page_definition__ = __webpack_require__(734);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__vuestic_components_vuestic_modal_VuesticModal__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__vuestic_components_vuestic_datatable_data_fields_definition__ = __webpack_require__(758);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vuestic_components_vuestic_datatable_data_items_per_page_definition__ = __webpack_require__(736);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__vuestic_components_vuestic_modal_VuesticModal__ = __webpack_require__(89);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__vuestic_components_vuestic_modal_VuesticModal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__vuestic_components_vuestic_modal_VuesticModal__);
 
 
@@ -535,7 +501,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 __WEBPACK_IMPORTED_MODULE_3_vue___default.a.component('badge-column', __WEBPACK_IMPORTED_MODULE_2__utils_BadgeColumn_vue___default.a);
-__WEBPACK_IMPORTED_MODULE_3_vue___default.a.component('add-role', __webpack_require__(698));
+__WEBPACK_IMPORTED_MODULE_3_vue___default.a.component('add-role', __webpack_require__(701));
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     components: {
@@ -574,7 +540,41 @@ __WEBPACK_IMPORTED_MODULE_3_vue___default.a.component('add-role', __webpack_requ
 
 /***/ }),
 
-/***/ 756:
+/***/ 758:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony default export */ var _unused_webpack_default_export = ({
+  tableFields: [{
+    name: '__component:badge-column',
+    title: '',
+    dataClass: 'text-center'
+  }, {
+    name: 'name',
+    sortField: 'name'
+  }, {
+    name: 'email',
+    sortField: 'email'
+  }, {
+    name: 'address.line2',
+    title: 'city'
+  }, {
+    name: 'salary',
+    title: 'score'
+  }],
+  sortFunctions: {
+    'name': function name(item1, item2) {
+      return item1 >= item2 ? 1 : -1;
+    },
+    'email': function email(item1, item2) {
+      return item1 >= item2 ? 1 : -1;
+    }
+  }
+});
+
+/***/ }),
+
+/***/ 759:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {

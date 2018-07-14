@@ -46,33 +46,3 @@
   }
 </script>
 
-<style lang="scss">
-  @import "../../../sass/_variables.scss";
-  @import "../../../../../node_modules/bootstrap/scss/mixins/breakpoints";
-  @import "../../../../../node_modules/bootstrap/scss/variables";
-
-  .content-wrap {
-    margin-left: $content-wrap-ml;
-    padding: $content-wrap-pt $content-wrap-pr $content-wrap-pb 0;
-    transition: margin-left 0.3s ease;
-
-    .pre-loader {
-      position: absolute;
-      left: $vuestic-preloader-left;
-      top: $vuestic-preloader-top;
-    }
-
-    .sidebar-hidden & {
-      margin-left: $sidebar-left;
-    }
-
-    @include media-breakpoint-down(md) {
-      padding: $content-mobile-wrap;
-      margin-left: 0;
-
-      .sidebar-hidden & {
-        margin-left: 0;
-      }
-    }
-  }
-</style>

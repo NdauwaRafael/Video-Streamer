@@ -3,13 +3,17 @@ import Router from 'vue-router'
 
 //import menuModule from 'vuex-store/modules/menu'
 import menuModule from '../store/modules/menu'
-
+import App from '../App.vue'
 Vue.use(Router)
 
 export default new Router({
     routes: [
         ...generateRoutesFromMenu(menuModule.state.items),
-        {path: '*', redirect: { name: getDefaultRoute(menuModule.state.items).name }}
+        {path: '*', redirect: { name: getDefaultRoute(menuModule.state.items).name }},
+        {
+            name: 'main_page',
+            path: '/dashboard'
+        }
     ],
     mode: 'history'
 })
