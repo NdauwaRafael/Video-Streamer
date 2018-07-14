@@ -260,7 +260,7 @@ if (false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ({
+/* unused harmony default export */ var _unused_webpack_default_export = ({
   tableFields: [{
     name: '__component:badge-column',
     title: '',
@@ -548,11 +548,26 @@ __WEBPACK_IMPORTED_MODULE_3_vue___default.a.component('add-role', __webpack_requ
         return {
             apiUrl: 'api/roles',
             apiMode: true,
-            tableFields: __WEBPACK_IMPORTED_MODULE_4__vuestic_components_vuestic_datatable_data_fields_definition__["a" /* default */].tableFields,
             itemsPerPage: __WEBPACK_IMPORTED_MODULE_5__vuestic_components_vuestic_datatable_data_items_per_page_definition__["a" /* default */].itemsPerPage,
-            sortFunctions: __WEBPACK_IMPORTED_MODULE_4__vuestic_components_vuestic_datatable_data_fields_definition__["a" /* default */].sortFunctions,
             paginationPath: '',
-            showCreateRoleModal: false
+            showCreateRoleModal: false,
+            tableFields: [{
+                name: '__component:badge-column',
+                title: '',
+                dataClass: 'text-center'
+            }, {
+                name: 'name',
+                sortField: 'name'
+            }],
+            sortFunctions: {
+                'name': function name(item1, item2) {
+                    return item1 >= item2 ? 1 : -1;
+                },
+                'email': function email(item1, item2) {
+                    return item1 >= item2 ? 1 : -1;
+                }
+            }
+
         };
     }
 });

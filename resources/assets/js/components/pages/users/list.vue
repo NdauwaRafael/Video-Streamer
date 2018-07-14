@@ -3,7 +3,6 @@
     import DataTable from '../../vuestic-components/vuestic-datatable/VuesticDataTable'
     import BadgeColumn from './utils/BadgeColumn.vue'
     import Vue from 'vue'
-    import FieldsDef from '../../vuestic-components/vuestic-datatable/data/fields-definition'
     import ItemsPerPageDef from '../../vuestic-components/vuestic-datatable/data/items-per-page-definition'
 
     Vue.component('badge-column', BadgeColumn)
@@ -14,16 +13,42 @@
             Widget
         },
         name: 'Table',
-        data () {
+        data() {
             return {
                 apiUrl: 'api/users',
                 apiMode: true,
-                tableFields: FieldsDef.tableFields,
                 itemsPerPage: ItemsPerPageDef.itemsPerPage,
-                sortFunctions: FieldsDef.sortFunctions,
-                paginationPath: ''
+                paginationPath: '',
+                tableFields:[
+                    {
+                        name: '__component:badge-column',
+                        title: '',
+                        dataClass: 'text-center'
+                    },
+                    {
+                        name: 'name',
+                        sortField: 'name'
+                    },
+                    {
+                        name: 'email',
+                        sortField: 'email'
+                    },
+                    {
+                        name: 'role',
+                        title: 'Role'
+                    }
+                ],
+                sortFunctions: {
+                    'name': function (item1, item2) {
+                        return item1 >= item2 ? 1 : -1
+                    },
+                    'email': function (item1, item2) {
+                        return item1 >= item2 ? 1 : -1
+                    }
+                }
             }
-        }
+
+    }
     }
 </script>
 

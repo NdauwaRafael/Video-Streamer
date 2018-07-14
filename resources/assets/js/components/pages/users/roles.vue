@@ -20,11 +20,29 @@
             return {
                 apiUrl: 'api/roles',
                 apiMode: true,
-                tableFields: FieldsDef.tableFields,
                 itemsPerPage: ItemsPerPageDef.itemsPerPage,
-                sortFunctions: FieldsDef.sortFunctions,
                 paginationPath: '',
-                showCreateRoleModal: false
+                showCreateRoleModal: false,
+                tableFields:[
+                    {
+                        name: '__component:badge-column',
+                        title: '',
+                        dataClass: 'text-center'
+                    },
+                    {
+                        name: 'name',
+                        sortField: 'name'
+                    }
+                    ],
+                sortFunctions: {
+                    'name': function (item1, item2) {
+                        return item1 >= item2 ? 1 : -1
+                    },
+                    'email': function (item1, item2) {
+                        return item1 >= item2 ? 1 : -1
+                    }
+                }
+
             }
         }
     }

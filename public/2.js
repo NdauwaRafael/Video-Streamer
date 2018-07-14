@@ -203,40 +203,6 @@ if (false) {
 
 /***/ }),
 
-/***/ 733:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony default export */ __webpack_exports__["a"] = ({
-  tableFields: [{
-    name: '__component:badge-column',
-    title: '',
-    dataClass: 'text-center'
-  }, {
-    name: 'name',
-    sortField: 'name'
-  }, {
-    name: 'email',
-    sortField: 'email'
-  }, {
-    name: 'address.line2',
-    title: 'city'
-  }, {
-    name: 'salary',
-    title: 'score'
-  }],
-  sortFunctions: {
-    'name': function name(item1, item2) {
-      return item1 >= item2 ? 1 : -1;
-    },
-    'email': function email(item1, item2) {
-      return item1 >= item2 ? 1 : -1;
-    }
-  }
-});
-
-/***/ }),
-
 /***/ 734:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -308,9 +274,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_BadgeColumn_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__utils_BadgeColumn_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__vuestic_components_vuestic_datatable_data_fields_definition__ = __webpack_require__(733);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vuestic_components_vuestic_datatable_data_items_per_page_definition__ = __webpack_require__(734);
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__vuestic_components_vuestic_datatable_data_items_per_page_definition__ = __webpack_require__(734);
 
 
 
@@ -330,10 +294,30 @@ __WEBPACK_IMPORTED_MODULE_3_vue___default.a.component('badge-column', __WEBPACK_
         return {
             apiUrl: 'api/users',
             apiMode: true,
-            tableFields: __WEBPACK_IMPORTED_MODULE_4__vuestic_components_vuestic_datatable_data_fields_definition__["a" /* default */].tableFields,
-            itemsPerPage: __WEBPACK_IMPORTED_MODULE_5__vuestic_components_vuestic_datatable_data_items_per_page_definition__["a" /* default */].itemsPerPage,
-            sortFunctions: __WEBPACK_IMPORTED_MODULE_4__vuestic_components_vuestic_datatable_data_fields_definition__["a" /* default */].sortFunctions,
-            paginationPath: ''
+            itemsPerPage: __WEBPACK_IMPORTED_MODULE_4__vuestic_components_vuestic_datatable_data_items_per_page_definition__["a" /* default */].itemsPerPage,
+            paginationPath: '',
+            tableFields: [{
+                name: '__component:badge-column',
+                title: '',
+                dataClass: 'text-center'
+            }, {
+                name: 'name',
+                sortField: 'name'
+            }, {
+                name: 'email',
+                sortField: 'email'
+            }, {
+                name: 'role',
+                title: 'Role'
+            }],
+            sortFunctions: {
+                'name': function name(item1, item2) {
+                    return item1 >= item2 ? 1 : -1;
+                },
+                'email': function email(item1, item2) {
+                    return item1 >= item2 ? 1 : -1;
+                }
+            }
         };
     }
 });
