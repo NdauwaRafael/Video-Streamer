@@ -9,8 +9,9 @@ import router from './router'
 import { sync } from 'vuex-router-sync'
 import VuesticPlugin from './components/vuestic-components/vuestic-components-plugin'
 
-Vue.use(VuesticPlugin)
-Vue.use(BootstrapVue)
+Vue.use(VuesticPlugin);
+Vue.use(BootstrapVue);
+require('./bootstrap');
 
 // NOTE: workaround for VeeValidate + vuetable-2
 Vue.use(VeeValidate, {fieldsBagName: 'formFields'})

@@ -1,6 +1,6 @@
 webpackJsonp([25],{
 
-/***/ 598:
+/***/ 603:
 /***/ (function(module, exports, __webpack_require__) {
 
 var normalizeComponent = __webpack_require__(1)
@@ -24,8 +24,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/pages/users/add.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+Component.options.__file = "resources/assets/js/components/pages/videos/list.vue"
 
 module.exports = Component.exports
 

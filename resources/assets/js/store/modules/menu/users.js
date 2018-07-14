@@ -24,12 +24,12 @@ export default {
             }
         },
         {
-            name: 'add_user',
-            path: '/users/create',
-            component: lazyLoading('pages/users/add'),
+            name: 'user_roles',
+            path: '/users/roles',
+            component: lazyLoading('pages/users/roles'),
             meta: {
                 default: false,
-                title: 'Add User',
+                title: 'Roles',
                 iconClass: 'entypo entypo-user-add'
             }
         },

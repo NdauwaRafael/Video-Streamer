@@ -1,11 +1,12 @@
 <script>
     import VuesticWizard from '../../vuestic-components/vuestic-wizard/VuesticWizard';
     import VuesticSimpleSelect from '../../vuestic-components/vuestic-simple-select/VuesticSimpleSelect';
-
+    import { Upload } from 'element-ui';
     export default {
         components: {
             VuesticWizard,
-            VuesticSimpleSelect
+            VuesticSimpleSelect,
+            'el-upload': Upload
         },
         data () {
             return {
@@ -92,8 +93,17 @@
                                 </div>
                             </div>
                         </div>
-                        <div slot="page2" class="form-wizard-tab-content" :class="{'has-error': errors.has('file'), 'valid': isFormFieldValid('file')}">
-                            <p>Attach the file</p>
+                        <div slot="page2" class="form-wizard-tab-content" :class="{'has-error': errors.has('video'), 'valid': isFormFieldValid('video')}">
+                            <p>Attach the file!"</p>
+                            <el-upload
+                                    name="video"
+                                    class="upload-demo"
+                                    drag
+                                    action="https://jsonplaceholder.typicode.com/posts/">
+                                <i class="el-icon-upload"></i>
+                                <div class="el-upload__text">Drop your Video here or <em>click to upload</em></div>
+                                <div class="el-upload__tip" slot="tip">mp4/mpeg4 files with a size less than 500mb</div>
+                            </el-upload>
                         </div>
 
                         <div slot="page3" class="form-wizard-tab-content" :class="{'has-error': errors.has('description'), 'valid': isFormFieldValid('description')}">
