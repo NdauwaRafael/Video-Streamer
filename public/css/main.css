@@ -4747,7 +4747,7 @@ html {
 
 html {
   -ms-overflow-style: scrollbar;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body {
@@ -9900,7 +9900,7 @@ a.badge:hover {
 }
 
 .alert-success hr {
-  border-top-color: transparent;
+  border-top-color: rgba(0, 0, 0, 0);
 }
 
 .alert-success .alert-link {
@@ -9914,7 +9914,7 @@ a.badge:hover {
 }
 
 .alert-info hr {
-  border-top-color: transparent;
+  border-top-color: rgba(0, 0, 0, 0);
 }
 
 .alert-info .alert-link {
@@ -9928,7 +9928,7 @@ a.badge:hover {
 }
 
 .alert-warning hr {
-  border-top-color: transparent;
+  border-top-color: rgba(0, 0, 0, 0);
 }
 
 .alert-warning .alert-link {
@@ -9942,7 +9942,7 @@ a.badge:hover {
 }
 
 .alert-danger hr {
-  border-top-color: transparent;
+  border-top-color: rgba(0, 0, 0, 0);
 }
 
 .alert-danger .alert-link {

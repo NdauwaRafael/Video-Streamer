@@ -12,6 +12,7 @@ import VuesticPlugin from './components/vuestic-components/vuestic-components-pl
 Vue.use(VuesticPlugin);
 Vue.use(BootstrapVue);
 require('./bootstrap');
+require('./components')
 
 // NOTE: workaround for VeeValidate + vuetable-2
 Vue.use(VeeValidate, {fieldsBagName: 'formFields'})
