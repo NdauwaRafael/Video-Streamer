@@ -9,30 +9,28 @@
 </head>
 <body>
 <div id="app" style="height: 100%">
-    <main-page>
-        @if (Route::has('login'))
-            <div class="top-right links">
-                @auth
-                    <div style="height: 100%" v-if="$route.name">
-                        <router-view></router-view>
-                    </div>
-                    <div style="height: 100%" v-else>
-                        @yield('content')
-                    </div>
-                    @else
-                        <div style="height: 100%" v-if="$route.name">
-                            <router-view></router-view>
-                        </div>
-                        <div style="height: 100%" v-else>
-                            <a href="{{ route('login') }}">Login</a>
-                            <a href="{{ route('register') }}">Register</a>
 
-                            @yield('content')
-                        </div>
-                        @endauth
-            </div>
-        @endif
-    </main-page>
+    @if (Route::has('login'))
+        @auth
+            <main-page>
+                <div style="height: 100%" v-if="$route.name">
+                    <router-view></router-view>
+                </div>
+                <div style="height: 100%" v-else>
+                    @yield('content')
+                </div>
+            </main-page>
+            @else
+
+                <div class="top-right links">
+                    <a href="{{ route('login') }}">Login</a>
+                    <a href="{{ route('register') }}">Register</a>
+                </div>
+                @yield('content')
+                @endauth
+
+            @endif
+
 
 </div>
 <script type="text/javascript" src="{{ asset('/js/main.js')}}"></script>
