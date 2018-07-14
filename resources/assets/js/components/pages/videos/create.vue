@@ -15,25 +15,27 @@
                         label: 'Step 1. File Name',
                         slot: 'page1',
                         onNext: () => {
-                            this.validateFormField('hsName')
+                            this.validateFormField('filename')
                         },
                         isValid: () => {
-                            return this.isFormFieldValid('hsName')
+                            return this.isFormFieldValid('filename')
                         }
                     },
                     {
                         label: 'Step 2. Upload Video',
-                        slot: 'page2',
-                        onNext: () => {
-                            this.$refs.hsCountrySelect.validate()
-                        },
-                        isValid: () => {
-                            return this.$refs.hsCountrySelect.isValid()
-                        }
+                        slot: 'page2'
                     },
                     {
                         label: 'Step 3. Add Description',
-                        slot: 'page3'
+                        slot: 'page3',
+                        onNext: () => {
+                            this.validateFormField('description')
+                        },
+                        isValid: () => {
+                            this.validateFormField('description')
+                        }
+
+
                     },
                     {
                         label: 'Step 4. Confirm',
@@ -42,9 +44,9 @@
                 ],
 
                 form: {},
-                hsName: '',
-                hsCountry: '',
-                hrName: '',
+                VideoName: '',
+                file: '',
+                description: '',
                 hrCountry: '',
                 vrName: '',
                 vrCountry: '',
@@ -79,27 +81,27 @@
                         <div slot="page1" class="form-wizard-tab-content">
                             <p>In order to identify your specified tutorial Video it is advisable to provide your videos with unique names that are easy to remember and identify with.
                                 Kindly provide a relevant name for the tutorial you are about to add in the specified field below!"</p>
-                            <div class="form-group with-icon-right" :class="{'has-error': errors.has('hsName'), 'valid': isFormFieldValid('hsName')}">
+                            <div class="form-group with-icon-right" :class="{'has-error': errors.has('filename'), 'valid': isFormFieldValid('filename')}">
                                 <div class="input-group">
                                     <input
-                                            name="hsName"
+                                            name="filename"
                                             v-model="form.filename"
                                             v-validate="'required'"
                                             required title=""/>
                                     <i class="fa fa-exclamation-triangle error-icon icon-right input-icon"></i>
                                     <i class="fa fa-check valid-icon icon-right input-icon"></i>
                                     <label class="control-label">Video Name</label><i class="bar"></i>
-                                    <small v-show="errors.has('hsName')" class="help text-danger">{{ errors.first('hsName') }}</small>
+                                    <small v-show="errors.has('filename')" class="help text-danger">{{ errors.first('filename') }}</small>
                                 </div>
                             </div>
                         </div>
-                        <div slot="page2" class="form-wizard-tab-content" :class="{'has-error': errors.has('video'), 'valid': isFormFieldValid('video')}">
+                        <div slot="page2" class="form-wizard-tab-content" >
                             <p>Attach the file!"</p>
                             <el-upload
-                                    name="video"
                                     class="upload-demo"
                                     drag
-                                    action="https://jsonplaceholder.typicode.com/posts/">
+                                    :auto-upload = 'false'
+                                    action="https://jsonplaceholder.typicode.com/posts/" >
                                 <i class="el-icon-upload"></i>
                                 <div class="el-upload__text">Drop your Video here or <em>click to upload</em></div>
                                 <div class="el-upload__tip" slot="tip">mp4/mpeg4 files with a size less than 500mb</div>
@@ -111,8 +113,9 @@
 
                             <div class="form-group">
                                 <div class="input-group">
-                                    <textarea type="text" name="description" v-model="form.description" id="simple-textarea" required></textarea>
+                                    <textarea type="text" name="description" v-model="form.description" id="simple-textarea" v-validate="'required'"></textarea>
                                     <label class="control-label" for="simple-textarea">Textarea</label><i class="bar"></i>
+                                    <small v-show="errors.has('description')" class="help text-danger">{{ errors.first('description') }}</small>
                                 </div>
                             </div>
 

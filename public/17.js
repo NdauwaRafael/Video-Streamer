@@ -124,32 +124,33 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 label: 'Step 1. File Name',
                 slot: 'page1',
                 onNext: function onNext() {
-                    _this.validateFormField('hsName');
+                    _this.validateFormField('filename');
                 },
                 isValid: function isValid() {
-                    return _this.isFormFieldValid('hsName');
+                    return _this.isFormFieldValid('filename');
                 }
             }, {
                 label: 'Step 2. Upload Video',
-                slot: 'page2',
-                onNext: function onNext() {
-                    _this.$refs.hsCountrySelect.validate();
-                },
-                isValid: function isValid() {
-                    return _this.$refs.hsCountrySelect.isValid();
-                }
+                slot: 'page2'
             }, {
                 label: 'Step 3. Add Description',
-                slot: 'page3'
+                slot: 'page3',
+                onNext: function onNext() {
+                    _this.validateFormField('description');
+                },
+                isValid: function isValid() {
+                    _this.validateFormField('description');
+                }
+
             }, {
                 label: 'Step 4. Confirm',
                 slot: 'page4'
             }],
 
             form: {},
-            hsName: '',
-            hsCountry: '',
-            hrName: '',
+            VideoName: '',
+            file: '',
+            description: '',
             hrCountry: '',
             vrName: '',
             vrCountry: '',
@@ -216,8 +217,8 @@ var render = function() {
                       {
                         staticClass: "form-group with-icon-right",
                         class: {
-                          "has-error": _vm.errors.has("hsName"),
-                          valid: _vm.isFormFieldValid("hsName")
+                          "has-error": _vm.errors.has("filename"),
+                          valid: _vm.isFormFieldValid("filename")
                         }
                       },
                       [
@@ -237,7 +238,11 @@ var render = function() {
                                 expression: "'required'"
                               }
                             ],
-                            attrs: { name: "hsName", required: "", title: "" },
+                            attrs: {
+                              name: "filename",
+                              required: "",
+                              title: ""
+                            },
                             domProps: { value: _vm.form.filename },
                             on: {
                               input: function($event) {
@@ -275,13 +280,13 @@ var render = function() {
                                 {
                                   name: "show",
                                   rawName: "v-show",
-                                  value: _vm.errors.has("hsName"),
-                                  expression: "errors.has('hsName')"
+                                  value: _vm.errors.has("filename"),
+                                  expression: "errors.has('filename')"
                                 }
                               ],
                               staticClass: "help text-danger"
                             },
-                            [_vm._v(_vm._s(_vm.errors.first("hsName")))]
+                            [_vm._v(_vm._s(_vm.errors.first("filename")))]
                           )
                         ])
                       ]
@@ -293,10 +298,6 @@ var render = function() {
                   "div",
                   {
                     staticClass: "form-wizard-tab-content",
-                    class: {
-                      "has-error": _vm.errors.has("video"),
-                      valid: _vm.isFormFieldValid("video")
-                    },
                     attrs: { slot: "page2" },
                     slot: "page2"
                   },
@@ -308,8 +309,8 @@ var render = function() {
                       {
                         staticClass: "upload-demo",
                         attrs: {
-                          name: "video",
                           drag: "",
+                          "auto-upload": false,
                           action: "https://jsonplaceholder.typicode.com/posts/"
                         }
                       },
@@ -367,13 +368,18 @@ var render = function() {
                               rawName: "v-model",
                               value: _vm.form.description,
                               expression: "form.description"
+                            },
+                            {
+                              name: "validate",
+                              rawName: "v-validate",
+                              value: "required",
+                              expression: "'required'"
                             }
                           ],
                           attrs: {
                             type: "text",
                             name: "description",
-                            id: "simple-textarea",
-                            required: ""
+                            id: "simple-textarea"
                           },
                           domProps: { value: _vm.form.description },
                           on: {
@@ -398,7 +404,23 @@ var render = function() {
                           },
                           [_vm._v("Textarea")]
                         ),
-                        _c("i", { staticClass: "bar" })
+                        _c("i", { staticClass: "bar" }),
+                        _vm._v(" "),
+                        _c(
+                          "small",
+                          {
+                            directives: [
+                              {
+                                name: "show",
+                                rawName: "v-show",
+                                value: _vm.errors.has("description"),
+                                expression: "errors.has('description')"
+                              }
+                            ],
+                            staticClass: "help text-danger"
+                          },
+                          [_vm._v(_vm._s(_vm.errors.first("description")))]
+                        )
                       ])
                     ])
                   ]

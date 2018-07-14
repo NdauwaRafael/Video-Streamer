@@ -153,6 +153,29 @@ var render = function() {
         "div",
         { staticClass: "col-md-12" },
         [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-8" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "md-col-4" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-info",
+                  on: {
+                    click: function($event) {
+                      _vm.showMediumModal()
+                    }
+                  }
+                },
+                [
+                  _vm._v(
+                    "\n                        Add New Role\n                    "
+                  )
+                ]
+              )
+            ])
+          ]),
+          _vm._v(" "),
           _c(
             "widget",
             { attrs: { headerText: "User Roles" } },

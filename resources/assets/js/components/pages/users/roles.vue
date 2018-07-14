@@ -5,13 +5,15 @@
     import Vue from 'vue'
     import FieldsDef from '../../vuestic-components/vuestic-datatable/data/fields-definition'
     import ItemsPerPageDef from '../../vuestic-components/vuestic-datatable/data/items-per-page-definition'
-
-    Vue.component('badge-column', BadgeColumn)
+    import Modal from '../../vuestic-components/vuestic-modal/VuesticModal';
+    Vue.component('badge-column', BadgeColumn);
+    Vue.component('add-role', require('./utils/add_role.vue'))
 
     export default {
         components: {
             DataTable,
-            Widget
+            Widget,
+            Modal
         },
         name: 'Table',
         data () {
@@ -21,7 +23,8 @@
                 tableFields: FieldsDef.tableFields,
                 itemsPerPage: ItemsPerPageDef.itemsPerPage,
                 sortFunctions: FieldsDef.sortFunctions,
-                paginationPath: ''
+                paginationPath: '',
+                showCreateRoleModal: false
             }
         }
     }
@@ -32,6 +35,25 @@
 
         <div class="row">
             <div class="col-md-12">
+                <div class="row add_role_row">
+                    <div class="col-md-8">
+
+                    </div>
+                    <div class="md-col-4 ">
+                        <button class="btn btn-info  btn-micro" @click="showCreateRoleModal = true">
+                            Add New Role
+                        </button>
+
+                        <el-dialog
+                                title=""
+                                :visible.sync="showCreateRoleModal">
+
+                            <add-role></add-role>
+
+                        </el-dialog>
+
+                    </div>
+                </div>
                 <widget headerText="User Roles">
                     <data-table :apiUrl="apiUrl"
                                 :tableFields="tableFields"
@@ -48,6 +70,10 @@
 
 
 <style lang="scss">
+
+    .add_role_row {
+        padding-bottom: 15px;
+    }
 
     .color-icon-label-table {
         td:first-child {

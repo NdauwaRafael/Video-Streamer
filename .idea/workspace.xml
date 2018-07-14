@@ -2,35 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e25d19d-0584-4fe4-8430-b8737af891fd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/components/pages/users/utils/BadgeColumn.vue" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/assets/js/components/pages/users/add.vue" afterPath="$PROJECT_DIR$/resources/assets/js/components/pages/users/roles.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/components/pages/users/utils/add_role.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/store/api/user.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/store/modules/users/add_role.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/0.js" afterPath="$PROJECT_DIR$/public/0.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/1.js" afterPath="$PROJECT_DIR$/public/1.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/10.js" afterPath="$PROJECT_DIR$/public/10.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/11.js" afterPath="$PROJECT_DIR$/public/11.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/12.js" afterPath="$PROJECT_DIR$/public/12.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/13.js" afterPath="$PROJECT_DIR$/public/13.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/15.js" afterPath="$PROJECT_DIR$/public/15.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/16.js" afterPath="$PROJECT_DIR$/public/16.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/17.js" afterPath="$PROJECT_DIR$/public/17.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/18.js" afterPath="$PROJECT_DIR$/public/18.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/19.js" afterPath="$PROJECT_DIR$/public/19.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2.js" afterPath="$PROJECT_DIR$/public/2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/20.js" afterPath="$PROJECT_DIR$/public/20.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/21.js" afterPath="$PROJECT_DIR$/public/21.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/22.js" afterPath="$PROJECT_DIR$/public/22.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/23.js" afterPath="$PROJECT_DIR$/public/23.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/24.js" afterPath="$PROJECT_DIR$/public/24.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/25.js" afterPath="$PROJECT_DIR$/public/25.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/26.js" afterPath="$PROJECT_DIR$/public/26.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/27.js" afterPath="$PROJECT_DIR$/public/27.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/28.js" afterPath="$PROJECT_DIR$/public/28.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/29.js" afterPath="$PROJECT_DIR$/public/29.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/3.js" afterPath="$PROJECT_DIR$/public/3.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/30.js" afterPath="$PROJECT_DIR$/public/30.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/4.js" afterPath="$PROJECT_DIR$/public/4.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/5.js" afterPath="$PROJECT_DIR$/public/5.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/6.js" afterPath="$PROJECT_DIR$/public/6.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/7.js" afterPath="$PROJECT_DIR$/public/7.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/8.js" afterPath="$PROJECT_DIR$/public/8.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/9.js" afterPath="$PROJECT_DIR$/public/9.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/main.js" afterPath="$PROJECT_DIR$/public/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/bootstrap.js" afterPath="$PROJECT_DIR$/resources/assets/js/bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/components/pages/users/list.vue" afterPath="$PROJECT_DIR$/resources/assets/js/components/pages/users/list.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/components/pages/users/roles.vue" afterPath="$PROJECT_DIR$/resources/assets/js/components/pages/users/roles.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/components/pages/videos/create.vue" afterPath="$PROJECT_DIR$/resources/assets/js/components/pages/videos/create.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/main.js" afterPath="$PROJECT_DIR$/resources/assets/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/store/modules/menu/users.js" afterPath="$PROJECT_DIR$/resources/assets/js/store/modules/menu/users.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,21 +36,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="list.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="list.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/assets/js/components/pages/users/list.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
+            <state relative-caret-position="-269">
               <caret line="2" column="77" lean-forward="false" selection-start-line="2" selection-start-column="77" selection-end-line="2" selection-end-column="77" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VuesticDataTable.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/assets/js/components/vuestic-components/vuestic-datatable/VuesticDataTable.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -64,11 +49,51 @@
       <file leaf-file-name="roles.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/assets/js/components/pages/users/roles.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="46" lean-forward="false" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+            <state relative-caret-position="322">
+              <caret line="47" column="39" lean-forward="false" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
               <folding>
                 <element signature="e#13#87#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add_role.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/assets/js/components/pages/users/utils/add_role.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6">
+              <caret line="1" column="31" lean-forward="true" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add_role.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/assets/js/store/modules/users/add_role.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="57" lean-forward="false" selection-start-line="12" selection-start-column="57" selection-end-line="12" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/assets/js/store/api/user.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/assets/js/store/modules/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-164">
+              <caret line="14" column="24" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -115,11 +140,14 @@
         <option value="$PROJECT_DIR$/resources/assets/js/store/modules/menu/videos.js" />
         <option value="$PROJECT_DIR$/resources/assets/js/bootstrap.js" />
         <option value="$PROJECT_DIR$/resources/assets/js/main.js" />
-        <option value="$PROJECT_DIR$/resources/assets/js/components/pages/videos/create.vue" />
         <option value="$PROJECT_DIR$/resources/assets/js/store/modules/menu/users.js" />
         <option value="$PROJECT_DIR$/resources/assets/js/components/pages/users/utils/BadgeColumn.vue" />
         <option value="$PROJECT_DIR$/resources/assets/js/components/pages/users/list.vue" />
+        <option value="$PROJECT_DIR$/resources/assets/js/components/pages/videos/create.vue" />
+        <option value="$PROJECT_DIR$/resources/assets/js/store/api/user.js" />
+        <option value="$PROJECT_DIR$/resources/assets/js/components/pages/users/utils/add_role.vue" />
         <option value="$PROJECT_DIR$/resources/assets/js/components/pages/users/roles.vue" />
+        <option value="$PROJECT_DIR$/resources/assets/js/store/modules/users/add_role.js" />
       </list>
     </option>
   </component>
@@ -252,6 +280,17 @@
               <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="users" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="utils" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="tuts-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tuts-master" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="videos" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -270,16 +309,6 @@
               <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="store" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="tuts-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tuts-master" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="store" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="menu" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="tuts-master" type="b2602c69:ProjectViewProjectNode" />
@@ -334,12 +363,12 @@
       <updated>1531558572397</updated>
       <workItem from="1531558575344" duration="870000" />
       <workItem from="1531560962163" duration="35000" />
-      <workItem from="1531565941749" duration="10394000" />
+      <workItem from="1531565941749" duration="13616000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11299000" />
+    <option name="totallyTimeSpent" value="14521000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -373,43 +402,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/assets/sass/_icons.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="24" lean-forward="false" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/sass/_auth.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="35" column="24" lean-forward="false" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/layout/AuthLayout.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="29" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/sass/main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -491,14 +488,6 @@
           <folding>
             <element signature="e#0#21#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/js/store/modules/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -721,16 +710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/pages/videos/create.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="96" column="48" lean-forward="false" selection-start-line="96" selection-start-column="48" selection-end-line="96" selection-end-column="48" />
-          <folding>
-            <element signature="e#13#95#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/assets/js/bootstrap.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="616">
@@ -783,13 +762,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/pages/users/roles.vue">
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/store/modules/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="46" lean-forward="false" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+        <state relative-caret-position="-164">
+          <caret line="14" column="24" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/store/api/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/pages/videos/create.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="99" column="33" lean-forward="false" selection-start-line="99" selection-start-column="33" selection-end-line="99" selection-end-column="33" />
           <folding>
-            <element signature="e#13#87#0" expanded="true" />
+            <element signature="e#13#95#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/vuestic-components/vuestic-simple-select/VuesticSimpleSelect.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -803,8 +806,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/assets/js/components/pages/users/list.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
+        <state relative-caret-position="-269">
           <caret line="2" column="77" lean-forward="false" selection-start-line="2" selection-start-column="77" selection-end-line="2" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/pages/users/utils/add_role.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6">
+          <caret line="1" column="31" lean-forward="true" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/pages/users/roles.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="47" column="39" lean-forward="false" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
+          <folding>
+            <element signature="e#13#87#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/store/modules/users/add_role.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="57" lean-forward="false" selection-start-line="12" selection-start-column="57" selection-end-line="12" selection-end-column="57" />
           <folding />
         </state>
       </provider>
