@@ -546,7 +546,7 @@ __WEBPACK_IMPORTED_MODULE_3_vue___default.a.component('add-role', __webpack_requ
     name: 'Table',
     data: function data() {
         return {
-            apiUrl: 'https://vuetable.ratiw.net/api/users',
+            apiUrl: 'api/roles',
             apiMode: true,
             tableFields: __WEBPACK_IMPORTED_MODULE_4__vuestic_components_vuestic_datatable_data_fields_definition__["a" /* default */].tableFields,
             itemsPerPage: __WEBPACK_IMPORTED_MODULE_5__vuestic_components_vuestic_datatable_data_items_per_page_definition__["a" /* default */].itemsPerPage,

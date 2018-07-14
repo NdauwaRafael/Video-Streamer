@@ -16,7 +16,7 @@
         name: 'Table',
         data () {
             return {
-                apiUrl: 'https://vuetable.ratiw.net/api/users',
+                apiUrl: 'api/users',
                 apiMode: true,
                 tableFields: FieldsDef.tableFields,
                 itemsPerPage: ItemsPerPageDef.itemsPerPage,
