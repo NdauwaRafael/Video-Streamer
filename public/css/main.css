@@ -15239,7 +15239,7 @@ ol.vue-ordered ul li::before {
   display: inline-block;
   width: 129px;
   height: 15.4px;
-  background: url(/fonts/vuestic.svg?aa95ffe29cfa7d7dd0b0c2fa6225e1da) no-repeat center center;
+  background: url(/fonts/tutsmaster.svg?96eafee0a1083d0387f380f465503513) no-repeat center center;
 }
 
 .i-menu-expanded {
@@ -17391,5 +17391,97 @@ th.sortable:hover {
 
 .glyphicon-menu-up:before {
   content: "\E260";
+}
+
+.auth-layout {
+  height: 100%;
+  margin: 0;
+}
+
+.auth-layout .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 5.625rem;
+  background-color: #333;
+}
+
+.auth-layout .nav .i-vuestic {
+  height: 1.5rem;
+  width: 100%;
+}
+
+.auth-layout .main {
+  margin: 0;
+  height: 100%;
+}
+
+.auth-layout .main .auth-content {
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: white;
+}
+
+.auth-layout .main .auth-wallpaper {
+  background-color: #333;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.auth-layout .main .auth-wallpaper .i-vuestic {
+  z-index: 2;
+  height: 2.625rem;
+  width: 100%;
+  text-align: center;
+  font-size: 50px;
+}
+
+.auth-layout .main .auth-wallpaper .i-vuestic:hover {
+  text-decoration: none;
+}
+
+.auth-layout .main .auth-wallpaper .oblique {
+  position: absolute;
+  background-color: #282828;
+  left: calc(50% - 27%/2);
+  -webkit-transform: rotate(15deg);
+          transform: rotate(15deg);
+  width: 27%;
+  height: 115%;
+}
+
+@media (max-width: 991px) {
+  .auth-layout .main {
+    height: calc(100% - 5.625rem);
+  }
+
+  .auth-layout .main .auth-content {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding-top: 2.875rem;
+  }
 }
 
