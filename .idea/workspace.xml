@@ -2,102 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e25d19d-0584-4fe4-8430-b8737af891fd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/components/pages/users/add.vue" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/components/pages/users/list.vue" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/components/pages/users/view.vue" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/components/pages/videos/create.vue" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/components/pages/videos/list.vue" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/components/pages/videos/view.vue" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/router/lazyLoading.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/store/modules/menu/users.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/store/modules/menu/videos.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/sass/_auth.scss" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/dashboard/data-visualisation-tab/DataVisualisation.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/dashboard/data-visualisation-tab/DonutChartData.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/dashboard/data-visualisation-tab/fields-definition.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/extra/Extra.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/forms/CountriesList.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/forms/form-elements/FormElements.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/forms/form-wizard/FormWizard.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/maps/bubble-maps/BubbleMap.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/maps/bubble-maps/BubbleMapData.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/maps/bubble-maps/BubbleMapsPage.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/maps/google-maps/GoogleMap.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/maps/google-maps/GoogleMapsPage.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/maps/leaflet-maps/LeafletMap.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/maps/leaflet-maps/LeafletMapsPage.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/maps/line-maps/LineMap.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/maps/line-maps/LineMapData.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/maps/line-maps/LineMapsPage.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/statistics/charts/BubbleChartData.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/statistics/charts/Charts.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/statistics/charts/DonutChartData.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/statistics/charts/HorizontalBarChartData.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/statistics/charts/LineChartData.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/statistics/charts/PieChartData.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/statistics/charts/VerticalBarChartData.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/statistics/progress-bars/ProgressBars.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/tables/BadgeColumn.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/tables/Table.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/ui/buttons/Buttons.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/ui/grid/Grid.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/ui/icons/Icons.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/ui/icons/Set.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/ui/icons/SetsList.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/ui/icons/sets/brandico.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/ui/icons/sets/entypo.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/ui/icons/sets/font-awesome.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/ui/icons/sets/fontelico.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/ui/icons/sets/glyphicons.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/ui/icons/sets/iconic-stroke.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/ui/icons/sets/ionicons.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/ui/icons/sets/maki.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/ui/icons/sets/names.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/ui/icons/sets/openweb.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/ui/icons/sets/typicons.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/ui/icons/sets/vuestic.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/ui/modals/Modals.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/js/components/ui/typography/Typography.vue" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/0.js" afterPath="$PROJECT_DIR$/public/0.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/1.js" afterPath="$PROJECT_DIR$/public/1.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/10.js" afterPath="$PROJECT_DIR$/public/10.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/11.js" afterPath="$PROJECT_DIR$/public/11.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/12.js" afterPath="$PROJECT_DIR$/public/12.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/13.js" afterPath="$PROJECT_DIR$/public/13.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/14.js" afterPath="$PROJECT_DIR$/public/14.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/15.js" afterPath="$PROJECT_DIR$/public/15.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/16.js" afterPath="$PROJECT_DIR$/public/16.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/17.js" afterPath="$PROJECT_DIR$/public/17.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/18.js" afterPath="$PROJECT_DIR$/public/18.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/19.js" afterPath="$PROJECT_DIR$/public/19.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/2.js" afterPath="$PROJECT_DIR$/public/2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/20.js" afterPath="$PROJECT_DIR$/public/20.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/21.js" afterPath="$PROJECT_DIR$/public/21.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/22.js" afterPath="$PROJECT_DIR$/public/22.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/23.js" afterPath="$PROJECT_DIR$/public/23.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/24.js" afterPath="$PROJECT_DIR$/public/24.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/25.js" afterPath="$PROJECT_DIR$/public/25.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/3.js" afterPath="$PROJECT_DIR$/public/3.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/30.js" afterPath="$PROJECT_DIR$/public/30.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/4.js" afterPath="$PROJECT_DIR$/public/4.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/5.js" afterPath="$PROJECT_DIR$/public/5.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/6.js" afterPath="$PROJECT_DIR$/public/6.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/7.js" afterPath="$PROJECT_DIR$/public/7.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/8.js" afterPath="$PROJECT_DIR$/public/8.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/9.js" afterPath="$PROJECT_DIR$/public/9.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/main.css" afterPath="$PROJECT_DIR$/public/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/main.js" afterPath="$PROJECT_DIR$/public/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/components/auth/login/Login.vue" afterPath="$PROJECT_DIR$/resources/assets/js/components/auth/login/Login.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/components/dashboard/Dashboard.vue" afterPath="$PROJECT_DIR$/resources/assets/js/components/dashboard/Dashboard.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/components/layout/AuthLayout.vue" afterPath="$PROJECT_DIR$/resources/assets/js/components/layout/AuthLayout.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/components/layout/sidebar/Sidebar.vue" afterPath="$PROJECT_DIR$/resources/assets/js/components/layout/sidebar/Sidebar.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/router/index.js" afterPath="$PROJECT_DIR$/resources/assets/js/router/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/store/modules/menu/index.js" afterPath="$PROJECT_DIR$/resources/assets/js/store/modules/menu/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/sass/_icons.scss" afterPath="$PROJECT_DIR$/resources/assets/sass/_icons.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/sass/main.scss" afterPath="$PROJECT_DIR$/resources/assets/sass/main.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/components/pages/videos/create.vue" afterPath="$PROJECT_DIR$/resources/assets/js/components/pages/videos/create.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/store/modules/menu/users.js" afterPath="$PROJECT_DIR$/resources/assets/js/store/modules/menu/users.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/store/modules/menu/videos.js" afterPath="$PROJECT_DIR$/resources/assets/js/store/modules/menu/videos.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -108,45 +32,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Dashboard.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/assets/js/components/dashboard/Dashboard.vue">
+      <file leaf-file-name="create.vue" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/assets/js/components/pages/videos/create.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="111" lean-forward="false" selection-start-line="15" selection-start-column="111" selection-end-line="15" selection-end-column="111" />
+            <state relative-caret-position="424">
+              <caret line="91" column="38" lean-forward="true" selection-start-line="91" selection-start-column="38" selection-end-line="91" selection-end-column="38" />
               <folding>
-                <element signature="e#1025#1103#0" expanded="true" />
+                <element signature="e#13#95#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/assets/js/store/modules/menu/index.js">
+      <file leaf-file-name="SetupProfileTab.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/assets/js/components/dashboard/setup-profile-tab/SetupProfileTab.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="19" column="12" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/assets/js/store/modules/menu/users.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="38" column="31" lean-forward="true" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Sidebar.vue" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/assets/js/components/layout/sidebar/Sidebar.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="40" lean-forward="false" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+            <state relative-caret-position="260">
+              <caret line="120" column="5" lean-forward="true" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -155,11 +57,19 @@
       <file leaf-file-name="videos.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/assets/js/store/modules/menu/videos.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="33" column="9" lean-forward="true" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state relative-caret-position="173">
+              <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Login.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/assets/js/components/auth/login/Login.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="28" lean-forward="false" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -197,9 +107,10 @@
         <option value="$PROJECT_DIR$/resources/assets/js/store/modules/menu/videos/index.js" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/resources/assets/js/store/modules/menu/index.js" />
-        <option value="$PROJECT_DIR$/resources/assets/js/store/modules/menu/videos.js" />
-        <option value="$PROJECT_DIR$/resources/assets/js/store/modules/menu/users.js" />
         <option value="$PROJECT_DIR$/resources/assets/js/components/layout/sidebar/Sidebar.vue" />
+        <option value="$PROJECT_DIR$/resources/assets/js/store/modules/menu/users.js" />
+        <option value="$PROJECT_DIR$/resources/assets/js/store/modules/menu/videos.js" />
+        <option value="$PROJECT_DIR$/resources/assets/js/components/pages/videos/create.vue" />
       </list>
     </option>
   </component>
@@ -293,6 +204,25 @@
               <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="auth" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="tuts-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tuts-master" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="auth" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="login" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="tuts-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tuts-master" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -304,6 +234,16 @@
               <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="users" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="tuts-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tuts-master" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="videos" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="tuts-master" type="b2602c69:ProjectViewProjectNode" />
@@ -385,12 +325,12 @@
       <updated>1531558572397</updated>
       <workItem from="1531558575344" duration="870000" />
       <workItem from="1531560962163" duration="35000" />
-      <workItem from="1531565941749" duration="6291000" />
+      <workItem from="1531565941749" duration="8735000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7196000" />
+    <option name="totallyTimeSpent" value="9640000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -424,39 +364,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/auth/login/Login.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="28" lean-forward="false" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -589,14 +505,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/pages/videos/create.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/assets/js/components/pages/videos/list.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -618,7 +526,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#52#0" expanded="true" />
+            <element signature="e#0#52#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -636,7 +544,7 @@
         <state relative-caret-position="195">
           <caret line="13" column="12" lean-forward="true" selection-start-line="13" selection-start-column="12" selection-end-line="14" selection-end-column="9" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -662,8 +570,8 @@
         <state relative-caret-position="358">
           <caret line="24" column="3" lean-forward="true" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#140#161#0" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#140#161#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -697,7 +605,7 @@
         <state relative-caret-position="616">
           <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -739,7 +647,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -811,6 +719,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/layout/sidebar/Sidebar.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-416">
+          <caret line="9" column="40" lean-forward="false" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/store/modules/menu/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="563">
+          <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/assets/js/store/modules/menu/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
@@ -829,31 +755,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/js/store/modules/menu/users.js">
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/auth/login/Login.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="38" column="31" lean-forward="true" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="60">
+          <caret line="4" column="28" lean-forward="false" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/assets/js/store/modules/menu/videos.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="33" column="9" lean-forward="true" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="173">
+          <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/layout/sidebar/Sidebar.vue">
+    <entry file="file://$PROJECT_DIR$/public/1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="40" lean-forward="false" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+        <state relative-caret-position="300">
+          <caret line="132" column="16" lean-forward="false" selection-start-line="132" selection-start-column="16" selection-end-line="132" selection-end-column="16" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/dashboard/setup-profile-tab/SetupProfileTab.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="120" column="5" lean-forward="true" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/pages/videos/create.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="91" column="38" lean-forward="true" selection-start-line="91" selection-start-column="38" selection-end-line="91" selection-end-column="38" />
+          <folding>
+            <element signature="e#13#95#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

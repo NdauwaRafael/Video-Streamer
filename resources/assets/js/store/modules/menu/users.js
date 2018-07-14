@@ -19,7 +19,8 @@ export default {
             component: lazyLoading('pages/users/list'),
             meta: {
                 default: false,
-                title: 'All Users'
+                title: 'All Users',
+
             }
         },
         {
@@ -28,7 +29,8 @@ export default {
             component: lazyLoading('pages/users/add'),
             meta: {
                 default: false,
-                title: 'Add User'
+                title: 'Add User',
+                iconClass: 'entypo entypo-user-add'
             }
         },
         {

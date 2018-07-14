@@ -15,7 +15,7 @@ export default {
     children: [
         {
             name: 'all_videos',
-            path: '/video/create',
+            path: '/video/list',
             component: lazyLoading('pages/videos/list'),
             meta: {
                 default: false,
