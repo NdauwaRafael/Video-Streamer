@@ -104,6 +104,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vuestic_components_vuestic_wizard_VuesticWizard___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__vuestic_components_vuestic_wizard_VuesticWizard__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vuestic_components_vuestic_simple_select_VuesticSimpleSelect__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vuestic_components_vuestic_simple_select_VuesticSimpleSelect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__vuestic_components_vuestic_simple_select_VuesticSimpleSelect__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_element_ui__ = __webpack_require__(646);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_element_ui___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_element_ui__);
 
 
 
@@ -111,7 +113,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     components: {
         VuesticWizard: __WEBPACK_IMPORTED_MODULE_0__vuestic_components_vuestic_wizard_VuesticWizard___default.a,
-        VuesticSimpleSelect: __WEBPACK_IMPORTED_MODULE_1__vuestic_components_vuestic_simple_select_VuesticSimpleSelect___default.a
+        VuesticSimpleSelect: __WEBPACK_IMPORTED_MODULE_1__vuestic_components_vuestic_simple_select_VuesticSimpleSelect___default.a,
+        'el-upload': __WEBPACK_IMPORTED_MODULE_2_element_ui__["Upload"]
     },
     data: function data() {
         var _this = this;
@@ -291,13 +294,50 @@ var render = function() {
                   {
                     staticClass: "form-wizard-tab-content",
                     class: {
-                      "has-error": _vm.errors.has("file"),
-                      valid: _vm.isFormFieldValid("file")
+                      "has-error": _vm.errors.has("video"),
+                      valid: _vm.isFormFieldValid("video")
                     },
                     attrs: { slot: "page2" },
                     slot: "page2"
                   },
-                  [_c("p", [_vm._v("Attach the file")])]
+                  [
+                    _c("p", [_vm._v('Attach the file!"')]),
+                    _vm._v(" "),
+                    _c(
+                      "el-upload",
+                      {
+                        staticClass: "upload-demo",
+                        attrs: {
+                          name: "video",
+                          drag: "",
+                          action: "https://jsonplaceholder.typicode.com/posts/"
+                        }
+                      },
+                      [
+                        _c("i", { staticClass: "el-icon-upload" }),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "el-upload__text" }, [
+                          _vm._v("Drop your Video here or "),
+                          _c("em", [_vm._v("click to upload")])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "el-upload__tip",
+                            attrs: { slot: "tip" },
+                            slot: "tip"
+                          },
+                          [
+                            _vm._v(
+                              "mp4/mpeg4 files with a size less than 500mb"
+                            )
+                          ]
+                        )
+                      ]
+                    )
+                  ],
+                  1
                 ),
                 _vm._v(" "),
                 _c(
