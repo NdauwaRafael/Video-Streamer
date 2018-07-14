@@ -1,3 +1,3 @@
-const ADD_USER = function (user) {
-
+const ADD_ROLE = function (role) {
+    this.$http.post('api/role', role)
 }
