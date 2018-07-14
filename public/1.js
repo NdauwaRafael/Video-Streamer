@@ -1,18 +1,18 @@
-webpackJsonp([1,13],{
+webpackJsonp([1,12],{
 
-/***/ 581:
+/***/ 549:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(664)
+  __webpack_require__(628)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(666)
+var __vue_script__ = __webpack_require__(630)
 /* template */
-var __vue_template__ = __webpack_require__(672)
+var __vue_template__ = __webpack_require__(636)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -53,19 +53,19 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 597:
+/***/ 565:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(743)
+  __webpack_require__(707)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(745)
+var __vue_script__ = __webpack_require__(709)
 /* template */
-var __vue_template__ = __webpack_require__(759)
+var __vue_template__ = __webpack_require__(723)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -106,17 +106,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 664:
+/***/ 628:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(665);
+var content = __webpack_require__(629);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("1aec1a48", content, false);
+var update = __webpack_require__(3)("1aec1a48", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -133,31 +133,23 @@ if(false) {
 
 /***/ }),
 
-/***/ 665:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ 629:
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.Set .header {\n  background-color: white;\n  padding: 1.75rem 0 1.125rem 0;\n  margin-bottom: 2rem;\n}\n.Set .header .header-text {\n    text-align: left;\n    padding-left: 2.5rem;\n}\n.Set .header .header-text h2 {\n      margin-bottom: 0;\n}\n.Set .header .search {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n}\n.Set .header .search .input-group {\n      width: 13.25rem;\n}\n.Set .header .range {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    text-align: center;\n}\n.Set .header .range .vue-slider-wrap {\n      width: 9.3rem !important;\n}\n.Set .header .range .vue-slider-wrap .vue-slider-process {\n        background-color: #4ae387;\n}\n.Set .header .range .vue-slider-wrap .vue-slider-tooltip {\n        background-color: #4ae387;\n        border-color: #4ae387;\n}\n.Set .header .range .vue-slider-wrap .vue-slider-dot {\n        background-color: #4ae387;\n        -webkit-box-shadow: none;\n                box-shadow: none;\n}\n.Set .header .range h2, .Set .header .range h4 {\n      margin: .5rem;\n}\n.Set .row .icon-grid-container {\n  padding-right: .625rem;\n  padding-left: .625rem;\n  margin: 0 0 .5rem;\n  text-align: center;\n  height: 6rem;\n  position: relative;\n  min-height: 1px;\n  float: left;\n}\n.Set .row .icon-grid-container:hover {\n    background-color: #4ae387;\n    color: white;\n    cursor: pointer;\n}\n.Set .row .icon-grid-container .icon {\n    padding: 1rem 0 0;\n    margin: 0 0 .5rem;\n}\n.Set .row .icon-grid-container .icon .iconText {\n      font-size: .6rem;\n      text-align: center;\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
 
-/***/ 666:
+/***/ 630:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_get_iterator__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_get_iterator__ = __webpack_require__(219);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_get_iterator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_get_iterator__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vuestic_components_vuestic_widget_VuesticWidget__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vuestic_components_vuestic_widget_VuesticWidget__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vuestic_components_vuestic_widget_VuesticWidget___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__vuestic_components_vuestic_widget_VuesticWidget__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_slider_component_src_vue2_slider_vue__ = __webpack_require__(667);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_slider_component_src_vue2_slider_vue__ = __webpack_require__(631);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_slider_component_src_vue2_slider_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue_slider_component_src_vue2_slider_vue__);
 
 
@@ -242,19 +234,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 667:
+/***/ 631:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(668)
+  __webpack_require__(632)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(670)
+var __vue_script__ = __webpack_require__(634)
 /* template */
-var __vue_template__ = __webpack_require__(671)
+var __vue_template__ = __webpack_require__(635)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -295,17 +287,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 668:
+/***/ 632:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(669);
+var content = __webpack_require__(633);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("17084fa7", content, false);
+var update = __webpack_require__(3)("17084fa7", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -322,10 +314,10 @@ if(false) {
 
 /***/ }),
 
-/***/ 669:
+/***/ 633:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
+exports = module.exports = __webpack_require__(217)(undefined);
 // imports
 
 
@@ -337,7 +329,7 @@ exports.push([module.i, "\n.vue-slider-wrap[data-v-76d451a7] {\n\tposition: rela
 
 /***/ }),
 
-/***/ 670:
+/***/ 634:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -921,7 +913,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 671:
+/***/ 635:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1366,7 +1358,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 672:
+/***/ 636:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1528,24 +1520,24 @@ if (false) {
 
 /***/ }),
 
-/***/ 673:
+/***/ 637:
 /***/ (function(module, exports) {
 
 module.exports = ["vuestic","brandico","entypo","font-awesome","fontelico","glyphicons","iconic-stroke","ionicons","maki","openweb"]
 
 /***/ }),
 
-/***/ 743:
+/***/ 707:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(744);
+var content = __webpack_require__(708);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("38f1a800", content, false);
+var update = __webpack_require__(3)("38f1a800", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -1562,27 +1554,19 @@ if(false) {
 
 /***/ }),
 
-/***/ 744:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ 708:
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-exports.push([module.i, "@import url(http://weloveiconfonts.com/api/?family=brandico|entypo|fontelico|iconicfill|iconicstroke|maki|openwebicons|typicons|zocial);", ""]);
-
-// module
-exports.push([module.i, "\n.ui-icons {\n  /* brandico */\n  /* entypo */\n  /* fontelico */\n  /* iconicfill */\n  /* iconicstroke */\n  /* maki */\n  /* openwebicons */\n  /* typicons */\n  /* zocial */\n}\n.ui-icons [class*=\"brandico-\"]:before {\n    font-family: 'brandico', sans-serif;\n    font-style: normal;\n}\n.ui-icons [class*=\"entypo-\"]:before {\n    font-family: 'entypo', sans-serif;\n    font-style: normal;\n}\n.ui-icons [class*=\"fontelico-\"]:before {\n    font-family: 'fontelico', sans-serif;\n    font-style: normal;\n}\n.ui-icons [class*=\"iconicfill-\"]:before {\n    font-family: 'IconicFill', sans-serif;\n    font-style: normal;\n}\n.ui-icons [class*=\"iconicstroke-\"]:before {\n    font-family: 'IconicStroke', sans-serif;\n    font-style: normal;\n}\n.ui-icons [class*=\"maki-\"]:before {\n    font-family: 'maki', sans-serif;\n    font-style: normal;\n}\n.ui-icons [class*=\"openwebicons-\"]:before {\n    font-family: 'OpenWeb Icons', sans-serif;\n    font-style: normal;\n}\n.ui-icons [class*=\"typicons-\"]:before {\n    font-family: 'Typicons', sans-serif;\n    font-style: normal;\n}\n.ui-icons [class*=\"zocial-\"]:before {\n    font-family: 'zocial', sans-serif;\n}\n.ui-icons .widget-body {\n    padding: 1.9375rem 2.6875rem 1.9375rem 2.125rem;\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
 
-/***/ 745:
+/***/ 709:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Set__ = __webpack_require__(581);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Set__ = __webpack_require__(549);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Set___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Set__);
 
 
@@ -1598,8 +1582,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       var _this = this;
 
       var sets = [];
-      __webpack_require__(746)(this.setsPath + 'names.json').forEach(function (name) {
-        var set = __webpack_require__(747)(_this.setsPath + name + '.json');
+      __webpack_require__(710)(this.setsPath + 'names.json').forEach(function (name) {
+        var set = __webpack_require__(711)(_this.setsPath + name + '.json');
         _this.addfilteredListsTo(set);
         sets.push(set);
       });
@@ -1625,11 +1609,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 746:
+/***/ 710:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./sets/names.json": 673
+	"./sets/names.json": 637
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -1645,26 +1629,26 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 746;
+webpackContext.id = 710;
 
 /***/ }),
 
-/***/ 747:
+/***/ 711:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./sets/brandico.json": 748,
-	"./sets/entypo.json": 749,
-	"./sets/font-awesome.json": 750,
-	"./sets/fontelico.json": 751,
-	"./sets/glyphicons.json": 752,
-	"./sets/iconic-stroke.json": 753,
-	"./sets/ionicons.json": 754,
-	"./sets/maki.json": 755,
-	"./sets/names.json": 673,
-	"./sets/openweb.json": 756,
-	"./sets/typicons.json": 757,
-	"./sets/vuestic.json": 758
+	"./sets/brandico.json": 712,
+	"./sets/entypo.json": 713,
+	"./sets/font-awesome.json": 714,
+	"./sets/fontelico.json": 715,
+	"./sets/glyphicons.json": 716,
+	"./sets/iconic-stroke.json": 717,
+	"./sets/ionicons.json": 718,
+	"./sets/maki.json": 719,
+	"./sets/names.json": 637,
+	"./sets/openweb.json": 720,
+	"./sets/typicons.json": 721,
+	"./sets/vuestic.json": 722
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -1680,88 +1664,88 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 747;
+webpackContext.id = 711;
 
 /***/ }),
 
-/***/ 748:
+/***/ 712:
 /***/ (function(module, exports) {
 
 module.exports = {"name":"Brandico","href":"brandico","prefix":"brandico","lists":[{"name":"Icons","icons":["facebook","facebook-rect","twitter","twitter-bird","vimeo","vimeo-rect","tumblr","tumblr-rect","googleplus-rect","github-text","github","skype","icq","yandex","yandex-rect","vkontakte-rect","odnoklassniki","odnoklassniki-rect","friendfeed","friendfeed-rect","blogger","blogger-rect","deviantart","jabber","lastfm","lastfm-rect","linkedin","linkedin-rect","picasa","wordpress","instagram","instagram-filled"]}]}
 
 /***/ }),
 
-/***/ 749:
+/***/ 713:
 /***/ (function(module, exports) {
 
 module.exports = {"name":"Entypo","href":"entypo","prefix":"entypo","lists":[{"name":"Main Icons","icons":["note","logo-db","music","search","flashlight","mail","heart","heart-empty","star","star-empty","user","users","user-add","video","picture","camera","layout","menu","check","cancel","cancel-circled","cancel-squared","plus","plus-circled","plus-squared","minus","minus-circled","minus-squared","help","help-circled","info","info-circled","back","home","link","attach","lock","lock-open","eye","tag","bookmark","bookmarks","flag","thumbs-up","thumbs-down","download","upload","upload-cloud","reply","reply-all","forward","quote","code","export","pencil","feather","print","retweet","keyboard","comment","chat","bell","attention","alert","vcard","address","location","map","direction","compass","cup","trash","doc","docs","doc-landscape","doc-text","doc-text-inv","newspaper","book-open","book","folder","archive","box","rss","phone","cog","tools","share","shareable","basket","bag","calendar","login","logout","mic","mute","sound","volume","clock","hourglass","lamp","light-down","light-up","adjust","block","resize-full","resize-small","popup","publish","window","arrow-combo","down-circled","left-circled","right-circled","up-circled","down-open","left-open","right-open","up-open","down-open-mini","left-open-mini","right-open-mini","up-open-mini","down-open-big","left-open-big","right-open-big","up-open-big","down","left","right","up","down-dir","left-dir","right-dir","up-dir","down-bold","left-bold","right-bold","up-bold","down-thin","left-thin","right-thin","note-beamed","ccw","cw","arrows-ccw","level-down","level-up","shuffle","loop","switch","play","stop","pause","record","to-end","to-start","fast-forward","fast-backward","progress-0","progress-1","progress-2","progress-3","target","palette","list","list-add","signal","trophy","battery","back-in-time","monitor","mobile","network","cd","inbox","install","globe","cloud","cloud-thunder","flash","moon","flight","paper-plane","leaf","lifebuoy","mouse","briefcase","suitcase","dot","dot-2","dot-3","brush","magnet","infinity","erase","chart-pie","chart-line","chart-bar","chart-area","tape","graduation-cap","language","ticket","water","droplet","air","credit-card","floppy","clipboard","megaphone","database","drive","bucket","thermometer","key","flow-cascade","flow-branch","flow-tree","flow-line","flow-parallel","rocket","gauge","traffic-cone","cc","cc-by","cc-nc","cc-nc-eu","cc-nc-jp","cc-sa","cc-nd","cc-pd","cc-zero","cc-share","cc-remix"]},{"name":"Social Icons","icons":["github","github-circled","flickr","flickr-circled","vimeo","vimeo-circled","twitter","twitter-circled","facebook","facebook-circled","facebook-squared","gplus","gplus-circled","pinterest","pinterest-circled","tumblr","tumblr-circled","linkedin","linkedin-circled","dribbble","dribbble-circled","stumbleupon","stumbleupon-circled","lastfm","lastfm-circled","rdio","rdio-circled","spotify","spotify-circled","qq","instagram","dropbox","evernote","flattr","skype","skype-circled","renren","sina-weibo","paypal","picasa","soundcloud","mixi","behance","google-circles","vkontakte","smashing","sweden","db-shape","up-thin"]}]}
 
 /***/ }),
 
-/***/ 750:
+/***/ 714:
 /***/ (function(module, exports) {
 
 module.exports = {"name":"Font Awesome","href":"font-awesome","prefix":"fa","lists":[{"name":"Web Applications Icons","icons":["address-book","address-book-o","address-card","address-card-o","adjust","american-sign-language-interpreting","anchor","archive","area-chart","arrows","arrows-h","arrows-v","asl-interpreting","assistive-listening-systems","asterisk","at","audio-description","automobile","balance-scale","ban","bank","bar-chart","bar-chart-o","barcode","bars","bath","bathtub","battery","battery-0","battery-1","battery-2","battery-3","battery-4","battery-empty","battery-full","battery-half","battery-quarter","battery-three-quarters","bed","beer","bell","bell-o","bell-slash","bell-slash-o","bicycle","binoculars","birthday-cake","blind","bluetooth","bluetooth-b","bolt","bomb","book","bookmark","bookmark-o","braille","briefcase","bug","building","building-o","bullhorn","bullseye","bus","cab","calculator","calendar","calendar-check-o","calendar-minus-o","calendar-o","calendar-plus-o","calendar-times-o","camera","camera-retro","car","caret-square-o-down","caret-square-o-left","caret-square-o-right","caret-square-o-up","cart-arrow-down","cart-plus","cc","certificate","check","check-circle","check-circle-o","check-square","check-square-o","child","circle","circle-o","circle-o-notch","circle-thin","clock-o","clone","close","cloud","cloud-download","cloud-upload","code","code-fork","coffee","cog","cogs","comment","comment-o","commenting","commenting-o","comments","comments-o","compass","copyright","creative-commons","credit-card","credit-card-alt","crop","crosshairs","cube","cubes","cutlery","dashboard","database","deaf","deafness","desktop","diamond","dot-circle-o","download","drivers-license","drivers-license-o","edit","ellipsis-h","ellipsis-v","envelope","envelope-o","envelope-open","envelope-open-o","envelope-square","eraser","exchange","exclamation","exclamation-circle","exclamation-triangle","external-link","external-link-square","eye","eye-slash","eyedropper","fax","feed","female","fighter-jet","file-archive-o","file-audio-o","file-code-o","file-excel-o","file-image-o","file-movie-o","file-pdf-o","file-photo-o","file-picture-o","file-powerpoint-o","file-sound-o","file-video-o","file-word-o","file-zip-o","film","filter","fire","fire-extinguisher","flag","flag-checkered","flag-o","flash","flask","folder","folder-o","folder-open","folder-open-o","frown-o","futbol-o","gamepad","gavel","gear","gears","gift","glass","globe","graduation-cap","group","hand-grab-o","hand-lizard-o","hand-paper-o","hand-peace-o","hand-pointer-o","hand-rock-o","hand-scissors-o","hand-spock-o","hand-stop-o","handshake-o","hard-of-hearing","hashtag","hdd-o","headphones","heart","heart-o","heartbeat","history","home","hotel","hourglass","hourglass-1","hourglass-2","hourglass-3","hourglass-end","hourglass-half","hourglass-o","hourglass-start","i-cursor","id-badge","id-card","id-card-o","image","inbox","industry","info","info-circle","institution","key","keyboard-o","language","laptop","leaf","legal","lemon-o","level-down","level-up","life-bouy","life-buoy","life-ring","life-saver","lightbulb-o","line-chart","location-arrow","lock","low-vision","magic","magnet","mail-forward","mail-reply","mail-reply-all","male","map","map-marker","map-o","map-pin","map-signs","meh-o","microchip","microphone","microphone-slash","minus","minus-circle","minus-square","minus-square-o","mobile","mobile-phone","money","moon-o","mortar-board","motorcycle","mouse-pointer","music","navicon","newspaper-o","object-group","object-ungroup","paint-brush","paper-plane","paper-plane-o","paw","pencil","pencil-square","pencil-square-o","percent","phone","phone-square","photo","picture-o","pie-chart","plane","plug","plus","plus-circle","plus-square","plus-square-o","podcast","power-off","print","puzzle-piece","qrcode","question","question-circle","question-circle-o","quote-left","quote-right","random","recycle","refresh","registered","remove","reorder","reply","reply-all","retweet","road","rocket","rss","rss-square","s15","search","search-minus","search-plus","send","send-o","server","share","share-alt","share-alt-square","share-square","share-square-o","shield","ship","shopping-bag","shopping-basket","shopping-cart","shower","sign-in","sign-language","sign-out","signal","signing","sitemap","sliders","smile-o","snowflake-o","soccer-ball-o","sort","sort-alpha-asc","sort-alpha-desc","sort-amount-asc","sort-amount-desc","sort-asc","sort-desc","sort-down","sort-numeric-asc","sort-numeric-desc","sort-up","space-shuttle","spinner","spoon","square","square-o","star","star-half","star-half-empty","star-half-full","star-half-o","star-o","sticky-note","sticky-note-o","street-view","suitcase","sun-o","support","tablet","tachometer","tag","tags","tasks","taxi","television","terminal","thermometer","thermometer-0","thermometer-1","thermometer-2","thermometer-3","thermometer-4","thermometer-empty","thermometer-full","thermometer-half","thermometer-quarter","thermometer-three-quarters","thumb-tack","thumbs-down","thumbs-o-down","thumbs-o-up","thumbs-up","ticket","times","times-circle","times-circle-o","times-rectangle","times-rectangle-o","tint","toggle-down","toggle-left","toggle-off","toggle-on","toggle-right","toggle-up","trademark","trash","trash-o","tree","trophy","truck","tty","tv","umbrella","universal-access","university","unlock","unlock-alt","unsorted","upload","user","user-circle","user-circle-o","user-o","user-plus","user-secret","user-times","users","vcard","vcard-o","video-camera","volume-control-phone","volume-down","volume-off","volume-up","warning","wheelchair","wheelchair-alt","wifi","window-close","window-close-o","window-maximize","window-minimize","window-restore","wrench"]},{"name":"Accessibility Icons","icons":["american-sign-language-interpreting","asl-interpreting","assistive-listening-systems","audio-description","blind","braille","cc","deaf","deafness","hard-of-hearing","low-vision","question-circle-o","sign-language","signing","tty","universal-access","volume-control-phone","wheelchair","wheelchair-alt"]},{"name":"Hand Icons","icons":["hand-grab-o","hand-lizard-o","hand-o-down","hand-o-left","hand-o-right","hand-o-up","hand-paper-o","hand-peace-o","hand-pointer-o","hand-rock-o","hand-scissors-o","hand-spock-o","hand-stop-o","thumbs-down","thumbs-o-down","thumbs-o-up","thumbs-up"]},{"name":"Transportation Icons","icons":["ambulance","automobile","bicycle","bus","cab","car","fighter-jet","motorcycle","plane","rocket","ship","space-shuttle","subway","taxi","train","truck","wheelchair","wheelchair-alt"]},{"name":"Gender Icons","icons":["genderless","intersex","mars","mars-double","mars-stroke","mars-stroke-h","mars-stroke-v","mercury","neuter","transgender","transgender-alt","venus","venus-double","venus-mars"]},{"name":"File Type Icons","icons":["file","file-archive-o","file-audio-o","file-code-o","file-excel-o","file-image-o","file-movie-o","file-o","file-pdf-o","file-photo-o","file-picture-o","file-powerpoint-o","file-sound-o","file-text","file-text-o","file-video-o","file-word-o","file-zip-o"]},{"name":"Spinner Icons","icons":["circle-o-notch","cog","gear","refresh","spinner"]},{"name":"Form Control Icons","icons":["check-square","check-square-o","circle","circle-o","dot-circle-o","minus-square","minus-square-o","plus-square","plus-square-o","square","square-o"]},{"name":"Payment Icons","icons":["cc-amex","cc-diners-club","cc-discover","cc-jcb","cc-mastercard","cc-paypal","cc-stripe","cc-visa","credit-card","credit-card-alt","google-wallet","paypal"]},{"name":"Chart Icons","icons":["area-chart","bar-chart","bar-chart-o","line-chart","pie-chart"]},{"name":"Currency Icons","icons":["bitcoin","btc","cny","dollar","eur","euro","gbp","gg","gg-circle","ils","inr","jpy","krw","money","rmb","rouble","rub","ruble","rupee","shekel","sheqel","try","turkish-lira","usd","won","yen"]},{"name":"Text Editor Icons","icons":["align-center","align-justify","align-left","align-right","bold","chain","chain-broken","clipboard","columns","copy","cut","dedent","eraser","file","file-o","file-text","file-text-o","files-o","floppy-o","font","header","indent","italic","link","list","list-alt","list-ol","list-ul","outdent","paperclip","paragraph","paste","repeat","rotate-left","rotate-right","save","scissors","strikethrough","subscript","superscript","table","text-height","text-width","th","th-large","th-list","underline","undo","unlink"]},{"name":"Directional Icons","icons":["angle-double-down","angle-double-left","angle-double-right","angle-double-up","angle-down","angle-left","angle-right","angle-up","arrow-circle-down","arrow-circle-left","arrow-circle-o-down","arrow-circle-o-left","arrow-circle-o-right","arrow-circle-o-up","arrow-circle-right","arrow-circle-up","arrow-down","arrow-left","arrow-right","arrow-up","arrows","arrows-alt","arrows-h","arrows-v","caret-down","caret-left","caret-right","caret-square-o-down","caret-square-o-left","caret-square-o-right","caret-square-o-up","caret-up","chevron-circle-down","chevron-circle-left","chevron-circle-right","chevron-circle-up","chevron-down","chevron-left","chevron-right","chevron-up","exchange","hand-o-down","hand-o-left","hand-o-right","hand-o-up","long-arrow-down","long-arrow-left","long-arrow-right","long-arrow-up","toggle-down","toggle-left","toggle-right","toggle-up"]},{"name":"Video Player Icons","icons":["arrows-alt","backward","compress","eject","expand","fast-backward","fast-forward","forward","pause","pause-circle","pause-circle-o","play","play-circle","play-circle-o","random","step-backward","step-forward","stop","stop-circle","stop-circle-o","youtube-play"]},{"name":"Brand Icons","icons":["500px","adn","amazon","android","angellist","apple","bandcamp","behance","behance-square","bitbucket","bitbucket-square","bitcoin","black-tie","bluetooth","bluetooth-b","btc","buysellads","cc-amex","cc-diners-club","cc-discover","cc-jcb","cc-mastercard","cc-paypal","cc-stripe","cc-visa","chrome","codepen","codiepie","connectdevelop","contao","css3","dashcube","delicious","deviantart","digg","dribbble","dropbox","drupal","edge","eercast","empire","envira","etsy","expeditedssl","fa","facebook","facebook-f","facebook-official","facebook-square","firefox","first-order","flickr","font-awesome","fonticons","fort-awesome","forumbee","foursquare","free-code-camp","ge","get-pocket","gg","gg-circle","git","git-square","github","github-alt","github-square","gitlab","gittip","glide","glide-g","google","google-plus","google-plus-circle","google-plus-official","google-plus-square","google-wallet","gratipay","grav","hacker-news","houzz","html5","imdb","instagram","internet-explorer","ioxhost","joomla","jsfiddle","lastfm","lastfm-square","leanpub","linkedin","linkedin-square","linode","linux","maxcdn","meanpath","medium","meetup","mixcloud","modx","odnoklassniki","odnoklassniki-square","opencart","openid","opera","optin-monster","pagelines","paypal","pied-piper","pied-piper-alt","pied-piper-pp","pinterest","pinterest-p","pinterest-square","product-hunt","qq","quora","ra","ravelry","rebel","reddit","reddit-alien","reddit-square","renren","resistance","safari","scribd","sellsy","share-alt","share-alt-square","shirtsinbulk","simplybuilt","skyatlas","skype","slack","slideshare","snapchat","snapchat-ghost","snapchat-square","soundcloud","spotify","stack-exchange","stack-overflow","steam","steam-square","stumbleupon","stumbleupon-circle","superpowers","telegram","tencent-weibo","themeisle","trello","tripadvisor","tumblr","tumblr-square","twitch","twitter","twitter-square","usb","viacoin","viadeo","viadeo-square","vimeo","vimeo-square","vine","vk","wechat","weibo","weixin","whatsapp","wikipedia-w","windows","wordpress","wpbeginner","wpexplorer","wpforms","xing","xing-square","y-combinator","y-combinator-square","yahoo","yc","yc-square","yelp","yoast","youtube","youtube-play","youtube-square"]},{"name":"Medical Icons","icons":["ambulance","h-square","heart","heart-o","heartbeat","hospital-o","medkit","plus-square","stethoscope","user-md","wheelchair","wheelchair-alt"]}]}
 
 /***/ }),
 
-/***/ 751:
+/***/ 715:
 /***/ (function(module, exports) {
 
 module.exports = {"name":"Fontelico","href":"fontelico","prefix":"fontelico","lists":[{"name":"Icons","icons":["emo-happy","emo-wink","emo-wink2","emo-unhappy","emo-sleep","emo-thumbsup","emo-devil","emo-surprised","emo-tongue","emo-coffee","emo-sunglasses","emo-displeased","emo-beer","emo-grin","emo-angry","emo-saint","emo-cry","emo-shoot","emo-squint","emo-laugh","spin1","spin2","spin3","spin4","spin5","spin6","firefox","chrome","opera","ie"]}]}
 
 /***/ }),
 
-/***/ 752:
+/***/ 716:
 /***/ (function(module, exports) {
 
 module.exports = {"name":"GlyphIcons","href":"glyphicons","prefix":"glyphicon","lists":[{"name":"Icons","icons":["asterisk","plus","minus","eur","euro","cloud","envelope","pencil","glass","music","search","heart","star","star-empty","user","film","th-large","th","th-list","ok","remove","zoom-in","zoom-out","off","signal","cog","trash","home","file","time","road","download-alt","download","upload","inbox","play-circle","repeat","refresh","list-alt","lock","flag","headphones","volume-off","volume-down","volume-up","qrcode","barcode","tag","tags","book","bookmark","print","camera","font","bold","italic","text-height","text-width","align-left","align-center","align-right","align-justify","list","indent-left","indent-right","facetime-video","picture","map-marker","adjust","tint","edit","share","check","move","step-backward","fast-backward","backward","play","pause","stop","forward","fast-forward","step-forward","eject","chevron-left","chevron-right","plus-sign","minus-sign","remove-sign","ok-sign","question-sign","info-sign","screenshot","remove-circle","ok-circle","ban-circle","arrow-left","arrow-right","arrow-up","arrow-down","share-alt","resize-full","resize-small","exclamation-sign","gift","leaf","fire","eye-open","eye-close","warning-sign","plane","calendar","random","comment","magnet","chevron-up","chevron-down","retweet","shopping-cart","folder-close","folder-open","resize-vertical","resize-horizontal","hdd","bullhorn","bell","certificate","thumbs-up","thumbs-down","hand-right","hand-left","hand-up","hand-down","circle-arrow-right","circle-arrow-left","circle-arrow-up","circle-arrow-down","globe","wrench","tasks","filter","briefcase","fullscreen","dashboard","paperclip","heart-empty","link","phone","pushpin","usd","gbp","sort","sort-by-alphabet","sort-by-alphabet-alt","sort-by-order","sort-by-order-alt","sort-by-attributes","sort-by-attributes-alt","unchecked","expand","collapse-down","collapse-up","log-in","flash","log-out","new-window","record","save","open","saved","import","export","send","floppy-disk","floppy-saved","floppy-remove","floppy-save","floppy-open","credit-card","transfer","cutlery","header","compressed","earphone","phone-alt","tower","stats","sd-video","hd-video","subtitles","sound-stereo","sound-dolby","sound-5-1","sound-6-1","sound-7-1","copyright-mark","registration-mark","cloud-download","cloud-upload","tree-conifer","tree-deciduous","cd","save-file","open-file","level-up","copy","paste","alert","equalizer","king","queen","pawn","bishop","knight","baby-formula","tent","blackboard","bed","apple","erase","hourglass","lamp","duplicate","piggy-bank","scissors","bitcoin","yen","ruble","scale","ice-lolly","ice-lolly-tasted","education","option-horizontal","option-vertical","menu-hamburger","modal-window","oil","grain","sunglasses","text-size","text-color","text-background","object-align-top","object-align-bottom","object-align-horizontal","object-align-left","object-align-vertical","object-align-right","triangle-right","triangle-left","triangle-bottom","triangle-top","console","superscript","subscript","menu-left","menu-right","menu-down","menu-up"]}]}
 
 /***/ }),
 
-/***/ 753:
+/***/ 717:
 /***/ (function(module, exports) {
 
 module.exports = {"name":"Iconic Stroke","href":"iconic-stroke","prefix":"iconicstroke","lists":[{"name":"Icons","icons":["hash","question-mark","at","pilcrow","info","arrow-left","arrow-up","arrow-right","arrow-down","home","sun-stroke","cloud","umbrella","star","moon-stroke","heart-stroke","cog","bolt","key-stroke","rain","denied","mail","pen","check","check-alt","x","x-alt","left-quote","right-quote","plus","minus","curved-arrow","document-alt-stroke","calendar","map-pin-alt","comment-alt1-stroke","comment-alt2-stroke","pen-alt-stroke","pen-alt2","chat-alt-stroke","plus-alt","minus-alt","bars-alt","book-alt","aperture-alt","beaker-alt","left-quote-alt","right-quote-alt","arrow-left-alt1","arrow-up-alt1","arrow-right-alt1","arrow-down-alt1","arrow-left-alt2","arrow-up-alt2","arrow-right-alt2","arrow-down-alt2","brush","brush-alt","eyedropper","layers","layers-alt","compass","award-stroke","beaker","steering-wheel","eye","aperture","image","chart","chart-alt","target","tag-stroke","rss","rss-alt","share","undo","reload","reload-alt","loop-alt1","loop-alt2","loop-alt3","loop-alt4","spin","spin-alt","move-horizontal","move-horizontal-alt1","move-horizontal-alt2","move-vertical","move-vertical-alt1","move-vertical-alt2","move","move-alt1","move-alt2","transfer","download","upload","cloud-download","cloud-upload","fork","play","play-alt","pause","stop","eject","first","last","fullscreen","fullscreen-alt","fullscreen-exit","fullscreen-exit-alt","equalizer","article","read-more","list","list-nested","cursor","dial","new-window","trash-stroke","battery-half","battery-empty","battery-charging","chat","mic","movie","headphones","user","lightbulb","cd","folder-stroke","document-stroke","pin","map-pin-stroke","book","book-alt2","box","calendar-alt-stroke","comment-stroke","iphone","bars","camera","volume-mute","volume","battery-full","magnifying-glass","lock-stroke","unlock-stroke","link","wrench","clock","paperclip"]}]}
 
 /***/ }),
 
-/***/ 754:
+/***/ 718:
 /***/ (function(module, exports) {
 
 module.exports = {"name":"Ionicons","href":"ionicons","prefix":"ion","lists":[{"name":"Icons","icons":["alert-circled","alert","android-add-circle","android-add","android-alarm-clock","android-alert","android-apps","android-archive","android-arrow-back","android-arrow-down","android-arrow-dropdown-circle","android-arrow-dropdown","android-arrow-dropleft-circle","android-arrow-dropleft","android-arrow-dropright-circle","android-arrow-dropright","android-arrow-dropup-circle","android-arrow-dropup","android-arrow-forward","android-arrow-up","android-attach","android-bar","android-bicycle","android-boat","android-bookmark","android-bulb","android-bus","android-calendar","android-call","android-camera","android-cancel","android-car","android-cart","android-chat","android-checkbox-blank","android-checkbox-outline-blank","android-checkbox-outline","android-checkbox","android-checkmark-circle","android-clipboard","android-close","android-cloud-circle","android-cloud-done","android-cloud-outline","android-cloud","android-color-palette","android-compass","android-contact","android-contacts","android-contract","android-create","android-delete","android-desktop","android-document","android-done-all","android-done","android-download","android-drafts","android-exit","android-expand","android-favorite-outline","android-favorite","android-film","android-folder-open","android-folder","android-funnel","android-globe","android-hand","android-hangout","android-happy","android-home","android-image","android-laptop","android-list","android-locate","android-lock","android-mail","android-map","android-menu","android-microphone-off","android-microphone","android-more-horizontal","android-more-vertical","android-navigate","android-notifications-none","android-notifications-off","android-notifications","android-open","android-options","android-people","android-person-add","android-person","android-phone-landscape","android-phone-portrait","android-pin","android-plane","android-playstore","android-print","android-radio-button-off","android-radio-button-on","android-refresh","android-remove-circle","android-remove","android-restaurant","android-sad","android-search","android-send","android-settings","android-share-alt","android-share","android-star-half","android-star-outline","android-star","android-stopwatch","android-subway","android-sunny","android-sync","android-textsms","android-time","android-train","android-unlock","android-upload","android-volume-down","android-volume-mute","android-volume-off","android-volume-up","android-walk","android-warning","android-watch","android-wifi","aperture","archive","arrow-down-a","arrow-down-b","arrow-down-c","arrow-expand","arrow-graph-down-left","arrow-graph-down-right","arrow-graph-up-left","arrow-graph-up-right","arrow-left-a","arrow-left-b","arrow-left-c","arrow-move","arrow-resize","arrow-return-left","arrow-return-right","arrow-right-a","arrow-right-b","arrow-right-c","arrow-shrink","arrow-swap","arrow-up-a","arrow-up-b","arrow-up-c","asterisk","at","backspace-outline","backspace","bag","battery-charging","battery-empty","battery-full","battery-half","battery-low","beaker","beer","bluetooth","bonfire","bookmark","bowtie","briefcase","bug","calculator","calendar","camera","card","cash","chatbox-working","chatbox","chatboxes","chatbubble-working","chatbubble","chatbubbles","checkmark-circled","checkmark-round","checkmark","chevron-down","chevron-left","chevron-right","chevron-up","clipboard","clock","close-circled","close-round","close","closed-captioning","cloud","code-download","code-working","code","coffee","compass","compose","connection-bars","contrast","crop","cube","disc","document-text","document","drag","earth","easel","edit","egg","eject","email-unread","email","erlenmeyer-flask-bubbles","erlenmeyer-flask","eye-disabled","eye","female","filing","film-marker","fireball","flag","flame","flash-off","flash","folder","fork-repo","fork","forward","funnel","gear-a","gear-b","grid","hammer","happy-outline","happy","headphone","heart-broken","heart","help-buoy","help-circled","help","home","icecream","image","images","information-circled","information","ionic","ios-alarm-outline","ios-alarm","ios-albums-outline","ios-albums","ios-americanfootball-outline","ios-americanfootball","ios-analytics-outline","ios-analytics","ios-arrow-back","ios-arrow-down","ios-arrow-forward","ios-arrow-left","ios-arrow-right","ios-arrow-thin-down","ios-arrow-thin-left","ios-arrow-thin-right","ios-arrow-thin-up","ios-arrow-up","ios-at-outline","ios-at","ios-barcode-outline","ios-barcode","ios-baseball-outline","ios-baseball","ios-basketball-outline","ios-basketball","ios-bell-outline","ios-bell","ios-body-outline","ios-body","ios-bolt-outline","ios-bolt","ios-book-outline","ios-book","ios-bookmarks-outline","ios-bookmarks","ios-box-outline","ios-box","ios-briefcase-outline","ios-briefcase","ios-browsers-outline","ios-browsers","ios-calculator-outline","ios-calculator","ios-calendar-outline","ios-calendar","ios-camera-outline","ios-camera","ios-cart-outline","ios-cart","ios-chatboxes-outline","ios-chatboxes","ios-chatbubble-outline","ios-chatbubble","ios-checkmark-empty","ios-checkmark-outline","ios-checkmark","ios-circle-filled","ios-circle-outline","ios-clock-outline","ios-clock","ios-close-empty","ios-close-outline","ios-close","ios-cloud-download-outline","ios-cloud-download","ios-cloud-outline","ios-cloud-upload-outline","ios-cloud-upload","ios-cloud","ios-cloudy-night-outline","ios-cloudy-night","ios-cloudy-outline","ios-cloudy","ios-cog-outline","ios-cog","ios-color-filter-outline","ios-color-filter","ios-color-wand-outline","ios-color-wand","ios-compose-outline","ios-compose","ios-contact-outline","ios-contact","ios-copy-outline","ios-copy","ios-crop-strong","ios-crop","ios-download-outline","ios-download","ios-drag","ios-email-outline","ios-email","ios-eye-outline","ios-eye","ios-fastforward-outline","ios-fastforward","ios-filing-outline","ios-filing","ios-film-outline","ios-film","ios-flag-outline","ios-flag","ios-flame-outline","ios-flame","ios-flask-outline","ios-flask","ios-flower-outline","ios-flower","ios-folder-outline","ios-folder","ios-football-outline","ios-football","ios-game-controller-a-outline","ios-game-controller-a","ios-game-controller-b-outline","ios-game-controller-b","ios-gear-outline","ios-gear","ios-glasses-outline","ios-glasses","ios-grid-view-outline","ios-grid-view","ios-heart-outline","ios-heart","ios-help-empty","ios-help-outline","ios-help","ios-home-outline","ios-home","ios-infinite-outline","ios-infinite","ios-information-empty","ios-information-outline","ios-information","ios-ionic-outline","ios-keypad-outline","ios-keypad","ios-lightbulb-outline","ios-lightbulb","ios-list-outline","ios-list","ios-location-outline","ios-location","ios-locked-outline","ios-locked","ios-loop-strong","ios-loop","ios-medical-outline","ios-medical","ios-medkit-outline","ios-medkit","ios-mic-off","ios-mic-outline","ios-mic","ios-minus-empty","ios-minus-outline","ios-minus","ios-monitor-outline","ios-monitor","ios-moon-outline","ios-moon","ios-more-outline","ios-more","ios-musical-note","ios-musical-notes","ios-navigate-outline","ios-navigate","ios-nutrition-outline","ios-nutrition","ios-paper-outline","ios-paper","ios-paperplane-outline","ios-paperplane","ios-partlysunny-outline","ios-partlysunny","ios-pause-outline","ios-pause","ios-paw-outline","ios-paw","ios-people-outline","ios-people","ios-person-outline","ios-person","ios-personadd-outline","ios-personadd","ios-photos-outline","ios-photos","ios-pie-outline","ios-pie","ios-pint-outline","ios-pint","ios-play-outline","ios-play","ios-plus-empty","ios-plus-outline","ios-plus","ios-pricetag-outline","ios-pricetag","ios-pricetags-outline","ios-pricetags","ios-printer-outline","ios-printer","ios-pulse-strong","ios-pulse","ios-rainy-outline","ios-rainy","ios-recording-outline","ios-recording","ios-redo-outline","ios-redo","ios-refresh-empty","ios-refresh-outline","ios-refresh","ios-reload","ios-reverse-camera-outline","ios-reverse-camera","ios-rewind-outline","ios-rewind","ios-rose-outline","ios-rose","ios-search-strong","ios-search","ios-settings-strong","ios-settings","ios-shuffle-strong","ios-shuffle","ios-skipbackward-outline","ios-skipbackward","ios-skipforward-outline","ios-skipforward","ios-snowy","ios-speedometer-outline","ios-speedometer","ios-star-half","ios-star-outline","ios-star","ios-stopwatch-outline","ios-stopwatch","ios-sunny-outline","ios-sunny","ios-telephone-outline","ios-telephone","ios-tennisball-outline","ios-tennisball","ios-thunderstorm-outline","ios-thunderstorm","ios-time-outline","ios-time","ios-timer-outline","ios-timer","ios-toggle-outline","ios-toggle","ios-trash-outline","ios-trash","ios-undo-outline","ios-undo","ios-unlocked-outline","ios-unlocked","ios-upload-outline","ios-upload","ios-videocam-outline","ios-videocam","ios-volume-high","ios-volume-low","ios-wineglass-outline","ios-wineglass","ios-world-outline","ios-world","ipad","iphone","ipod","jet","key","knife","laptop","leaf","levels","lightbulb","link","load-a","load-b","load-c","load-d","location","lock-combination","locked","log-in","log-out","loop","magnet","male","man","map","medkit","merge","mic-a","mic-b","mic-c","minus-circled","minus-round","minus","model-s","monitor","more","mouse","music-note","navicon-round","navicon","navigate","network","no-smoking","nuclear","outlet","paintbrush","paintbucket","paper-airplane","paperclip","pause","person-add","person-stalker","person","pie-graph","pin","pinpoint","pizza","plane","planet","play","playstation","plus-circled","plus-round","plus","podium","pound","power","pricetag","pricetags","printer","pull-request","qr-scanner","quote","radio-waves","record","refresh","reply-all","reply","ribbon-a","ribbon-b","sad-outline","sad","scissors","search","settings","share","shuffle","skip-backward","skip-forward","social-android-outline","social-android","social-angular-outline","social-angular","social-apple-outline","social-apple","social-bitcoin-outline","social-bitcoin","social-buffer-outline","social-buffer","social-chrome-outline","social-chrome","social-codepen-outline","social-codepen","social-css3-outline","social-css3","social-designernews-outline","social-designernews","social-dribbble-outline","social-dribbble","social-dropbox-outline","social-dropbox","social-euro-outline","social-euro","social-facebook-outline","social-facebook","social-foursquare-outline","social-foursquare","social-freebsd-devil","social-github-outline","social-github","social-google-outline","social-google","social-googleplus-outline","social-googleplus","social-hackernews-outline","social-hackernews","social-html5-outline","social-html5","social-instagram-outline","social-instagram","social-javascript-outline","social-javascript","social-linkedin-outline","social-linkedin","social-markdown","social-nodejs","social-octocat","social-pinterest-outline","social-pinterest","social-python","social-reddit-outline","social-reddit","social-rss-outline","social-rss","social-sass","social-skype-outline","social-skype","social-snapchat-outline","social-snapchat","social-tumblr-outline","social-tumblr","social-tux","social-twitch-outline","social-twitch","social-twitter-outline","social-twitter","social-usd-outline","social-usd","social-vimeo-outline","social-vimeo","social-whatsapp-outline","social-whatsapp","social-windows-outline","social-windows","social-wordpress-outline","social-wordpress","social-yahoo-outline","social-yahoo","social-yen-outline","social-yen","social-youtube-outline","social-youtube","soup-can-outline","soup-can","speakerphone","speedometer","spoon","star","stats-bars","steam","stop","thermometer","thumbsdown","thumbsup","toggle-filled","toggle","transgender","trash-a","trash-b","trophy","tshirt-outline","tshirt","umbrella","university","unlocked","upload","usb","videocamera","volume-high","volume-low","volume-medium","volume-mute","wand","waterdrop","wifi","wineglass","woman","wrench","xbox"]}]}
 
 /***/ }),
 
-/***/ 755:
+/***/ 719:
 /***/ (function(module, exports) {
 
 module.exports = {"name":"Maki","href":"maki","prefix":"maki","lists":[{"name":"Icons","icons":["aboveground-rail","airfield","airport","art-gallery","bar","baseball","basketball","beer","belowground-rail","bicycle","bus","cafe","campsite","cemetery","cinema","college","commerical-building","credit-card","cricket","embassy","fast-food","ferry","fire-station","football","fuel","garden","giraffe","golf","grocery-store","harbor","heliport","hospital","industrial-building","library","lodging","london-underground","minefield","monument","museum","pharmacy","pitch","police","post","prison","rail","religious-christian","religious-islam","religious-jewish","restaurant","roadblock","school","shop","skiing","soccer","swimming","tennis","theatre","toilet","town-hall","trash","tree-1","tree-2","warehouse"]}]}
 
 /***/ }),
 
-/***/ 756:
+/***/ 720:
 /***/ (function(module, exports) {
 
 module.exports = {"name":"OpenWeb Icons","href":"openweb","prefix":"openwebicons","lists":[{"name":"Icons","icons":["apml","open-share","share","feed","ostatus","opml","activity","geo","opensearch","oauth","openid","rdf","dataportability","federated","open-web","web-intents","xmpp","qr","epub","opengraph","foaf","info-card","browserid","persona","remote-storage","odata","markdown","tosdr"]}]}
 
 /***/ }),
 
-/***/ 757:
+/***/ 721:
 /***/ (function(module, exports) {
 
 module.exports = {"name":"Typicons","href":"typicons","prefix":"typicons","lists":[{"name":"Icons","icons":["adjust-brightness","adjust-contrast","anchor-outline","anchor","archive","arrow-back-outline","arrow-back","arrow-down-outline","arrow-down-thick","arrow-down","arrow-forward-outline","arrow-forward","arrow-left-outline","arrow-left-thick","arrow-left","arrow-loop-outline","arrow-loop","arrow-maximise-outline","arrow-maximise","arrow-minimise-outline","arrow-minimise","arrow-move-outline","arrow-move","arrow-repeat-outline","arrow-repeat","arrow-right-outline","arrow-right-thick","arrow-right","arrow-shuffle","arrow-sorted-down","arrow-sorted-up","arrow-sync-outline","arrow-sync","arrow-unsorted","arrow-up-outline","arrow-up-thick","arrow-up","at","attachment-outline","attachment","backspace-outline","backspace","battery-charge","battery-full","battery-high","battery-low","battery-mid","beaker","beer","bell","book","bookmark","briefcase","brush","business-card","calculator","calendar-outline","calendar","camera-outline","camera","cancel-outline","cancel","chart-area-outline","chart-area","chart-bar-outline","chart-bar","chart-line-outline","chart-line","chart-pie-outline","chart-pie","chevron-left-outline","chevron-left","chevron-right-outline","chevron-right","clipboard","cloud-storage","cloud-storage-outline","code-outline","code","coffee","cog-outline","cog","compass","contacts","credit-card","css3","database","delete-outline","delete","device-desktop","device-laptop","device-phone","device-tablet","directions","divide-outline","divide","document-add","document-delete","document-text","document","download-outline","download","dropbox","edit","eject-outline","eject","equals-outline","equals","export-outline","export","eye-outline","eye","feather","film","filter","flag-outline","flag","flash-outline","flash","flow-children","flow-merge","flow-parallel","flow-switch","folder-add","folder-delete","folder-open","folder","gift","globe-outline","globe","group-outline","group","headphones","heart-full-outline","heart-half-outline","heart-outline","heart","home-outline","home","html5","image-outline","image","infinity-outline","infinity","info-large-outline","info-large","info-outline","info","input-checked-outline","input-checked","key-outline","key","keyboard","leaf","lightbulb","link-outline","link","location-arrow-outline","location-arrow","location-outline","location","lock-closed-outline","lock-closed","lock-open-outline","lock-open","mail","map","media-eject-outline","media-eject","media-fast-forward-outline","media-fast-forward","media-pause-outline","media-pause","media-play-outline","media-play-reverse-outline","media-play-reverse","media-play","media-record-outline","media-record","media-rewind-outline","media-rewind","media-stop-outline","media-stop","message-typing","message","messages","microphone-outline","microphone","minus-outline","minus","mortar-board","news","notes-outline","notes","pen","pencil","phone-outline","phone","pi-outline","pi","pin-outline","pin","pipette","plane-outline","plane","plug","plus-outline","plus","point-of-interest-outline","point-of-interest","power-outline","power","printer","puzzle-outline","puzzle","radar-outline","radar","refresh-outline","refresh","rss-outline","rss","scissors-outline","scissors","shopping-bag","shopping-cart","social-at-circular","social-dribbble-circular","social-dribbble","social-facebook-circular","social-facebook","social-flickr-circular","social-flickr","social-github-circular","social-github","social-google-plus-circular","social-google-plus","social-instagram-circular","social-instagram","social-last-fm-circular","social-last-fm","social-linkedin-circular","social-linkedin","social-pinterest-circular","social-pinterest","social-skype-outline","social-skype","social-tumbler-circular","social-tumbler","social-twitter-circular","social-twitter","social-vimeo-circular","social-vimeo","social-youtube-circular","social-youtube","sort-alphabetically-outline","sort-alphabetically","sort-numerically-outline","sort-numerically","spanner-outline","spanner","spiral","star-full-outline","star-half-outline","star-half","star-outline","star","starburst-outline","starburst","stopwatch","support","tabs-outline","tag","tags","th-large-outline","th-large","th-list-outline","th-list","th-menu-outline","th-menu","th-small-outline","th-small","thermometer","thumbs-down","thumbs-ok","thumbs-up","tick-outline","tick","ticket","time","times-outline","times","trash","tree","upload-outline","upload","user-add-outline","user-add","user-delete-outline","user-delete","user-outline","user","vendor-android","vendor-apple","vendor-microsoft","video-outline","video","volume-down","volume-mute","volume-up","volume","warning-outline","warning","watch","waves-outline","waves","weather-cloudy","weather-downpour","weather-night","weather-partly-sunny","weather-shower","weather-snow","weather-stormy","weather-sunny","weather-windy-cloudy","weather-windy","wi-fi-outline","wi-fi","wine","world-outline","world","zoom-in-outline","zoom-in","zoom-out-outline","zoom-out","zoom-outline"]}]}
 
 /***/ }),
 
-/***/ 758:
+/***/ 722:
 /***/ (function(module, exports) {
 
 module.exports = {"name":"Vuestic","href":"vuestic","prefix":"vuestic-icon","lists":[{"name":"Icons","icons":["comments","components","dashboard","extras","files","forms","graph","auth","image","maps","music","settings","statistics","tables","time","ui-elements","user","video"]}]}
 
 /***/ }),
 
-/***/ 759:
+/***/ 723:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {

@@ -8,7 +8,9 @@
         <title>Bounce Admin</title>
     </head>
     <body>
-        <div id="app"></div>
+        <div id="app">
+
+        </div>
         <script type="text/javascript" src="{{ asset('/js/main.js')}}"></script>
     </body>
 </html>

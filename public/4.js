@@ -1,18 +1,18 @@
-webpackJsonp([4,10],{
+webpackJsonp([4,11],{
 
-/***/ 577:
+/***/ 545:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(643)
+  __webpack_require__(610)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(645)
+var __vue_script__ = __webpack_require__(612)
 /* template */
-var __vue_template__ = __webpack_require__(646)
+var __vue_template__ = __webpack_require__(613)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -53,19 +53,19 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 588:
+/***/ 556:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(698)
+  __webpack_require__(662)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(700)
+var __vue_script__ = __webpack_require__(664)
 /* template */
-var __vue_template__ = __webpack_require__(702)
+var __vue_template__ = __webpack_require__(666)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -106,22 +106,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 605:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, ".ammapAlert\r\n{\r\n    display:table-cell;\r\n    vertical-align:middle;\r\n    text-align:center;\r\n    font-family:verdana,helvetica,arial,sans-serif;\r\n    font-size:12px;\r\n    color:#CC0000;\r\n}\r\n\r\n.ammapDescriptionWindow\r\n{\r\n   font-size:11px;\r\n   font-family:verdana,helvetica,arial,sans-serif;\r\n   background-color:#FFFFFF;\r\n   border-style:solid;\r\n   border-color:#DADADA;\r\n   border-width:1px;\r\n   color:#000000;\r\n   padding:8px;\r\n   -webkit-box-sizing: border-box;\r\n   -moz-box-sizing: border-box;\r\n   box-sizing: border-box;\r\n}\r\n\r\n.ammapDescriptionTitle\r\n{\r\n   font-size:12px;\r\n   font-weight:bold;\r\n   font-family:verdana,helvetica,arial,sans-serif;\r\n   padding-bottom:5px;\r\n}\r\n\r\n.ammapDescriptionWindowCloseButton\r\n{\r\n\r\n}\r\n\r\n.ammapObjectList ul\r\n{\r\n    padding-left:20px;\r\n    list-style:square outside;\r\n    color:#999999;\r\n    font-family:verdana,helvetica,arial,sans-serif;\r\n    font-size: 12px;\r\n}\r\n\r\n.ammapObjectList ul ul\r\n{\r\n    padding-left:14px;\r\n}\r\n\r\n.ammapObjectList a\r\n{\r\n    color:#000000;\r\n}\r\n\r\n.ammapObjectList a\r\n{\r\n    color:#000000;\r\n    text-decoration:none;\r\n    display:block;\r\n    padding:2px;\r\n}\r\n\r\n.ammapObjectList a:hover\r\n{\r\n    color:#CC0000;\r\n    text-decoration:none;\r\n    background:#FFFFFF;\r\n    cursor:pointer;\r\n    display:block;\r\n}\r\n\r\n.ammapDescriptionText\r\n{\r\n\toverflow: auto;\r\n}\r\n\r\n\r\n.amChartsPlotArea\r\n{\r\n\r\n}", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 606:
+/***/ 573:
 /***/ (function(module, exports) {
 
 (function(){var d;window.AmCharts?d=window.AmCharts:(d={},window.AmCharts=d,d.themes={},d.maps={},d.inheriting={},d.charts=[],d.onReadyArray=[],d.useUTC=!1,d.updateRate=60,d.uid=0,d.lang={},d.translations={},d.mapTranslations={},d.windows={},d.initHandlers=[],d.amString="am",d.pmString="pm");d.Class=function(a){var b=function(){arguments[0]!==d.inheriting&&(this.events={},this.construct.apply(this,arguments))};a.inherits?(b.prototype=new a.inherits(d.inheriting),b.base=a.inherits.prototype,delete a.inherits):
@@ -531,7 +516,7 @@ c*f);break;case "mm":a.setMinutes(a.getMinutes()+c*f);break;case "ss":a.setSecon
 
 /***/ }),
 
-/***/ 607:
+/***/ 574:
 /***/ (function(module, exports) {
 
 /*
@@ -1811,7 +1796,7 @@ AmCharts.addInitHandler( function( chart ) {
 
 /***/ }),
 
-/***/ 608:
+/***/ 575:
 /***/ (function(module, exports) {
 
 (function(){var e=window.AmCharts;e.AmRectangularChart=e.Class({inherits:e.AmCoordinateChart,construct:function(a){e.AmRectangularChart.base.construct.call(this,a);this.theme=a;this.createEvents("zoomed","changed");this.marginRight=this.marginBottom=this.marginTop=this.marginLeft=20;this.depth3D=this.angle=0;this.plotAreaFillColors="#FFFFFF";this.plotAreaFillAlphas=0;this.plotAreaBorderColor="#000000";this.plotAreaBorderAlpha=0;this.maxZoomFactor=20;this.zoomOutButtonImageSize=19;this.zoomOutButtonImage=
@@ -1914,7 +1899,7 @@ return a},showBalloonAt:function(a,b){void 0===b&&(b=this.parseDates?this.dateTo
 
 /***/ }),
 
-/***/ 609:
+/***/ 576:
 /***/ (function(module, exports) {
 
 AmCharts.themes.light = {
@@ -2109,7 +2094,7 @@ AmCharts.themes.light = {
 
 /***/ }),
 
-/***/ 610:
+/***/ 577:
 /***/ (function(module, exports) {
 
 (function(){var d;window.AmCharts?d=window.AmCharts:(d={},window.AmCharts=d,d.themes={},d.maps={},d.inheriting={},d.charts=[],d.onReadyArray=[],d.useUTC=!1,d.updateRate=60,d.uid=0,d.lang={},d.translations={},d.mapTranslations={},d.windows={},d.initHandlers=[],d.amString="am",d.pmString="pm");d.Class=function(a){var b=function(){arguments[0]!==d.inheriting&&(this.events={},this.construct.apply(this,arguments))};a.inherits?(b.prototype=new a.inherits(d.inheriting),b.base=a.inherits.prototype,delete a.inherits):
@@ -2433,7 +2418,7 @@ a.title){var d=c.chart,g=document.createElement("li");g.className=d.classNamePre
 
 /***/ }),
 
-/***/ 611:
+/***/ 578:
 /***/ (function(module, exports) {
 
 // (c) ammap.com | SVG (in JSON format) map of World - Low
@@ -3338,17 +3323,17 @@ AmCharts.maps.worldLow={
 
 /***/ }),
 
-/***/ 643:
+/***/ 610:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(644);
+var content = __webpack_require__(611);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("aff17fb2", content, false);
+var update = __webpack_require__(3)("aff17fb2", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -3365,37 +3350,29 @@ if(false) {
 
 /***/ }),
 
-/***/ 644:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ 611:
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-exports.i(__webpack_require__(605), "");
-
-// module
-exports.push([module.i, "\n.bubble-map {\n  height: 100%;\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
 
-/***/ 645:
+/***/ 612:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_amcharts3__ = __webpack_require__(606);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_amcharts3__ = __webpack_require__(573);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_amcharts3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_amcharts3__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_amcharts3_amcharts_plugins_responsive_responsive_js__ = __webpack_require__(607);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_amcharts3_amcharts_plugins_responsive_responsive_js__ = __webpack_require__(574);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_amcharts3_amcharts_plugins_responsive_responsive_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_amcharts3_amcharts_plugins_responsive_responsive_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_amcharts3_amcharts_serial_js__ = __webpack_require__(608);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_amcharts3_amcharts_serial_js__ = __webpack_require__(575);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_amcharts3_amcharts_serial_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_amcharts3_amcharts_serial_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_amcharts3_amcharts_themes_light__ = __webpack_require__(609);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_amcharts3_amcharts_themes_light__ = __webpack_require__(576);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_amcharts3_amcharts_themes_light___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_amcharts3_amcharts_themes_light__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ammap3__ = __webpack_require__(610);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ammap3__ = __webpack_require__(577);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ammap3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_ammap3__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ammap3_ammap_maps_js_worldLow__ = __webpack_require__(611);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ammap3_ammap_maps_js_worldLow__ = __webpack_require__(578);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ammap3_ammap_maps_js_worldLow___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_ammap3_ammap_maps_js_worldLow__);
 
 
@@ -3490,7 +3467,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 646:
+/***/ 613:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -3511,17 +3488,17 @@ if (false) {
 
 /***/ }),
 
-/***/ 698:
+/***/ 662:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(699);
+var content = __webpack_require__(663);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("76519cc4", content, false);
+var update = __webpack_require__(3)("76519cc4", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -3538,29 +3515,21 @@ if(false) {
 
 /***/ }),
 
-/***/ 699:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ 663:
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
 
-/***/ 700:
+/***/ 664:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BubbleMap__ = __webpack_require__(577);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BubbleMap__ = __webpack_require__(545);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BubbleMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__BubbleMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__BubbleMapData__ = __webpack_require__(701);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__BubbleMapData__ = __webpack_require__(665);
 
 
 
@@ -3580,7 +3549,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 701:
+/***/ 665:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5400,7 +5369,7 @@ var data = [{
 
 /***/ }),
 
-/***/ 702:
+/***/ 666:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {

@@ -142,7 +142,7 @@
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 223);
+/******/ 	return __webpack_require__(__webpack_require__.s = 220);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -1978,7 +1978,7 @@ function loadLocale(name) {
             module && module.exports) {
         try {
             oldLocale = globalLocale._abbr;
-            __webpack_require__(422)("./" + name);
+            __webpack_require__(390)("./" + name);
             // because defineLocale currently also sets the global locale, we
             // want to undo that for lazy loaded locales
             getSetGlobalLocale(oldLocale);
@@ -4613,7 +4613,7 @@ return hooks;
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(91)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(87)(module)))
 
 /***/ }),
 /* 1 */
@@ -4726,101 +4726,19 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports) {
-
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-module.exports = function(useSourceMap) {
-	var list = [];
-
-	// return the list of modules as css string
-	list.toString = function toString() {
-		return this.map(function (item) {
-			var content = cssWithMappingToString(item, useSourceMap);
-			if(item[2]) {
-				return "@media " + item[2] + "{" + content + "}";
-			} else {
-				return content;
-			}
-		}).join("");
-	};
-
-	// import a list of modules into the list
-	list.i = function(modules, mediaQuery) {
-		if(typeof modules === "string")
-			modules = [[null, modules, ""]];
-		var alreadyImportedModules = {};
-		for(var i = 0; i < this.length; i++) {
-			var id = this[i][0];
-			if(typeof id === "number")
-				alreadyImportedModules[id] = true;
-		}
-		for(i = 0; i < modules.length; i++) {
-			var item = modules[i];
-			// skip already imported module
-			// this implementation is not 100% perfect for weird media query combinations
-			//  when a module is imported multiple times with different media queries.
-			//  I hope this will never occur (Hey this way we have smaller bundles)
-			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-				if(mediaQuery && !item[2]) {
-					item[2] = mediaQuery;
-				} else if(mediaQuery) {
-					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-				}
-				list.push(item);
-			}
-		}
-	};
-	return list;
-};
-
-function cssWithMappingToString(item, useSourceMap) {
-	var content = item[1] || '';
-	var cssMapping = item[3];
-	if (!cssMapping) {
-		return content;
-	}
-
-	if (useSourceMap && typeof btoa === 'function') {
-		var sourceMapping = toComment(cssMapping);
-		var sourceURLs = cssMapping.sources.map(function (source) {
-			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
-		});
-
-		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-	}
-
-	return [content].join('\n');
-}
-
-// Adapted from convert-source-map (MIT)
-function toComment(sourceMap) {
-	// eslint-disable-next-line no-undef
-	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
-
-	return '/*# ' + data + ' */';
-}
-
-
-/***/ }),
-/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-module.exports = __webpack_require__(34);
-module.exports.easing = __webpack_require__(394);
-module.exports.canvas = __webpack_require__(395);
-module.exports.options = __webpack_require__(396);
+module.exports = __webpack_require__(33);
+module.exports.easing = __webpack_require__(362);
+module.exports.canvas = __webpack_require__(363);
+module.exports.options = __webpack_require__(364);
 
 
 /***/ }),
-/* 4 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -4839,7 +4757,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(261)
+var listToStyles = __webpack_require__(229)
 
 /*
 type StyleObject = {
@@ -5041,13 +4959,13 @@ function applyToTag (styleElement, obj) {
 
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var helpers = __webpack_require__(3);
+var helpers = __webpack_require__(2);
 
 module.exports = {
 	/**
@@ -5060,7 +4978,7 @@ module.exports = {
 
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15680,16 +15598,16 @@ Vue$3.compile = compileToFunctions;
 
 module.exports = Vue$3;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(30), __webpack_require__(225).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(29), __webpack_require__(222).setImmediate))
 
 /***/ }),
-/* 7 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var bind = __webpack_require__(209);
+var bind = __webpack_require__(205);
 
 /*global toString:true*/
 
@@ -15989,14 +15907,14 @@ module.exports = {
 
 
 /***/ }),
-/* 8 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var color = __webpack_require__(88);
-var helpers = __webpack_require__(3);
+var color = __webpack_require__(84);
+var helpers = __webpack_require__(2);
 
 function interpolate(start, view, model, ease) {
 	var keys = Object.keys(model);
@@ -16111,7 +16029,7 @@ module.exports = Element;
 
 
 /***/ }),
-/* 9 */
+/* 8 */
 /***/ (function(module, exports) {
 
 var core = module.exports = { version: '2.5.1' };
@@ -16119,66 +16037,66 @@ if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
  * @namespace Chart
  */
-var Chart = __webpack_require__(393)();
+var Chart = __webpack_require__(361)();
 
-Chart.helpers = __webpack_require__(3);
+Chart.helpers = __webpack_require__(2);
 
 // @todo dispatch these helpers into appropriated helpers/helpers.* file and write unit tests!
-__webpack_require__(397)(Chart);
+__webpack_require__(365)(Chart);
 
-Chart.defaults = __webpack_require__(5);
-Chart.Element = __webpack_require__(8);
-Chart.elements = __webpack_require__(13);
-Chart.Interaction = __webpack_require__(89);
-Chart.platform = __webpack_require__(90);
+Chart.defaults = __webpack_require__(4);
+Chart.Element = __webpack_require__(7);
+Chart.elements = __webpack_require__(12);
+Chart.Interaction = __webpack_require__(85);
+Chart.platform = __webpack_require__(86);
 
-__webpack_require__(408)(Chart);
-__webpack_require__(409)(Chart);
-__webpack_require__(410)(Chart);
-__webpack_require__(411)(Chart);
-__webpack_require__(412)(Chart);
-__webpack_require__(413)(Chart);
-__webpack_require__(414)(Chart);
-__webpack_require__(415)(Chart);
+__webpack_require__(376)(Chart);
+__webpack_require__(377)(Chart);
+__webpack_require__(378)(Chart);
+__webpack_require__(379)(Chart);
+__webpack_require__(380)(Chart);
+__webpack_require__(381)(Chart);
+__webpack_require__(382)(Chart);
+__webpack_require__(383)(Chart);
 
-__webpack_require__(416)(Chart);
-__webpack_require__(417)(Chart);
-__webpack_require__(418)(Chart);
-__webpack_require__(419)(Chart);
-__webpack_require__(420)(Chart);
-__webpack_require__(421)(Chart);
+__webpack_require__(384)(Chart);
+__webpack_require__(385)(Chart);
+__webpack_require__(386)(Chart);
+__webpack_require__(387)(Chart);
+__webpack_require__(388)(Chart);
+__webpack_require__(389)(Chart);
 
 // Controllers must be loaded after elements
 // See Chart.core.datasetController.dataElementType
-__webpack_require__(423)(Chart);
-__webpack_require__(424)(Chart);
-__webpack_require__(425)(Chart);
-__webpack_require__(426)(Chart);
-__webpack_require__(427)(Chart);
-__webpack_require__(428)(Chart);
-__webpack_require__(429)(Chart);
+__webpack_require__(391)(Chart);
+__webpack_require__(392)(Chart);
+__webpack_require__(393)(Chart);
+__webpack_require__(394)(Chart);
+__webpack_require__(395)(Chart);
+__webpack_require__(396)(Chart);
+__webpack_require__(397)(Chart);
 
-__webpack_require__(430)(Chart);
-__webpack_require__(431)(Chart);
-__webpack_require__(432)(Chart);
-__webpack_require__(433)(Chart);
-__webpack_require__(434)(Chart);
-__webpack_require__(435)(Chart);
-__webpack_require__(436)(Chart);
+__webpack_require__(398)(Chart);
+__webpack_require__(399)(Chart);
+__webpack_require__(400)(Chart);
+__webpack_require__(401)(Chart);
+__webpack_require__(402)(Chart);
+__webpack_require__(403)(Chart);
+__webpack_require__(404)(Chart);
 
 // Loading built-it plugins
 var plugins = [];
 
 plugins.push(
-	__webpack_require__(437)(Chart),
-	__webpack_require__(438)(Chart),
-	__webpack_require__(439)(Chart)
+	__webpack_require__(405)(Chart),
+	__webpack_require__(406)(Chart),
+	__webpack_require__(407)(Chart)
 );
 
 Chart.plugins.register(plugins);
@@ -16203,7 +16121,7 @@ Chart.canvasHelpers = Chart.helpers.canvas;
 
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16214,7 +16132,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.mergeOptions = mergeOptions;
 
-var _lodash = __webpack_require__(440);
+var _lodash = __webpack_require__(408);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -16225,7 +16143,7 @@ function mergeOptions(obj, src) {
 }
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16233,31 +16151,31 @@ function mergeOptions(obj, src) {
 /* harmony default export */ __webpack_exports__["a"] = (function (name) {
   var index = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
   return function () {
-    return __webpack_require__(313)("./" + name + (index ? '/index' : '') + '.vue');
+    return __webpack_require__(281)("./" + name + (index ? '/index' : '') + '.vue');
   };
 });
 
 /***/ }),
-/* 13 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 module.exports = {};
-module.exports.Arc = __webpack_require__(402);
-module.exports.Line = __webpack_require__(403);
-module.exports.Point = __webpack_require__(404);
-module.exports.Rectangle = __webpack_require__(405);
+module.exports.Arc = __webpack_require__(370);
+module.exports.Line = __webpack_require__(371);
+module.exports.Point = __webpack_require__(372);
+module.exports.Rectangle = __webpack_require__(373);
 
 
 /***/ }),
-/* 14 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var store = __webpack_require__(71)('wks');
-var uid = __webpack_require__(72);
-var Symbol = __webpack_require__(17).Symbol;
+var store = __webpack_require__(67)('wks');
+var uid = __webpack_require__(68);
+var Symbol = __webpack_require__(16).Symbol;
 var USE_SYMBOL = typeof Symbol == 'function';
 
 var $exports = module.exports = function (name) {
@@ -16269,19 +16187,19 @@ $exports.store = store;
 
 
 /***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(234), __esModule: true };
+
+/***/ }),
 /* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(266), __esModule: true };
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var global = __webpack_require__(17);
-var core = __webpack_require__(9);
-var ctx = __webpack_require__(66);
-var hide = __webpack_require__(20);
+var global = __webpack_require__(16);
+var core = __webpack_require__(8);
+var ctx = __webpack_require__(62);
+var hide = __webpack_require__(19);
 var PROTOTYPE = 'prototype';
 
 var $export = function (type, name, source) {
@@ -16342,7 +16260,7 @@ module.exports = $export;
 
 
 /***/ }),
-/* 17 */
+/* 16 */
 /***/ (function(module, exports) {
 
 // https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
@@ -16354,7 +16272,7 @@ if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
 
 
 /***/ }),
-/* 18 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16365,47 +16283,47 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.mixins = exports.Scatter = exports.Bubble = exports.Radar = exports.PolarArea = exports.Pie = exports.Line = exports.Doughnut = exports.HorizontalBar = exports.Bar = exports.VueCharts = undefined;
 
-var _Bar = __webpack_require__(392);
+var _Bar = __webpack_require__(360);
 
 var _Bar2 = _interopRequireDefault(_Bar);
 
-var _HorizontalBar = __webpack_require__(441);
+var _HorizontalBar = __webpack_require__(409);
 
 var _HorizontalBar2 = _interopRequireDefault(_HorizontalBar);
 
-var _Doughnut = __webpack_require__(442);
+var _Doughnut = __webpack_require__(410);
 
 var _Doughnut2 = _interopRequireDefault(_Doughnut);
 
-var _Line = __webpack_require__(443);
+var _Line = __webpack_require__(411);
 
 var _Line2 = _interopRequireDefault(_Line);
 
-var _Pie = __webpack_require__(444);
+var _Pie = __webpack_require__(412);
 
 var _Pie2 = _interopRequireDefault(_Pie);
 
-var _PolarArea = __webpack_require__(445);
+var _PolarArea = __webpack_require__(413);
 
 var _PolarArea2 = _interopRequireDefault(_PolarArea);
 
-var _Radar = __webpack_require__(446);
+var _Radar = __webpack_require__(414);
 
 var _Radar2 = _interopRequireDefault(_Radar);
 
-var _Bubble = __webpack_require__(447);
+var _Bubble = __webpack_require__(415);
 
 var _Bubble2 = _interopRequireDefault(_Bubble);
 
-var _Scatter = __webpack_require__(448);
+var _Scatter = __webpack_require__(416);
 
 var _Scatter2 = _interopRequireDefault(_Scatter);
 
-var _index = __webpack_require__(449);
+var _index = __webpack_require__(417);
 
 var _index2 = _interopRequireDefault(_index);
 
-var _package = __webpack_require__(456);
+var _package = __webpack_require__(424);
 
 var _package2 = _interopRequireDefault(_package);
 
@@ -16439,11 +16357,11 @@ exports.Scatter = _Scatter2.default;
 exports.mixins = _index2.default;
 
 /***/ }),
-/* 19 */
+/* 18 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store___ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store___ = __webpack_require__(35);
 
 
 
@@ -16469,12 +16387,12 @@ var palette = __WEBPACK_IMPORTED_MODULE_0__store___["a" /* default */].getters.p
 });
 
 /***/ }),
-/* 20 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var dP = __webpack_require__(21);
-var createDesc = __webpack_require__(38);
-module.exports = __webpack_require__(23) ? function (object, key, value) {
+var dP = __webpack_require__(20);
+var createDesc = __webpack_require__(37);
+module.exports = __webpack_require__(22) ? function (object, key, value) {
   return dP.f(object, key, createDesc(1, value));
 } : function (object, key, value) {
   object[key] = value;
@@ -16483,15 +16401,15 @@ module.exports = __webpack_require__(23) ? function (object, key, value) {
 
 
 /***/ }),
-/* 21 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var anObject = __webpack_require__(22);
-var IE8_DOM_DEFINE = __webpack_require__(269);
-var toPrimitive = __webpack_require__(270);
+var anObject = __webpack_require__(21);
+var IE8_DOM_DEFINE = __webpack_require__(237);
+var toPrimitive = __webpack_require__(238);
 var dP = Object.defineProperty;
 
-exports.f = __webpack_require__(23) ? Object.defineProperty : function defineProperty(O, P, Attributes) {
+exports.f = __webpack_require__(22) ? Object.defineProperty : function defineProperty(O, P, Attributes) {
   anObject(O);
   P = toPrimitive(P, true);
   anObject(Attributes);
@@ -16505,10 +16423,10 @@ exports.f = __webpack_require__(23) ? Object.defineProperty : function definePro
 
 
 /***/ }),
-/* 22 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isObject = __webpack_require__(37);
+var isObject = __webpack_require__(36);
 module.exports = function (it) {
   if (!isObject(it)) throw TypeError(it + ' is not an object!');
   return it;
@@ -16516,29 +16434,29 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 23 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Thank's IE8 for his funny defineProperty
-module.exports = !__webpack_require__(31)(function () {
+module.exports = !__webpack_require__(30)(function () {
   return Object.defineProperty({}, 'a', { get: function () { return 7; } }).a != 7;
 });
 
 
 /***/ }),
-/* 24 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(289)
+  __webpack_require__(257)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(291)
+var __vue_script__ = __webpack_require__(259)
 /* template */
-var __vue_template__ = __webpack_require__(306)
+var __vue_template__ = __webpack_require__(274)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -16578,13 +16496,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 25 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var helpers = __webpack_require__(3);
+var helpers = __webpack_require__(2);
 
 /**
  * Namespace to hold static tick generation functions
@@ -16789,14 +16707,14 @@ module.exports = {
 
 
 /***/ }),
-/* 26 */
+/* 25 */
 /***/ (function(module, exports) {
 
 module.exports = {};
 
 
 /***/ }),
-/* 27 */
+/* 26 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17690,7 +17608,7 @@ var index_esm = {
 
 
 /***/ }),
-/* 28 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17698,7 +17616,7 @@ var index_esm = {
 
 exports.__esModule = true;
 
-var _assign = __webpack_require__(15);
+var _assign = __webpack_require__(14);
 
 var _assign2 = _interopRequireDefault(_assign);
 
@@ -17719,7 +17637,7 @@ exports.default = _assign2.default || function (target) {
 };
 
 /***/ }),
-/* 29 */
+/* 28 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17750,7 +17668,7 @@ exports.default = _assign2.default || function (target) {
 });
 
 /***/ }),
-/* 30 */
+/* 29 */
 /***/ (function(module, exports) {
 
 var g;
@@ -17777,7 +17695,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 31 */
+/* 30 */
 /***/ (function(module, exports) {
 
 module.exports = function (exec) {
@@ -17790,7 +17708,7 @@ module.exports = function (exec) {
 
 
 /***/ }),
-/* 32 */
+/* 31 */
 /***/ (function(module, exports) {
 
 var hasOwnProperty = {}.hasOwnProperty;
@@ -17800,18 +17718,18 @@ module.exports = function (it, key) {
 
 
 /***/ }),
-/* 33 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.13 ToObject(argument)
-var defined = __webpack_require__(41);
+var defined = __webpack_require__(40);
 module.exports = function (it) {
   return Object(defined(it));
 };
 
 
 /***/ }),
-/* 34 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18157,15 +18075,15 @@ helpers.getValueAtIndexOrDefault = helpers.valueAtIndexOrDefault;
 
 
 /***/ }),
-/* 35 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(543)
+var __vue_script__ = __webpack_require__(511)
 /* template */
-var __vue_template__ = __webpack_require__(545)
+var __vue_template__ = __webpack_require__(513)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -18205,16 +18123,16 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 36 */
+/* 35 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modules_menu__ = __webpack_require__(78);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_app__ = __webpack_require__(553);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__getters__ = __webpack_require__(554);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modules_menu__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_app__ = __webpack_require__(521);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__getters__ = __webpack_require__(522);
 
 
 
@@ -18239,7 +18157,7 @@ var store = new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
 /* harmony default export */ __webpack_exports__["a"] = (store);
 
 /***/ }),
-/* 37 */
+/* 36 */
 /***/ (function(module, exports) {
 
 module.exports = function (it) {
@@ -18248,7 +18166,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 38 */
+/* 37 */
 /***/ (function(module, exports) {
 
 module.exports = function (bitmap, value) {
@@ -18262,12 +18180,12 @@ module.exports = function (bitmap, value) {
 
 
 /***/ }),
-/* 39 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
-var $keys = __webpack_require__(272);
-var enumBugKeys = __webpack_require__(73);
+var $keys = __webpack_require__(240);
+var enumBugKeys = __webpack_require__(69);
 
 module.exports = Object.keys || function keys(O) {
   return $keys(O, enumBugKeys);
@@ -18275,19 +18193,19 @@ module.exports = Object.keys || function keys(O) {
 
 
 /***/ }),
-/* 40 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // to indexed object, toObject with fallback for non-array-like ES3 strings
-var IObject = __webpack_require__(68);
-var defined = __webpack_require__(41);
+var IObject = __webpack_require__(64);
+var defined = __webpack_require__(40);
 module.exports = function (it) {
   return IObject(defined(it));
 };
 
 
 /***/ }),
-/* 41 */
+/* 40 */
 /***/ (function(module, exports) {
 
 // 7.2.1 RequireObjectCoercible(argument)
@@ -18298,7 +18216,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 42 */
+/* 41 */
 /***/ (function(module, exports) {
 
 // 7.1.4 ToInteger
@@ -18310,18 +18228,18 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 43 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var shared = __webpack_require__(71)('keys');
-var uid = __webpack_require__(72);
+var shared = __webpack_require__(67)('keys');
+var uid = __webpack_require__(68);
 module.exports = function (key) {
   return shared[key] || (shared[key] = uid(key));
 };
 
 
 /***/ }),
-/* 44 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18331,11 +18249,11 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var flow = _interopDefault(__webpack_require__(332));
-var isFunction = _interopDefault(__webpack_require__(333));
-var isArray = _interopDefault(__webpack_require__(334));
-var _hslToHex = _interopDefault(__webpack_require__(335));
-var hexToHsl = _interopDefault(__webpack_require__(337));
+var flow = _interopDefault(__webpack_require__(300));
+var isFunction = _interopDefault(__webpack_require__(301));
+var isArray = _interopDefault(__webpack_require__(302));
+var _hslToHex = _interopDefault(__webpack_require__(303));
+var hexToHsl = _interopDefault(__webpack_require__(305));
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 
@@ -18508,14 +18426,14 @@ exports.hue = hue;
 
 
 /***/ }),
-/* 45 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
-var utils = __webpack_require__(7);
-var normalizeHeaderName = __webpack_require__(473);
+var utils = __webpack_require__(6);
+var normalizeHeaderName = __webpack_require__(441);
 
 var PROTECTION_PREFIX = /^\)\]\}',?\n/;
 var DEFAULT_CONTENT_TYPE = {
@@ -18532,10 +18450,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(210);
+    adapter = __webpack_require__(206);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(210);
+    adapter = __webpack_require__(206);
   }
   return adapter;
 }
@@ -18606,22 +18524,22 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(61)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(60)))
 
 /***/ }),
-/* 46 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(314)
+  __webpack_require__(282)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(316)
+var __vue_script__ = __webpack_require__(284)
 /* template */
-var __vue_template__ = __webpack_require__(317)
+var __vue_template__ = __webpack_require__(285)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -18661,19 +18579,19 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 47 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(384)
+  __webpack_require__(352)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(386)
+var __vue_script__ = __webpack_require__(354)
 /* template */
-var __vue_template__ = __webpack_require__(387)
+var __vue_template__ = __webpack_require__(355)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -18713,19 +18631,19 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 48 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(363)
+  __webpack_require__(331)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(365)
+var __vue_script__ = __webpack_require__(333)
 /* template */
-var __vue_template__ = __webpack_require__(383)
+var __vue_template__ = __webpack_require__(351)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -18765,19 +18683,19 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 49 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(354)
+  __webpack_require__(322)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(356)
+var __vue_script__ = __webpack_require__(324)
 /* template */
-var __vue_template__ = __webpack_require__(358)
+var __vue_template__ = __webpack_require__(326)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -18817,19 +18735,19 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 50 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(359)
+  __webpack_require__(327)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(361)
+var __vue_script__ = __webpack_require__(329)
 /* template */
-var __vue_template__ = __webpack_require__(362)
+var __vue_template__ = __webpack_require__(330)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -18869,19 +18787,19 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 51 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(388)
+  __webpack_require__(356)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(390)
+var __vue_script__ = __webpack_require__(358)
 /* template */
-var __vue_template__ = __webpack_require__(462)
+var __vue_template__ = __webpack_require__(430)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -18921,19 +18839,19 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 52 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(463)
+  __webpack_require__(431)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(465)
+var __vue_script__ = __webpack_require__(433)
 /* template */
-var __vue_template__ = __webpack_require__(503)
+var __vue_template__ = __webpack_require__(471)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -18973,19 +18891,19 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 53 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(504)
+  __webpack_require__(472)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(506)
+var __vue_script__ = __webpack_require__(474)
 /* template */
-var __vue_template__ = __webpack_require__(522)
+var __vue_template__ = __webpack_require__(490)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -19025,19 +18943,19 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 54 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(523)
+  __webpack_require__(491)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(525)
+var __vue_script__ = __webpack_require__(493)
 /* template */
-var __vue_template__ = __webpack_require__(526)
+var __vue_template__ = __webpack_require__(494)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -19077,19 +18995,19 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 55 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(318)
+  __webpack_require__(286)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(320)
+var __vue_script__ = __webpack_require__(288)
 /* template */
-var __vue_template__ = __webpack_require__(321)
+var __vue_template__ = __webpack_require__(289)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -19129,19 +19047,19 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 56 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(322)
+  __webpack_require__(290)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(324)
+var __vue_script__ = __webpack_require__(292)
 /* template */
-var __vue_template__ = __webpack_require__(349)
+var __vue_template__ = __webpack_require__(317)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -19181,19 +19099,19 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 57 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(350)
+  __webpack_require__(318)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(352)
+var __vue_script__ = __webpack_require__(320)
 /* template */
-var __vue_template__ = __webpack_require__(353)
+var __vue_template__ = __webpack_require__(321)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -19233,19 +19151,19 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 58 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(527)
+  __webpack_require__(495)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(529)
+var __vue_script__ = __webpack_require__(497)
 /* template */
-var __vue_template__ = __webpack_require__(530)
+var __vue_template__ = __webpack_require__(498)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -19285,19 +19203,19 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 59 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(531)
+  __webpack_require__(499)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(533)
+var __vue_script__ = __webpack_require__(501)
 /* template */
-var __vue_template__ = __webpack_require__(534)
+var __vue_template__ = __webpack_require__(502)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -19337,19 +19255,19 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 60 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(539)
+  __webpack_require__(507)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(541)
+var __vue_script__ = __webpack_require__(509)
 /* template */
-var __vue_template__ = __webpack_require__(542)
+var __vue_template__ = __webpack_require__(510)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -19389,7 +19307,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 61 */
+/* 60 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -19579,37 +19497,19 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 62 */
-/***/ (function(module, exports) {
-
-module.exports = "/fonts/vendor/ionicons/ionicons.eot?19e65b89cee273a249fba4c09b951b74";
-
-/***/ }),
-/* 63 */
-/***/ (function(module, exports) {
-
-module.exports = "/fonts/Glyphter.eot?90f6882a8306b10faaab780e5c5d2cc8";
-
-/***/ }),
-/* 64 */
-/***/ (function(module, exports) {
-
-module.exports = "/fonts/glyphicons-halflings-regular.eot?f4769f9bdb7466be65088239c12046d1";
-
-/***/ }),
-/* 65 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(263)
+  __webpack_require__(231)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(265)
+var __vue_script__ = __webpack_require__(233)
 /* template */
-var __vue_template__ = __webpack_require__(555)
+var __vue_template__ = __webpack_require__(523)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -19649,11 +19549,11 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 66 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // optional / simple context binding
-var aFunction = __webpack_require__(268);
+var aFunction = __webpack_require__(236);
 module.exports = function (fn, that, length) {
   aFunction(fn);
   if (that === undefined) return fn;
@@ -19675,11 +19575,11 @@ module.exports = function (fn, that, length) {
 
 
 /***/ }),
-/* 67 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isObject = __webpack_require__(37);
-var document = __webpack_require__(17).document;
+var isObject = __webpack_require__(36);
+var document = __webpack_require__(16).document;
 // typeof document.createElement is 'object' in old IE
 var is = isObject(document) && isObject(document.createElement);
 module.exports = function (it) {
@@ -19688,11 +19588,11 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 68 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for non-array-like ES3 and non-enumerable old V8 strings
-var cof = __webpack_require__(69);
+var cof = __webpack_require__(65);
 // eslint-disable-next-line no-prototype-builtins
 module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
   return cof(it) == 'String' ? it.split('') : Object(it);
@@ -19700,7 +19600,7 @@ module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
 
 
 /***/ }),
-/* 69 */
+/* 65 */
 /***/ (function(module, exports) {
 
 var toString = {}.toString;
@@ -19711,11 +19611,11 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 70 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.15 ToLength
-var toInteger = __webpack_require__(42);
+var toInteger = __webpack_require__(41);
 var min = Math.min;
 module.exports = function (it) {
   return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
@@ -19723,10 +19623,10 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 71 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var global = __webpack_require__(17);
+var global = __webpack_require__(16);
 var SHARED = '__core-js_shared__';
 var store = global[SHARED] || (global[SHARED] = {});
 module.exports = function (key) {
@@ -19735,7 +19635,7 @@ module.exports = function (key) {
 
 
 /***/ }),
-/* 72 */
+/* 68 */
 /***/ (function(module, exports) {
 
 var id = 0;
@@ -19746,7 +19646,7 @@ module.exports = function (key) {
 
 
 /***/ }),
-/* 73 */
+/* 69 */
 /***/ (function(module, exports) {
 
 // IE 8- don't enum bug keys
@@ -19756,19 +19656,19 @@ module.exports = (
 
 
 /***/ }),
-/* 74 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(277)
+  __webpack_require__(245)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(279)
+var __vue_script__ = __webpack_require__(247)
 /* template */
-var __vue_template__ = __webpack_require__(280)
+var __vue_template__ = __webpack_require__(248)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -19808,19 +19708,19 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 75 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(281)
+  __webpack_require__(249)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(283)
+var __vue_script__ = __webpack_require__(251)
 /* template */
-var __vue_template__ = __webpack_require__(307)
+var __vue_template__ = __webpack_require__(275)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -19860,7 +19760,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 76 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19886,7 +19786,7 @@ utils.forEach = function(collection, callback) {
 
 
 /***/ }),
-/* 77 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19932,21 +19832,21 @@ detector.isLegacyOpera = function() {
 
 
 /***/ }),
-/* 78 */
+/* 74 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty__ = __webpack_require__(75);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mutation_types__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__statistics__ = __webpack_require__(312);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__forms__ = __webpack_require__(546);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__dashboard__ = __webpack_require__(547);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ui__ = __webpack_require__(548);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__maps__ = __webpack_require__(549);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__tables__ = __webpack_require__(550);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__auth__ = __webpack_require__(551);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__extra__ = __webpack_require__(552);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mutation_types__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__statistics__ = __webpack_require__(280);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__forms__ = __webpack_require__(514);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__dashboard__ = __webpack_require__(515);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ui__ = __webpack_require__(516);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__maps__ = __webpack_require__(517);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__tables__ = __webpack_require__(518);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__auth__ = __webpack_require__(519);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__extra__ = __webpack_require__(520);
 
 
 
@@ -19985,7 +19885,7 @@ var actions = {
 });
 
 /***/ }),
-/* 79 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19993,7 +19893,7 @@ var actions = {
 
 exports.__esModule = true;
 
-var _defineProperty = __webpack_require__(309);
+var _defineProperty = __webpack_require__(277);
 
 var _defineProperty2 = _interopRequireDefault(_defineProperty);
 
@@ -20015,7 +19915,7 @@ exports.default = function (obj, key, value) {
 };
 
 /***/ }),
-/* 80 */
+/* 76 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -20032,19 +19932,19 @@ var TOGGLE_SIDEBAR = 'TOGGLE_SIDEBAR';
 var TOGGLE_WITHOUT_ANIMATION = 'TOGGLE_WITHOUT_ANIMATION';
 
 /***/ }),
-/* 81 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(329)
+  __webpack_require__(297)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(331)
+var __vue_script__ = __webpack_require__(299)
 /* template */
-var __vue_template__ = __webpack_require__(340)
+var __vue_template__ = __webpack_require__(308)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -20084,19 +19984,19 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 82 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(341)
+  __webpack_require__(309)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(343)
+var __vue_script__ = __webpack_require__(311)
 /* template */
-var __vue_template__ = __webpack_require__(344)
+var __vue_template__ = __webpack_require__(312)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -20136,19 +20036,19 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 83 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(345)
+  __webpack_require__(313)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(347)
+var __vue_script__ = __webpack_require__(315)
 /* template */
-var __vue_template__ = __webpack_require__(348)
+var __vue_template__ = __webpack_require__(316)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -20188,19 +20088,19 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 84 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(366)
+  __webpack_require__(334)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(368)
+var __vue_script__ = __webpack_require__(336)
 /* template */
-var __vue_template__ = __webpack_require__(369)
+var __vue_template__ = __webpack_require__(337)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -20240,19 +20140,19 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 85 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(370)
+  __webpack_require__(338)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(372)
+var __vue_script__ = __webpack_require__(340)
 /* template */
-var __vue_template__ = __webpack_require__(373)
+var __vue_template__ = __webpack_require__(341)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -20292,19 +20192,19 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 86 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(374)
+  __webpack_require__(342)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(376)
+var __vue_script__ = __webpack_require__(344)
 /* template */
-var __vue_template__ = __webpack_require__(377)
+var __vue_template__ = __webpack_require__(345)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -20344,19 +20244,19 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 87 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(378)
+  __webpack_require__(346)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(380)
+var __vue_script__ = __webpack_require__(348)
 /* template */
-var __vue_template__ = __webpack_require__(381)
+var __vue_template__ = __webpack_require__(349)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -20396,12 +20296,12 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 88 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* MIT license */
-var convert = __webpack_require__(398);
-var string = __webpack_require__(400);
+var convert = __webpack_require__(366);
+var string = __webpack_require__(368);
 
 var Color = function (obj) {
 	if (obj instanceof Color) {
@@ -20887,13 +20787,13 @@ module.exports = Color;
 
 
 /***/ }),
-/* 89 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var helpers = __webpack_require__(3);
+var helpers = __webpack_require__(2);
 
 /**
  * Helper function to get relative position for an event
@@ -21224,15 +21124,15 @@ module.exports = {
 
 
 /***/ }),
-/* 90 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var helpers = __webpack_require__(3);
-var basic = __webpack_require__(406);
-var dom = __webpack_require__(407);
+var helpers = __webpack_require__(2);
+var basic = __webpack_require__(374);
+var dom = __webpack_require__(375);
 
 // @TODO Make possible to select another platform at build time.
 var implementation = dom._enabled ? dom : basic;
@@ -21305,7 +21205,7 @@ module.exports = helpers.extend({
 
 
 /***/ }),
-/* 91 */
+/* 87 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -21333,7 +21233,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 92 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -21411,7 +21311,7 @@ return af;
 
 
 /***/ }),
-/* 93 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -21558,7 +21458,7 @@ return ar;
 
 
 /***/ }),
-/* 94 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -21622,7 +21522,7 @@ return arDz;
 
 
 /***/ }),
-/* 95 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -21686,7 +21586,7 @@ return arKw;
 
 
 /***/ }),
-/* 96 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -21817,7 +21717,7 @@ return arLy;
 
 
 /***/ }),
-/* 97 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -21882,7 +21782,7 @@ return arMa;
 
 
 /***/ }),
-/* 98 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -21992,7 +21892,7 @@ return arSa;
 
 
 /***/ }),
-/* 99 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22056,7 +21956,7 @@ return arTn;
 
 
 /***/ }),
-/* 100 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22166,7 +22066,7 @@ return az;
 
 
 /***/ }),
-/* 101 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22305,7 +22205,7 @@ return be;
 
 
 /***/ }),
-/* 102 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22400,7 +22300,7 @@ return bg;
 
 
 /***/ }),
-/* 103 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22524,7 +22424,7 @@ return bn;
 
 
 /***/ }),
-/* 104 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22648,7 +22548,7 @@ return bo;
 
 
 /***/ }),
-/* 105 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22761,7 +22661,7 @@ return br;
 
 
 /***/ }),
-/* 106 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -22909,7 +22809,7 @@ return bs;
 
 
 /***/ }),
-/* 107 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23002,7 +22902,7 @@ return ca;
 
 
 /***/ }),
-/* 108 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23179,7 +23079,7 @@ return cs;
 
 
 /***/ }),
-/* 109 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23247,7 +23147,7 @@ return cv;
 
 
 /***/ }),
-/* 110 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23333,7 +23233,7 @@ return cy;
 
 
 /***/ }),
-/* 111 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23398,7 +23298,7 @@ return da;
 
 
 /***/ }),
-/* 112 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23481,7 +23381,7 @@ return de;
 
 
 /***/ }),
-/* 113 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23565,7 +23465,7 @@ return deAt;
 
 
 /***/ }),
-/* 114 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23648,7 +23548,7 @@ return deCh;
 
 
 /***/ }),
-/* 115 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23753,7 +23653,7 @@ return dv;
 
 
 /***/ }),
-/* 116 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23858,7 +23758,7 @@ return el;
 
 
 /***/ }),
-/* 117 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23930,7 +23830,7 @@ return enAu;
 
 
 /***/ }),
-/* 118 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -23998,7 +23898,7 @@ return enCa;
 
 
 /***/ }),
-/* 119 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24070,7 +23970,7 @@ return enGb;
 
 
 /***/ }),
-/* 120 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24142,7 +24042,7 @@ return enIe;
 
 
 /***/ }),
-/* 121 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24214,7 +24114,7 @@ return enNz;
 
 
 /***/ }),
-/* 122 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24292,7 +24192,7 @@ return eo;
 
 
 /***/ }),
-/* 123 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24380,7 +24280,7 @@ return es;
 
 
 /***/ }),
-/* 124 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24467,7 +24367,7 @@ return esDo;
 
 
 /***/ }),
-/* 125 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24552,7 +24452,7 @@ return et;
 
 
 /***/ }),
-/* 126 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24623,7 +24523,7 @@ return eu;
 
 
 /***/ }),
-/* 127 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24735,7 +24635,7 @@ return fa;
 
 
 /***/ }),
-/* 128 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24847,7 +24747,7 @@ return fi;
 
 
 /***/ }),
-/* 129 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -24912,7 +24812,7 @@ return fo;
 
 
 /***/ }),
-/* 130 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -25000,7 +24900,7 @@ return fr;
 
 
 /***/ }),
-/* 131 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -25079,7 +24979,7 @@ return frCa;
 
 
 /***/ }),
-/* 132 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -25162,7 +25062,7 @@ return frCh;
 
 
 /***/ }),
-/* 133 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -25242,7 +25142,7 @@ return fy;
 
 
 /***/ }),
-/* 134 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -25323,7 +25223,7 @@ return gd;
 
 
 /***/ }),
-/* 135 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -25405,7 +25305,7 @@ return gl;
 
 
 /***/ }),
-/* 136 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -25532,7 +25432,7 @@ return gomLatn;
 
 
 /***/ }),
-/* 137 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -25636,7 +25536,7 @@ return he;
 
 
 /***/ }),
-/* 138 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -25765,7 +25665,7 @@ return hi;
 
 
 /***/ }),
-/* 139 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -25915,7 +25815,7 @@ return hr;
 
 
 /***/ }),
-/* 140 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -26029,7 +25929,7 @@ return hu;
 
 
 /***/ }),
-/* 141 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -26129,7 +26029,7 @@ return hyAm;
 
 
 /***/ }),
-/* 142 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -26217,7 +26117,7 @@ return id;
 
 
 /***/ }),
-/* 143 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -26349,7 +26249,7 @@ return is;
 
 
 /***/ }),
-/* 144 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -26424,7 +26324,7 @@ return it;
 
 
 /***/ }),
-/* 145 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -26509,7 +26409,7 @@ return ja;
 
 
 /***/ }),
-/* 146 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -26597,7 +26497,7 @@ return jv;
 
 
 /***/ }),
-/* 147 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -26691,7 +26591,7 @@ return ka;
 
 
 /***/ }),
-/* 148 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -26783,7 +26683,7 @@ return kk;
 
 
 /***/ }),
-/* 149 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -26846,7 +26746,7 @@ return km;
 
 
 /***/ }),
-/* 150 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -26977,7 +26877,7 @@ return kn;
 
 
 /***/ }),
-/* 151 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -27051,7 +26951,7 @@ return ko;
 
 
 /***/ }),
-/* 152 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -27144,7 +27044,7 @@ return ky;
 
 
 /***/ }),
-/* 153 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -27286,7 +27186,7 @@ return lb;
 
 
 /***/ }),
-/* 154 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -27361,7 +27261,7 @@ return lo;
 
 
 /***/ }),
-/* 155 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -27483,7 +27383,7 @@ return lt;
 
 
 /***/ }),
-/* 156 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -27585,7 +27485,7 @@ return lv;
 
 
 /***/ }),
-/* 157 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -27701,7 +27601,7 @@ return me;
 
 
 /***/ }),
-/* 158 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -27770,7 +27670,7 @@ return mi;
 
 
 /***/ }),
-/* 159 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -27865,7 +27765,7 @@ return mk;
 
 
 /***/ }),
-/* 160 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -27951,7 +27851,7 @@ return ml;
 
 
 /***/ }),
-/* 161 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -28115,7 +28015,7 @@ return mr;
 
 
 /***/ }),
-/* 162 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -28202,7 +28102,7 @@ return ms;
 
 
 /***/ }),
-/* 163 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -28290,7 +28190,7 @@ return msMy;
 
 
 /***/ }),
-/* 164 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -28391,7 +28291,7 @@ return my;
 
 
 /***/ }),
-/* 165 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -28459,7 +28359,7 @@ return nb;
 
 
 /***/ }),
-/* 166 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -28587,7 +28487,7 @@ return ne;
 
 
 /***/ }),
-/* 167 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -28680,7 +28580,7 @@ return nl;
 
 
 /***/ }),
-/* 168 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -28773,7 +28673,7 @@ return nlBe;
 
 
 /***/ }),
-/* 169 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -28838,7 +28738,7 @@ return nn;
 
 
 /***/ }),
-/* 170 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -28967,7 +28867,7 @@ return paIn;
 
 
 /***/ }),
-/* 171 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -29079,7 +28979,7 @@ return pl;
 
 
 /***/ }),
-/* 172 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -29149,7 +29049,7 @@ return pt;
 
 
 /***/ }),
-/* 173 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -29215,7 +29115,7 @@ return ptBr;
 
 
 /***/ }),
-/* 174 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -29295,7 +29195,7 @@ return ro;
 
 
 /***/ }),
-/* 175 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -29483,7 +29383,7 @@ return ru;
 
 
 /***/ }),
-/* 176 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -29586,7 +29486,7 @@ return sd;
 
 
 /***/ }),
-/* 177 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -29652,7 +29552,7 @@ return se;
 
 
 /***/ }),
-/* 178 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -29728,7 +29628,7 @@ return si;
 
 
 /***/ }),
-/* 179 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -29883,7 +29783,7 @@ return sk;
 
 
 /***/ }),
-/* 180 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -30050,7 +29950,7 @@ return sl;
 
 
 /***/ }),
-/* 181 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -30125,7 +30025,7 @@ return sq;
 
 
 /***/ }),
-/* 182 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -30240,7 +30140,7 @@ return sr;
 
 
 /***/ }),
-/* 183 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -30355,7 +30255,7 @@ return srCyrl;
 
 
 /***/ }),
-/* 184 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -30449,7 +30349,7 @@ return ss;
 
 
 /***/ }),
-/* 185 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -30523,7 +30423,7 @@ return sv;
 
 
 /***/ }),
-/* 186 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -30587,7 +30487,7 @@ return sw;
 
 
 /***/ }),
-/* 187 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -30722,7 +30622,7 @@ return ta;
 
 
 /***/ }),
-/* 188 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -30816,7 +30716,7 @@ return te;
 
 
 /***/ }),
-/* 189 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -30889,7 +30789,7 @@ return tet;
 
 
 /***/ }),
-/* 190 */
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -30961,7 +30861,7 @@ return th;
 
 
 /***/ }),
-/* 191 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -31028,7 +30928,7 @@ return tlPh;
 
 
 /***/ }),
-/* 192 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -31153,7 +31053,7 @@ return tlh;
 
 
 /***/ }),
-/* 193 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -31248,7 +31148,7 @@ return tr;
 
 
 /***/ }),
-/* 194 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -31344,7 +31244,7 @@ return tzl;
 
 
 /***/ }),
-/* 195 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -31407,7 +31307,7 @@ return tzm;
 
 
 /***/ }),
-/* 196 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -31470,7 +31370,7 @@ return tzmLatn;
 
 
 /***/ }),
-/* 197 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -31626,7 +31526,7 @@ return uk;
 
 
 /***/ }),
-/* 198 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -31730,7 +31630,7 @@ return ur;
 
 
 /***/ }),
-/* 199 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -31793,7 +31693,7 @@ return uz;
 
 
 /***/ }),
-/* 200 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -31856,7 +31756,7 @@ return uzLatn;
 
 
 /***/ }),
-/* 201 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -31940,7 +31840,7 @@ return vi;
 
 
 /***/ }),
-/* 202 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -32013,7 +31913,7 @@ return xPseudo;
 
 
 /***/ }),
-/* 203 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -32078,7 +31978,7 @@ return yo;
 
 
 /***/ }),
-/* 204 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -32194,7 +32094,7 @@ return zhCn;
 
 
 /***/ }),
-/* 205 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -32304,7 +32204,7 @@ return zhHk;
 
 
 /***/ }),
-/* 206 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 //! moment.js locale configuration
@@ -32413,19 +32313,19 @@ return zhTw;
 
 
 /***/ }),
-/* 207 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(451), __esModule: true };
+module.exports = { "default": __webpack_require__(419), __esModule: true };
 
 /***/ }),
-/* 208 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(454), __esModule: true };
+module.exports = { "default": __webpack_require__(422), __esModule: true };
 
 /***/ }),
-/* 209 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32443,19 +32343,19 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 210 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(7);
-var settle = __webpack_require__(474);
-var buildURL = __webpack_require__(476);
-var parseHeaders = __webpack_require__(477);
-var isURLSameOrigin = __webpack_require__(478);
-var createError = __webpack_require__(211);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(479);
+var utils = __webpack_require__(6);
+var settle = __webpack_require__(442);
+var buildURL = __webpack_require__(444);
+var parseHeaders = __webpack_require__(445);
+var isURLSameOrigin = __webpack_require__(446);
+var createError = __webpack_require__(207);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(447);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -32551,7 +32451,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(480);
+      var cookies = __webpack_require__(448);
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -32627,13 +32527,13 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 211 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var enhanceError = __webpack_require__(475);
+var enhanceError = __webpack_require__(443);
 
 /**
  * Create an Error with the specified message, config, error code, and response.
@@ -32651,7 +32551,7 @@ module.exports = function createError(message, config, code, response) {
 
 
 /***/ }),
-/* 212 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32663,7 +32563,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 213 */
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32689,19 +32589,19 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 214 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(494)
+  __webpack_require__(462)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(496)
+var __vue_script__ = __webpack_require__(464)
 /* template */
-var __vue_template__ = __webpack_require__(497)
+var __vue_template__ = __webpack_require__(465)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -32741,19 +32641,19 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 215 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(498)
+  __webpack_require__(466)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(500)
+var __vue_script__ = __webpack_require__(468)
 /* template */
-var __vue_template__ = __webpack_require__(501)
+var __vue_template__ = __webpack_require__(469)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -32793,21 +32693,21 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 216 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var LIBRARY = __webpack_require__(512);
-var $export = __webpack_require__(16);
-var redefine = __webpack_require__(513);
-var hide = __webpack_require__(20);
-var has = __webpack_require__(32);
-var Iterators = __webpack_require__(26);
-var $iterCreate = __webpack_require__(514);
-var setToStringTag = __webpack_require__(217);
-var getPrototypeOf = __webpack_require__(518);
-var ITERATOR = __webpack_require__(14)('iterator');
+var LIBRARY = __webpack_require__(480);
+var $export = __webpack_require__(15);
+var redefine = __webpack_require__(481);
+var hide = __webpack_require__(19);
+var has = __webpack_require__(31);
+var Iterators = __webpack_require__(25);
+var $iterCreate = __webpack_require__(482);
+var setToStringTag = __webpack_require__(213);
+var getPrototypeOf = __webpack_require__(486);
+var ITERATOR = __webpack_require__(13)('iterator');
 var BUGGY = !([].keys && 'next' in [].keys()); // Safari has buggy iterators w/o `next`
 var FF_ITERATOR = '@@iterator';
 var KEYS = 'keys';
@@ -32870,12 +32770,12 @@ module.exports = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCE
 
 
 /***/ }),
-/* 217 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var def = __webpack_require__(21).f;
-var has = __webpack_require__(32);
-var TAG = __webpack_require__(14)('toStringTag');
+var def = __webpack_require__(20).f;
+var has = __webpack_require__(31);
+var TAG = __webpack_require__(13)('toStringTag');
 
 module.exports = function (it, tag, stat) {
   if (it && !has(it = stat ? it : it.prototype, TAG)) def(it, TAG, { configurable: true, value: tag });
@@ -32883,15 +32783,15 @@ module.exports = function (it, tag, stat) {
 
 
 /***/ }),
-/* 218 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var $at = __webpack_require__(519)(true);
+var $at = __webpack_require__(487)(true);
 
 // 21.1.3.27 String.prototype[@@iterator]()
-__webpack_require__(216)(String, 'String', function (iterated) {
+__webpack_require__(212)(String, 'String', function (iterated) {
   this._t = String(iterated); // target
   this._i = 0;                // next index
 // 21.1.5.2.1 %StringIteratorPrototype%.next()
@@ -32907,13 +32807,13 @@ __webpack_require__(216)(String, 'String', function (iterated) {
 
 
 /***/ }),
-/* 219 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var classof = __webpack_require__(521);
-var ITERATOR = __webpack_require__(14)('iterator');
-var Iterators = __webpack_require__(26);
-module.exports = __webpack_require__(9).getIteratorMethod = function (it) {
+var classof = __webpack_require__(489);
+var ITERATOR = __webpack_require__(13)('iterator');
+var Iterators = __webpack_require__(25);
+module.exports = __webpack_require__(8).getIteratorMethod = function (it) {
   if (it != undefined) return it[ITERATOR]
     || it['@@iterator']
     || Iterators[classof(it)];
@@ -32921,19 +32821,19 @@ module.exports = __webpack_require__(9).getIteratorMethod = function (it) {
 
 
 /***/ }),
-/* 220 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(535)
+  __webpack_require__(503)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(537)
+var __vue_script__ = __webpack_require__(505)
 /* template */
-var __vue_template__ = __webpack_require__(538)
+var __vue_template__ = __webpack_require__(506)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -32973,7 +32873,89 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 221 */
+/* 217 */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+/* 218 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -34292,38 +34274,38 @@ module.exports = Component.exports
 });
 
 /***/ }),
-/* 222 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(507), __esModule: true };
+module.exports = { "default": __webpack_require__(475), __esModule: true };
 
 /***/ }),
-/* 223 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(224);
-module.exports = __webpack_require__(569);
+__webpack_require__(221);
+module.exports = __webpack_require__(537);
 
 
 /***/ }),
-/* 224 */
+/* 221 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_bootstrap_vue__ = __webpack_require__(227);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_bootstrap_vue__ = __webpack_require__(224);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_bootstrap_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_bootstrap_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vee_validate__ = __webpack_require__(228);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vee_validate__ = __webpack_require__(225);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vee_validate___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vee_validate__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__App__ = __webpack_require__(229);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__App__ = __webpack_require__(226);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__App___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__App__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__store__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__router__ = __webpack_require__(557);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_vuex_router_sync__ = __webpack_require__(567);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__store__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__router__ = __webpack_require__(525);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_vuex_router_sync__ = __webpack_require__(535);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_vuex_router_sync___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_vuex_router_sync__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_vuestic_components_vuestic_components_plugin__ = __webpack_require__(568);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_vuestic_components_vuestic_components_plugin__ = __webpack_require__(536);
 
 
 
@@ -34368,7 +34350,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 });
 
 /***/ }),
-/* 225 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var apply = Function.prototype.apply;
@@ -34421,13 +34403,13 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(226);
+__webpack_require__(223);
 exports.setImmediate = setImmediate;
 exports.clearImmediate = clearImmediate;
 
 
 /***/ }),
-/* 226 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -34617,10 +34599,10 @@ exports.clearImmediate = clearImmediate;
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(30), __webpack_require__(61)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(29), __webpack_require__(60)))
 
 /***/ }),
-/* 227 */
+/* 224 */
 /***/ (function(module, exports) {
 
 module.exports=function(t){function e(n){if(i[n])return i[n].exports;var o=i[n]={i:n,l:!1,exports:{}};return t[n].call(o.exports,o,o.exports,e),o.l=!0,o.exports}var i={};return e.m=t,e.c=i,e.i=function(t){return t},e.d=function(t,i,n){e.o(t,i)||Object.defineProperty(t,i,{configurable:!1,enumerable:!0,get:n})},e.n=function(t){var i=t&&t.__esModule?function(){return t.default}:function(){return t};return e.d(i,"a",i),i},e.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},e.p="",e(e.s=119)}([function(t,e){t.exports=function(t,e,i,n){var o,a=t=t||{},r=typeof t.default;"object"!==r&&"function"!==r||(o=t,a=t.default);var s="function"==typeof a?a.options:a;if(e&&(s.render=e.render,s.staticRenderFns=e.staticRenderFns),i&&(s._scopeId=i),n){var l=Object.create(s.computed||null);Object.keys(n).forEach(function(t){var e=n[t];l[t]=function(){return e}}),s.computed=l}return{esModule:o,exports:a,options:s}}},function(t,e,i){"use strict";function n(){for(var t="",e="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",i=0;i<5;i++)t+=e.charAt(Math.floor(Math.random()*e.length));return t}function o(){if("undefined"==typeof document)return!1;var t=document.documentElement.style;return void 0!==t.webkitTransition||void 0!==t.MozTransition||void 0!==t.OTransition||void 0!==t.MsTransition||void 0!==t.transition}Object.defineProperty(e,"__esModule",{value:!0}),e.uniqueId=n,e.csstransitions=o;e.TRANSITION_DURATION=o()?350:0},function(t,e){t.exports=function(){var t=[];return t.toString=function(){for(var t=[],e=0;e<this.length;e++){var i=this[e];i[2]?t.push("@media "+i[2]+"{"+i[1]+"}"):t.push(i[1])}return t.join("")},t.i=function(e,i){"string"==typeof e&&(e=[[null,e,""]]);for(var n={},o=0;o<this.length;o++){var a=this[o][0];"number"==typeof a&&(n[a]=!0)}for(o=0;o<e.length;o++){var r=e[o];"number"==typeof r[0]&&n[r[0]]||(i&&!r[2]?r[2]=i:i&&(r[2]="("+r[2]+") and ("+i+")"),t.push(r))}},t}},function(t,e,i){var n=i(0)(i(35),i(91),null,null);t.exports=n.exports},function(t,e,i){function n(t,e){for(var i=0;i<e.length;i++)for(var n=e[i].parts,o=0;o<n.length;o++){var a=n[o],r=a.media||"default",s=t[r];s?(s.ids.push(a.id),s.css+="\n"+a.css):t[r]={ids:[a.id],css:a.css,media:a.media}}}function o(t,e){for(var i=0;i<e.length;i++)for(var n=e[i].parts,o=0;o<n.length;o++){var a=n[o];t[a.id]={ids:[a.id],css:a.css,media:a.media}}}function a(t){var e="";for(var i in t){var n=t[i];e+='<style data-vue-ssr-id="'+n.ids.join(" ")+'"'+(n.media?' media="'+n.media+'"':"")+">"+n.css+"</style>"}return e}var r=i(118);t.exports=function(t,e,i){if("undefined"!=typeof __VUE_SSR_CONTEXT__){var s=__VUE_SSR_CONTEXT__,l=s._styles;l||(l=s._styles={},Object.defineProperty(s,"styles",{enumberable:!0,get:function(){return s._renderedStyles||(s._renderedStyles=a(l))}})),e=r(t,e),i?n(l,e):o(l,e)}}},function(t,e,i){"use strict";function n(t){return t&&t.__esModule?t:{default:t}}Object.defineProperty(e,"__esModule",{value:!0}),e.bCollapse=e.bCarousel=e.bSlide=e.bListGroup=e.bListGroupItem=e.bNavToggle=e.bNavItemDropdown=e.bNavItem=e.bNav=e.bTabs=e.bTab=e.bTooltip=e.bTable=e.bProgress=e.bPopover=e.bPagination=e.bNavbar=e.bModal=e.bMedia=e.bBadge=e.bJumbotron=e.bFormSelect=e.bFormInput=e.bFormRadio=e.bFormFieldset=e.bFormCheckbox=e.bForm=e.bDropdownSelect=e.bDropdown=e.bCard=e.bBtn=e.bButton=e.bButtonRadio=e.bButtonGroup=e.bButtonCheckbox=e.bBreadcrumb=e.bAlert=void 0;var o=i(45),a=n(o),r=i(47),s=n(r),l=i(48),u=n(l),c=i(49),d=n(c),f=i(50),h=n(f),p=i(51),v=n(p),m=i(52),g=n(m),b=i(54),y=n(b),_=i(53),w=n(_),x=i(55),S=n(x),O=i(57),C=n(O),P=i(56),k=n(P),E=i(63),$=n(E),T=i(59),B=n(T),j=i(58),z=n(j),A=i(61),M=n(A),N=i(60),F=n(N),L=i(62),D=n(L),R=i(64),V=n(R),I=i(46),H=n(I),W=i(66),q=n(W),X=i(65),Y=n(X),U=i(67),K=n(U),G=i(68),J=n(G),Z=i(72),Q=n(Z),tt=i(70),et=n(tt),it=i(69),nt=n(it),ot=i(71),at=n(ot),rt=i(73),st=n(rt),lt=i(3),ut=n(lt),ct=i(74),dt=n(ct),ft=i(75),ht=n(ft),pt=i(77),vt=n(pt),mt=i(78),gt=n(mt),bt=i(76),yt=n(bt),_t=i(79),wt=n(_t);e.bAlert=a.default,e.bBreadcrumb=s.default,e.bButtonCheckbox=u.default,e.bButtonGroup=d.default,e.bButtonRadio=h.default,e.bButton=v.default,e.bBtn=v.default,e.bCard=g.default,e.bDropdown=C.default,e.bDropdownSelect=k.default,e.bForm=$.default,e.bFormCheckbox=z.default,e.bFormFieldset=B.default,e.bFormRadio=M.default,e.bFormInput=F.default,e.bFormSelect=D.default,e.bJumbotron=V.default,e.bBadge=H.default,e.bMedia=K.default,e.bModal=J.default,e.bNavbar=st.default,e.bPagination=ut.default,e.bPopover=dt.default,e.bProgress=ht.default,e.bTable=vt.default,e.bTooltip=wt.default,e.bTab=yt.default,e.bTabs=gt.default,e.bNav=Q.default,e.bNavItem=et.default,e.bNavItemDropdown=nt.default,e.bNavToggle=at.default,e.bListGroupItem=Y.default,e.bListGroup=q.default,e.bSlide=w.default,e.bCarousel=y.default,e.bCollapse=S.default},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={data:function(){return{countDownTimerId:null,dismissed:!1}},computed:{classObject:function(){return["alert",this.alertState,this.dismissible?"alert-dismissible":""]},alertState:function(){return this.state&&"default"!==this.state?"alert-"+this.state:"alert-success"},localShow:function(){return!this.dismissed&&(this.countDownTimerId||this.show)}},props:{state:{type:String,default:"info"},dismissible:{type:Boolean,default:!1},show:{type:[Boolean,Number],default:!1}},watch:{show:function(){this.showChanged()}},mounted:function(){this.showChanged()},methods:{dismiss:function(){this.dismissed=!0,this.$emit("dismissed"),this.clearCounter()},clearCounter:function(){this.countDownTimerId&&clearInterval(this.countDownTimerId)},showChanged:function(){var t=this;if(this.dismissed=!1,this.show!==!0&&this.show!==!1&&null!==this.show&&0!==this.show){var e=this.show;this.$emit("dismiss-count-down",e),this.clearCounter(),this.countDownTimerId=setInterval(function(){if(e<2)return t.dismiss();e--,t.$emit("dismiss-count-down",e)},1e3)}}}}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={replace:!0,computed:{badgeVariant:function(){return this.variant&&"default"!==this.variant?"badge-"+this.variant:"badge-default"},badgeType:function(){return this.type?"badge-"+this.type:""},badgePill:function(){return this.pill?"badge-pill":""}},props:{variant:{type:String,default:"default"},type:{type:String,default:""},pill:{type:Boolean,default:!1}}}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={computed:{},props:{items:{type:Array,default:function(){return[]},required:!0}},methods:{onclick:function(t){this.$emit("click",t)}}}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={replace:!0,computed:{btnVariant:function(){return this.variant&&"default"!==this.variant?"btn-"+this.variant:"btn-secondary"},btnSize:function(){return this.size&&"default"!==this.size?"btn-"+this.size:""}},props:{list:{type:Array,default:[],required:!0},model:{type:Array,default:[]},size:{type:String,default:"md"},variant:{type:String,default:"default"},returnObject:{type:Boolean,default:!1}},methods:{checked:function(t){if(!this.list)return!1;var e=!1;if(this.returnObject)for(var i=0;i<this.model.length;i++)this.model[i].value===this.list[t].value&&(e=!0);else e=this.model.indexOf(this.list[t].value)!==-1;return e}},watch:{list:{}},mounted:function(){var t=this;this.list.forEach(function(e){t.returnObject?t.model.forEach(function(t){t.value===e.value&&(e.checked=!0)}):t.model.indexOf(e.value)!==-1&&(e.checked=!0)})}}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={computed:{classObject:function(){return["btn-"+(this.toolbar?"toolbar":"group"),this.vertical?"btn-group-vertical":"",this.size?"btn-group-"+this.size:""]}},props:{vertical:{type:Boolean,default:!1},toolbar:{type:Boolean,default:!1},size:{type:String,default:null}}}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={data:function(){return{selection:"",model:{}}},computed:{btnVariant:function(){return this.variant&&"default"!==this.variant?"btn-"+this.variant:"btn-secondary"},btnSize:function(){return this.size&&"default"!==this.size?"btn-"+this.size:""}},props:{list:{type:Array,default:[],required:!0},size:{type:String,default:"md"},variant:{type:String,default:"default"},returnObject:{type:Boolean,default:!1}},watch:{selection:{handler:function(){var t=this;this.returnObject?this.list.forEach(function(e){e.value===t.selection&&(t.model=e)}):this.model=this.selection,this.$root.$emit("changed::button-radio",this.model)},deep:!0}},mounted:function(){this.selection=this.model.value}}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={computed:{classObject:function(){return["btn",this.btnVariant,this.btnSize,this.btnBlock,this.btnDisabled,this.inactive?"btn-inactive":""]},componentType:function(){return this.href?this.$route?"router-link":"a":"button"},btnBlock:function(){return this.block?"btn-block":""},btnVariant:function(){return this.variant?"btn-"+this.variant:"btn-secondary"},btnSize:function(){return this.size?"btn-"+this.size:""},btnDisabled:function(){return this.disabled?"disabled":""}},props:{block:{type:Boolean,default:!1},disabled:{type:Boolean,default:!1},inactive:{type:Boolean,default:!1},role:{type:String,default:""},size:{type:String,default:"md"},variant:{type:String,default:"primary"},to:{type:[String,Object]},href:{type:String},exact:{type:Boolean,default:!1},target:{type:String}},methods:{onclick:function(){this.$emit("click",this.to),this.$router&&this.to&&this.$router.push(this.to)}}}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={replace:!0,computed:{cardVariant:function(){return this.variant&&"default"!==this.variant?"card-"+this.variant:"card-default"},cardInverse:function(){return"image-overlay"===this.type||"inverse"===this.type?"card-inverse":""},cardAlign:function(){return"text-"+this.align}},props:{align:{type:String,default:"left"},type:{type:String,default:"default"},variant:{type:String,default:"default"}},watch:{type:function(t){var e=this.$el.getElementsByClassName("card-block")[0]||this.$el.getElementsByTagName("div")[0];"image-overlay"===t?e.classList.add("card-img-overlay"):e.classList.remove("card-img-overlay")}}}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={replace:!0}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var n=i(1),o=(0,n.csstransitions)()?600:0,a={rtl:{outgoing:"left",incoming:"right",overlay:"next"},ltr:{outgoing:"right",incoming:"left",overlay:"prev"}};e.default={replace:!0,computed:{},data:function(){return{index:0,slidesCount:0,animating:!1,slides:[],direction:a.rtl}},props:{interval:{type:Number,default:5e3},indicators:{type:Boolean,default:!0},controls:{type:Boolean,default:!0}},methods:{prev:function(){this.animating||(this.index--,this.index<0&&(this.index=this.slidesCount))},next:function(){this.animating||(this.index++,this.index>this.slidesCount&&(this.index=0))},changeSlide:function(t){this.index=t},pause:function(){0!==this.interval&&void 0!==this.interval&&clearInterval(this._intervalId)},start:function(){var t=this;0!==this.interval&&void 0!==this.interval&&(this._intervalId=setInterval(function(){t.next()},this.interval))}},mounted:function(){this._items=this.$el.querySelectorAll(".carousel-item"),this.slidesCount=this._items.length-1,this.slides=Array.apply(null,{length:this._items.length}).map(Number.call,Number),this._items[0].classList.add("active"),this.start()},watch:{index:function(t,e){var i=this;this.animating=!0,this.direction=a.rtl,t<e&&(this.direction=a.ltr),this._items[t].classList.add(this.direction.incoming,this.direction.overlay),this._items[t].classList.add("active"),this._items[e].classList.add(this.direction.outgoing),this._items[t].classList.remove(this.direction.incoming),this._carouselAnimation=setTimeout(function(){i._items[e].classList.remove(i.direction.outgoing,"active"),i._items[t].classList.remove(i.direction.overlay),i.animating=!1,i.$root.$emit("slid::carousel",t)},o)}},destroyed:function(){clearTimeout(this._carouselAnimation),clearInterval(this._intervalId)}}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={data:function(){return{show:!1}},computed:{classObject:function(){return{"navbar-collapse":this.isNav,show:this.show}}},props:{isNav:{type:Boolean,default:!1},id:{type:String,required:!0}},methods:{toggle:function(){this.show=!this.show}},created:function(){var t=this;this.$root.$on("collapse::toggle",function(e){e===t.id&&t.toggle()})}}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={replace:!0,data:function(){return{show:!1,selected:!1}},computed:{btnVariant:function(){return this.variant&&"default"!==this.variant?"btn-"+this.variant:"btn-secondary"},btnSize:function(){return this.size&&"default"!==this.size?"btn-"+this.size:""},dropdownToggle:function(){return this.caret?"dropdown-toggle":""},displayItem:function(){if(this.returnObject&&this.model&&!this.model.text||!this.returnObject&&this.model&&0===this.model.length||this.forceDefault)return this.defaultText;if(this.returnObject&&this.model&&this.model.text)return this.model.text;if(!this.returnObject&&this.model){var t=this.model||"";return this.list.forEach(function(e){e.value===this.model&&(t=e.text)}),t}return""}},props:{id:{type:String},model:{required:!1},list:{type:Array,default:[],required:!0},caret:{type:Boolean,default:!0},position:{type:String,default:"left"},size:{type:String,default:""},variant:{type:String,default:"default"},defaultText:{type:String,default:"Plase select one"},forceDefault:{type:Boolean,default:!1},returnObject:{type:Boolean,default:!1},dropup:{type:Boolean,default:!1},disabled:{type:Boolean,default:!1}},methods:{toggle:function(t){this.show=!this.show,this.show?(this.$root.$emit("shown:dropdown",this.id),t.stopPropagation()):this.$root.$emit("hidden::dropdown",this.id)},select:function(t){this.returnObject?this.model=t:this.model=t.value,this.show=!1,this.$root.$emit("selected::dropdown",this.id,this.model)}},created:function(){this.$root.$on("hide::dropdown",function(){this.show=!1})},mounted:function(){}}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={data:function(){return{show:!1}},props:{split:{type:Boolean,default:!1},text:{type:String,default:""},size:{type:String,default:null},variant:{type:String,default:null},dropup:{type:Boolean,default:!1},disabled:{type:Boolean,default:!1},right:{type:Boolean,default:!1}},mounted:function(){"undefined"!=typeof document&&document.documentElement.addEventListener("click",this.clickOut)},methods:{toggle:function(){this.setShow(!this.show)},setShow:function(t){this.show!==t&&(this.show=t,this.show?this.$emit("shown"):this.$emit("hidden"))},clickOut:function(){this.setShow(!1)},click:function(){this.split?this.$emit("click"):this.toggle()}}}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={data:function(){return{localChecked:this.checked}},mounted:function(){this.change(this.localChecked)},computed:{inputState:function(){return this.state?"has-"+this.state:""}},props:{id:{type:String,default:null},name:{type:String,default:null},_value:{default:!0},disabled:{type:Boolean,default:!1},checked:{type:Boolean,default:!1},inline:{type:Boolean,default:!0},custom:{type:Boolean,default:!0}},methods:{change:function(t){this.localChecked=t,this.$emit("change",t),this.$emit("input",t?this._value:void 0)}}}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var n=i(1);e.default={computed:{inputState:function(){return this.state?"has-"+this.state:""},labelLayout:function(){return this.horizontal?"col-sm-"+this.labelSize:"col-sm-"+(12-this.labelSize)},inputLayout:function(){return this.horizontal?"col-sm-"+(12-this.labelSize):"col-sm-"+this.labelSize}},props:{for_id:{type:String,default:n.uniqueId},state:{type:String,default:null},horizontal:{type:Boolean,default:!1},labelSize:{type:Number,default:6},enabled:{type:Boolean,default:!0},label:{type:String,default:null},description:{type:String,default:null},feedback:{type:String,default:null}}}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={computed:{inputState:function(){var t=this.state||this.$parent.state;return t?"form-control-"+t:""},inputSize:function(){return this.size?"form-control-"+this.size:""}},methods:{format:function(t){if(this.formatter){var e=this.formatter(t);e!==t&&(t=e,this.$refs.input.value=e)}return t},onInput:function(t){this.lazyFormatter||(t=this.format(t)),this.$emit("input",t)},onChange:function(t){t=this.format(t),this.$emit("input",t),this.$emit("change",t)},onKeyUp:function(t){this.$emit("keyup",t)}},props:{value:{type:[String,Number],default:null},type:{type:String,default:"text"},name:{type:String,default:null},placeholder:{type:String,default:null},size:{type:String,default:null},rows:{type:Number,default:null},textarea:{type:Boolean,default:!1},state:{type:String,default:null},formatter:{type:Function},lazyFormatter:{type:Boolean,default:!1}}}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var n=i(1);e.default={data:function(){return{localValue:this.value}},computed:{inputState:function(){return this.state?"has-"+this.state:""}},props:{value:{default:null},valueKey:{type:String,default:"value"},textKey:{type:String,default:"text"},name:{type:String,default:n.uniqueId},items:{type:Array,default:function(){return[]},required:!0},stacked:{type:Boolean,default:!1},state:{type:String,default:null},returnObject:{type:Boolean,default:!1}},watch:{localValue:function(t,e){t!==e&&(this.returnObject&&this.items.forEach(function(e){e.value===t&&(t=e)}),this.$emit("input",t))}}}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={data:function(){var t=this.value;return t||(t=this.defaultOption?this.defaultOption.value:null),{selected:t}},mounted:function(){this.selected&&this.change(this.selected)},computed:{allOptions:function(){return this.defaultOption?[].concat(this.defaultOption,this.options):this.options},inputSize:function(){return this.size?"form-control-"+this.size:null}},props:{options:{type:Array,default:[],required:!0},defaultOption:{default:null},value:{default:""},size:{type:String,default:""},disabled:{type:Boolean,default:!1}},watch:{selected:function(t,e){t!==e&&this.change(t)}},methods:{change:function(t){this.$emit("input",t)}}}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={computed:{classObject:function(){return[this.inline?"form-inline":""]}},props:{inline:{type:Boolean,default:!1}}}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={replace:!0,computed:{},props:{fluid:{type:Boolean,default:!1}}}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={computed:{listState:function(){return this.state&&"default"!==this.state?"list-group-item-"+this.state:""}},replace:!0,props:{active:{type:Boolean,default:!1},disabled:{type:Boolean,default:!1},state:{type:String,default:"default"}}}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={replace:!0,props:{flush:{type:Boolean,default:!1}}}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={replace:!0,computed:{align:function(){return this.position.split(" ")},mediaVerticalAlign:function(){return"media-"+this.align[0]},mediaHorizontalAlign:function(){return"media-"+this.align[1]}},props:{position:{type:String,default:"top left"}}}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var n=i(1),o=(0,n.csstransitions)()?300:0;e.default={replace:!0,computed:{},data:function(){return{animateBackdrop:!1,animateModal:!1}},props:{id:{type:String,default:"default"},size:{type:String,default:"md"},fade:{type:Boolean,default:!0},closeOnBackdrop:{type:Boolean,default:!0}},methods:{show:function(){var t=this;this.$el.style.display="block",this._body=document.querySelector("body");var e=this;this._modalAnimation=setTimeout(function(){e.animateBackdrop=!0,t._modalAnimation=setTimeout(function(){e._body.classList.add("modal-open"),e.animateModal=!0,e.$root.$emit("shown::modal",t.id)},e.fade?o:0)},0)},hide:function(){var t=this,e=this;this.animateModal=!1,this._modalAnimation=setTimeout(function(){e.animateBackdrop=!1,t._modalAnimation=setTimeout(function(){e._body.classList.remove("modal-open"),e.$el.style.display="none",e.$root.$emit("hidden::modal",t.id)},e.fade?o:0)},e.fade?o:0)},onClickOut:function(t){this.closeOnBackdrop&&t.target.id&&t.target.id===this.id&&this.hide()}},created:function(){var t=this,e=this.$root;e.$on("show::modal",function(e){return e===t.id&&t.show()}),e.$on("hide::modal",function(e){return e===t.id&&t.hide()})},mounted:function(){var t=this;document.addEventListener("keydown",function(e){27===(e.which||e.keyCode)&&t.hide()})},destroyed:function(){clearTimeout(this._modalAnimation)}}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={data:function(){return{show:!1}},computed:{dropdownToggle:function(){return this.caret?"dropdown-toggle":""}},props:{caret:{type:Boolean,default:!0},text:{type:String,default:""},dropup:{type:Boolean,default:!1},rightAlignment:{type:Boolean,default:!1},disabled:{type:Boolean,default:!1},class:["class"]},methods:{toggle:function(t){this.disabled||(this.show=!this.show,this.show?(this.$root.$emit("shown::dropdown"),t.stopPropagation()):this.$root.$emit("hidden::dropdown"))}},created:function(){var t=this;this.$root.$on("hide::dropdown",function(){t.show=!1})}}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var n="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t};e.default={computed:{classObject:function(){return["nav-link",this.active?"active":"",this.disabled?"disabled":""]},componentType:function(){return this.to?"router-link":"a"},hrefString:function(){return"object"===n(this.to)?this.href||void 0:this.href||this.to}},props:{active:{type:Boolean,default:!1},disabled:{type:Boolean,default:!1},to:{type:[String,Object]},href:{type:String},exact:{type:Boolean,default:!1},target:{type:String}},methods:{onclick:function(){this.$emit("click",this.to)}}}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={computed:{classObject:function(){return["navbar-toggler","navbar-toggler-"+this.position]}},props:{label:{type:String,default:"Toggle navigation"},position:{type:String,default:"right"},target:{required:!0}},methods:{onclick:function(){var t=this.target;t.toggle&&t.toggle(),this.$root.$emit("collapse::toggle",this.target)}}}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={computed:{classObject:function(){return{nav:!0,"navbar-nav":this.isNavBar,"nav-tabs":this.tabs,"nav-pills":this.pills,"flex-column":this.vertical,"nav-fill":this.fill}}},props:{type:{type:String,default:"ul"},fill:{type:Boolean,default:!1},tabs:{type:Boolean,default:!1},pills:{type:Boolean,default:!1},vertical:{type:Boolean,default:!1},isNavBar:{type:Boolean,default:!1}}}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={replace:!0,computed:{classObject:function(){return["navbar",this.type?"navbar-"+this.type:"",this.variant?"bg-"+this.variant:"",this.fixed?"navbar-fixed-"+this.fixed:"",this.full?"navbar-full":"",this.toggleable?"navbar-toggleable-md":""]}},props:{type:{type:String,default:"light"},variant:{type:String},toggleable:{type:Boolean,default:!1},fixed:{type:String},full:{type:Boolean,default:!1}}}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={data:function(){return{diff:1,showPrev:!1,showNext:!1,currentPage:this.value}},computed:{numberOfPages:function(){var t=Math.ceil(this.totalRows/this.perPage);return t<1?1:t},btnSize:function(){return this.size&&"default"!==this.size?"btn-"+this.size:""},pageLinks:function(){var t=this.limit;return this.currentPage>this.numberOfPages&&(this.currentPage=1),this.diff=1,this.showPrev=!1,this.showNext=!1,this.numberOfPages<=this.limit?this.numberOfPages:(this.currentPage<=this.limit-2&&(this.diff=1,this.showNext=!0,t=this.limit-2),this.currentPage>this.numberOfPages-this.limit+2&&(this.diff=this.numberOfPages-this.limit+3,this.showPrev=!0,t=this.limit-2),this.currentPage>=this.limit-2&&this.currentPage<=this.numberOfPages-this.limit+2&&(this.diff=this.currentPage-1,this.showPrev=!0,this.showNext=!0,t=this.limit-4),t)}},methods:{btnVariant:function(t){return t+this.diff===this.currentPage?"btn-"+this.variant:"btn-"+this.secondaryVariant},_return:function(){}},watch:{currentPage:function(t){this.$emit("input",t)},value:function(t,e){t!==e&&(this.currentPage=t)}},props:{value:{type:Number,default:1},limit:{type:Number,default:7},perPage:{type:Number,default:20},totalRows:{type:Number,default:20},size:{type:String,default:"md"},variant:{type:String,default:"primary"},secondaryVariant:{type:String,default:"secondary"}}}},function(t,e,i){"use strict";function n(t){return t&&t.__esModule?t:{default:t}}Object.defineProperty(e,"__esModule",{value:!0});var o="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},a=i(44),r=n(a),s={click:{click:"toggle"},hover:{mouseenter:"show",mouseleave:"hide"},focus:{focus:"show",blur:"hide"}};e.default={replace:!0,props:{placement:{type:String,default:"top",validator:function(t){return["top","bottom","left","right"].indexOf(t)!==-1}},triggers:{type:[Boolean,String,Array],default:function(){return["click","focus"]},validator:function(t){if(t===!1||""===t)return!0;if("string"==typeof t)return Object.keys(s).indexOf(t)!==-1;if(Array.isArray(t)){var e=Object.keys(s);return t.forEach(function(t){if(e.indexOf(t)===-1)return!1}),!0}return!1}},title:{type:String,default:""},content:{type:String,default:""},show:{type:Boolean,default:!1},constraints:{type:Array,default:function(){return[]}},offset:{type:String,default:"0 0",validator:function(t){return/^(\d+\s\d+)$/.test(t)}},delay:{type:[Number,Object],default:0,validator:function(t){return"number"==typeof t?t>=0:null!==t&&"object"===(void 0===t?"undefined":o(t))&&("number"==typeof t.show&&"number"==typeof t.hide&&t.show>=0&&t.hide>=0)}},debounce:{type:[Number],default:100,validator:function(t){return t>=0}}},data:function(){return{showState:this.show,lastEvent:null}},computed:{popoverAlignment:function(){return this.placement&&"default"!==this.placement?"popover-"+this.placement:"popover-top"},normalizedTriggers:function(){return this.triggers===!1?[]:"string"==typeof this.triggers?[this.triggers]:this.triggers},placementParameters:function(){switch(this.placement){case"bottom":return{attachment:"top center",targetAttachment:"bottom center"};case"left":return{attachment:"middle right",targetAttachment:"middle left"};case"right":return{attachment:"middle left",targetAttachment:"middle right"};default:return{attachment:"bottom center",targetAttachment:"top center"}}},useDebounce:function(){return this.normalizedTriggers.length>1}},watch:{show:function(t){this.showState=t},showState:function(t){var e=this;clearTimeout(this._timeout),this._timeout=setTimeout(function(){e.$emit("showChange",t),t?e.showPopover():e.hidePopover()},this.getDelay(t))},normalizedTriggers:function(t,e){this.updateListeners(t,e)}},methods:{showPopover:function(){this._popover.style.display="block",this._tether=new r.default({element:this._popover,target:this._trigger,offset:this.offset,constraints:this.constraints,attachment:this.placementParameters.attachment,targetAttachment:this.placementParameters.targetAttachment}),this._tether.position(),this.$root.$emit("shown::popover")},hidePopover:function(){this._tether&&(this._popover.style.display="none",this._tether.destroy(),this.$root.$emit("hidden::popover"))},getDelay:function(t){return"object"===o(this.delay)?t?this.delay.show:this.delay.hide:this.delay},toggleShowState:function(){var t=this,e=!this.showState;if(clearTimeout(this._timeout),0===this.currentDelay)return void(this.showState=e);this._timeout=setTimeout(function(){t.showState=e},this.currentDelay)},eventHandler:function(t){if(!(this.useDebounce&&this.debounce>0&&null!==this.lastEvent&&t.timeStamp<=this.lastEvent+this.debounce))for(var e in s)for(var i in s[e])if(i===t.type){var n=s[e][i];return void(("toggle"===n||this.showState&&"hide"===n||!this.showState&&"show"===n)&&(this.showState=!this.showState,this.lastEvent=t.timeStamp))}},updateListeners:function(t){var e=this,i=arguments.length>1&&void 0!==arguments[1]?arguments[1]:[],n=[],o=[];t.forEach(function(t){i.indexOf(t)===-1&&n.push(t)}),i.forEach(function(e){t.indexOf(e)===-1&&o.push(e)}),n.forEach(function(t){return e.addListener(t)}),o.forEach(function(t){return e.removeListener(t)})},addListener:function(t){var e=this;for(var i in s[t])this._trigger.addEventListener(i,function(t){return e.eventHandler(t)})},removeListener:function(t){var e=this;for(var i in s[t])this._trigger.removeEventListener(i,function(t){return e.eventHandler(t)})},removeAllListeners:function(){for(var t in this.normalizedTriggers)this.removeListener(t)}},created:function(){var t=this;this.$root.$on("hide::popover",function(){t.showState=!1})},mounted:function(){this._trigger=this.$refs.trigger.children[0],this._popover=this.$refs.popover,this._popover.style.display="none",this._timeout=0,this.updateListeners(this.normalizedTriggers),this.showState&&this.showPopover()},beforeDestroy:function(){this.hidePopover(),this.removeAllListeners(),clearTimeout(this._timeout),this._timeout=null}}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={replace:!0,computed:{progressVariant:function(){return this.variant&&"default"!==this.variant?"progress progress-"+this.variant:"progress"}},props:{striped:{type:Boolean,default:!1},animated:{type:Boolean,default:!1},value:{type:Number,default:0},max:{type:Number,default:100},variant:{type:String,default:"default"}},mounted:function(){this._progress=this.$refs.progress,this._progressBar=this.$refs.progressbar,this._progressBar.style.width=this.value+"%",this._progress.setAttribute("value",this.value)},watch:{value:function(t){this._progress.setAttribute("value",t),this._progressBar.style.width=this.value+"%"}}}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={replace:!0,data:function(){return{fade:this.$parent.fade,animate:!1,active:!1}},props:{id:{type:String,default:""},title:{type:String,default:""},disabled:{type:Boolean,default:!1}},mounted:function(){this.$parent.items.push({id:this.id,title:this.title,active:this.active,disabled:this.disabled})}}},function(t,e,i){"use strict";function n(t){return t&&t.__esModule?t:{default:t}}Object.defineProperty(e,"__esModule",{value:!0});var o=i(3),a=n(o);e.default={components:{bPagination:a.default},data:function(){return{sort:null,sortDesc:!0}},props:{sortable:{type:Boolean,default:!1},items:{type:Array,default:function(){return[]}},fields:{type:Object,default:function(){}},striped:{type:Boolean,default:!1},hover:{type:Boolean,default:!1},perPage:{type:Number,default:null},items_key:{type:String,default:null},currentPage:{type:Number,default:1},filter:{type:String,default:null}},computed:{_items:function(){var t=this;if(!this.items)return[];var e=this.items,i=function t(e){return e instanceof Object?Object.keys(e).map(function(i){return t(e[i])}).join(" "):String(e)};if(this.filter&&this.filter.length>0){var n=new RegExp(".*"+this.filter+".*","ig");e=e.filter(function(t){return n.test(i(t))})}return this.sort&&(e=e.sort(function(e,n){var o=i(e[t.sort]).localeCompare(i(n[t.sort]));return t.sortDesc?o:o*-1})),this.perPage&&(e=e.slice((this.currentPage-1)*this.perPage,this.currentPage*this.perPage)),e}},methods:{headClick:function(t,e){t.sortable&&(e===this.sort&&(this.sortDesc=!this.sortDesc),this.sort=e)}}}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var n=i(1),o=(0,n.csstransitions)()?150:0;e.default={replace:!0,data:function(){return{currentTab:this.value||0,items:[]}},computed:{btnSize:function(){return this.size&&"default"!==this.size?"btn-"+this.size:""}},props:{fade:{type:Boolean,default:!0},size:{type:String,default:"md"},value:{type:Number,default:0},navStyle:{type:String,default:"tabs"}},watch:{currentTab:function(t){this.$emit("input",t)},value:function(t){this.setActive(t)}},methods:{getActive:function(){var t=-1;return this.items.forEach(function(e,i){e.active&&(t=i)}),t},setActive:function(t){var e=this;if(!this.items[t].disabled){var i=this.getActive();i!==-1&&(this.items[i].active=!1,this.$set(this.$children[i],"animate",!1),this.$set(this.$children[i],"active",!1)),this.$set(this.$children[t],"active",!0),this._tabAnimation=setTimeout(function(){e.items[t].active=!0,e.$set(e.$children[t],"animate",!0),e.$root.$emit("changed::tab",e.items[t].id)},this.fade?o:0),this.currentTab=t}}},mounted:function(){this.getActive()===-1&&this.setActive(this.currentTab)},destroyed:function(){clearTimeout(this._tabAnimation)}}},function(t,e,i){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),e.default={replace:!0,computed:{}}},function(t,e,i){e=t.exports=i(2)(),e.push([t.i,'table thead>tr>td.sorting[data-v-505c158b],table thead>tr>td.sorting_asc[data-v-505c158b],table thead>tr>td.sorting_desc[data-v-505c158b],table thead>tr>th.sorting[data-v-505c158b],table thead>tr>th.sorting_asc[data-v-505c158b],table thead>tr>th.sorting_desc[data-v-505c158b]{padding-right:30px}table thead>tr>td[data-v-505c158b]:active,table thead>tr>th[data-v-505c158b]:active{outline:none}table thead .sorting[data-v-505c158b],table thead .sorting_asc[data-v-505c158b],table thead .sorting_asc_disabled[data-v-505c158b],table thead .sorting_desc[data-v-505c158b],table thead .sorting_desc_disabled[data-v-505c158b]{cursor:pointer;position:relative}table thead .sorting[data-v-505c158b]:after,table thead .sorting[data-v-505c158b]:before,table thead .sorting_asc[data-v-505c158b]:after,table thead .sorting_asc[data-v-505c158b]:before,table thead .sorting_asc_disabled[data-v-505c158b]:after,table thead .sorting_asc_disabled[data-v-505c158b]:before,table thead .sorting_desc[data-v-505c158b]:after,table thead .sorting_desc[data-v-505c158b]:before,table thead .sorting_desc_disabled[data-v-505c158b]:after,table thead .sorting_desc_disabled[data-v-505c158b]:before{position:absolute;bottom:.9em;display:block;opacity:.3}table thead .sorting[data-v-505c158b]:before,table thead .sorting_asc[data-v-505c158b]:before,table thead .sorting_asc_disabled[data-v-505c158b]:before,table thead .sorting_desc[data-v-505c158b]:before,table thead .sorting_desc_disabled[data-v-505c158b]:before{right:1em;content:"\\2191"}table thead .sorting[data-v-505c158b]:after,table thead .sorting_asc[data-v-505c158b]:after,table thead .sorting_asc_disabled[data-v-505c158b]:after,table thead .sorting_desc[data-v-505c158b]:after,table thead .sorting_desc_disabled[data-v-505c158b]:after{right:.5em;content:"\\2193"}table thead .sorting_asc[data-v-505c158b]:before,table thead .sorting_desc[data-v-505c158b]:after{opacity:1}table thead .sorting_asc_disabled[data-v-505c158b]:before,table thead .sorting_desc_disabled[data-v-505c158b]:after{opacity:0}div.dataTables_scrollBody table thead .sorting[data-v-505c158b]:after,div.dataTables_scrollBody table thead .sorting_asc[data-v-505c158b]:after,div.dataTables_scrollBody table thead .sorting_desc[data-v-505c158b]:after{display:none}table.dataTable.table-condensed .sorting[data-v-505c158b]:after,table.dataTable.table-condensed .sorting_asc[data-v-505c158b]:after,table.dataTable.table-condensed .sorting_desc[data-v-505c158b]:after{top:6px;right:6px}',""])},function(t,e,i){e=t.exports=i(2)(),e.push([t.i,".collapse-enter-active[data-v-937ae900],.collapse-leave-active[data-v-937ae900]{transition:all .35s ease;overflow:hidden;max-height:100vh}.collapse-enter[data-v-937ae900],.collapse-leave-to[data-v-937ae900]{max-height:0}",""])},function(t,e,i){var n,o;/*! tether 1.4.0 */
@@ -34628,7 +34610,7 @@ module.exports=function(t){function e(n){if(i[n])return i[n].exports;var o=i[n]=
 //# sourceMappingURL=bootstrap-vue.common.js.map
 
 /***/ }),
-/* 228 */
+/* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -38301,19 +38283,19 @@ return index;
 
 
 /***/ }),
-/* 229 */
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(230)
+  __webpack_require__(227)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(262)
+var __vue_script__ = __webpack_require__(230)
 /* template */
-var __vue_template__ = __webpack_require__(556)
+var __vue_template__ = __webpack_require__(524)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -38353,17 +38335,17 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 230 */
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(231);
+var content = __webpack_require__(228);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("01b6791b", content, false);
+var update = __webpack_require__(3)("01b6791b", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -38379,214 +38361,13 @@ if(false) {
 }
 
 /***/ }),
-/* 231 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);", ""]);
-exports.i(__webpack_require__(232), "");
-exports.i(__webpack_require__(239), "");
-exports.push([module.i, "@import url(http://weloveiconfonts.com/api/?family=brandico|entypo|fontelico|iconicfill|iconicstroke|maki|openwebicons|typicons|zocial);", ""]);
-
-// module
-exports.push([module.i, "\n@charset \"UTF-8\";\n/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */\n/* Document\n   ========================================================================== */\n/**\n * 1. Correct the line height in all browsers.\n * 2. Prevent adjustments of font size after orientation changes in\n *    IE on Windows Phone and in iOS.\n */\nhtml {\n  line-height: 1.15;\n  /* 1 */\n  -ms-text-size-adjust: 100%;\n  /* 2 */\n  -webkit-text-size-adjust: 100%;\n  /* 2 */\n}\n\n/* Sections\n   ========================================================================== */\n/**\n * Remove the margin in all browsers (opinionated).\n */\nbody {\n  margin: 0;\n}\n\n/**\n * Add the correct display in IE 9-.\n */\narticle,\naside,\nfooter,\nheader,\nnav,\nsection {\n  display: block;\n}\n\n/**\n * Correct the font size and margin on `h1` elements within `section` and\n * `article` contexts in Chrome, Firefox, and Safari.\n */\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0;\n}\n\n/* Grouping content\n   ========================================================================== */\n/**\n * Add the correct display in IE 9-.\n * 1. Add the correct display in IE.\n */\nfigcaption,\nfigure,\nmain {\n  /* 1 */\n  display: block;\n}\n\n/**\n * Add the correct margin in IE 8.\n */\nfigure {\n  margin: 1em 40px;\n}\n\n/**\n * 1. Add the correct box sizing in Firefox.\n * 2. Show the overflow in Edge and IE.\n */\nhr {\n  -webkit-box-sizing: content-box;\n          box-sizing: content-box;\n  /* 1 */\n  height: 0;\n  /* 1 */\n  overflow: visible;\n  /* 2 */\n}\n\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\npre {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */\n}\n\n/* Text-level semantics\n   ========================================================================== */\n/**\n * 1. Remove the gray background on active links in IE 10.\n * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.\n */\na {\n  background-color: transparent;\n  /* 1 */\n  -webkit-text-decoration-skip: objects;\n  /* 2 */\n}\n\n/**\n * 1. Remove the bottom border in Chrome 57- and Firefox 39-.\n * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\n */\nabbr[title] {\n  border-bottom: none;\n  /* 1 */\n  text-decoration: underline;\n  /* 2 */\n  -webkit-text-decoration: underline dotted;\n          text-decoration: underline dotted;\n  /* 2 */\n}\n\n/**\n * Prevent the duplicate application of `bolder` by the next rule in Safari 6.\n */\nb,\nstrong {\n  font-weight: inherit;\n}\n\n/**\n * Add the correct font weight in Chrome, Edge, and Safari.\n */\nb,\nstrong {\n  font-weight: bolder;\n}\n\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\ncode,\nkbd,\nsamp {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */\n}\n\n/**\n * Add the correct font style in Android 4.3-.\n */\ndfn {\n  font-style: italic;\n}\n\n/**\n * Add the correct background and color in IE 9-.\n */\nmark {\n  background-color: #ff0;\n  color: #000;\n}\n\n/**\n * Add the correct font size in all browsers.\n */\nsmall {\n  font-size: 80%;\n}\n\n/**\n * Prevent `sub` and `sup` elements from affecting the line height in\n * all browsers.\n */\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\nsub {\n  bottom: -0.25em;\n}\nsup {\n  top: -0.5em;\n}\n\n/* Embedded content\n   ========================================================================== */\n/**\n * Add the correct display in IE 9-.\n */\naudio,\nvideo {\n  display: inline-block;\n}\n\n/**\n * Add the correct display in iOS 4-7.\n */\naudio:not([controls]) {\n  display: none;\n  height: 0;\n}\n\n/**\n * Remove the border on images inside links in IE 10-.\n */\nimg {\n  border-style: none;\n}\n\n/**\n * Hide the overflow in IE.\n */\nsvg:not(:root) {\n  overflow: hidden;\n}\n\n/* Forms\n   ========================================================================== */\n/**\n * 1. Change the font styles in all browsers (opinionated).\n * 2. Remove the margin in Firefox and Safari.\n */\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font-family: sans-serif;\n  /* 1 */\n  font-size: 100%;\n  /* 1 */\n  line-height: 1.15;\n  /* 1 */\n  margin: 0;\n  /* 2 */\n}\n\n/**\n * Show the overflow in IE.\n * 1. Show the overflow in Edge.\n */\nbutton,\ninput {\n  /* 1 */\n  overflow: visible;\n}\n\n/**\n * Remove the inheritance of text transform in Edge, Firefox, and IE.\n * 1. Remove the inheritance of text transform in Firefox.\n */\nbutton,\nselect {\n  /* 1 */\n  text-transform: none;\n}\n\n/**\n * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`\n *    controls in Android 4.\n * 2. Correct the inability to style clickable types in iOS and Safari.\n */\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button;\n  /* 2 */\n}\n\n/**\n * Remove the inner border and padding in Firefox.\n */\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: none;\n  padding: 0;\n}\n\n/**\n * Restore the focus styles unset by the previous rule.\n */\nbutton:-moz-focusring,\n[type=\"button\"]:-moz-focusring,\n[type=\"reset\"]:-moz-focusring,\n[type=\"submit\"]:-moz-focusring {\n  outline: 1px dotted ButtonText;\n}\n\n/**\n * Correct the padding in Firefox.\n */\nfieldset {\n  padding: 0.35em 0.75em 0.625em;\n}\n\n/**\n * 1. Correct the text wrapping in Edge and IE.\n * 2. Correct the color inheritance from `fieldset` elements in IE.\n * 3. Remove the padding so developers are not caught out when they zero out\n *    `fieldset` elements in all browsers.\n */\nlegend {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  /* 1 */\n  color: inherit;\n  /* 2 */\n  display: table;\n  /* 1 */\n  max-width: 100%;\n  /* 1 */\n  padding: 0;\n  /* 3 */\n  white-space: normal;\n  /* 1 */\n}\n\n/**\n * 1. Add the correct display in IE 9-.\n * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.\n */\nprogress {\n  display: inline-block;\n  /* 1 */\n  vertical-align: baseline;\n  /* 2 */\n}\n\n/**\n * Remove the default vertical scrollbar in IE.\n */\ntextarea {\n  overflow: auto;\n}\n\n/**\n * 1. Add the correct box sizing in IE 10-.\n * 2. Remove the padding in IE 10-.\n */\n[type=\"checkbox\"],\n[type=\"radio\"] {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  /* 1 */\n  padding: 0;\n  /* 2 */\n}\n\n/**\n * Correct the cursor style of increment and decrement buttons in Chrome.\n */\n[type=\"number\"]::-webkit-inner-spin-button,\n[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto;\n}\n\n/**\n * 1. Correct the odd appearance in Chrome and Safari.\n * 2. Correct the outline style in Safari.\n */\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  /* 1 */\n  outline-offset: -2px;\n  /* 2 */\n}\n\n/**\n * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.\n */\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n\n/**\n * 1. Correct the inability to style clickable types in iOS and Safari.\n * 2. Change font properties to `inherit` in Safari.\n */\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  /* 1 */\n  font: inherit;\n  /* 2 */\n}\n\n/* Interactive\n   ========================================================================== */\n/*\n * Add the correct display in IE 9-.\n * 1. Add the correct display in Edge, IE, and Firefox.\n */\ndetails,\nmenu {\n  display: block;\n}\n\n/*\n * Add the correct display in all browsers.\n */\nsummary {\n  display: list-item;\n}\n\n/* Scripting\n   ========================================================================== */\n/**\n * Add the correct display in IE 9-.\n */\ncanvas {\n  display: inline-block;\n}\n\n/**\n * Add the correct display in IE.\n */\ntemplate {\n  display: none;\n}\n\n/* Hidden\n   ========================================================================== */\n/**\n * Add the correct display in IE 10-.\n */\n[hidden] {\n  display: none;\n}\n@font-face {\n  font-family: 'Vuestic Icons';\n  src: url(" + __webpack_require__(63) + ");\n  src: url(" + __webpack_require__(63) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(243) + ") format(\"woff\"), url(" + __webpack_require__(244) + ") format(\"truetype\"), url(" + __webpack_require__(245) + "#Glyphter) format(\"svg\");\n  font-weight: normal;\n  font-style: normal;\n}\n.vuestic-icon {\n  line-height: 1;\n}\n.vuestic-icon:before {\n  display: inline-block;\n  font-family: 'Vuestic Icons';\n  font-style: normal;\n  font-weight: normal;\n  line-height: 1;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.vuestic-icon-comments:before {\n  content: 'A';\n}\n.vuestic-icon-components:before {\n  content: 'B';\n}\n.vuestic-icon-dashboard:before {\n  content: 'C';\n}\n.vuestic-icon-extras:before {\n  content: 'D';\n}\n.vuestic-icon-files:before {\n  content: 'E';\n}\n.vuestic-icon-forms:before {\n  content: 'F';\n}\n.vuestic-icon-graph:before {\n  content: 'G';\n}\n.vuestic-icon-auth:before {\n  content: 'H';\n}\n.vuestic-icon-image:before {\n  content: 'I';\n}\n.vuestic-icon-maps:before {\n  content: 'J';\n}\n.vuestic-icon-music:before {\n  content: 'K';\n}\n.vuestic-icon-settings:before {\n  content: 'L';\n}\n.vuestic-icon-statistics:before {\n  content: 'M';\n}\n.vuestic-icon-tables:before {\n  content: 'N';\n}\n.vuestic-icon-time:before {\n  content: 'O';\n}\n.vuestic-icon-ui-elements:before {\n  content: 'P';\n}\n.vuestic-icon-user:before {\n  content: 'Q';\n}\n.vuestic-icon-video:before {\n  content: 'R';\n}\n\n/*!\n * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)\n * Copyright 2011-2017 The Bootstrap Authors\n * Copyright 2011-2017 Twitter, Inc.\n * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)\n */\n/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */\nhtml {\n  font-family: sans-serif;\n  line-height: 1.15;\n  -ms-text-size-adjust: 100%;\n  -webkit-text-size-adjust: 100%;\n}\nbody {\n  margin: 0;\n}\narticle,\naside,\nfooter,\nheader,\nnav,\nsection {\n  display: block;\n}\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0;\n}\nfigcaption,\nfigure,\nmain {\n  display: block;\n}\nfigure {\n  margin: 1em 40px;\n}\nhr {\n  -webkit-box-sizing: content-box;\n          box-sizing: content-box;\n  height: 0;\n  overflow: visible;\n}\npre {\n  font-family: monospace, monospace;\n  font-size: 1em;\n}\na {\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects;\n}\na:active,\na:hover {\n  outline-width: 0;\n}\nabbr[title] {\n  border-bottom: none;\n  text-decoration: underline;\n  -webkit-text-decoration: underline dotted;\n          text-decoration: underline dotted;\n}\nb,\nstrong {\n  font-weight: inherit;\n}\nb,\nstrong {\n  font-weight: bolder;\n}\ncode,\nkbd,\nsamp {\n  font-family: monospace, monospace;\n  font-size: 1em;\n}\ndfn {\n  font-style: italic;\n}\nmark {\n  background-color: #ff0;\n  color: #000;\n}\nsmall {\n  font-size: 80%;\n}\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\nsub {\n  bottom: -0.25em;\n}\nsup {\n  top: -0.5em;\n}\naudio,\nvideo {\n  display: inline-block;\n}\naudio:not([controls]) {\n  display: none;\n  height: 0;\n}\nimg {\n  border-style: none;\n}\nsvg:not(:root) {\n  overflow: hidden;\n}\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font-family: sans-serif;\n  font-size: 100%;\n  line-height: 1.15;\n  margin: 0;\n}\nbutton,\ninput {\n  overflow: visible;\n}\nbutton,\nselect {\n  text-transform: none;\n}\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button;\n}\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: none;\n  padding: 0;\n}\nbutton:-moz-focusring,\n[type=\"button\"]:-moz-focusring,\n[type=\"reset\"]:-moz-focusring,\n[type=\"submit\"]:-moz-focusring {\n  outline: 1px dotted ButtonText;\n}\nfieldset {\n  border: 1px solid #c0c0c0;\n  margin: 0 2px;\n  padding: 0.35em 0.625em 0.75em;\n}\nlegend {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  color: inherit;\n  display: table;\n  max-width: 100%;\n  padding: 0;\n  white-space: normal;\n}\nprogress {\n  display: inline-block;\n  vertical-align: baseline;\n}\ntextarea {\n  overflow: auto;\n}\n[type=\"checkbox\"],\n[type=\"radio\"] {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  padding: 0;\n}\n[type=\"number\"]::-webkit-inner-spin-button,\n[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto;\n}\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  outline-offset: -2px;\n}\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  font: inherit;\n}\ndetails,\nmenu {\n  display: block;\n}\nsummary {\n  display: list-item;\n}\ncanvas {\n  display: inline-block;\n}\ntemplate {\n  display: none;\n}\n[hidden] {\n  display: none;\n}\n@media print {\n*,\n  *::before,\n  *::after,\n  p::first-letter,\n  div::first-letter,\n  blockquote::first-letter,\n  li::first-letter,\n  p::first-line,\n  div::first-line,\n  blockquote::first-line,\n  li::first-line {\n    text-shadow: none !important;\n    -webkit-box-shadow: none !important;\n            box-shadow: none !important;\n}\na,\n  a:visited {\n    text-decoration: underline;\n}\nabbr[title]::after {\n    content: \" (\" attr(title) \")\";\n}\npre {\n    white-space: pre-wrap !important;\n}\npre,\n  blockquote {\n    border: 1px solid #999;\n    page-break-inside: avoid;\n}\nthead {\n    display: table-header-group;\n}\ntr,\n  img {\n    page-break-inside: avoid;\n}\np,\n  h2,\n  h3 {\n    orphans: 3;\n    widows: 3;\n}\nh2,\n  h3 {\n    page-break-after: avoid;\n}\n.navbar {\n    display: none;\n}\n.badge {\n    border: 1px solid #000;\n}\n.table {\n    border-collapse: collapse !important;\n}\n.table td,\n    .table th {\n      background-color: #fff !important;\n}\n.table-bordered th,\n  .table-bordered td {\n    border: 1px solid #ddd !important;\n}\n}\nhtml {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\n*,\n*::before,\n*::after {\n  -webkit-box-sizing: inherit;\n          box-sizing: inherit;\n}\n@-ms-viewport {\n  width: device-width;\n}\nhtml {\n  -ms-overflow-style: scrollbar;\n  -webkit-tap-highlight-color: transparent;\n}\nbody {\n  font-family: \"Source Sans Pro\", sans-serif;\n  font-size: 1rem;\n  font-weight: 300;\n  line-height: 1.5;\n  color: #34495e;\n  background-color: #eee;\n}\n[tabindex=\"-1\"]:focus {\n  outline: none !important;\n}\nh1, h2, h3, h4, h5, h6 {\n  margin-top: 0;\n  margin-bottom: .5rem;\n}\np {\n  margin-top: 0;\n  margin-bottom: 1rem;\n}\nabbr[title],\nabbr[data-original-title] {\n  cursor: help;\n}\naddress {\n  margin-bottom: 1rem;\n  font-style: normal;\n  line-height: inherit;\n}\nol,\nul,\ndl {\n  margin-top: 0;\n  margin-bottom: 1rem;\n}\nol ol,\nul ul,\nol ul,\nul ol {\n  margin-bottom: 0;\n}\ndt {\n  font-weight: 700;\n}\ndd {\n  margin-bottom: .5rem;\n  margin-left: 0;\n}\nblockquote {\n  margin: 0 0 1rem;\n}\na {\n  color: #4ae387;\n  text-decoration: none;\n}\na:focus, a:hover {\n    color: #1ec260;\n    text-decoration: underline;\n}\na:not([href]):not([tabindex]) {\n  color: inherit;\n  text-decoration: none;\n}\na:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {\n    color: inherit;\n    text-decoration: none;\n}\na:not([href]):not([tabindex]):focus {\n    outline: 0;\n}\npre {\n  margin-top: 0;\n  margin-bottom: 1rem;\n  overflow: auto;\n}\nfigure {\n  margin: 0 0 1rem;\n}\nimg {\n  vertical-align: middle;\n}\n[role=\"button\"] {\n  cursor: pointer;\n}\na,\narea,\nbutton,\n[role=\"button\"],\ninput,\nlabel,\nselect,\nsummary,\ntextarea {\n  -ms-touch-action: manipulation;\n      touch-action: manipulation;\n}\ntable {\n  border-collapse: collapse;\n  background-color: transparent;\n}\ncaption {\n  padding-top: 0.75rem;\n  padding-bottom: 0.75rem;\n  color: #acb5be;\n  text-align: left;\n  caption-side: bottom;\n}\nth {\n  text-align: left;\n}\nlabel {\n  display: inline-block;\n  margin-bottom: .5rem;\n}\nbutton:focus {\n  outline: 1px dotted;\n  outline: 5px auto -webkit-focus-ring-color;\n}\ninput,\nbutton,\nselect,\ntextarea {\n  line-height: inherit;\n}\ninput[type=\"radio\"]:disabled,\ninput[type=\"checkbox\"]:disabled {\n  cursor: not-allowed;\n}\ninput[type=\"date\"],\ninput[type=\"time\"],\ninput[type=\"datetime-local\"],\ninput[type=\"month\"] {\n  -webkit-appearance: listbox;\n}\ntextarea {\n  resize: vertical;\n}\nfieldset {\n  min-width: 0;\n  padding: 0;\n  margin: 0;\n  border: 0;\n}\nlegend {\n  display: block;\n  width: 100%;\n  padding: 0;\n  margin-bottom: .5rem;\n  font-size: 1.5rem;\n  line-height: inherit;\n}\ninput[type=\"search\"] {\n  -webkit-appearance: none;\n}\noutput {\n  display: inline-block;\n}\n[hidden] {\n  display: none !important;\n}\nh1, h2, h3, h4, h5, h6,\n.h1, .h2, .h3, .h4, .h5, .h6 {\n  margin-bottom: 0.5rem;\n  font-family: inherit;\n  font-weight: 500;\n  line-height: 1;\n  color: inherit;\n}\nh1, .h1 {\n  font-size: 2.625rem;\n}\nh2, .h2 {\n  font-size: 2.25rem;\n}\nh3, .h3 {\n  font-size: 1.75rem;\n}\nh4, .h4 {\n  font-size: 1.375rem;\n}\nh5, .h5 {\n  font-size: 1.25rem;\n}\nh6, .h6 {\n  font-size: 1rem;\n}\n.lead {\n  font-size: 1.25rem;\n  font-weight: 300;\n}\n.display-1 {\n  font-size: 6rem;\n  font-weight: 300;\n  line-height: 1;\n}\n.display-2 {\n  font-size: 5.5rem;\n  font-weight: 300;\n  line-height: 1;\n}\n.display-3 {\n  font-size: 4.5rem;\n  font-weight: 300;\n  line-height: 1;\n}\n.display-4 {\n  font-size: 3.5rem;\n  font-weight: 300;\n  line-height: 1;\n}\nhr {\n  margin-top: 1rem;\n  margin-bottom: 1rem;\n  border: 0;\n  border-top: 1px solid rgba(0, 0, 0, 0.1);\n}\nsmall,\n.small {\n  font-size: 80%;\n  font-weight: 400;\n}\nmark,\n.mark {\n  padding: 0.2em;\n  background-color: #fff1c8;\n}\n.list-unstyled {\n  padding-left: 0;\n  list-style: none;\n}\n.list-inline {\n  padding-left: 0;\n  list-style: none;\n}\n.list-inline-item {\n  display: inline-block;\n}\n.list-inline-item:not(:last-child) {\n    margin-right: 5px;\n}\n.initialism {\n  font-size: 90%;\n  text-transform: uppercase;\n}\n.blockquote {\n  padding: 0.5rem 1rem;\n  margin-bottom: 1rem;\n  font-size: 1.5rem;\n  border-left: 0.375rem solid #4ae387;\n}\n.blockquote-footer {\n  display: block;\n  font-size: 80%;\n  color: #acb5be;\n}\n.blockquote-footer::before {\n    content: \"\\2014   \\A0\";\n}\n.blockquote-reverse {\n  padding-right: 1rem;\n  padding-left: 0;\n  text-align: right;\n  border-right: 0.375rem solid #4ae387;\n  border-left: 0;\n}\n.blockquote-reverse .blockquote-footer::before {\n  content: \"\";\n}\n.blockquote-reverse .blockquote-footer::after {\n  content: \"\\A0   \\2014\";\n}\n.img-fluid {\n  max-width: 100%;\n  height: auto;\n}\n.img-thumbnail {\n  padding: 0.25rem;\n  background-color: #eee;\n  border: 1px solid #ddd;\n  border-radius: 0.25rem;\n  -webkit-transition: all 0.2s ease-in-out;\n  transition: all 0.2s ease-in-out;\n  max-width: 100%;\n  height: auto;\n}\n.figure {\n  display: inline-block;\n}\n.figure-img {\n  margin-bottom: 0.5rem;\n  line-height: 1;\n}\n.figure-caption {\n  font-size: 90%;\n  color: #acb5be;\n}\ncode,\nkbd,\npre,\nsamp {\n  font-family: Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace;\n}\ncode {\n  padding: 0.2rem 0.4rem;\n  font-size: 90%;\n  color: #bd4147;\n  background-color: #f7f7f9;\n  border-radius: 0.25rem;\n}\na > code {\n    padding: 0;\n    color: inherit;\n    background-color: inherit;\n}\nkbd {\n  padding: 0.2rem 0.4rem;\n  font-size: 90%;\n  color: #fff;\n  background-color: #292b2c;\n  border-radius: 0.2rem;\n}\nkbd kbd {\n    padding: 0;\n    font-size: 100%;\n    font-weight: 700;\n}\npre {\n  display: block;\n  margin-top: 0;\n  margin-bottom: 1rem;\n  font-size: 90%;\n  color: #292b2c;\n}\npre code {\n    padding: 0;\n    font-size: inherit;\n    color: inherit;\n    background-color: transparent;\n    border-radius: 0;\n}\n.pre-scrollable {\n  max-height: 340px;\n  overflow-y: scroll;\n}\n.container {\n  position: relative;\n  margin-left: auto;\n  margin-right: auto;\n  padding-right: 15px;\n  padding-left: 15px;\n}\n@media (min-width: 576px) {\n.container {\n      padding-right: 15px;\n      padding-left: 15px;\n}\n}\n@media (min-width: 768px) {\n.container {\n      padding-right: 15px;\n      padding-left: 15px;\n}\n}\n@media (min-width: 992px) {\n.container {\n      padding-right: 15px;\n      padding-left: 15px;\n}\n}\n@media (min-width: 1200px) {\n.container {\n      padding-right: 15px;\n      padding-left: 15px;\n}\n}\n@media (min-width: 576px) {\n.container {\n      width: 540px;\n      max-width: 100%;\n}\n}\n@media (min-width: 768px) {\n.container {\n      width: 720px;\n      max-width: 100%;\n}\n}\n@media (min-width: 992px) {\n.container {\n      width: 960px;\n      max-width: 100%;\n}\n}\n@media (min-width: 1200px) {\n.container {\n      width: 1140px;\n      max-width: 100%;\n}\n}\n.container-fluid {\n  position: relative;\n  margin-left: auto;\n  margin-right: auto;\n  padding-right: 15px;\n  padding-left: 15px;\n}\n@media (min-width: 576px) {\n.container-fluid {\n      padding-right: 15px;\n      padding-left: 15px;\n}\n}\n@media (min-width: 768px) {\n.container-fluid {\n      padding-right: 15px;\n      padding-left: 15px;\n}\n}\n@media (min-width: 992px) {\n.container-fluid {\n      padding-right: 15px;\n      padding-left: 15px;\n}\n}\n@media (min-width: 1200px) {\n.container-fluid {\n      padding-right: 15px;\n      padding-left: 15px;\n}\n}\n.row {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  margin-right: -15px;\n  margin-left: -15px;\n}\n@media (min-width: 576px) {\n.row {\n      margin-right: -15px;\n      margin-left: -15px;\n}\n}\n@media (min-width: 768px) {\n.row {\n      margin-right: -15px;\n      margin-left: -15px;\n}\n}\n@media (min-width: 992px) {\n.row {\n      margin-right: -15px;\n      margin-left: -15px;\n}\n}\n@media (min-width: 1200px) {\n.row {\n      margin-right: -15px;\n      margin-left: -15px;\n}\n}\n.no-gutters {\n  margin-right: 0;\n  margin-left: 0;\n}\n.no-gutters > .col,\n  .no-gutters > [class*=\"col-\"] {\n    padding-right: 0;\n    padding-left: 0;\n}\n.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {\n  position: relative;\n  width: 100%;\n  min-height: 1px;\n  padding-right: 15px;\n  padding-left: 15px;\n}\n@media (min-width: 576px) {\n.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {\n      padding-right: 15px;\n      padding-left: 15px;\n}\n}\n@media (min-width: 768px) {\n.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {\n      padding-right: 15px;\n      padding-left: 15px;\n}\n}\n@media (min-width: 992px) {\n.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {\n      padding-right: 15px;\n      padding-left: 15px;\n}\n}\n@media (min-width: 1200px) {\n.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl {\n      padding-right: 15px;\n      padding-left: 15px;\n}\n}\n.col {\n  -ms-flex-preferred-size: 0;\n      flex-basis: 0;\n  -webkit-box-flex: 1;\n      -ms-flex-positive: 1;\n          flex-grow: 1;\n  max-width: 100%;\n}\n.col-auto {\n  -webkit-box-flex: 0;\n      -ms-flex: 0 0 auto;\n          flex: 0 0 auto;\n  width: auto;\n}\n.col-1 {\n  -webkit-box-flex: 0;\n      -ms-flex: 0 0 8.33333%;\n          flex: 0 0 8.33333%;\n  max-width: 8.33333%;\n}\n.col-2 {\n  -webkit-box-flex: 0;\n      -ms-flex: 0 0 16.66667%;\n          flex: 0 0 16.66667%;\n  max-width: 16.66667%;\n}\n.col-3 {\n  -webkit-box-flex: 0;\n      -ms-flex: 0 0 25%;\n          flex: 0 0 25%;\n  max-width: 25%;\n}\n.col-4 {\n  -webkit-box-flex: 0;\n      -ms-flex: 0 0 33.33333%;\n          flex: 0 0 33.33333%;\n  max-width: 33.33333%;\n}\n.col-5 {\n  -webkit-box-flex: 0;\n      -ms-flex: 0 0 41.66667%;\n          flex: 0 0 41.66667%;\n  max-width: 41.66667%;\n}\n.col-6 {\n  -webkit-box-flex: 0;\n      -ms-flex: 0 0 50%;\n          flex: 0 0 50%;\n  max-width: 50%;\n}\n.col-7 {\n  -webkit-box-flex: 0;\n      -ms-flex: 0 0 58.33333%;\n          flex: 0 0 58.33333%;\n  max-width: 58.33333%;\n}\n.col-8 {\n  -webkit-box-flex: 0;\n      -ms-flex: 0 0 66.66667%;\n          flex: 0 0 66.66667%;\n  max-width: 66.66667%;\n}\n.col-9 {\n  -webkit-box-flex: 0;\n      -ms-flex: 0 0 75%;\n          flex: 0 0 75%;\n  max-width: 75%;\n}\n.col-10 {\n  -webkit-box-flex: 0;\n      -ms-flex: 0 0 83.33333%;\n          flex: 0 0 83.33333%;\n  max-width: 83.33333%;\n}\n.col-11 {\n  -webkit-box-flex: 0;\n      -ms-flex: 0 0 91.66667%;\n          flex: 0 0 91.66667%;\n  max-width: 91.66667%;\n}\n.col-12 {\n  -webkit-box-flex: 0;\n      -ms-flex: 0 0 100%;\n          flex: 0 0 100%;\n  max-width: 100%;\n}\n.pull-0 {\n  right: auto;\n}\n.pull-1 {\n  right: 8.33333%;\n}\n.pull-2 {\n  right: 16.66667%;\n}\n.pull-3 {\n  right: 25%;\n}\n.pull-4 {\n  right: 33.33333%;\n}\n.pull-5 {\n  right: 41.66667%;\n}\n.pull-6 {\n  right: 50%;\n}\n.pull-7 {\n  right: 58.33333%;\n}\n.pull-8 {\n  right: 66.66667%;\n}\n.pull-9 {\n  right: 75%;\n}\n.pull-10 {\n  right: 83.33333%;\n}\n.pull-11 {\n  right: 91.66667%;\n}\n.pull-12 {\n  right: 100%;\n}\n.push-0 {\n  left: auto;\n}\n.push-1 {\n  left: 8.33333%;\n}\n.push-2 {\n  left: 16.66667%;\n}\n.push-3 {\n  left: 25%;\n}\n.push-4 {\n  left: 33.33333%;\n}\n.push-5 {\n  left: 41.66667%;\n}\n.push-6 {\n  left: 50%;\n}\n.push-7 {\n  left: 58.33333%;\n}\n.push-8 {\n  left: 66.66667%;\n}\n.push-9 {\n  left: 75%;\n}\n.push-10 {\n  left: 83.33333%;\n}\n.push-11 {\n  left: 91.66667%;\n}\n.push-12 {\n  left: 100%;\n}\n.offset-1 {\n  margin-left: 8.33333%;\n}\n.offset-2 {\n  margin-left: 16.66667%;\n}\n.offset-3 {\n  margin-left: 25%;\n}\n.offset-4 {\n  margin-left: 33.33333%;\n}\n.offset-5 {\n  margin-left: 41.66667%;\n}\n.offset-6 {\n  margin-left: 50%;\n}\n.offset-7 {\n  margin-left: 58.33333%;\n}\n.offset-8 {\n  margin-left: 66.66667%;\n}\n.offset-9 {\n  margin-left: 75%;\n}\n.offset-10 {\n  margin-left: 83.33333%;\n}\n.offset-11 {\n  margin-left: 91.66667%;\n}\n@media (min-width: 576px) {\n.col-sm {\n    -ms-flex-preferred-size: 0;\n        flex-basis: 0;\n    -webkit-box-flex: 1;\n        -ms-flex-positive: 1;\n            flex-grow: 1;\n    max-width: 100%;\n}\n.col-sm-auto {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 auto;\n            flex: 0 0 auto;\n    width: auto;\n}\n.col-sm-1 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 8.33333%;\n            flex: 0 0 8.33333%;\n    max-width: 8.33333%;\n}\n.col-sm-2 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 16.66667%;\n            flex: 0 0 16.66667%;\n    max-width: 16.66667%;\n}\n.col-sm-3 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 25%;\n            flex: 0 0 25%;\n    max-width: 25%;\n}\n.col-sm-4 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 33.33333%;\n            flex: 0 0 33.33333%;\n    max-width: 33.33333%;\n}\n.col-sm-5 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 41.66667%;\n            flex: 0 0 41.66667%;\n    max-width: 41.66667%;\n}\n.col-sm-6 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 50%;\n            flex: 0 0 50%;\n    max-width: 50%;\n}\n.col-sm-7 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 58.33333%;\n            flex: 0 0 58.33333%;\n    max-width: 58.33333%;\n}\n.col-sm-8 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 66.66667%;\n            flex: 0 0 66.66667%;\n    max-width: 66.66667%;\n}\n.col-sm-9 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 75%;\n            flex: 0 0 75%;\n    max-width: 75%;\n}\n.col-sm-10 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 83.33333%;\n            flex: 0 0 83.33333%;\n    max-width: 83.33333%;\n}\n.col-sm-11 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 91.66667%;\n            flex: 0 0 91.66667%;\n    max-width: 91.66667%;\n}\n.col-sm-12 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 100%;\n            flex: 0 0 100%;\n    max-width: 100%;\n}\n.pull-sm-0 {\n    right: auto;\n}\n.pull-sm-1 {\n    right: 8.33333%;\n}\n.pull-sm-2 {\n    right: 16.66667%;\n}\n.pull-sm-3 {\n    right: 25%;\n}\n.pull-sm-4 {\n    right: 33.33333%;\n}\n.pull-sm-5 {\n    right: 41.66667%;\n}\n.pull-sm-6 {\n    right: 50%;\n}\n.pull-sm-7 {\n    right: 58.33333%;\n}\n.pull-sm-8 {\n    right: 66.66667%;\n}\n.pull-sm-9 {\n    right: 75%;\n}\n.pull-sm-10 {\n    right: 83.33333%;\n}\n.pull-sm-11 {\n    right: 91.66667%;\n}\n.pull-sm-12 {\n    right: 100%;\n}\n.push-sm-0 {\n    left: auto;\n}\n.push-sm-1 {\n    left: 8.33333%;\n}\n.push-sm-2 {\n    left: 16.66667%;\n}\n.push-sm-3 {\n    left: 25%;\n}\n.push-sm-4 {\n    left: 33.33333%;\n}\n.push-sm-5 {\n    left: 41.66667%;\n}\n.push-sm-6 {\n    left: 50%;\n}\n.push-sm-7 {\n    left: 58.33333%;\n}\n.push-sm-8 {\n    left: 66.66667%;\n}\n.push-sm-9 {\n    left: 75%;\n}\n.push-sm-10 {\n    left: 83.33333%;\n}\n.push-sm-11 {\n    left: 91.66667%;\n}\n.push-sm-12 {\n    left: 100%;\n}\n.offset-sm-0 {\n    margin-left: 0%;\n}\n.offset-sm-1 {\n    margin-left: 8.33333%;\n}\n.offset-sm-2 {\n    margin-left: 16.66667%;\n}\n.offset-sm-3 {\n    margin-left: 25%;\n}\n.offset-sm-4 {\n    margin-left: 33.33333%;\n}\n.offset-sm-5 {\n    margin-left: 41.66667%;\n}\n.offset-sm-6 {\n    margin-left: 50%;\n}\n.offset-sm-7 {\n    margin-left: 58.33333%;\n}\n.offset-sm-8 {\n    margin-left: 66.66667%;\n}\n.offset-sm-9 {\n    margin-left: 75%;\n}\n.offset-sm-10 {\n    margin-left: 83.33333%;\n}\n.offset-sm-11 {\n    margin-left: 91.66667%;\n}\n}\n@media (min-width: 768px) {\n.col-md {\n    -ms-flex-preferred-size: 0;\n        flex-basis: 0;\n    -webkit-box-flex: 1;\n        -ms-flex-positive: 1;\n            flex-grow: 1;\n    max-width: 100%;\n}\n.col-md-auto {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 auto;\n            flex: 0 0 auto;\n    width: auto;\n}\n.col-md-1 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 8.33333%;\n            flex: 0 0 8.33333%;\n    max-width: 8.33333%;\n}\n.col-md-2 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 16.66667%;\n            flex: 0 0 16.66667%;\n    max-width: 16.66667%;\n}\n.col-md-3 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 25%;\n            flex: 0 0 25%;\n    max-width: 25%;\n}\n.col-md-4 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 33.33333%;\n            flex: 0 0 33.33333%;\n    max-width: 33.33333%;\n}\n.col-md-5 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 41.66667%;\n            flex: 0 0 41.66667%;\n    max-width: 41.66667%;\n}\n.col-md-6 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 50%;\n            flex: 0 0 50%;\n    max-width: 50%;\n}\n.col-md-7 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 58.33333%;\n            flex: 0 0 58.33333%;\n    max-width: 58.33333%;\n}\n.col-md-8 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 66.66667%;\n            flex: 0 0 66.66667%;\n    max-width: 66.66667%;\n}\n.col-md-9 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 75%;\n            flex: 0 0 75%;\n    max-width: 75%;\n}\n.col-md-10 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 83.33333%;\n            flex: 0 0 83.33333%;\n    max-width: 83.33333%;\n}\n.col-md-11 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 91.66667%;\n            flex: 0 0 91.66667%;\n    max-width: 91.66667%;\n}\n.col-md-12 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 100%;\n            flex: 0 0 100%;\n    max-width: 100%;\n}\n.pull-md-0 {\n    right: auto;\n}\n.pull-md-1 {\n    right: 8.33333%;\n}\n.pull-md-2 {\n    right: 16.66667%;\n}\n.pull-md-3 {\n    right: 25%;\n}\n.pull-md-4 {\n    right: 33.33333%;\n}\n.pull-md-5 {\n    right: 41.66667%;\n}\n.pull-md-6 {\n    right: 50%;\n}\n.pull-md-7 {\n    right: 58.33333%;\n}\n.pull-md-8 {\n    right: 66.66667%;\n}\n.pull-md-9 {\n    right: 75%;\n}\n.pull-md-10 {\n    right: 83.33333%;\n}\n.pull-md-11 {\n    right: 91.66667%;\n}\n.pull-md-12 {\n    right: 100%;\n}\n.push-md-0 {\n    left: auto;\n}\n.push-md-1 {\n    left: 8.33333%;\n}\n.push-md-2 {\n    left: 16.66667%;\n}\n.push-md-3 {\n    left: 25%;\n}\n.push-md-4 {\n    left: 33.33333%;\n}\n.push-md-5 {\n    left: 41.66667%;\n}\n.push-md-6 {\n    left: 50%;\n}\n.push-md-7 {\n    left: 58.33333%;\n}\n.push-md-8 {\n    left: 66.66667%;\n}\n.push-md-9 {\n    left: 75%;\n}\n.push-md-10 {\n    left: 83.33333%;\n}\n.push-md-11 {\n    left: 91.66667%;\n}\n.push-md-12 {\n    left: 100%;\n}\n.offset-md-0 {\n    margin-left: 0%;\n}\n.offset-md-1 {\n    margin-left: 8.33333%;\n}\n.offset-md-2 {\n    margin-left: 16.66667%;\n}\n.offset-md-3 {\n    margin-left: 25%;\n}\n.offset-md-4 {\n    margin-left: 33.33333%;\n}\n.offset-md-5 {\n    margin-left: 41.66667%;\n}\n.offset-md-6 {\n    margin-left: 50%;\n}\n.offset-md-7 {\n    margin-left: 58.33333%;\n}\n.offset-md-8 {\n    margin-left: 66.66667%;\n}\n.offset-md-9 {\n    margin-left: 75%;\n}\n.offset-md-10 {\n    margin-left: 83.33333%;\n}\n.offset-md-11 {\n    margin-left: 91.66667%;\n}\n}\n@media (min-width: 992px) {\n.col-lg {\n    -ms-flex-preferred-size: 0;\n        flex-basis: 0;\n    -webkit-box-flex: 1;\n        -ms-flex-positive: 1;\n            flex-grow: 1;\n    max-width: 100%;\n}\n.col-lg-auto {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 auto;\n            flex: 0 0 auto;\n    width: auto;\n}\n.col-lg-1 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 8.33333%;\n            flex: 0 0 8.33333%;\n    max-width: 8.33333%;\n}\n.col-lg-2 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 16.66667%;\n            flex: 0 0 16.66667%;\n    max-width: 16.66667%;\n}\n.col-lg-3 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 25%;\n            flex: 0 0 25%;\n    max-width: 25%;\n}\n.col-lg-4 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 33.33333%;\n            flex: 0 0 33.33333%;\n    max-width: 33.33333%;\n}\n.col-lg-5 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 41.66667%;\n            flex: 0 0 41.66667%;\n    max-width: 41.66667%;\n}\n.col-lg-6 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 50%;\n            flex: 0 0 50%;\n    max-width: 50%;\n}\n.col-lg-7 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 58.33333%;\n            flex: 0 0 58.33333%;\n    max-width: 58.33333%;\n}\n.col-lg-8 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 66.66667%;\n            flex: 0 0 66.66667%;\n    max-width: 66.66667%;\n}\n.col-lg-9 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 75%;\n            flex: 0 0 75%;\n    max-width: 75%;\n}\n.col-lg-10 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 83.33333%;\n            flex: 0 0 83.33333%;\n    max-width: 83.33333%;\n}\n.col-lg-11 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 91.66667%;\n            flex: 0 0 91.66667%;\n    max-width: 91.66667%;\n}\n.col-lg-12 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 100%;\n            flex: 0 0 100%;\n    max-width: 100%;\n}\n.pull-lg-0 {\n    right: auto;\n}\n.pull-lg-1 {\n    right: 8.33333%;\n}\n.pull-lg-2 {\n    right: 16.66667%;\n}\n.pull-lg-3 {\n    right: 25%;\n}\n.pull-lg-4 {\n    right: 33.33333%;\n}\n.pull-lg-5 {\n    right: 41.66667%;\n}\n.pull-lg-6 {\n    right: 50%;\n}\n.pull-lg-7 {\n    right: 58.33333%;\n}\n.pull-lg-8 {\n    right: 66.66667%;\n}\n.pull-lg-9 {\n    right: 75%;\n}\n.pull-lg-10 {\n    right: 83.33333%;\n}\n.pull-lg-11 {\n    right: 91.66667%;\n}\n.pull-lg-12 {\n    right: 100%;\n}\n.push-lg-0 {\n    left: auto;\n}\n.push-lg-1 {\n    left: 8.33333%;\n}\n.push-lg-2 {\n    left: 16.66667%;\n}\n.push-lg-3 {\n    left: 25%;\n}\n.push-lg-4 {\n    left: 33.33333%;\n}\n.push-lg-5 {\n    left: 41.66667%;\n}\n.push-lg-6 {\n    left: 50%;\n}\n.push-lg-7 {\n    left: 58.33333%;\n}\n.push-lg-8 {\n    left: 66.66667%;\n}\n.push-lg-9 {\n    left: 75%;\n}\n.push-lg-10 {\n    left: 83.33333%;\n}\n.push-lg-11 {\n    left: 91.66667%;\n}\n.push-lg-12 {\n    left: 100%;\n}\n.offset-lg-0 {\n    margin-left: 0%;\n}\n.offset-lg-1 {\n    margin-left: 8.33333%;\n}\n.offset-lg-2 {\n    margin-left: 16.66667%;\n}\n.offset-lg-3 {\n    margin-left: 25%;\n}\n.offset-lg-4 {\n    margin-left: 33.33333%;\n}\n.offset-lg-5 {\n    margin-left: 41.66667%;\n}\n.offset-lg-6 {\n    margin-left: 50%;\n}\n.offset-lg-7 {\n    margin-left: 58.33333%;\n}\n.offset-lg-8 {\n    margin-left: 66.66667%;\n}\n.offset-lg-9 {\n    margin-left: 75%;\n}\n.offset-lg-10 {\n    margin-left: 83.33333%;\n}\n.offset-lg-11 {\n    margin-left: 91.66667%;\n}\n}\n@media (min-width: 1200px) {\n.col-xl {\n    -ms-flex-preferred-size: 0;\n        flex-basis: 0;\n    -webkit-box-flex: 1;\n        -ms-flex-positive: 1;\n            flex-grow: 1;\n    max-width: 100%;\n}\n.col-xl-auto {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 auto;\n            flex: 0 0 auto;\n    width: auto;\n}\n.col-xl-1 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 8.33333%;\n            flex: 0 0 8.33333%;\n    max-width: 8.33333%;\n}\n.col-xl-2 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 16.66667%;\n            flex: 0 0 16.66667%;\n    max-width: 16.66667%;\n}\n.col-xl-3 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 25%;\n            flex: 0 0 25%;\n    max-width: 25%;\n}\n.col-xl-4 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 33.33333%;\n            flex: 0 0 33.33333%;\n    max-width: 33.33333%;\n}\n.col-xl-5 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 41.66667%;\n            flex: 0 0 41.66667%;\n    max-width: 41.66667%;\n}\n.col-xl-6 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 50%;\n            flex: 0 0 50%;\n    max-width: 50%;\n}\n.col-xl-7 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 58.33333%;\n            flex: 0 0 58.33333%;\n    max-width: 58.33333%;\n}\n.col-xl-8 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 66.66667%;\n            flex: 0 0 66.66667%;\n    max-width: 66.66667%;\n}\n.col-xl-9 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 75%;\n            flex: 0 0 75%;\n    max-width: 75%;\n}\n.col-xl-10 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 83.33333%;\n            flex: 0 0 83.33333%;\n    max-width: 83.33333%;\n}\n.col-xl-11 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 91.66667%;\n            flex: 0 0 91.66667%;\n    max-width: 91.66667%;\n}\n.col-xl-12 {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 100%;\n            flex: 0 0 100%;\n    max-width: 100%;\n}\n.pull-xl-0 {\n    right: auto;\n}\n.pull-xl-1 {\n    right: 8.33333%;\n}\n.pull-xl-2 {\n    right: 16.66667%;\n}\n.pull-xl-3 {\n    right: 25%;\n}\n.pull-xl-4 {\n    right: 33.33333%;\n}\n.pull-xl-5 {\n    right: 41.66667%;\n}\n.pull-xl-6 {\n    right: 50%;\n}\n.pull-xl-7 {\n    right: 58.33333%;\n}\n.pull-xl-8 {\n    right: 66.66667%;\n}\n.pull-xl-9 {\n    right: 75%;\n}\n.pull-xl-10 {\n    right: 83.33333%;\n}\n.pull-xl-11 {\n    right: 91.66667%;\n}\n.pull-xl-12 {\n    right: 100%;\n}\n.push-xl-0 {\n    left: auto;\n}\n.push-xl-1 {\n    left: 8.33333%;\n}\n.push-xl-2 {\n    left: 16.66667%;\n}\n.push-xl-3 {\n    left: 25%;\n}\n.push-xl-4 {\n    left: 33.33333%;\n}\n.push-xl-5 {\n    left: 41.66667%;\n}\n.push-xl-6 {\n    left: 50%;\n}\n.push-xl-7 {\n    left: 58.33333%;\n}\n.push-xl-8 {\n    left: 66.66667%;\n}\n.push-xl-9 {\n    left: 75%;\n}\n.push-xl-10 {\n    left: 83.33333%;\n}\n.push-xl-11 {\n    left: 91.66667%;\n}\n.push-xl-12 {\n    left: 100%;\n}\n.offset-xl-0 {\n    margin-left: 0%;\n}\n.offset-xl-1 {\n    margin-left: 8.33333%;\n}\n.offset-xl-2 {\n    margin-left: 16.66667%;\n}\n.offset-xl-3 {\n    margin-left: 25%;\n}\n.offset-xl-4 {\n    margin-left: 33.33333%;\n}\n.offset-xl-5 {\n    margin-left: 41.66667%;\n}\n.offset-xl-6 {\n    margin-left: 50%;\n}\n.offset-xl-7 {\n    margin-left: 58.33333%;\n}\n.offset-xl-8 {\n    margin-left: 66.66667%;\n}\n.offset-xl-9 {\n    margin-left: 75%;\n}\n.offset-xl-10 {\n    margin-left: 83.33333%;\n}\n.offset-xl-11 {\n    margin-left: 91.66667%;\n}\n}\n.table {\n  width: 100%;\n  max-width: 100%;\n  margin-bottom: 1rem;\n}\n.table th,\n  .table td {\n    padding: 0.75rem;\n    vertical-align: top;\n    border-top: #fff solid #eceeef;\n}\n.table thead th {\n    vertical-align: bottom;\n    border-bottom: white solid #eceeef;\n}\n.table tbody + tbody {\n    border-top: white solid #eceeef;\n}\n.table .table {\n    background-color: #eee;\n}\n.table-sm th,\n.table-sm td {\n  padding: 0.3rem;\n}\n.table-bordered {\n  border: #fff solid #eceeef;\n}\n.table-bordered th,\n  .table-bordered td {\n    border: #fff solid #eceeef;\n}\n.table-bordered thead th,\n  .table-bordered thead td {\n    border-bottom-width: white;\n}\n.table-striped tbody tr:nth-of-type(odd) {\n  background-color: #fff;\n}\n.table-hover tbody tr:hover {\n  background-color: rgba(0, 0, 0, 0.075);\n}\n.table-active,\n.table-active > th,\n.table-active > td {\n  background-color: rgba(0, 0, 0, 0.075);\n}\n.table-hover .table-active:hover {\n  background-color: rgba(0, 0, 0, 0.075);\n}\n.table-hover .table-active:hover > td,\n  .table-hover .table-active:hover > th {\n    background-color: rgba(0, 0, 0, 0.075);\n}\n.table-success,\n.table-success > th,\n.table-success > td {\n  background-color: #c8fac6;\n}\n.table-hover .table-success:hover {\n  background-color: #b1f8af;\n}\n.table-hover .table-success:hover > td,\n  .table-hover .table-success:hover > th {\n    background-color: #b1f8af;\n}\n.table-info,\n.table-info > th,\n.table-info > td {\n  background-color: #dcf1ff;\n}\n.table-hover .table-info:hover {\n  background-color: #c3e7ff;\n}\n.table-hover .table-info:hover > td,\n  .table-hover .table-info:hover > th {\n    background-color: #c3e7ff;\n}\n.table-warning,\n.table-warning > th,\n.table-warning > td {\n  background-color: #fff1c8;\n}\n.table-hover .table-warning:hover {\n  background-color: #ffebaf;\n}\n.table-hover .table-warning:hover > td,\n  .table-hover .table-warning:hover > th {\n    background-color: #ffebaf;\n}\n.table-danger,\n.table-danger > th,\n.table-danger > td {\n  background-color: #ffcece;\n}\n.table-hover .table-danger:hover {\n  background-color: #ffb5b5;\n}\n.table-hover .table-danger:hover > td,\n  .table-hover .table-danger:hover > th {\n    background-color: #ffb5b5;\n}\n.thead-inverse th {\n  color: #eee;\n  background-color: #292b2c;\n}\n.thead-default th {\n  color: #adb3b9;\n  background-color: #eceeef;\n}\n.table-inverse {\n  color: #eee;\n  background-color: #292b2c;\n}\n.table-inverse th,\n  .table-inverse td,\n  .table-inverse thead th {\n    border-color: #eee;\n}\n.table-inverse.table-bordered {\n    border: 0;\n}\n.table-responsive {\n  display: block;\n  width: 100%;\n  overflow-x: auto;\n  -ms-overflow-style: -ms-autohiding-scrollbar;\n}\n.table-responsive.table-bordered {\n    border: 0;\n}\n.form-control {\n  display: block;\n  width: 100%;\n  padding: 0.5rem 0.75rem;\n  font-size: 1rem;\n  line-height: 1.25;\n  color: #adb3b9;\n  background-color: #fff;\n  background-image: none;\n  background-clip: padding-box;\n  border: 0px solid #ddd;\n  border-radius: 0.25rem;\n  -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;\n  transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;\n  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;\n  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;\n}\n.form-control::-ms-expand {\n    background-color: transparent;\n    border: 0;\n}\n.form-control:focus {\n    color: #adb3b9;\n    background-color: #fff;\n    border-color: #b8f4d0;\n    outline: none;\n}\n.form-control::-webkit-input-placeholder {\n    color: #acb5be;\n    opacity: 1;\n}\n.form-control:-ms-input-placeholder {\n    color: #acb5be;\n    opacity: 1;\n}\n.form-control::-ms-input-placeholder {\n    color: #acb5be;\n    opacity: 1;\n}\n.form-control::placeholder {\n    color: #acb5be;\n    opacity: 1;\n}\n.form-control:disabled, .form-control[readonly] {\n    background-color: #fff;\n    opacity: 1;\n}\n.form-control:disabled {\n    cursor: not-allowed;\n}\nselect.form-control:not([size]):not([multiple]) {\n  height: calc(2.25rem + 2px);\n}\nselect.form-control:focus::-ms-value {\n  color: #adb3b9;\n  background-color: #fff;\n}\n.form-control-file,\n.form-control-range {\n  display: block;\n}\n.col-form-label {\n  padding-top: calc(0.5rem - 0px * 2);\n  padding-bottom: calc(0.5rem - 0px * 2);\n  margin-bottom: 0;\n}\n.col-form-label-lg {\n  padding-top: calc(0.75rem - 0px * 2);\n  padding-bottom: calc(0.75rem - 0px * 2);\n  font-size: 1.25rem;\n}\n.col-form-label-sm {\n  padding-top: calc(0.25rem - 0px * 2);\n  padding-bottom: calc(0.25rem - 0px * 2);\n  font-size: 0.875rem;\n}\n.col-form-legend {\n  padding-top: 0.5rem;\n  padding-bottom: 0.5rem;\n  margin-bottom: 0;\n  font-size: 1rem;\n}\n.form-control-static {\n  padding-top: 0.5rem;\n  padding-bottom: 0.5rem;\n  margin-bottom: 0;\n  line-height: 1.25;\n  border: solid transparent;\n  border-width: 0px 0;\n}\n.form-control-static.form-control-sm, .input-group-sm > .form-control-static.form-control,\n  .input-group-sm > .form-control-static.input-group-addon,\n  .input-group-sm > .input-group-btn > .form-control-static.btn, .form-control-static.form-control-lg, .input-group-lg > .form-control-static.form-control,\n  .input-group-lg > .form-control-static.input-group-addon,\n  .input-group-lg > .input-group-btn > .form-control-static.btn {\n    padding-right: 0;\n    padding-left: 0;\n}\n.form-control-sm, .input-group-sm > .form-control,\n.input-group-sm > .input-group-addon,\n.input-group-sm > .input-group-btn > .btn {\n  padding: 0.25rem 0.5rem;\n  font-size: 0.875rem;\n  border-radius: 0.2rem;\n}\nselect.form-control-sm:not([size]):not([multiple]), .input-group-sm > select.form-control:not([size]):not([multiple]),\n.input-group-sm > select.input-group-addon:not([size]):not([multiple]),\n.input-group-sm > .input-group-btn > select.btn:not([size]):not([multiple]) {\n  height: 1.8125rem;\n}\n.form-control-lg, .input-group-lg > .form-control,\n.input-group-lg > .input-group-addon,\n.input-group-lg > .input-group-btn > .btn {\n  padding: 0.75rem 1.5rem;\n  font-size: 1.25rem;\n  border-radius: 0.3rem;\n}\nselect.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.form-control:not([size]):not([multiple]),\n.input-group-lg > select.input-group-addon:not([size]):not([multiple]),\n.input-group-lg > .input-group-btn > select.btn:not([size]):not([multiple]) {\n  height: 3.16667rem;\n}\n.form-group {\n  margin-bottom: 1rem;\n}\n.form-text {\n  display: block;\n  margin-top: 0.25rem;\n}\n.form-check {\n  position: relative;\n  display: block;\n  margin-bottom: 0.5rem;\n}\n.form-check.disabled .form-check-label {\n    color: #acb5be;\n    cursor: not-allowed;\n}\n.form-check-label {\n  padding-left: 1.25rem;\n  margin-bottom: 0;\n  cursor: pointer;\n}\n.form-check-input {\n  position: absolute;\n  margin-top: 0.25rem;\n  margin-left: -1.25rem;\n}\n.form-check-input:only-child {\n    position: static;\n}\n.form-check-inline {\n  display: inline-block;\n}\n.form-check-inline .form-check-label {\n    vertical-align: middle;\n}\n.form-check-inline + .form-check-inline {\n    margin-left: 0.75rem;\n}\n.form-control-feedback {\n  margin-top: 0.25rem;\n}\n.form-control-success,\n.form-control-warning,\n.form-control-danger {\n  padding-right: 2.25rem;\n  background-repeat: no-repeat;\n  background-position: center right 0.5625rem;\n  background-size: 1.125rem 1.125rem;\n}\n.has-success .form-control-feedback,\n.has-success .form-control-label,\n.has-success .col-form-label,\n.has-success .form-check-label,\n.has-success .custom-control {\n  color: #db76df;\n}\n.has-success .form-control {\n  border-color: #db76df;\n}\n.has-success .input-group-addon {\n  color: #db76df;\n  border-color: #db76df;\n  background-color: white;\n}\n.has-success .form-control-success {\n  background-image: url(\"data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23db76df' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3E%3C/svg%3E\");\n}\n.has-warning .form-control-feedback,\n.has-warning .form-control-label,\n.has-warning .col-form-label,\n.has-warning .form-check-label,\n.has-warning .custom-control {\n  color: #f7cc36;\n}\n.has-warning .form-control {\n  border-color: #f7cc36;\n}\n.has-warning .input-group-addon {\n  color: #f7cc36;\n  border-color: #f7cc36;\n  background-color: #fffefa;\n}\n.has-warning .form-control-warning {\n  background-image: url(\"data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23f7cc36' d='M4.4 5.324h-.8v-2.46h.8zm0 1.42h-.8V5.89h.8zM3.76.63L.04 7.075c-.115.2.016.425.26.426h7.397c.242 0 .372-.226.258-.426C6.726 4.924 5.47 2.79 4.253.63c-.113-.174-.39-.174-.494 0z'/%3E%3C/svg%3E\");\n}\n.has-danger .form-control-feedback,\n.has-danger .form-control-label,\n.has-danger .col-form-label,\n.has-danger .form-check-label,\n.has-danger .custom-control {\n  color: #e34a4a;\n}\n.has-danger .form-control {\n  border-color: #e34a4a;\n}\n.has-danger .input-group-addon {\n  color: #e34a4a;\n  border-color: #e34a4a;\n  background-color: #fefbfb;\n}\n.has-danger .form-control-danger {\n  background-image: url(\"data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23e34a4a' viewBox='-2 -2 7 7'%3E%3Cpath stroke='%23d9534f' d='M0 0l3 3m0-3L0 3'/%3E%3Ccircle r='.5'/%3E%3Ccircle cx='3' r='.5'/%3E%3Ccircle cy='3' r='.5'/%3E%3Ccircle cx='3' cy='3' r='.5'/%3E%3C/svg%3E\");\n}\n.form-inline {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-flow: row wrap;\n          flex-flow: row wrap;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.form-inline .form-check {\n    width: 100%;\n}\n@media (min-width: 576px) {\n.form-inline label {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n      -webkit-box-pack: center;\n          -ms-flex-pack: center;\n              justify-content: center;\n      margin-bottom: 0;\n}\n.form-inline .form-group {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-flex: 0;\n          -ms-flex: 0 0 auto;\n              flex: 0 0 auto;\n      -webkit-box-orient: horizontal;\n      -webkit-box-direction: normal;\n          -ms-flex-flow: row wrap;\n              flex-flow: row wrap;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n      margin-bottom: 0;\n}\n.form-inline .form-control {\n      display: inline-block;\n      width: auto;\n      vertical-align: middle;\n}\n.form-inline .form-control-static {\n      display: inline-block;\n}\n.form-inline .input-group {\n      width: auto;\n}\n.form-inline .form-control-label {\n      margin-bottom: 0;\n      vertical-align: middle;\n}\n.form-inline .form-check {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n      -webkit-box-pack: center;\n          -ms-flex-pack: center;\n              justify-content: center;\n      width: auto;\n      margin-top: 0;\n      margin-bottom: 0;\n}\n.form-inline .form-check-label {\n      padding-left: 0;\n}\n.form-inline .form-check-input {\n      position: relative;\n      margin-top: 0;\n      margin-right: 0.25rem;\n      margin-left: 0;\n}\n.form-inline .custom-control {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n      -webkit-box-pack: center;\n          -ms-flex-pack: center;\n              justify-content: center;\n      padding-left: 0;\n}\n.form-inline .custom-control-indicator {\n      position: static;\n      display: inline-block;\n      margin-right: 0.25rem;\n      vertical-align: text-bottom;\n}\n.form-inline .has-feedback .form-control-feedback {\n      top: 0;\n}\n}\n.btn {\n  display: inline-block;\n  font-weight: 400;\n  line-height: 1.25;\n  text-align: center;\n  white-space: nowrap;\n  vertical-align: middle;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  border: 0px solid transparent;\n  padding: 1.1rem 3.9rem;\n  font-size: 1rem;\n  border-radius: 1.875rem;\n  -webkit-transition: all 0.2s ease-in-out;\n  transition: all 0.2s ease-in-out;\n}\n.btn:focus, .btn:hover {\n    text-decoration: none;\n}\n.btn:focus, .btn.focus {\n    outline: 0;\n    -webkit-box-shadow: 0 0 0 2px rgba(74, 227, 135, 0.25);\n            box-shadow: 0 0 0 2px rgba(74, 227, 135, 0.25);\n}\n.btn.disabled, .btn:disabled {\n    cursor: not-allowed;\n    opacity: .65;\n}\n.btn:active, .btn.active {\n    background-image: none;\n}\na.btn.disabled,\nfieldset[disabled] a.btn {\n  pointer-events: none;\n}\n.btn-primary {\n  color: #fff;\n  background-color: #4ae387;\n  border-color: #4ae387;\n}\n.btn-primary:hover {\n    color: #fff;\n    background-color: #21d96a;\n    border-color: #20d066;\n}\n.btn-primary:focus, .btn-primary.focus {\n    -webkit-box-shadow: 0 0 0 2px rgba(74, 227, 135, 0.5);\n            box-shadow: 0 0 0 2px rgba(74, 227, 135, 0.5);\n}\n.btn-primary.disabled, .btn-primary:disabled {\n    background-color: #4ae387;\n    border-color: #4ae387;\n}\n.btn-primary:active, .btn-primary.active,\n  .show > .btn-primary.dropdown-toggle {\n    color: #fff;\n    background-color: #21d96a;\n    background-image: none;\n    border-color: #20d066;\n}\n.btn-secondary {\n  color: #292b2c;\n  background-color: #fff;\n  border-color: #ccc;\n}\n.btn-secondary:hover {\n    color: #292b2c;\n    background-color: #e6e6e6;\n    border-color: #adadad;\n}\n.btn-secondary:focus, .btn-secondary.focus {\n    -webkit-box-shadow: 0 0 0 2px rgba(204, 204, 204, 0.5);\n            box-shadow: 0 0 0 2px rgba(204, 204, 204, 0.5);\n}\n.btn-secondary.disabled, .btn-secondary:disabled {\n    background-color: #fff;\n    border-color: #ccc;\n}\n.btn-secondary:active, .btn-secondary.active,\n  .show > .btn-secondary.dropdown-toggle {\n    color: #292b2c;\n    background-color: #e6e6e6;\n    background-image: none;\n    border-color: #adadad;\n}\n.btn-info {\n  color: #fff;\n  background-color: #4ab2e3;\n  border-color: #4ab2e3;\n}\n.btn-info:hover {\n    color: #fff;\n    background-color: #219ed9;\n    border-color: #2097d0;\n}\n.btn-info:focus, .btn-info.focus {\n    -webkit-box-shadow: 0 0 0 2px rgba(74, 178, 227, 0.5);\n            box-shadow: 0 0 0 2px rgba(74, 178, 227, 0.5);\n}\n.btn-info.disabled, .btn-info:disabled {\n    background-color: #4ab2e3;\n    border-color: #4ab2e3;\n}\n.btn-info:active, .btn-info.active,\n  .show > .btn-info.dropdown-toggle {\n    color: #fff;\n    background-color: #219ed9;\n    background-image: none;\n    border-color: #2097d0;\n}\n.btn-success {\n  color: #fff;\n  background-color: #db76df;\n  border-color: #db76df;\n}\n.btn-success:hover {\n    color: #fff;\n    background-color: #d04dd5;\n    border-color: #ce44d3;\n}\n.btn-success:focus, .btn-success.focus {\n    -webkit-box-shadow: 0 0 0 2px rgba(219, 118, 223, 0.5);\n            box-shadow: 0 0 0 2px rgba(219, 118, 223, 0.5);\n}\n.btn-success.disabled, .btn-success:disabled {\n    background-color: #db76df;\n    border-color: #db76df;\n}\n.btn-success:active, .btn-success.active,\n  .show > .btn-success.dropdown-toggle {\n    color: #fff;\n    background-color: #d04dd5;\n    background-image: none;\n    border-color: #ce44d3;\n}\n.btn-warning {\n  color: #fff;\n  background-color: #f7cc36;\n  border-color: #f7cc36;\n}\n.btn-warning:hover {\n    color: #fff;\n    background-color: #f0bd0a;\n    border-color: #e7b509;\n}\n.btn-warning:focus, .btn-warning.focus {\n    -webkit-box-shadow: 0 0 0 2px rgba(247, 204, 54, 0.5);\n            box-shadow: 0 0 0 2px rgba(247, 204, 54, 0.5);\n}\n.btn-warning.disabled, .btn-warning:disabled {\n    background-color: #f7cc36;\n    border-color: #f7cc36;\n}\n.btn-warning:active, .btn-warning.active,\n  .show > .btn-warning.dropdown-toggle {\n    color: #fff;\n    background-color: #f0bd0a;\n    background-image: none;\n    border-color: #e7b509;\n}\n.btn-danger {\n  color: #fff;\n  background-color: #e34a4a;\n  border-color: #e34a4a;\n}\n.btn-danger:hover {\n    color: #fff;\n    background-color: #d92121;\n    border-color: #d02020;\n}\n.btn-danger:focus, .btn-danger.focus {\n    -webkit-box-shadow: 0 0 0 2px rgba(227, 74, 74, 0.5);\n            box-shadow: 0 0 0 2px rgba(227, 74, 74, 0.5);\n}\n.btn-danger.disabled, .btn-danger:disabled {\n    background-color: #e34a4a;\n    border-color: #e34a4a;\n}\n.btn-danger:active, .btn-danger.active,\n  .show > .btn-danger.dropdown-toggle {\n    color: #fff;\n    background-color: #d92121;\n    background-image: none;\n    border-color: #d02020;\n}\n.btn-outline-primary {\n  color: #4ae387;\n  background-image: none;\n  background-color: transparent;\n  border-color: #4ae387;\n}\n.btn-outline-primary:hover {\n    color: #fff;\n    background-color: #4ae387;\n    border-color: #4ae387;\n}\n.btn-outline-primary:focus, .btn-outline-primary.focus {\n    -webkit-box-shadow: 0 0 0 2px rgba(74, 227, 135, 0.5);\n            box-shadow: 0 0 0 2px rgba(74, 227, 135, 0.5);\n}\n.btn-outline-primary.disabled, .btn-outline-primary:disabled {\n    color: #4ae387;\n    background-color: transparent;\n}\n.btn-outline-primary:active, .btn-outline-primary.active,\n  .show > .btn-outline-primary.dropdown-toggle {\n    color: #fff;\n    background-color: #4ae387;\n    border-color: #4ae387;\n}\n.btn-outline-secondary {\n  color: #ccc;\n  background-image: none;\n  background-color: transparent;\n  border-color: #ccc;\n}\n.btn-outline-secondary:hover {\n    color: #fff;\n    background-color: #ccc;\n    border-color: #ccc;\n}\n.btn-outline-secondary:focus, .btn-outline-secondary.focus {\n    -webkit-box-shadow: 0 0 0 2px rgba(204, 204, 204, 0.5);\n            box-shadow: 0 0 0 2px rgba(204, 204, 204, 0.5);\n}\n.btn-outline-secondary.disabled, .btn-outline-secondary:disabled {\n    color: #ccc;\n    background-color: transparent;\n}\n.btn-outline-secondary:active, .btn-outline-secondary.active,\n  .show > .btn-outline-secondary.dropdown-toggle {\n    color: #fff;\n    background-color: #ccc;\n    border-color: #ccc;\n}\n.btn-outline-info {\n  color: #4ab2e3;\n  background-image: none;\n  background-color: transparent;\n  border-color: #4ab2e3;\n}\n.btn-outline-info:hover {\n    color: #fff;\n    background-color: #4ab2e3;\n    border-color: #4ab2e3;\n}\n.btn-outline-info:focus, .btn-outline-info.focus {\n    -webkit-box-shadow: 0 0 0 2px rgba(74, 178, 227, 0.5);\n            box-shadow: 0 0 0 2px rgba(74, 178, 227, 0.5);\n}\n.btn-outline-info.disabled, .btn-outline-info:disabled {\n    color: #4ab2e3;\n    background-color: transparent;\n}\n.btn-outline-info:active, .btn-outline-info.active,\n  .show > .btn-outline-info.dropdown-toggle {\n    color: #fff;\n    background-color: #4ab2e3;\n    border-color: #4ab2e3;\n}\n.btn-outline-success {\n  color: #db76df;\n  background-image: none;\n  background-color: transparent;\n  border-color: #db76df;\n}\n.btn-outline-success:hover {\n    color: #fff;\n    background-color: #db76df;\n    border-color: #db76df;\n}\n.btn-outline-success:focus, .btn-outline-success.focus {\n    -webkit-box-shadow: 0 0 0 2px rgba(219, 118, 223, 0.5);\n            box-shadow: 0 0 0 2px rgba(219, 118, 223, 0.5);\n}\n.btn-outline-success.disabled, .btn-outline-success:disabled {\n    color: #db76df;\n    background-color: transparent;\n}\n.btn-outline-success:active, .btn-outline-success.active,\n  .show > .btn-outline-success.dropdown-toggle {\n    color: #fff;\n    background-color: #db76df;\n    border-color: #db76df;\n}\n.btn-outline-warning {\n  color: #f7cc36;\n  background-image: none;\n  background-color: transparent;\n  border-color: #f7cc36;\n}\n.btn-outline-warning:hover {\n    color: #fff;\n    background-color: #f7cc36;\n    border-color: #f7cc36;\n}\n.btn-outline-warning:focus, .btn-outline-warning.focus {\n    -webkit-box-shadow: 0 0 0 2px rgba(247, 204, 54, 0.5);\n            box-shadow: 0 0 0 2px rgba(247, 204, 54, 0.5);\n}\n.btn-outline-warning.disabled, .btn-outline-warning:disabled {\n    color: #f7cc36;\n    background-color: transparent;\n}\n.btn-outline-warning:active, .btn-outline-warning.active,\n  .show > .btn-outline-warning.dropdown-toggle {\n    color: #fff;\n    background-color: #f7cc36;\n    border-color: #f7cc36;\n}\n.btn-outline-danger {\n  color: #e34a4a;\n  background-image: none;\n  background-color: transparent;\n  border-color: #e34a4a;\n}\n.btn-outline-danger:hover {\n    color: #fff;\n    background-color: #e34a4a;\n    border-color: #e34a4a;\n}\n.btn-outline-danger:focus, .btn-outline-danger.focus {\n    -webkit-box-shadow: 0 0 0 2px rgba(227, 74, 74, 0.5);\n            box-shadow: 0 0 0 2px rgba(227, 74, 74, 0.5);\n}\n.btn-outline-danger.disabled, .btn-outline-danger:disabled {\n    color: #e34a4a;\n    background-color: transparent;\n}\n.btn-outline-danger:active, .btn-outline-danger.active,\n  .show > .btn-outline-danger.dropdown-toggle {\n    color: #fff;\n    background-color: #e34a4a;\n    border-color: #e34a4a;\n}\n.btn-link {\n  font-weight: 400;\n  color: #4ae387;\n  border-radius: 0;\n}\n.btn-link, .btn-link:active, .btn-link.active, .btn-link:disabled {\n    background-color: transparent;\n}\n.btn-link, .btn-link:focus, .btn-link:active {\n    border-color: transparent;\n}\n.btn-link:hover {\n    border-color: transparent;\n}\n.btn-link:focus, .btn-link:hover {\n    color: #1ec260;\n    text-decoration: underline;\n    background-color: transparent;\n}\n.btn-link:disabled {\n    color: #acb5be;\n}\n.btn-link:disabled:focus, .btn-link:disabled:hover {\n      text-decoration: none;\n}\n.btn-lg, .btn-group-lg > .btn {\n  padding: 0.75rem 1.5rem;\n  font-size: 1.25rem;\n  border-radius: 0.3rem;\n}\n.btn-sm, .btn-group-sm > .btn {\n  padding: 0.7rem 2.5rem;\n  font-size: 0.875rem;\n  border-radius: 0.2rem;\n}\n.btn-block {\n  display: block;\n  width: 100%;\n}\n.btn-block + .btn-block {\n  margin-top: 0.5rem;\n}\ninput[type=\"submit\"].btn-block,\ninput[type=\"reset\"].btn-block,\ninput[type=\"button\"].btn-block {\n  width: 100%;\n}\n.fade {\n  opacity: 0;\n  -webkit-transition: opacity 0.15s linear;\n  transition: opacity 0.15s linear;\n}\n.fade.show {\n    opacity: 1;\n}\n.collapse {\n  display: none;\n}\n.collapse.show {\n    display: block;\n}\ntr.collapse.show {\n  display: table-row;\n}\ntbody.collapse.show {\n  display: table-row-group;\n}\n.collapsing {\n  position: relative;\n  height: 0;\n  overflow: hidden;\n  -webkit-transition: height 0.35s ease;\n  transition: height 0.35s ease;\n}\n.dropup,\n.dropdown {\n  position: relative;\n}\n.dropdown-toggle::after {\n  display: inline-block;\n  width: 0;\n  height: 0;\n  margin-left: 0.3em;\n  vertical-align: middle;\n  content: \"\";\n  border-top: 0.3em solid;\n  border-right: 0.3em solid transparent;\n  border-left: 0.3em solid transparent;\n}\n.dropdown-toggle:focus {\n  outline: 0;\n}\n.dropup .dropdown-toggle::after {\n  border-top: 0;\n  border-bottom: 0.3em solid;\n}\n.dropdown-menu {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  z-index: 1000;\n  display: none;\n  float: left;\n  min-width: 15rem;\n  padding: 0.5rem 0;\n  margin: 0.125rem 0 0;\n  font-size: 1rem;\n  color: #34495e;\n  text-align: left;\n  list-style: none;\n  background-color: #fff;\n  background-clip: padding-box;\n  border: 1px solid rgba(0, 0, 0, 0.15);\n  border-radius: 0.25rem;\n}\n.dropdown-divider {\n  height: 1px;\n  margin: 0.5rem 0;\n  overflow: hidden;\n  background-color: #eceeef;\n}\n.dropdown-item {\n  display: block;\n  width: 100%;\n  padding: 3px 25px;\n  clear: both;\n  font-weight: 400;\n  color: #fff;\n  text-align: inherit;\n  white-space: nowrap;\n  background: none;\n  border: 0;\n}\n.dropdown-item:focus, .dropdown-item:hover {\n    color: #fff;\n    text-decoration: none;\n    background-color: #161616;\n}\n.dropdown-item.active, .dropdown-item:active {\n    color: #fff;\n    text-decoration: none;\n    background-color: #161616;\n}\n.dropdown-item.disabled, .dropdown-item:disabled {\n    color: #acb5be;\n    cursor: not-allowed;\n    background-color: transparent;\n}\n.show > .dropdown-menu {\n  display: block;\n}\n.show > a {\n  outline: 0;\n}\n.dropdown-menu-right {\n  right: 0;\n  left: auto;\n}\n.dropdown-menu-left {\n  right: auto;\n  left: 0;\n}\n.dropdown-header {\n  display: block;\n  padding: 0.5rem 25px;\n  margin-bottom: 0;\n  font-size: 0.875rem;\n  color: #acb5be;\n  white-space: nowrap;\n}\n.dropdown-backdrop {\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 990;\n}\n.dropup .dropdown-menu {\n  top: auto;\n  bottom: 100%;\n  margin-bottom: 0.125rem;\n}\n.btn-group,\n.btn-group-vertical {\n  position: relative;\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  vertical-align: middle;\n}\n.btn-group > .btn,\n  .btn-group-vertical > .btn {\n    position: relative;\n    -webkit-box-flex: 0;\n        -ms-flex: 0 1 auto;\n            flex: 0 1 auto;\n}\n.btn-group > .btn:hover,\n    .btn-group-vertical > .btn:hover {\n      z-index: 2;\n}\n.btn-group > .btn:focus, .btn-group > .btn:active, .btn-group > .btn.active,\n    .btn-group-vertical > .btn:focus,\n    .btn-group-vertical > .btn:active,\n    .btn-group-vertical > .btn.active {\n      z-index: 2;\n}\n.btn-group .btn + .btn,\n  .btn-group .btn + .btn-group,\n  .btn-group .btn-group + .btn,\n  .btn-group .btn-group + .btn-group,\n  .btn-group-vertical .btn + .btn,\n  .btn-group-vertical .btn + .btn-group,\n  .btn-group-vertical .btn-group + .btn,\n  .btn-group-vertical .btn-group + .btn-group {\n    margin-left: 0px;\n}\n.btn-toolbar {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n}\n.btn-toolbar .input-group {\n    width: auto;\n}\n.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {\n  border-radius: 0;\n}\n.btn-group > .btn:first-child {\n  margin-left: 0;\n}\n.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n    border-bottom-right-radius: 0;\n    border-top-right-radius: 0;\n}\n.btn-group > .btn:last-child:not(:first-child),\n.btn-group > .dropdown-toggle:not(:first-child) {\n  border-bottom-left-radius: 0;\n  border-top-left-radius: 0;\n}\n.btn-group > .btn-group {\n  float: left;\n}\n.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {\n  border-radius: 0;\n}\n.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,\n.btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {\n  border-bottom-right-radius: 0;\n  border-top-right-radius: 0;\n}\n.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {\n  border-bottom-left-radius: 0;\n  border-top-left-radius: 0;\n}\n.btn-group .dropdown-toggle:active,\n.btn-group.open .dropdown-toggle {\n  outline: 0;\n}\n.btn + .dropdown-toggle-split {\n  padding-right: 2.925rem;\n  padding-left: 2.925rem;\n}\n.btn + .dropdown-toggle-split::after {\n    margin-left: 0;\n}\n.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split {\n  padding-right: 1.875rem;\n  padding-left: 1.875rem;\n}\n.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split {\n  padding-right: 1.125rem;\n  padding-left: 1.125rem;\n}\n.btn-group-vertical {\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-align: start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\n.btn-group-vertical .btn,\n  .btn-group-vertical .btn-group {\n    width: 100%;\n}\n.btn-group-vertical > .btn + .btn,\n  .btn-group-vertical > .btn + .btn-group,\n  .btn-group-vertical > .btn-group + .btn,\n  .btn-group-vertical > .btn-group + .btn-group {\n    margin-top: 0px;\n    margin-left: 0;\n}\n.btn-group-vertical > .btn:not(:first-child):not(:last-child) {\n  border-radius: 0;\n}\n.btn-group-vertical > .btn:first-child:not(:last-child) {\n  border-bottom-right-radius: 0;\n  border-bottom-left-radius: 0;\n}\n.btn-group-vertical > .btn:last-child:not(:first-child) {\n  border-top-right-radius: 0;\n  border-top-left-radius: 0;\n}\n.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {\n  border-radius: 0;\n}\n.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,\n.btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {\n  border-bottom-right-radius: 0;\n  border-bottom-left-radius: 0;\n}\n.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child {\n  border-top-right-radius: 0;\n  border-top-left-radius: 0;\n}\n[data-toggle=\"buttons\"] > .btn input[type=\"radio\"],\n[data-toggle=\"buttons\"] > .btn input[type=\"checkbox\"],\n[data-toggle=\"buttons\"] > .btn-group > .btn input[type=\"radio\"],\n[data-toggle=\"buttons\"] > .btn-group > .btn input[type=\"checkbox\"] {\n  position: absolute;\n  clip: rect(0, 0, 0, 0);\n  pointer-events: none;\n}\n.input-group {\n  position: relative;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  width: 100%;\n}\n.input-group .form-control {\n    position: relative;\n    z-index: 2;\n    -webkit-box-flex: 1;\n        -ms-flex: 1 1 auto;\n            flex: 1 1 auto;\n    width: 1%;\n    margin-bottom: 0;\n}\n.input-group .form-control:focus, .input-group .form-control:active, .input-group .form-control:hover {\n      z-index: 3;\n}\n.input-group-addon,\n.input-group-btn,\n.input-group .form-control {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\n.input-group-addon:not(:first-child):not(:last-child),\n  .input-group-btn:not(:first-child):not(:last-child),\n  .input-group .form-control:not(:first-child):not(:last-child) {\n    border-radius: 0;\n}\n.input-group-addon,\n.input-group-btn {\n  white-space: nowrap;\n  vertical-align: middle;\n}\n.input-group-addon {\n  padding: 0.5rem 0.75rem;\n  margin-bottom: 0;\n  font-size: 1rem;\n  font-weight: 400;\n  line-height: 1.25;\n  color: #adb3b9;\n  text-align: center;\n  background-color: #eceeef;\n  border: 0px solid #ddd;\n  border-radius: 0.25rem;\n}\n.input-group-addon.form-control-sm,\n  .input-group-sm > .input-group-addon,\n  .input-group-sm > .input-group-btn > .input-group-addon.btn {\n    padding: 0.25rem 0.5rem;\n    font-size: 0.875rem;\n    border-radius: 0.2rem;\n}\n.input-group-addon.form-control-lg,\n  .input-group-lg > .input-group-addon,\n  .input-group-lg > .input-group-btn > .input-group-addon.btn {\n    padding: 0.75rem 1.5rem;\n    font-size: 1.25rem;\n    border-radius: 0.3rem;\n}\n.input-group-addon input[type=\"radio\"],\n  .input-group-addon input[type=\"checkbox\"] {\n    margin-top: 0;\n}\n.input-group .form-control:not(:last-child),\n.input-group-addon:not(:last-child),\n.input-group-btn:not(:last-child) > .btn,\n.input-group-btn:not(:last-child) > .btn-group > .btn,\n.input-group-btn:not(:last-child) > .dropdown-toggle,\n.input-group-btn:not(:first-child) > .btn:not(:last-child):not(.dropdown-toggle),\n.input-group-btn:not(:first-child) > .btn-group:not(:last-child) > .btn {\n  border-bottom-right-radius: 0;\n  border-top-right-radius: 0;\n}\n.input-group-addon:not(:last-child) {\n  border-right: 0;\n}\n.input-group .form-control:not(:first-child),\n.input-group-addon:not(:first-child),\n.input-group-btn:not(:first-child) > .btn,\n.input-group-btn:not(:first-child) > .btn-group > .btn,\n.input-group-btn:not(:first-child) > .dropdown-toggle,\n.input-group-btn:not(:last-child) > .btn:not(:first-child),\n.input-group-btn:not(:last-child) > .btn-group:not(:first-child) > .btn {\n  border-bottom-left-radius: 0;\n  border-top-left-radius: 0;\n}\n.form-control + .input-group-addon:not(:first-child) {\n  border-left: 0;\n}\n.input-group-btn {\n  position: relative;\n  font-size: 0;\n  white-space: nowrap;\n}\n.input-group-btn > .btn {\n    position: relative;\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n}\n.input-group-btn > .btn + .btn {\n      margin-left: 0px;\n}\n.input-group-btn > .btn:focus, .input-group-btn > .btn:active, .input-group-btn > .btn:hover {\n      z-index: 3;\n}\n.input-group-btn:not(:last-child) > .btn,\n  .input-group-btn:not(:last-child) > .btn-group {\n    margin-right: 0px;\n}\n.input-group-btn:not(:first-child) > .btn,\n  .input-group-btn:not(:first-child) > .btn-group {\n    z-index: 2;\n    margin-left: 0px;\n}\n.input-group-btn:not(:first-child) > .btn:focus, .input-group-btn:not(:first-child) > .btn:active, .input-group-btn:not(:first-child) > .btn:hover,\n    .input-group-btn:not(:first-child) > .btn-group:focus,\n    .input-group-btn:not(:first-child) > .btn-group:active,\n    .input-group-btn:not(:first-child) > .btn-group:hover {\n      z-index: 3;\n}\n.custom-control {\n  position: relative;\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  min-height: 1.5rem;\n  padding-left: 1.5rem;\n  margin-right: 1rem;\n  cursor: pointer;\n}\n.custom-control-input {\n  position: absolute;\n  z-index: -1;\n  opacity: 0;\n}\n.custom-control-input:checked ~ .custom-control-indicator {\n    color: #fff;\n    background-color: #4ae387;\n}\n.custom-control-input:focus ~ .custom-control-indicator {\n    -webkit-box-shadow: 0 0 0 1px #eee, 0 0 0 3px #4ae387;\n            box-shadow: 0 0 0 1px #eee, 0 0 0 3px #4ae387;\n}\n.custom-control-input:active ~ .custom-control-indicator {\n    color: #fff;\n    background-color: #e5fbed;\n}\n.custom-control-input:disabled ~ .custom-control-indicator {\n    cursor: not-allowed;\n    background-color: #eceeef;\n}\n.custom-control-input:disabled ~ .custom-control-description {\n    color: #acb5be;\n    cursor: not-allowed;\n}\n.custom-control-indicator {\n  position: absolute;\n  top: 0.25rem;\n  left: 0;\n  display: block;\n  width: 1rem;\n  height: 1rem;\n  pointer-events: none;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  background-color: #ddd;\n  background-repeat: no-repeat;\n  background-position: center center;\n  background-size: 50% 50%;\n}\n.custom-checkbox .custom-control-indicator {\n  border-radius: 0.25rem;\n}\n.custom-checkbox .custom-control-input:checked ~ .custom-control-indicator {\n  background-image: url(\"data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E\");\n}\n.custom-checkbox .custom-control-input:indeterminate ~ .custom-control-indicator {\n  background-color: #4ae387;\n  background-image: url(\"data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3E%3Cpath stroke='%23fff' d='M0 2h4'/%3E%3C/svg%3E\");\n}\n.custom-radio .custom-control-indicator {\n  border-radius: 50%;\n}\n.custom-radio .custom-control-input:checked ~ .custom-control-indicator {\n  background-image: url(\"data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='%23fff'/%3E%3C/svg%3E\");\n}\n.custom-controls-stacked {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n.custom-controls-stacked .custom-control {\n    margin-bottom: 0.25rem;\n}\n.custom-controls-stacked .custom-control + .custom-control {\n      margin-left: 0;\n}\n.custom-select {\n  display: inline-block;\n  max-width: 100%;\n  height: calc(2.25rem + 2px);\n  padding: 0.375rem 1.75rem 0.375rem 0.75rem;\n  line-height: 1.25;\n  color: #adb3b9;\n  vertical-align: middle;\n  background: #fff url(\"data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23333' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E\") no-repeat right 0.75rem center;\n  background-size: 8px 10px;\n  border: 0px solid #ddd;\n  border-radius: 0.25rem;\n  -moz-appearance: none;\n  -webkit-appearance: none;\n}\n.custom-select:focus {\n    border-color: #b8f4d0;\n    outline: none;\n}\n.custom-select:focus::-ms-value {\n      color: #adb3b9;\n      background-color: #fff;\n}\n.custom-select:disabled {\n    color: #acb5be;\n    cursor: not-allowed;\n    background-color: #eceeef;\n}\n.custom-select::-ms-expand {\n    opacity: 0;\n}\n.custom-select-sm {\n  padding-top: 0.375rem;\n  padding-bottom: 0.375rem;\n  font-size: 75%;\n}\n.custom-file {\n  position: relative;\n  display: inline-block;\n  max-width: 100%;\n  height: 2.5rem;\n  margin-bottom: 0;\n  cursor: pointer;\n}\n.custom-file-input {\n  min-width: 14rem;\n  max-width: 100%;\n  height: 2.5rem;\n  margin: 0;\n  filter: alpha(opacity=0);\n  opacity: 0;\n}\n.custom-file-control {\n  position: absolute;\n  top: 0;\n  right: 0;\n  left: 0;\n  z-index: 5;\n  height: 2.5rem;\n  padding: 0.5rem 1rem;\n  line-height: 1.5;\n  color: #adb3b9;\n  pointer-events: none;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  background-color: #fff;\n  border: 1px solid #ddd;\n  border-radius: 0.25rem;\n}\n.custom-file-control:lang(en)::after {\n    content: \"Choose file...\";\n}\n.custom-file-control::before {\n    position: absolute;\n    top: -1px;\n    right: -1px;\n    bottom: -1px;\n    z-index: 6;\n    display: block;\n    height: 2.5rem;\n    padding: 0.5rem 1rem;\n    line-height: 1.5;\n    color: #adb3b9;\n    background-color: #eceeef;\n    border: 1px solid #ddd;\n    border-radius: 0 0.25rem 0.25rem 0;\n}\n.custom-file-control:lang(en)::before {\n    content: \"Browse\";\n}\n.nav {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding-left: 0;\n  margin-bottom: 0;\n  list-style: none;\n}\n.nav-link {\n  display: block;\n  padding: 0.5em 1em;\n}\n.nav-link:focus, .nav-link:hover {\n    text-decoration: none;\n}\n.nav-link.disabled {\n    color: #acb5be;\n    cursor: not-allowed;\n}\n.nav-tabs {\n  border-bottom: 1px solid #ddd;\n}\n.nav-tabs .nav-item {\n    margin-bottom: -1px;\n}\n.nav-tabs .nav-link {\n    border: 1px solid transparent;\n    border-top-right-radius: 0.25rem;\n    border-top-left-radius: 0.25rem;\n}\n.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {\n      border-color: #eceeef #eceeef #ddd;\n}\n.nav-tabs .nav-link.disabled {\n      color: #acb5be;\n      background-color: transparent;\n      border-color: transparent;\n}\n.nav-tabs .nav-link.active,\n  .nav-tabs .nav-item.show .nav-link {\n    color: #adb3b9;\n    background-color: #eee;\n    border-color: #ddd #ddd #eee;\n}\n.nav-tabs .dropdown-menu {\n    margin-top: -1px;\n    border-top-right-radius: 0;\n    border-top-left-radius: 0;\n}\n.nav-pills .nav-link {\n  border-radius: 0.25rem;\n}\n.nav-pills .nav-link.active,\n.nav-pills .nav-item.show .nav-link {\n  color: #fff;\n  cursor: default;\n  background-color: #4ae387;\n}\n.nav-fill .nav-item {\n  -webkit-box-flex: 1;\n      -ms-flex: 1 1 auto;\n          flex: 1 1 auto;\n  text-align: center;\n}\n.nav-justified .nav-item {\n  -webkit-box-flex: 1;\n      -ms-flex: 1 1 100%;\n          flex: 1 1 100%;\n  text-align: center;\n}\n.tab-content > .tab-pane {\n  display: none;\n}\n.tab-content > .active {\n  display: block;\n}\n.navbar {\n  position: relative;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  padding: 0.5rem 1rem;\n}\n.navbar-brand {\n  display: inline-block;\n  padding-top: .25rem;\n  padding-bottom: .25rem;\n  margin-right: 1rem;\n  font-size: 1.25rem;\n  line-height: inherit;\n  white-space: nowrap;\n}\n.navbar-brand:focus, .navbar-brand:hover {\n    text-decoration: none;\n}\n.navbar-nav {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  padding-left: 0;\n  margin-bottom: 0;\n  list-style: none;\n}\n.navbar-nav .nav-link {\n    padding-right: 0;\n    padding-left: 0;\n}\n.navbar-text {\n  display: inline-block;\n  padding-top: .425rem;\n  padding-bottom: .425rem;\n}\n.navbar-toggler {\n  -ms-flex-item-align: start;\n      align-self: flex-start;\n  padding: 0.25rem 0.75rem;\n  font-size: 1.25rem;\n  line-height: 1;\n  background: transparent;\n  border: 1px solid transparent;\n  border-radius: 1.875rem;\n}\n.navbar-toggler:focus, .navbar-toggler:hover {\n    text-decoration: none;\n}\n.navbar-toggler-icon {\n  display: inline-block;\n  width: 1.5em;\n  height: 1.5em;\n  vertical-align: middle;\n  content: \"\";\n  background: no-repeat center center;\n  background-size: 100% 100%;\n}\n.navbar-toggler-left {\n  position: absolute;\n  left: 1rem;\n}\n.navbar-toggler-right {\n  position: absolute;\n  right: 1rem;\n}\n@media (max-width: 575px) {\n.navbar-toggleable .navbar-nav .dropdown-menu {\n    position: static;\n    float: none;\n}\n.navbar-toggleable > .container {\n    padding-right: 0;\n    padding-left: 0;\n}\n}\n@media (min-width: 576px) {\n.navbar-toggleable {\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -ms-flex-wrap: nowrap;\n        flex-wrap: nowrap;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n.navbar-toggleable .navbar-nav {\n      -webkit-box-orient: horizontal;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: row;\n              flex-direction: row;\n}\n.navbar-toggleable .navbar-nav .nav-link {\n        padding-right: .5rem;\n        padding-left: .5rem;\n}\n.navbar-toggleable > .container {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -ms-flex-wrap: nowrap;\n          flex-wrap: nowrap;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n}\n.navbar-toggleable .navbar-collapse {\n      display: -webkit-box !important;\n      display: -ms-flexbox !important;\n      display: flex !important;\n      width: 100%;\n}\n.navbar-toggleable .navbar-toggler {\n      display: none;\n}\n}\n@media (max-width: 767px) {\n.navbar-toggleable-sm .navbar-nav .dropdown-menu {\n    position: static;\n    float: none;\n}\n.navbar-toggleable-sm > .container {\n    padding-right: 0;\n    padding-left: 0;\n}\n}\n@media (min-width: 768px) {\n.navbar-toggleable-sm {\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -ms-flex-wrap: nowrap;\n        flex-wrap: nowrap;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n.navbar-toggleable-sm .navbar-nav {\n      -webkit-box-orient: horizontal;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: row;\n              flex-direction: row;\n}\n.navbar-toggleable-sm .navbar-nav .nav-link {\n        padding-right: .5rem;\n        padding-left: .5rem;\n}\n.navbar-toggleable-sm > .container {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -ms-flex-wrap: nowrap;\n          flex-wrap: nowrap;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n}\n.navbar-toggleable-sm .navbar-collapse {\n      display: -webkit-box !important;\n      display: -ms-flexbox !important;\n      display: flex !important;\n      width: 100%;\n}\n.navbar-toggleable-sm .navbar-toggler {\n      display: none;\n}\n}\n@media (max-width: 991px) {\n.navbar-toggleable-md .navbar-nav .dropdown-menu {\n    position: static;\n    float: none;\n}\n.navbar-toggleable-md > .container {\n    padding-right: 0;\n    padding-left: 0;\n}\n}\n@media (min-width: 992px) {\n.navbar-toggleable-md {\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -ms-flex-wrap: nowrap;\n        flex-wrap: nowrap;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n.navbar-toggleable-md .navbar-nav {\n      -webkit-box-orient: horizontal;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: row;\n              flex-direction: row;\n}\n.navbar-toggleable-md .navbar-nav .nav-link {\n        padding-right: .5rem;\n        padding-left: .5rem;\n}\n.navbar-toggleable-md > .container {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -ms-flex-wrap: nowrap;\n          flex-wrap: nowrap;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n}\n.navbar-toggleable-md .navbar-collapse {\n      display: -webkit-box !important;\n      display: -ms-flexbox !important;\n      display: flex !important;\n      width: 100%;\n}\n.navbar-toggleable-md .navbar-toggler {\n      display: none;\n}\n}\n@media (max-width: 1199px) {\n.navbar-toggleable-lg .navbar-nav .dropdown-menu {\n    position: static;\n    float: none;\n}\n.navbar-toggleable-lg > .container {\n    padding-right: 0;\n    padding-left: 0;\n}\n}\n@media (min-width: 1200px) {\n.navbar-toggleable-lg {\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -ms-flex-wrap: nowrap;\n        flex-wrap: nowrap;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n.navbar-toggleable-lg .navbar-nav {\n      -webkit-box-orient: horizontal;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: row;\n              flex-direction: row;\n}\n.navbar-toggleable-lg .navbar-nav .nav-link {\n        padding-right: .5rem;\n        padding-left: .5rem;\n}\n.navbar-toggleable-lg > .container {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -ms-flex-wrap: nowrap;\n          flex-wrap: nowrap;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n}\n.navbar-toggleable-lg .navbar-collapse {\n      display: -webkit-box !important;\n      display: -ms-flexbox !important;\n      display: flex !important;\n      width: 100%;\n}\n.navbar-toggleable-lg .navbar-toggler {\n      display: none;\n}\n}\n.navbar-toggleable-xl {\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -ms-flex-wrap: nowrap;\n      flex-wrap: nowrap;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.navbar-toggleable-xl .navbar-nav .dropdown-menu {\n    position: static;\n    float: none;\n}\n.navbar-toggleable-xl > .container {\n    padding-right: 0;\n    padding-left: 0;\n}\n.navbar-toggleable-xl .navbar-nav {\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n}\n.navbar-toggleable-xl .navbar-nav .nav-link {\n      padding-right: .5rem;\n      padding-left: .5rem;\n}\n.navbar-toggleable-xl > .container {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-wrap: nowrap;\n        flex-wrap: nowrap;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n.navbar-toggleable-xl .navbar-collapse {\n    display: -webkit-box !important;\n    display: -ms-flexbox !important;\n    display: flex !important;\n    width: 100%;\n}\n.navbar-toggleable-xl .navbar-toggler {\n    display: none;\n}\n.navbar-light .navbar-brand,\n.navbar-light .navbar-toggler {\n  color: rgba(0, 0, 0, 0.9);\n}\n.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover,\n  .navbar-light .navbar-toggler:focus,\n  .navbar-light .navbar-toggler:hover {\n    color: rgba(0, 0, 0, 0.9);\n}\n.navbar-light .navbar-nav .nav-link {\n  color: rgba(0, 0, 0, 0.5);\n}\n.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {\n    color: rgba(0, 0, 0, 0.7);\n}\n.navbar-light .navbar-nav .nav-link.disabled {\n    color: rgba(0, 0, 0, 0.3);\n}\n.navbar-light .navbar-nav .open > .nav-link,\n.navbar-light .navbar-nav .active > .nav-link,\n.navbar-light .navbar-nav .nav-link.open,\n.navbar-light .navbar-nav .nav-link.active {\n  color: rgba(0, 0, 0, 0.9);\n}\n.navbar-light .navbar-toggler {\n  border-color: rgba(0, 0, 0, 0.1);\n}\n.navbar-light .navbar-toggler-icon {\n  background-image: url(\"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E\");\n}\n.navbar-light .navbar-text {\n  color: rgba(0, 0, 0, 0.5);\n}\n.navbar-inverse .navbar-brand,\n.navbar-inverse .navbar-toggler {\n  color: white;\n}\n.navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover,\n  .navbar-inverse .navbar-toggler:focus,\n  .navbar-inverse .navbar-toggler:hover {\n    color: white;\n}\n.navbar-inverse .navbar-nav .nav-link {\n  color: rgba(255, 255, 255, 0.5);\n}\n.navbar-inverse .navbar-nav .nav-link:focus, .navbar-inverse .navbar-nav .nav-link:hover {\n    color: rgba(255, 255, 255, 0.75);\n}\n.navbar-inverse .navbar-nav .nav-link.disabled {\n    color: rgba(255, 255, 255, 0.25);\n}\n.navbar-inverse .navbar-nav .open > .nav-link,\n.navbar-inverse .navbar-nav .active > .nav-link,\n.navbar-inverse .navbar-nav .nav-link.open,\n.navbar-inverse .navbar-nav .nav-link.active {\n  color: white;\n}\n.navbar-inverse .navbar-toggler {\n  border-color: rgba(255, 255, 255, 0.1);\n}\n.navbar-inverse .navbar-toggler-icon {\n  background-image: url(\"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E\");\n}\n.navbar-inverse .navbar-text {\n  color: rgba(255, 255, 255, 0.5);\n}\n.card {\n  position: relative;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  background-color: #fff;\n  border: 1px solid rgba(0, 0, 0, 0.125);\n  border-radius: 0.25rem;\n}\n.card-block {\n  -webkit-box-flex: 1;\n      -ms-flex: 1 1 auto;\n          flex: 1 1 auto;\n  padding: 1.25rem;\n}\n.card-title {\n  margin-bottom: 0.75rem;\n}\n.card-subtitle {\n  margin-top: -0.375rem;\n  margin-bottom: 0;\n}\n.card-text:last-child {\n  margin-bottom: 0;\n}\n.card-link:hover {\n  text-decoration: none;\n}\n.card-link + .card-link {\n  margin-left: 1.25rem;\n}\n.card > .list-group:first-child .list-group-item:first-child {\n  border-top-right-radius: 0.25rem;\n  border-top-left-radius: 0.25rem;\n}\n.card > .list-group:last-child .list-group-item:last-child {\n  border-bottom-right-radius: 0.25rem;\n  border-bottom-left-radius: 0.25rem;\n}\n.card-header {\n  padding: 0.75rem 1.25rem;\n  margin-bottom: 0;\n  background-color: #f7f7f9;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.125);\n}\n.card-header:first-child {\n    border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;\n}\n.card-footer {\n  padding: 0.75rem 1.25rem;\n  background-color: #f7f7f9;\n  border-top: 1px solid rgba(0, 0, 0, 0.125);\n}\n.card-footer:last-child {\n    border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);\n}\n.card-header-tabs {\n  margin-right: -0.625rem;\n  margin-bottom: -0.75rem;\n  margin-left: -0.625rem;\n  border-bottom: 0;\n}\n.card-header-pills {\n  margin-right: -0.625rem;\n  margin-left: -0.625rem;\n}\n.card-primary {\n  background-color: #4ae387;\n  border-color: #4ae387;\n}\n.card-primary .card-header,\n  .card-primary .card-footer {\n    background-color: transparent;\n}\n.card-success {\n  background-color: #db76df;\n  border-color: #db76df;\n}\n.card-success .card-header,\n  .card-success .card-footer {\n    background-color: transparent;\n}\n.card-info {\n  background-color: #4ab2e3;\n  border-color: #4ab2e3;\n}\n.card-info .card-header,\n  .card-info .card-footer {\n    background-color: transparent;\n}\n.card-warning {\n  background-color: #f7cc36;\n  border-color: #f7cc36;\n}\n.card-warning .card-header,\n  .card-warning .card-footer {\n    background-color: transparent;\n}\n.card-danger {\n  background-color: #e34a4a;\n  border-color: #e34a4a;\n}\n.card-danger .card-header,\n  .card-danger .card-footer {\n    background-color: transparent;\n}\n.card-outline-primary {\n  background-color: transparent;\n  border-color: #4ae387;\n}\n.card-outline-secondary {\n  background-color: transparent;\n  border-color: #ccc;\n}\n.card-outline-info {\n  background-color: transparent;\n  border-color: #4ab2e3;\n}\n.card-outline-success {\n  background-color: transparent;\n  border-color: #db76df;\n}\n.card-outline-warning {\n  background-color: transparent;\n  border-color: #f7cc36;\n}\n.card-outline-danger {\n  background-color: transparent;\n  border-color: #e34a4a;\n}\n.card-inverse {\n  color: rgba(255, 255, 255, 0.65);\n}\n.card-inverse .card-header,\n  .card-inverse .card-footer {\n    background-color: transparent;\n    border-color: rgba(255, 255, 255, 0.2);\n}\n.card-inverse .card-header,\n  .card-inverse .card-footer,\n  .card-inverse .card-title,\n  .card-inverse .card-blockquote {\n    color: #fff;\n}\n.card-inverse .card-link,\n  .card-inverse .card-text,\n  .card-inverse .card-subtitle,\n  .card-inverse .card-blockquote .blockquote-footer {\n    color: rgba(255, 255, 255, 0.65);\n}\n.card-inverse .card-link:focus, .card-inverse .card-link:hover {\n    color: #fff;\n}\n.card-blockquote {\n  padding: 0;\n  margin-bottom: 0;\n  border-left: 0;\n}\n.card-img {\n  border-radius: calc(0.25rem - 1px);\n}\n.card-img-overlay {\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  padding: 1.25rem;\n}\n.card-img-top {\n  border-top-right-radius: calc(0.25rem - 1px);\n  border-top-left-radius: calc(0.25rem - 1px);\n}\n.card-img-bottom {\n  border-bottom-right-radius: calc(0.25rem - 1px);\n  border-bottom-left-radius: calc(0.25rem - 1px);\n}\n@media (min-width: 576px) {\n.card-deck {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-flow: row wrap;\n            flex-flow: row wrap;\n}\n.card-deck .card {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-flex: 1;\n          -ms-flex: 1 0 0px;\n              flex: 1 0 0;\n      -webkit-box-orient: vertical;\n      -webkit-box-direction: normal;\n          -ms-flex-direction: column;\n              flex-direction: column;\n}\n.card-deck .card:not(:first-child) {\n        margin-left: 15px;\n}\n.card-deck .card:not(:last-child) {\n        margin-right: 15px;\n}\n}\n@media (min-width: 576px) {\n.card-group {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-flow: row wrap;\n            flex-flow: row wrap;\n}\n.card-group .card {\n      -webkit-box-flex: 1;\n          -ms-flex: 1 0 0px;\n              flex: 1 0 0;\n}\n.card-group .card + .card {\n        margin-left: 0;\n        border-left: 0;\n}\n.card-group .card:first-child {\n        border-bottom-right-radius: 0;\n        border-top-right-radius: 0;\n}\n.card-group .card:first-child .card-img-top {\n          border-top-right-radius: 0;\n}\n.card-group .card:first-child .card-img-bottom {\n          border-bottom-right-radius: 0;\n}\n.card-group .card:last-child {\n        border-bottom-left-radius: 0;\n        border-top-left-radius: 0;\n}\n.card-group .card:last-child .card-img-top {\n          border-top-left-radius: 0;\n}\n.card-group .card:last-child .card-img-bottom {\n          border-bottom-left-radius: 0;\n}\n.card-group .card:not(:first-child):not(:last-child) {\n        border-radius: 0;\n}\n.card-group .card:not(:first-child):not(:last-child) .card-img-top,\n        .card-group .card:not(:first-child):not(:last-child) .card-img-bottom {\n          border-radius: 0;\n}\n}\n@media (min-width: 576px) {\n.card-columns {\n    -webkit-column-count: 3;\n            column-count: 3;\n    -webkit-column-gap: 1.25rem;\n            column-gap: 1.25rem;\n}\n.card-columns .card {\n      display: inline-block;\n      width: 100%;\n      margin-bottom: 0.75rem;\n}\n}\n.breadcrumb {\n  padding: 0.75rem 1rem;\n  margin-bottom: 1rem;\n  list-style: none;\n  background-color: #eceeef;\n  border-radius: 0.25rem;\n}\n.breadcrumb::after {\n    display: block;\n    content: \"\";\n    clear: both;\n}\n.breadcrumb-item {\n  float: left;\n}\n.breadcrumb-item + .breadcrumb-item::before {\n    display: inline-block;\n    padding-right: 0.5rem;\n    padding-left: 0.5rem;\n    color: #acb5be;\n    content: \"/\";\n}\n.breadcrumb-item + .breadcrumb-item:hover::before {\n    text-decoration: underline;\n}\n.breadcrumb-item + .breadcrumb-item:hover::before {\n    text-decoration: none;\n}\n.breadcrumb-item.active {\n    color: #acb5be;\n}\n.pagination {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding-left: 0;\n  list-style: none;\n  border-radius: 0.25rem;\n}\n.page-item:first-child .page-link {\n  margin-left: 0;\n  border-bottom-left-radius: 0.25rem;\n  border-top-left-radius: 0.25rem;\n}\n.page-item:last-child .page-link {\n  border-bottom-right-radius: 0.25rem;\n  border-top-right-radius: 0.25rem;\n}\n.page-item.active .page-link {\n  z-index: 2;\n  color: #fff;\n  background-color: #4ae387;\n  border-color: #4ae387;\n}\n.page-item.disabled .page-link {\n  color: #acb5be;\n  pointer-events: none;\n  cursor: not-allowed;\n  background-color: #fff;\n  border-color: #ddd;\n}\n.page-link {\n  position: relative;\n  display: block;\n  padding: 0.5rem 0.75rem;\n  margin-left: -1px;\n  line-height: 1.25;\n  color: #4ae387;\n  background-color: #fff;\n  border: 1px solid #ddd;\n}\n.page-link:focus, .page-link:hover {\n    color: #1ec260;\n    text-decoration: none;\n    background-color: #eceeef;\n    border-color: #ddd;\n}\n.pagination-lg .page-link {\n  padding: 0.75rem 1.5rem;\n  font-size: 1.25rem;\n}\n.pagination-lg .page-item:first-child .page-link {\n  border-bottom-left-radius: 0.3rem;\n  border-top-left-radius: 0.3rem;\n}\n.pagination-lg .page-item:last-child .page-link {\n  border-bottom-right-radius: 0.3rem;\n  border-top-right-radius: 0.3rem;\n}\n.pagination-sm .page-link {\n  padding: 0.25rem 0.5rem;\n  font-size: 0.875rem;\n}\n.pagination-sm .page-item:first-child .page-link {\n  border-bottom-left-radius: 0.2rem;\n  border-top-left-radius: 0.2rem;\n}\n.pagination-sm .page-item:last-child .page-link {\n  border-bottom-right-radius: 0.2rem;\n  border-top-right-radius: 0.2rem;\n}\n.badge {\n  display: inline-block;\n  padding: 0.28rem 0.4em;\n  font-size: 0.7rem;\n  font-weight: 700;\n  line-height: 1;\n  color: #fff;\n  text-align: center;\n  white-space: nowrap;\n  vertical-align: baseline;\n  border-radius: 0.25rem;\n}\n.badge:empty {\n    display: none;\n}\n.btn .badge {\n  position: relative;\n  top: -1px;\n}\na.badge:focus, a.badge:hover {\n  color: #fff;\n  text-decoration: none;\n  cursor: pointer;\n}\n.badge-pill {\n  padding-right: 0.6em;\n  padding-left: 0.6em;\n  border-radius: 10rem;\n}\n.badge-default {\n  background-color: #acb5be;\n}\n.badge-default[href]:focus, .badge-default[href]:hover {\n    background-color: #8f9ca8;\n}\n.badge-primary {\n  background-color: #4ae387;\n}\n.badge-primary[href]:focus, .badge-primary[href]:hover {\n    background-color: #21d96a;\n}\n.badge-success {\n  background-color: #4ae387;\n}\n.badge-success[href]:focus, .badge-success[href]:hover {\n    background-color: #21d96a;\n}\n.badge-info {\n  background-color: #4ab2e3;\n}\n.badge-info[href]:focus, .badge-info[href]:hover {\n    background-color: #219ed9;\n}\n.badge-warning {\n  background-color: #f7cc36;\n}\n.badge-warning[href]:focus, .badge-warning[href]:hover {\n    background-color: #f0bd0a;\n}\n.badge-danger {\n  background-color: #e34a4a;\n}\n.badge-danger[href]:focus, .badge-danger[href]:hover {\n    background-color: #d92121;\n}\n.jumbotron {\n  padding: 2rem 1rem;\n  margin-bottom: 2rem;\n  background-color: #eceeef;\n  border-radius: 0.3rem;\n}\n@media (min-width: 576px) {\n.jumbotron {\n      padding: 4rem 2rem;\n}\n}\n.jumbotron-hr {\n  border-top-color: #d0d5d8;\n}\n.jumbotron-fluid {\n  padding-right: 0;\n  padding-left: 0;\n  border-radius: 0;\n}\n.alert {\n  padding: 0.75rem 1.25rem;\n  margin-bottom: 1.875rem;\n  border: 0 solid transparent;\n  border-radius: 0;\n}\n.alert-heading {\n  color: inherit;\n}\n.alert-link {\n  font-weight: 700;\n}\n.alert-dismissible .close {\n  position: relative;\n  top: -0.75rem;\n  right: -1.25rem;\n  padding: 0.75rem 1.25rem;\n  color: inherit;\n}\n.alert-success {\n  background-color: #c8f9c5;\n  border-color: transparent;\n  color: #34495e;\n}\n.alert-success hr {\n    border-top-color: transparent;\n}\n.alert-success .alert-link {\n    color: #22303d;\n}\n.alert-info {\n  background-color: #dcf1ff;\n  border-color: transparent;\n  color: #34495e;\n}\n.alert-info hr {\n    border-top-color: transparent;\n}\n.alert-info .alert-link {\n    color: #22303d;\n}\n.alert-warning {\n  background-color: #fff1c8;\n  border-color: transparent;\n  color: #34495e;\n}\n.alert-warning hr {\n    border-top-color: transparent;\n}\n.alert-warning .alert-link {\n    color: #22303d;\n}\n.alert-danger {\n  background-color: #ffcece;\n  border-color: transparent;\n  color: #34495e;\n}\n.alert-danger hr {\n    border-top-color: transparent;\n}\n.alert-danger .alert-link {\n    color: #22303d;\n}\n@-webkit-keyframes progress-bar-stripes {\nfrom {\n    background-position: 1rem 0;\n}\nto {\n    background-position: 0 0;\n}\n}\n@keyframes progress-bar-stripes {\nfrom {\n    background-position: 1rem 0;\n}\nto {\n    background-position: 0 0;\n}\n}\n.progress {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  overflow: hidden;\n  font-size: 0.75rem;\n  line-height: 1rem;\n  text-align: center;\n  background-color: #eceeef;\n  border-radius: 0.25rem;\n}\n.progress-bar {\n  height: 1rem;\n  color: #fff;\n  background-color: #4ae387;\n}\n.progress-bar-striped {\n  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-size: 1rem 1rem;\n}\n.progress-bar-animated {\n  -webkit-animation: progress-bar-stripes 1s linear infinite;\n          animation: progress-bar-stripes 1s linear infinite;\n}\n.media {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n}\n.media-body {\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n}\n.list-group {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  padding-left: 0;\n  margin-bottom: 0;\n}\n.list-group-item-action {\n  width: 100%;\n  color: #adb3b9;\n  text-align: inherit;\n}\n.list-group-item-action .list-group-item-heading {\n    color: #292b2c;\n}\n.list-group-item-action:focus, .list-group-item-action:hover {\n    color: #adb3b9;\n    text-decoration: none;\n    background-color: #f7f7f9;\n}\n.list-group-item-action:active {\n    color: #34495e;\n    background-color: #eceeef;\n}\n.list-group-item {\n  position: relative;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-flow: row wrap;\n          flex-flow: row wrap;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding: 0.75rem 1.25rem;\n  margin-bottom: -1px;\n  background-color: #fff;\n  border: 1px solid rgba(0, 0, 0, 0.125);\n}\n.list-group-item:first-child {\n    border-top-right-radius: 0.25rem;\n    border-top-left-radius: 0.25rem;\n}\n.list-group-item:last-child {\n    margin-bottom: 0;\n    border-bottom-right-radius: 0.25rem;\n    border-bottom-left-radius: 0.25rem;\n}\n.list-group-item:focus, .list-group-item:hover {\n    text-decoration: none;\n}\n.list-group-item.disabled, .list-group-item:disabled {\n    color: #acb5be;\n    cursor: not-allowed;\n    background-color: #fff;\n}\n.list-group-item.disabled .list-group-item-heading, .list-group-item:disabled .list-group-item-heading {\n      color: inherit;\n}\n.list-group-item.disabled .list-group-item-text, .list-group-item:disabled .list-group-item-text {\n      color: #acb5be;\n}\n.list-group-item.active {\n    z-index: 2;\n    color: #fff;\n    background-color: #4ae387;\n    border-color: #4ae387;\n}\n.list-group-item.active .list-group-item-heading,\n    .list-group-item.active .list-group-item-heading > small,\n    .list-group-item.active .list-group-item-heading > .small {\n      color: inherit;\n}\n.list-group-item.active .list-group-item-text {\n      color: white;\n}\n.list-group-flush .list-group-item {\n  border-right: 0;\n  border-left: 0;\n  border-radius: 0;\n}\n.list-group-flush:first-child .list-group-item:first-child {\n  border-top: 0;\n}\n.list-group-flush:last-child .list-group-item:last-child {\n  border-bottom: 0;\n}\n.list-group-item-success {\n  color: #3c763d;\n  background-color: #c8fac6;\n}\na.list-group-item-success,\nbutton.list-group-item-success {\n  color: #3c763d;\n}\na.list-group-item-success .list-group-item-heading,\n  button.list-group-item-success .list-group-item-heading {\n    color: inherit;\n}\na.list-group-item-success:focus, a.list-group-item-success:hover,\n  button.list-group-item-success:focus,\n  button.list-group-item-success:hover {\n    color: #3c763d;\n    background-color: #b1f8af;\n}\na.list-group-item-success.active,\n  button.list-group-item-success.active {\n    color: #fff;\n    background-color: #3c763d;\n    border-color: #3c763d;\n}\n.list-group-item-info {\n  color: #31708f;\n  background-color: #dcf1ff;\n}\na.list-group-item-info,\nbutton.list-group-item-info {\n  color: #31708f;\n}\na.list-group-item-info .list-group-item-heading,\n  button.list-group-item-info .list-group-item-heading {\n    color: inherit;\n}\na.list-group-item-info:focus, a.list-group-item-info:hover,\n  button.list-group-item-info:focus,\n  button.list-group-item-info:hover {\n    color: #31708f;\n    background-color: #c3e7ff;\n}\na.list-group-item-info.active,\n  button.list-group-item-info.active {\n    color: #fff;\n    background-color: #31708f;\n    border-color: #31708f;\n}\n.list-group-item-warning {\n  color: #8a6d3b;\n  background-color: #fff1c8;\n}\na.list-group-item-warning,\nbutton.list-group-item-warning {\n  color: #8a6d3b;\n}\na.list-group-item-warning .list-group-item-heading,\n  button.list-group-item-warning .list-group-item-heading {\n    color: inherit;\n}\na.list-group-item-warning:focus, a.list-group-item-warning:hover,\n  button.list-group-item-warning:focus,\n  button.list-group-item-warning:hover {\n    color: #8a6d3b;\n    background-color: #ffebaf;\n}\na.list-group-item-warning.active,\n  button.list-group-item-warning.active {\n    color: #fff;\n    background-color: #8a6d3b;\n    border-color: #8a6d3b;\n}\n.list-group-item-danger {\n  color: #a94442;\n  background-color: #ffcece;\n}\na.list-group-item-danger,\nbutton.list-group-item-danger {\n  color: #a94442;\n}\na.list-group-item-danger .list-group-item-heading,\n  button.list-group-item-danger .list-group-item-heading {\n    color: inherit;\n}\na.list-group-item-danger:focus, a.list-group-item-danger:hover,\n  button.list-group-item-danger:focus,\n  button.list-group-item-danger:hover {\n    color: #a94442;\n    background-color: #ffb5b5;\n}\na.list-group-item-danger.active,\n  button.list-group-item-danger.active {\n    color: #fff;\n    background-color: #a94442;\n    border-color: #a94442;\n}\n.embed-responsive {\n  position: relative;\n  display: block;\n  width: 100%;\n  padding: 0;\n  overflow: hidden;\n}\n.embed-responsive::before {\n    display: block;\n    content: \"\";\n}\n.embed-responsive .embed-responsive-item,\n  .embed-responsive iframe,\n  .embed-responsive embed,\n  .embed-responsive object,\n  .embed-responsive video {\n    position: absolute;\n    top: 0;\n    bottom: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    border: 0;\n}\n.embed-responsive-21by9::before {\n  padding-top: 42.85714%;\n}\n.embed-responsive-16by9::before {\n  padding-top: 56.25%;\n}\n.embed-responsive-4by3::before {\n  padding-top: 75%;\n}\n.embed-responsive-1by1::before {\n  padding-top: 100%;\n}\n.close {\n  float: right;\n  font-size: 1.5rem;\n  font-weight: 700;\n  line-height: 1;\n  color: #000;\n  text-shadow: 0 1px 0 #fff;\n  opacity: .5;\n}\n.close:focus, .close:hover {\n    color: #000;\n    text-decoration: none;\n    cursor: pointer;\n    opacity: .75;\n}\nbutton.close {\n  padding: 0;\n  cursor: pointer;\n  background: transparent;\n  border: 0;\n  -webkit-appearance: none;\n}\n.modal-open {\n  overflow: hidden;\n}\n.modal {\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 1050;\n  display: none;\n  overflow: hidden;\n  outline: 0;\n}\n.modal.fade .modal-dialog {\n    -webkit-transition: -webkit-transform 0.3s ease-out;\n    transition: -webkit-transform 0.3s ease-out;\n    transition: transform 0.3s ease-out;\n    transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;\n    -webkit-transform: translate(0, -25%);\n            transform: translate(0, -25%);\n}\n.modal.show .modal-dialog {\n    -webkit-transform: translate(0, 0);\n            transform: translate(0, 0);\n}\n.modal-open .modal {\n  overflow-x: hidden;\n  overflow-y: auto;\n}\n.modal-dialog {\n  position: relative;\n  width: auto;\n  margin: 10px;\n}\n.modal-content {\n  position: relative;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  background-color: #fff;\n  background-clip: padding-box;\n  border: 0 solid rgba(0, 0, 0, 0.2);\n  border-radius: 0.3rem;\n  outline: 0;\n}\n.modal-backdrop {\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 1040;\n  background-color: #000;\n}\n.modal-backdrop.fade {\n    opacity: 0;\n}\n.modal-backdrop.show {\n    opacity: 0.5;\n}\n.modal-header {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  padding: 15px;\n  border-bottom: 0 solid #eceeef;\n}\n.modal-title {\n  margin-bottom: 0;\n  line-height: 1.5;\n}\n.modal-body {\n  position: relative;\n  -webkit-box-flex: 1;\n      -ms-flex: 1 1 auto;\n          flex: 1 1 auto;\n  padding: 25px;\n}\n.modal-footer {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  padding: 25px;\n  border-top: 0 solid #eceeef;\n}\n.modal-footer > :not(:first-child) {\n    margin-left: .25rem;\n}\n.modal-footer > :not(:last-child) {\n    margin-right: .25rem;\n}\n.modal-scrollbar-measure {\n  position: absolute;\n  top: -9999px;\n  width: 50px;\n  height: 50px;\n  overflow: scroll;\n}\n@media (min-width: 576px) {\n.modal-dialog {\n    max-width: 650px;\n    margin: 30px auto;\n}\n.modal-sm {\n    max-width: 300px;\n}\n}\n@media (min-width: 992px) {\n.modal-lg {\n    max-width: 850px;\n}\n}\n.tooltip {\n  position: absolute;\n  z-index: 1070;\n  display: block;\n  font-family: \"Source Sans Pro\", sans-serif;\n  font-style: normal;\n  font-weight: 400;\n  letter-spacing: normal;\n  line-break: auto;\n  line-height: 1.5;\n  text-align: left;\n  text-align: start;\n  text-decoration: none;\n  text-shadow: none;\n  text-transform: none;\n  white-space: normal;\n  word-break: normal;\n  word-spacing: normal;\n  font-size: 0.875rem;\n  word-wrap: break-word;\n  opacity: 0;\n}\n.tooltip.show {\n    opacity: 0.9;\n}\n.tooltip.tooltip-top, .tooltip.bs-tether-element-attached-bottom {\n    padding: 5px 0;\n    margin-top: -3px;\n}\n.tooltip.tooltip-top .tooltip-inner::before, .tooltip.bs-tether-element-attached-bottom .tooltip-inner::before {\n      bottom: 0;\n      left: 50%;\n      margin-left: -5px;\n      content: \"\";\n      border-width: 5px 5px 0;\n      border-top-color: #000;\n}\n.tooltip.tooltip-right, .tooltip.bs-tether-element-attached-left {\n    padding: 0 5px;\n    margin-left: 3px;\n}\n.tooltip.tooltip-right .tooltip-inner::before, .tooltip.bs-tether-element-attached-left .tooltip-inner::before {\n      top: 50%;\n      left: 0;\n      margin-top: -5px;\n      content: \"\";\n      border-width: 5px 5px 5px 0;\n      border-right-color: #000;\n}\n.tooltip.tooltip-bottom, .tooltip.bs-tether-element-attached-top {\n    padding: 5px 0;\n    margin-top: 3px;\n}\n.tooltip.tooltip-bottom .tooltip-inner::before, .tooltip.bs-tether-element-attached-top .tooltip-inner::before {\n      top: 0;\n      left: 50%;\n      margin-left: -5px;\n      content: \"\";\n      border-width: 0 5px 5px;\n      border-bottom-color: #000;\n}\n.tooltip.tooltip-left, .tooltip.bs-tether-element-attached-right {\n    padding: 0 5px;\n    margin-left: -3px;\n}\n.tooltip.tooltip-left .tooltip-inner::before, .tooltip.bs-tether-element-attached-right .tooltip-inner::before {\n      top: 50%;\n      right: 0;\n      margin-top: -5px;\n      content: \"\";\n      border-width: 5px 0 5px 5px;\n      border-left-color: #000;\n}\n.tooltip-inner {\n  max-width: 200px;\n  padding: 3px 8px;\n  color: #fff;\n  text-align: center;\n  background-color: #000;\n  border-radius: 0.25rem;\n}\n.tooltip-inner::before {\n    position: absolute;\n    width: 0;\n    height: 0;\n    border-color: transparent;\n    border-style: solid;\n}\n.popover {\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: 1060;\n  display: block;\n  max-width: 276px;\n  padding: 1px;\n  font-family: \"Source Sans Pro\", sans-serif;\n  font-style: normal;\n  font-weight: 400;\n  letter-spacing: normal;\n  line-break: auto;\n  line-height: 1.5;\n  text-align: left;\n  text-align: start;\n  text-decoration: none;\n  text-shadow: none;\n  text-transform: none;\n  white-space: normal;\n  word-break: normal;\n  word-spacing: normal;\n  font-size: 0.875rem;\n  word-wrap: break-word;\n  background-color: #fff;\n  background-clip: padding-box;\n  border: 1px solid rgba(0, 0, 0, 0.2);\n  border-radius: 0.3rem;\n}\n.popover.popover-top, .popover.bs-tether-element-attached-bottom {\n    margin-top: -10px;\n}\n.popover.popover-top::before, .popover.popover-top::after, .popover.bs-tether-element-attached-bottom::before, .popover.bs-tether-element-attached-bottom::after {\n      left: 50%;\n      border-bottom-width: 0;\n}\n.popover.popover-top::before, .popover.bs-tether-element-attached-bottom::before {\n      bottom: -11px;\n      margin-left: -11px;\n      border-top-color: rgba(0, 0, 0, 0.25);\n}\n.popover.popover-top::after, .popover.bs-tether-element-attached-bottom::after {\n      bottom: -10px;\n      margin-left: -10px;\n      border-top-color: #fff;\n}\n.popover.popover-right, .popover.bs-tether-element-attached-left {\n    margin-left: 10px;\n}\n.popover.popover-right::before, .popover.popover-right::after, .popover.bs-tether-element-attached-left::before, .popover.bs-tether-element-attached-left::after {\n      top: 50%;\n      border-left-width: 0;\n}\n.popover.popover-right::before, .popover.bs-tether-element-attached-left::before {\n      left: -11px;\n      margin-top: -11px;\n      border-right-color: rgba(0, 0, 0, 0.25);\n}\n.popover.popover-right::after, .popover.bs-tether-element-attached-left::after {\n      left: -10px;\n      margin-top: -10px;\n      border-right-color: #fff;\n}\n.popover.popover-bottom, .popover.bs-tether-element-attached-top {\n    margin-top: 10px;\n}\n.popover.popover-bottom::before, .popover.popover-bottom::after, .popover.bs-tether-element-attached-top::before, .popover.bs-tether-element-attached-top::after {\n      left: 50%;\n      border-top-width: 0;\n}\n.popover.popover-bottom::before, .popover.bs-tether-element-attached-top::before {\n      top: -11px;\n      margin-left: -11px;\n      border-bottom-color: rgba(0, 0, 0, 0.25);\n}\n.popover.popover-bottom::after, .popover.bs-tether-element-attached-top::after {\n      top: -10px;\n      margin-left: -10px;\n      border-bottom-color: #f7f7f7;\n}\n.popover.popover-bottom .popover-title::before, .popover.bs-tether-element-attached-top .popover-title::before {\n      position: absolute;\n      top: 0;\n      left: 50%;\n      display: block;\n      width: 20px;\n      margin-left: -10px;\n      content: \"\";\n      border-bottom: 1px solid #f7f7f7;\n}\n.popover.popover-left, .popover.bs-tether-element-attached-right {\n    margin-left: -10px;\n}\n.popover.popover-left::before, .popover.popover-left::after, .popover.bs-tether-element-attached-right::before, .popover.bs-tether-element-attached-right::after {\n      top: 50%;\n      border-right-width: 0;\n}\n.popover.popover-left::before, .popover.bs-tether-element-attached-right::before {\n      right: -11px;\n      margin-top: -11px;\n      border-left-color: rgba(0, 0, 0, 0.25);\n}\n.popover.popover-left::after, .popover.bs-tether-element-attached-right::after {\n      right: -10px;\n      margin-top: -10px;\n      border-left-color: #fff;\n}\n.popover-title {\n  padding: 8px 14px;\n  margin-bottom: 0;\n  font-size: 1rem;\n  background-color: #f7f7f7;\n  border-bottom: 1px solid #ebebeb;\n  border-top-right-radius: calc(0.3rem - 1px);\n  border-top-left-radius: calc(0.3rem - 1px);\n}\n.popover-title:empty {\n    display: none;\n}\n.popover-content {\n  padding: 9px 14px;\n}\n.popover::before,\n.popover::after {\n  position: absolute;\n  display: block;\n  width: 0;\n  height: 0;\n  border-color: transparent;\n  border-style: solid;\n}\n.popover::before {\n  content: \"\";\n  border-width: 11px;\n}\n.popover::after {\n  content: \"\";\n  border-width: 10px;\n}\n.carousel {\n  position: relative;\n}\n.carousel-inner {\n  position: relative;\n  width: 100%;\n  overflow: hidden;\n}\n.carousel-item {\n  position: relative;\n  display: none;\n  width: 100%;\n}\n@media (-webkit-transform-3d) {\n.carousel-item {\n      -webkit-transition: -webkit-transform 0.6s ease-in-out;\n      transition: -webkit-transform 0.6s ease-in-out;\n      transition: transform 0.6s ease-in-out;\n      transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;\n      -webkit-backface-visibility: hidden;\n              backface-visibility: hidden;\n      -webkit-perspective: 1000px;\n              perspective: 1000px;\n}\n}\n@supports ((-webkit-transform: translate3d(0, 0, 0)) or (transform: translate3d(0, 0, 0))) {\n.carousel-item {\n      -webkit-transition: -webkit-transform 0.6s ease-in-out;\n      transition: -webkit-transform 0.6s ease-in-out;\n      transition: transform 0.6s ease-in-out;\n      transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;\n      -webkit-backface-visibility: hidden;\n              backface-visibility: hidden;\n      -webkit-perspective: 1000px;\n              perspective: 1000px;\n}\n}\n.carousel-item.active,\n.carousel-item-next,\n.carousel-item-prev {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n.carousel-item-next,\n.carousel-item-prev {\n  position: absolute;\n  top: 0;\n}\n@media (-webkit-transform-3d) {\n.carousel-item-next.carousel-item-left,\n  .carousel-item-prev.carousel-item-right {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0);\n}\n.carousel-item-next,\n  .active.carousel-item-right {\n    -webkit-transform: translate3d(100%, 0, 0);\n            transform: translate3d(100%, 0, 0);\n}\n.carousel-item-prev,\n  .active.carousel-item-left {\n    -webkit-transform: translate3d(-100%, 0, 0);\n            transform: translate3d(-100%, 0, 0);\n}\n}\n@supports ((-webkit-transform: translate3d(0, 0, 0)) or (transform: translate3d(0, 0, 0))) {\n.carousel-item-next.carousel-item-left,\n  .carousel-item-prev.carousel-item-right {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0);\n}\n.carousel-item-next,\n  .active.carousel-item-right {\n    -webkit-transform: translate3d(100%, 0, 0);\n            transform: translate3d(100%, 0, 0);\n}\n.carousel-item-prev,\n  .active.carousel-item-left {\n    -webkit-transform: translate3d(-100%, 0, 0);\n            transform: translate3d(-100%, 0, 0);\n}\n}\n.carousel-control-prev,\n.carousel-control-next {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  width: 15%;\n  color: #fff;\n  text-align: center;\n  opacity: 0.5;\n}\n.carousel-control-prev:focus, .carousel-control-prev:hover,\n  .carousel-control-next:focus,\n  .carousel-control-next:hover {\n    color: #fff;\n    text-decoration: none;\n    outline: 0;\n    opacity: .9;\n}\n.carousel-control-prev {\n  left: 0;\n}\n.carousel-control-next {\n  right: 0;\n}\n.carousel-control-prev-icon,\n.carousel-control-next-icon {\n  display: inline-block;\n  width: 20px;\n  height: 20px;\n  background: transparent no-repeat center center;\n  background-size: 100% 100%;\n}\n.carousel-control-prev-icon {\n  background-image: url(\"data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M4 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E\");\n}\n.carousel-control-next-icon {\n  background-image: url(\"data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M1.5 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E\");\n}\n.carousel-indicators {\n  position: absolute;\n  right: 0;\n  bottom: 10px;\n  left: 0;\n  z-index: 15;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  padding-left: 0;\n  margin-right: 15%;\n  margin-left: 15%;\n  list-style: none;\n}\n.carousel-indicators li {\n    position: relative;\n    -webkit-box-flex: 1;\n        -ms-flex: 1 0 auto;\n            flex: 1 0 auto;\n    max-width: 30px;\n    height: 3px;\n    margin-right: 3px;\n    margin-left: 3px;\n    text-indent: -999px;\n    cursor: pointer;\n    background-color: rgba(255, 255, 255, 0.5);\n}\n.carousel-indicators li::before {\n      position: absolute;\n      top: -10px;\n      left: 0;\n      display: inline-block;\n      width: 100%;\n      height: 10px;\n      content: \"\";\n}\n.carousel-indicators li::after {\n      position: absolute;\n      bottom: -10px;\n      left: 0;\n      display: inline-block;\n      width: 100%;\n      height: 10px;\n      content: \"\";\n}\n.carousel-indicators .active {\n    background-color: #fff;\n}\n.carousel-caption {\n  position: absolute;\n  right: 15%;\n  bottom: 20px;\n  left: 15%;\n  z-index: 10;\n  padding-top: 20px;\n  padding-bottom: 20px;\n  color: #fff;\n  text-align: center;\n}\n.align-baseline {\n  vertical-align: baseline !important;\n}\n.align-top {\n  vertical-align: top !important;\n}\n.align-middle {\n  vertical-align: middle !important;\n}\n.align-bottom {\n  vertical-align: bottom !important;\n}\n.align-text-bottom {\n  vertical-align: text-bottom !important;\n}\n.align-text-top {\n  vertical-align: text-top !important;\n}\n.bg-faded {\n  background-color: #e6e6e6;\n}\n.bg-primary {\n  background-color: #4ae387 !important;\n}\na.bg-primary:focus, a.bg-primary:hover {\n  background-color: #21d96a !important;\n}\n.bg-success {\n  background-color: #db76df !important;\n}\na.bg-success:focus, a.bg-success:hover {\n  background-color: #d04dd5 !important;\n}\n.bg-info {\n  background-color: #4ab2e3 !important;\n}\na.bg-info:focus, a.bg-info:hover {\n  background-color: #219ed9 !important;\n}\n.bg-warning {\n  background-color: #f7cc36 !important;\n}\na.bg-warning:focus, a.bg-warning:hover {\n  background-color: #f0bd0a !important;\n}\n.bg-danger {\n  background-color: #e34a4a !important;\n}\na.bg-danger:focus, a.bg-danger:hover {\n  background-color: #d92121 !important;\n}\n.bg-inverse {\n  background-color: #292b2c !important;\n}\na.bg-inverse:focus, a.bg-inverse:hover {\n  background-color: #101112 !important;\n}\n.border-0 {\n  border: 0 !important;\n}\n.border-top-0 {\n  border-top: 0 !important;\n}\n.border-right-0 {\n  border-right: 0 !important;\n}\n.border-bottom-0 {\n  border-bottom: 0 !important;\n}\n.border-left-0 {\n  border-left: 0 !important;\n}\n.rounded {\n  border-radius: 0.25rem;\n}\n.rounded-top {\n  border-top-right-radius: 0.25rem;\n  border-top-left-radius: 0.25rem;\n}\n.rounded-right {\n  border-bottom-right-radius: 0.25rem;\n  border-top-right-radius: 0.25rem;\n}\n.rounded-bottom {\n  border-bottom-right-radius: 0.25rem;\n  border-bottom-left-radius: 0.25rem;\n}\n.rounded-left {\n  border-bottom-left-radius: 0.25rem;\n  border-top-left-radius: 0.25rem;\n}\n.rounded-circle {\n  border-radius: 50%;\n}\n.rounded-0 {\n  border-radius: 0;\n}\n.clearfix::after {\n  display: block;\n  content: \"\";\n  clear: both;\n}\n.d-none {\n  display: none !important;\n}\n.d-inline {\n  display: inline !important;\n}\n.d-inline-block {\n  display: inline-block !important;\n}\n.d-block {\n  display: block !important;\n}\n.d-table {\n  display: table !important;\n}\n.d-table-cell {\n  display: table-cell !important;\n}\n.d-flex {\n  display: -webkit-box !important;\n  display: -ms-flexbox !important;\n  display: flex !important;\n}\n.d-inline-flex {\n  display: -webkit-inline-box !important;\n  display: -ms-inline-flexbox !important;\n  display: inline-flex !important;\n}\n@media (min-width: 576px) {\n.d-sm-none {\n    display: none !important;\n}\n.d-sm-inline {\n    display: inline !important;\n}\n.d-sm-inline-block {\n    display: inline-block !important;\n}\n.d-sm-block {\n    display: block !important;\n}\n.d-sm-table {\n    display: table !important;\n}\n.d-sm-table-cell {\n    display: table-cell !important;\n}\n.d-sm-flex {\n    display: -webkit-box !important;\n    display: -ms-flexbox !important;\n    display: flex !important;\n}\n.d-sm-inline-flex {\n    display: -webkit-inline-box !important;\n    display: -ms-inline-flexbox !important;\n    display: inline-flex !important;\n}\n}\n@media (min-width: 768px) {\n.d-md-none {\n    display: none !important;\n}\n.d-md-inline {\n    display: inline !important;\n}\n.d-md-inline-block {\n    display: inline-block !important;\n}\n.d-md-block {\n    display: block !important;\n}\n.d-md-table {\n    display: table !important;\n}\n.d-md-table-cell {\n    display: table-cell !important;\n}\n.d-md-flex {\n    display: -webkit-box !important;\n    display: -ms-flexbox !important;\n    display: flex !important;\n}\n.d-md-inline-flex {\n    display: -webkit-inline-box !important;\n    display: -ms-inline-flexbox !important;\n    display: inline-flex !important;\n}\n}\n@media (min-width: 992px) {\n.d-lg-none {\n    display: none !important;\n}\n.d-lg-inline {\n    display: inline !important;\n}\n.d-lg-inline-block {\n    display: inline-block !important;\n}\n.d-lg-block {\n    display: block !important;\n}\n.d-lg-table {\n    display: table !important;\n}\n.d-lg-table-cell {\n    display: table-cell !important;\n}\n.d-lg-flex {\n    display: -webkit-box !important;\n    display: -ms-flexbox !important;\n    display: flex !important;\n}\n.d-lg-inline-flex {\n    display: -webkit-inline-box !important;\n    display: -ms-inline-flexbox !important;\n    display: inline-flex !important;\n}\n}\n@media (min-width: 1200px) {\n.d-xl-none {\n    display: none !important;\n}\n.d-xl-inline {\n    display: inline !important;\n}\n.d-xl-inline-block {\n    display: inline-block !important;\n}\n.d-xl-block {\n    display: block !important;\n}\n.d-xl-table {\n    display: table !important;\n}\n.d-xl-table-cell {\n    display: table-cell !important;\n}\n.d-xl-flex {\n    display: -webkit-box !important;\n    display: -ms-flexbox !important;\n    display: flex !important;\n}\n.d-xl-inline-flex {\n    display: -webkit-inline-box !important;\n    display: -ms-inline-flexbox !important;\n    display: inline-flex !important;\n}\n}\n.flex-first {\n  -webkit-box-ordinal-group: 0;\n      -ms-flex-order: -1;\n          order: -1;\n}\n.flex-last {\n  -webkit-box-ordinal-group: 2;\n      -ms-flex-order: 1;\n          order: 1;\n}\n.flex-unordered {\n  -webkit-box-ordinal-group: 1;\n      -ms-flex-order: 0;\n          order: 0;\n}\n.flex-row {\n  -webkit-box-orient: horizontal !important;\n  -webkit-box-direction: normal !important;\n      -ms-flex-direction: row !important;\n          flex-direction: row !important;\n}\n.flex-column {\n  -webkit-box-orient: vertical !important;\n  -webkit-box-direction: normal !important;\n      -ms-flex-direction: column !important;\n          flex-direction: column !important;\n}\n.flex-row-reverse {\n  -webkit-box-orient: horizontal !important;\n  -webkit-box-direction: reverse !important;\n      -ms-flex-direction: row-reverse !important;\n          flex-direction: row-reverse !important;\n}\n.flex-column-reverse {\n  -webkit-box-orient: vertical !important;\n  -webkit-box-direction: reverse !important;\n      -ms-flex-direction: column-reverse !important;\n          flex-direction: column-reverse !important;\n}\n.flex-wrap {\n  -ms-flex-wrap: wrap !important;\n      flex-wrap: wrap !important;\n}\n.flex-nowrap {\n  -ms-flex-wrap: nowrap !important;\n      flex-wrap: nowrap !important;\n}\n.flex-wrap-reverse {\n  -ms-flex-wrap: wrap-reverse !important;\n      flex-wrap: wrap-reverse !important;\n}\n.justify-content-start {\n  -webkit-box-pack: start !important;\n      -ms-flex-pack: start !important;\n          justify-content: flex-start !important;\n}\n.justify-content-end {\n  -webkit-box-pack: end !important;\n      -ms-flex-pack: end !important;\n          justify-content: flex-end !important;\n}\n.justify-content-center {\n  -webkit-box-pack: center !important;\n      -ms-flex-pack: center !important;\n          justify-content: center !important;\n}\n.justify-content-between {\n  -webkit-box-pack: justify !important;\n      -ms-flex-pack: justify !important;\n          justify-content: space-between !important;\n}\n.justify-content-around {\n  -ms-flex-pack: distribute !important;\n      justify-content: space-around !important;\n}\n.align-items-start {\n  -webkit-box-align: start !important;\n      -ms-flex-align: start !important;\n          align-items: flex-start !important;\n}\n.align-items-end {\n  -webkit-box-align: end !important;\n      -ms-flex-align: end !important;\n          align-items: flex-end !important;\n}\n.align-items-center {\n  -webkit-box-align: center !important;\n      -ms-flex-align: center !important;\n          align-items: center !important;\n}\n.align-items-baseline {\n  -webkit-box-align: baseline !important;\n      -ms-flex-align: baseline !important;\n          align-items: baseline !important;\n}\n.align-items-stretch {\n  -webkit-box-align: stretch !important;\n      -ms-flex-align: stretch !important;\n          align-items: stretch !important;\n}\n.align-content-start {\n  -ms-flex-line-pack: start !important;\n      align-content: flex-start !important;\n}\n.align-content-end {\n  -ms-flex-line-pack: end !important;\n      align-content: flex-end !important;\n}\n.align-content-center {\n  -ms-flex-line-pack: center !important;\n      align-content: center !important;\n}\n.align-content-between {\n  -ms-flex-line-pack: justify !important;\n      align-content: space-between !important;\n}\n.align-content-around {\n  -ms-flex-line-pack: distribute !important;\n      align-content: space-around !important;\n}\n.align-content-stretch {\n  -ms-flex-line-pack: stretch !important;\n      align-content: stretch !important;\n}\n.align-self-auto {\n  -ms-flex-item-align: auto !important;\n      align-self: auto !important;\n}\n.align-self-start {\n  -ms-flex-item-align: start !important;\n      align-self: flex-start !important;\n}\n.align-self-end {\n  -ms-flex-item-align: end !important;\n      align-self: flex-end !important;\n}\n.align-self-center {\n  -ms-flex-item-align: center !important;\n      align-self: center !important;\n}\n.align-self-baseline {\n  -ms-flex-item-align: baseline !important;\n      align-self: baseline !important;\n}\n.align-self-stretch {\n  -ms-flex-item-align: stretch !important;\n      align-self: stretch !important;\n}\n@media (min-width: 576px) {\n.flex-sm-first {\n    -webkit-box-ordinal-group: 0;\n        -ms-flex-order: -1;\n            order: -1;\n}\n.flex-sm-last {\n    -webkit-box-ordinal-group: 2;\n        -ms-flex-order: 1;\n            order: 1;\n}\n.flex-sm-unordered {\n    -webkit-box-ordinal-group: 1;\n        -ms-flex-order: 0;\n            order: 0;\n}\n.flex-sm-row {\n    -webkit-box-orient: horizontal !important;\n    -webkit-box-direction: normal !important;\n        -ms-flex-direction: row !important;\n            flex-direction: row !important;\n}\n.flex-sm-column {\n    -webkit-box-orient: vertical !important;\n    -webkit-box-direction: normal !important;\n        -ms-flex-direction: column !important;\n            flex-direction: column !important;\n}\n.flex-sm-row-reverse {\n    -webkit-box-orient: horizontal !important;\n    -webkit-box-direction: reverse !important;\n        -ms-flex-direction: row-reverse !important;\n            flex-direction: row-reverse !important;\n}\n.flex-sm-column-reverse {\n    -webkit-box-orient: vertical !important;\n    -webkit-box-direction: reverse !important;\n        -ms-flex-direction: column-reverse !important;\n            flex-direction: column-reverse !important;\n}\n.flex-sm-wrap {\n    -ms-flex-wrap: wrap !important;\n        flex-wrap: wrap !important;\n}\n.flex-sm-nowrap {\n    -ms-flex-wrap: nowrap !important;\n        flex-wrap: nowrap !important;\n}\n.flex-sm-wrap-reverse {\n    -ms-flex-wrap: wrap-reverse !important;\n        flex-wrap: wrap-reverse !important;\n}\n.justify-content-sm-start {\n    -webkit-box-pack: start !important;\n        -ms-flex-pack: start !important;\n            justify-content: flex-start !important;\n}\n.justify-content-sm-end {\n    -webkit-box-pack: end !important;\n        -ms-flex-pack: end !important;\n            justify-content: flex-end !important;\n}\n.justify-content-sm-center {\n    -webkit-box-pack: center !important;\n        -ms-flex-pack: center !important;\n            justify-content: center !important;\n}\n.justify-content-sm-between {\n    -webkit-box-pack: justify !important;\n        -ms-flex-pack: justify !important;\n            justify-content: space-between !important;\n}\n.justify-content-sm-around {\n    -ms-flex-pack: distribute !important;\n        justify-content: space-around !important;\n}\n.align-items-sm-start {\n    -webkit-box-align: start !important;\n        -ms-flex-align: start !important;\n            align-items: flex-start !important;\n}\n.align-items-sm-end {\n    -webkit-box-align: end !important;\n        -ms-flex-align: end !important;\n            align-items: flex-end !important;\n}\n.align-items-sm-center {\n    -webkit-box-align: center !important;\n        -ms-flex-align: center !important;\n            align-items: center !important;\n}\n.align-items-sm-baseline {\n    -webkit-box-align: baseline !important;\n        -ms-flex-align: baseline !important;\n            align-items: baseline !important;\n}\n.align-items-sm-stretch {\n    -webkit-box-align: stretch !important;\n        -ms-flex-align: stretch !important;\n            align-items: stretch !important;\n}\n.align-content-sm-start {\n    -ms-flex-line-pack: start !important;\n        align-content: flex-start !important;\n}\n.align-content-sm-end {\n    -ms-flex-line-pack: end !important;\n        align-content: flex-end !important;\n}\n.align-content-sm-center {\n    -ms-flex-line-pack: center !important;\n        align-content: center !important;\n}\n.align-content-sm-between {\n    -ms-flex-line-pack: justify !important;\n        align-content: space-between !important;\n}\n.align-content-sm-around {\n    -ms-flex-line-pack: distribute !important;\n        align-content: space-around !important;\n}\n.align-content-sm-stretch {\n    -ms-flex-line-pack: stretch !important;\n        align-content: stretch !important;\n}\n.align-self-sm-auto {\n    -ms-flex-item-align: auto !important;\n        align-self: auto !important;\n}\n.align-self-sm-start {\n    -ms-flex-item-align: start !important;\n        align-self: flex-start !important;\n}\n.align-self-sm-end {\n    -ms-flex-item-align: end !important;\n        align-self: flex-end !important;\n}\n.align-self-sm-center {\n    -ms-flex-item-align: center !important;\n        align-self: center !important;\n}\n.align-self-sm-baseline {\n    -ms-flex-item-align: baseline !important;\n        align-self: baseline !important;\n}\n.align-self-sm-stretch {\n    -ms-flex-item-align: stretch !important;\n        align-self: stretch !important;\n}\n}\n@media (min-width: 768px) {\n.flex-md-first {\n    -webkit-box-ordinal-group: 0;\n        -ms-flex-order: -1;\n            order: -1;\n}\n.flex-md-last {\n    -webkit-box-ordinal-group: 2;\n        -ms-flex-order: 1;\n            order: 1;\n}\n.flex-md-unordered {\n    -webkit-box-ordinal-group: 1;\n        -ms-flex-order: 0;\n            order: 0;\n}\n.flex-md-row {\n    -webkit-box-orient: horizontal !important;\n    -webkit-box-direction: normal !important;\n        -ms-flex-direction: row !important;\n            flex-direction: row !important;\n}\n.flex-md-column {\n    -webkit-box-orient: vertical !important;\n    -webkit-box-direction: normal !important;\n        -ms-flex-direction: column !important;\n            flex-direction: column !important;\n}\n.flex-md-row-reverse {\n    -webkit-box-orient: horizontal !important;\n    -webkit-box-direction: reverse !important;\n        -ms-flex-direction: row-reverse !important;\n            flex-direction: row-reverse !important;\n}\n.flex-md-column-reverse {\n    -webkit-box-orient: vertical !important;\n    -webkit-box-direction: reverse !important;\n        -ms-flex-direction: column-reverse !important;\n            flex-direction: column-reverse !important;\n}\n.flex-md-wrap {\n    -ms-flex-wrap: wrap !important;\n        flex-wrap: wrap !important;\n}\n.flex-md-nowrap {\n    -ms-flex-wrap: nowrap !important;\n        flex-wrap: nowrap !important;\n}\n.flex-md-wrap-reverse {\n    -ms-flex-wrap: wrap-reverse !important;\n        flex-wrap: wrap-reverse !important;\n}\n.justify-content-md-start {\n    -webkit-box-pack: start !important;\n        -ms-flex-pack: start !important;\n            justify-content: flex-start !important;\n}\n.justify-content-md-end {\n    -webkit-box-pack: end !important;\n        -ms-flex-pack: end !important;\n            justify-content: flex-end !important;\n}\n.justify-content-md-center {\n    -webkit-box-pack: center !important;\n        -ms-flex-pack: center !important;\n            justify-content: center !important;\n}\n.justify-content-md-between {\n    -webkit-box-pack: justify !important;\n        -ms-flex-pack: justify !important;\n            justify-content: space-between !important;\n}\n.justify-content-md-around {\n    -ms-flex-pack: distribute !important;\n        justify-content: space-around !important;\n}\n.align-items-md-start {\n    -webkit-box-align: start !important;\n        -ms-flex-align: start !important;\n            align-items: flex-start !important;\n}\n.align-items-md-end {\n    -webkit-box-align: end !important;\n        -ms-flex-align: end !important;\n            align-items: flex-end !important;\n}\n.align-items-md-center {\n    -webkit-box-align: center !important;\n        -ms-flex-align: center !important;\n            align-items: center !important;\n}\n.align-items-md-baseline {\n    -webkit-box-align: baseline !important;\n        -ms-flex-align: baseline !important;\n            align-items: baseline !important;\n}\n.align-items-md-stretch {\n    -webkit-box-align: stretch !important;\n        -ms-flex-align: stretch !important;\n            align-items: stretch !important;\n}\n.align-content-md-start {\n    -ms-flex-line-pack: start !important;\n        align-content: flex-start !important;\n}\n.align-content-md-end {\n    -ms-flex-line-pack: end !important;\n        align-content: flex-end !important;\n}\n.align-content-md-center {\n    -ms-flex-line-pack: center !important;\n        align-content: center !important;\n}\n.align-content-md-between {\n    -ms-flex-line-pack: justify !important;\n        align-content: space-between !important;\n}\n.align-content-md-around {\n    -ms-flex-line-pack: distribute !important;\n        align-content: space-around !important;\n}\n.align-content-md-stretch {\n    -ms-flex-line-pack: stretch !important;\n        align-content: stretch !important;\n}\n.align-self-md-auto {\n    -ms-flex-item-align: auto !important;\n        align-self: auto !important;\n}\n.align-self-md-start {\n    -ms-flex-item-align: start !important;\n        align-self: flex-start !important;\n}\n.align-self-md-end {\n    -ms-flex-item-align: end !important;\n        align-self: flex-end !important;\n}\n.align-self-md-center {\n    -ms-flex-item-align: center !important;\n        align-self: center !important;\n}\n.align-self-md-baseline {\n    -ms-flex-item-align: baseline !important;\n        align-self: baseline !important;\n}\n.align-self-md-stretch {\n    -ms-flex-item-align: stretch !important;\n        align-self: stretch !important;\n}\n}\n@media (min-width: 992px) {\n.flex-lg-first {\n    -webkit-box-ordinal-group: 0;\n        -ms-flex-order: -1;\n            order: -1;\n}\n.flex-lg-last {\n    -webkit-box-ordinal-group: 2;\n        -ms-flex-order: 1;\n            order: 1;\n}\n.flex-lg-unordered {\n    -webkit-box-ordinal-group: 1;\n        -ms-flex-order: 0;\n            order: 0;\n}\n.flex-lg-row {\n    -webkit-box-orient: horizontal !important;\n    -webkit-box-direction: normal !important;\n        -ms-flex-direction: row !important;\n            flex-direction: row !important;\n}\n.flex-lg-column {\n    -webkit-box-orient: vertical !important;\n    -webkit-box-direction: normal !important;\n        -ms-flex-direction: column !important;\n            flex-direction: column !important;\n}\n.flex-lg-row-reverse {\n    -webkit-box-orient: horizontal !important;\n    -webkit-box-direction: reverse !important;\n        -ms-flex-direction: row-reverse !important;\n            flex-direction: row-reverse !important;\n}\n.flex-lg-column-reverse {\n    -webkit-box-orient: vertical !important;\n    -webkit-box-direction: reverse !important;\n        -ms-flex-direction: column-reverse !important;\n            flex-direction: column-reverse !important;\n}\n.flex-lg-wrap {\n    -ms-flex-wrap: wrap !important;\n        flex-wrap: wrap !important;\n}\n.flex-lg-nowrap {\n    -ms-flex-wrap: nowrap !important;\n        flex-wrap: nowrap !important;\n}\n.flex-lg-wrap-reverse {\n    -ms-flex-wrap: wrap-reverse !important;\n        flex-wrap: wrap-reverse !important;\n}\n.justify-content-lg-start {\n    -webkit-box-pack: start !important;\n        -ms-flex-pack: start !important;\n            justify-content: flex-start !important;\n}\n.justify-content-lg-end {\n    -webkit-box-pack: end !important;\n        -ms-flex-pack: end !important;\n            justify-content: flex-end !important;\n}\n.justify-content-lg-center {\n    -webkit-box-pack: center !important;\n        -ms-flex-pack: center !important;\n            justify-content: center !important;\n}\n.justify-content-lg-between {\n    -webkit-box-pack: justify !important;\n        -ms-flex-pack: justify !important;\n            justify-content: space-between !important;\n}\n.justify-content-lg-around {\n    -ms-flex-pack: distribute !important;\n        justify-content: space-around !important;\n}\n.align-items-lg-start {\n    -webkit-box-align: start !important;\n        -ms-flex-align: start !important;\n            align-items: flex-start !important;\n}\n.align-items-lg-end {\n    -webkit-box-align: end !important;\n        -ms-flex-align: end !important;\n            align-items: flex-end !important;\n}\n.align-items-lg-center {\n    -webkit-box-align: center !important;\n        -ms-flex-align: center !important;\n            align-items: center !important;\n}\n.align-items-lg-baseline {\n    -webkit-box-align: baseline !important;\n        -ms-flex-align: baseline !important;\n            align-items: baseline !important;\n}\n.align-items-lg-stretch {\n    -webkit-box-align: stretch !important;\n        -ms-flex-align: stretch !important;\n            align-items: stretch !important;\n}\n.align-content-lg-start {\n    -ms-flex-line-pack: start !important;\n        align-content: flex-start !important;\n}\n.align-content-lg-end {\n    -ms-flex-line-pack: end !important;\n        align-content: flex-end !important;\n}\n.align-content-lg-center {\n    -ms-flex-line-pack: center !important;\n        align-content: center !important;\n}\n.align-content-lg-between {\n    -ms-flex-line-pack: justify !important;\n        align-content: space-between !important;\n}\n.align-content-lg-around {\n    -ms-flex-line-pack: distribute !important;\n        align-content: space-around !important;\n}\n.align-content-lg-stretch {\n    -ms-flex-line-pack: stretch !important;\n        align-content: stretch !important;\n}\n.align-self-lg-auto {\n    -ms-flex-item-align: auto !important;\n        align-self: auto !important;\n}\n.align-self-lg-start {\n    -ms-flex-item-align: start !important;\n        align-self: flex-start !important;\n}\n.align-self-lg-end {\n    -ms-flex-item-align: end !important;\n        align-self: flex-end !important;\n}\n.align-self-lg-center {\n    -ms-flex-item-align: center !important;\n        align-self: center !important;\n}\n.align-self-lg-baseline {\n    -ms-flex-item-align: baseline !important;\n        align-self: baseline !important;\n}\n.align-self-lg-stretch {\n    -ms-flex-item-align: stretch !important;\n        align-self: stretch !important;\n}\n}\n@media (min-width: 1200px) {\n.flex-xl-first {\n    -webkit-box-ordinal-group: 0;\n        -ms-flex-order: -1;\n            order: -1;\n}\n.flex-xl-last {\n    -webkit-box-ordinal-group: 2;\n        -ms-flex-order: 1;\n            order: 1;\n}\n.flex-xl-unordered {\n    -webkit-box-ordinal-group: 1;\n        -ms-flex-order: 0;\n            order: 0;\n}\n.flex-xl-row {\n    -webkit-box-orient: horizontal !important;\n    -webkit-box-direction: normal !important;\n        -ms-flex-direction: row !important;\n            flex-direction: row !important;\n}\n.flex-xl-column {\n    -webkit-box-orient: vertical !important;\n    -webkit-box-direction: normal !important;\n        -ms-flex-direction: column !important;\n            flex-direction: column !important;\n}\n.flex-xl-row-reverse {\n    -webkit-box-orient: horizontal !important;\n    -webkit-box-direction: reverse !important;\n        -ms-flex-direction: row-reverse !important;\n            flex-direction: row-reverse !important;\n}\n.flex-xl-column-reverse {\n    -webkit-box-orient: vertical !important;\n    -webkit-box-direction: reverse !important;\n        -ms-flex-direction: column-reverse !important;\n            flex-direction: column-reverse !important;\n}\n.flex-xl-wrap {\n    -ms-flex-wrap: wrap !important;\n        flex-wrap: wrap !important;\n}\n.flex-xl-nowrap {\n    -ms-flex-wrap: nowrap !important;\n        flex-wrap: nowrap !important;\n}\n.flex-xl-wrap-reverse {\n    -ms-flex-wrap: wrap-reverse !important;\n        flex-wrap: wrap-reverse !important;\n}\n.justify-content-xl-start {\n    -webkit-box-pack: start !important;\n        -ms-flex-pack: start !important;\n            justify-content: flex-start !important;\n}\n.justify-content-xl-end {\n    -webkit-box-pack: end !important;\n        -ms-flex-pack: end !important;\n            justify-content: flex-end !important;\n}\n.justify-content-xl-center {\n    -webkit-box-pack: center !important;\n        -ms-flex-pack: center !important;\n            justify-content: center !important;\n}\n.justify-content-xl-between {\n    -webkit-box-pack: justify !important;\n        -ms-flex-pack: justify !important;\n            justify-content: space-between !important;\n}\n.justify-content-xl-around {\n    -ms-flex-pack: distribute !important;\n        justify-content: space-around !important;\n}\n.align-items-xl-start {\n    -webkit-box-align: start !important;\n        -ms-flex-align: start !important;\n            align-items: flex-start !important;\n}\n.align-items-xl-end {\n    -webkit-box-align: end !important;\n        -ms-flex-align: end !important;\n            align-items: flex-end !important;\n}\n.align-items-xl-center {\n    -webkit-box-align: center !important;\n        -ms-flex-align: center !important;\n            align-items: center !important;\n}\n.align-items-xl-baseline {\n    -webkit-box-align: baseline !important;\n        -ms-flex-align: baseline !important;\n            align-items: baseline !important;\n}\n.align-items-xl-stretch {\n    -webkit-box-align: stretch !important;\n        -ms-flex-align: stretch !important;\n            align-items: stretch !important;\n}\n.align-content-xl-start {\n    -ms-flex-line-pack: start !important;\n        align-content: flex-start !important;\n}\n.align-content-xl-end {\n    -ms-flex-line-pack: end !important;\n        align-content: flex-end !important;\n}\n.align-content-xl-center {\n    -ms-flex-line-pack: center !important;\n        align-content: center !important;\n}\n.align-content-xl-between {\n    -ms-flex-line-pack: justify !important;\n        align-content: space-between !important;\n}\n.align-content-xl-around {\n    -ms-flex-line-pack: distribute !important;\n        align-content: space-around !important;\n}\n.align-content-xl-stretch {\n    -ms-flex-line-pack: stretch !important;\n        align-content: stretch !important;\n}\n.align-self-xl-auto {\n    -ms-flex-item-align: auto !important;\n        align-self: auto !important;\n}\n.align-self-xl-start {\n    -ms-flex-item-align: start !important;\n        align-self: flex-start !important;\n}\n.align-self-xl-end {\n    -ms-flex-item-align: end !important;\n        align-self: flex-end !important;\n}\n.align-self-xl-center {\n    -ms-flex-item-align: center !important;\n        align-self: center !important;\n}\n.align-self-xl-baseline {\n    -ms-flex-item-align: baseline !important;\n        align-self: baseline !important;\n}\n.align-self-xl-stretch {\n    -ms-flex-item-align: stretch !important;\n        align-self: stretch !important;\n}\n}\n.float-left {\n  float: left !important;\n}\n.float-right {\n  float: right !important;\n}\n.float-none {\n  float: none !important;\n}\n@media (min-width: 576px) {\n.float-sm-left {\n    float: left !important;\n}\n.float-sm-right {\n    float: right !important;\n}\n.float-sm-none {\n    float: none !important;\n}\n}\n@media (min-width: 768px) {\n.float-md-left {\n    float: left !important;\n}\n.float-md-right {\n    float: right !important;\n}\n.float-md-none {\n    float: none !important;\n}\n}\n@media (min-width: 992px) {\n.float-lg-left {\n    float: left !important;\n}\n.float-lg-right {\n    float: right !important;\n}\n.float-lg-none {\n    float: none !important;\n}\n}\n@media (min-width: 1200px) {\n.float-xl-left {\n    float: left !important;\n}\n.float-xl-right {\n    float: right !important;\n}\n.float-xl-none {\n    float: none !important;\n}\n}\n.fixed-top {\n  position: fixed;\n  top: 0;\n  right: 0;\n  left: 0;\n  z-index: 1030;\n}\n.fixed-bottom {\n  position: fixed;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 1030;\n}\n.sticky-top {\n  position: -webkit-sticky;\n  position: sticky;\n  top: 0;\n  z-index: 1030;\n}\n.sr-only {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  padding: 0;\n  margin: -1px;\n  overflow: hidden;\n  clip: rect(0, 0, 0, 0);\n  border: 0;\n}\n.sr-only-focusable:active, .sr-only-focusable:focus {\n  position: static;\n  width: auto;\n  height: auto;\n  margin: 0;\n  overflow: visible;\n  clip: auto;\n}\n.w-25 {\n  width: 25% !important;\n}\n.w-50 {\n  width: 50% !important;\n}\n.w-75 {\n  width: 75% !important;\n}\n.w-100 {\n  width: 100% !important;\n}\n.h-25 {\n  height: 25% !important;\n}\n.h-50 {\n  height: 50% !important;\n}\n.h-75 {\n  height: 75% !important;\n}\n.h-100 {\n  height: 100% !important;\n}\n.mw-100 {\n  max-width: 100% !important;\n}\n.mh-100 {\n  max-height: 100% !important;\n}\n.m-0 {\n  margin: 0 0 !important;\n}\n.mt-0 {\n  margin-top: 0 !important;\n}\n.mr-0 {\n  margin-right: 0 !important;\n}\n.mb-0 {\n  margin-bottom: 0 !important;\n}\n.ml-0 {\n  margin-left: 0 !important;\n}\n.mx-0 {\n  margin-right: 0 !important;\n  margin-left: 0 !important;\n}\n.my-0 {\n  margin-top: 0 !important;\n  margin-bottom: 0 !important;\n}\n.m-1 {\n  margin: 0.25rem 0.25rem !important;\n}\n.mt-1 {\n  margin-top: 0.25rem !important;\n}\n.mr-1 {\n  margin-right: 0.25rem !important;\n}\n.mb-1 {\n  margin-bottom: 0.25rem !important;\n}\n.ml-1 {\n  margin-left: 0.25rem !important;\n}\n.mx-1 {\n  margin-right: 0.25rem !important;\n  margin-left: 0.25rem !important;\n}\n.my-1 {\n  margin-top: 0.25rem !important;\n  margin-bottom: 0.25rem !important;\n}\n.m-2 {\n  margin: 0.5rem 0.5rem !important;\n}\n.mt-2 {\n  margin-top: 0.5rem !important;\n}\n.mr-2 {\n  margin-right: 0.5rem !important;\n}\n.mb-2 {\n  margin-bottom: 0.5rem !important;\n}\n.ml-2 {\n  margin-left: 0.5rem !important;\n}\n.mx-2 {\n  margin-right: 0.5rem !important;\n  margin-left: 0.5rem !important;\n}\n.my-2 {\n  margin-top: 0.5rem !important;\n  margin-bottom: 0.5rem !important;\n}\n.m-3 {\n  margin: 1rem 1rem !important;\n}\n.mt-3 {\n  margin-top: 1rem !important;\n}\n.mr-3 {\n  margin-right: 1rem !important;\n}\n.mb-3 {\n  margin-bottom: 1rem !important;\n}\n.ml-3 {\n  margin-left: 1rem !important;\n}\n.mx-3 {\n  margin-right: 1rem !important;\n  margin-left: 1rem !important;\n}\n.my-3 {\n  margin-top: 1rem !important;\n  margin-bottom: 1rem !important;\n}\n.m-4 {\n  margin: 1.5rem 1.5rem !important;\n}\n.mt-4 {\n  margin-top: 1.5rem !important;\n}\n.mr-4 {\n  margin-right: 1.5rem !important;\n}\n.mb-4 {\n  margin-bottom: 1.5rem !important;\n}\n.ml-4 {\n  margin-left: 1.5rem !important;\n}\n.mx-4 {\n  margin-right: 1.5rem !important;\n  margin-left: 1.5rem !important;\n}\n.my-4 {\n  margin-top: 1.5rem !important;\n  margin-bottom: 1.5rem !important;\n}\n.m-5 {\n  margin: 3rem 3rem !important;\n}\n.mt-5 {\n  margin-top: 3rem !important;\n}\n.mr-5 {\n  margin-right: 3rem !important;\n}\n.mb-5 {\n  margin-bottom: 3rem !important;\n}\n.ml-5 {\n  margin-left: 3rem !important;\n}\n.mx-5 {\n  margin-right: 3rem !important;\n  margin-left: 3rem !important;\n}\n.my-5 {\n  margin-top: 3rem !important;\n  margin-bottom: 3rem !important;\n}\n.p-0 {\n  padding: 0 0 !important;\n}\n.pt-0 {\n  padding-top: 0 !important;\n}\n.pr-0 {\n  padding-right: 0 !important;\n}\n.pb-0 {\n  padding-bottom: 0 !important;\n}\n.pl-0 {\n  padding-left: 0 !important;\n}\n.px-0 {\n  padding-right: 0 !important;\n  padding-left: 0 !important;\n}\n.py-0 {\n  padding-top: 0 !important;\n  padding-bottom: 0 !important;\n}\n.p-1 {\n  padding: 0.25rem 0.25rem !important;\n}\n.pt-1 {\n  padding-top: 0.25rem !important;\n}\n.pr-1 {\n  padding-right: 0.25rem !important;\n}\n.pb-1 {\n  padding-bottom: 0.25rem !important;\n}\n.pl-1 {\n  padding-left: 0.25rem !important;\n}\n.px-1 {\n  padding-right: 0.25rem !important;\n  padding-left: 0.25rem !important;\n}\n.py-1 {\n  padding-top: 0.25rem !important;\n  padding-bottom: 0.25rem !important;\n}\n.p-2 {\n  padding: 0.5rem 0.5rem !important;\n}\n.pt-2 {\n  padding-top: 0.5rem !important;\n}\n.pr-2 {\n  padding-right: 0.5rem !important;\n}\n.pb-2 {\n  padding-bottom: 0.5rem !important;\n}\n.pl-2 {\n  padding-left: 0.5rem !important;\n}\n.px-2 {\n  padding-right: 0.5rem !important;\n  padding-left: 0.5rem !important;\n}\n.py-2 {\n  padding-top: 0.5rem !important;\n  padding-bottom: 0.5rem !important;\n}\n.p-3 {\n  padding: 1rem 1rem !important;\n}\n.pt-3 {\n  padding-top: 1rem !important;\n}\n.pr-3 {\n  padding-right: 1rem !important;\n}\n.pb-3 {\n  padding-bottom: 1rem !important;\n}\n.pl-3 {\n  padding-left: 1rem !important;\n}\n.px-3 {\n  padding-right: 1rem !important;\n  padding-left: 1rem !important;\n}\n.py-3 {\n  padding-top: 1rem !important;\n  padding-bottom: 1rem !important;\n}\n.p-4 {\n  padding: 1.5rem 1.5rem !important;\n}\n.pt-4 {\n  padding-top: 1.5rem !important;\n}\n.pr-4 {\n  padding-right: 1.5rem !important;\n}\n.pb-4 {\n  padding-bottom: 1.5rem !important;\n}\n.pl-4, .first-td-padding td:first-child {\n  padding-left: 1.5rem !important;\n}\n.px-4 {\n  padding-right: 1.5rem !important;\n  padding-left: 1.5rem !important;\n}\n.py-4 {\n  padding-top: 1.5rem !important;\n  padding-bottom: 1.5rem !important;\n}\n.p-5 {\n  padding: 3rem 3rem !important;\n}\n.pt-5 {\n  padding-top: 3rem !important;\n}\n.pr-5 {\n  padding-right: 3rem !important;\n}\n.pb-5 {\n  padding-bottom: 3rem !important;\n}\n.pl-5 {\n  padding-left: 3rem !important;\n}\n.px-5 {\n  padding-right: 3rem !important;\n  padding-left: 3rem !important;\n}\n.py-5 {\n  padding-top: 3rem !important;\n  padding-bottom: 3rem !important;\n}\n.m-auto {\n  margin: auto !important;\n}\n.mt-auto {\n  margin-top: auto !important;\n}\n.mr-auto {\n  margin-right: auto !important;\n}\n.mb-auto {\n  margin-bottom: auto !important;\n}\n.ml-auto {\n  margin-left: auto !important;\n}\n.mx-auto {\n  margin-right: auto !important;\n  margin-left: auto !important;\n}\n.my-auto {\n  margin-top: auto !important;\n  margin-bottom: auto !important;\n}\n@media (min-width: 576px) {\n.m-sm-0 {\n    margin: 0 0 !important;\n}\n.mt-sm-0 {\n    margin-top: 0 !important;\n}\n.mr-sm-0 {\n    margin-right: 0 !important;\n}\n.mb-sm-0 {\n    margin-bottom: 0 !important;\n}\n.ml-sm-0 {\n    margin-left: 0 !important;\n}\n.mx-sm-0 {\n    margin-right: 0 !important;\n    margin-left: 0 !important;\n}\n.my-sm-0 {\n    margin-top: 0 !important;\n    margin-bottom: 0 !important;\n}\n.m-sm-1 {\n    margin: 0.25rem 0.25rem !important;\n}\n.mt-sm-1 {\n    margin-top: 0.25rem !important;\n}\n.mr-sm-1 {\n    margin-right: 0.25rem !important;\n}\n.mb-sm-1 {\n    margin-bottom: 0.25rem !important;\n}\n.ml-sm-1 {\n    margin-left: 0.25rem !important;\n}\n.mx-sm-1 {\n    margin-right: 0.25rem !important;\n    margin-left: 0.25rem !important;\n}\n.my-sm-1 {\n    margin-top: 0.25rem !important;\n    margin-bottom: 0.25rem !important;\n}\n.m-sm-2 {\n    margin: 0.5rem 0.5rem !important;\n}\n.mt-sm-2 {\n    margin-top: 0.5rem !important;\n}\n.mr-sm-2 {\n    margin-right: 0.5rem !important;\n}\n.mb-sm-2 {\n    margin-bottom: 0.5rem !important;\n}\n.ml-sm-2 {\n    margin-left: 0.5rem !important;\n}\n.mx-sm-2 {\n    margin-right: 0.5rem !important;\n    margin-left: 0.5rem !important;\n}\n.my-sm-2 {\n    margin-top: 0.5rem !important;\n    margin-bottom: 0.5rem !important;\n}\n.m-sm-3 {\n    margin: 1rem 1rem !important;\n}\n.mt-sm-3 {\n    margin-top: 1rem !important;\n}\n.mr-sm-3 {\n    margin-right: 1rem !important;\n}\n.mb-sm-3 {\n    margin-bottom: 1rem !important;\n}\n.ml-sm-3 {\n    margin-left: 1rem !important;\n}\n.mx-sm-3 {\n    margin-right: 1rem !important;\n    margin-left: 1rem !important;\n}\n.my-sm-3 {\n    margin-top: 1rem !important;\n    margin-bottom: 1rem !important;\n}\n.m-sm-4 {\n    margin: 1.5rem 1.5rem !important;\n}\n.mt-sm-4 {\n    margin-top: 1.5rem !important;\n}\n.mr-sm-4 {\n    margin-right: 1.5rem !important;\n}\n.mb-sm-4 {\n    margin-bottom: 1.5rem !important;\n}\n.ml-sm-4 {\n    margin-left: 1.5rem !important;\n}\n.mx-sm-4 {\n    margin-right: 1.5rem !important;\n    margin-left: 1.5rem !important;\n}\n.my-sm-4 {\n    margin-top: 1.5rem !important;\n    margin-bottom: 1.5rem !important;\n}\n.m-sm-5 {\n    margin: 3rem 3rem !important;\n}\n.mt-sm-5 {\n    margin-top: 3rem !important;\n}\n.mr-sm-5 {\n    margin-right: 3rem !important;\n}\n.mb-sm-5 {\n    margin-bottom: 3rem !important;\n}\n.ml-sm-5 {\n    margin-left: 3rem !important;\n}\n.mx-sm-5 {\n    margin-right: 3rem !important;\n    margin-left: 3rem !important;\n}\n.my-sm-5 {\n    margin-top: 3rem !important;\n    margin-bottom: 3rem !important;\n}\n.p-sm-0 {\n    padding: 0 0 !important;\n}\n.pt-sm-0 {\n    padding-top: 0 !important;\n}\n.pr-sm-0 {\n    padding-right: 0 !important;\n}\n.pb-sm-0 {\n    padding-bottom: 0 !important;\n}\n.pl-sm-0 {\n    padding-left: 0 !important;\n}\n.px-sm-0 {\n    padding-right: 0 !important;\n    padding-left: 0 !important;\n}\n.py-sm-0 {\n    padding-top: 0 !important;\n    padding-bottom: 0 !important;\n}\n.p-sm-1 {\n    padding: 0.25rem 0.25rem !important;\n}\n.pt-sm-1 {\n    padding-top: 0.25rem !important;\n}\n.pr-sm-1 {\n    padding-right: 0.25rem !important;\n}\n.pb-sm-1 {\n    padding-bottom: 0.25rem !important;\n}\n.pl-sm-1 {\n    padding-left: 0.25rem !important;\n}\n.px-sm-1 {\n    padding-right: 0.25rem !important;\n    padding-left: 0.25rem !important;\n}\n.py-sm-1 {\n    padding-top: 0.25rem !important;\n    padding-bottom: 0.25rem !important;\n}\n.p-sm-2 {\n    padding: 0.5rem 0.5rem !important;\n}\n.pt-sm-2 {\n    padding-top: 0.5rem !important;\n}\n.pr-sm-2 {\n    padding-right: 0.5rem !important;\n}\n.pb-sm-2 {\n    padding-bottom: 0.5rem !important;\n}\n.pl-sm-2 {\n    padding-left: 0.5rem !important;\n}\n.px-sm-2 {\n    padding-right: 0.5rem !important;\n    padding-left: 0.5rem !important;\n}\n.py-sm-2 {\n    padding-top: 0.5rem !important;\n    padding-bottom: 0.5rem !important;\n}\n.p-sm-3 {\n    padding: 1rem 1rem !important;\n}\n.pt-sm-3 {\n    padding-top: 1rem !important;\n}\n.pr-sm-3 {\n    padding-right: 1rem !important;\n}\n.pb-sm-3 {\n    padding-bottom: 1rem !important;\n}\n.pl-sm-3 {\n    padding-left: 1rem !important;\n}\n.px-sm-3 {\n    padding-right: 1rem !important;\n    padding-left: 1rem !important;\n}\n.py-sm-3 {\n    padding-top: 1rem !important;\n    padding-bottom: 1rem !important;\n}\n.p-sm-4 {\n    padding: 1.5rem 1.5rem !important;\n}\n.pt-sm-4 {\n    padding-top: 1.5rem !important;\n}\n.pr-sm-4 {\n    padding-right: 1.5rem !important;\n}\n.pb-sm-4 {\n    padding-bottom: 1.5rem !important;\n}\n.pl-sm-4 {\n    padding-left: 1.5rem !important;\n}\n.px-sm-4 {\n    padding-right: 1.5rem !important;\n    padding-left: 1.5rem !important;\n}\n.py-sm-4 {\n    padding-top: 1.5rem !important;\n    padding-bottom: 1.5rem !important;\n}\n.p-sm-5 {\n    padding: 3rem 3rem !important;\n}\n.pt-sm-5 {\n    padding-top: 3rem !important;\n}\n.pr-sm-5 {\n    padding-right: 3rem !important;\n}\n.pb-sm-5 {\n    padding-bottom: 3rem !important;\n}\n.pl-sm-5 {\n    padding-left: 3rem !important;\n}\n.px-sm-5 {\n    padding-right: 3rem !important;\n    padding-left: 3rem !important;\n}\n.py-sm-5 {\n    padding-top: 3rem !important;\n    padding-bottom: 3rem !important;\n}\n.m-sm-auto {\n    margin: auto !important;\n}\n.mt-sm-auto {\n    margin-top: auto !important;\n}\n.mr-sm-auto {\n    margin-right: auto !important;\n}\n.mb-sm-auto {\n    margin-bottom: auto !important;\n}\n.ml-sm-auto {\n    margin-left: auto !important;\n}\n.mx-sm-auto {\n    margin-right: auto !important;\n    margin-left: auto !important;\n}\n.my-sm-auto {\n    margin-top: auto !important;\n    margin-bottom: auto !important;\n}\n}\n@media (min-width: 768px) {\n.m-md-0 {\n    margin: 0 0 !important;\n}\n.mt-md-0 {\n    margin-top: 0 !important;\n}\n.mr-md-0 {\n    margin-right: 0 !important;\n}\n.mb-md-0 {\n    margin-bottom: 0 !important;\n}\n.ml-md-0 {\n    margin-left: 0 !important;\n}\n.mx-md-0 {\n    margin-right: 0 !important;\n    margin-left: 0 !important;\n}\n.my-md-0 {\n    margin-top: 0 !important;\n    margin-bottom: 0 !important;\n}\n.m-md-1 {\n    margin: 0.25rem 0.25rem !important;\n}\n.mt-md-1 {\n    margin-top: 0.25rem !important;\n}\n.mr-md-1 {\n    margin-right: 0.25rem !important;\n}\n.mb-md-1 {\n    margin-bottom: 0.25rem !important;\n}\n.ml-md-1 {\n    margin-left: 0.25rem !important;\n}\n.mx-md-1 {\n    margin-right: 0.25rem !important;\n    margin-left: 0.25rem !important;\n}\n.my-md-1 {\n    margin-top: 0.25rem !important;\n    margin-bottom: 0.25rem !important;\n}\n.m-md-2 {\n    margin: 0.5rem 0.5rem !important;\n}\n.mt-md-2 {\n    margin-top: 0.5rem !important;\n}\n.mr-md-2 {\n    margin-right: 0.5rem !important;\n}\n.mb-md-2 {\n    margin-bottom: 0.5rem !important;\n}\n.ml-md-2 {\n    margin-left: 0.5rem !important;\n}\n.mx-md-2 {\n    margin-right: 0.5rem !important;\n    margin-left: 0.5rem !important;\n}\n.my-md-2 {\n    margin-top: 0.5rem !important;\n    margin-bottom: 0.5rem !important;\n}\n.m-md-3 {\n    margin: 1rem 1rem !important;\n}\n.mt-md-3 {\n    margin-top: 1rem !important;\n}\n.mr-md-3 {\n    margin-right: 1rem !important;\n}\n.mb-md-3 {\n    margin-bottom: 1rem !important;\n}\n.ml-md-3 {\n    margin-left: 1rem !important;\n}\n.mx-md-3 {\n    margin-right: 1rem !important;\n    margin-left: 1rem !important;\n}\n.my-md-3 {\n    margin-top: 1rem !important;\n    margin-bottom: 1rem !important;\n}\n.m-md-4 {\n    margin: 1.5rem 1.5rem !important;\n}\n.mt-md-4 {\n    margin-top: 1.5rem !important;\n}\n.mr-md-4 {\n    margin-right: 1.5rem !important;\n}\n.mb-md-4 {\n    margin-bottom: 1.5rem !important;\n}\n.ml-md-4 {\n    margin-left: 1.5rem !important;\n}\n.mx-md-4 {\n    margin-right: 1.5rem !important;\n    margin-left: 1.5rem !important;\n}\n.my-md-4 {\n    margin-top: 1.5rem !important;\n    margin-bottom: 1.5rem !important;\n}\n.m-md-5 {\n    margin: 3rem 3rem !important;\n}\n.mt-md-5 {\n    margin-top: 3rem !important;\n}\n.mr-md-5 {\n    margin-right: 3rem !important;\n}\n.mb-md-5 {\n    margin-bottom: 3rem !important;\n}\n.ml-md-5 {\n    margin-left: 3rem !important;\n}\n.mx-md-5 {\n    margin-right: 3rem !important;\n    margin-left: 3rem !important;\n}\n.my-md-5 {\n    margin-top: 3rem !important;\n    margin-bottom: 3rem !important;\n}\n.p-md-0 {\n    padding: 0 0 !important;\n}\n.pt-md-0 {\n    padding-top: 0 !important;\n}\n.pr-md-0 {\n    padding-right: 0 !important;\n}\n.pb-md-0 {\n    padding-bottom: 0 !important;\n}\n.pl-md-0 {\n    padding-left: 0 !important;\n}\n.px-md-0 {\n    padding-right: 0 !important;\n    padding-left: 0 !important;\n}\n.py-md-0 {\n    padding-top: 0 !important;\n    padding-bottom: 0 !important;\n}\n.p-md-1 {\n    padding: 0.25rem 0.25rem !important;\n}\n.pt-md-1 {\n    padding-top: 0.25rem !important;\n}\n.pr-md-1 {\n    padding-right: 0.25rem !important;\n}\n.pb-md-1 {\n    padding-bottom: 0.25rem !important;\n}\n.pl-md-1 {\n    padding-left: 0.25rem !important;\n}\n.px-md-1 {\n    padding-right: 0.25rem !important;\n    padding-left: 0.25rem !important;\n}\n.py-md-1 {\n    padding-top: 0.25rem !important;\n    padding-bottom: 0.25rem !important;\n}\n.p-md-2 {\n    padding: 0.5rem 0.5rem !important;\n}\n.pt-md-2 {\n    padding-top: 0.5rem !important;\n}\n.pr-md-2 {\n    padding-right: 0.5rem !important;\n}\n.pb-md-2 {\n    padding-bottom: 0.5rem !important;\n}\n.pl-md-2 {\n    padding-left: 0.5rem !important;\n}\n.px-md-2 {\n    padding-right: 0.5rem !important;\n    padding-left: 0.5rem !important;\n}\n.py-md-2 {\n    padding-top: 0.5rem !important;\n    padding-bottom: 0.5rem !important;\n}\n.p-md-3 {\n    padding: 1rem 1rem !important;\n}\n.pt-md-3 {\n    padding-top: 1rem !important;\n}\n.pr-md-3 {\n    padding-right: 1rem !important;\n}\n.pb-md-3 {\n    padding-bottom: 1rem !important;\n}\n.pl-md-3 {\n    padding-left: 1rem !important;\n}\n.px-md-3 {\n    padding-right: 1rem !important;\n    padding-left: 1rem !important;\n}\n.py-md-3 {\n    padding-top: 1rem !important;\n    padding-bottom: 1rem !important;\n}\n.p-md-4 {\n    padding: 1.5rem 1.5rem !important;\n}\n.pt-md-4 {\n    padding-top: 1.5rem !important;\n}\n.pr-md-4 {\n    padding-right: 1.5rem !important;\n}\n.pb-md-4 {\n    padding-bottom: 1.5rem !important;\n}\n.pl-md-4 {\n    padding-left: 1.5rem !important;\n}\n.px-md-4 {\n    padding-right: 1.5rem !important;\n    padding-left: 1.5rem !important;\n}\n.py-md-4 {\n    padding-top: 1.5rem !important;\n    padding-bottom: 1.5rem !important;\n}\n.p-md-5 {\n    padding: 3rem 3rem !important;\n}\n.pt-md-5 {\n    padding-top: 3rem !important;\n}\n.pr-md-5 {\n    padding-right: 3rem !important;\n}\n.pb-md-5 {\n    padding-bottom: 3rem !important;\n}\n.pl-md-5 {\n    padding-left: 3rem !important;\n}\n.px-md-5 {\n    padding-right: 3rem !important;\n    padding-left: 3rem !important;\n}\n.py-md-5 {\n    padding-top: 3rem !important;\n    padding-bottom: 3rem !important;\n}\n.m-md-auto {\n    margin: auto !important;\n}\n.mt-md-auto {\n    margin-top: auto !important;\n}\n.mr-md-auto {\n    margin-right: auto !important;\n}\n.mb-md-auto {\n    margin-bottom: auto !important;\n}\n.ml-md-auto {\n    margin-left: auto !important;\n}\n.mx-md-auto {\n    margin-right: auto !important;\n    margin-left: auto !important;\n}\n.my-md-auto {\n    margin-top: auto !important;\n    margin-bottom: auto !important;\n}\n}\n@media (min-width: 992px) {\n.m-lg-0 {\n    margin: 0 0 !important;\n}\n.mt-lg-0 {\n    margin-top: 0 !important;\n}\n.mr-lg-0 {\n    margin-right: 0 !important;\n}\n.mb-lg-0 {\n    margin-bottom: 0 !important;\n}\n.ml-lg-0 {\n    margin-left: 0 !important;\n}\n.mx-lg-0 {\n    margin-right: 0 !important;\n    margin-left: 0 !important;\n}\n.my-lg-0 {\n    margin-top: 0 !important;\n    margin-bottom: 0 !important;\n}\n.m-lg-1 {\n    margin: 0.25rem 0.25rem !important;\n}\n.mt-lg-1 {\n    margin-top: 0.25rem !important;\n}\n.mr-lg-1 {\n    margin-right: 0.25rem !important;\n}\n.mb-lg-1 {\n    margin-bottom: 0.25rem !important;\n}\n.ml-lg-1 {\n    margin-left: 0.25rem !important;\n}\n.mx-lg-1 {\n    margin-right: 0.25rem !important;\n    margin-left: 0.25rem !important;\n}\n.my-lg-1 {\n    margin-top: 0.25rem !important;\n    margin-bottom: 0.25rem !important;\n}\n.m-lg-2 {\n    margin: 0.5rem 0.5rem !important;\n}\n.mt-lg-2 {\n    margin-top: 0.5rem !important;\n}\n.mr-lg-2 {\n    margin-right: 0.5rem !important;\n}\n.mb-lg-2 {\n    margin-bottom: 0.5rem !important;\n}\n.ml-lg-2 {\n    margin-left: 0.5rem !important;\n}\n.mx-lg-2 {\n    margin-right: 0.5rem !important;\n    margin-left: 0.5rem !important;\n}\n.my-lg-2 {\n    margin-top: 0.5rem !important;\n    margin-bottom: 0.5rem !important;\n}\n.m-lg-3 {\n    margin: 1rem 1rem !important;\n}\n.mt-lg-3 {\n    margin-top: 1rem !important;\n}\n.mr-lg-3 {\n    margin-right: 1rem !important;\n}\n.mb-lg-3 {\n    margin-bottom: 1rem !important;\n}\n.ml-lg-3 {\n    margin-left: 1rem !important;\n}\n.mx-lg-3 {\n    margin-right: 1rem !important;\n    margin-left: 1rem !important;\n}\n.my-lg-3 {\n    margin-top: 1rem !important;\n    margin-bottom: 1rem !important;\n}\n.m-lg-4 {\n    margin: 1.5rem 1.5rem !important;\n}\n.mt-lg-4 {\n    margin-top: 1.5rem !important;\n}\n.mr-lg-4 {\n    margin-right: 1.5rem !important;\n}\n.mb-lg-4 {\n    margin-bottom: 1.5rem !important;\n}\n.ml-lg-4 {\n    margin-left: 1.5rem !important;\n}\n.mx-lg-4 {\n    margin-right: 1.5rem !important;\n    margin-left: 1.5rem !important;\n}\n.my-lg-4 {\n    margin-top: 1.5rem !important;\n    margin-bottom: 1.5rem !important;\n}\n.m-lg-5 {\n    margin: 3rem 3rem !important;\n}\n.mt-lg-5 {\n    margin-top: 3rem !important;\n}\n.mr-lg-5 {\n    margin-right: 3rem !important;\n}\n.mb-lg-5 {\n    margin-bottom: 3rem !important;\n}\n.ml-lg-5 {\n    margin-left: 3rem !important;\n}\n.mx-lg-5 {\n    margin-right: 3rem !important;\n    margin-left: 3rem !important;\n}\n.my-lg-5 {\n    margin-top: 3rem !important;\n    margin-bottom: 3rem !important;\n}\n.p-lg-0 {\n    padding: 0 0 !important;\n}\n.pt-lg-0 {\n    padding-top: 0 !important;\n}\n.pr-lg-0 {\n    padding-right: 0 !important;\n}\n.pb-lg-0 {\n    padding-bottom: 0 !important;\n}\n.pl-lg-0 {\n    padding-left: 0 !important;\n}\n.px-lg-0 {\n    padding-right: 0 !important;\n    padding-left: 0 !important;\n}\n.py-lg-0 {\n    padding-top: 0 !important;\n    padding-bottom: 0 !important;\n}\n.p-lg-1 {\n    padding: 0.25rem 0.25rem !important;\n}\n.pt-lg-1 {\n    padding-top: 0.25rem !important;\n}\n.pr-lg-1 {\n    padding-right: 0.25rem !important;\n}\n.pb-lg-1 {\n    padding-bottom: 0.25rem !important;\n}\n.pl-lg-1 {\n    padding-left: 0.25rem !important;\n}\n.px-lg-1 {\n    padding-right: 0.25rem !important;\n    padding-left: 0.25rem !important;\n}\n.py-lg-1 {\n    padding-top: 0.25rem !important;\n    padding-bottom: 0.25rem !important;\n}\n.p-lg-2 {\n    padding: 0.5rem 0.5rem !important;\n}\n.pt-lg-2 {\n    padding-top: 0.5rem !important;\n}\n.pr-lg-2 {\n    padding-right: 0.5rem !important;\n}\n.pb-lg-2 {\n    padding-bottom: 0.5rem !important;\n}\n.pl-lg-2 {\n    padding-left: 0.5rem !important;\n}\n.px-lg-2 {\n    padding-right: 0.5rem !important;\n    padding-left: 0.5rem !important;\n}\n.py-lg-2 {\n    padding-top: 0.5rem !important;\n    padding-bottom: 0.5rem !important;\n}\n.p-lg-3 {\n    padding: 1rem 1rem !important;\n}\n.pt-lg-3 {\n    padding-top: 1rem !important;\n}\n.pr-lg-3 {\n    padding-right: 1rem !important;\n}\n.pb-lg-3 {\n    padding-bottom: 1rem !important;\n}\n.pl-lg-3 {\n    padding-left: 1rem !important;\n}\n.px-lg-3 {\n    padding-right: 1rem !important;\n    padding-left: 1rem !important;\n}\n.py-lg-3 {\n    padding-top: 1rem !important;\n    padding-bottom: 1rem !important;\n}\n.p-lg-4 {\n    padding: 1.5rem 1.5rem !important;\n}\n.pt-lg-4 {\n    padding-top: 1.5rem !important;\n}\n.pr-lg-4 {\n    padding-right: 1.5rem !important;\n}\n.pb-lg-4 {\n    padding-bottom: 1.5rem !important;\n}\n.pl-lg-4 {\n    padding-left: 1.5rem !important;\n}\n.px-lg-4 {\n    padding-right: 1.5rem !important;\n    padding-left: 1.5rem !important;\n}\n.py-lg-4 {\n    padding-top: 1.5rem !important;\n    padding-bottom: 1.5rem !important;\n}\n.p-lg-5 {\n    padding: 3rem 3rem !important;\n}\n.pt-lg-5 {\n    padding-top: 3rem !important;\n}\n.pr-lg-5 {\n    padding-right: 3rem !important;\n}\n.pb-lg-5 {\n    padding-bottom: 3rem !important;\n}\n.pl-lg-5 {\n    padding-left: 3rem !important;\n}\n.px-lg-5 {\n    padding-right: 3rem !important;\n    padding-left: 3rem !important;\n}\n.py-lg-5 {\n    padding-top: 3rem !important;\n    padding-bottom: 3rem !important;\n}\n.m-lg-auto {\n    margin: auto !important;\n}\n.mt-lg-auto {\n    margin-top: auto !important;\n}\n.mr-lg-auto {\n    margin-right: auto !important;\n}\n.mb-lg-auto {\n    margin-bottom: auto !important;\n}\n.ml-lg-auto {\n    margin-left: auto !important;\n}\n.mx-lg-auto {\n    margin-right: auto !important;\n    margin-left: auto !important;\n}\n.my-lg-auto {\n    margin-top: auto !important;\n    margin-bottom: auto !important;\n}\n}\n@media (min-width: 1200px) {\n.m-xl-0 {\n    margin: 0 0 !important;\n}\n.mt-xl-0 {\n    margin-top: 0 !important;\n}\n.mr-xl-0 {\n    margin-right: 0 !important;\n}\n.mb-xl-0 {\n    margin-bottom: 0 !important;\n}\n.ml-xl-0 {\n    margin-left: 0 !important;\n}\n.mx-xl-0 {\n    margin-right: 0 !important;\n    margin-left: 0 !important;\n}\n.my-xl-0 {\n    margin-top: 0 !important;\n    margin-bottom: 0 !important;\n}\n.m-xl-1 {\n    margin: 0.25rem 0.25rem !important;\n}\n.mt-xl-1 {\n    margin-top: 0.25rem !important;\n}\n.mr-xl-1 {\n    margin-right: 0.25rem !important;\n}\n.mb-xl-1 {\n    margin-bottom: 0.25rem !important;\n}\n.ml-xl-1 {\n    margin-left: 0.25rem !important;\n}\n.mx-xl-1 {\n    margin-right: 0.25rem !important;\n    margin-left: 0.25rem !important;\n}\n.my-xl-1 {\n    margin-top: 0.25rem !important;\n    margin-bottom: 0.25rem !important;\n}\n.m-xl-2 {\n    margin: 0.5rem 0.5rem !important;\n}\n.mt-xl-2 {\n    margin-top: 0.5rem !important;\n}\n.mr-xl-2 {\n    margin-right: 0.5rem !important;\n}\n.mb-xl-2 {\n    margin-bottom: 0.5rem !important;\n}\n.ml-xl-2 {\n    margin-left: 0.5rem !important;\n}\n.mx-xl-2 {\n    margin-right: 0.5rem !important;\n    margin-left: 0.5rem !important;\n}\n.my-xl-2 {\n    margin-top: 0.5rem !important;\n    margin-bottom: 0.5rem !important;\n}\n.m-xl-3 {\n    margin: 1rem 1rem !important;\n}\n.mt-xl-3 {\n    margin-top: 1rem !important;\n}\n.mr-xl-3 {\n    margin-right: 1rem !important;\n}\n.mb-xl-3 {\n    margin-bottom: 1rem !important;\n}\n.ml-xl-3 {\n    margin-left: 1rem !important;\n}\n.mx-xl-3 {\n    margin-right: 1rem !important;\n    margin-left: 1rem !important;\n}\n.my-xl-3 {\n    margin-top: 1rem !important;\n    margin-bottom: 1rem !important;\n}\n.m-xl-4 {\n    margin: 1.5rem 1.5rem !important;\n}\n.mt-xl-4 {\n    margin-top: 1.5rem !important;\n}\n.mr-xl-4 {\n    margin-right: 1.5rem !important;\n}\n.mb-xl-4 {\n    margin-bottom: 1.5rem !important;\n}\n.ml-xl-4 {\n    margin-left: 1.5rem !important;\n}\n.mx-xl-4 {\n    margin-right: 1.5rem !important;\n    margin-left: 1.5rem !important;\n}\n.my-xl-4 {\n    margin-top: 1.5rem !important;\n    margin-bottom: 1.5rem !important;\n}\n.m-xl-5 {\n    margin: 3rem 3rem !important;\n}\n.mt-xl-5 {\n    margin-top: 3rem !important;\n}\n.mr-xl-5 {\n    margin-right: 3rem !important;\n}\n.mb-xl-5 {\n    margin-bottom: 3rem !important;\n}\n.ml-xl-5 {\n    margin-left: 3rem !important;\n}\n.mx-xl-5 {\n    margin-right: 3rem !important;\n    margin-left: 3rem !important;\n}\n.my-xl-5 {\n    margin-top: 3rem !important;\n    margin-bottom: 3rem !important;\n}\n.p-xl-0 {\n    padding: 0 0 !important;\n}\n.pt-xl-0 {\n    padding-top: 0 !important;\n}\n.pr-xl-0 {\n    padding-right: 0 !important;\n}\n.pb-xl-0 {\n    padding-bottom: 0 !important;\n}\n.pl-xl-0 {\n    padding-left: 0 !important;\n}\n.px-xl-0 {\n    padding-right: 0 !important;\n    padding-left: 0 !important;\n}\n.py-xl-0 {\n    padding-top: 0 !important;\n    padding-bottom: 0 !important;\n}\n.p-xl-1 {\n    padding: 0.25rem 0.25rem !important;\n}\n.pt-xl-1 {\n    padding-top: 0.25rem !important;\n}\n.pr-xl-1 {\n    padding-right: 0.25rem !important;\n}\n.pb-xl-1 {\n    padding-bottom: 0.25rem !important;\n}\n.pl-xl-1 {\n    padding-left: 0.25rem !important;\n}\n.px-xl-1 {\n    padding-right: 0.25rem !important;\n    padding-left: 0.25rem !important;\n}\n.py-xl-1 {\n    padding-top: 0.25rem !important;\n    padding-bottom: 0.25rem !important;\n}\n.p-xl-2 {\n    padding: 0.5rem 0.5rem !important;\n}\n.pt-xl-2 {\n    padding-top: 0.5rem !important;\n}\n.pr-xl-2 {\n    padding-right: 0.5rem !important;\n}\n.pb-xl-2 {\n    padding-bottom: 0.5rem !important;\n}\n.pl-xl-2 {\n    padding-left: 0.5rem !important;\n}\n.px-xl-2 {\n    padding-right: 0.5rem !important;\n    padding-left: 0.5rem !important;\n}\n.py-xl-2 {\n    padding-top: 0.5rem !important;\n    padding-bottom: 0.5rem !important;\n}\n.p-xl-3 {\n    padding: 1rem 1rem !important;\n}\n.pt-xl-3 {\n    padding-top: 1rem !important;\n}\n.pr-xl-3 {\n    padding-right: 1rem !important;\n}\n.pb-xl-3 {\n    padding-bottom: 1rem !important;\n}\n.pl-xl-3 {\n    padding-left: 1rem !important;\n}\n.px-xl-3 {\n    padding-right: 1rem !important;\n    padding-left: 1rem !important;\n}\n.py-xl-3 {\n    padding-top: 1rem !important;\n    padding-bottom: 1rem !important;\n}\n.p-xl-4 {\n    padding: 1.5rem 1.5rem !important;\n}\n.pt-xl-4 {\n    padding-top: 1.5rem !important;\n}\n.pr-xl-4 {\n    padding-right: 1.5rem !important;\n}\n.pb-xl-4 {\n    padding-bottom: 1.5rem !important;\n}\n.pl-xl-4 {\n    padding-left: 1.5rem !important;\n}\n.px-xl-4 {\n    padding-right: 1.5rem !important;\n    padding-left: 1.5rem !important;\n}\n.py-xl-4 {\n    padding-top: 1.5rem !important;\n    padding-bottom: 1.5rem !important;\n}\n.p-xl-5 {\n    padding: 3rem 3rem !important;\n}\n.pt-xl-5 {\n    padding-top: 3rem !important;\n}\n.pr-xl-5 {\n    padding-right: 3rem !important;\n}\n.pb-xl-5 {\n    padding-bottom: 3rem !important;\n}\n.pl-xl-5 {\n    padding-left: 3rem !important;\n}\n.px-xl-5 {\n    padding-right: 3rem !important;\n    padding-left: 3rem !important;\n}\n.py-xl-5 {\n    padding-top: 3rem !important;\n    padding-bottom: 3rem !important;\n}\n.m-xl-auto {\n    margin: auto !important;\n}\n.mt-xl-auto {\n    margin-top: auto !important;\n}\n.mr-xl-auto {\n    margin-right: auto !important;\n}\n.mb-xl-auto {\n    margin-bottom: auto !important;\n}\n.ml-xl-auto {\n    margin-left: auto !important;\n}\n.mx-xl-auto {\n    margin-right: auto !important;\n    margin-left: auto !important;\n}\n.my-xl-auto {\n    margin-top: auto !important;\n    margin-bottom: auto !important;\n}\n}\n.text-justify {\n  text-align: justify !important;\n}\n.text-nowrap {\n  white-space: nowrap !important;\n}\n.text-truncate {\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.text-left {\n  text-align: left !important;\n}\n.text-right {\n  text-align: right !important;\n}\n.text-center {\n  text-align: center !important;\n}\n@media (min-width: 576px) {\n.text-sm-left {\n    text-align: left !important;\n}\n.text-sm-right {\n    text-align: right !important;\n}\n.text-sm-center {\n    text-align: center !important;\n}\n}\n@media (min-width: 768px) {\n.text-md-left {\n    text-align: left !important;\n}\n.text-md-right {\n    text-align: right !important;\n}\n.text-md-center {\n    text-align: center !important;\n}\n}\n@media (min-width: 992px) {\n.text-lg-left {\n    text-align: left !important;\n}\n.text-lg-right {\n    text-align: right !important;\n}\n.text-lg-center {\n    text-align: center !important;\n}\n}\n@media (min-width: 1200px) {\n.text-xl-left {\n    text-align: left !important;\n}\n.text-xl-right {\n    text-align: right !important;\n}\n.text-xl-center {\n    text-align: center !important;\n}\n}\n.text-lowercase {\n  text-transform: lowercase !important;\n}\n.text-uppercase {\n  text-transform: uppercase !important;\n}\n.text-capitalize {\n  text-transform: capitalize !important;\n}\n.font-weight-normal {\n  font-weight: 400;\n}\n.font-weight-bold {\n  font-weight: 700;\n}\n.font-italic {\n  font-style: italic;\n}\n.text-white {\n  color: #fff !important;\n}\n.text-muted {\n  color: #acb5be !important;\n}\na.text-muted:focus, a.text-muted:hover {\n  color: #8f9ca8 !important;\n}\n.text-primary {\n  color: #4ae387 !important;\n}\na.text-primary:focus, a.text-primary:hover {\n  color: #21d96a !important;\n}\n.text-success {\n  color: #db76df !important;\n}\na.text-success:focus, a.text-success:hover {\n  color: #d04dd5 !important;\n}\n.text-info {\n  color: #4ab2e3 !important;\n}\na.text-info:focus, a.text-info:hover {\n  color: #219ed9 !important;\n}\n.text-warning {\n  color: #f7cc36 !important;\n}\na.text-warning:focus, a.text-warning:hover {\n  color: #f0bd0a !important;\n}\n.text-danger {\n  color: #e34a4a !important;\n}\na.text-danger:focus, a.text-danger:hover {\n  color: #d92121 !important;\n}\n.text-gray-dark {\n  color: #292b2c !important;\n}\na.text-gray-dark:focus, a.text-gray-dark:hover {\n  color: #101112 !important;\n}\n.text-hide {\n  font: 0/0 a;\n  color: transparent;\n  text-shadow: none;\n  background-color: transparent;\n  border: 0;\n}\n.invisible {\n  visibility: hidden !important;\n}\n.hidden-xs-up {\n  display: none !important;\n}\n@media (max-width: 575px) {\n.hidden-xs-down {\n    display: none !important;\n}\n}\n@media (min-width: 576px) {\n.hidden-sm-up {\n    display: none !important;\n}\n}\n@media (max-width: 767px) {\n.hidden-sm-down {\n    display: none !important;\n}\n}\n@media (min-width: 768px) {\n.hidden-md-up {\n    display: none !important;\n}\n}\n@media (max-width: 991px) {\n.hidden-md-down {\n    display: none !important;\n}\n}\n@media (min-width: 992px) {\n.hidden-lg-up {\n    display: none !important;\n}\n}\n@media (max-width: 1199px) {\n.hidden-lg-down {\n    display: none !important;\n}\n}\n@media (min-width: 1200px) {\n.hidden-xl-up {\n    display: none !important;\n}\n}\n.hidden-xl-down {\n  display: none !important;\n}\n.visible-print-block {\n  display: none !important;\n}\n@media print {\n.visible-print-block {\n      display: block !important;\n}\n}\n.visible-print-inline {\n  display: none !important;\n}\n@media print {\n.visible-print-inline {\n      display: inline !important;\n}\n}\n.visible-print-inline-block {\n  display: none !important;\n}\n@media print {\n.visible-print-inline-block {\n      display: inline-block !important;\n}\n}\n@media print {\n.hidden-print {\n    display: none !important;\n}\n}\n.abc-checkbox {\n  cursor: default;\n  padding-left: 4px;\n}\n.abc-checkbox label {\n    cursor: pointer;\n    display: inline;\n    vertical-align: top;\n    position: relative;\n    padding-left: 5px;\n}\n.abc-checkbox label::before {\n      cursor: pointer;\n      content: \"\";\n      display: inline-block;\n      position: absolute;\n      width: 17px;\n      height: 17px;\n      top: 2px;\n      left: 0;\n      margin-left: -20px;\n      border: 1px solid #ddd;\n      border-radius: 3px;\n      background-color: #fff;\n      -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;\n      transition: border 0.15s ease-in-out, color 0.15s ease-in-out;\n}\n.abc-checkbox label::after {\n      cursor: pointer;\n      display: inline-block;\n      position: absolute;\n      width: 16px;\n      height: 16px;\n      left: 0;\n      top: 2px;\n      margin-left: -20px;\n      padding-left: 3px;\n      padding-top: 1px;\n      font-size: 11px;\n      color: #adb3b9;\n}\n.abc-checkbox input[type=\"checkbox\"],\n  .abc-checkbox input[type=\"radio\"] {\n    cursor: pointer;\n    opacity: 0;\n    z-index: 1;\n}\n.abc-checkbox input[type=\"checkbox\"]:focus + label::before,\n    .abc-checkbox input[type=\"radio\"]:focus + label::before {\n      outline: thin dotted;\n      outline: 5px auto -webkit-focus-ring-color;\n      outline-offset: -2px;\n}\n.abc-checkbox input[type=\"checkbox\"]:checked + label::after,\n    .abc-checkbox input[type=\"radio\"]:checked + label::after {\n      font-family: \"FontAwesome\";\n      content: \"\\F00C\";\n}\n.abc-checkbox input[type=\"checkbox\"]:indeterminate + label::after,\n    .abc-checkbox input[type=\"radio\"]:indeterminate + label::after {\n      display: block;\n      content: \"\";\n      width: 10px;\n      height: 3px;\n      background-color: #555555;\n      border-radius: 2px;\n      margin-left: -16.5px;\n      margin-top: 7px;\n}\n.abc-checkbox input[type=\"checkbox\"]:disabled + label,\n    .abc-checkbox input[type=\"radio\"]:disabled + label {\n      opacity: 0.65;\n}\n.abc-checkbox input[type=\"checkbox\"]:disabled + label::before,\n      .abc-checkbox input[type=\"radio\"]:disabled + label::before {\n        background-color: #fff;\n        cursor: not-allowed;\n}\n.abc-checkbox input[type=\"checkbox\"]:disabled + label::after,\n      .abc-checkbox input[type=\"radio\"]:disabled + label::after {\n        cursor: not-allowed;\n}\n.abc-checkbox.abc-checkbox-circle label::before {\n    border-radius: 50%;\n}\n.abc-checkbox.checkbox-inline {\n    margin-top: 0;\n}\n.abc-checkbox-primary input[type=\"checkbox\"]:checked + label::before,\n.abc-checkbox-primary input[type=\"radio\"]:checked + label::before {\n  background-color: #4ae387;\n  border-color: #4ae387;\n}\n.abc-checkbox-primary input[type=\"checkbox\"]:checked + label::after,\n.abc-checkbox-primary input[type=\"radio\"]:checked + label::after {\n  color: #fff;\n}\n.abc-checkbox-danger input[type=\"checkbox\"]:checked + label::before,\n.abc-checkbox-danger input[type=\"radio\"]:checked + label::before {\n  background-color: #e34a4a;\n  border-color: #e34a4a;\n}\n.abc-checkbox-danger input[type=\"checkbox\"]:checked + label::after,\n.abc-checkbox-danger input[type=\"radio\"]:checked + label::after {\n  color: #fff;\n}\n.abc-checkbox-info input[type=\"checkbox\"]:checked + label::before,\n.abc-checkbox-info input[type=\"radio\"]:checked + label::before {\n  background-color: #4ab2e3;\n  border-color: #4ab2e3;\n}\n.abc-checkbox-info input[type=\"checkbox\"]:checked + label::after,\n.abc-checkbox-info input[type=\"radio\"]:checked + label::after {\n  color: #fff;\n}\n.abc-checkbox-warning input[type=\"checkbox\"]:checked + label::before,\n.abc-checkbox-warning input[type=\"radio\"]:checked + label::before {\n  background-color: #f7cc36;\n  border-color: #f7cc36;\n}\n.abc-checkbox-warning input[type=\"checkbox\"]:checked + label::after,\n.abc-checkbox-warning input[type=\"radio\"]:checked + label::after {\n  color: #fff;\n}\n.abc-checkbox-success input[type=\"checkbox\"]:checked + label::before,\n.abc-checkbox-success input[type=\"radio\"]:checked + label::before {\n  background-color: #db76df;\n  border-color: #db76df;\n}\n.abc-checkbox-success input[type=\"checkbox\"]:checked + label::after,\n.abc-checkbox-success input[type=\"radio\"]:checked + label::after {\n  color: #fff;\n}\n.abc-checkbox-primary input[type=\"checkbox\"]:indeterminate + label::before,\n.abc-checkbox-primary input[type=\"radio\"]:indeterminate + label::before {\n  background-color: #4ae387;\n  border-color: #4ae387;\n}\n.abc-checkbox-primary input[type=\"checkbox\"]:indeterminate + label::after,\n.abc-checkbox-primary input[type=\"radio\"]:indeterminate + label::after {\n  background-color: #fff;\n}\n.abc-checkbox-danger input[type=\"checkbox\"]:indeterminate + label::before,\n.abc-checkbox-danger input[type=\"radio\"]:indeterminate + label::before {\n  background-color: #e34a4a;\n  border-color: #e34a4a;\n}\n.abc-checkbox-danger input[type=\"checkbox\"]:indeterminate + label::after,\n.abc-checkbox-danger input[type=\"radio\"]:indeterminate + label::after {\n  background-color: #fff;\n}\n.abc-checkbox-info input[type=\"checkbox\"]:indeterminate + label::before,\n.abc-checkbox-info input[type=\"radio\"]:indeterminate + label::before {\n  background-color: #4ab2e3;\n  border-color: #4ab2e3;\n}\n.abc-checkbox-info input[type=\"checkbox\"]:indeterminate + label::after,\n.abc-checkbox-info input[type=\"radio\"]:indeterminate + label::after {\n  background-color: #fff;\n}\n.abc-checkbox-warning input[type=\"checkbox\"]:indeterminate + label::before,\n.abc-checkbox-warning input[type=\"radio\"]:indeterminate + label::before {\n  background-color: #f7cc36;\n  border-color: #f7cc36;\n}\n.abc-checkbox-warning input[type=\"checkbox\"]:indeterminate + label::after,\n.abc-checkbox-warning input[type=\"radio\"]:indeterminate + label::after {\n  background-color: #fff;\n}\n.abc-checkbox-success input[type=\"checkbox\"]:indeterminate + label::before,\n.abc-checkbox-success input[type=\"radio\"]:indeterminate + label::before {\n  background-color: #db76df;\n  border-color: #db76df;\n}\n.abc-checkbox-success input[type=\"checkbox\"]:indeterminate + label::after,\n.abc-checkbox-success input[type=\"radio\"]:indeterminate + label::after {\n  background-color: #fff;\n}\n.abc-radio {\n  cursor: default;\n  padding-left: 4px;\n}\n.abc-radio label {\n    cursor: pointer;\n    display: inline;\n    vertical-align: top;\n    position: relative;\n    padding-left: 5px;\n}\n.abc-radio label::before {\n      cursor: pointer;\n      content: \"\";\n      display: inline-block;\n      position: absolute;\n      width: 17px;\n      height: 17px;\n      top: 2px;\n      left: 0;\n      margin-left: -20px;\n      border: 1px solid #ddd;\n      border-radius: 50%;\n      background-color: #fff;\n      -webkit-transition: border 0.15s ease-in-out;\n      transition: border 0.15s ease-in-out;\n}\n.abc-radio label::after {\n      cursor: pointer;\n      display: inline-block;\n      position: absolute;\n      content: \" \";\n      width: 11px;\n      height: 11px;\n      left: 3px;\n      top: 5px;\n      margin-left: -20px;\n      border-radius: 50%;\n      background-color: #adb3b9;\n      -webkit-transform: scale(0, 0);\n              transform: scale(0, 0);\n      -webkit-transition: -webkit-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);\n      transition: -webkit-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);\n      transition: transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);\n      transition: transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33), -webkit-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);\n}\n.abc-radio input[type=\"radio\"] {\n    cursor: pointer;\n    opacity: 0;\n    z-index: 1;\n}\n.abc-radio input[type=\"radio\"]:focus + label::before {\n      outline: thin dotted;\n      outline: 5px auto -webkit-focus-ring-color;\n      outline-offset: -2px;\n}\n.abc-radio input[type=\"radio\"]:checked + label::after {\n      -webkit-transform: scale(1, 1);\n              transform: scale(1, 1);\n}\n.abc-radio input[type=\"radio\"]:disabled + label {\n      opacity: 0.65;\n}\n.abc-radio input[type=\"radio\"]:disabled + label::before {\n        cursor: not-allowed;\n}\n.abc-radio input[type=\"radio\"]:disabled + label::after {\n        cursor: not-allowed;\n}\n.abc-radio.radio-inline {\n    margin-top: 0;\n}\n.abc-radio-primary input[type=\"radio\"] + label::after {\n  background-color: #4ae387;\n}\n.abc-radio-primary input[type=\"radio\"]:checked + label::before {\n  border-color: #4ae387;\n}\n.abc-radio-primary input[type=\"radio\"]:checked + label::after {\n  background-color: #4ae387;\n}\n.abc-radio-danger input[type=\"radio\"] + label::after {\n  background-color: #e34a4a;\n}\n.abc-radio-danger input[type=\"radio\"]:checked + label::before {\n  border-color: #e34a4a;\n}\n.abc-radio-danger input[type=\"radio\"]:checked + label::after {\n  background-color: #e34a4a;\n}\n.abc-radio-info input[type=\"radio\"] + label::after {\n  background-color: #4ab2e3;\n}\n.abc-radio-info input[type=\"radio\"]:checked + label::before {\n  border-color: #4ab2e3;\n}\n.abc-radio-info input[type=\"radio\"]:checked + label::after {\n  background-color: #4ab2e3;\n}\n.abc-radio-warning input[type=\"radio\"] + label::after {\n  background-color: #f7cc36;\n}\n.abc-radio-warning input[type=\"radio\"]:checked + label::before {\n  border-color: #f7cc36;\n}\n.abc-radio-warning input[type=\"radio\"]:checked + label::after {\n  background-color: #f7cc36;\n}\n.abc-radio-success input[type=\"radio\"] + label::after {\n  background-color: #db76df;\n}\n.abc-radio-success input[type=\"radio\"]:checked + label::before {\n  border-color: #db76df;\n}\n.abc-radio-success input[type=\"radio\"]:checked + label::after {\n  background-color: #db76df;\n}\ninput[type=\"checkbox\"].styled:checked + label:after,\ninput[type=\"radio\"].styled:checked + label:after {\n  font-family: \"FontAwesome\";\n  content: \"\\F00C\";\n}\ninput[type=\"checkbox\"] .styled:checked + label::before,\ninput[type=\"radio\"] .styled:checked + label::before {\n  color: #fff;\n}\ninput[type=\"checkbox\"] .styled:checked + label::after,\ninput[type=\"radio\"] .styled:checked + label::after {\n  color: #fff;\n}\n.has-danger .abc-checkbox label:before, .has-danger .abc-radio label:before {\n  border-color: #e34a4a;\n}\n\n/* brandico */\n[class*=\"brandico-\"]:before {\n  font-family: 'brandico', sans-serif;\n  font-style: normal;\n}\n\n/* entypo */\n[class*=\"entypo-\"]:before {\n  font-family: 'entypo', sans-serif;\n  font-style: normal;\n}\n\n/* fontelico */\n[class*=\"fontelico-\"]:before {\n  font-family: 'fontelico', sans-serif;\n  font-style: normal;\n}\n\n/* iconicfill */\n[class*=\"iconicfill-\"]:before {\n  font-family: 'IconicFill', sans-serif;\n  font-style: normal;\n}\n\n/* iconicstroke */\n[class*=\"iconicstroke-\"]:before {\n  font-family: 'IconicStroke', sans-serif;\n  font-style: normal;\n}\n\n/* maki */\n[class*=\"maki-\"]:before {\n  font-family: 'maki', sans-serif;\n  font-style: normal;\n}\n\n/* openwebicons */\n[class*=\"openwebicons-\"]:before {\n  font-family: 'OpenWeb Icons', sans-serif;\n  font-style: normal;\n}\n\n/* typicons */\n[class*=\"typicons-\"]:before {\n  font-family: 'Typicons', sans-serif;\n  font-style: normal;\n}\n\n/* zocial */\n[class*=\"zocial-\"]:before {\n  font-family: 'zocial', sans-serif;\n}\nhtml {\n  height: 100%;\n}\nbody {\n  min-height: 100%;\n}\n.ellipsis {\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n}\n.widget-viewport-height {\n  height: calc(100vh - 72px - 24px - 24px);\n}\n.none {\n  display: none;\n}\n.pointer {\n  cursor: pointer;\n}\na:not([href]):not([tabindex]) {\n  color: #fff;\n  cursor: pointer;\n}\na:not([href]):not([tabindex]):hover {\n  color: #fff;\n  cursor: pointer;\n}\na:not([href]):not([tabindex]):focus {\n  color: #fff;\n  cursor: pointer;\n}\nh1, h2, h3, h4, h5, h6, strong, b {\n  font-weight: 600;\n}\n.blockquote {\n  margin: 2.5rem 0 2.5rem 1rem;\n  font-style: oblique;\n}\n.vue-green-text {\n  color: #4ae387;\n}\n.vue-clickable-text {\n  color: #4ae387;\n}\n.vue-clickable-text:hover {\n    color: #76eaa4;\n    cursor: pointer;\n}\n.vue-highlighted-text {\n  background-color: #dbf9e7;\n  padding: 2px 1px 1px 2px;\n}\n.vue-selected-text {\n  background-color: #4ae387;\n  padding: 2px 1px 2px 2px;\n  color: #fff;\n}\nul.vue-list-inner li:first-child, ol.vue-list-inner li:first-child {\n  margin-top: 1.5rem;\n}\nul.vue-list-inner li:last-child, ol.vue-list-inner li:last-child {\n  padding-bottom: 0;\n}\nul.vue-unordered {\n  padding: 0;\n  list-style-type: none;\n}\nul.vue-unordered ul {\n    padding: 0;\n    list-style-type: none;\n}\nul.vue-unordered li {\n    padding-left: 1.563rem;\n    padding-bottom: 1.5rem;\n}\nul.vue-unordered li::before {\n      content: \"\";\n      display: inline-block;\n      width: 0.75rem;\n      height: 0.75rem;\n      position: relative;\n      right: 1.563rem;\n      top: 0.0625rem;\n      margin-right: -0.75em;\n      border-radius: 0.75rem;\n      background-color: #4ae387;\n}\nul.vue-unordered li li::before {\n      background-color: #fff;\n      border: 2.5px solid #4ae387;\n}\nol.vue-ordered {\n  padding: 0;\n  counter-reset: olCounter;\n}\nol.vue-ordered li {\n    list-style: none;\n    padding-left: 1.563rem;\n    padding-bottom: 1.5rem;\n}\nol.vue-ordered > li:before {\n    counter-increment: olCounter;\n    content: counter(olCounter) \". \";\n    display: inline-block;\n    width: 0.75rem;\n    height: 0.75rem;\n    position: relative;\n    right: 1.563rem;\n    top: 0.0625rem;\n    margin-right: -0.75em;\n}\nol.vue-ordered ul {\n    padding: 0;\n    list-style-type: none;\n}\nol.vue-ordered ul li {\n      padding-left: 1.563rem;\n}\nol.vue-ordered ul li::before {\n        content: \"\";\n        display: inline-block;\n        width: 0.75rem;\n        height: 0.75rem;\n        position: relative;\n        right: 1.563rem;\n        top: 0.0625rem;\n        margin-right: -0.75em;\n        border-radius: 0.75rem;\n        background-color: #4ae387;\n}\n.vue-misc {\n  margin-top: 5.625rem;\n  margin-bottom: 2rem;\n}\n.well {\n  padding: 1.9rem 2.2rem 1.9rem 1.6rem;\n  background-color: #eee;\n}\n.i-nav-notification {\n  display: inline-block;\n  height: 32px;\n  width: 22px;\n  background: url(" + __webpack_require__(246) + ") no-repeat center center;\n}\n.i-nav-messages {\n  display: inline-block;\n  height: 21px;\n  width: 26px;\n  background: url(" + __webpack_require__(247) + ") no-repeat center center;\n}\n.i-vuestic {\n  display: inline-block;\n  width: 129px;\n  height: 15.4px;\n  background: url(" + __webpack_require__(248) + ") no-repeat center center;\n}\n.i-menu-expanded {\n  display: inline-block;\n  width: 24px;\n  height: 20px;\n  background: url(" + __webpack_require__(249) + ") no-repeat center center;\n}\n.i-menu-collapsed {\n  display: inline-block;\n  width: 24px;\n  height: 20px;\n  background: url(" + __webpack_require__(250) + ") no-repeat center center;\n}\n.i-vuestic-fresh {\n  display: inline-block;\n  width: 51px;\n  height: 48px;\n  background: url(" + __webpack_require__(251) + ") no-repeat center center;\n}\n.i-vuestic-clean-code {\n  display: inline-block;\n  width: 56px;\n  height: 50px;\n  background: url(" + __webpack_require__(252) + ") no-repeat center center;\n}\n.i-vuestic-free {\n  display: inline-block;\n  width: 45px;\n  height: 51px;\n  background: url(" + __webpack_require__(253) + ") no-repeat center center;\n}\n.i-vuestic-responsive {\n  display: inline-block;\n  width: 47.5px;\n  height: 49px;\n  background: url(" + __webpack_require__(254) + ") no-repeat center center;\n}\n.i-vuestic-rich {\n  display: inline-block;\n  width: 57px;\n  height: 55px;\n  background: url(" + __webpack_require__(255) + ") no-repeat center center;\n}\n.i-vuestic-vue {\n  display: inline-block;\n  width: 55px;\n  height: 47.8px;\n  background: url(" + __webpack_require__(256) + ") no-repeat center center;\n}\n.button-container {\n  text-align: center;\n}\nfieldset {\n  padding: 0;\n  border: none;\n}\n.form-group {\n  position: relative;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  min-height: 2.25rem;\n  margin-top: 0.2rem;\n  margin-bottom: 2.25rem;\n}\n.form-group .input-group {\n    -ms-flex-item-align: end;\n        align-self: flex-end;\n}\n.form-group .input-icon {\n    position: absolute;\n    top: 0.4375rem;\n    color: #b3b3b3;\n}\n.form-group .text-secondary {\n    color: #b3b3b3;\n}\n.form-group .input-group {\n    position: relative;\n    display: block;\n}\n.form-group.select-form-group .dropdown-toggle::after {\n    display: none;\n}\n.form-group.select-form-group .dropdown-menu {\n    width: 100%;\n}\n.form-group.select-form-group .dropdown-item {\n    cursor: pointer;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n}\n.form-group.select-form-group .dropdown-item .selected-icon {\n      display: none;\n      margin-left: 0.35rem;\n}\n.form-group.select-form-group .dropdown-item.selected {\n      color: #4ae387;\n}\n.form-group.select-form-group .dropdown-item.selected .selected-icon {\n        display: inline-block;\n}\n.form-group.select-form-group .input-icon {\n    color: gray;\n    font-size: 0.8rem;\n    top: 1rem;\n}\n.form-group.select-form-group .bar::before {\n    display: none;\n}\n.form-group.form-group-w-btn .btn {\n    -ms-flex-item-align: end;\n        align-self: flex-end;\n}\n.form-group.with-icon-right input {\n    padding-right: 1.375rem;\n}\n.form-group.with-icon-right .icon-right {\n    right: 0;\n}\n.form-group.with-icon-left input,\n  .form-group.with-icon-left textarea {\n    padding-left: 1.375rem;\n}\n.form-group.with-icon-left input ~ .control-label,\n    .form-group.with-icon-left textarea ~ .control-label {\n      padding-left: 1.375rem;\n}\n.form-group.with-icon-left select,\n  .form-group.with-icon-left input:focus,\n  .form-group.with-icon-left input:valid,\n  .form-group.with-icon-left input.form-file,\n  .form-group.with-icon-left input.has-value,\n  .form-group.with-icon-left textarea:focus,\n  .form-group.with-icon-left textarea:valid,\n  .form-group.with-icon-left textarea.form-file,\n  .form-group.with-icon-left textarea.has-value {\n    color: #34495e;\n}\n.form-group.with-icon-left select ~ .control-label,\n    .form-group.with-icon-left input:focus ~ .control-label,\n    .form-group.with-icon-left input:valid ~ .control-label,\n    .form-group.with-icon-left input.form-file ~ .control-label,\n    .form-group.with-icon-left input.has-value ~ .control-label,\n    .form-group.with-icon-left textarea:focus ~ .control-label,\n    .form-group.with-icon-left textarea:valid ~ .control-label,\n    .form-group.with-icon-left textarea.form-file ~ .control-label,\n    .form-group.with-icon-left textarea.has-value ~ .control-label {\n      padding-left: 0;\n}\n.form-group.with-icon-left .icon-left {\n    left: 0;\n}\n.form-group .error-icon, .form-group .valid-icon {\n    display: none;\n}\n.form-inline > .form-group,\n.form-inline > .btn {\n  display: inline-block;\n  margin-bottom: 0;\n}\n.form-help {\n  margin-top: 0.125rem;\n  margin-left: 0.125rem;\n  color: #b3b3b3;\n  font-size: 0.6rem;\n}\n.form-group .form-help {\n    position: absolute;\n    width: 100%;\n}\n.checkbox .form-help {\n    position: relative;\n    margin-bottom: 1rem;\n}\n.form-group input, .form-group textarea.chat {\n  height: 1.9rem;\n}\n.form-group textarea {\n  resize: none;\n}\n.form-group select {\n  width: 100%;\n  font-size: 1rem;\n  height: 1.6rem;\n  padding: 0.125rem 0.125rem 0.0625rem;\n  background: none;\n  border: none;\n  line-height: 1.6;\n  -webkit-box-shadow: none;\n          box-shadow: none;\n}\n.form-group .control-label {\n  position: absolute;\n  top: 0.25rem;\n  left: 0;\n  max-width: 100%;\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  pointer-events: none;\n  padding-left: 0.125rem;\n  z-index: 1;\n  color: #b3b3b3;\n  font-size: 1rem;\n  font-weight: normal;\n  -webkit-transition: all 0.28s ease;\n  transition: all 0.28s ease;\n}\n.form-group .bar {\n  position: relative;\n  border-bottom: 0.0625rem solid #999;\n  display: block;\n}\n.form-group .bar::before {\n    content: '';\n    height: 0.125rem;\n    width: 0;\n    left: 50%;\n    bottom: -0.0625rem;\n    position: absolute;\n    background: #555;\n    -webkit-transition: left 0.28s ease, width 0.28s ease;\n    transition: left 0.28s ease, width 0.28s ease;\n    z-index: 2;\n}\n.form-group input,\n.form-group textarea {\n  display: block;\n  background: none;\n  padding: 0.125rem 0.125rem 0.0625rem;\n  font-size: 1rem;\n  border-width: 0;\n  border-color: transparent;\n  line-height: 1.9;\n  width: 100%;\n  color: transparent;\n  -webkit-transition: all 0.28s ease;\n  transition: all 0.28s ease;\n  -webkit-box-shadow: none;\n          box-shadow: none;\n}\n.form-group input[type=\"file\"] {\n  line-height: 1;\n}\n.form-group input[type=\"file\"] ~ .bar {\n    display: none;\n}\n.form-group.show input,\n.form-group select,\n.form-group input:focus,\n.form-group input:valid,\n.form-group input.form-file,\n.form-group input.has-value,\n.form-group textarea:focus,\n.form-group textarea:valid,\n.form-group textarea.form-file,\n.form-group textarea.has-value {\n  color: #34495e;\n}\n.form-group.show input ~ .control-label,\n  .form-group select ~ .control-label,\n  .form-group input:focus ~ .control-label,\n  .form-group input:valid ~ .control-label,\n  .form-group input.form-file ~ .control-label,\n  .form-group input.has-value ~ .control-label,\n  .form-group textarea:focus ~ .control-label,\n  .form-group textarea:valid ~ .control-label,\n  .form-group textarea.form-file ~ .control-label,\n  .form-group textarea.has-value ~ .control-label {\n    font-size: 0.6rem;\n    color: #4ae387;\n    font-weight: 600;\n    text-transform: uppercase;\n    top: -0.6rem;\n    left: 0;\n}\n.form-group select:focus,\n.form-group input:focus,\n.form-group textarea:focus {\n  outline: none;\n}\n.form-group select:focus ~ .control-label,\n  .form-group input:focus ~ .control-label,\n  .form-group textarea:focus ~ .control-label {\n    color: #4ae387;\n}\n.form-group select:focus ~ .bar::before,\n  .form-group input:focus ~ .bar::before,\n  .form-group textarea:focus ~ .bar::before {\n    width: 100%;\n    left: 0;\n}\n.valid .legend.legend,\n.valid.form-group .control-label.control-label {\n  color: #4ae387;\n}\n.valid .valid-icon {\n  display: inline-block;\n  color: #4ae387;\n}\n.has-error .legend.legend,\n.has-error.form-group .control-label.control-label {\n  color: #e34a4a;\n}\n.has-error .error-icon {\n  display: inline-block;\n  color: #e34a4a;\n}\n.has-error.form-group .icon-right {\n  color: #e34a4a;\n}\n.has-error.form-group .form-help,\n.has-error.form-group .helper, .has-error.checkbox .form-help,\n.has-error.checkbox .helper {\n  color: #e34a4a;\n}\n.has-error .bar::before {\n  background: #e34a4a;\n  left: 0;\n  width: 100%;\n}\n.abc-checkbox, .abc-radio {\n  margin-bottom: 20px;\n}\n.abc-checkbox label .abc-label-text, .abc-radio label .abc-label-text {\n    display: inline-block;\n    position: relative;\n    top: 2px;\n    padding-left: 13px;\n}\n.abc-checkbox label::before, .abc-radio label::before {\n    width: 22px;\n    height: 22px;\n    border: 2px solid #ddd;\n    -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out, background-color 0.15s ease-in-out;\n    transition: border 0.15s ease-in-out, color 0.15s ease-in-out, background-color 0.15s ease-in-out;\n}\n.abc-checkbox label::before {\n  border-radius: 0;\n  -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out, background-color 0.15s ease-in-out;\n  transition: border 0.15s ease-in-out, color 0.15s ease-in-out, background-color 0.15s ease-in-out;\n}\n.abc-checkbox label::after {\n  width: 20px;\n  height: 20px;\n  top: 2px;\n  left: 2px;\n}\n.abc-checkbox input[type=\"checkbox\"]:focus + label::before,\n.abc-checkbox input[type=\"radio\"]:focus + label::before {\n  outline: none;\n}\n.abc-checkbox input[type=\"checkbox\"]:checked + label::after,\n.abc-checkbox input[type=\"radio\"]:checked + label::after {\n  font-family: \"Ionicons\";\n  content: \"\\F122\";\n  font-size: 15px;\n}\n.abc-checkbox input[type=\"checkbox\"]:disabled + label,\n.abc-checkbox input[type=\"radio\"]:disabled + label {\n  opacity: 0.5;\n}\n.abc-radio label::after {\n  width: 10px;\n  height: 10px;\n  top: 7.5px;\n  left: 6px;\n}\n.abc-radio input[type=\"radio\"]:focus + label::before {\n  outline: none;\n}\n.navbar .navbar-nav > .nav-item > .nav-link {\n  padding-right: 38px;\n  padding-left: 38px;\n  line-height: 0;\n}\n.navbar .navbar-nav > .nav-item {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\nh1, .h1 {\n  margin-bottom: 2.25rem;\n}\nh2, .h2 {\n  margin-bottom: 2rem;\n}\nh3, .h3 {\n  margin-bottom: 1.5rem;\n}\nh4, .h4 {\n  margin-bottom: 1rem;\n}\n.blockquote {\n  padding: 0 1.625rem;\n  color: #acb5be;\n  line-height: 2rem;\n}\n.blockquote-footer::before {\n  content: \"--- \";\n}\n.btn {\n  -webkit-box-shadow: 0 4px 9.6px 0.4px rgba(74, 227, 135, 0.5);\n          box-shadow: 0 4px 9.6px 0.4px rgba(74, 227, 135, 0.5);\n  font-family: inherit;\n  letter-spacing: 3px;\n  text-transform: uppercase;\n  cursor: pointer;\n}\n.btn.dropdown-toggle.theme-toggle {\n    padding: 1.1rem 3.9rem;\n    font-size: 1rem;\n    border-radius: 1.875rem;\n}\n.btn:focus, .btn:active, .btn.focus {\n    -webkit-box-shadow: 0 4px 9.6px 0.4px rgba(74, 227, 135, 0.5);\n            box-shadow: 0 4px 9.6px 0.4px rgba(74, 227, 135, 0.5);\n}\n.btn.btn-sm, .btn-group-sm > .btn {\n  padding: 0.7rem 2.5rem;\n  font-size: 1rem;\n  border-radius: 1.875rem;\n}\n.btn.btn-micro {\n  padding: 0.625rem 1.8rem;\n  font-size: 85%;\n  border-radius: 1.875rem;\n}\n.btn.btn-primary {\n  background-color: #4ae387;\n  color: #fff;\n  -webkit-box-shadow: 0 4px 9.6px 0.4px rgba(74, 227, 135, 0.5);\n          box-shadow: 0 4px 9.6px 0.4px rgba(74, 227, 135, 0.5);\n  border: none;\n}\n.btn.btn-primary:hover {\n    color: #fff;\n    background-color: #76eaa4;\n}\n.btn.btn-primary:active, .btn.btn-primary:focus, .btn.btn-primary .active {\n    background-color: #1ec260;\n    color: #fff;\n}\n.btn.btn-primary[disabled], .btn.btn-primary[disabled]:hover {\n    background-color: #1ec260;\n    color: #14803f;\n    opacity: 0.5;\n}\n.btn.btn-primary.hover {\n    background-color: #76eaa4 !important;\n    color: #fff;\n}\n.btn.btn-primary.focus {\n    background-color: #1ec260;\n    color: #fff;\n}\n.btn.btn-secondary {\n  background-color: #4ae387;\n  color: #fff;\n  -webkit-box-shadow: none;\n          box-shadow: none;\n  border: 2px solid #4ae387;\n  color: #4ae387;\n  border: 2px solid #4ae387;\n  background-color: #fff;\n}\n.btn.btn-secondary:hover {\n    color: #fff;\n    background-color: #76eaa4;\n}\n.btn.btn-secondary:active, .btn.btn-secondary:focus, .btn.btn-secondary .active {\n    background-color: #1ec260;\n    color: #fff;\n}\n.btn.btn-secondary[disabled], .btn.btn-secondary[disabled]:hover {\n    background-color: #1ec260;\n    color: #14803f;\n    opacity: 0.5;\n}\n.btn.btn-secondary[disabled], .btn.btn-secondary[disabled]:hover {\n    background-color: #fff;\n    color: #4ae387;\n    border: 2px solid #4ae387;\n}\n.btn.btn-secondary:hover {\n    border: 2px solid #76eaa4;\n}\n.btn.btn-secondary.hover {\n    border: 2px solid #76eaa4 !important;\n    background-color: #76eaa4 !important;\n    color: #fff;\n}\n.btn.btn-secondary:active, .btn.btn-secondary:focus, .btn.btn-secondary.focus {\n    border: 2px solid #1ec260;\n    background-color: #1ec260;\n    color: #fff;\n}\n.btn.btn-danger {\n  background-color: #e34a4a;\n  color: #fff;\n  -webkit-box-shadow: 0px 4px 70px -16px #e34a4a;\n          box-shadow: 0px 4px 70px -16px #e34a4a;\n  border: none;\n}\n.btn.btn-danger:hover {\n    color: #fff;\n    background-color: #ea7676;\n}\n.btn.btn-danger:active, .btn.btn-danger:focus, .btn.btn-danger .active {\n    background-color: #c21e1e;\n    color: #fff;\n}\n.btn.btn-danger[disabled], .btn.btn-danger[disabled]:hover {\n    background-color: #c21e1e;\n    color: #801414;\n    opacity: 0.5;\n}\n.btn.btn-warning {\n  background-color: #f7cc36;\n  color: #fff;\n  -webkit-box-shadow: 0px 4px 70px -16px #f7cc36;\n          box-shadow: 0px 4px 70px -16px #f7cc36;\n  border: none;\n}\n.btn.btn-warning:hover {\n    color: #fff;\n    background-color: #f9d867;\n}\n.btn.btn-warning:active, .btn.btn-warning:focus, .btn.btn-warning .active {\n    background-color: #d8aa09;\n    color: #fff;\n}\n.btn.btn-warning[disabled], .btn.btn-warning[disabled]:hover {\n    background-color: #d8aa09;\n    color: #8e7006;\n    opacity: 0.5;\n}\n.btn.btn-info {\n  background-color: #4ab2e3;\n  color: #fff;\n  -webkit-box-shadow: 0px 4px 70px -16px #4ab2e3;\n          box-shadow: 0px 4px 70px -16px #4ab2e3;\n  border: none;\n}\n.btn.btn-info:hover {\n    color: #fff;\n    background-color: #76c5ea;\n}\n.btn.btn-info:active, .btn.btn-info:focus, .btn.btn-info .active {\n    background-color: #1e8ec2;\n    color: #fff;\n}\n.btn.btn-info[disabled], .btn.btn-info[disabled]:hover {\n    background-color: #1e8ec2;\n    color: #145d80;\n    opacity: 0.5;\n}\n.btn.btn-success {\n  background-color: #db76df;\n  color: #fff;\n  -webkit-box-shadow: 0px 4px 70px -16px #db76df;\n          box-shadow: 0px 4px 70px -16px #db76df;\n  border: none;\n}\n.btn.btn-success:hover {\n    color: #fff;\n    background-color: #e69fe9;\n}\n.btn.btn-success:active, .btn.btn-success:focus, .btn.btn-success .active {\n    background-color: #cb38d1;\n    color: #fff;\n}\n.btn.btn-success[disabled], .btn.btn-success[disabled]:hover {\n    background-color: #cb38d1;\n    color: #942498;\n    opacity: 0.5;\n}\n.btn.btn-dark {\n  background-color: #333;\n  color: #fff;\n  -webkit-box-shadow: 0px 4px 70px -16px #161616;\n          box-shadow: 0px 4px 70px -16px #161616;\n  border: none;\n}\n.btn.btn-dark:hover {\n    color: #fff;\n    background-color: #4d4d4d;\n}\n.btn.btn-dark:active, .btn.btn-dark:focus, .btn.btn-dark .active {\n    background-color: #0d0d0d;\n    color: #fff;\n}\n.btn.btn-dark[disabled], .btn.btn-dark[disabled]:hover {\n    background-color: #0d0d0d;\n    color: black;\n    opacity: 0.5;\n}\n.btn.btn-pale {\n  background-color: #d9d9d9;\n  color: #fff;\n  -webkit-box-shadow: 0px 4px 70px -16px #d9d9d9;\n          box-shadow: 0px 4px 70px -16px #d9d9d9;\n  border: none;\n}\n.btn.btn-pale:hover {\n    color: #fff;\n    background-color: #f3f3f3;\n}\n.btn.btn-pale:active, .btn.btn-pale:focus, .btn.btn-pale .active {\n    background-color: #b3b3b3;\n    color: #fff;\n}\n.btn.btn-pale[disabled], .btn.btn-pale[disabled]:hover {\n    background-color: #b3b3b3;\n    color: #8d8d8d;\n    opacity: 0.5;\n}\n.btn.btn-pale:hover {\n    background-color: #e6e6e6;\n}\n.btn.btn-pale:hover:focus, .btn.btn-pale:hover:active, .btn.btn-pale:hover.active {\n      background-color: #b3b3b3;\n}\n.btn.btn-with-icon {\n  position: relative;\n  padding: 1.1rem 2.8125rem;\n}\n.btn.btn-with-icon .btn-with-icon-content {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    margin-left: 1.875rem;\n}\n.btn.btn-with-icon i {\n    position: absolute;\n    left: 2.8125rem;\n    top: 0.75rem;\n    font-size: 2rem;\n}\n.btn.btn-with-icon.rounded-icon {\n    width: 3.5rem;\n    height: 3.5rem;\n    border-radius: 50%;\n    padding: 0;\n}\n.btn.btn-with-icon.rounded-icon i {\n      left: 1.23rem;\n}\n.btn.btn-with-icon.rounded-icon.btn-micro {\n      height: 2.25rem;\n      width: 2.25rem;\n      -webkit-box-flex: 0;\n          -ms-flex: none;\n              flex: none;\n}\n.btn.btn-with-icon.rounded-icon.btn-micro i {\n        font-size: 1.5rem;\n        left: 0.46rem;\n        top: 0.4rem;\n}\n.btn-group {\n  -webkit-box-shadow: 0 4px 9.6px 0.4px rgba(74, 227, 135, 0.5);\n          box-shadow: 0 4px 9.6px 0.4px rgba(74, 227, 135, 0.5);\n  border-radius: 1.875rem;\n}\n.btn-group .btn {\n    padding-left: 1.53rem;\n    padding-right: 1.53rem;\n    -webkit-box-shadow: none;\n            box-shadow: none;\n}\n.btn.dropdown-toggle {\n  position: relative;\n}\n.btn.dropdown-toggle .arrow-down {\n    position: absolute;\n    font-size: 0.75rem;\n    right: 1rem;\n    top: calc(50% - 0.75rem/2);\n}\n.btn.dropdown-toggle::after {\n    display: none;\n}\n.btn-group {\n  color: #fff;\n}\n.dropdown-menu {\n  border-radius: 0;\n  padding: 10px 0;\n  background: transparent;\n  border: none;\n}\n.dropdown-menu .dropdown-menu-content {\n    background-color: #333;\n    -webkit-box-shadow: 0 4px 9.6px 0.4px rgba(74, 227, 135, 0.5);\n            box-shadow: 0 4px 9.6px 0.4px rgba(74, 227, 135, 0.5);\n}\n.dropdown-item {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  height: 40px;\n  padding: 0 25px;\n  font-size: 0.875rem;\n}\n@media (min-width: 768px) {\n.row > .col-8-custom {\n    width: 12.5%;\n}\n}\n@media (min-width: 576px) and (max-width: 767px) {\n.row > .col-8-custom {\n    width: 25%;\n}\n}\n@media (max-width: 575px) {\n.row > .col-8-custom {\n    width: 100%;\n}\n}\n.error-icon {\n  display: inline-block;\n  color: #e34a4a;\n}\n.success-icon {\n  display: inline-block;\n  color: #4ae387;\n}\n.table-striped tbody tr:nth-of-type(even) {\n  background-color: #eff4f5;\n}\n.table thead tr {\n  border-bottom: 2px solid #555555;\n  color: #4ae387;\n  font-size: 14px;\n  font-weight: bold;\n  text-transform: uppercase;\n}\n.table td, .table th {\n  vertical-align: middle !important;\n  padding: .5rem;\n}\n.table .badge {\n  vertical-align: text-top;\n}\n.table .table-info {\n  background-color: #dcf1ff;\n}\n.table .table-warning {\n  background-color: #fff1c8;\n}\n.table .table-success {\n  background-color: #c8fac6;\n}\n.table .table-danger {\n  background-color: #ffcece;\n}\n.sort-icon {\n  float: none !important;\n  margin-left: .2rem;\n  top: 1px;\n  font-size: 1rem;\n}\nth.sortable:hover {\n  color: #4ae387 !important;\n  opacity: .6;\n}\n.badge {\n  min-width: 5rem;\n  display: inline-block;\n  font-weight: bold;\n  text-transform: uppercase;\n  font-size: .625rem;\n  letter-spacing: .0625rem;\n}\n.badge-violet {\n  background-color: #db76df;\n}\n.badge-violet[href]:focus, .badge-violet[href]:hover {\n    background-color: #d04dd5;\n}\n.badge-dark-blue {\n  background-color: #0045b6;\n}\n.badge-dark-blue[href]:focus, .badge-dark-blue[href]:hover {\n    background-color: #003283;\n}\n.badge-success {\n  background-color: #4ae387;\n}\n.badge-success[href]:focus, .badge-success[href]:hover {\n    background-color: #21d96a;\n}\n.alert {\n  position: relative;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.alert .badge {\n    margin-right: 0.63rem;\n}\n.alert.with-close {\n    padding-right: 3.125rem;\n}\n.alert .alert-close {\n    position: absolute;\n    right: 20px;\n    font-size: 1rem;\n    top: calc(50% - 1rem/2);\n    cursor: pointer;\n}\n.alert-success {\n  -webkit-box-shadow: 0px 4px 9.6px 0.4px rgba(79, 206, 145, 0.5);\n          box-shadow: 0px 4px 9.6px 0.4px rgba(79, 206, 145, 0.5);\n}\n.alert-success .alert-close {\n    color: #4ae387;\n}\n.alert-warning {\n  -webkit-box-shadow: 0px 4px 9.6px 0.4px rgba(206, 178, 79, 0.5);\n          box-shadow: 0px 4px 9.6px 0.4px rgba(206, 178, 79, 0.5);\n}\n.alert-warning .alert-close {\n    color: #f7cc36;\n}\n.alert-danger {\n  -webkit-box-shadow: 0px 4px 9.6px 0.4px rgba(206, 79, 79, 0.5);\n          box-shadow: 0px 4px 9.6px 0.4px rgba(206, 79, 79, 0.5);\n}\n.alert-danger .alert-close {\n    color: #e34a4a;\n}\n.alert-info {\n  -webkit-box-shadow: 0px 4px 9.6px 0.4px rgba(79, 142, 206, 0.5);\n          box-shadow: 0px 4px 9.6px 0.4px rgba(79, 142, 206, 0.5);\n}\n.alert-info .alert-close {\n    color: #4ab2e3;\n}\n@font-face {\n  font-family: 'Glyphicons Halflings';\n  src: url(" + __webpack_require__(64) + ");\n  src: url(" + __webpack_require__(64) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(257) + ") format(\"woff2\"), url(" + __webpack_require__(258) + ") format(\"woff\"), url(" + __webpack_require__(259) + ") format(\"truetype\"), url(" + __webpack_require__(260) + "#glyphicons_halflingsregular) format(\"svg\");\n}\n.glyphicon {\n  position: relative;\n  top: 1px;\n  display: inline-block;\n  font-family: 'Glyphicons Halflings';\n  font-style: normal;\n  font-weight: normal;\n  line-height: 1;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.glyphicon-asterisk:before {\n  content: \"*\";\n}\n.glyphicon-plus:before {\n  content: \"+\";\n}\n.glyphicon-euro:before,\n.glyphicon-eur:before {\n  content: \"\\20AC\";\n}\n.glyphicon-minus:before {\n  content: \"\\2212\";\n}\n.glyphicon-cloud:before {\n  content: \"\\2601\";\n}\n.glyphicon-envelope:before {\n  content: \"\\2709\";\n}\n.glyphicon-pencil:before {\n  content: \"\\270F\";\n}\n.glyphicon-glass:before {\n  content: \"\\E001\";\n}\n.glyphicon-music:before {\n  content: \"\\E002\";\n}\n.glyphicon-search:before {\n  content: \"\\E003\";\n}\n.glyphicon-heart:before {\n  content: \"\\E005\";\n}\n.glyphicon-star:before {\n  content: \"\\E006\";\n}\n.glyphicon-star-empty:before {\n  content: \"\\E007\";\n}\n.glyphicon-user:before {\n  content: \"\\E008\";\n}\n.glyphicon-film:before {\n  content: \"\\E009\";\n}\n.glyphicon-th-large:before {\n  content: \"\\E010\";\n}\n.glyphicon-th:before {\n  content: \"\\E011\";\n}\n.glyphicon-th-list:before {\n  content: \"\\E012\";\n}\n.glyphicon-ok:before {\n  content: \"\\E013\";\n}\n.glyphicon-remove:before {\n  content: \"\\E014\";\n}\n.glyphicon-zoom-in:before {\n  content: \"\\E015\";\n}\n.glyphicon-zoom-out:before {\n  content: \"\\E016\";\n}\n.glyphicon-off:before {\n  content: \"\\E017\";\n}\n.glyphicon-signal:before {\n  content: \"\\E018\";\n}\n.glyphicon-cog:before {\n  content: \"\\E019\";\n}\n.glyphicon-trash:before {\n  content: \"\\E020\";\n}\n.glyphicon-home:before {\n  content: \"\\E021\";\n}\n.glyphicon-file:before {\n  content: \"\\E022\";\n}\n.glyphicon-time:before {\n  content: \"\\E023\";\n}\n.glyphicon-road:before {\n  content: \"\\E024\";\n}\n.glyphicon-download-alt:before {\n  content: \"\\E025\";\n}\n.glyphicon-download:before {\n  content: \"\\E026\";\n}\n.glyphicon-upload:before {\n  content: \"\\E027\";\n}\n.glyphicon-inbox:before {\n  content: \"\\E028\";\n}\n.glyphicon-play-circle:before {\n  content: \"\\E029\";\n}\n.glyphicon-repeat:before {\n  content: \"\\E030\";\n}\n.glyphicon-refresh:before {\n  content: \"\\E031\";\n}\n.glyphicon-list-alt:before {\n  content: \"\\E032\";\n}\n.glyphicon-lock:before {\n  content: \"\\E033\";\n}\n.glyphicon-flag:before {\n  content: \"\\E034\";\n}\n.glyphicon-headphones:before {\n  content: \"\\E035\";\n}\n.glyphicon-volume-off:before {\n  content: \"\\E036\";\n}\n.glyphicon-volume-down:before {\n  content: \"\\E037\";\n}\n.glyphicon-volume-up:before {\n  content: \"\\E038\";\n}\n.glyphicon-qrcode:before {\n  content: \"\\E039\";\n}\n.glyphicon-barcode:before {\n  content: \"\\E040\";\n}\n.glyphicon-tag:before {\n  content: \"\\E041\";\n}\n.glyphicon-tags:before {\n  content: \"\\E042\";\n}\n.glyphicon-book:before {\n  content: \"\\E043\";\n}\n.glyphicon-bookmark:before {\n  content: \"\\E044\";\n}\n.glyphicon-print:before {\n  content: \"\\E045\";\n}\n.glyphicon-camera:before {\n  content: \"\\E046\";\n}\n.glyphicon-font:before {\n  content: \"\\E047\";\n}\n.glyphicon-bold:before {\n  content: \"\\E048\";\n}\n.glyphicon-italic:before {\n  content: \"\\E049\";\n}\n.glyphicon-text-height:before {\n  content: \"\\E050\";\n}\n.glyphicon-text-width:before {\n  content: \"\\E051\";\n}\n.glyphicon-align-left:before {\n  content: \"\\E052\";\n}\n.glyphicon-align-center:before {\n  content: \"\\E053\";\n}\n.glyphicon-align-right:before {\n  content: \"\\E054\";\n}\n.glyphicon-align-justify:before {\n  content: \"\\E055\";\n}\n.glyphicon-list:before {\n  content: \"\\E056\";\n}\n.glyphicon-indent-left:before {\n  content: \"\\E057\";\n}\n.glyphicon-indent-right:before {\n  content: \"\\E058\";\n}\n.glyphicon-facetime-video:before {\n  content: \"\\E059\";\n}\n.glyphicon-picture:before {\n  content: \"\\E060\";\n}\n.glyphicon-map-marker:before {\n  content: \"\\E062\";\n}\n.glyphicon-adjust:before {\n  content: \"\\E063\";\n}\n.glyphicon-tint:before {\n  content: \"\\E064\";\n}\n.glyphicon-edit:before {\n  content: \"\\E065\";\n}\n.glyphicon-share:before {\n  content: \"\\E066\";\n}\n.glyphicon-check:before {\n  content: \"\\E067\";\n}\n.glyphicon-move:before {\n  content: \"\\E068\";\n}\n.glyphicon-step-backward:before {\n  content: \"\\E069\";\n}\n.glyphicon-fast-backward:before {\n  content: \"\\E070\";\n}\n.glyphicon-backward:before {\n  content: \"\\E071\";\n}\n.glyphicon-play:before {\n  content: \"\\E072\";\n}\n.glyphicon-pause:before {\n  content: \"\\E073\";\n}\n.glyphicon-stop:before {\n  content: \"\\E074\";\n}\n.glyphicon-forward:before {\n  content: \"\\E075\";\n}\n.glyphicon-fast-forward:before {\n  content: \"\\E076\";\n}\n.glyphicon-step-forward:before {\n  content: \"\\E077\";\n}\n.glyphicon-eject:before {\n  content: \"\\E078\";\n}\n.glyphicon-chevron-left:before {\n  content: \"\\E079\";\n}\n.glyphicon-chevron-right:before {\n  content: \"\\E080\";\n}\n.glyphicon-plus-sign:before {\n  content: \"\\E081\";\n}\n.glyphicon-minus-sign:before {\n  content: \"\\E082\";\n}\n.glyphicon-remove-sign:before {\n  content: \"\\E083\";\n}\n.glyphicon-ok-sign:before {\n  content: \"\\E084\";\n}\n.glyphicon-question-sign:before {\n  content: \"\\E085\";\n}\n.glyphicon-info-sign:before {\n  content: \"\\E086\";\n}\n.glyphicon-screenshot:before {\n  content: \"\\E087\";\n}\n.glyphicon-remove-circle:before {\n  content: \"\\E088\";\n}\n.glyphicon-ok-circle:before {\n  content: \"\\E089\";\n}\n.glyphicon-ban-circle:before {\n  content: \"\\E090\";\n}\n.glyphicon-arrow-left:before {\n  content: \"\\E091\";\n}\n.glyphicon-arrow-right:before {\n  content: \"\\E092\";\n}\n.glyphicon-arrow-up:before {\n  content: \"\\E093\";\n}\n.glyphicon-arrow-down:before {\n  content: \"\\E094\";\n}\n.glyphicon-share-alt:before {\n  content: \"\\E095\";\n}\n.glyphicon-resize-full:before {\n  content: \"\\E096\";\n}\n.glyphicon-resize-small:before {\n  content: \"\\E097\";\n}\n.glyphicon-exclamation-sign:before {\n  content: \"\\E101\";\n}\n.glyphicon-gift:before {\n  content: \"\\E102\";\n}\n.glyphicon-leaf:before {\n  content: \"\\E103\";\n}\n.glyphicon-fire:before {\n  content: \"\\E104\";\n}\n.glyphicon-eye-open:before {\n  content: \"\\E105\";\n}\n.glyphicon-eye-close:before {\n  content: \"\\E106\";\n}\n.glyphicon-warning-sign:before {\n  content: \"\\E107\";\n}\n.glyphicon-plane:before {\n  content: \"\\E108\";\n}\n.glyphicon-calendar:before {\n  content: \"\\E109\";\n}\n.glyphicon-random:before {\n  content: \"\\E110\";\n}\n.glyphicon-comment:before {\n  content: \"\\E111\";\n}\n.glyphicon-magnet:before {\n  content: \"\\E112\";\n}\n.glyphicon-chevron-up:before {\n  content: \"\\E113\";\n}\n.glyphicon-chevron-down:before {\n  content: \"\\E114\";\n}\n.glyphicon-retweet:before {\n  content: \"\\E115\";\n}\n.glyphicon-shopping-cart:before {\n  content: \"\\E116\";\n}\n.glyphicon-folder-close:before {\n  content: \"\\E117\";\n}\n.glyphicon-folder-open:before {\n  content: \"\\E118\";\n}\n.glyphicon-resize-vertical:before {\n  content: \"\\E119\";\n}\n.glyphicon-resize-horizontal:before {\n  content: \"\\E120\";\n}\n.glyphicon-hdd:before {\n  content: \"\\E121\";\n}\n.glyphicon-bullhorn:before {\n  content: \"\\E122\";\n}\n.glyphicon-bell:before {\n  content: \"\\E123\";\n}\n.glyphicon-certificate:before {\n  content: \"\\E124\";\n}\n.glyphicon-thumbs-up:before {\n  content: \"\\E125\";\n}\n.glyphicon-thumbs-down:before {\n  content: \"\\E126\";\n}\n.glyphicon-hand-right:before {\n  content: \"\\E127\";\n}\n.glyphicon-hand-left:before {\n  content: \"\\E128\";\n}\n.glyphicon-hand-up:before {\n  content: \"\\E129\";\n}\n.glyphicon-hand-down:before {\n  content: \"\\E130\";\n}\n.glyphicon-circle-arrow-right:before {\n  content: \"\\E131\";\n}\n.glyphicon-circle-arrow-left:before {\n  content: \"\\E132\";\n}\n.glyphicon-circle-arrow-up:before {\n  content: \"\\E133\";\n}\n.glyphicon-circle-arrow-down:before {\n  content: \"\\E134\";\n}\n.glyphicon-globe:before {\n  content: \"\\E135\";\n}\n.glyphicon-wrench:before {\n  content: \"\\E136\";\n}\n.glyphicon-tasks:before {\n  content: \"\\E137\";\n}\n.glyphicon-filter:before {\n  content: \"\\E138\";\n}\n.glyphicon-briefcase:before {\n  content: \"\\E139\";\n}\n.glyphicon-fullscreen:before {\n  content: \"\\E140\";\n}\n.glyphicon-dashboard:before {\n  content: \"\\E141\";\n}\n.glyphicon-paperclip:before {\n  content: \"\\E142\";\n}\n.glyphicon-heart-empty:before {\n  content: \"\\E143\";\n}\n.glyphicon-link:before {\n  content: \"\\E144\";\n}\n.glyphicon-phone:before {\n  content: \"\\E145\";\n}\n.glyphicon-pushpin:before {\n  content: \"\\E146\";\n}\n.glyphicon-usd:before {\n  content: \"\\E148\";\n}\n.glyphicon-gbp:before {\n  content: \"\\E149\";\n}\n.glyphicon-sort:before {\n  content: \"\\E150\";\n}\n.glyphicon-sort-by-alphabet:before {\n  content: \"\\E151\";\n}\n.glyphicon-sort-by-alphabet-alt:before {\n  content: \"\\E152\";\n}\n.glyphicon-sort-by-order:before {\n  content: \"\\E153\";\n}\n.glyphicon-sort-by-order-alt:before {\n  content: \"\\E154\";\n}\n.glyphicon-sort-by-attributes:before {\n  content: \"\\E155\";\n}\n.glyphicon-sort-by-attributes-alt:before {\n  content: \"\\E156\";\n}\n.glyphicon-unchecked:before {\n  content: \"\\E157\";\n}\n.glyphicon-expand:before {\n  content: \"\\E158\";\n}\n.glyphicon-collapse-down:before {\n  content: \"\\E159\";\n}\n.glyphicon-collapse-up:before {\n  content: \"\\E160\";\n}\n.glyphicon-log-in:before {\n  content: \"\\E161\";\n}\n.glyphicon-flash:before {\n  content: \"\\E162\";\n}\n.glyphicon-log-out:before {\n  content: \"\\E163\";\n}\n.glyphicon-new-window:before {\n  content: \"\\E164\";\n}\n.glyphicon-record:before {\n  content: \"\\E165\";\n}\n.glyphicon-save:before {\n  content: \"\\E166\";\n}\n.glyphicon-open:before {\n  content: \"\\E167\";\n}\n.glyphicon-saved:before {\n  content: \"\\E168\";\n}\n.glyphicon-import:before {\n  content: \"\\E169\";\n}\n.glyphicon-export:before {\n  content: \"\\E170\";\n}\n.glyphicon-send:before {\n  content: \"\\E171\";\n}\n.glyphicon-floppy-disk:before {\n  content: \"\\E172\";\n}\n.glyphicon-floppy-saved:before {\n  content: \"\\E173\";\n}\n.glyphicon-floppy-remove:before {\n  content: \"\\E174\";\n}\n.glyphicon-floppy-save:before {\n  content: \"\\E175\";\n}\n.glyphicon-floppy-open:before {\n  content: \"\\E176\";\n}\n.glyphicon-credit-card:before {\n  content: \"\\E177\";\n}\n.glyphicon-transfer:before {\n  content: \"\\E178\";\n}\n.glyphicon-cutlery:before {\n  content: \"\\E179\";\n}\n.glyphicon-header:before {\n  content: \"\\E180\";\n}\n.glyphicon-compressed:before {\n  content: \"\\E181\";\n}\n.glyphicon-earphone:before {\n  content: \"\\E182\";\n}\n.glyphicon-phone-alt:before {\n  content: \"\\E183\";\n}\n.glyphicon-tower:before {\n  content: \"\\E184\";\n}\n.glyphicon-stats:before {\n  content: \"\\E185\";\n}\n.glyphicon-sd-video:before {\n  content: \"\\E186\";\n}\n.glyphicon-hd-video:before {\n  content: \"\\E187\";\n}\n.glyphicon-subtitles:before {\n  content: \"\\E188\";\n}\n.glyphicon-sound-stereo:before {\n  content: \"\\E189\";\n}\n.glyphicon-sound-dolby:before {\n  content: \"\\E190\";\n}\n.glyphicon-sound-5-1:before {\n  content: \"\\E191\";\n}\n.glyphicon-sound-6-1:before {\n  content: \"\\E192\";\n}\n.glyphicon-sound-7-1:before {\n  content: \"\\E193\";\n}\n.glyphicon-copyright-mark:before {\n  content: \"\\E194\";\n}\n.glyphicon-registration-mark:before {\n  content: \"\\E195\";\n}\n.glyphicon-cloud-download:before {\n  content: \"\\E197\";\n}\n.glyphicon-cloud-upload:before {\n  content: \"\\E198\";\n}\n.glyphicon-tree-conifer:before {\n  content: \"\\E199\";\n}\n.glyphicon-tree-deciduous:before {\n  content: \"\\E200\";\n}\n.glyphicon-cd:before {\n  content: \"\\E201\";\n}\n.glyphicon-save-file:before {\n  content: \"\\E202\";\n}\n.glyphicon-open-file:before {\n  content: \"\\E203\";\n}\n.glyphicon-level-up:before {\n  content: \"\\E204\";\n}\n.glyphicon-copy:before {\n  content: \"\\E205\";\n}\n.glyphicon-paste:before {\n  content: \"\\E206\";\n}\n.glyphicon-alert:before {\n  content: \"\\E209\";\n}\n.glyphicon-equalizer:before {\n  content: \"\\E210\";\n}\n.glyphicon-king:before {\n  content: \"\\E211\";\n}\n.glyphicon-queen:before {\n  content: \"\\E212\";\n}\n.glyphicon-pawn:before {\n  content: \"\\E213\";\n}\n.glyphicon-bishop:before {\n  content: \"\\E214\";\n}\n.glyphicon-knight:before {\n  content: \"\\E215\";\n}\n.glyphicon-baby-formula:before {\n  content: \"\\E216\";\n}\n.glyphicon-tent:before {\n  content: \"\\26FA\";\n}\n.glyphicon-blackboard:before {\n  content: \"\\E218\";\n}\n.glyphicon-bed:before {\n  content: \"\\E219\";\n}\n.glyphicon-apple:before {\n  content: \"\\F8FF\";\n}\n.glyphicon-erase:before {\n  content: \"\\E221\";\n}\n.glyphicon-hourglass:before {\n  content: \"\\231B\";\n}\n.glyphicon-lamp:before {\n  content: \"\\E223\";\n}\n.glyphicon-duplicate:before {\n  content: \"\\E224\";\n}\n.glyphicon-piggy-bank:before {\n  content: \"\\E225\";\n}\n.glyphicon-scissors:before {\n  content: \"\\E226\";\n}\n.glyphicon-bitcoin:before {\n  content: \"\\E227\";\n}\n.glyphicon-btc:before {\n  content: \"\\E227\";\n}\n.glyphicon-xbt:before {\n  content: \"\\E227\";\n}\n.glyphicon-yen:before {\n  content: \"\\A5\";\n}\n.glyphicon-jpy:before {\n  content: \"\\A5\";\n}\n.glyphicon-ruble:before {\n  content: \"\\20BD\";\n}\n.glyphicon-rub:before {\n  content: \"\\20BD\";\n}\n.glyphicon-scale:before {\n  content: \"\\E230\";\n}\n.glyphicon-ice-lolly:before {\n  content: \"\\E231\";\n}\n.glyphicon-ice-lolly-tasted:before {\n  content: \"\\E232\";\n}\n.glyphicon-education:before {\n  content: \"\\E233\";\n}\n.glyphicon-option-horizontal:before {\n  content: \"\\E234\";\n}\n.glyphicon-option-vertical:before {\n  content: \"\\E235\";\n}\n.glyphicon-menu-hamburger:before {\n  content: \"\\E236\";\n}\n.glyphicon-modal-window:before {\n  content: \"\\E237\";\n}\n.glyphicon-oil:before {\n  content: \"\\E238\";\n}\n.glyphicon-grain:before {\n  content: \"\\E239\";\n}\n.glyphicon-sunglasses:before {\n  content: \"\\E240\";\n}\n.glyphicon-text-size:before {\n  content: \"\\E241\";\n}\n.glyphicon-text-color:before {\n  content: \"\\E242\";\n}\n.glyphicon-text-background:before {\n  content: \"\\E243\";\n}\n.glyphicon-object-align-top:before {\n  content: \"\\E244\";\n}\n.glyphicon-object-align-bottom:before {\n  content: \"\\E245\";\n}\n.glyphicon-object-align-horizontal:before {\n  content: \"\\E246\";\n}\n.glyphicon-object-align-left:before {\n  content: \"\\E247\";\n}\n.glyphicon-object-align-vertical:before {\n  content: \"\\E248\";\n}\n.glyphicon-object-align-right:before {\n  content: \"\\E249\";\n}\n.glyphicon-triangle-right:before {\n  content: \"\\E250\";\n}\n.glyphicon-triangle-left:before {\n  content: \"\\E251\";\n}\n.glyphicon-triangle-bottom:before {\n  content: \"\\E252\";\n}\n.glyphicon-triangle-top:before {\n  content: \"\\E253\";\n}\n.glyphicon-console:before {\n  content: \"\\E254\";\n}\n.glyphicon-superscript:before {\n  content: \"\\E255\";\n}\n.glyphicon-subscript:before {\n  content: \"\\E256\";\n}\n.glyphicon-menu-left:before {\n  content: \"\\E257\";\n}\n.glyphicon-menu-right:before {\n  content: \"\\E258\";\n}\n.glyphicon-menu-down:before {\n  content: \"\\E259\";\n}\n.glyphicon-menu-up:before {\n  content: \"\\E260\";\n}\nbody {\n  height: 100%;\n}\nbody .app {\n    height: 100%;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 232 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "/*!\n *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome\n *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)\n */\n/* FONT PATH\n * -------------------------- */\n@font-face {\n  font-family: 'FontAwesome';\n  src: url(" + __webpack_require__(233) + ");\n  src: url(" + __webpack_require__(234) + "?#iefix&v=4.7.0) format('embedded-opentype'), url(" + __webpack_require__(235) + ") format('woff2'), url(" + __webpack_require__(236) + ") format('woff'), url(" + __webpack_require__(237) + ") format('truetype'), url(" + __webpack_require__(238) + "#fontawesomeregular) format('svg');\n  font-weight: normal;\n  font-style: normal;\n}\n.fa {\n  display: inline-block;\n  font: normal normal normal 14px/1 FontAwesome;\n  font-size: inherit;\n  text-rendering: auto;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n/* makes the font 33% larger relative to the icon container */\n.fa-lg {\n  font-size: 1.33333333em;\n  line-height: 0.75em;\n  vertical-align: -15%;\n}\n.fa-2x {\n  font-size: 2em;\n}\n.fa-3x {\n  font-size: 3em;\n}\n.fa-4x {\n  font-size: 4em;\n}\n.fa-5x {\n  font-size: 5em;\n}\n.fa-fw {\n  width: 1.28571429em;\n  text-align: center;\n}\n.fa-ul {\n  padding-left: 0;\n  margin-left: 2.14285714em;\n  list-style-type: none;\n}\n.fa-ul > li {\n  position: relative;\n}\n.fa-li {\n  position: absolute;\n  left: -2.14285714em;\n  width: 2.14285714em;\n  top: 0.14285714em;\n  text-align: center;\n}\n.fa-li.fa-lg {\n  left: -1.85714286em;\n}\n.fa-border {\n  padding: .2em .25em .15em;\n  border: solid 0.08em #eeeeee;\n  border-radius: .1em;\n}\n.fa-pull-left {\n  float: left;\n}\n.fa-pull-right {\n  float: right;\n}\n.fa.fa-pull-left {\n  margin-right: .3em;\n}\n.fa.fa-pull-right {\n  margin-left: .3em;\n}\n/* Deprecated as of 4.4.0 */\n.pull-right {\n  float: right;\n}\n.pull-left {\n  float: left;\n}\n.fa.pull-left {\n  margin-right: .3em;\n}\n.fa.pull-right {\n  margin-left: .3em;\n}\n.fa-spin {\n  -webkit-animation: fa-spin 2s infinite linear;\n  animation: fa-spin 2s infinite linear;\n}\n.fa-pulse {\n  -webkit-animation: fa-spin 1s infinite steps(8);\n  animation: fa-spin 1s infinite steps(8);\n}\n@-webkit-keyframes fa-spin {\n  0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n  100% {\n    -webkit-transform: rotate(359deg);\n    transform: rotate(359deg);\n  }\n}\n@keyframes fa-spin {\n  0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n  100% {\n    -webkit-transform: rotate(359deg);\n    transform: rotate(359deg);\n  }\n}\n.fa-rotate-90 {\n  -ms-filter: \"progid:DXImageTransform.Microsoft.BasicImage(rotation=1)\";\n  -webkit-transform: rotate(90deg);\n  -ms-transform: rotate(90deg);\n  transform: rotate(90deg);\n}\n.fa-rotate-180 {\n  -ms-filter: \"progid:DXImageTransform.Microsoft.BasicImage(rotation=2)\";\n  -webkit-transform: rotate(180deg);\n  -ms-transform: rotate(180deg);\n  transform: rotate(180deg);\n}\n.fa-rotate-270 {\n  -ms-filter: \"progid:DXImageTransform.Microsoft.BasicImage(rotation=3)\";\n  -webkit-transform: rotate(270deg);\n  -ms-transform: rotate(270deg);\n  transform: rotate(270deg);\n}\n.fa-flip-horizontal {\n  -ms-filter: \"progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)\";\n  -webkit-transform: scale(-1, 1);\n  -ms-transform: scale(-1, 1);\n  transform: scale(-1, 1);\n}\n.fa-flip-vertical {\n  -ms-filter: \"progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)\";\n  -webkit-transform: scale(1, -1);\n  -ms-transform: scale(1, -1);\n  transform: scale(1, -1);\n}\n:root .fa-rotate-90,\n:root .fa-rotate-180,\n:root .fa-rotate-270,\n:root .fa-flip-horizontal,\n:root .fa-flip-vertical {\n  filter: none;\n}\n.fa-stack {\n  position: relative;\n  display: inline-block;\n  width: 2em;\n  height: 2em;\n  line-height: 2em;\n  vertical-align: middle;\n}\n.fa-stack-1x,\n.fa-stack-2x {\n  position: absolute;\n  left: 0;\n  width: 100%;\n  text-align: center;\n}\n.fa-stack-1x {\n  line-height: inherit;\n}\n.fa-stack-2x {\n  font-size: 2em;\n}\n.fa-inverse {\n  color: #ffffff;\n}\n/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen\n   readers do not read off random characters that represent icons */\n.fa-glass:before {\n  content: \"\\F000\";\n}\n.fa-music:before {\n  content: \"\\F001\";\n}\n.fa-search:before {\n  content: \"\\F002\";\n}\n.fa-envelope-o:before {\n  content: \"\\F003\";\n}\n.fa-heart:before {\n  content: \"\\F004\";\n}\n.fa-star:before {\n  content: \"\\F005\";\n}\n.fa-star-o:before {\n  content: \"\\F006\";\n}\n.fa-user:before {\n  content: \"\\F007\";\n}\n.fa-film:before {\n  content: \"\\F008\";\n}\n.fa-th-large:before {\n  content: \"\\F009\";\n}\n.fa-th:before {\n  content: \"\\F00A\";\n}\n.fa-th-list:before {\n  content: \"\\F00B\";\n}\n.fa-check:before {\n  content: \"\\F00C\";\n}\n.fa-remove:before,\n.fa-close:before,\n.fa-times:before {\n  content: \"\\F00D\";\n}\n.fa-search-plus:before {\n  content: \"\\F00E\";\n}\n.fa-search-minus:before {\n  content: \"\\F010\";\n}\n.fa-power-off:before {\n  content: \"\\F011\";\n}\n.fa-signal:before {\n  content: \"\\F012\";\n}\n.fa-gear:before,\n.fa-cog:before {\n  content: \"\\F013\";\n}\n.fa-trash-o:before {\n  content: \"\\F014\";\n}\n.fa-home:before {\n  content: \"\\F015\";\n}\n.fa-file-o:before {\n  content: \"\\F016\";\n}\n.fa-clock-o:before {\n  content: \"\\F017\";\n}\n.fa-road:before {\n  content: \"\\F018\";\n}\n.fa-download:before {\n  content: \"\\F019\";\n}\n.fa-arrow-circle-o-down:before {\n  content: \"\\F01A\";\n}\n.fa-arrow-circle-o-up:before {\n  content: \"\\F01B\";\n}\n.fa-inbox:before {\n  content: \"\\F01C\";\n}\n.fa-play-circle-o:before {\n  content: \"\\F01D\";\n}\n.fa-rotate-right:before,\n.fa-repeat:before {\n  content: \"\\F01E\";\n}\n.fa-refresh:before {\n  content: \"\\F021\";\n}\n.fa-list-alt:before {\n  content: \"\\F022\";\n}\n.fa-lock:before {\n  content: \"\\F023\";\n}\n.fa-flag:before {\n  content: \"\\F024\";\n}\n.fa-headphones:before {\n  content: \"\\F025\";\n}\n.fa-volume-off:before {\n  content: \"\\F026\";\n}\n.fa-volume-down:before {\n  content: \"\\F027\";\n}\n.fa-volume-up:before {\n  content: \"\\F028\";\n}\n.fa-qrcode:before {\n  content: \"\\F029\";\n}\n.fa-barcode:before {\n  content: \"\\F02A\";\n}\n.fa-tag:before {\n  content: \"\\F02B\";\n}\n.fa-tags:before {\n  content: \"\\F02C\";\n}\n.fa-book:before {\n  content: \"\\F02D\";\n}\n.fa-bookmark:before {\n  content: \"\\F02E\";\n}\n.fa-print:before {\n  content: \"\\F02F\";\n}\n.fa-camera:before {\n  content: \"\\F030\";\n}\n.fa-font:before {\n  content: \"\\F031\";\n}\n.fa-bold:before {\n  content: \"\\F032\";\n}\n.fa-italic:before {\n  content: \"\\F033\";\n}\n.fa-text-height:before {\n  content: \"\\F034\";\n}\n.fa-text-width:before {\n  content: \"\\F035\";\n}\n.fa-align-left:before {\n  content: \"\\F036\";\n}\n.fa-align-center:before {\n  content: \"\\F037\";\n}\n.fa-align-right:before {\n  content: \"\\F038\";\n}\n.fa-align-justify:before {\n  content: \"\\F039\";\n}\n.fa-list:before {\n  content: \"\\F03A\";\n}\n.fa-dedent:before,\n.fa-outdent:before {\n  content: \"\\F03B\";\n}\n.fa-indent:before {\n  content: \"\\F03C\";\n}\n.fa-video-camera:before {\n  content: \"\\F03D\";\n}\n.fa-photo:before,\n.fa-image:before,\n.fa-picture-o:before {\n  content: \"\\F03E\";\n}\n.fa-pencil:before {\n  content: \"\\F040\";\n}\n.fa-map-marker:before {\n  content: \"\\F041\";\n}\n.fa-adjust:before {\n  content: \"\\F042\";\n}\n.fa-tint:before {\n  content: \"\\F043\";\n}\n.fa-edit:before,\n.fa-pencil-square-o:before {\n  content: \"\\F044\";\n}\n.fa-share-square-o:before {\n  content: \"\\F045\";\n}\n.fa-check-square-o:before {\n  content: \"\\F046\";\n}\n.fa-arrows:before {\n  content: \"\\F047\";\n}\n.fa-step-backward:before {\n  content: \"\\F048\";\n}\n.fa-fast-backward:before {\n  content: \"\\F049\";\n}\n.fa-backward:before {\n  content: \"\\F04A\";\n}\n.fa-play:before {\n  content: \"\\F04B\";\n}\n.fa-pause:before {\n  content: \"\\F04C\";\n}\n.fa-stop:before {\n  content: \"\\F04D\";\n}\n.fa-forward:before {\n  content: \"\\F04E\";\n}\n.fa-fast-forward:before {\n  content: \"\\F050\";\n}\n.fa-step-forward:before {\n  content: \"\\F051\";\n}\n.fa-eject:before {\n  content: \"\\F052\";\n}\n.fa-chevron-left:before {\n  content: \"\\F053\";\n}\n.fa-chevron-right:before {\n  content: \"\\F054\";\n}\n.fa-plus-circle:before {\n  content: \"\\F055\";\n}\n.fa-minus-circle:before {\n  content: \"\\F056\";\n}\n.fa-times-circle:before {\n  content: \"\\F057\";\n}\n.fa-check-circle:before {\n  content: \"\\F058\";\n}\n.fa-question-circle:before {\n  content: \"\\F059\";\n}\n.fa-info-circle:before {\n  content: \"\\F05A\";\n}\n.fa-crosshairs:before {\n  content: \"\\F05B\";\n}\n.fa-times-circle-o:before {\n  content: \"\\F05C\";\n}\n.fa-check-circle-o:before {\n  content: \"\\F05D\";\n}\n.fa-ban:before {\n  content: \"\\F05E\";\n}\n.fa-arrow-left:before {\n  content: \"\\F060\";\n}\n.fa-arrow-right:before {\n  content: \"\\F061\";\n}\n.fa-arrow-up:before {\n  content: \"\\F062\";\n}\n.fa-arrow-down:before {\n  content: \"\\F063\";\n}\n.fa-mail-forward:before,\n.fa-share:before {\n  content: \"\\F064\";\n}\n.fa-expand:before {\n  content: \"\\F065\";\n}\n.fa-compress:before {\n  content: \"\\F066\";\n}\n.fa-plus:before {\n  content: \"\\F067\";\n}\n.fa-minus:before {\n  content: \"\\F068\";\n}\n.fa-asterisk:before {\n  content: \"\\F069\";\n}\n.fa-exclamation-circle:before {\n  content: \"\\F06A\";\n}\n.fa-gift:before {\n  content: \"\\F06B\";\n}\n.fa-leaf:before {\n  content: \"\\F06C\";\n}\n.fa-fire:before {\n  content: \"\\F06D\";\n}\n.fa-eye:before {\n  content: \"\\F06E\";\n}\n.fa-eye-slash:before {\n  content: \"\\F070\";\n}\n.fa-warning:before,\n.fa-exclamation-triangle:before {\n  content: \"\\F071\";\n}\n.fa-plane:before {\n  content: \"\\F072\";\n}\n.fa-calendar:before {\n  content: \"\\F073\";\n}\n.fa-random:before {\n  content: \"\\F074\";\n}\n.fa-comment:before {\n  content: \"\\F075\";\n}\n.fa-magnet:before {\n  content: \"\\F076\";\n}\n.fa-chevron-up:before {\n  content: \"\\F077\";\n}\n.fa-chevron-down:before {\n  content: \"\\F078\";\n}\n.fa-retweet:before {\n  content: \"\\F079\";\n}\n.fa-shopping-cart:before {\n  content: \"\\F07A\";\n}\n.fa-folder:before {\n  content: \"\\F07B\";\n}\n.fa-folder-open:before {\n  content: \"\\F07C\";\n}\n.fa-arrows-v:before {\n  content: \"\\F07D\";\n}\n.fa-arrows-h:before {\n  content: \"\\F07E\";\n}\n.fa-bar-chart-o:before,\n.fa-bar-chart:before {\n  content: \"\\F080\";\n}\n.fa-twitter-square:before {\n  content: \"\\F081\";\n}\n.fa-facebook-square:before {\n  content: \"\\F082\";\n}\n.fa-camera-retro:before {\n  content: \"\\F083\";\n}\n.fa-key:before {\n  content: \"\\F084\";\n}\n.fa-gears:before,\n.fa-cogs:before {\n  content: \"\\F085\";\n}\n.fa-comments:before {\n  content: \"\\F086\";\n}\n.fa-thumbs-o-up:before {\n  content: \"\\F087\";\n}\n.fa-thumbs-o-down:before {\n  content: \"\\F088\";\n}\n.fa-star-half:before {\n  content: \"\\F089\";\n}\n.fa-heart-o:before {\n  content: \"\\F08A\";\n}\n.fa-sign-out:before {\n  content: \"\\F08B\";\n}\n.fa-linkedin-square:before {\n  content: \"\\F08C\";\n}\n.fa-thumb-tack:before {\n  content: \"\\F08D\";\n}\n.fa-external-link:before {\n  content: \"\\F08E\";\n}\n.fa-sign-in:before {\n  content: \"\\F090\";\n}\n.fa-trophy:before {\n  content: \"\\F091\";\n}\n.fa-github-square:before {\n  content: \"\\F092\";\n}\n.fa-upload:before {\n  content: \"\\F093\";\n}\n.fa-lemon-o:before {\n  content: \"\\F094\";\n}\n.fa-phone:before {\n  content: \"\\F095\";\n}\n.fa-square-o:before {\n  content: \"\\F096\";\n}\n.fa-bookmark-o:before {\n  content: \"\\F097\";\n}\n.fa-phone-square:before {\n  content: \"\\F098\";\n}\n.fa-twitter:before {\n  content: \"\\F099\";\n}\n.fa-facebook-f:before,\n.fa-facebook:before {\n  content: \"\\F09A\";\n}\n.fa-github:before {\n  content: \"\\F09B\";\n}\n.fa-unlock:before {\n  content: \"\\F09C\";\n}\n.fa-credit-card:before {\n  content: \"\\F09D\";\n}\n.fa-feed:before,\n.fa-rss:before {\n  content: \"\\F09E\";\n}\n.fa-hdd-o:before {\n  content: \"\\F0A0\";\n}\n.fa-bullhorn:before {\n  content: \"\\F0A1\";\n}\n.fa-bell:before {\n  content: \"\\F0F3\";\n}\n.fa-certificate:before {\n  content: \"\\F0A3\";\n}\n.fa-hand-o-right:before {\n  content: \"\\F0A4\";\n}\n.fa-hand-o-left:before {\n  content: \"\\F0A5\";\n}\n.fa-hand-o-up:before {\n  content: \"\\F0A6\";\n}\n.fa-hand-o-down:before {\n  content: \"\\F0A7\";\n}\n.fa-arrow-circle-left:before {\n  content: \"\\F0A8\";\n}\n.fa-arrow-circle-right:before {\n  content: \"\\F0A9\";\n}\n.fa-arrow-circle-up:before {\n  content: \"\\F0AA\";\n}\n.fa-arrow-circle-down:before {\n  content: \"\\F0AB\";\n}\n.fa-globe:before {\n  content: \"\\F0AC\";\n}\n.fa-wrench:before {\n  content: \"\\F0AD\";\n}\n.fa-tasks:before {\n  content: \"\\F0AE\";\n}\n.fa-filter:before {\n  content: \"\\F0B0\";\n}\n.fa-briefcase:before {\n  content: \"\\F0B1\";\n}\n.fa-arrows-alt:before {\n  content: \"\\F0B2\";\n}\n.fa-group:before,\n.fa-users:before {\n  content: \"\\F0C0\";\n}\n.fa-chain:before,\n.fa-link:before {\n  content: \"\\F0C1\";\n}\n.fa-cloud:before {\n  content: \"\\F0C2\";\n}\n.fa-flask:before {\n  content: \"\\F0C3\";\n}\n.fa-cut:before,\n.fa-scissors:before {\n  content: \"\\F0C4\";\n}\n.fa-copy:before,\n.fa-files-o:before {\n  content: \"\\F0C5\";\n}\n.fa-paperclip:before {\n  content: \"\\F0C6\";\n}\n.fa-save:before,\n.fa-floppy-o:before {\n  content: \"\\F0C7\";\n}\n.fa-square:before {\n  content: \"\\F0C8\";\n}\n.fa-navicon:before,\n.fa-reorder:before,\n.fa-bars:before {\n  content: \"\\F0C9\";\n}\n.fa-list-ul:before {\n  content: \"\\F0CA\";\n}\n.fa-list-ol:before {\n  content: \"\\F0CB\";\n}\n.fa-strikethrough:before {\n  content: \"\\F0CC\";\n}\n.fa-underline:before {\n  content: \"\\F0CD\";\n}\n.fa-table:before {\n  content: \"\\F0CE\";\n}\n.fa-magic:before {\n  content: \"\\F0D0\";\n}\n.fa-truck:before {\n  content: \"\\F0D1\";\n}\n.fa-pinterest:before {\n  content: \"\\F0D2\";\n}\n.fa-pinterest-square:before {\n  content: \"\\F0D3\";\n}\n.fa-google-plus-square:before {\n  content: \"\\F0D4\";\n}\n.fa-google-plus:before {\n  content: \"\\F0D5\";\n}\n.fa-money:before {\n  content: \"\\F0D6\";\n}\n.fa-caret-down:before {\n  content: \"\\F0D7\";\n}\n.fa-caret-up:before {\n  content: \"\\F0D8\";\n}\n.fa-caret-left:before {\n  content: \"\\F0D9\";\n}\n.fa-caret-right:before {\n  content: \"\\F0DA\";\n}\n.fa-columns:before {\n  content: \"\\F0DB\";\n}\n.fa-unsorted:before,\n.fa-sort:before {\n  content: \"\\F0DC\";\n}\n.fa-sort-down:before,\n.fa-sort-desc:before {\n  content: \"\\F0DD\";\n}\n.fa-sort-up:before,\n.fa-sort-asc:before {\n  content: \"\\F0DE\";\n}\n.fa-envelope:before {\n  content: \"\\F0E0\";\n}\n.fa-linkedin:before {\n  content: \"\\F0E1\";\n}\n.fa-rotate-left:before,\n.fa-undo:before {\n  content: \"\\F0E2\";\n}\n.fa-legal:before,\n.fa-gavel:before {\n  content: \"\\F0E3\";\n}\n.fa-dashboard:before,\n.fa-tachometer:before {\n  content: \"\\F0E4\";\n}\n.fa-comment-o:before {\n  content: \"\\F0E5\";\n}\n.fa-comments-o:before {\n  content: \"\\F0E6\";\n}\n.fa-flash:before,\n.fa-bolt:before {\n  content: \"\\F0E7\";\n}\n.fa-sitemap:before {\n  content: \"\\F0E8\";\n}\n.fa-umbrella:before {\n  content: \"\\F0E9\";\n}\n.fa-paste:before,\n.fa-clipboard:before {\n  content: \"\\F0EA\";\n}\n.fa-lightbulb-o:before {\n  content: \"\\F0EB\";\n}\n.fa-exchange:before {\n  content: \"\\F0EC\";\n}\n.fa-cloud-download:before {\n  content: \"\\F0ED\";\n}\n.fa-cloud-upload:before {\n  content: \"\\F0EE\";\n}\n.fa-user-md:before {\n  content: \"\\F0F0\";\n}\n.fa-stethoscope:before {\n  content: \"\\F0F1\";\n}\n.fa-suitcase:before {\n  content: \"\\F0F2\";\n}\n.fa-bell-o:before {\n  content: \"\\F0A2\";\n}\n.fa-coffee:before {\n  content: \"\\F0F4\";\n}\n.fa-cutlery:before {\n  content: \"\\F0F5\";\n}\n.fa-file-text-o:before {\n  content: \"\\F0F6\";\n}\n.fa-building-o:before {\n  content: \"\\F0F7\";\n}\n.fa-hospital-o:before {\n  content: \"\\F0F8\";\n}\n.fa-ambulance:before {\n  content: \"\\F0F9\";\n}\n.fa-medkit:before {\n  content: \"\\F0FA\";\n}\n.fa-fighter-jet:before {\n  content: \"\\F0FB\";\n}\n.fa-beer:before {\n  content: \"\\F0FC\";\n}\n.fa-h-square:before {\n  content: \"\\F0FD\";\n}\n.fa-plus-square:before {\n  content: \"\\F0FE\";\n}\n.fa-angle-double-left:before {\n  content: \"\\F100\";\n}\n.fa-angle-double-right:before {\n  content: \"\\F101\";\n}\n.fa-angle-double-up:before {\n  content: \"\\F102\";\n}\n.fa-angle-double-down:before {\n  content: \"\\F103\";\n}\n.fa-angle-left:before {\n  content: \"\\F104\";\n}\n.fa-angle-right:before {\n  content: \"\\F105\";\n}\n.fa-angle-up:before {\n  content: \"\\F106\";\n}\n.fa-angle-down:before {\n  content: \"\\F107\";\n}\n.fa-desktop:before {\n  content: \"\\F108\";\n}\n.fa-laptop:before {\n  content: \"\\F109\";\n}\n.fa-tablet:before {\n  content: \"\\F10A\";\n}\n.fa-mobile-phone:before,\n.fa-mobile:before {\n  content: \"\\F10B\";\n}\n.fa-circle-o:before {\n  content: \"\\F10C\";\n}\n.fa-quote-left:before {\n  content: \"\\F10D\";\n}\n.fa-quote-right:before {\n  content: \"\\F10E\";\n}\n.fa-spinner:before {\n  content: \"\\F110\";\n}\n.fa-circle:before {\n  content: \"\\F111\";\n}\n.fa-mail-reply:before,\n.fa-reply:before {\n  content: \"\\F112\";\n}\n.fa-github-alt:before {\n  content: \"\\F113\";\n}\n.fa-folder-o:before {\n  content: \"\\F114\";\n}\n.fa-folder-open-o:before {\n  content: \"\\F115\";\n}\n.fa-smile-o:before {\n  content: \"\\F118\";\n}\n.fa-frown-o:before {\n  content: \"\\F119\";\n}\n.fa-meh-o:before {\n  content: \"\\F11A\";\n}\n.fa-gamepad:before {\n  content: \"\\F11B\";\n}\n.fa-keyboard-o:before {\n  content: \"\\F11C\";\n}\n.fa-flag-o:before {\n  content: \"\\F11D\";\n}\n.fa-flag-checkered:before {\n  content: \"\\F11E\";\n}\n.fa-terminal:before {\n  content: \"\\F120\";\n}\n.fa-code:before {\n  content: \"\\F121\";\n}\n.fa-mail-reply-all:before,\n.fa-reply-all:before {\n  content: \"\\F122\";\n}\n.fa-star-half-empty:before,\n.fa-star-half-full:before,\n.fa-star-half-o:before {\n  content: \"\\F123\";\n}\n.fa-location-arrow:before {\n  content: \"\\F124\";\n}\n.fa-crop:before {\n  content: \"\\F125\";\n}\n.fa-code-fork:before {\n  content: \"\\F126\";\n}\n.fa-unlink:before,\n.fa-chain-broken:before {\n  content: \"\\F127\";\n}\n.fa-question:before {\n  content: \"\\F128\";\n}\n.fa-info:before {\n  content: \"\\F129\";\n}\n.fa-exclamation:before {\n  content: \"\\F12A\";\n}\n.fa-superscript:before {\n  content: \"\\F12B\";\n}\n.fa-subscript:before {\n  content: \"\\F12C\";\n}\n.fa-eraser:before {\n  content: \"\\F12D\";\n}\n.fa-puzzle-piece:before {\n  content: \"\\F12E\";\n}\n.fa-microphone:before {\n  content: \"\\F130\";\n}\n.fa-microphone-slash:before {\n  content: \"\\F131\";\n}\n.fa-shield:before {\n  content: \"\\F132\";\n}\n.fa-calendar-o:before {\n  content: \"\\F133\";\n}\n.fa-fire-extinguisher:before {\n  content: \"\\F134\";\n}\n.fa-rocket:before {\n  content: \"\\F135\";\n}\n.fa-maxcdn:before {\n  content: \"\\F136\";\n}\n.fa-chevron-circle-left:before {\n  content: \"\\F137\";\n}\n.fa-chevron-circle-right:before {\n  content: \"\\F138\";\n}\n.fa-chevron-circle-up:before {\n  content: \"\\F139\";\n}\n.fa-chevron-circle-down:before {\n  content: \"\\F13A\";\n}\n.fa-html5:before {\n  content: \"\\F13B\";\n}\n.fa-css3:before {\n  content: \"\\F13C\";\n}\n.fa-anchor:before {\n  content: \"\\F13D\";\n}\n.fa-unlock-alt:before {\n  content: \"\\F13E\";\n}\n.fa-bullseye:before {\n  content: \"\\F140\";\n}\n.fa-ellipsis-h:before {\n  content: \"\\F141\";\n}\n.fa-ellipsis-v:before {\n  content: \"\\F142\";\n}\n.fa-rss-square:before {\n  content: \"\\F143\";\n}\n.fa-play-circle:before {\n  content: \"\\F144\";\n}\n.fa-ticket:before {\n  content: \"\\F145\";\n}\n.fa-minus-square:before {\n  content: \"\\F146\";\n}\n.fa-minus-square-o:before {\n  content: \"\\F147\";\n}\n.fa-level-up:before {\n  content: \"\\F148\";\n}\n.fa-level-down:before {\n  content: \"\\F149\";\n}\n.fa-check-square:before {\n  content: \"\\F14A\";\n}\n.fa-pencil-square:before {\n  content: \"\\F14B\";\n}\n.fa-external-link-square:before {\n  content: \"\\F14C\";\n}\n.fa-share-square:before {\n  content: \"\\F14D\";\n}\n.fa-compass:before {\n  content: \"\\F14E\";\n}\n.fa-toggle-down:before,\n.fa-caret-square-o-down:before {\n  content: \"\\F150\";\n}\n.fa-toggle-up:before,\n.fa-caret-square-o-up:before {\n  content: \"\\F151\";\n}\n.fa-toggle-right:before,\n.fa-caret-square-o-right:before {\n  content: \"\\F152\";\n}\n.fa-euro:before,\n.fa-eur:before {\n  content: \"\\F153\";\n}\n.fa-gbp:before {\n  content: \"\\F154\";\n}\n.fa-dollar:before,\n.fa-usd:before {\n  content: \"\\F155\";\n}\n.fa-rupee:before,\n.fa-inr:before {\n  content: \"\\F156\";\n}\n.fa-cny:before,\n.fa-rmb:before,\n.fa-yen:before,\n.fa-jpy:before {\n  content: \"\\F157\";\n}\n.fa-ruble:before,\n.fa-rouble:before,\n.fa-rub:before {\n  content: \"\\F158\";\n}\n.fa-won:before,\n.fa-krw:before {\n  content: \"\\F159\";\n}\n.fa-bitcoin:before,\n.fa-btc:before {\n  content: \"\\F15A\";\n}\n.fa-file:before {\n  content: \"\\F15B\";\n}\n.fa-file-text:before {\n  content: \"\\F15C\";\n}\n.fa-sort-alpha-asc:before {\n  content: \"\\F15D\";\n}\n.fa-sort-alpha-desc:before {\n  content: \"\\F15E\";\n}\n.fa-sort-amount-asc:before {\n  content: \"\\F160\";\n}\n.fa-sort-amount-desc:before {\n  content: \"\\F161\";\n}\n.fa-sort-numeric-asc:before {\n  content: \"\\F162\";\n}\n.fa-sort-numeric-desc:before {\n  content: \"\\F163\";\n}\n.fa-thumbs-up:before {\n  content: \"\\F164\";\n}\n.fa-thumbs-down:before {\n  content: \"\\F165\";\n}\n.fa-youtube-square:before {\n  content: \"\\F166\";\n}\n.fa-youtube:before {\n  content: \"\\F167\";\n}\n.fa-xing:before {\n  content: \"\\F168\";\n}\n.fa-xing-square:before {\n  content: \"\\F169\";\n}\n.fa-youtube-play:before {\n  content: \"\\F16A\";\n}\n.fa-dropbox:before {\n  content: \"\\F16B\";\n}\n.fa-stack-overflow:before {\n  content: \"\\F16C\";\n}\n.fa-instagram:before {\n  content: \"\\F16D\";\n}\n.fa-flickr:before {\n  content: \"\\F16E\";\n}\n.fa-adn:before {\n  content: \"\\F170\";\n}\n.fa-bitbucket:before {\n  content: \"\\F171\";\n}\n.fa-bitbucket-square:before {\n  content: \"\\F172\";\n}\n.fa-tumblr:before {\n  content: \"\\F173\";\n}\n.fa-tumblr-square:before {\n  content: \"\\F174\";\n}\n.fa-long-arrow-down:before {\n  content: \"\\F175\";\n}\n.fa-long-arrow-up:before {\n  content: \"\\F176\";\n}\n.fa-long-arrow-left:before {\n  content: \"\\F177\";\n}\n.fa-long-arrow-right:before {\n  content: \"\\F178\";\n}\n.fa-apple:before {\n  content: \"\\F179\";\n}\n.fa-windows:before {\n  content: \"\\F17A\";\n}\n.fa-android:before {\n  content: \"\\F17B\";\n}\n.fa-linux:before {\n  content: \"\\F17C\";\n}\n.fa-dribbble:before {\n  content: \"\\F17D\";\n}\n.fa-skype:before {\n  content: \"\\F17E\";\n}\n.fa-foursquare:before {\n  content: \"\\F180\";\n}\n.fa-trello:before {\n  content: \"\\F181\";\n}\n.fa-female:before {\n  content: \"\\F182\";\n}\n.fa-male:before {\n  content: \"\\F183\";\n}\n.fa-gittip:before,\n.fa-gratipay:before {\n  content: \"\\F184\";\n}\n.fa-sun-o:before {\n  content: \"\\F185\";\n}\n.fa-moon-o:before {\n  content: \"\\F186\";\n}\n.fa-archive:before {\n  content: \"\\F187\";\n}\n.fa-bug:before {\n  content: \"\\F188\";\n}\n.fa-vk:before {\n  content: \"\\F189\";\n}\n.fa-weibo:before {\n  content: \"\\F18A\";\n}\n.fa-renren:before {\n  content: \"\\F18B\";\n}\n.fa-pagelines:before {\n  content: \"\\F18C\";\n}\n.fa-stack-exchange:before {\n  content: \"\\F18D\";\n}\n.fa-arrow-circle-o-right:before {\n  content: \"\\F18E\";\n}\n.fa-arrow-circle-o-left:before {\n  content: \"\\F190\";\n}\n.fa-toggle-left:before,\n.fa-caret-square-o-left:before {\n  content: \"\\F191\";\n}\n.fa-dot-circle-o:before {\n  content: \"\\F192\";\n}\n.fa-wheelchair:before {\n  content: \"\\F193\";\n}\n.fa-vimeo-square:before {\n  content: \"\\F194\";\n}\n.fa-turkish-lira:before,\n.fa-try:before {\n  content: \"\\F195\";\n}\n.fa-plus-square-o:before {\n  content: \"\\F196\";\n}\n.fa-space-shuttle:before {\n  content: \"\\F197\";\n}\n.fa-slack:before {\n  content: \"\\F198\";\n}\n.fa-envelope-square:before {\n  content: \"\\F199\";\n}\n.fa-wordpress:before {\n  content: \"\\F19A\";\n}\n.fa-openid:before {\n  content: \"\\F19B\";\n}\n.fa-institution:before,\n.fa-bank:before,\n.fa-university:before {\n  content: \"\\F19C\";\n}\n.fa-mortar-board:before,\n.fa-graduation-cap:before {\n  content: \"\\F19D\";\n}\n.fa-yahoo:before {\n  content: \"\\F19E\";\n}\n.fa-google:before {\n  content: \"\\F1A0\";\n}\n.fa-reddit:before {\n  content: \"\\F1A1\";\n}\n.fa-reddit-square:before {\n  content: \"\\F1A2\";\n}\n.fa-stumbleupon-circle:before {\n  content: \"\\F1A3\";\n}\n.fa-stumbleupon:before {\n  content: \"\\F1A4\";\n}\n.fa-delicious:before {\n  content: \"\\F1A5\";\n}\n.fa-digg:before {\n  content: \"\\F1A6\";\n}\n.fa-pied-piper-pp:before {\n  content: \"\\F1A7\";\n}\n.fa-pied-piper-alt:before {\n  content: \"\\F1A8\";\n}\n.fa-drupal:before {\n  content: \"\\F1A9\";\n}\n.fa-joomla:before {\n  content: \"\\F1AA\";\n}\n.fa-language:before {\n  content: \"\\F1AB\";\n}\n.fa-fax:before {\n  content: \"\\F1AC\";\n}\n.fa-building:before {\n  content: \"\\F1AD\";\n}\n.fa-child:before {\n  content: \"\\F1AE\";\n}\n.fa-paw:before {\n  content: \"\\F1B0\";\n}\n.fa-spoon:before {\n  content: \"\\F1B1\";\n}\n.fa-cube:before {\n  content: \"\\F1B2\";\n}\n.fa-cubes:before {\n  content: \"\\F1B3\";\n}\n.fa-behance:before {\n  content: \"\\F1B4\";\n}\n.fa-behance-square:before {\n  content: \"\\F1B5\";\n}\n.fa-steam:before {\n  content: \"\\F1B6\";\n}\n.fa-steam-square:before {\n  content: \"\\F1B7\";\n}\n.fa-recycle:before {\n  content: \"\\F1B8\";\n}\n.fa-automobile:before,\n.fa-car:before {\n  content: \"\\F1B9\";\n}\n.fa-cab:before,\n.fa-taxi:before {\n  content: \"\\F1BA\";\n}\n.fa-tree:before {\n  content: \"\\F1BB\";\n}\n.fa-spotify:before {\n  content: \"\\F1BC\";\n}\n.fa-deviantart:before {\n  content: \"\\F1BD\";\n}\n.fa-soundcloud:before {\n  content: \"\\F1BE\";\n}\n.fa-database:before {\n  content: \"\\F1C0\";\n}\n.fa-file-pdf-o:before {\n  content: \"\\F1C1\";\n}\n.fa-file-word-o:before {\n  content: \"\\F1C2\";\n}\n.fa-file-excel-o:before {\n  content: \"\\F1C3\";\n}\n.fa-file-powerpoint-o:before {\n  content: \"\\F1C4\";\n}\n.fa-file-photo-o:before,\n.fa-file-picture-o:before,\n.fa-file-image-o:before {\n  content: \"\\F1C5\";\n}\n.fa-file-zip-o:before,\n.fa-file-archive-o:before {\n  content: \"\\F1C6\";\n}\n.fa-file-sound-o:before,\n.fa-file-audio-o:before {\n  content: \"\\F1C7\";\n}\n.fa-file-movie-o:before,\n.fa-file-video-o:before {\n  content: \"\\F1C8\";\n}\n.fa-file-code-o:before {\n  content: \"\\F1C9\";\n}\n.fa-vine:before {\n  content: \"\\F1CA\";\n}\n.fa-codepen:before {\n  content: \"\\F1CB\";\n}\n.fa-jsfiddle:before {\n  content: \"\\F1CC\";\n}\n.fa-life-bouy:before,\n.fa-life-buoy:before,\n.fa-life-saver:before,\n.fa-support:before,\n.fa-life-ring:before {\n  content: \"\\F1CD\";\n}\n.fa-circle-o-notch:before {\n  content: \"\\F1CE\";\n}\n.fa-ra:before,\n.fa-resistance:before,\n.fa-rebel:before {\n  content: \"\\F1D0\";\n}\n.fa-ge:before,\n.fa-empire:before {\n  content: \"\\F1D1\";\n}\n.fa-git-square:before {\n  content: \"\\F1D2\";\n}\n.fa-git:before {\n  content: \"\\F1D3\";\n}\n.fa-y-combinator-square:before,\n.fa-yc-square:before,\n.fa-hacker-news:before {\n  content: \"\\F1D4\";\n}\n.fa-tencent-weibo:before {\n  content: \"\\F1D5\";\n}\n.fa-qq:before {\n  content: \"\\F1D6\";\n}\n.fa-wechat:before,\n.fa-weixin:before {\n  content: \"\\F1D7\";\n}\n.fa-send:before,\n.fa-paper-plane:before {\n  content: \"\\F1D8\";\n}\n.fa-send-o:before,\n.fa-paper-plane-o:before {\n  content: \"\\F1D9\";\n}\n.fa-history:before {\n  content: \"\\F1DA\";\n}\n.fa-circle-thin:before {\n  content: \"\\F1DB\";\n}\n.fa-header:before {\n  content: \"\\F1DC\";\n}\n.fa-paragraph:before {\n  content: \"\\F1DD\";\n}\n.fa-sliders:before {\n  content: \"\\F1DE\";\n}\n.fa-share-alt:before {\n  content: \"\\F1E0\";\n}\n.fa-share-alt-square:before {\n  content: \"\\F1E1\";\n}\n.fa-bomb:before {\n  content: \"\\F1E2\";\n}\n.fa-soccer-ball-o:before,\n.fa-futbol-o:before {\n  content: \"\\F1E3\";\n}\n.fa-tty:before {\n  content: \"\\F1E4\";\n}\n.fa-binoculars:before {\n  content: \"\\F1E5\";\n}\n.fa-plug:before {\n  content: \"\\F1E6\";\n}\n.fa-slideshare:before {\n  content: \"\\F1E7\";\n}\n.fa-twitch:before {\n  content: \"\\F1E8\";\n}\n.fa-yelp:before {\n  content: \"\\F1E9\";\n}\n.fa-newspaper-o:before {\n  content: \"\\F1EA\";\n}\n.fa-wifi:before {\n  content: \"\\F1EB\";\n}\n.fa-calculator:before {\n  content: \"\\F1EC\";\n}\n.fa-paypal:before {\n  content: \"\\F1ED\";\n}\n.fa-google-wallet:before {\n  content: \"\\F1EE\";\n}\n.fa-cc-visa:before {\n  content: \"\\F1F0\";\n}\n.fa-cc-mastercard:before {\n  content: \"\\F1F1\";\n}\n.fa-cc-discover:before {\n  content: \"\\F1F2\";\n}\n.fa-cc-amex:before {\n  content: \"\\F1F3\";\n}\n.fa-cc-paypal:before {\n  content: \"\\F1F4\";\n}\n.fa-cc-stripe:before {\n  content: \"\\F1F5\";\n}\n.fa-bell-slash:before {\n  content: \"\\F1F6\";\n}\n.fa-bell-slash-o:before {\n  content: \"\\F1F7\";\n}\n.fa-trash:before {\n  content: \"\\F1F8\";\n}\n.fa-copyright:before {\n  content: \"\\F1F9\";\n}\n.fa-at:before {\n  content: \"\\F1FA\";\n}\n.fa-eyedropper:before {\n  content: \"\\F1FB\";\n}\n.fa-paint-brush:before {\n  content: \"\\F1FC\";\n}\n.fa-birthday-cake:before {\n  content: \"\\F1FD\";\n}\n.fa-area-chart:before {\n  content: \"\\F1FE\";\n}\n.fa-pie-chart:before {\n  content: \"\\F200\";\n}\n.fa-line-chart:before {\n  content: \"\\F201\";\n}\n.fa-lastfm:before {\n  content: \"\\F202\";\n}\n.fa-lastfm-square:before {\n  content: \"\\F203\";\n}\n.fa-toggle-off:before {\n  content: \"\\F204\";\n}\n.fa-toggle-on:before {\n  content: \"\\F205\";\n}\n.fa-bicycle:before {\n  content: \"\\F206\";\n}\n.fa-bus:before {\n  content: \"\\F207\";\n}\n.fa-ioxhost:before {\n  content: \"\\F208\";\n}\n.fa-angellist:before {\n  content: \"\\F209\";\n}\n.fa-cc:before {\n  content: \"\\F20A\";\n}\n.fa-shekel:before,\n.fa-sheqel:before,\n.fa-ils:before {\n  content: \"\\F20B\";\n}\n.fa-meanpath:before {\n  content: \"\\F20C\";\n}\n.fa-buysellads:before {\n  content: \"\\F20D\";\n}\n.fa-connectdevelop:before {\n  content: \"\\F20E\";\n}\n.fa-dashcube:before {\n  content: \"\\F210\";\n}\n.fa-forumbee:before {\n  content: \"\\F211\";\n}\n.fa-leanpub:before {\n  content: \"\\F212\";\n}\n.fa-sellsy:before {\n  content: \"\\F213\";\n}\n.fa-shirtsinbulk:before {\n  content: \"\\F214\";\n}\n.fa-simplybuilt:before {\n  content: \"\\F215\";\n}\n.fa-skyatlas:before {\n  content: \"\\F216\";\n}\n.fa-cart-plus:before {\n  content: \"\\F217\";\n}\n.fa-cart-arrow-down:before {\n  content: \"\\F218\";\n}\n.fa-diamond:before {\n  content: \"\\F219\";\n}\n.fa-ship:before {\n  content: \"\\F21A\";\n}\n.fa-user-secret:before {\n  content: \"\\F21B\";\n}\n.fa-motorcycle:before {\n  content: \"\\F21C\";\n}\n.fa-street-view:before {\n  content: \"\\F21D\";\n}\n.fa-heartbeat:before {\n  content: \"\\F21E\";\n}\n.fa-venus:before {\n  content: \"\\F221\";\n}\n.fa-mars:before {\n  content: \"\\F222\";\n}\n.fa-mercury:before {\n  content: \"\\F223\";\n}\n.fa-intersex:before,\n.fa-transgender:before {\n  content: \"\\F224\";\n}\n.fa-transgender-alt:before {\n  content: \"\\F225\";\n}\n.fa-venus-double:before {\n  content: \"\\F226\";\n}\n.fa-mars-double:before {\n  content: \"\\F227\";\n}\n.fa-venus-mars:before {\n  content: \"\\F228\";\n}\n.fa-mars-stroke:before {\n  content: \"\\F229\";\n}\n.fa-mars-stroke-v:before {\n  content: \"\\F22A\";\n}\n.fa-mars-stroke-h:before {\n  content: \"\\F22B\";\n}\n.fa-neuter:before {\n  content: \"\\F22C\";\n}\n.fa-genderless:before {\n  content: \"\\F22D\";\n}\n.fa-facebook-official:before {\n  content: \"\\F230\";\n}\n.fa-pinterest-p:before {\n  content: \"\\F231\";\n}\n.fa-whatsapp:before {\n  content: \"\\F232\";\n}\n.fa-server:before {\n  content: \"\\F233\";\n}\n.fa-user-plus:before {\n  content: \"\\F234\";\n}\n.fa-user-times:before {\n  content: \"\\F235\";\n}\n.fa-hotel:before,\n.fa-bed:before {\n  content: \"\\F236\";\n}\n.fa-viacoin:before {\n  content: \"\\F237\";\n}\n.fa-train:before {\n  content: \"\\F238\";\n}\n.fa-subway:before {\n  content: \"\\F239\";\n}\n.fa-medium:before {\n  content: \"\\F23A\";\n}\n.fa-yc:before,\n.fa-y-combinator:before {\n  content: \"\\F23B\";\n}\n.fa-optin-monster:before {\n  content: \"\\F23C\";\n}\n.fa-opencart:before {\n  content: \"\\F23D\";\n}\n.fa-expeditedssl:before {\n  content: \"\\F23E\";\n}\n.fa-battery-4:before,\n.fa-battery:before,\n.fa-battery-full:before {\n  content: \"\\F240\";\n}\n.fa-battery-3:before,\n.fa-battery-three-quarters:before {\n  content: \"\\F241\";\n}\n.fa-battery-2:before,\n.fa-battery-half:before {\n  content: \"\\F242\";\n}\n.fa-battery-1:before,\n.fa-battery-quarter:before {\n  content: \"\\F243\";\n}\n.fa-battery-0:before,\n.fa-battery-empty:before {\n  content: \"\\F244\";\n}\n.fa-mouse-pointer:before {\n  content: \"\\F245\";\n}\n.fa-i-cursor:before {\n  content: \"\\F246\";\n}\n.fa-object-group:before {\n  content: \"\\F247\";\n}\n.fa-object-ungroup:before {\n  content: \"\\F248\";\n}\n.fa-sticky-note:before {\n  content: \"\\F249\";\n}\n.fa-sticky-note-o:before {\n  content: \"\\F24A\";\n}\n.fa-cc-jcb:before {\n  content: \"\\F24B\";\n}\n.fa-cc-diners-club:before {\n  content: \"\\F24C\";\n}\n.fa-clone:before {\n  content: \"\\F24D\";\n}\n.fa-balance-scale:before {\n  content: \"\\F24E\";\n}\n.fa-hourglass-o:before {\n  content: \"\\F250\";\n}\n.fa-hourglass-1:before,\n.fa-hourglass-start:before {\n  content: \"\\F251\";\n}\n.fa-hourglass-2:before,\n.fa-hourglass-half:before {\n  content: \"\\F252\";\n}\n.fa-hourglass-3:before,\n.fa-hourglass-end:before {\n  content: \"\\F253\";\n}\n.fa-hourglass:before {\n  content: \"\\F254\";\n}\n.fa-hand-grab-o:before,\n.fa-hand-rock-o:before {\n  content: \"\\F255\";\n}\n.fa-hand-stop-o:before,\n.fa-hand-paper-o:before {\n  content: \"\\F256\";\n}\n.fa-hand-scissors-o:before {\n  content: \"\\F257\";\n}\n.fa-hand-lizard-o:before {\n  content: \"\\F258\";\n}\n.fa-hand-spock-o:before {\n  content: \"\\F259\";\n}\n.fa-hand-pointer-o:before {\n  content: \"\\F25A\";\n}\n.fa-hand-peace-o:before {\n  content: \"\\F25B\";\n}\n.fa-trademark:before {\n  content: \"\\F25C\";\n}\n.fa-registered:before {\n  content: \"\\F25D\";\n}\n.fa-creative-commons:before {\n  content: \"\\F25E\";\n}\n.fa-gg:before {\n  content: \"\\F260\";\n}\n.fa-gg-circle:before {\n  content: \"\\F261\";\n}\n.fa-tripadvisor:before {\n  content: \"\\F262\";\n}\n.fa-odnoklassniki:before {\n  content: \"\\F263\";\n}\n.fa-odnoklassniki-square:before {\n  content: \"\\F264\";\n}\n.fa-get-pocket:before {\n  content: \"\\F265\";\n}\n.fa-wikipedia-w:before {\n  content: \"\\F266\";\n}\n.fa-safari:before {\n  content: \"\\F267\";\n}\n.fa-chrome:before {\n  content: \"\\F268\";\n}\n.fa-firefox:before {\n  content: \"\\F269\";\n}\n.fa-opera:before {\n  content: \"\\F26A\";\n}\n.fa-internet-explorer:before {\n  content: \"\\F26B\";\n}\n.fa-tv:before,\n.fa-television:before {\n  content: \"\\F26C\";\n}\n.fa-contao:before {\n  content: \"\\F26D\";\n}\n.fa-500px:before {\n  content: \"\\F26E\";\n}\n.fa-amazon:before {\n  content: \"\\F270\";\n}\n.fa-calendar-plus-o:before {\n  content: \"\\F271\";\n}\n.fa-calendar-minus-o:before {\n  content: \"\\F272\";\n}\n.fa-calendar-times-o:before {\n  content: \"\\F273\";\n}\n.fa-calendar-check-o:before {\n  content: \"\\F274\";\n}\n.fa-industry:before {\n  content: \"\\F275\";\n}\n.fa-map-pin:before {\n  content: \"\\F276\";\n}\n.fa-map-signs:before {\n  content: \"\\F277\";\n}\n.fa-map-o:before {\n  content: \"\\F278\";\n}\n.fa-map:before {\n  content: \"\\F279\";\n}\n.fa-commenting:before {\n  content: \"\\F27A\";\n}\n.fa-commenting-o:before {\n  content: \"\\F27B\";\n}\n.fa-houzz:before {\n  content: \"\\F27C\";\n}\n.fa-vimeo:before {\n  content: \"\\F27D\";\n}\n.fa-black-tie:before {\n  content: \"\\F27E\";\n}\n.fa-fonticons:before {\n  content: \"\\F280\";\n}\n.fa-reddit-alien:before {\n  content: \"\\F281\";\n}\n.fa-edge:before {\n  content: \"\\F282\";\n}\n.fa-credit-card-alt:before {\n  content: \"\\F283\";\n}\n.fa-codiepie:before {\n  content: \"\\F284\";\n}\n.fa-modx:before {\n  content: \"\\F285\";\n}\n.fa-fort-awesome:before {\n  content: \"\\F286\";\n}\n.fa-usb:before {\n  content: \"\\F287\";\n}\n.fa-product-hunt:before {\n  content: \"\\F288\";\n}\n.fa-mixcloud:before {\n  content: \"\\F289\";\n}\n.fa-scribd:before {\n  content: \"\\F28A\";\n}\n.fa-pause-circle:before {\n  content: \"\\F28B\";\n}\n.fa-pause-circle-o:before {\n  content: \"\\F28C\";\n}\n.fa-stop-circle:before {\n  content: \"\\F28D\";\n}\n.fa-stop-circle-o:before {\n  content: \"\\F28E\";\n}\n.fa-shopping-bag:before {\n  content: \"\\F290\";\n}\n.fa-shopping-basket:before {\n  content: \"\\F291\";\n}\n.fa-hashtag:before {\n  content: \"\\F292\";\n}\n.fa-bluetooth:before {\n  content: \"\\F293\";\n}\n.fa-bluetooth-b:before {\n  content: \"\\F294\";\n}\n.fa-percent:before {\n  content: \"\\F295\";\n}\n.fa-gitlab:before {\n  content: \"\\F296\";\n}\n.fa-wpbeginner:before {\n  content: \"\\F297\";\n}\n.fa-wpforms:before {\n  content: \"\\F298\";\n}\n.fa-envira:before {\n  content: \"\\F299\";\n}\n.fa-universal-access:before {\n  content: \"\\F29A\";\n}\n.fa-wheelchair-alt:before {\n  content: \"\\F29B\";\n}\n.fa-question-circle-o:before {\n  content: \"\\F29C\";\n}\n.fa-blind:before {\n  content: \"\\F29D\";\n}\n.fa-audio-description:before {\n  content: \"\\F29E\";\n}\n.fa-volume-control-phone:before {\n  content: \"\\F2A0\";\n}\n.fa-braille:before {\n  content: \"\\F2A1\";\n}\n.fa-assistive-listening-systems:before {\n  content: \"\\F2A2\";\n}\n.fa-asl-interpreting:before,\n.fa-american-sign-language-interpreting:before {\n  content: \"\\F2A3\";\n}\n.fa-deafness:before,\n.fa-hard-of-hearing:before,\n.fa-deaf:before {\n  content: \"\\F2A4\";\n}\n.fa-glide:before {\n  content: \"\\F2A5\";\n}\n.fa-glide-g:before {\n  content: \"\\F2A6\";\n}\n.fa-signing:before,\n.fa-sign-language:before {\n  content: \"\\F2A7\";\n}\n.fa-low-vision:before {\n  content: \"\\F2A8\";\n}\n.fa-viadeo:before {\n  content: \"\\F2A9\";\n}\n.fa-viadeo-square:before {\n  content: \"\\F2AA\";\n}\n.fa-snapchat:before {\n  content: \"\\F2AB\";\n}\n.fa-snapchat-ghost:before {\n  content: \"\\F2AC\";\n}\n.fa-snapchat-square:before {\n  content: \"\\F2AD\";\n}\n.fa-pied-piper:before {\n  content: \"\\F2AE\";\n}\n.fa-first-order:before {\n  content: \"\\F2B0\";\n}\n.fa-yoast:before {\n  content: \"\\F2B1\";\n}\n.fa-themeisle:before {\n  content: \"\\F2B2\";\n}\n.fa-google-plus-circle:before,\n.fa-google-plus-official:before {\n  content: \"\\F2B3\";\n}\n.fa-fa:before,\n.fa-font-awesome:before {\n  content: \"\\F2B4\";\n}\n.fa-handshake-o:before {\n  content: \"\\F2B5\";\n}\n.fa-envelope-open:before {\n  content: \"\\F2B6\";\n}\n.fa-envelope-open-o:before {\n  content: \"\\F2B7\";\n}\n.fa-linode:before {\n  content: \"\\F2B8\";\n}\n.fa-address-book:before {\n  content: \"\\F2B9\";\n}\n.fa-address-book-o:before {\n  content: \"\\F2BA\";\n}\n.fa-vcard:before,\n.fa-address-card:before {\n  content: \"\\F2BB\";\n}\n.fa-vcard-o:before,\n.fa-address-card-o:before {\n  content: \"\\F2BC\";\n}\n.fa-user-circle:before {\n  content: \"\\F2BD\";\n}\n.fa-user-circle-o:before {\n  content: \"\\F2BE\";\n}\n.fa-user-o:before {\n  content: \"\\F2C0\";\n}\n.fa-id-badge:before {\n  content: \"\\F2C1\";\n}\n.fa-drivers-license:before,\n.fa-id-card:before {\n  content: \"\\F2C2\";\n}\n.fa-drivers-license-o:before,\n.fa-id-card-o:before {\n  content: \"\\F2C3\";\n}\n.fa-quora:before {\n  content: \"\\F2C4\";\n}\n.fa-free-code-camp:before {\n  content: \"\\F2C5\";\n}\n.fa-telegram:before {\n  content: \"\\F2C6\";\n}\n.fa-thermometer-4:before,\n.fa-thermometer:before,\n.fa-thermometer-full:before {\n  content: \"\\F2C7\";\n}\n.fa-thermometer-3:before,\n.fa-thermometer-three-quarters:before {\n  content: \"\\F2C8\";\n}\n.fa-thermometer-2:before,\n.fa-thermometer-half:before {\n  content: \"\\F2C9\";\n}\n.fa-thermometer-1:before,\n.fa-thermometer-quarter:before {\n  content: \"\\F2CA\";\n}\n.fa-thermometer-0:before,\n.fa-thermometer-empty:before {\n  content: \"\\F2CB\";\n}\n.fa-shower:before {\n  content: \"\\F2CC\";\n}\n.fa-bathtub:before,\n.fa-s15:before,\n.fa-bath:before {\n  content: \"\\F2CD\";\n}\n.fa-podcast:before {\n  content: \"\\F2CE\";\n}\n.fa-window-maximize:before {\n  content: \"\\F2D0\";\n}\n.fa-window-minimize:before {\n  content: \"\\F2D1\";\n}\n.fa-window-restore:before {\n  content: \"\\F2D2\";\n}\n.fa-times-rectangle:before,\n.fa-window-close:before {\n  content: \"\\F2D3\";\n}\n.fa-times-rectangle-o:before,\n.fa-window-close-o:before {\n  content: \"\\F2D4\";\n}\n.fa-bandcamp:before {\n  content: \"\\F2D5\";\n}\n.fa-grav:before {\n  content: \"\\F2D6\";\n}\n.fa-etsy:before {\n  content: \"\\F2D7\";\n}\n.fa-imdb:before {\n  content: \"\\F2D8\";\n}\n.fa-ravelry:before {\n  content: \"\\F2D9\";\n}\n.fa-eercast:before {\n  content: \"\\F2DA\";\n}\n.fa-microchip:before {\n  content: \"\\F2DB\";\n}\n.fa-snowflake-o:before {\n  content: \"\\F2DC\";\n}\n.fa-superpowers:before {\n  content: \"\\F2DD\";\n}\n.fa-wpexplorer:before {\n  content: \"\\F2DE\";\n}\n.fa-meetup:before {\n  content: \"\\F2E0\";\n}\n.sr-only {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  padding: 0;\n  margin: -1px;\n  overflow: hidden;\n  clip: rect(0, 0, 0, 0);\n  border: 0;\n}\n.sr-only-focusable:active,\n.sr-only-focusable:focus {\n  position: static;\n  width: auto;\n  height: auto;\n  margin: 0;\n  overflow: visible;\n  clip: auto;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 233 */
+/* 228 */
 /***/ (function(module, exports) {
 
-module.exports = "/fonts/vendor/font-awesome/fontawesome-webfont.eot?674f50d287a8c48dc19ba404d20fe713";
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
-/* 234 */
-/***/ (function(module, exports) {
-
-module.exports = "/fonts/vendor/font-awesome/fontawesome-webfont.eot?674f50d287a8c48dc19ba404d20fe713";
-
-/***/ }),
-/* 235 */
-/***/ (function(module, exports) {
-
-module.exports = "/fonts/vendor/font-awesome/fontawesome-webfont.woff2?af7ae505a9eed503f8b8e6982036873e";
-
-/***/ }),
-/* 236 */
-/***/ (function(module, exports) {
-
-module.exports = "/fonts/vendor/font-awesome/fontawesome-webfont.woff?fee66e712a8a08eef5805a46892932ad";
-
-/***/ }),
-/* 237 */
-/***/ (function(module, exports) {
-
-module.exports = "/fonts/vendor/font-awesome/fontawesome-webfont.ttf?b06871f281fee6b241d60582ae9369b9";
-
-/***/ }),
-/* 238 */
-/***/ (function(module, exports) {
-
-module.exports = "/fonts/vendor/font-awesome/fontawesome-webfont.svg?912ec66d7572ff821749319396470bde";
-
-/***/ }),
-/* 239 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "@charset \"UTF-8\";\n/*!\n  Ionicons, v2.0.1\n  Created by Ben Sperry for the Ionic Framework, http://ionicons.com/\n  https://twitter.com/benjsperry  https://twitter.com/ionicframework\n  MIT License: https://github.com/driftyco/ionicons\n\n  Android-style icons originally built by Google’s\n  Material Design Icons: https://github.com/google/material-design-icons\n  used under CC BY http://creativecommons.org/licenses/by/4.0/\n  Modified icons to fit ionicon’s grid from original.\n*/\n@font-face { font-family: \"Ionicons\"; src: url(" + __webpack_require__(62) + "); src: url(" + __webpack_require__(62) + "#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(240) + ") format(\"truetype\"), url(" + __webpack_require__(241) + ") format(\"woff\"), url(" + __webpack_require__(242) + "#Ionicons) format(\"svg\"); font-weight: normal; font-style: normal; }\n.ion, .ionicons, .ion-alert:before, .ion-alert-circled:before, .ion-android-add:before, .ion-android-add-circle:before, .ion-android-alarm-clock:before, .ion-android-alert:before, .ion-android-apps:before, .ion-android-archive:before, .ion-android-arrow-back:before, .ion-android-arrow-down:before, .ion-android-arrow-dropdown:before, .ion-android-arrow-dropdown-circle:before, .ion-android-arrow-dropleft:before, .ion-android-arrow-dropleft-circle:before, .ion-android-arrow-dropright:before, .ion-android-arrow-dropright-circle:before, .ion-android-arrow-dropup:before, .ion-android-arrow-dropup-circle:before, .ion-android-arrow-forward:before, .ion-android-arrow-up:before, .ion-android-attach:before, .ion-android-bar:before, .ion-android-bicycle:before, .ion-android-boat:before, .ion-android-bookmark:before, .ion-android-bulb:before, .ion-android-bus:before, .ion-android-calendar:before, .ion-android-call:before, .ion-android-camera:before, .ion-android-cancel:before, .ion-android-car:before, .ion-android-cart:before, .ion-android-chat:before, .ion-android-checkbox:before, .ion-android-checkbox-blank:before, .ion-android-checkbox-outline:before, .ion-android-checkbox-outline-blank:before, .ion-android-checkmark-circle:before, .ion-android-clipboard:before, .ion-android-close:before, .ion-android-cloud:before, .ion-android-cloud-circle:before, .ion-android-cloud-done:before, .ion-android-cloud-outline:before, .ion-android-color-palette:before, .ion-android-compass:before, .ion-android-contact:before, .ion-android-contacts:before, .ion-android-contract:before, .ion-android-create:before, .ion-android-delete:before, .ion-android-desktop:before, .ion-android-document:before, .ion-android-done:before, .ion-android-done-all:before, .ion-android-download:before, .ion-android-drafts:before, .ion-android-exit:before, .ion-android-expand:before, .ion-android-favorite:before, .ion-android-favorite-outline:before, .ion-android-film:before, .ion-android-folder:before, .ion-android-folder-open:before, .ion-android-funnel:before, .ion-android-globe:before, .ion-android-hand:before, .ion-android-hangout:before, .ion-android-happy:before, .ion-android-home:before, .ion-android-image:before, .ion-android-laptop:before, .ion-android-list:before, .ion-android-locate:before, .ion-android-lock:before, .ion-android-mail:before, .ion-android-map:before, .ion-android-menu:before, .ion-android-microphone:before, .ion-android-microphone-off:before, .ion-android-more-horizontal:before, .ion-android-more-vertical:before, .ion-android-navigate:before, .ion-android-notifications:before, .ion-android-notifications-none:before, .ion-android-notifications-off:before, .ion-android-open:before, .ion-android-options:before, .ion-android-people:before, .ion-android-person:before, .ion-android-person-add:before, .ion-android-phone-landscape:before, .ion-android-phone-portrait:before, .ion-android-pin:before, .ion-android-plane:before, .ion-android-playstore:before, .ion-android-print:before, .ion-android-radio-button-off:before, .ion-android-radio-button-on:before, .ion-android-refresh:before, .ion-android-remove:before, .ion-android-remove-circle:before, .ion-android-restaurant:before, .ion-android-sad:before, .ion-android-search:before, .ion-android-send:before, .ion-android-settings:before, .ion-android-share:before, .ion-android-share-alt:before, .ion-android-star:before, .ion-android-star-half:before, .ion-android-star-outline:before, .ion-android-stopwatch:before, .ion-android-subway:before, .ion-android-sunny:before, .ion-android-sync:before, .ion-android-textsms:before, .ion-android-time:before, .ion-android-train:before, .ion-android-unlock:before, .ion-android-upload:before, .ion-android-volume-down:before, .ion-android-volume-mute:before, .ion-android-volume-off:before, .ion-android-volume-up:before, .ion-android-walk:before, .ion-android-warning:before, .ion-android-watch:before, .ion-android-wifi:before, .ion-aperture:before, .ion-archive:before, .ion-arrow-down-a:before, .ion-arrow-down-b:before, .ion-arrow-down-c:before, .ion-arrow-expand:before, .ion-arrow-graph-down-left:before, .ion-arrow-graph-down-right:before, .ion-arrow-graph-up-left:before, .ion-arrow-graph-up-right:before, .ion-arrow-left-a:before, .ion-arrow-left-b:before, .ion-arrow-left-c:before, .ion-arrow-move:before, .ion-arrow-resize:before, .ion-arrow-return-left:before, .ion-arrow-return-right:before, .ion-arrow-right-a:before, .ion-arrow-right-b:before, .ion-arrow-right-c:before, .ion-arrow-shrink:before, .ion-arrow-swap:before, .ion-arrow-up-a:before, .ion-arrow-up-b:before, .ion-arrow-up-c:before, .ion-asterisk:before, .ion-at:before, .ion-backspace:before, .ion-backspace-outline:before, .ion-bag:before, .ion-battery-charging:before, .ion-battery-empty:before, .ion-battery-full:before, .ion-battery-half:before, .ion-battery-low:before, .ion-beaker:before, .ion-beer:before, .ion-bluetooth:before, .ion-bonfire:before, .ion-bookmark:before, .ion-bowtie:before, .ion-briefcase:before, .ion-bug:before, .ion-calculator:before, .ion-calendar:before, .ion-camera:before, .ion-card:before, .ion-cash:before, .ion-chatbox:before, .ion-chatbox-working:before, .ion-chatboxes:before, .ion-chatbubble:before, .ion-chatbubble-working:before, .ion-chatbubbles:before, .ion-checkmark:before, .ion-checkmark-circled:before, .ion-checkmark-round:before, .ion-chevron-down:before, .ion-chevron-left:before, .ion-chevron-right:before, .ion-chevron-up:before, .ion-clipboard:before, .ion-clock:before, .ion-close:before, .ion-close-circled:before, .ion-close-round:before, .ion-closed-captioning:before, .ion-cloud:before, .ion-code:before, .ion-code-download:before, .ion-code-working:before, .ion-coffee:before, .ion-compass:before, .ion-compose:before, .ion-connection-bars:before, .ion-contrast:before, .ion-crop:before, .ion-cube:before, .ion-disc:before, .ion-document:before, .ion-document-text:before, .ion-drag:before, .ion-earth:before, .ion-easel:before, .ion-edit:before, .ion-egg:before, .ion-eject:before, .ion-email:before, .ion-email-unread:before, .ion-erlenmeyer-flask:before, .ion-erlenmeyer-flask-bubbles:before, .ion-eye:before, .ion-eye-disabled:before, .ion-female:before, .ion-filing:before, .ion-film-marker:before, .ion-fireball:before, .ion-flag:before, .ion-flame:before, .ion-flash:before, .ion-flash-off:before, .ion-folder:before, .ion-fork:before, .ion-fork-repo:before, .ion-forward:before, .ion-funnel:before, .ion-gear-a:before, .ion-gear-b:before, .ion-grid:before, .ion-hammer:before, .ion-happy:before, .ion-happy-outline:before, .ion-headphone:before, .ion-heart:before, .ion-heart-broken:before, .ion-help:before, .ion-help-buoy:before, .ion-help-circled:before, .ion-home:before, .ion-icecream:before, .ion-image:before, .ion-images:before, .ion-information:before, .ion-information-circled:before, .ion-ionic:before, .ion-ios-alarm:before, .ion-ios-alarm-outline:before, .ion-ios-albums:before, .ion-ios-albums-outline:before, .ion-ios-americanfootball:before, .ion-ios-americanfootball-outline:before, .ion-ios-analytics:before, .ion-ios-analytics-outline:before, .ion-ios-arrow-back:before, .ion-ios-arrow-down:before, .ion-ios-arrow-forward:before, .ion-ios-arrow-left:before, .ion-ios-arrow-right:before, .ion-ios-arrow-thin-down:before, .ion-ios-arrow-thin-left:before, .ion-ios-arrow-thin-right:before, .ion-ios-arrow-thin-up:before, .ion-ios-arrow-up:before, .ion-ios-at:before, .ion-ios-at-outline:before, .ion-ios-barcode:before, .ion-ios-barcode-outline:before, .ion-ios-baseball:before, .ion-ios-baseball-outline:before, .ion-ios-basketball:before, .ion-ios-basketball-outline:before, .ion-ios-bell:before, .ion-ios-bell-outline:before, .ion-ios-body:before, .ion-ios-body-outline:before, .ion-ios-bolt:before, .ion-ios-bolt-outline:before, .ion-ios-book:before, .ion-ios-book-outline:before, .ion-ios-bookmarks:before, .ion-ios-bookmarks-outline:before, .ion-ios-box:before, .ion-ios-box-outline:before, .ion-ios-briefcase:before, .ion-ios-briefcase-outline:before, .ion-ios-browsers:before, .ion-ios-browsers-outline:before, .ion-ios-calculator:before, .ion-ios-calculator-outline:before, .ion-ios-calendar:before, .ion-ios-calendar-outline:before, .ion-ios-camera:before, .ion-ios-camera-outline:before, .ion-ios-cart:before, .ion-ios-cart-outline:before, .ion-ios-chatboxes:before, .ion-ios-chatboxes-outline:before, .ion-ios-chatbubble:before, .ion-ios-chatbubble-outline:before, .ion-ios-checkmark:before, .ion-ios-checkmark-empty:before, .ion-ios-checkmark-outline:before, .ion-ios-circle-filled:before, .ion-ios-circle-outline:before, .ion-ios-clock:before, .ion-ios-clock-outline:before, .ion-ios-close:before, .ion-ios-close-empty:before, .ion-ios-close-outline:before, .ion-ios-cloud:before, .ion-ios-cloud-download:before, .ion-ios-cloud-download-outline:before, .ion-ios-cloud-outline:before, .ion-ios-cloud-upload:before, .ion-ios-cloud-upload-outline:before, .ion-ios-cloudy:before, .ion-ios-cloudy-night:before, .ion-ios-cloudy-night-outline:before, .ion-ios-cloudy-outline:before, .ion-ios-cog:before, .ion-ios-cog-outline:before, .ion-ios-color-filter:before, .ion-ios-color-filter-outline:before, .ion-ios-color-wand:before, .ion-ios-color-wand-outline:before, .ion-ios-compose:before, .ion-ios-compose-outline:before, .ion-ios-contact:before, .ion-ios-contact-outline:before, .ion-ios-copy:before, .ion-ios-copy-outline:before, .ion-ios-crop:before, .ion-ios-crop-strong:before, .ion-ios-download:before, .ion-ios-download-outline:before, .ion-ios-drag:before, .ion-ios-email:before, .ion-ios-email-outline:before, .ion-ios-eye:before, .ion-ios-eye-outline:before, .ion-ios-fastforward:before, .ion-ios-fastforward-outline:before, .ion-ios-filing:before, .ion-ios-filing-outline:before, .ion-ios-film:before, .ion-ios-film-outline:before, .ion-ios-flag:before, .ion-ios-flag-outline:before, .ion-ios-flame:before, .ion-ios-flame-outline:before, .ion-ios-flask:before, .ion-ios-flask-outline:before, .ion-ios-flower:before, .ion-ios-flower-outline:before, .ion-ios-folder:before, .ion-ios-folder-outline:before, .ion-ios-football:before, .ion-ios-football-outline:before, .ion-ios-game-controller-a:before, .ion-ios-game-controller-a-outline:before, .ion-ios-game-controller-b:before, .ion-ios-game-controller-b-outline:before, .ion-ios-gear:before, .ion-ios-gear-outline:before, .ion-ios-glasses:before, .ion-ios-glasses-outline:before, .ion-ios-grid-view:before, .ion-ios-grid-view-outline:before, .ion-ios-heart:before, .ion-ios-heart-outline:before, .ion-ios-help:before, .ion-ios-help-empty:before, .ion-ios-help-outline:before, .ion-ios-home:before, .ion-ios-home-outline:before, .ion-ios-infinite:before, .ion-ios-infinite-outline:before, .ion-ios-information:before, .ion-ios-information-empty:before, .ion-ios-information-outline:before, .ion-ios-ionic-outline:before, .ion-ios-keypad:before, .ion-ios-keypad-outline:before, .ion-ios-lightbulb:before, .ion-ios-lightbulb-outline:before, .ion-ios-list:before, .ion-ios-list-outline:before, .ion-ios-location:before, .ion-ios-location-outline:before, .ion-ios-locked:before, .ion-ios-locked-outline:before, .ion-ios-loop:before, .ion-ios-loop-strong:before, .ion-ios-medical:before, .ion-ios-medical-outline:before, .ion-ios-medkit:before, .ion-ios-medkit-outline:before, .ion-ios-mic:before, .ion-ios-mic-off:before, .ion-ios-mic-outline:before, .ion-ios-minus:before, .ion-ios-minus-empty:before, .ion-ios-minus-outline:before, .ion-ios-monitor:before, .ion-ios-monitor-outline:before, .ion-ios-moon:before, .ion-ios-moon-outline:before, .ion-ios-more:before, .ion-ios-more-outline:before, .ion-ios-musical-note:before, .ion-ios-musical-notes:before, .ion-ios-navigate:before, .ion-ios-navigate-outline:before, .ion-ios-nutrition:before, .ion-ios-nutrition-outline:before, .ion-ios-paper:before, .ion-ios-paper-outline:before, .ion-ios-paperplane:before, .ion-ios-paperplane-outline:before, .ion-ios-partlysunny:before, .ion-ios-partlysunny-outline:before, .ion-ios-pause:before, .ion-ios-pause-outline:before, .ion-ios-paw:before, .ion-ios-paw-outline:before, .ion-ios-people:before, .ion-ios-people-outline:before, .ion-ios-person:before, .ion-ios-person-outline:before, .ion-ios-personadd:before, .ion-ios-personadd-outline:before, .ion-ios-photos:before, .ion-ios-photos-outline:before, .ion-ios-pie:before, .ion-ios-pie-outline:before, .ion-ios-pint:before, .ion-ios-pint-outline:before, .ion-ios-play:before, .ion-ios-play-outline:before, .ion-ios-plus:before, .ion-ios-plus-empty:before, .ion-ios-plus-outline:before, .ion-ios-pricetag:before, .ion-ios-pricetag-outline:before, .ion-ios-pricetags:before, .ion-ios-pricetags-outline:before, .ion-ios-printer:before, .ion-ios-printer-outline:before, .ion-ios-pulse:before, .ion-ios-pulse-strong:before, .ion-ios-rainy:before, .ion-ios-rainy-outline:before, .ion-ios-recording:before, .ion-ios-recording-outline:before, .ion-ios-redo:before, .ion-ios-redo-outline:before, .ion-ios-refresh:before, .ion-ios-refresh-empty:before, .ion-ios-refresh-outline:before, .ion-ios-reload:before, .ion-ios-reverse-camera:before, .ion-ios-reverse-camera-outline:before, .ion-ios-rewind:before, .ion-ios-rewind-outline:before, .ion-ios-rose:before, .ion-ios-rose-outline:before, .ion-ios-search:before, .ion-ios-search-strong:before, .ion-ios-settings:before, .ion-ios-settings-strong:before, .ion-ios-shuffle:before, .ion-ios-shuffle-strong:before, .ion-ios-skipbackward:before, .ion-ios-skipbackward-outline:before, .ion-ios-skipforward:before, .ion-ios-skipforward-outline:before, .ion-ios-snowy:before, .ion-ios-speedometer:before, .ion-ios-speedometer-outline:before, .ion-ios-star:before, .ion-ios-star-half:before, .ion-ios-star-outline:before, .ion-ios-stopwatch:before, .ion-ios-stopwatch-outline:before, .ion-ios-sunny:before, .ion-ios-sunny-outline:before, .ion-ios-telephone:before, .ion-ios-telephone-outline:before, .ion-ios-tennisball:before, .ion-ios-tennisball-outline:before, .ion-ios-thunderstorm:before, .ion-ios-thunderstorm-outline:before, .ion-ios-time:before, .ion-ios-time-outline:before, .ion-ios-timer:before, .ion-ios-timer-outline:before, .ion-ios-toggle:before, .ion-ios-toggle-outline:before, .ion-ios-trash:before, .ion-ios-trash-outline:before, .ion-ios-undo:before, .ion-ios-undo-outline:before, .ion-ios-unlocked:before, .ion-ios-unlocked-outline:before, .ion-ios-upload:before, .ion-ios-upload-outline:before, .ion-ios-videocam:before, .ion-ios-videocam-outline:before, .ion-ios-volume-high:before, .ion-ios-volume-low:before, .ion-ios-wineglass:before, .ion-ios-wineglass-outline:before, .ion-ios-world:before, .ion-ios-world-outline:before, .ion-ipad:before, .ion-iphone:before, .ion-ipod:before, .ion-jet:before, .ion-key:before, .ion-knife:before, .ion-laptop:before, .ion-leaf:before, .ion-levels:before, .ion-lightbulb:before, .ion-link:before, .ion-load-a:before, .ion-load-b:before, .ion-load-c:before, .ion-load-d:before, .ion-location:before, .ion-lock-combination:before, .ion-locked:before, .ion-log-in:before, .ion-log-out:before, .ion-loop:before, .ion-magnet:before, .ion-male:before, .ion-man:before, .ion-map:before, .ion-medkit:before, .ion-merge:before, .ion-mic-a:before, .ion-mic-b:before, .ion-mic-c:before, .ion-minus:before, .ion-minus-circled:before, .ion-minus-round:before, .ion-model-s:before, .ion-monitor:before, .ion-more:before, .ion-mouse:before, .ion-music-note:before, .ion-navicon:before, .ion-navicon-round:before, .ion-navigate:before, .ion-network:before, .ion-no-smoking:before, .ion-nuclear:before, .ion-outlet:before, .ion-paintbrush:before, .ion-paintbucket:before, .ion-paper-airplane:before, .ion-paperclip:before, .ion-pause:before, .ion-person:before, .ion-person-add:before, .ion-person-stalker:before, .ion-pie-graph:before, .ion-pin:before, .ion-pinpoint:before, .ion-pizza:before, .ion-plane:before, .ion-planet:before, .ion-play:before, .ion-playstation:before, .ion-plus:before, .ion-plus-circled:before, .ion-plus-round:before, .ion-podium:before, .ion-pound:before, .ion-power:before, .ion-pricetag:before, .ion-pricetags:before, .ion-printer:before, .ion-pull-request:before, .ion-qr-scanner:before, .ion-quote:before, .ion-radio-waves:before, .ion-record:before, .ion-refresh:before, .ion-reply:before, .ion-reply-all:before, .ion-ribbon-a:before, .ion-ribbon-b:before, .ion-sad:before, .ion-sad-outline:before, .ion-scissors:before, .ion-search:before, .ion-settings:before, .ion-share:before, .ion-shuffle:before, .ion-skip-backward:before, .ion-skip-forward:before, .ion-social-android:before, .ion-social-android-outline:before, .ion-social-angular:before, .ion-social-angular-outline:before, .ion-social-apple:before, .ion-social-apple-outline:before, .ion-social-bitcoin:before, .ion-social-bitcoin-outline:before, .ion-social-buffer:before, .ion-social-buffer-outline:before, .ion-social-chrome:before, .ion-social-chrome-outline:before, .ion-social-codepen:before, .ion-social-codepen-outline:before, .ion-social-css3:before, .ion-social-css3-outline:before, .ion-social-designernews:before, .ion-social-designernews-outline:before, .ion-social-dribbble:before, .ion-social-dribbble-outline:before, .ion-social-dropbox:before, .ion-social-dropbox-outline:before, .ion-social-euro:before, .ion-social-euro-outline:before, .ion-social-facebook:before, .ion-social-facebook-outline:before, .ion-social-foursquare:before, .ion-social-foursquare-outline:before, .ion-social-freebsd-devil:before, .ion-social-github:before, .ion-social-github-outline:before, .ion-social-google:before, .ion-social-google-outline:before, .ion-social-googleplus:before, .ion-social-googleplus-outline:before, .ion-social-hackernews:before, .ion-social-hackernews-outline:before, .ion-social-html5:before, .ion-social-html5-outline:before, .ion-social-instagram:before, .ion-social-instagram-outline:before, .ion-social-javascript:before, .ion-social-javascript-outline:before, .ion-social-linkedin:before, .ion-social-linkedin-outline:before, .ion-social-markdown:before, .ion-social-nodejs:before, .ion-social-octocat:before, .ion-social-pinterest:before, .ion-social-pinterest-outline:before, .ion-social-python:before, .ion-social-reddit:before, .ion-social-reddit-outline:before, .ion-social-rss:before, .ion-social-rss-outline:before, .ion-social-sass:before, .ion-social-skype:before, .ion-social-skype-outline:before, .ion-social-snapchat:before, .ion-social-snapchat-outline:before, .ion-social-tumblr:before, .ion-social-tumblr-outline:before, .ion-social-tux:before, .ion-social-twitch:before, .ion-social-twitch-outline:before, .ion-social-twitter:before, .ion-social-twitter-outline:before, .ion-social-usd:before, .ion-social-usd-outline:before, .ion-social-vimeo:before, .ion-social-vimeo-outline:before, .ion-social-whatsapp:before, .ion-social-whatsapp-outline:before, .ion-social-windows:before, .ion-social-windows-outline:before, .ion-social-wordpress:before, .ion-social-wordpress-outline:before, .ion-social-yahoo:before, .ion-social-yahoo-outline:before, .ion-social-yen:before, .ion-social-yen-outline:before, .ion-social-youtube:before, .ion-social-youtube-outline:before, .ion-soup-can:before, .ion-soup-can-outline:before, .ion-speakerphone:before, .ion-speedometer:before, .ion-spoon:before, .ion-star:before, .ion-stats-bars:before, .ion-steam:before, .ion-stop:before, .ion-thermometer:before, .ion-thumbsdown:before, .ion-thumbsup:before, .ion-toggle:before, .ion-toggle-filled:before, .ion-transgender:before, .ion-trash-a:before, .ion-trash-b:before, .ion-trophy:before, .ion-tshirt:before, .ion-tshirt-outline:before, .ion-umbrella:before, .ion-university:before, .ion-unlocked:before, .ion-upload:before, .ion-usb:before, .ion-videocamera:before, .ion-volume-high:before, .ion-volume-low:before, .ion-volume-medium:before, .ion-volume-mute:before, .ion-wand:before, .ion-waterdrop:before, .ion-wifi:before, .ion-wineglass:before, .ion-woman:before, .ion-wrench:before, .ion-xbox:before { display: inline-block; font-family: \"Ionicons\"; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; text-rendering: auto; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }\n\n.ion-alert:before { content: \"\\F101\"; }\n\n.ion-alert-circled:before { content: \"\\F100\"; }\n\n.ion-android-add:before { content: \"\\F2C7\"; }\n\n.ion-android-add-circle:before { content: \"\\F359\"; }\n\n.ion-android-alarm-clock:before { content: \"\\F35A\"; }\n\n.ion-android-alert:before { content: \"\\F35B\"; }\n\n.ion-android-apps:before { content: \"\\F35C\"; }\n\n.ion-android-archive:before { content: \"\\F2C9\"; }\n\n.ion-android-arrow-back:before { content: \"\\F2CA\"; }\n\n.ion-android-arrow-down:before { content: \"\\F35D\"; }\n\n.ion-android-arrow-dropdown:before { content: \"\\F35F\"; }\n\n.ion-android-arrow-dropdown-circle:before { content: \"\\F35E\"; }\n\n.ion-android-arrow-dropleft:before { content: \"\\F361\"; }\n\n.ion-android-arrow-dropleft-circle:before { content: \"\\F360\"; }\n\n.ion-android-arrow-dropright:before { content: \"\\F363\"; }\n\n.ion-android-arrow-dropright-circle:before { content: \"\\F362\"; }\n\n.ion-android-arrow-dropup:before { content: \"\\F365\"; }\n\n.ion-android-arrow-dropup-circle:before { content: \"\\F364\"; }\n\n.ion-android-arrow-forward:before { content: \"\\F30F\"; }\n\n.ion-android-arrow-up:before { content: \"\\F366\"; }\n\n.ion-android-attach:before { content: \"\\F367\"; }\n\n.ion-android-bar:before { content: \"\\F368\"; }\n\n.ion-android-bicycle:before { content: \"\\F369\"; }\n\n.ion-android-boat:before { content: \"\\F36A\"; }\n\n.ion-android-bookmark:before { content: \"\\F36B\"; }\n\n.ion-android-bulb:before { content: \"\\F36C\"; }\n\n.ion-android-bus:before { content: \"\\F36D\"; }\n\n.ion-android-calendar:before { content: \"\\F2D1\"; }\n\n.ion-android-call:before { content: \"\\F2D2\"; }\n\n.ion-android-camera:before { content: \"\\F2D3\"; }\n\n.ion-android-cancel:before { content: \"\\F36E\"; }\n\n.ion-android-car:before { content: \"\\F36F\"; }\n\n.ion-android-cart:before { content: \"\\F370\"; }\n\n.ion-android-chat:before { content: \"\\F2D4\"; }\n\n.ion-android-checkbox:before { content: \"\\F374\"; }\n\n.ion-android-checkbox-blank:before { content: \"\\F371\"; }\n\n.ion-android-checkbox-outline:before { content: \"\\F373\"; }\n\n.ion-android-checkbox-outline-blank:before { content: \"\\F372\"; }\n\n.ion-android-checkmark-circle:before { content: \"\\F375\"; }\n\n.ion-android-clipboard:before { content: \"\\F376\"; }\n\n.ion-android-close:before { content: \"\\F2D7\"; }\n\n.ion-android-cloud:before { content: \"\\F37A\"; }\n\n.ion-android-cloud-circle:before { content: \"\\F377\"; }\n\n.ion-android-cloud-done:before { content: \"\\F378\"; }\n\n.ion-android-cloud-outline:before { content: \"\\F379\"; }\n\n.ion-android-color-palette:before { content: \"\\F37B\"; }\n\n.ion-android-compass:before { content: \"\\F37C\"; }\n\n.ion-android-contact:before { content: \"\\F2D8\"; }\n\n.ion-android-contacts:before { content: \"\\F2D9\"; }\n\n.ion-android-contract:before { content: \"\\F37D\"; }\n\n.ion-android-create:before { content: \"\\F37E\"; }\n\n.ion-android-delete:before { content: \"\\F37F\"; }\n\n.ion-android-desktop:before { content: \"\\F380\"; }\n\n.ion-android-document:before { content: \"\\F381\"; }\n\n.ion-android-done:before { content: \"\\F383\"; }\n\n.ion-android-done-all:before { content: \"\\F382\"; }\n\n.ion-android-download:before { content: \"\\F2DD\"; }\n\n.ion-android-drafts:before { content: \"\\F384\"; }\n\n.ion-android-exit:before { content: \"\\F385\"; }\n\n.ion-android-expand:before { content: \"\\F386\"; }\n\n.ion-android-favorite:before { content: \"\\F388\"; }\n\n.ion-android-favorite-outline:before { content: \"\\F387\"; }\n\n.ion-android-film:before { content: \"\\F389\"; }\n\n.ion-android-folder:before { content: \"\\F2E0\"; }\n\n.ion-android-folder-open:before { content: \"\\F38A\"; }\n\n.ion-android-funnel:before { content: \"\\F38B\"; }\n\n.ion-android-globe:before { content: \"\\F38C\"; }\n\n.ion-android-hand:before { content: \"\\F2E3\"; }\n\n.ion-android-hangout:before { content: \"\\F38D\"; }\n\n.ion-android-happy:before { content: \"\\F38E\"; }\n\n.ion-android-home:before { content: \"\\F38F\"; }\n\n.ion-android-image:before { content: \"\\F2E4\"; }\n\n.ion-android-laptop:before { content: \"\\F390\"; }\n\n.ion-android-list:before { content: \"\\F391\"; }\n\n.ion-android-locate:before { content: \"\\F2E9\"; }\n\n.ion-android-lock:before { content: \"\\F392\"; }\n\n.ion-android-mail:before { content: \"\\F2EB\"; }\n\n.ion-android-map:before { content: \"\\F393\"; }\n\n.ion-android-menu:before { content: \"\\F394\"; }\n\n.ion-android-microphone:before { content: \"\\F2EC\"; }\n\n.ion-android-microphone-off:before { content: \"\\F395\"; }\n\n.ion-android-more-horizontal:before { content: \"\\F396\"; }\n\n.ion-android-more-vertical:before { content: \"\\F397\"; }\n\n.ion-android-navigate:before { content: \"\\F398\"; }\n\n.ion-android-notifications:before { content: \"\\F39B\"; }\n\n.ion-android-notifications-none:before { content: \"\\F399\"; }\n\n.ion-android-notifications-off:before { content: \"\\F39A\"; }\n\n.ion-android-open:before { content: \"\\F39C\"; }\n\n.ion-android-options:before { content: \"\\F39D\"; }\n\n.ion-android-people:before { content: \"\\F39E\"; }\n\n.ion-android-person:before { content: \"\\F3A0\"; }\n\n.ion-android-person-add:before { content: \"\\F39F\"; }\n\n.ion-android-phone-landscape:before { content: \"\\F3A1\"; }\n\n.ion-android-phone-portrait:before { content: \"\\F3A2\"; }\n\n.ion-android-pin:before { content: \"\\F3A3\"; }\n\n.ion-android-plane:before { content: \"\\F3A4\"; }\n\n.ion-android-playstore:before { content: \"\\F2F0\"; }\n\n.ion-android-print:before { content: \"\\F3A5\"; }\n\n.ion-android-radio-button-off:before { content: \"\\F3A6\"; }\n\n.ion-android-radio-button-on:before { content: \"\\F3A7\"; }\n\n.ion-android-refresh:before { content: \"\\F3A8\"; }\n\n.ion-android-remove:before { content: \"\\F2F4\"; }\n\n.ion-android-remove-circle:before { content: \"\\F3A9\"; }\n\n.ion-android-restaurant:before { content: \"\\F3AA\"; }\n\n.ion-android-sad:before { content: \"\\F3AB\"; }\n\n.ion-android-search:before { content: \"\\F2F5\"; }\n\n.ion-android-send:before { content: \"\\F2F6\"; }\n\n.ion-android-settings:before { content: \"\\F2F7\"; }\n\n.ion-android-share:before { content: \"\\F2F8\"; }\n\n.ion-android-share-alt:before { content: \"\\F3AC\"; }\n\n.ion-android-star:before { content: \"\\F2FC\"; }\n\n.ion-android-star-half:before { content: \"\\F3AD\"; }\n\n.ion-android-star-outline:before { content: \"\\F3AE\"; }\n\n.ion-android-stopwatch:before { content: \"\\F2FD\"; }\n\n.ion-android-subway:before { content: \"\\F3AF\"; }\n\n.ion-android-sunny:before { content: \"\\F3B0\"; }\n\n.ion-android-sync:before { content: \"\\F3B1\"; }\n\n.ion-android-textsms:before { content: \"\\F3B2\"; }\n\n.ion-android-time:before { content: \"\\F3B3\"; }\n\n.ion-android-train:before { content: \"\\F3B4\"; }\n\n.ion-android-unlock:before { content: \"\\F3B5\"; }\n\n.ion-android-upload:before { content: \"\\F3B6\"; }\n\n.ion-android-volume-down:before { content: \"\\F3B7\"; }\n\n.ion-android-volume-mute:before { content: \"\\F3B8\"; }\n\n.ion-android-volume-off:before { content: \"\\F3B9\"; }\n\n.ion-android-volume-up:before { content: \"\\F3BA\"; }\n\n.ion-android-walk:before { content: \"\\F3BB\"; }\n\n.ion-android-warning:before { content: \"\\F3BC\"; }\n\n.ion-android-watch:before { content: \"\\F3BD\"; }\n\n.ion-android-wifi:before { content: \"\\F305\"; }\n\n.ion-aperture:before { content: \"\\F313\"; }\n\n.ion-archive:before { content: \"\\F102\"; }\n\n.ion-arrow-down-a:before { content: \"\\F103\"; }\n\n.ion-arrow-down-b:before { content: \"\\F104\"; }\n\n.ion-arrow-down-c:before { content: \"\\F105\"; }\n\n.ion-arrow-expand:before { content: \"\\F25E\"; }\n\n.ion-arrow-graph-down-left:before { content: \"\\F25F\"; }\n\n.ion-arrow-graph-down-right:before { content: \"\\F260\"; }\n\n.ion-arrow-graph-up-left:before { content: \"\\F261\"; }\n\n.ion-arrow-graph-up-right:before { content: \"\\F262\"; }\n\n.ion-arrow-left-a:before { content: \"\\F106\"; }\n\n.ion-arrow-left-b:before { content: \"\\F107\"; }\n\n.ion-arrow-left-c:before { content: \"\\F108\"; }\n\n.ion-arrow-move:before { content: \"\\F263\"; }\n\n.ion-arrow-resize:before { content: \"\\F264\"; }\n\n.ion-arrow-return-left:before { content: \"\\F265\"; }\n\n.ion-arrow-return-right:before { content: \"\\F266\"; }\n\n.ion-arrow-right-a:before { content: \"\\F109\"; }\n\n.ion-arrow-right-b:before { content: \"\\F10A\"; }\n\n.ion-arrow-right-c:before { content: \"\\F10B\"; }\n\n.ion-arrow-shrink:before { content: \"\\F267\"; }\n\n.ion-arrow-swap:before { content: \"\\F268\"; }\n\n.ion-arrow-up-a:before { content: \"\\F10C\"; }\n\n.ion-arrow-up-b:before { content: \"\\F10D\"; }\n\n.ion-arrow-up-c:before { content: \"\\F10E\"; }\n\n.ion-asterisk:before { content: \"\\F314\"; }\n\n.ion-at:before { content: \"\\F10F\"; }\n\n.ion-backspace:before { content: \"\\F3BF\"; }\n\n.ion-backspace-outline:before { content: \"\\F3BE\"; }\n\n.ion-bag:before { content: \"\\F110\"; }\n\n.ion-battery-charging:before { content: \"\\F111\"; }\n\n.ion-battery-empty:before { content: \"\\F112\"; }\n\n.ion-battery-full:before { content: \"\\F113\"; }\n\n.ion-battery-half:before { content: \"\\F114\"; }\n\n.ion-battery-low:before { content: \"\\F115\"; }\n\n.ion-beaker:before { content: \"\\F269\"; }\n\n.ion-beer:before { content: \"\\F26A\"; }\n\n.ion-bluetooth:before { content: \"\\F116\"; }\n\n.ion-bonfire:before { content: \"\\F315\"; }\n\n.ion-bookmark:before { content: \"\\F26B\"; }\n\n.ion-bowtie:before { content: \"\\F3C0\"; }\n\n.ion-briefcase:before { content: \"\\F26C\"; }\n\n.ion-bug:before { content: \"\\F2BE\"; }\n\n.ion-calculator:before { content: \"\\F26D\"; }\n\n.ion-calendar:before { content: \"\\F117\"; }\n\n.ion-camera:before { content: \"\\F118\"; }\n\n.ion-card:before { content: \"\\F119\"; }\n\n.ion-cash:before { content: \"\\F316\"; }\n\n.ion-chatbox:before { content: \"\\F11B\"; }\n\n.ion-chatbox-working:before { content: \"\\F11A\"; }\n\n.ion-chatboxes:before { content: \"\\F11C\"; }\n\n.ion-chatbubble:before { content: \"\\F11E\"; }\n\n.ion-chatbubble-working:before { content: \"\\F11D\"; }\n\n.ion-chatbubbles:before { content: \"\\F11F\"; }\n\n.ion-checkmark:before { content: \"\\F122\"; }\n\n.ion-checkmark-circled:before { content: \"\\F120\"; }\n\n.ion-checkmark-round:before { content: \"\\F121\"; }\n\n.ion-chevron-down:before { content: \"\\F123\"; }\n\n.ion-chevron-left:before { content: \"\\F124\"; }\n\n.ion-chevron-right:before { content: \"\\F125\"; }\n\n.ion-chevron-up:before { content: \"\\F126\"; }\n\n.ion-clipboard:before { content: \"\\F127\"; }\n\n.ion-clock:before { content: \"\\F26E\"; }\n\n.ion-close:before { content: \"\\F12A\"; }\n\n.ion-close-circled:before { content: \"\\F128\"; }\n\n.ion-close-round:before { content: \"\\F129\"; }\n\n.ion-closed-captioning:before { content: \"\\F317\"; }\n\n.ion-cloud:before { content: \"\\F12B\"; }\n\n.ion-code:before { content: \"\\F271\"; }\n\n.ion-code-download:before { content: \"\\F26F\"; }\n\n.ion-code-working:before { content: \"\\F270\"; }\n\n.ion-coffee:before { content: \"\\F272\"; }\n\n.ion-compass:before { content: \"\\F273\"; }\n\n.ion-compose:before { content: \"\\F12C\"; }\n\n.ion-connection-bars:before { content: \"\\F274\"; }\n\n.ion-contrast:before { content: \"\\F275\"; }\n\n.ion-crop:before { content: \"\\F3C1\"; }\n\n.ion-cube:before { content: \"\\F318\"; }\n\n.ion-disc:before { content: \"\\F12D\"; }\n\n.ion-document:before { content: \"\\F12F\"; }\n\n.ion-document-text:before { content: \"\\F12E\"; }\n\n.ion-drag:before { content: \"\\F130\"; }\n\n.ion-earth:before { content: \"\\F276\"; }\n\n.ion-easel:before { content: \"\\F3C2\"; }\n\n.ion-edit:before { content: \"\\F2BF\"; }\n\n.ion-egg:before { content: \"\\F277\"; }\n\n.ion-eject:before { content: \"\\F131\"; }\n\n.ion-email:before { content: \"\\F132\"; }\n\n.ion-email-unread:before { content: \"\\F3C3\"; }\n\n.ion-erlenmeyer-flask:before { content: \"\\F3C5\"; }\n\n.ion-erlenmeyer-flask-bubbles:before { content: \"\\F3C4\"; }\n\n.ion-eye:before { content: \"\\F133\"; }\n\n.ion-eye-disabled:before { content: \"\\F306\"; }\n\n.ion-female:before { content: \"\\F278\"; }\n\n.ion-filing:before { content: \"\\F134\"; }\n\n.ion-film-marker:before { content: \"\\F135\"; }\n\n.ion-fireball:before { content: \"\\F319\"; }\n\n.ion-flag:before { content: \"\\F279\"; }\n\n.ion-flame:before { content: \"\\F31A\"; }\n\n.ion-flash:before { content: \"\\F137\"; }\n\n.ion-flash-off:before { content: \"\\F136\"; }\n\n.ion-folder:before { content: \"\\F139\"; }\n\n.ion-fork:before { content: \"\\F27A\"; }\n\n.ion-fork-repo:before { content: \"\\F2C0\"; }\n\n.ion-forward:before { content: \"\\F13A\"; }\n\n.ion-funnel:before { content: \"\\F31B\"; }\n\n.ion-gear-a:before { content: \"\\F13D\"; }\n\n.ion-gear-b:before { content: \"\\F13E\"; }\n\n.ion-grid:before { content: \"\\F13F\"; }\n\n.ion-hammer:before { content: \"\\F27B\"; }\n\n.ion-happy:before { content: \"\\F31C\"; }\n\n.ion-happy-outline:before { content: \"\\F3C6\"; }\n\n.ion-headphone:before { content: \"\\F140\"; }\n\n.ion-heart:before { content: \"\\F141\"; }\n\n.ion-heart-broken:before { content: \"\\F31D\"; }\n\n.ion-help:before { content: \"\\F143\"; }\n\n.ion-help-buoy:before { content: \"\\F27C\"; }\n\n.ion-help-circled:before { content: \"\\F142\"; }\n\n.ion-home:before { content: \"\\F144\"; }\n\n.ion-icecream:before { content: \"\\F27D\"; }\n\n.ion-image:before { content: \"\\F147\"; }\n\n.ion-images:before { content: \"\\F148\"; }\n\n.ion-information:before { content: \"\\F14A\"; }\n\n.ion-information-circled:before { content: \"\\F149\"; }\n\n.ion-ionic:before { content: \"\\F14B\"; }\n\n.ion-ios-alarm:before { content: \"\\F3C8\"; }\n\n.ion-ios-alarm-outline:before { content: \"\\F3C7\"; }\n\n.ion-ios-albums:before { content: \"\\F3CA\"; }\n\n.ion-ios-albums-outline:before { content: \"\\F3C9\"; }\n\n.ion-ios-americanfootball:before { content: \"\\F3CC\"; }\n\n.ion-ios-americanfootball-outline:before { content: \"\\F3CB\"; }\n\n.ion-ios-analytics:before { content: \"\\F3CE\"; }\n\n.ion-ios-analytics-outline:before { content: \"\\F3CD\"; }\n\n.ion-ios-arrow-back:before { content: \"\\F3CF\"; }\n\n.ion-ios-arrow-down:before { content: \"\\F3D0\"; }\n\n.ion-ios-arrow-forward:before { content: \"\\F3D1\"; }\n\n.ion-ios-arrow-left:before { content: \"\\F3D2\"; }\n\n.ion-ios-arrow-right:before { content: \"\\F3D3\"; }\n\n.ion-ios-arrow-thin-down:before { content: \"\\F3D4\"; }\n\n.ion-ios-arrow-thin-left:before { content: \"\\F3D5\"; }\n\n.ion-ios-arrow-thin-right:before { content: \"\\F3D6\"; }\n\n.ion-ios-arrow-thin-up:before { content: \"\\F3D7\"; }\n\n.ion-ios-arrow-up:before { content: \"\\F3D8\"; }\n\n.ion-ios-at:before { content: \"\\F3DA\"; }\n\n.ion-ios-at-outline:before { content: \"\\F3D9\"; }\n\n.ion-ios-barcode:before { content: \"\\F3DC\"; }\n\n.ion-ios-barcode-outline:before { content: \"\\F3DB\"; }\n\n.ion-ios-baseball:before { content: \"\\F3DE\"; }\n\n.ion-ios-baseball-outline:before { content: \"\\F3DD\"; }\n\n.ion-ios-basketball:before { content: \"\\F3E0\"; }\n\n.ion-ios-basketball-outline:before { content: \"\\F3DF\"; }\n\n.ion-ios-bell:before { content: \"\\F3E2\"; }\n\n.ion-ios-bell-outline:before { content: \"\\F3E1\"; }\n\n.ion-ios-body:before { content: \"\\F3E4\"; }\n\n.ion-ios-body-outline:before { content: \"\\F3E3\"; }\n\n.ion-ios-bolt:before { content: \"\\F3E6\"; }\n\n.ion-ios-bolt-outline:before { content: \"\\F3E5\"; }\n\n.ion-ios-book:before { content: \"\\F3E8\"; }\n\n.ion-ios-book-outline:before { content: \"\\F3E7\"; }\n\n.ion-ios-bookmarks:before { content: \"\\F3EA\"; }\n\n.ion-ios-bookmarks-outline:before { content: \"\\F3E9\"; }\n\n.ion-ios-box:before { content: \"\\F3EC\"; }\n\n.ion-ios-box-outline:before { content: \"\\F3EB\"; }\n\n.ion-ios-briefcase:before { content: \"\\F3EE\"; }\n\n.ion-ios-briefcase-outline:before { content: \"\\F3ED\"; }\n\n.ion-ios-browsers:before { content: \"\\F3F0\"; }\n\n.ion-ios-browsers-outline:before { content: \"\\F3EF\"; }\n\n.ion-ios-calculator:before { content: \"\\F3F2\"; }\n\n.ion-ios-calculator-outline:before { content: \"\\F3F1\"; }\n\n.ion-ios-calendar:before { content: \"\\F3F4\"; }\n\n.ion-ios-calendar-outline:before { content: \"\\F3F3\"; }\n\n.ion-ios-camera:before { content: \"\\F3F6\"; }\n\n.ion-ios-camera-outline:before { content: \"\\F3F5\"; }\n\n.ion-ios-cart:before { content: \"\\F3F8\"; }\n\n.ion-ios-cart-outline:before { content: \"\\F3F7\"; }\n\n.ion-ios-chatboxes:before { content: \"\\F3FA\"; }\n\n.ion-ios-chatboxes-outline:before { content: \"\\F3F9\"; }\n\n.ion-ios-chatbubble:before { content: \"\\F3FC\"; }\n\n.ion-ios-chatbubble-outline:before { content: \"\\F3FB\"; }\n\n.ion-ios-checkmark:before { content: \"\\F3FF\"; }\n\n.ion-ios-checkmark-empty:before { content: \"\\F3FD\"; }\n\n.ion-ios-checkmark-outline:before { content: \"\\F3FE\"; }\n\n.ion-ios-circle-filled:before { content: \"\\F400\"; }\n\n.ion-ios-circle-outline:before { content: \"\\F401\"; }\n\n.ion-ios-clock:before { content: \"\\F403\"; }\n\n.ion-ios-clock-outline:before { content: \"\\F402\"; }\n\n.ion-ios-close:before { content: \"\\F406\"; }\n\n.ion-ios-close-empty:before { content: \"\\F404\"; }\n\n.ion-ios-close-outline:before { content: \"\\F405\"; }\n\n.ion-ios-cloud:before { content: \"\\F40C\"; }\n\n.ion-ios-cloud-download:before { content: \"\\F408\"; }\n\n.ion-ios-cloud-download-outline:before { content: \"\\F407\"; }\n\n.ion-ios-cloud-outline:before { content: \"\\F409\"; }\n\n.ion-ios-cloud-upload:before { content: \"\\F40B\"; }\n\n.ion-ios-cloud-upload-outline:before { content: \"\\F40A\"; }\n\n.ion-ios-cloudy:before { content: \"\\F410\"; }\n\n.ion-ios-cloudy-night:before { content: \"\\F40E\"; }\n\n.ion-ios-cloudy-night-outline:before { content: \"\\F40D\"; }\n\n.ion-ios-cloudy-outline:before { content: \"\\F40F\"; }\n\n.ion-ios-cog:before { content: \"\\F412\"; }\n\n.ion-ios-cog-outline:before { content: \"\\F411\"; }\n\n.ion-ios-color-filter:before { content: \"\\F414\"; }\n\n.ion-ios-color-filter-outline:before { content: \"\\F413\"; }\n\n.ion-ios-color-wand:before { content: \"\\F416\"; }\n\n.ion-ios-color-wand-outline:before { content: \"\\F415\"; }\n\n.ion-ios-compose:before { content: \"\\F418\"; }\n\n.ion-ios-compose-outline:before { content: \"\\F417\"; }\n\n.ion-ios-contact:before { content: \"\\F41A\"; }\n\n.ion-ios-contact-outline:before { content: \"\\F419\"; }\n\n.ion-ios-copy:before { content: \"\\F41C\"; }\n\n.ion-ios-copy-outline:before { content: \"\\F41B\"; }\n\n.ion-ios-crop:before { content: \"\\F41E\"; }\n\n.ion-ios-crop-strong:before { content: \"\\F41D\"; }\n\n.ion-ios-download:before { content: \"\\F420\"; }\n\n.ion-ios-download-outline:before { content: \"\\F41F\"; }\n\n.ion-ios-drag:before { content: \"\\F421\"; }\n\n.ion-ios-email:before { content: \"\\F423\"; }\n\n.ion-ios-email-outline:before { content: \"\\F422\"; }\n\n.ion-ios-eye:before { content: \"\\F425\"; }\n\n.ion-ios-eye-outline:before { content: \"\\F424\"; }\n\n.ion-ios-fastforward:before { content: \"\\F427\"; }\n\n.ion-ios-fastforward-outline:before { content: \"\\F426\"; }\n\n.ion-ios-filing:before { content: \"\\F429\"; }\n\n.ion-ios-filing-outline:before { content: \"\\F428\"; }\n\n.ion-ios-film:before { content: \"\\F42B\"; }\n\n.ion-ios-film-outline:before { content: \"\\F42A\"; }\n\n.ion-ios-flag:before { content: \"\\F42D\"; }\n\n.ion-ios-flag-outline:before { content: \"\\F42C\"; }\n\n.ion-ios-flame:before { content: \"\\F42F\"; }\n\n.ion-ios-flame-outline:before { content: \"\\F42E\"; }\n\n.ion-ios-flask:before { content: \"\\F431\"; }\n\n.ion-ios-flask-outline:before { content: \"\\F430\"; }\n\n.ion-ios-flower:before { content: \"\\F433\"; }\n\n.ion-ios-flower-outline:before { content: \"\\F432\"; }\n\n.ion-ios-folder:before { content: \"\\F435\"; }\n\n.ion-ios-folder-outline:before { content: \"\\F434\"; }\n\n.ion-ios-football:before { content: \"\\F437\"; }\n\n.ion-ios-football-outline:before { content: \"\\F436\"; }\n\n.ion-ios-game-controller-a:before { content: \"\\F439\"; }\n\n.ion-ios-game-controller-a-outline:before { content: \"\\F438\"; }\n\n.ion-ios-game-controller-b:before { content: \"\\F43B\"; }\n\n.ion-ios-game-controller-b-outline:before { content: \"\\F43A\"; }\n\n.ion-ios-gear:before { content: \"\\F43D\"; }\n\n.ion-ios-gear-outline:before { content: \"\\F43C\"; }\n\n.ion-ios-glasses:before { content: \"\\F43F\"; }\n\n.ion-ios-glasses-outline:before { content: \"\\F43E\"; }\n\n.ion-ios-grid-view:before { content: \"\\F441\"; }\n\n.ion-ios-grid-view-outline:before { content: \"\\F440\"; }\n\n.ion-ios-heart:before { content: \"\\F443\"; }\n\n.ion-ios-heart-outline:before { content: \"\\F442\"; }\n\n.ion-ios-help:before { content: \"\\F446\"; }\n\n.ion-ios-help-empty:before { content: \"\\F444\"; }\n\n.ion-ios-help-outline:before { content: \"\\F445\"; }\n\n.ion-ios-home:before { content: \"\\F448\"; }\n\n.ion-ios-home-outline:before { content: \"\\F447\"; }\n\n.ion-ios-infinite:before { content: \"\\F44A\"; }\n\n.ion-ios-infinite-outline:before { content: \"\\F449\"; }\n\n.ion-ios-information:before { content: \"\\F44D\"; }\n\n.ion-ios-information-empty:before { content: \"\\F44B\"; }\n\n.ion-ios-information-outline:before { content: \"\\F44C\"; }\n\n.ion-ios-ionic-outline:before { content: \"\\F44E\"; }\n\n.ion-ios-keypad:before { content: \"\\F450\"; }\n\n.ion-ios-keypad-outline:before { content: \"\\F44F\"; }\n\n.ion-ios-lightbulb:before { content: \"\\F452\"; }\n\n.ion-ios-lightbulb-outline:before { content: \"\\F451\"; }\n\n.ion-ios-list:before { content: \"\\F454\"; }\n\n.ion-ios-list-outline:before { content: \"\\F453\"; }\n\n.ion-ios-location:before { content: \"\\F456\"; }\n\n.ion-ios-location-outline:before { content: \"\\F455\"; }\n\n.ion-ios-locked:before { content: \"\\F458\"; }\n\n.ion-ios-locked-outline:before { content: \"\\F457\"; }\n\n.ion-ios-loop:before { content: \"\\F45A\"; }\n\n.ion-ios-loop-strong:before { content: \"\\F459\"; }\n\n.ion-ios-medical:before { content: \"\\F45C\"; }\n\n.ion-ios-medical-outline:before { content: \"\\F45B\"; }\n\n.ion-ios-medkit:before { content: \"\\F45E\"; }\n\n.ion-ios-medkit-outline:before { content: \"\\F45D\"; }\n\n.ion-ios-mic:before { content: \"\\F461\"; }\n\n.ion-ios-mic-off:before { content: \"\\F45F\"; }\n\n.ion-ios-mic-outline:before { content: \"\\F460\"; }\n\n.ion-ios-minus:before { content: \"\\F464\"; }\n\n.ion-ios-minus-empty:before { content: \"\\F462\"; }\n\n.ion-ios-minus-outline:before { content: \"\\F463\"; }\n\n.ion-ios-monitor:before { content: \"\\F466\"; }\n\n.ion-ios-monitor-outline:before { content: \"\\F465\"; }\n\n.ion-ios-moon:before { content: \"\\F468\"; }\n\n.ion-ios-moon-outline:before { content: \"\\F467\"; }\n\n.ion-ios-more:before { content: \"\\F46A\"; }\n\n.ion-ios-more-outline:before { content: \"\\F469\"; }\n\n.ion-ios-musical-note:before { content: \"\\F46B\"; }\n\n.ion-ios-musical-notes:before { content: \"\\F46C\"; }\n\n.ion-ios-navigate:before { content: \"\\F46E\"; }\n\n.ion-ios-navigate-outline:before { content: \"\\F46D\"; }\n\n.ion-ios-nutrition:before { content: \"\\F470\"; }\n\n.ion-ios-nutrition-outline:before { content: \"\\F46F\"; }\n\n.ion-ios-paper:before { content: \"\\F472\"; }\n\n.ion-ios-paper-outline:before { content: \"\\F471\"; }\n\n.ion-ios-paperplane:before { content: \"\\F474\"; }\n\n.ion-ios-paperplane-outline:before { content: \"\\F473\"; }\n\n.ion-ios-partlysunny:before { content: \"\\F476\"; }\n\n.ion-ios-partlysunny-outline:before { content: \"\\F475\"; }\n\n.ion-ios-pause:before { content: \"\\F478\"; }\n\n.ion-ios-pause-outline:before { content: \"\\F477\"; }\n\n.ion-ios-paw:before { content: \"\\F47A\"; }\n\n.ion-ios-paw-outline:before { content: \"\\F479\"; }\n\n.ion-ios-people:before { content: \"\\F47C\"; }\n\n.ion-ios-people-outline:before { content: \"\\F47B\"; }\n\n.ion-ios-person:before { content: \"\\F47E\"; }\n\n.ion-ios-person-outline:before { content: \"\\F47D\"; }\n\n.ion-ios-personadd:before { content: \"\\F480\"; }\n\n.ion-ios-personadd-outline:before { content: \"\\F47F\"; }\n\n.ion-ios-photos:before { content: \"\\F482\"; }\n\n.ion-ios-photos-outline:before { content: \"\\F481\"; }\n\n.ion-ios-pie:before { content: \"\\F484\"; }\n\n.ion-ios-pie-outline:before { content: \"\\F483\"; }\n\n.ion-ios-pint:before { content: \"\\F486\"; }\n\n.ion-ios-pint-outline:before { content: \"\\F485\"; }\n\n.ion-ios-play:before { content: \"\\F488\"; }\n\n.ion-ios-play-outline:before { content: \"\\F487\"; }\n\n.ion-ios-plus:before { content: \"\\F48B\"; }\n\n.ion-ios-plus-empty:before { content: \"\\F489\"; }\n\n.ion-ios-plus-outline:before { content: \"\\F48A\"; }\n\n.ion-ios-pricetag:before { content: \"\\F48D\"; }\n\n.ion-ios-pricetag-outline:before { content: \"\\F48C\"; }\n\n.ion-ios-pricetags:before { content: \"\\F48F\"; }\n\n.ion-ios-pricetags-outline:before { content: \"\\F48E\"; }\n\n.ion-ios-printer:before { content: \"\\F491\"; }\n\n.ion-ios-printer-outline:before { content: \"\\F490\"; }\n\n.ion-ios-pulse:before { content: \"\\F493\"; }\n\n.ion-ios-pulse-strong:before { content: \"\\F492\"; }\n\n.ion-ios-rainy:before { content: \"\\F495\"; }\n\n.ion-ios-rainy-outline:before { content: \"\\F494\"; }\n\n.ion-ios-recording:before { content: \"\\F497\"; }\n\n.ion-ios-recording-outline:before { content: \"\\F496\"; }\n\n.ion-ios-redo:before { content: \"\\F499\"; }\n\n.ion-ios-redo-outline:before { content: \"\\F498\"; }\n\n.ion-ios-refresh:before { content: \"\\F49C\"; }\n\n.ion-ios-refresh-empty:before { content: \"\\F49A\"; }\n\n.ion-ios-refresh-outline:before { content: \"\\F49B\"; }\n\n.ion-ios-reload:before { content: \"\\F49D\"; }\n\n.ion-ios-reverse-camera:before { content: \"\\F49F\"; }\n\n.ion-ios-reverse-camera-outline:before { content: \"\\F49E\"; }\n\n.ion-ios-rewind:before { content: \"\\F4A1\"; }\n\n.ion-ios-rewind-outline:before { content: \"\\F4A0\"; }\n\n.ion-ios-rose:before { content: \"\\F4A3\"; }\n\n.ion-ios-rose-outline:before { content: \"\\F4A2\"; }\n\n.ion-ios-search:before { content: \"\\F4A5\"; }\n\n.ion-ios-search-strong:before { content: \"\\F4A4\"; }\n\n.ion-ios-settings:before { content: \"\\F4A7\"; }\n\n.ion-ios-settings-strong:before { content: \"\\F4A6\"; }\n\n.ion-ios-shuffle:before { content: \"\\F4A9\"; }\n\n.ion-ios-shuffle-strong:before { content: \"\\F4A8\"; }\n\n.ion-ios-skipbackward:before { content: \"\\F4AB\"; }\n\n.ion-ios-skipbackward-outline:before { content: \"\\F4AA\"; }\n\n.ion-ios-skipforward:before { content: \"\\F4AD\"; }\n\n.ion-ios-skipforward-outline:before { content: \"\\F4AC\"; }\n\n.ion-ios-snowy:before { content: \"\\F4AE\"; }\n\n.ion-ios-speedometer:before { content: \"\\F4B0\"; }\n\n.ion-ios-speedometer-outline:before { content: \"\\F4AF\"; }\n\n.ion-ios-star:before { content: \"\\F4B3\"; }\n\n.ion-ios-star-half:before { content: \"\\F4B1\"; }\n\n.ion-ios-star-outline:before { content: \"\\F4B2\"; }\n\n.ion-ios-stopwatch:before { content: \"\\F4B5\"; }\n\n.ion-ios-stopwatch-outline:before { content: \"\\F4B4\"; }\n\n.ion-ios-sunny:before { content: \"\\F4B7\"; }\n\n.ion-ios-sunny-outline:before { content: \"\\F4B6\"; }\n\n.ion-ios-telephone:before { content: \"\\F4B9\"; }\n\n.ion-ios-telephone-outline:before { content: \"\\F4B8\"; }\n\n.ion-ios-tennisball:before { content: \"\\F4BB\"; }\n\n.ion-ios-tennisball-outline:before { content: \"\\F4BA\"; }\n\n.ion-ios-thunderstorm:before { content: \"\\F4BD\"; }\n\n.ion-ios-thunderstorm-outline:before { content: \"\\F4BC\"; }\n\n.ion-ios-time:before { content: \"\\F4BF\"; }\n\n.ion-ios-time-outline:before { content: \"\\F4BE\"; }\n\n.ion-ios-timer:before { content: \"\\F4C1\"; }\n\n.ion-ios-timer-outline:before { content: \"\\F4C0\"; }\n\n.ion-ios-toggle:before { content: \"\\F4C3\"; }\n\n.ion-ios-toggle-outline:before { content: \"\\F4C2\"; }\n\n.ion-ios-trash:before { content: \"\\F4C5\"; }\n\n.ion-ios-trash-outline:before { content: \"\\F4C4\"; }\n\n.ion-ios-undo:before { content: \"\\F4C7\"; }\n\n.ion-ios-undo-outline:before { content: \"\\F4C6\"; }\n\n.ion-ios-unlocked:before { content: \"\\F4C9\"; }\n\n.ion-ios-unlocked-outline:before { content: \"\\F4C8\"; }\n\n.ion-ios-upload:before { content: \"\\F4CB\"; }\n\n.ion-ios-upload-outline:before { content: \"\\F4CA\"; }\n\n.ion-ios-videocam:before { content: \"\\F4CD\"; }\n\n.ion-ios-videocam-outline:before { content: \"\\F4CC\"; }\n\n.ion-ios-volume-high:before { content: \"\\F4CE\"; }\n\n.ion-ios-volume-low:before { content: \"\\F4CF\"; }\n\n.ion-ios-wineglass:before { content: \"\\F4D1\"; }\n\n.ion-ios-wineglass-outline:before { content: \"\\F4D0\"; }\n\n.ion-ios-world:before { content: \"\\F4D3\"; }\n\n.ion-ios-world-outline:before { content: \"\\F4D2\"; }\n\n.ion-ipad:before { content: \"\\F1F9\"; }\n\n.ion-iphone:before { content: \"\\F1FA\"; }\n\n.ion-ipod:before { content: \"\\F1FB\"; }\n\n.ion-jet:before { content: \"\\F295\"; }\n\n.ion-key:before { content: \"\\F296\"; }\n\n.ion-knife:before { content: \"\\F297\"; }\n\n.ion-laptop:before { content: \"\\F1FC\"; }\n\n.ion-leaf:before { content: \"\\F1FD\"; }\n\n.ion-levels:before { content: \"\\F298\"; }\n\n.ion-lightbulb:before { content: \"\\F299\"; }\n\n.ion-link:before { content: \"\\F1FE\"; }\n\n.ion-load-a:before { content: \"\\F29A\"; }\n\n.ion-load-b:before { content: \"\\F29B\"; }\n\n.ion-load-c:before { content: \"\\F29C\"; }\n\n.ion-load-d:before { content: \"\\F29D\"; }\n\n.ion-location:before { content: \"\\F1FF\"; }\n\n.ion-lock-combination:before { content: \"\\F4D4\"; }\n\n.ion-locked:before { content: \"\\F200\"; }\n\n.ion-log-in:before { content: \"\\F29E\"; }\n\n.ion-log-out:before { content: \"\\F29F\"; }\n\n.ion-loop:before { content: \"\\F201\"; }\n\n.ion-magnet:before { content: \"\\F2A0\"; }\n\n.ion-male:before { content: \"\\F2A1\"; }\n\n.ion-man:before { content: \"\\F202\"; }\n\n.ion-map:before { content: \"\\F203\"; }\n\n.ion-medkit:before { content: \"\\F2A2\"; }\n\n.ion-merge:before { content: \"\\F33F\"; }\n\n.ion-mic-a:before { content: \"\\F204\"; }\n\n.ion-mic-b:before { content: \"\\F205\"; }\n\n.ion-mic-c:before { content: \"\\F206\"; }\n\n.ion-minus:before { content: \"\\F209\"; }\n\n.ion-minus-circled:before { content: \"\\F207\"; }\n\n.ion-minus-round:before { content: \"\\F208\"; }\n\n.ion-model-s:before { content: \"\\F2C1\"; }\n\n.ion-monitor:before { content: \"\\F20A\"; }\n\n.ion-more:before { content: \"\\F20B\"; }\n\n.ion-mouse:before { content: \"\\F340\"; }\n\n.ion-music-note:before { content: \"\\F20C\"; }\n\n.ion-navicon:before { content: \"\\F20E\"; }\n\n.ion-navicon-round:before { content: \"\\F20D\"; }\n\n.ion-navigate:before { content: \"\\F2A3\"; }\n\n.ion-network:before { content: \"\\F341\"; }\n\n.ion-no-smoking:before { content: \"\\F2C2\"; }\n\n.ion-nuclear:before { content: \"\\F2A4\"; }\n\n.ion-outlet:before { content: \"\\F342\"; }\n\n.ion-paintbrush:before { content: \"\\F4D5\"; }\n\n.ion-paintbucket:before { content: \"\\F4D6\"; }\n\n.ion-paper-airplane:before { content: \"\\F2C3\"; }\n\n.ion-paperclip:before { content: \"\\F20F\"; }\n\n.ion-pause:before { content: \"\\F210\"; }\n\n.ion-person:before { content: \"\\F213\"; }\n\n.ion-person-add:before { content: \"\\F211\"; }\n\n.ion-person-stalker:before { content: \"\\F212\"; }\n\n.ion-pie-graph:before { content: \"\\F2A5\"; }\n\n.ion-pin:before { content: \"\\F2A6\"; }\n\n.ion-pinpoint:before { content: \"\\F2A7\"; }\n\n.ion-pizza:before { content: \"\\F2A8\"; }\n\n.ion-plane:before { content: \"\\F214\"; }\n\n.ion-planet:before { content: \"\\F343\"; }\n\n.ion-play:before { content: \"\\F215\"; }\n\n.ion-playstation:before { content: \"\\F30A\"; }\n\n.ion-plus:before { content: \"\\F218\"; }\n\n.ion-plus-circled:before { content: \"\\F216\"; }\n\n.ion-plus-round:before { content: \"\\F217\"; }\n\n.ion-podium:before { content: \"\\F344\"; }\n\n.ion-pound:before { content: \"\\F219\"; }\n\n.ion-power:before { content: \"\\F2A9\"; }\n\n.ion-pricetag:before { content: \"\\F2AA\"; }\n\n.ion-pricetags:before { content: \"\\F2AB\"; }\n\n.ion-printer:before { content: \"\\F21A\"; }\n\n.ion-pull-request:before { content: \"\\F345\"; }\n\n.ion-qr-scanner:before { content: \"\\F346\"; }\n\n.ion-quote:before { content: \"\\F347\"; }\n\n.ion-radio-waves:before { content: \"\\F2AC\"; }\n\n.ion-record:before { content: \"\\F21B\"; }\n\n.ion-refresh:before { content: \"\\F21C\"; }\n\n.ion-reply:before { content: \"\\F21E\"; }\n\n.ion-reply-all:before { content: \"\\F21D\"; }\n\n.ion-ribbon-a:before { content: \"\\F348\"; }\n\n.ion-ribbon-b:before { content: \"\\F349\"; }\n\n.ion-sad:before { content: \"\\F34A\"; }\n\n.ion-sad-outline:before { content: \"\\F4D7\"; }\n\n.ion-scissors:before { content: \"\\F34B\"; }\n\n.ion-search:before { content: \"\\F21F\"; }\n\n.ion-settings:before { content: \"\\F2AD\"; }\n\n.ion-share:before { content: \"\\F220\"; }\n\n.ion-shuffle:before { content: \"\\F221\"; }\n\n.ion-skip-backward:before { content: \"\\F222\"; }\n\n.ion-skip-forward:before { content: \"\\F223\"; }\n\n.ion-social-android:before { content: \"\\F225\"; }\n\n.ion-social-android-outline:before { content: \"\\F224\"; }\n\n.ion-social-angular:before { content: \"\\F4D9\"; }\n\n.ion-social-angular-outline:before { content: \"\\F4D8\"; }\n\n.ion-social-apple:before { content: \"\\F227\"; }\n\n.ion-social-apple-outline:before { content: \"\\F226\"; }\n\n.ion-social-bitcoin:before { content: \"\\F2AF\"; }\n\n.ion-social-bitcoin-outline:before { content: \"\\F2AE\"; }\n\n.ion-social-buffer:before { content: \"\\F229\"; }\n\n.ion-social-buffer-outline:before { content: \"\\F228\"; }\n\n.ion-social-chrome:before { content: \"\\F4DB\"; }\n\n.ion-social-chrome-outline:before { content: \"\\F4DA\"; }\n\n.ion-social-codepen:before { content: \"\\F4DD\"; }\n\n.ion-social-codepen-outline:before { content: \"\\F4DC\"; }\n\n.ion-social-css3:before { content: \"\\F4DF\"; }\n\n.ion-social-css3-outline:before { content: \"\\F4DE\"; }\n\n.ion-social-designernews:before { content: \"\\F22B\"; }\n\n.ion-social-designernews-outline:before { content: \"\\F22A\"; }\n\n.ion-social-dribbble:before { content: \"\\F22D\"; }\n\n.ion-social-dribbble-outline:before { content: \"\\F22C\"; }\n\n.ion-social-dropbox:before { content: \"\\F22F\"; }\n\n.ion-social-dropbox-outline:before { content: \"\\F22E\"; }\n\n.ion-social-euro:before { content: \"\\F4E1\"; }\n\n.ion-social-euro-outline:before { content: \"\\F4E0\"; }\n\n.ion-social-facebook:before { content: \"\\F231\"; }\n\n.ion-social-facebook-outline:before { content: \"\\F230\"; }\n\n.ion-social-foursquare:before { content: \"\\F34D\"; }\n\n.ion-social-foursquare-outline:before { content: \"\\F34C\"; }\n\n.ion-social-freebsd-devil:before { content: \"\\F2C4\"; }\n\n.ion-social-github:before { content: \"\\F233\"; }\n\n.ion-social-github-outline:before { content: \"\\F232\"; }\n\n.ion-social-google:before { content: \"\\F34F\"; }\n\n.ion-social-google-outline:before { content: \"\\F34E\"; }\n\n.ion-social-googleplus:before { content: \"\\F235\"; }\n\n.ion-social-googleplus-outline:before { content: \"\\F234\"; }\n\n.ion-social-hackernews:before { content: \"\\F237\"; }\n\n.ion-social-hackernews-outline:before { content: \"\\F236\"; }\n\n.ion-social-html5:before { content: \"\\F4E3\"; }\n\n.ion-social-html5-outline:before { content: \"\\F4E2\"; }\n\n.ion-social-instagram:before { content: \"\\F351\"; }\n\n.ion-social-instagram-outline:before { content: \"\\F350\"; }\n\n.ion-social-javascript:before { content: \"\\F4E5\"; }\n\n.ion-social-javascript-outline:before { content: \"\\F4E4\"; }\n\n.ion-social-linkedin:before { content: \"\\F239\"; }\n\n.ion-social-linkedin-outline:before { content: \"\\F238\"; }\n\n.ion-social-markdown:before { content: \"\\F4E6\"; }\n\n.ion-social-nodejs:before { content: \"\\F4E7\"; }\n\n.ion-social-octocat:before { content: \"\\F4E8\"; }\n\n.ion-social-pinterest:before { content: \"\\F2B1\"; }\n\n.ion-social-pinterest-outline:before { content: \"\\F2B0\"; }\n\n.ion-social-python:before { content: \"\\F4E9\"; }\n\n.ion-social-reddit:before { content: \"\\F23B\"; }\n\n.ion-social-reddit-outline:before { content: \"\\F23A\"; }\n\n.ion-social-rss:before { content: \"\\F23D\"; }\n\n.ion-social-rss-outline:before { content: \"\\F23C\"; }\n\n.ion-social-sass:before { content: \"\\F4EA\"; }\n\n.ion-social-skype:before { content: \"\\F23F\"; }\n\n.ion-social-skype-outline:before { content: \"\\F23E\"; }\n\n.ion-social-snapchat:before { content: \"\\F4EC\"; }\n\n.ion-social-snapchat-outline:before { content: \"\\F4EB\"; }\n\n.ion-social-tumblr:before { content: \"\\F241\"; }\n\n.ion-social-tumblr-outline:before { content: \"\\F240\"; }\n\n.ion-social-tux:before { content: \"\\F2C5\"; }\n\n.ion-social-twitch:before { content: \"\\F4EE\"; }\n\n.ion-social-twitch-outline:before { content: \"\\F4ED\"; }\n\n.ion-social-twitter:before { content: \"\\F243\"; }\n\n.ion-social-twitter-outline:before { content: \"\\F242\"; }\n\n.ion-social-usd:before { content: \"\\F353\"; }\n\n.ion-social-usd-outline:before { content: \"\\F352\"; }\n\n.ion-social-vimeo:before { content: \"\\F245\"; }\n\n.ion-social-vimeo-outline:before { content: \"\\F244\"; }\n\n.ion-social-whatsapp:before { content: \"\\F4F0\"; }\n\n.ion-social-whatsapp-outline:before { content: \"\\F4EF\"; }\n\n.ion-social-windows:before { content: \"\\F247\"; }\n\n.ion-social-windows-outline:before { content: \"\\F246\"; }\n\n.ion-social-wordpress:before { content: \"\\F249\"; }\n\n.ion-social-wordpress-outline:before { content: \"\\F248\"; }\n\n.ion-social-yahoo:before { content: \"\\F24B\"; }\n\n.ion-social-yahoo-outline:before { content: \"\\F24A\"; }\n\n.ion-social-yen:before { content: \"\\F4F2\"; }\n\n.ion-social-yen-outline:before { content: \"\\F4F1\"; }\n\n.ion-social-youtube:before { content: \"\\F24D\"; }\n\n.ion-social-youtube-outline:before { content: \"\\F24C\"; }\n\n.ion-soup-can:before { content: \"\\F4F4\"; }\n\n.ion-soup-can-outline:before { content: \"\\F4F3\"; }\n\n.ion-speakerphone:before { content: \"\\F2B2\"; }\n\n.ion-speedometer:before { content: \"\\F2B3\"; }\n\n.ion-spoon:before { content: \"\\F2B4\"; }\n\n.ion-star:before { content: \"\\F24E\"; }\n\n.ion-stats-bars:before { content: \"\\F2B5\"; }\n\n.ion-steam:before { content: \"\\F30B\"; }\n\n.ion-stop:before { content: \"\\F24F\"; }\n\n.ion-thermometer:before { content: \"\\F2B6\"; }\n\n.ion-thumbsdown:before { content: \"\\F250\"; }\n\n.ion-thumbsup:before { content: \"\\F251\"; }\n\n.ion-toggle:before { content: \"\\F355\"; }\n\n.ion-toggle-filled:before { content: \"\\F354\"; }\n\n.ion-transgender:before { content: \"\\F4F5\"; }\n\n.ion-trash-a:before { content: \"\\F252\"; }\n\n.ion-trash-b:before { content: \"\\F253\"; }\n\n.ion-trophy:before { content: \"\\F356\"; }\n\n.ion-tshirt:before { content: \"\\F4F7\"; }\n\n.ion-tshirt-outline:before { content: \"\\F4F6\"; }\n\n.ion-umbrella:before { content: \"\\F2B7\"; }\n\n.ion-university:before { content: \"\\F357\"; }\n\n.ion-unlocked:before { content: \"\\F254\"; }\n\n.ion-upload:before { content: \"\\F255\"; }\n\n.ion-usb:before { content: \"\\F2B8\"; }\n\n.ion-videocamera:before { content: \"\\F256\"; }\n\n.ion-volume-high:before { content: \"\\F257\"; }\n\n.ion-volume-low:before { content: \"\\F258\"; }\n\n.ion-volume-medium:before { content: \"\\F259\"; }\n\n.ion-volume-mute:before { content: \"\\F25A\"; }\n\n.ion-wand:before { content: \"\\F358\"; }\n\n.ion-waterdrop:before { content: \"\\F25B\"; }\n\n.ion-wifi:before { content: \"\\F25C\"; }\n\n.ion-wineglass:before { content: \"\\F2B9\"; }\n\n.ion-woman:before { content: \"\\F25D\"; }\n\n.ion-wrench:before { content: \"\\F2BA\"; }\n\n.ion-xbox:before { content: \"\\F30C\"; }\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 240 */
-/***/ (function(module, exports) {
-
-module.exports = "/fonts/vendor/ionicons/ionicons.ttf?dd4781d1acc57ba4c4808d1b44301201";
-
-/***/ }),
-/* 241 */
-/***/ (function(module, exports) {
-
-module.exports = "/fonts/vendor/ionicons/ionicons.woff?2c159d0d05473040b53ec79df8797d32";
-
-/***/ }),
-/* 242 */
-/***/ (function(module, exports) {
-
-module.exports = "/fonts/vendor/ionicons/ionicons.svg?28df6ee7b407fd8a14b40bc01f4fd3ae";
-
-/***/ }),
-/* 243 */
-/***/ (function(module, exports) {
-
-module.exports = "/fonts/Glyphter.woff?6d5c75ec21f41624afd0030ed560542b";
-
-/***/ }),
-/* 244 */
-/***/ (function(module, exports) {
-
-module.exports = "/fonts/Glyphter.ttf?cc2f8e936020ce7168762413c50082bb";
-
-/***/ }),
-/* 245 */
-/***/ (function(module, exports) {
-
-module.exports = "/fonts/Glyphter.svg?02b618f1207ecf6241610599a8e10b26";
-
-/***/ }),
-/* 246 */
-/***/ (function(module, exports) {
-
-module.exports = "/images/nav-notification.png?423ec897e440eb89b2f4c8233093d044";
-
-/***/ }),
-/* 247 */
-/***/ (function(module, exports) {
-
-module.exports = "/images/nav-messages.png?196bb1bfbefbc47ed5b17fc3478a3439";
-
-/***/ }),
-/* 248 */
-/***/ (function(module, exports) {
-
-module.exports = "/fonts/vuestic.svg?aa95ffe29cfa7d7dd0b0c2fa6225e1da";
-
-/***/ }),
-/* 249 */
-/***/ (function(module, exports) {
-
-module.exports = "/fonts/menu-expanded.svg?c7e1563fa6ef61acf461215d6a5fdde7";
-
-/***/ }),
-/* 250 */
-/***/ (function(module, exports) {
-
-module.exports = "/fonts/menu-collapsed.svg?3bfaf383dc8a30e61d69025966f386b7";
-
-/***/ }),
-/* 251 */
-/***/ (function(module, exports) {
-
-module.exports = "/fonts/vuestic-fresh.svg?0048c3fa93de77db668231b9644eadbf";
-
-/***/ }),
-/* 252 */
-/***/ (function(module, exports) {
-
-module.exports = "/fonts/vuestic-clean-code.svg?f090e73414dd340b171d878b9d427700";
-
-/***/ }),
-/* 253 */
-/***/ (function(module, exports) {
-
-module.exports = "/fonts/vuestic-free.svg?10bfc4e3c59c75c01e1e62a389f73341";
-
-/***/ }),
-/* 254 */
-/***/ (function(module, exports) {
-
-module.exports = "/fonts/vuestic-responsive.svg?46da42e779e0f6a7b2f798adc7627847";
-
-/***/ }),
-/* 255 */
-/***/ (function(module, exports) {
-
-module.exports = "/fonts/vuestic-rich.svg?800ee3ca819ad504f94f3c113be97a25";
-
-/***/ }),
-/* 256 */
-/***/ (function(module, exports) {
-
-module.exports = "/fonts/vuestic-vue.svg?0c15f2efbaa9cc1ce249c608a955925c";
-
-/***/ }),
-/* 257 */
-/***/ (function(module, exports) {
-
-module.exports = "/fonts/glyphicons-halflings-regular.woff2?448c34a56d699c29117adc64c43affeb";
-
-/***/ }),
-/* 258 */
-/***/ (function(module, exports) {
-
-module.exports = "/fonts/glyphicons-halflings-regular.woff?fa2772327f55d8198301fdb8bcfc8158";
-
-/***/ }),
-/* 259 */
-/***/ (function(module, exports) {
-
-module.exports = "/fonts/glyphicons-halflings-regular.ttf?e18bbf611f2a2e43afc071aa2f4e1512";
-
-/***/ }),
-/* 260 */
-/***/ (function(module, exports) {
-
-module.exports = "/fonts/glyphicons-halflings-regular.svg?89889688147bd7575d6327160d64e760";
-
-/***/ }),
-/* 261 */
+/* 229 */
 /***/ (function(module, exports) {
 
 /**
@@ -38619,16 +38400,16 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 262 */
+/* 230 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_layout_Layout__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_layout_Layout__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_layout_Layout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_layout_Layout__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_layout_AuthLayout__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_layout_AuthLayout__ = __webpack_require__(216);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_layout_AuthLayout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_layout_AuthLayout__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_vuestic_components_vuestic_preloader_VuesticPreLoader_vue__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_vuestic_components_vuestic_preloader_VuesticPreLoader_vue__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_vuestic_components_vuestic_preloader_VuesticPreLoader_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_vuestic_components_vuestic_preloader_VuesticPreLoader_vue__);
 
 
@@ -38651,17 +38432,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 263 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(264);
+var content = __webpack_require__(232);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("5f34b976", content, false);
+var update = __webpack_require__(3)("5f34b976", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -38677,34 +38458,26 @@ if(false) {
 }
 
 /***/ }),
-/* 264 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 232 */
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.content-wrap {\n  margin-left: calc(24px + 225px + 35px);\n  padding: 24px 44px 24px 0;\n  -webkit-transition: margin-left 0.3s ease;\n  transition: margin-left 0.3s ease;\n}\n.content-wrap .pre-loader {\n    position: absolute;\n    left: calc(50% - 140px/2);\n    top: calc(50% - 104px/2);\n}\n.sidebar-hidden .content-wrap {\n    margin-left: 24px;\n}\n@media (max-width: 991px) {\n.content-wrap {\n      padding: 2rem 1rem 24px 1rem;\n      margin-left: 0;\n}\n.sidebar-hidden .content-wrap {\n        margin-left: 0;\n}\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
-/* 265 */
+/* 233 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__navbar_Navbar__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__navbar_Navbar__ = __webpack_require__(70);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__navbar_Navbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__navbar_Navbar__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__sidebar_Sidebar__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__sidebar_Sidebar__ = __webpack_require__(71);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__sidebar_Sidebar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__sidebar_Sidebar__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_ResizeHandler__ = __webpack_require__(308);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vuestic_components_vuestic_preloader_VuesticPreLoader_vue__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_ResizeHandler__ = __webpack_require__(276);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vuestic_components_vuestic_preloader_VuesticPreLoader_vue__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vuestic_components_vuestic_preloader_VuesticPreLoader_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__vuestic_components_vuestic_preloader_VuesticPreLoader_vue__);
 
 
@@ -38738,25 +38511,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 266 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(267);
-module.exports = __webpack_require__(9).Object.assign;
+__webpack_require__(235);
+module.exports = __webpack_require__(8).Object.assign;
 
 
 /***/ }),
-/* 267 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.3.1 Object.assign(target, source)
-var $export = __webpack_require__(16);
+var $export = __webpack_require__(15);
 
-$export($export.S + $export.F, 'Object', { assign: __webpack_require__(271) });
+$export($export.S + $export.F, 'Object', { assign: __webpack_require__(239) });
 
 
 /***/ }),
-/* 268 */
+/* 236 */
 /***/ (function(module, exports) {
 
 module.exports = function (it) {
@@ -38766,20 +38539,20 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 269 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = !__webpack_require__(23) && !__webpack_require__(31)(function () {
-  return Object.defineProperty(__webpack_require__(67)('div'), 'a', { get: function () { return 7; } }).a != 7;
+module.exports = !__webpack_require__(22) && !__webpack_require__(30)(function () {
+  return Object.defineProperty(__webpack_require__(63)('div'), 'a', { get: function () { return 7; } }).a != 7;
 });
 
 
 /***/ }),
-/* 270 */
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.1 ToPrimitive(input [, PreferredType])
-var isObject = __webpack_require__(37);
+var isObject = __webpack_require__(36);
 // instead of the ES6 spec version, we didn't implement @@toPrimitive case
 // and the second argument - flag - preferred type is a string
 module.exports = function (it, S) {
@@ -38793,21 +38566,21 @@ module.exports = function (it, S) {
 
 
 /***/ }),
-/* 271 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // 19.1.2.1 Object.assign(target, source, ...)
-var getKeys = __webpack_require__(39);
-var gOPS = __webpack_require__(275);
-var pIE = __webpack_require__(276);
-var toObject = __webpack_require__(33);
-var IObject = __webpack_require__(68);
+var getKeys = __webpack_require__(38);
+var gOPS = __webpack_require__(243);
+var pIE = __webpack_require__(244);
+var toObject = __webpack_require__(32);
+var IObject = __webpack_require__(64);
 var $assign = Object.assign;
 
 // should work with symbols and should have deterministic property order (V8 bug)
-module.exports = !$assign || __webpack_require__(31)(function () {
+module.exports = !$assign || __webpack_require__(30)(function () {
   var A = {};
   var B = {};
   // eslint-disable-next-line no-undef
@@ -38834,13 +38607,13 @@ module.exports = !$assign || __webpack_require__(31)(function () {
 
 
 /***/ }),
-/* 272 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var has = __webpack_require__(32);
-var toIObject = __webpack_require__(40);
-var arrayIndexOf = __webpack_require__(273)(false);
-var IE_PROTO = __webpack_require__(43)('IE_PROTO');
+var has = __webpack_require__(31);
+var toIObject = __webpack_require__(39);
+var arrayIndexOf = __webpack_require__(241)(false);
+var IE_PROTO = __webpack_require__(42)('IE_PROTO');
 
 module.exports = function (object, names) {
   var O = toIObject(object);
@@ -38857,14 +38630,14 @@ module.exports = function (object, names) {
 
 
 /***/ }),
-/* 273 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // false -> Array#indexOf
 // true  -> Array#includes
-var toIObject = __webpack_require__(40);
-var toLength = __webpack_require__(70);
-var toAbsoluteIndex = __webpack_require__(274);
+var toIObject = __webpack_require__(39);
+var toLength = __webpack_require__(66);
+var toAbsoluteIndex = __webpack_require__(242);
 module.exports = function (IS_INCLUDES) {
   return function ($this, el, fromIndex) {
     var O = toIObject($this);
@@ -38886,10 +38659,10 @@ module.exports = function (IS_INCLUDES) {
 
 
 /***/ }),
-/* 274 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var toInteger = __webpack_require__(42);
+var toInteger = __webpack_require__(41);
 var max = Math.max;
 var min = Math.min;
 module.exports = function (index, length) {
@@ -38899,31 +38672,31 @@ module.exports = function (index, length) {
 
 
 /***/ }),
-/* 275 */
+/* 243 */
 /***/ (function(module, exports) {
 
 exports.f = Object.getOwnPropertySymbols;
 
 
 /***/ }),
-/* 276 */
+/* 244 */
 /***/ (function(module, exports) {
 
 exports.f = {}.propertyIsEnumerable;
 
 
 /***/ }),
-/* 277 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(278);
+var content = __webpack_require__(246);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("59d9d25f", content, false);
+var update = __webpack_require__(3)("59d9d25f", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -38939,29 +38712,21 @@ if(false) {
 }
 
 /***/ }),
-/* 278 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 246 */
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.navbar.app-navbar {\n  height: 72px;\n  padding-left: 24px;\n  padding-right: 44px;\n  background-color: #333;\n}\n.navbar.app-navbar .navbar-container {\n    width: 100%;\n    height: 100%;\n    margin: 0;\n}\n.navbar.app-navbar .avatar-container {\n    display: inline-block;\n    width: 50px;\n    height: 50px;\n    background-color: white;\n    border-radius: 50%;\n    border: 2px solid #ddd;\n    overflow: hidden;\n}\n.navbar.app-navbar .avatar-container img {\n      height: 100%;\n      width: 100%;\n}\n.navbar.app-navbar .menu-icon-container {\n    padding: 0;\n    font-size: 1rem;\n}\n.navbar.app-navbar .navbar-brand-container {\n    position: absolute;\n    z-index: 3;\n    height: 100%;\n    left: 75px;\n    top: 0;\n}\n.navbar.app-navbar .nav-item {\n    padding: 0;\n    height: 100%;\n}\n.navbar.app-navbar .dropdown.navbar-dropdown .dropdown-toggle {\n    padding: 0;\n}\n.navbar.app-navbar .dropdown.navbar-dropdown .dropdown-toggle:after {\n      display: none;\n}\n@media (min-width: 992px) {\n.navbar.app-navbar .dropdown.navbar-dropdown.show .dropdown-menu {\n      left: auto;\n      right: 0;\n}\n}\n.navbar.app-navbar .dropdown.navbar-dropdown.show:after {\n    position: absolute;\n    bottom: -1.125rem;\n    right: calc(50% - 10px);\n    width: 0;\n    height: 0;\n    display: block;\n    content: '';\n    border-left: 10px solid transparent;\n    border-right: 10px solid transparent;\n    border-bottom: 10px solid #333;\n}\n.navbar.app-navbar .dropdown.navbar-dropdown .dropdown-menu {\n    margin-top: 1.125rem;\n    padding-top: 0;\n    width: 100%;\n}\n.navbar.app-navbar .dropdown.navbar-dropdown .dropdown-item {\n    height: 48px;\n    cursor: pointer;\n    font-size: 1rem;\n}\n.navbar.app-navbar .dropdown.navbar-dropdown .dropdown-item:hover, .navbar.app-navbar .dropdown.navbar-dropdown .dropdown-item:active, .navbar.app-navbar .dropdown.navbar-dropdown .dropdown-item:focus, .navbar.app-navbar .dropdown.navbar-dropdown .dropdown-item.active {\n      outline: none;\n}\n.navbar.app-navbar .dropdown.navbar-dropdown .dropdown-item.plain-link-item {\n      color: #4ae387;\n}\n.navbar.app-navbar .dropdown.navbar-dropdown .dropdown-item.plain-link-item:hover, .navbar.app-navbar .dropdown.navbar-dropdown .dropdown-item.plain-link-item:active, .navbar.app-navbar .dropdown.navbar-dropdown .dropdown-item.plain-link-item:focus {\n        background: #333;\n}\n.navbar.app-navbar .dropdown.navbar-dropdown .dropdown-item.plain-link-item .plain-link {\n        text-decoration: none;\n}\n.navbar.app-navbar .notify {\n    position: relative;\n}\n.navbar.app-navbar .notify::after {\n      content: '';\n      position: absolute;\n      right: -6px;\n      top: -6px;\n      background-color: #4ae387;\n      height: 12px;\n      width: 12px;\n      border-radius: 50%;\n}\n.navbar.app-navbar .i-nav-notification.notify::after {\n    right: -4px;\n    top: 0;\n}\n@media (max-width: 991px) {\n.navbar.app-navbar {\n      height: 5.625rem;\n      padding: 3rem 0.875rem 1.375rem 0.875rem;\n}\n.navbar.app-navbar .navbar-brand-container {\n        width: 4rem;\n        top: 0.875rem;\n        left: calc(50% - 4rem);\n        height: auto;\n}\n.navbar.app-navbar .navbar-brand-container .navbar-brand {\n          height: 85%;\n          padding: 0;\n          font-size: 85%;\n}\n.navbar.app-navbar .dropdown.navbar-dropdown.show {\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n}\n.navbar.app-navbar .dropdown.navbar-dropdown.show:after {\n          bottom: -2rem;\n          z-index: 2;\n}\n.navbar.app-navbar .dropdown.navbar-dropdown.show .dropdown-menu {\n          margin-top: 2rem;\n          left: auto;\n}\n.navbar.app-navbar .dropdown.navbar-dropdown.show .dropdown-menu.last {\n            right: 0;\n}\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
-/* 279 */
+/* 247 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_Dropdown__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_Dropdown__ = __webpack_require__(28);
 
 
 
@@ -38980,7 +38745,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 280 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -39225,17 +38990,17 @@ if (false) {
 }
 
 /***/ }),
-/* 281 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(282);
+var content = __webpack_require__(250);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("6afbe1d6", content, false);
+var update = __webpack_require__(3)("6afbe1d6", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -39251,31 +39016,23 @@ if(false) {
 }
 
 /***/ }),
-/* 282 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 250 */
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.sidebar {\n  height: calc(100vh - 72px - 24px - 24px);\n  position: absolute;\n  width: 225px;\n  top: calc(72px + 24px);\n  left: 24px;\n  -webkit-transition: all 0.2s ease;\n  transition: all 0.2s ease;\n  opacity: 1;\n}\n@media (max-width: 991px) {\n.sidebar {\n      top: 5.8125rem;\n      left: 0.1875rem;\n      width: calc(100% - 0.375rem);\n      z-index: 1000;\n}\n}\n.sidebar .vuestic-scrollbar {\n    height: 100%;\n}\n.sidebar .vuestic-scrollbar .scrollbar-wrapper {\n      -webkit-box-shadow: 0px 8px 14.72px 1.28px rgba(101, 169, 119, 0.3);\n              box-shadow: 0px 8px 14.72px 1.28px rgba(101, 169, 119, 0.3);\n}\n.sidebar .vuestic-scrollbar .scrollbar-content {\n      background: #333;\n}\n.sidebar-hidden_without-animation .sidebar {\n    -webkit-transition: none;\n    transition: none;\n}\n.sidebar-hidden .sidebar {\n    top: -150px;\n    opacity: 0;\n    z-index: -1000;\n}\n@media (max-width: 991px) {\n.sidebar-hidden .sidebar {\n        top: 5.8125rem;\n        opacity: 0;\n        z-index: 1000;\n        height: 0;\n}\n}\n.sidebar .sidebar-link {\n    position: relative;\n    height: 64px;\n    padding-left: 25px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    cursor: pointer;\n    text-decoration: none;\n}\n.sidebar .sidebar-link.router-link-active, .sidebar .sidebar-link:hover {\n      color: #fff;\n      background-color: #161616;\n}\n.sidebar .sidebar-link.router-link-active .sidebar-menu-item-icon, .sidebar .sidebar-link.router-link-active .expand-icon, .sidebar .sidebar-link:hover .sidebar-menu-item-icon, .sidebar .sidebar-link:hover .expand-icon {\n        color: #fff;\n}\n.sidebar .sidebar-link .expand-icon {\n      position: absolute;\n      right: 16px;\n      top: calc(50% - 16px/2);\n      font-weight: bold;\n      -webkit-transition: -webkit-transform 0.3s ease;\n      transition: -webkit-transform 0.3s ease;\n      transition: transform 0.3s ease;\n      transition: transform 0.3s ease, -webkit-transform 0.3s ease;\n}\n.sidebar .sidebar-link.expanded .expand-icon {\n      -webkit-transform: rotate(180deg);\n              transform: rotate(180deg);\n}\n.sidebar .sidebar-link .sidebar-menu-item-icon {\n      font-size: 19px;\n      color: #4ae387;\n      margin-right: 14px;\n}\n.sidebar .sidebar-link .sidebar-menu-item-icon.fa-dashboard {\n        /* Temp fix */\n        position: relative;\n        top: -2px;\n}\n.sidebar .sidebar-submenu-link {\n    height: 48px;\n}\n.sidebar .sidebar-menu, .sidebar .sidebar-submenu {\n    list-style: none;\n    padding-left: 0;\n}\n.sidebar .sidebar-menu li, .sidebar .sidebar-submenu li {\n      display: block;\n      padding-left: 0;\n}\n.sidebar .sidebar-submenu .sidebar-link {\n    padding-left: 74px;\n    font-size: 85%;\n}\n.sidebar .sidebar-menu {\n    max-height: 100%;\n    margin-bottom: 0;\n}\n.sidebar .expand-icon {\n    color: #4ae387;\n}\n.sidebar a {\n    color: #fff;\n    text-decoration: none;\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
-/* 283 */
+/* 251 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_bulma_expanding_src_Expanding__ = __webpack_require__(284);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_bulma_expanding_src_Expanding__ = __webpack_require__(252);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_bulma_expanding_src_Expanding___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_bulma_expanding_src_Expanding__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__vuestic_components_vuestic_scrollbar_VuesticScrollbar__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__vuestic_components_vuestic_scrollbar_VuesticScrollbar__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__vuestic_components_vuestic_scrollbar_VuesticScrollbar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__vuestic_components_vuestic_scrollbar_VuesticScrollbar__);
 
 
@@ -39341,19 +39098,19 @@ function _findMatchingParentMenuItem(itemName) {
 }
 
 /***/ }),
-/* 284 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(285)
+  __webpack_require__(253)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(287)
+var __vue_script__ = __webpack_require__(255)
 /* template */
-var __vue_template__ = __webpack_require__(288)
+var __vue_template__ = __webpack_require__(256)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -39393,17 +39150,17 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 285 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(286);
+var content = __webpack_require__(254);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("6c5289e2", content, false);
+var update = __webpack_require__(3)("6c5289e2", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -39419,21 +39176,13 @@ if(false) {
 }
 
 /***/ }),
-/* 286 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 254 */
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.collapse {\n  display: none;\n}\n.collapse.in {\n    display: block;\n}\n.collapsing {\n  position: relative;\n  height: 0;\n  overflow: hidden;\n  -webkit-transition: height .377s ease;\n  transition: height .377s ease;\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
-/* 287 */
+/* 255 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -39467,7 +39216,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 288 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -39499,17 +39248,17 @@ if (false) {
 }
 
 /***/ }),
-/* 289 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(290);
+var content = __webpack_require__(258);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("a82ae964", content, false);
+var update = __webpack_require__(3)("a82ae964", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -39525,27 +39274,19 @@ if(false) {
 }
 
 /***/ }),
-/* 290 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 258 */
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.vuestic-scrollbar {\n  background: transparent;\n  -webkit-transition: all .3s linear;\n  transition: all .3s linear;\n  position: relative;\n}\n.vuestic-scrollbar .scrollbar-wrapper {\n    -webkit-box-shadow: 0px 8px 14.72px 1.28px rgba(101, 169, 119, 0.3);\n            box-shadow: 0px 8px 14.72px 1.28px rgba(101, 169, 119, 0.3);\n    position: relative;\n    overflow: hidden;\n    max-height: 100%;\n}\n.vuestic-scrollbar .scrollbar-wrapper .track {\n      position: absolute;\n      right: 0;\n      top: 0;\n      height: 100%;\n      width: 3px;\n}\n.vuestic-scrollbar .scrollbar-wrapper .track .thumb {\n        -webkit-transition: height .3s linear, opacity .6s linear;\n        transition: height .3s linear, opacity .6s linear;\n        position: absolute;\n        width: 100%;\n        background-color: black;\n        opacity: 0;\n}\n.vuestic-scrollbar .scrollbar-wrapper .track .thumb.active {\n          opacity: .3;\n}\n.vuestic-scrollbar:hover .thumb.active {\n    opacity: 1 !important;\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
-/* 291 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 
-var browser = __webpack_require__(292);
-var erd = __webpack_require__(295)();
+var browser = __webpack_require__(260);
+var erd = __webpack_require__(263)();
 
 var vm = {
   name: 'vuestic-scrollbar',
@@ -39679,10 +39420,10 @@ var vm = {
 module.exports = vm;
 
 /***/ }),
-/* 292 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var detectBrowser = __webpack_require__(293);
+var detectBrowser = __webpack_require__(261);
 
 var agent;
 
@@ -39694,10 +39435,10 @@ module.exports = detectBrowser(agent);
 
 
 /***/ }),
-/* 293 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var detectOS = __webpack_require__(294);
+var detectOS = __webpack_require__(262);
 
 module.exports = function detectBrowser(userAgentString) {
   if (!userAgentString) return null;
@@ -39743,7 +39484,7 @@ module.exports = function detectBrowser(userAgentString) {
 
 
 /***/ }),
-/* 294 */
+/* 262 */
 /***/ (function(module, exports) {
 
 module.exports = function detectOS(userAgentString) {
@@ -39861,25 +39602,25 @@ module.exports = function detectOS(userAgentString) {
 
 
 /***/ }),
-/* 295 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var forEach                 = __webpack_require__(76).forEach;
-var elementUtilsMaker       = __webpack_require__(296);
-var listenerHandlerMaker    = __webpack_require__(297);
-var idGeneratorMaker        = __webpack_require__(298);
-var idHandlerMaker          = __webpack_require__(299);
-var reporterMaker           = __webpack_require__(300);
-var browserDetector         = __webpack_require__(77);
-var batchProcessorMaker     = __webpack_require__(301);
-var stateHandler            = __webpack_require__(303);
+var forEach                 = __webpack_require__(72).forEach;
+var elementUtilsMaker       = __webpack_require__(264);
+var listenerHandlerMaker    = __webpack_require__(265);
+var idGeneratorMaker        = __webpack_require__(266);
+var idHandlerMaker          = __webpack_require__(267);
+var reporterMaker           = __webpack_require__(268);
+var browserDetector         = __webpack_require__(73);
+var batchProcessorMaker     = __webpack_require__(269);
+var stateHandler            = __webpack_require__(271);
 
 //Detection strategies.
-var objectStrategyMaker     = __webpack_require__(304);
-var scrollStrategyMaker     = __webpack_require__(305);
+var objectStrategyMaker     = __webpack_require__(272);
+var scrollStrategyMaker     = __webpack_require__(273);
 
 function isCollection(obj) {
     return Array.isArray(obj) || obj.length !== undefined;
@@ -40189,7 +39930,7 @@ function getOption(options, name, defaultValue) {
 
 
 /***/ }),
-/* 296 */
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40248,7 +39989,7 @@ module.exports = function(options) {
 
 
 /***/ }),
-/* 297 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40315,7 +40056,7 @@ module.exports = function(idHandler) {
 
 
 /***/ }),
-/* 298 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40340,7 +40081,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 299 */
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40394,7 +40135,7 @@ module.exports = function(options) {
 
 
 /***/ }),
-/* 300 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40443,13 +40184,13 @@ module.exports = function(quiet) {
 };
 
 /***/ }),
-/* 301 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(302);
+var utils = __webpack_require__(270);
 
 module.exports = function batchProcessorMaker(options) {
     options             = options || {};
@@ -40588,7 +40329,7 @@ function Batch() {
 
 
 /***/ }),
-/* 302 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40610,7 +40351,7 @@ function getOption(options, name, defaultValue) {
 
 
 /***/ }),
-/* 303 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40639,7 +40380,7 @@ module.exports = {
 
 
 /***/ }),
-/* 304 */
+/* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40650,7 +40391,7 @@ module.exports = {
 
 
 
-var browserDetector = __webpack_require__(77);
+var browserDetector = __webpack_require__(73);
 
 module.exports = function(options) {
     options             = options || {};
@@ -40860,7 +40601,7 @@ module.exports = function(options) {
 
 
 /***/ }),
-/* 305 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40871,7 +40612,7 @@ module.exports = function(options) {
 
 
 
-var forEach = __webpack_require__(76).forEach;
+var forEach = __webpack_require__(72).forEach;
 
 module.exports = function(options) {
     options             = options || {};
@@ -41514,7 +41255,7 @@ module.exports = function(options) {
 
 
 /***/ }),
-/* 306 */
+/* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -41564,7 +41305,7 @@ if (false) {
 }
 
 /***/ }),
-/* 307 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -41693,11 +41434,11 @@ if (false) {
 }
 
 /***/ }),
-/* 308 */
+/* 276 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__store__ = __webpack_require__(35);
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -41725,37 +41466,37 @@ if (false) {
 });
 
 /***/ }),
-/* 309 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(310), __esModule: true };
+module.exports = { "default": __webpack_require__(278), __esModule: true };
 
 /***/ }),
-/* 310 */
+/* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(311);
-var $Object = __webpack_require__(9).Object;
+__webpack_require__(279);
+var $Object = __webpack_require__(8).Object;
 module.exports = function defineProperty(it, key, desc) {
   return $Object.defineProperty(it, key, desc);
 };
 
 
 /***/ }),
-/* 311 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var $export = __webpack_require__(16);
+var $export = __webpack_require__(15);
 // 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
-$export($export.S + $export.F * !__webpack_require__(23), 'Object', { defineProperty: __webpack_require__(21).f });
+$export($export.S + $export.F * !__webpack_require__(22), 'Object', { defineProperty: __webpack_require__(20).f });
 
 
 /***/ }),
-/* 312 */
+/* 280 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lazyLoading__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lazyLoading__ = __webpack_require__(11);
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -41784,223 +41525,223 @@ $export($export.S + $export.F * !__webpack_require__(23), 'Object', { defineProp
 });
 
 /***/ }),
-/* 313 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"./auth/login/Login.vue": [
-		582,
+		550,
 		30
 	],
 	"./auth/signup/Signup.vue": [
-		583,
+		551,
 		29
 	],
 	"./dashboard/Dashboard.vue": [
-		584,
+		552,
 		0
 	],
 	"./dashboard/DashboardBottomWidgets.vue": [
-		576,
+		544,
 		28
 	],
 	"./dashboard/DashboardInfoWidgets.vue": [
-		573,
+		541,
 		27
 	],
 	"./dashboard/data-visualisation-tab/DataVisualisation.vue": [
-		575,
+		543,
 		8
 	],
 	"./dashboard/features-tab/FeaturesTab.vue": [
-		572,
+		540,
 		26
 	],
 	"./dashboard/setup-profile-tab/SetupProfileTab.vue": [
-		571,
+		539,
 		17
 	],
 	"./dashboard/users-and-members-tab/UsersMembersTab.vue": [
-		574,
+		542,
 		25
 	],
 	"./extra/Extra.vue": [
-		585,
+		553,
 		2
 	],
 	"./forms/form-elements/FormElements.vue": [
-		586,
+		554,
 		16
 	],
 	"./forms/form-wizard/FormWizard.vue": [
-		587,
+		555,
 		15
 	],
 	"./layout/AuthLayout.vue": [
-		220
+		216
 	],
 	"./layout/Layout.vue": [
-		65
+		61
 	],
 	"./layout/navbar/Navbar.vue": [
-		74
+		70
 	],
 	"./layout/sidebar/Sidebar.vue": [
-		75
+		71
 	],
 	"./maps/bubble-maps/BubbleMap.vue": [
-		577,
-		10
+		545,
+		11
 	],
 	"./maps/bubble-maps/BubbleMapsPage.vue": [
-		588,
+		556,
 		4
 	],
 	"./maps/google-maps/GoogleMap.vue": [
-		578,
+		546,
 		14
 	],
 	"./maps/google-maps/GoogleMapsPage.vue": [
-		589,
-		11
+		557,
+		9
 	],
 	"./maps/leaflet-maps/LeafletMap.vue": [
-		579,
-		12
+		547,
+		13
 	],
 	"./maps/leaflet-maps/LeafletMapsPage.vue": [
-		590,
+		558,
 		5
 	],
 	"./maps/line-maps/LineMap.vue": [
-		580,
-		9
+		548,
+		10
 	],
 	"./maps/line-maps/LineMapsPage.vue": [
-		591,
+		559,
 		3
 	],
 	"./statistics/charts/Charts.vue": [
-		592,
+		560,
 		7
 	],
 	"./statistics/progress-bars/ProgressBars.vue": [
-		593,
+		561,
 		24
 	],
 	"./tables/BadgeColumn.vue": [
-		570,
+		538,
 		23
 	],
 	"./tables/Table.vue": [
-		594,
+		562,
 		6
 	],
 	"./ui/buttons/Buttons.vue": [
-		595,
+		563,
 		22
 	],
 	"./ui/grid/Grid.vue": [
-		596,
+		564,
 		21
 	],
 	"./ui/icons/Icons.vue": [
-		597,
+		565,
 		1
 	],
 	"./ui/icons/Set.vue": [
-		581,
-		13
+		549,
+		12
 	],
 	"./ui/icons/SetsList.vue": [
-		598,
+		566,
 		20
 	],
 	"./ui/modals/Modals.vue": [
-		599,
+		567,
 		19
 	],
 	"./ui/typography/Typography.vue": [
-		600,
+		568,
 		18
 	],
 	"./vuestic-components/vuestic-alert/VuesticAlert.vue": [
-		55
-	],
-	"./vuestic-components/vuestic-chart/VuesticChart.vue": [
-		51
-	],
-	"./vuestic-components/vuestic-chat/VuesticChat.vue": [
-		49
-	],
-	"./vuestic-components/vuestic-datatable/VuesticDataTable.vue": [
-		52
-	],
-	"./vuestic-components/vuestic-datatable/datatable-components/FilterBar.vue": [
-		214
-	],
-	"./vuestic-components/vuestic-datatable/datatable-components/ItemsPerPage.vue": [
-		215
-	],
-	"./vuestic-components/vuestic-feed/VuesticFeed.vue": [
-		53
-	],
-	"./vuestic-components/vuestic-modal/VuesticModal.vue": [
-		60
-	],
-	"./vuestic-components/vuestic-multi-select/VuesticMultiSelect.vue": [
-		59
-	],
-	"./vuestic-components/vuestic-preloader/VuesticPreLoader.vue": [
-		35
-	],
-	"./vuestic-components/vuestic-profile-card/VuesticProfileCard.vue": [
-		50
-	],
-	"./vuestic-components/vuestic-progress-bar/VuesticProgressBar.vue": [
-		56
-	],
-	"./vuestic-components/vuestic-progress-bar/progress-types/CircleProgressBar.vue": [
-		83
-	],
-	"./vuestic-components/vuestic-progress-bar/progress-types/HorizontalProgressBar.vue": [
-		81
-	],
-	"./vuestic-components/vuestic-progress-bar/progress-types/VerticalProgressBar.vue": [
-		82
-	],
-	"./vuestic-components/vuestic-scrollbar/VuesticScrollbar.vue": [
-		24
-	],
-	"./vuestic-components/vuestic-simple-select/VuesticSimpleSelect.vue": [
-		47
-	],
-	"./vuestic-components/vuestic-social-news/VuesticSocialNews.vue": [
 		54
 	],
-	"./vuestic-components/vuestic-switch/VuesticSwitch.vue": [
-		58
+	"./vuestic-components/vuestic-chart/VuesticChart.vue": [
+		50
 	],
-	"./vuestic-components/vuestic-tabs/VuesticTabs.vue": [
-		57
-	],
-	"./vuestic-components/vuestic-widget/VuesticWidget.vue": [
-		46
-	],
-	"./vuestic-components/vuestic-wizard/VuesticWizard.vue": [
+	"./vuestic-components/vuestic-chat/VuesticChat.vue": [
 		48
 	],
+	"./vuestic-components/vuestic-datatable/VuesticDataTable.vue": [
+		51
+	],
+	"./vuestic-components/vuestic-datatable/datatable-components/FilterBar.vue": [
+		210
+	],
+	"./vuestic-components/vuestic-datatable/datatable-components/ItemsPerPage.vue": [
+		211
+	],
+	"./vuestic-components/vuestic-feed/VuesticFeed.vue": [
+		52
+	],
+	"./vuestic-components/vuestic-modal/VuesticModal.vue": [
+		59
+	],
+	"./vuestic-components/vuestic-multi-select/VuesticMultiSelect.vue": [
+		58
+	],
+	"./vuestic-components/vuestic-preloader/VuesticPreLoader.vue": [
+		34
+	],
+	"./vuestic-components/vuestic-profile-card/VuesticProfileCard.vue": [
+		49
+	],
+	"./vuestic-components/vuestic-progress-bar/VuesticProgressBar.vue": [
+		55
+	],
+	"./vuestic-components/vuestic-progress-bar/progress-types/CircleProgressBar.vue": [
+		79
+	],
+	"./vuestic-components/vuestic-progress-bar/progress-types/HorizontalProgressBar.vue": [
+		77
+	],
+	"./vuestic-components/vuestic-progress-bar/progress-types/VerticalProgressBar.vue": [
+		78
+	],
+	"./vuestic-components/vuestic-scrollbar/VuesticScrollbar.vue": [
+		23
+	],
+	"./vuestic-components/vuestic-simple-select/VuesticSimpleSelect.vue": [
+		46
+	],
+	"./vuestic-components/vuestic-social-news/VuesticSocialNews.vue": [
+		53
+	],
+	"./vuestic-components/vuestic-switch/VuesticSwitch.vue": [
+		57
+	],
+	"./vuestic-components/vuestic-tabs/VuesticTabs.vue": [
+		56
+	],
+	"./vuestic-components/vuestic-widget/VuesticWidget.vue": [
+		45
+	],
+	"./vuestic-components/vuestic-wizard/VuesticWizard.vue": [
+		47
+	],
 	"./vuestic-components/vuestic-wizard/indicators/RichHorizontalIndicator.vue": [
-		85
+		81
 	],
 	"./vuestic-components/vuestic-wizard/indicators/RichVerticalIndicator.vue": [
-		86
+		82
 	],
 	"./vuestic-components/vuestic-wizard/indicators/SimpleHorizontalIndicator.vue": [
-		84
+		80
 	],
 	"./vuestic-components/vuestic-wizard/indicators/SimpleVerticalIndicator.vue": [
-		87
+		83
 	]
 };
 function webpackAsyncContext(req) {
@@ -42014,21 +41755,21 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 313;
+webpackAsyncContext.id = 281;
 module.exports = webpackAsyncContext;
 
 /***/ }),
-/* 314 */
+/* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(315);
+var content = __webpack_require__(283);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("9b99856a", content, false);
+var update = __webpack_require__(3)("9b99856a", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -42044,21 +41785,13 @@ if(false) {
 }
 
 /***/ }),
-/* 315 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 283 */
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.widget {\n  background: #fff;\n  -webkit-box-shadow: 0px 4px 70px -18px #707070;\n          box-shadow: 0px 4px 70px -18px #707070;\n  margin-bottom: 1.875rem;\n  padding: 0;\n}\n.widget.no-header .widget-body {\n    height: 100%;\n}\n.widget.larger-padding .widget-body {\n    padding: 45px;\n}\n.widget.no-h-padding .widget-body {\n    padding-left: 0;\n    padding-right: 0;\n}\n.widget.no-v-padding .widget-body {\n    padding-top: 0;\n    padding-bottom: 0;\n}\n.widget.brand-info {\n    background-color: #4ab2e3;\n    color: #fff;\n    -webkit-box-shadow: 0px 4px 70px -16px #4ab2e3;\n            box-shadow: 0px 4px 70px -16px #4ab2e3;\n}\n.widget.brand-danger {\n    background-color: #e34a4a;\n    color: #fff;\n    -webkit-box-shadow: 0px 4px 70px -16px #e34a4a;\n            box-shadow: 0px 4px 70px -16px #e34a4a;\n}\n.widget.info-widget {\n    border-top: 0.5rem solid #4ae387;\n}\n.widget.info-widget.brand-info {\n      border-top-color: #4ab2e3;\n}\n.widget.info-widget.brand-danger {\n      border-top-color: #e34a4a;\n}\n.widget .widget-body {\n    height: calc(100% - 55px);\n    padding: 1.5625rem;\n}\n.widget .widget-header {\n    height: 55px;\n    padding: 0 1.5625rem;\n    border-bottom: 2px solid #eee;\n    font-size: 1.2rem;\n    font-weight: 600;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
-/* 316 */
+/* 284 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -42072,7 +41805,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 317 */
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -42104,17 +41837,17 @@ if (false) {
 }
 
 /***/ }),
-/* 318 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(319);
+var content = __webpack_require__(287);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("d2331d92", content, false);
+var update = __webpack_require__(3)("d2331d92", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -42130,21 +41863,13 @@ if(false) {
 }
 
 /***/ }),
-/* 319 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 287 */
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.fade-enter-active[data-v-e3be15c0], .fade-leave-active[data-v-e3be15c0] {\n  -webkit-transition: opacity .5s;\n  transition: opacity .5s;\n}\n.fade-enter[data-v-e3be15c0], .fade-leave-to[data-v-e3be15c0] {\n  opacity: 0;\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
-/* 320 */
+/* 288 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -42188,7 +41913,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 321 */
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -42230,17 +41955,17 @@ if (false) {
 }
 
 /***/ }),
-/* 322 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(323);
+var content = __webpack_require__(291);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("004599b8", content, false);
+var update = __webpack_require__(3)("004599b8", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -42256,32 +41981,24 @@ if(false) {
 }
 
 /***/ }),
-/* 323 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 291 */
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.vuestic-progress-bar {\n  font-size: 0.6875rem;\n  font-weight: 700;\n}\n.vuestic-progress-bar:hover {\n    cursor: pointer;\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
-/* 324 */
+/* 292 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_math_sign__ = __webpack_require__(325);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_math_sign__ = __webpack_require__(293);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_math_sign___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_math_sign__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__progress_types_HorizontalProgressBar_vue__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__progress_types_HorizontalProgressBar_vue__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__progress_types_HorizontalProgressBar_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__progress_types_HorizontalProgressBar_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__progress_types_VerticalProgressBar_vue__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__progress_types_VerticalProgressBar_vue__ = __webpack_require__(78);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__progress_types_VerticalProgressBar_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__progress_types_VerticalProgressBar_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__progress_types_CircleProgressBar_vue__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__progress_types_CircleProgressBar_vue__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__progress_types_CircleProgressBar_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__progress_types_CircleProgressBar_vue__);
 
 
@@ -42369,31 +42086,31 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 325 */
+/* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(326), __esModule: true };
+module.exports = { "default": __webpack_require__(294), __esModule: true };
 
 /***/ }),
-/* 326 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(327);
-module.exports = __webpack_require__(9).Math.sign;
+__webpack_require__(295);
+module.exports = __webpack_require__(8).Math.sign;
 
 
 /***/ }),
-/* 327 */
+/* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.28 Math.sign(x)
-var $export = __webpack_require__(16);
+var $export = __webpack_require__(15);
 
-$export($export.S, 'Math', { sign: __webpack_require__(328) });
+$export($export.S, 'Math', { sign: __webpack_require__(296) });
 
 
 /***/ }),
-/* 328 */
+/* 296 */
 /***/ (function(module, exports) {
 
 // 20.2.2.28 Math.sign(x)
@@ -42404,17 +42121,17 @@ module.exports = Math.sign || function sign(x) {
 
 
 /***/ }),
-/* 329 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(330);
+var content = __webpack_require__(298);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("5b93ec22", content, false);
+var update = __webpack_require__(3)("5b93ec22", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -42430,26 +42147,18 @@ if(false) {
 }
 
 /***/ }),
-/* 330 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 298 */
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.vuestic-progress-bar .horizontal {\n  display: inline-block;\n  width: 100%;\n}\n.vuestic-progress-bar .horizontal .progress-bar {\n    -webkit-transition: background-color ease .5s, width 3s linear !important;\n    transition: background-color ease .5s, width 3s linear !important;\n}\n.vuestic-progress-bar .horizontal .value {\n    text-align: center;\n}\n.vuestic-progress-bar .horizontal .value.hidden {\n      visibility: hidden;\n}\n.vuestic-progress-bar .horizontal .basic {\n    border-radius: 0.5rem;\n}\n.vuestic-progress-bar .horizontal .basic .progress-bar {\n      border-radius: inherit;\n      height: 0.5rem;\n}\n.vuestic-progress-bar .horizontal .thin .progress-bar {\n    height: 0.125rem;\n}\n.vuestic-progress-bar .horizontal .thick {\n    border-radius: 1.5rem;\n}\n.vuestic-progress-bar .horizontal .thick .progress-bar {\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-pack: center;\n          -ms-flex-pack: center;\n              justify-content: center;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n      border-radius: inherit;\n      height: 1.5rem;\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
-/* 331 */
+/* 299 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_kewler__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_kewler__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_kewler___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_kewler__);
 
 
@@ -42473,7 +42182,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 332 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/**
@@ -42920,10 +42629,10 @@ var flow = createFlow();
 
 module.exports = flow;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(30)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(29)))
 
 /***/ }),
-/* 333 */
+/* 301 */
 /***/ (function(module, exports) {
 
 /**
@@ -43004,7 +42713,7 @@ module.exports = isFunction;
 
 
 /***/ }),
-/* 334 */
+/* 302 */
 /***/ (function(module, exports) {
 
 /**
@@ -43045,12 +42754,12 @@ module.exports = isArray;
 
 
 /***/ }),
-/* 335 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // In our case, there's only one dependency
 
-var toRgb = __webpack_require__(336)
+var toRgb = __webpack_require__(304)
 
 // Typically all dependencies should be declared at the top of the file.
 
@@ -43110,7 +42819,7 @@ module.exports = hsl
 
 
 /***/ }),
-/* 336 */
+/* 304 */
 /***/ (function(module, exports) {
 
 // expected hue range: [0, 360)
@@ -43169,12 +42878,12 @@ var hslToRgb = function(hue, saturation, lightness){
 module.exports = hslToRgb;
 
 /***/ }),
-/* 337 */
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var rgbToHsl = __webpack_require__(338);
-var hexToRgb = __webpack_require__(339);
+var rgbToHsl = __webpack_require__(306);
+var hexToRgb = __webpack_require__(307);
 
 module.exports = function (hex) {
 	var hsl = rgbToHsl.apply(rgbToHsl, hexToRgb(hex));
@@ -43183,7 +42892,7 @@ module.exports = function (hex) {
 
 
 /***/ }),
-/* 338 */
+/* 306 */
 /***/ (function(module, exports) {
 
 (function() {
@@ -43224,7 +42933,7 @@ module.exports = function (hex) {
 
 
 /***/ }),
-/* 339 */
+/* 307 */
 /***/ (function(module, exports) {
 
 module.exports = function hexToRgb (hex) {
@@ -43265,7 +42974,7 @@ function expand (hex) {
 
 
 /***/ }),
-/* 340 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -43318,17 +43027,17 @@ if (false) {
 }
 
 /***/ }),
-/* 341 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(342);
+var content = __webpack_require__(310);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("62c80120", content, false);
+var update = __webpack_require__(3)("62c80120", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -43344,26 +43053,18 @@ if(false) {
 }
 
 /***/ }),
-/* 342 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 310 */
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.vuestic-progress-bar .vertical .progress-bar {\n  -webkit-transition: background-color ease .5s, height 3s linear !important;\n  transition: background-color ease .5s, height 3s linear !important;\n}\n.vuestic-progress-bar .vertical .progress {\n  height: 5.75rem;\n  float: left;\n  display: -webkit-box;\n  /* OLD - iOS 6-, Safari 3.1-6, BB7 */\n  display: -ms-flexbox;\n  /* TWEENER - IE 10 */\n  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */\n  display: flex;\n  /* NEW, Spec - Firefox, Chrome, Opera */\n  -webkit-box-align: start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  -webkit-align-items: flex-start;\n  /* Safari 7.0+ */\n}\n.vuestic-progress-bar .vertical .value {\n  float: left;\n  height: 5.75rem;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  padding-left: .25rem;\n}\n.vuestic-progress-bar .vertical .basic {\n  border-radius: 0.5rem;\n}\n.vuestic-progress-bar .vertical .basic .progress-bar {\n    border-radius: inherit;\n    width: 0.5rem;\n}\n.vuestic-progress-bar .vertical .thin .progress-bar {\n  width: 0.125rem;\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
-/* 343 */
+/* 311 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_kewler__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_kewler__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_kewler___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_kewler__);
 
 
@@ -43388,7 +43089,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 344 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -43420,17 +43121,17 @@ if (false) {
 }
 
 /***/ }),
-/* 345 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(346);
+var content = __webpack_require__(314);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("2b30baf8", content, false);
+var update = __webpack_require__(3)("2b30baf8", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -43446,21 +43147,13 @@ if(false) {
 }
 
 /***/ }),
-/* 346 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 314 */
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.vuestic-progress-bar .circle.progress-bar {\n  float: left;\n  position: relative;\n  width: 3.125rem;\n  height: 3.125rem;\n  padding-left: 0.125rem;\n  padding-top: 0.125rem;\n  border-radius: 50%;\n  border-width: 0;\n}\n.vuestic-progress-bar .circle .overlay {\n  width: calc(3.125rem - 2*0.125rem);\n  height: 2.875rem;\n  border-radius: 50%;\n  border-width: 0;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
-/* 347 */
+/* 315 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -43485,7 +43178,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 348 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -43522,7 +43215,7 @@ if (false) {
 }
 
 /***/ }),
-/* 349 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -43593,17 +43286,17 @@ if (false) {
 }
 
 /***/ }),
-/* 350 */
+/* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(351);
+var content = __webpack_require__(319);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("68cacbe4", content, false);
+var update = __webpack_require__(3)("68cacbe4", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -43619,21 +43312,13 @@ if(false) {
 }
 
 /***/ }),
-/* 351 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 319 */
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.vuestic-tabs {\n  background-color: white;\n}\n.vuestic-tabs .simple-select {\n    padding-top: 1.5rem;\n}\n.vuestic-tabs .nav {\n    margin: 0;\n    padding-top: 2.25rem;\n}\n.vuestic-tabs .nav .nav-item {\n      -webkit-box-flex: 1;\n          -ms-flex-positive: 1;\n              flex-grow: 1;\n      text-align: center;\n      padding: 0;\n}\n.vuestic-tabs .nav .nav-item .nav-link {\n        padding: 0;\n        color: #adb3b9;\n        -webkit-transition: all .3s ease;\n        transition: all .3s ease;\n}\n.vuestic-tabs .nav .nav-item:hover {\n        cursor: pointer;\n}\n.vuestic-tabs .nav .nav-item:hover .nav-link {\n          color: #34495e;\n}\n.vuestic-tabs .nav .nav-item.active .nav-link {\n        color: #34495e;\n}\n.vuestic-tabs .track {\n    overflow: hidden;\n    width: 100%;\n    height: .125rem;\n    position: relative;\n}\n.vuestic-tabs .track div[class^='underscore-'] {\n      background-color: #4ae387;\n      height: .125rem;\n      position: absolute;\n}\n.vuestic-tabs .track div[class^='underscore-1'] {\n      width: 80%;\n      -webkit-transition: left 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n      transition: left 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n}\n.vuestic-tabs .track .underscore-1-0 {\n      left: 10%;\n}\n.vuestic-tabs .track .underscore-1-1 {\n      left: 110%;\n}\n.vuestic-tabs .track div[class^='underscore-2'] {\n      width: 40%;\n      -webkit-transition: left 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n      transition: left 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n}\n.vuestic-tabs .track .underscore-2-0 {\n      left: 5%;\n}\n.vuestic-tabs .track .underscore-2-1 {\n      left: 55%;\n}\n.vuestic-tabs .track .underscore-2-2 {\n      left: 105%;\n}\n.vuestic-tabs .track div[class^='underscore-3'] {\n      width: 26.66667%;\n      -webkit-transition: left 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n      transition: left 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n}\n.vuestic-tabs .track .underscore-3-0 {\n      left: 3.33333%;\n}\n.vuestic-tabs .track .underscore-3-1 {\n      left: 36.66667%;\n}\n.vuestic-tabs .track .underscore-3-2 {\n      left: 70%;\n}\n.vuestic-tabs .track .underscore-3-3 {\n      left: 103.33333%;\n}\n.vuestic-tabs .track div[class^='underscore-4'] {\n      width: 20%;\n      -webkit-transition: left 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n      transition: left 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n}\n.vuestic-tabs .track .underscore-4-0 {\n      left: 2.5%;\n}\n.vuestic-tabs .track .underscore-4-1 {\n      left: 27.5%;\n}\n.vuestic-tabs .track .underscore-4-2 {\n      left: 52.5%;\n}\n.vuestic-tabs .track .underscore-4-3 {\n      left: 77.5%;\n}\n.vuestic-tabs .track .underscore-4-4 {\n      left: 102.5%;\n}\n.vuestic-tabs .track div[class^='underscore-5'] {\n      width: 16%;\n      -webkit-transition: left 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n      transition: left 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n}\n.vuestic-tabs .track .underscore-5-0 {\n      left: 2%;\n}\n.vuestic-tabs .track .underscore-5-1 {\n      left: 22%;\n}\n.vuestic-tabs .track .underscore-5-2 {\n      left: 42%;\n}\n.vuestic-tabs .track .underscore-5-3 {\n      left: 62%;\n}\n.vuestic-tabs .track .underscore-5-4 {\n      left: 82%;\n}\n.vuestic-tabs .track .underscore-5-5 {\n      left: 102%;\n}\n.vuestic-tabs .track div[class^='underscore-6'] {\n      width: 13.33333%;\n      -webkit-transition: left 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n      transition: left 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n}\n.vuestic-tabs .track .underscore-6-0 {\n      left: 1.66667%;\n}\n.vuestic-tabs .track .underscore-6-1 {\n      left: 18.33333%;\n}\n.vuestic-tabs .track .underscore-6-2 {\n      left: 35%;\n}\n.vuestic-tabs .track .underscore-6-3 {\n      left: 51.66667%;\n}\n.vuestic-tabs .track .underscore-6-4 {\n      left: 68.33333%;\n}\n.vuestic-tabs .track .underscore-6-5 {\n      left: 85%;\n}\n.vuestic-tabs .track .underscore-6-6 {\n      left: 101.66667%;\n}\n.vuestic-tabs .track div[class^='underscore-7'] {\n      width: 11.42857%;\n      -webkit-transition: left 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n      transition: left 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n}\n.vuestic-tabs .track .underscore-7-0 {\n      left: 1.42857%;\n}\n.vuestic-tabs .track .underscore-7-1 {\n      left: 15.71429%;\n}\n.vuestic-tabs .track .underscore-7-2 {\n      left: 30%;\n}\n.vuestic-tabs .track .underscore-7-3 {\n      left: 44.28571%;\n}\n.vuestic-tabs .track .underscore-7-4 {\n      left: 58.57143%;\n}\n.vuestic-tabs .track .underscore-7-5 {\n      left: 72.85714%;\n}\n.vuestic-tabs .track .underscore-7-6 {\n      left: 87.14286%;\n}\n.vuestic-tabs .track .underscore-7-7 {\n      left: 101.42857%;\n}\n.vuestic-tabs .track div[class^='underscore-8'] {\n      width: 10%;\n      -webkit-transition: left 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n      transition: left 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n}\n.vuestic-tabs .track .underscore-8-0 {\n      left: 1.25%;\n}\n.vuestic-tabs .track .underscore-8-1 {\n      left: 13.75%;\n}\n.vuestic-tabs .track .underscore-8-2 {\n      left: 26.25%;\n}\n.vuestic-tabs .track .underscore-8-3 {\n      left: 38.75%;\n}\n.vuestic-tabs .track .underscore-8-4 {\n      left: 51.25%;\n}\n.vuestic-tabs .track .underscore-8-5 {\n      left: 63.75%;\n}\n.vuestic-tabs .track .underscore-8-6 {\n      left: 76.25%;\n}\n.vuestic-tabs .track .underscore-8-7 {\n      left: 88.75%;\n}\n.vuestic-tabs .track .underscore-8-8 {\n      left: 101.25%;\n}\n.vuestic-tabs .track div[class^='underscore-9'] {\n      width: 8.88889%;\n      -webkit-transition: left 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n      transition: left 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n}\n.vuestic-tabs .track .underscore-9-0 {\n      left: 1.11111%;\n}\n.vuestic-tabs .track .underscore-9-1 {\n      left: 12.22222%;\n}\n.vuestic-tabs .track .underscore-9-2 {\n      left: 23.33333%;\n}\n.vuestic-tabs .track .underscore-9-3 {\n      left: 34.44444%;\n}\n.vuestic-tabs .track .underscore-9-4 {\n      left: 45.55556%;\n}\n.vuestic-tabs .track .underscore-9-5 {\n      left: 56.66667%;\n}\n.vuestic-tabs .track .underscore-9-6 {\n      left: 67.77778%;\n}\n.vuestic-tabs .track .underscore-9-7 {\n      left: 78.88889%;\n}\n.vuestic-tabs .track .underscore-9-8 {\n      left: 90%;\n}\n.vuestic-tabs .track .underscore-9-9 {\n      left: 101.11111%;\n}\n.vuestic-tabs .track div[class^='underscore-10'] {\n      width: 8%;\n      -webkit-transition: left 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n      transition: left 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n}\n.vuestic-tabs .track .underscore-10-0 {\n      left: 1%;\n}\n.vuestic-tabs .track .underscore-10-1 {\n      left: 11%;\n}\n.vuestic-tabs .track .underscore-10-2 {\n      left: 21%;\n}\n.vuestic-tabs .track .underscore-10-3 {\n      left: 31%;\n}\n.vuestic-tabs .track .underscore-10-4 {\n      left: 41%;\n}\n.vuestic-tabs .track .underscore-10-5 {\n      left: 51%;\n}\n.vuestic-tabs .track .underscore-10-6 {\n      left: 61%;\n}\n.vuestic-tabs .track .underscore-10-7 {\n      left: 71%;\n}\n.vuestic-tabs .track .underscore-10-8 {\n      left: 81%;\n}\n.vuestic-tabs .track .underscore-10-9 {\n      left: 91%;\n}\n.vuestic-tabs .track .underscore-10-10 {\n      left: 101%;\n}\n.vuestic-tabs .tab-content {\n    padding-bottom: 1.5rem;\n    padding-top: 3.125rem;\n}\n.vuestic-tabs .tab-content > .tab-pane {\n      width: 100%;\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
-/* 352 */
+/* 320 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -43661,7 +43346,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 353 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -43744,17 +43429,17 @@ if (false) {
 }
 
 /***/ }),
-/* 354 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(355);
+var content = __webpack_require__(323);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("37181aa6", content, false);
+var update = __webpack_require__(3)("37181aa6", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -43770,26 +43455,18 @@ if(false) {
 }
 
 /***/ }),
-/* 355 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 323 */
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.vuestic-chat[data-v-7d261818] {\n  width: 100%;\n}\n.chat-body[data-v-7d261818] {\n  min-height: 18.75rem;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  margin-bottom: 1.5rem;\n  overflow: auto;\n}\n.chat-message[data-v-7d261818] {\n  padding: 0.657rem 1.375rem;\n  margin-bottom: 0.625rem;\n  border-radius: 0.875rem;\n  max-width: 70%;\n  overflow-wrap: break-word;\n}\n.chat-message[data-v-7d261818]:last-child {\n    margin-bottom: 0;\n}\n.chat-message.alien[data-v-7d261818] {\n    -ms-flex-item-align: start;\n        align-self: flex-start;\n    border-top-left-radius: 0;\n    background-color: #eff4f5;\n}\n.chat-message.yours[data-v-7d261818] {\n    -ms-flex-item-align: end;\n        align-self: flex-end;\n    border-top-right-radius: 0;\n    background-color: #4ae387;\n}\n.chat-message .chat-message-input[data-v-7d261818] {\n    resize: vertical !important;\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
-/* 356 */
+/* 324 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives_StickyScroll__ = __webpack_require__(357);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives_StickyScroll__ = __webpack_require__(325);
 
 
 
@@ -43834,7 +43511,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 357 */
+/* 325 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -43888,7 +43565,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 358 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -43984,17 +43661,17 @@ if (false) {
 }
 
 /***/ }),
-/* 359 */
+/* 327 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(360);
+var content = __webpack_require__(328);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("3b759956", content, false);
+var update = __webpack_require__(3)("3b759956", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -44010,21 +43687,13 @@ if(false) {
 }
 
 /***/ }),
-/* 360 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 328 */
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-exports.push([module.i, "@import url(http://weloveiconfonts.com/api/?family=brandico|entypo|fontelico|iconicfill|iconicstroke|maki|openwebicons|typicons|zocial);", ""]);
-
-// module
-exports.push([module.i, "\n/* brandico */\n[class*=\"brandico-\"]:before {\n  font-family: 'brandico', sans-serif;\n  font-style: normal;\n}\n\n/* entypo */\n[class*=\"entypo-\"]:before {\n  font-family: 'entypo', sans-serif;\n  font-style: normal;\n}\n\n/* fontelico */\n[class*=\"fontelico-\"]:before {\n  font-family: 'fontelico', sans-serif;\n  font-style: normal;\n}\n\n/* iconicfill */\n[class*=\"iconicfill-\"]:before {\n  font-family: 'IconicFill', sans-serif;\n  font-style: normal;\n}\n\n/* iconicstroke */\n[class*=\"iconicstroke-\"]:before {\n  font-family: 'IconicStroke', sans-serif;\n  font-style: normal;\n}\n\n/* maki */\n[class*=\"maki-\"]:before {\n  font-family: 'maki', sans-serif;\n  font-style: normal;\n}\n\n/* openwebicons */\n[class*=\"openwebicons-\"]:before {\n  font-family: 'OpenWeb Icons', sans-serif;\n  font-style: normal;\n}\n\n/* typicons */\n[class*=\"typicons-\"]:before {\n  font-family: 'Typicons', sans-serif;\n  font-style: normal;\n}\n\n/* zocial */\n[class*=\"zocial-\"]:before {\n  font-family: 'zocial', sans-serif;\n}\n.vuestic-profile-card {\n  width: 12.6875rem;\n}\n.vuestic-profile-card .photo {\n    height: 9.375rem;\n    width: 9.375rem;\n    border-radius: 50%;\n    background-color: #ddd;\n    overflow: hidden;\n}\n.vuestic-profile-card .photo img {\n      height: 100%;\n      width: 100%;\n}\n.vuestic-profile-card .name {\n    margin-top: 1.325rem;\n    margin-bottom: 0;\n}\n.vuestic-profile-card .location {\n    margin-top: 0.8125rem;\n}\n.vuestic-profile-card .location .icon {\n      color: #ddd;\n      font-size: 1.2rem;\n}\n.vuestic-profile-card .location:hover {\n      cursor: pointer;\n}\n.vuestic-profile-card .location:hover .icon {\n        color: red;\n}\n.vuestic-profile-card .social {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    padding-top: 1rem;\n    margin-top: 1.25rem;\n    width: 100%;\n    border-top: solid 0.125rem #eee;\n}\n.vuestic-profile-card .social .icon {\n      color: #adb3b9;\n      text-decoration: none;\n      font-size: 1.375rem;\n      margin-right: .4375rem;\n      margin-left: .4375rem;\n}\n.vuestic-profile-card .social .icon:hover {\n        cursor: pointer;\n        color: #2f3438;\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
-/* 361 */
+/* 329 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -44037,7 +43706,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 362 */
+/* 330 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -44100,17 +43769,17 @@ if (false) {
 }
 
 /***/ }),
-/* 363 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(364);
+var content = __webpack_require__(332);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("b67118ae", content, false);
+var update = __webpack_require__(3)("b67118ae", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -44126,34 +43795,26 @@ if(false) {
 }
 
 /***/ }),
-/* 364 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 332 */
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.wizard[data-v-21a2705a] {\n  position: relative;\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n.wizard.horizontal[data-v-21a2705a] {\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n}\n.wizard.vertical[data-v-21a2705a] {\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n}\n.wizard-body[data-v-21a2705a] {\n  position: relative;\n}\n.wizard-body-step > *[data-v-21a2705a] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.wizard-body-step > * > *[data-v-21a2705a] {\n    margin-bottom: 2.25rem;\n}\n.wizard-body-step > * > *[data-v-21a2705a]:last-child {\n    margin-bottom: 0;\n}\n.wizard-body-actions[data-v-21a2705a] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-align: baseline;\n      -ms-flex-align: baseline;\n          align-items: baseline;\n}\n.wizard-body-actions .btn-container[data-v-21a2705a] {\n    margin: 2.25rem 1.125rem 0 1.125rem;\n}\n.vertical .wizard-body[data-v-21a2705a] {\n  min-height: 20rem;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  padding: 2.25rem 7%;\n}\n.vertical .indicator-container[data-v-21a2705a] {\n  -ms-flex-preferred-size: 20rem;\n      flex-basis: 20rem;\n  max-width: 20rem;\n  -webkit-box-flex: 0;\n      -ms-flex-positive: 0;\n          flex-grow: 0;\n  -ms-flex-negative: 0;\n      flex-shrink: 0;\n  position: relative;\n}\n.horizontal .wizard-body[data-v-21a2705a] {\n  padding: 2.25rem 15%;\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
-/* 365 */
+/* 333 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__indicators_SimpleHorizontalIndicator_vue__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__indicators_SimpleHorizontalIndicator_vue__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__indicators_SimpleHorizontalIndicator_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__indicators_SimpleHorizontalIndicator_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__indicators_RichHorizontalIndicator_vue__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__indicators_RichHorizontalIndicator_vue__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__indicators_RichHorizontalIndicator_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__indicators_RichHorizontalIndicator_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__indicators_RichVerticalIndicator_vue__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__indicators_RichVerticalIndicator_vue__ = __webpack_require__(82);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__indicators_RichVerticalIndicator_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__indicators_RichVerticalIndicator_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__indicators_SimpleVerticalIndicator_vue__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__indicators_SimpleVerticalIndicator_vue__ = __webpack_require__(83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__indicators_SimpleVerticalIndicator_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__indicators_SimpleVerticalIndicator_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__WizardOrientationHandler__ = __webpack_require__(382);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__WizardOrientationHandler__ = __webpack_require__(350);
 
 
 
@@ -44258,17 +43919,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 366 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(367);
+var content = __webpack_require__(335);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("493c4222", content, false);
+var update = __webpack_require__(3)("493c4222", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -44284,21 +43945,13 @@ if(false) {
 }
 
 /***/ }),
-/* 367 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 335 */
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.wizard-steps[data-v-80896ae0] {\n  list-style-type: none;\n  text-align: justify;\n  -ms-text-justify: distribute-all-lines;\n  text-justify: distribute-all-lines;\n  padding: 0;\n  height: 3.75rem;\n  position: relative;\n}\n.wizard-step[data-v-80896ae0] {\n  height: 3.75rem;\n  vertical-align: bottom;\n  display: inline-block;\n  text-align: center;\n  position: relative;\n}\n.wizard-step .wizard-step-line[data-v-80896ae0] {\n    position: absolute;\n    width: 100%;\n    left: -50%;\n    bottom: 12px;\n    height: 2px;\n    background-color: #ddd;\n    -webkit-transition: background-color 300ms linear;\n    transition: background-color 300ms linear;\n}\n.wizard-step .wizard-step-line.completed-line[data-v-80896ae0] {\n      display: none;\n      width: 50%;\n      left: 50%;\n}\n.wizard-step .wizard-step-indicator[data-v-80896ae0] {\n    -webkit-box-sizing: content-box;\n            box-sizing: content-box;\n    display: block;\n    width: 1rem;\n    height: 1rem;\n    background-color: #ddd;\n    border-radius: 50%;\n    position: absolute;\n    left: 50%;\n    margin-left: -7px;\n    bottom: 5px;\n    z-index: 1;\n    -webkit-transition: background-color 300ms linear;\n    transition: background-color 300ms linear;\n}\n.wizard-step .wizard-step-label[data-v-80896ae0] {\n    display: inline-block;\n    width: 100%;\n    padding: 0 0.6rem;\n    color: #ddd;\n    font-size: 1.375rem;\n    font-weight: bold;\n    -webkit-transition: color 300ms linear;\n    transition: color 300ms linear;\n}\n@media (min-width: 576px) and (max-width: 767px) {\n.wizard-step .wizard-step-label[data-v-80896ae0] {\n    font-size: 1.2rem;\n}\n}\n@media (max-width: 575px) {\n.wizard-step .wizard-step-label[data-v-80896ae0] {\n        font-size: 1rem;\n}\n}\n.wizard-step:first-child .wizard-step-line[data-v-80896ae0] {\n    width: 50%;\n    left: 0;\n}\n.wizard-step:last-child .wizard-step-line.completed-line[data-v-80896ae0] {\n    display: block;\n}\n.wizard-step.active .wizard-step-indicator[data-v-80896ae0] {\n    background-color: #4ae387;\n}\n.wizard-step.active .wizard-step-line[data-v-80896ae0]:not(.completed-line), .completed .wizard-step.active .wizard-step-line[data-v-80896ae0] {\n    background-color: #4ae387;\n}\n.wizard-step.active .wizard-step-label[data-v-80896ae0], .completed .wizard-step.active.current .wizard-step-label[data-v-80896ae0] {\n    color: #4ae387;\n}\n.wizard-step.active.current .wizard-step-label[data-v-80896ae0] {\n    color: #34495e;\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
-/* 368 */
+/* 336 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -44324,7 +43977,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 369 */
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -44374,17 +44027,17 @@ if (false) {
 }
 
 /***/ }),
-/* 370 */
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(371);
+var content = __webpack_require__(339);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("305cb571", content, false);
+var update = __webpack_require__(3)("305cb571", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -44400,21 +44053,13 @@ if(false) {
 }
 
 /***/ }),
-/* 371 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 339 */
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.wizard-steps[data-v-52a5e7e6] {\n  list-style-type: none;\n  padding: 0 0.315rem;\n  height: 5.5rem;\n  position: relative;\n}\n.wizard-step[data-v-52a5e7e6] {\n  height: 5.5rem;\n  padding: 0 0.315rem;\n  color: #ddd;\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-transition: color 300ms linear;\n  transition: color 300ms linear;\n}\n.wizard-step .wizard-step-line[data-v-52a5e7e6] {\n    width: 100%;\n    height: 2px;\n    background-color: #ddd;\n    -webkit-transition: background-color 300ms linear;\n    transition: background-color 300ms linear;\n}\n.wizard-step .wizard-step-label[data-v-52a5e7e6] {\n    display: inline-block;\n    width: 100%;\n    padding: 0 0.6rem;\n    text-align: center;\n    font-size: 1.375rem;\n    font-weight: bold;\n}\n@media (min-width: 576px) and (max-width: 767px) {\n.wizard-step .wizard-step-label[data-v-52a5e7e6] {\n    font-size: 1.2rem;\n}\n}\n@media (max-width: 575px) {\n.wizard-step .wizard-step-label[data-v-52a5e7e6] {\n        font-size: 1rem;\n}\n}\n.wizard-step .step-icon[data-v-52a5e7e6] {\n    font-size: 3.125rem;\n    height: 2.25rem;\n    position: relative;\n    top: 0.5rem;\n}\n.wizard-step .step-icon.icon-cross[data-v-52a5e7e6] {\n      display: block;\n}\n.wizard-step .step-icon.icon-check[data-v-52a5e7e6] {\n      display: none;\n}\n.wizard-step .step-icon[data-v-52a5e7e6]::before {\n      position: relative;\n      top: -0.5rem;\n}\n.wizard-step.active[data-v-52a5e7e6] {\n    color: #4ae387;\n}\n.wizard-step.active .wizard-step-line[data-v-52a5e7e6] {\n      background-color: #4ae387;\n}\n.wizard-step.active:not(.current) .step-icon.icon-cross[data-v-52a5e7e6], .completed .wizard-step.active.current .step-icon.icon-cross[data-v-52a5e7e6] {\n      display: none;\n}\n.wizard-step.active:not(.current) .step-icon.icon-check[data-v-52a5e7e6], .completed .wizard-step.active.current .step-icon.icon-check[data-v-52a5e7e6] {\n      display: block;\n}\n.wizard-step.active.current[data-v-52a5e7e6] {\n      color: #34495e;\n}\n.completed .wizard-step.active.current[data-v-52a5e7e6] {\n      color: #4ae387;\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
-/* 372 */
+/* 340 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -44440,7 +44085,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 373 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -44492,17 +44137,17 @@ if (false) {
 }
 
 /***/ }),
-/* 374 */
+/* 342 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(375);
+var content = __webpack_require__(343);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("28dfaf09", content, false);
+var update = __webpack_require__(3)("28dfaf09", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -44518,21 +44163,13 @@ if(false) {
 }
 
 /***/ }),
-/* 375 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 343 */
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.wizard-steps[data-v-4b3072d8] {\n  list-style-type: none;\n  padding: 0;\n  height: 100%;\n  width: 100%;\n  position: absolute;\n  top: 0;\n  bottom: 0;\n}\n.wizard-step[data-v-4b3072d8] {\n  padding: 0.625rem 0;\n  color: #ddd;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-transition: color 300ms linear;\n  transition: color 300ms linear;\n}\n.wizard-step .wizard-step-line[data-v-4b3072d8] {\n    width: 2px;\n    height: 100%;\n    background-color: #ddd;\n    -webkit-transition: background-color 300ms linear;\n    transition: background-color 300ms linear;\n}\n.wizard-step .wizard-step-label[data-v-4b3072d8] {\n    margin-left: 1.25rem;\n    font-size: 1.375rem;\n    font-weight: bold;\n}\n.wizard-step .step-icon[data-v-4b3072d8] {\n    font-size: 3.125rem;\n    height: 2.25rem;\n    margin-left: 1.25rem;\n}\n.wizard-step .step-icon.icon-cross[data-v-4b3072d8] {\n      display: block;\n}\n.wizard-step .step-icon.icon-check[data-v-4b3072d8] {\n      display: none;\n}\n.wizard-step .step-icon[data-v-4b3072d8]::before {\n      position: relative;\n      top: -0.5rem;\n}\n.wizard-step.active[data-v-4b3072d8] {\n    color: #4ae387;\n}\n.wizard-step.active .wizard-step-line[data-v-4b3072d8] {\n      background-color: #4ae387;\n}\n.wizard-step.active:not(.current) .step-icon.icon-cross[data-v-4b3072d8], .completed .wizard-step.active.current .step-icon.icon-cross[data-v-4b3072d8] {\n      display: none;\n}\n.wizard-step.active:not(.current) .step-icon.icon-check[data-v-4b3072d8], .completed .wizard-step.active.current .step-icon.icon-check[data-v-4b3072d8] {\n      display: block;\n}\n.wizard-step.active.current[data-v-4b3072d8] {\n      color: #34495e;\n}\n.completed .wizard-step.active.current[data-v-4b3072d8] {\n      color: #4ae387;\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
-/* 376 */
+/* 344 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -44558,7 +44195,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 377 */
+/* 345 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -44610,17 +44247,17 @@ if (false) {
 }
 
 /***/ }),
-/* 378 */
+/* 346 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(379);
+var content = __webpack_require__(347);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("065aa101", content, false);
+var update = __webpack_require__(3)("065aa101", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -44636,21 +44273,13 @@ if(false) {
 }
 
 /***/ }),
-/* 379 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 347 */
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.wizard-steps[data-v-c02c6884] {\n  list-style-type: none;\n  padding: 2.5rem 0;\n  height: 100%;\n  width: 100%;\n  position: absolute;\n  top: 0;\n  bottom: 0;\n}\n.wizard-step[data-v-c02c6884] {\n  vertical-align: bottom;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  position: relative;\n}\n.wizard-step .wizard-step-line[data-v-c02c6884] {\n    position: absolute;\n    height: 100%;\n    width: 2px;\n    left: 0;\n    top: -50%;\n    background-color: #ddd;\n    -webkit-transition: background-color 300ms linear;\n    transition: background-color 300ms linear;\n}\n.wizard-step .wizard-step-line.completed-line[data-v-c02c6884] {\n      display: none;\n}\n.wizard-step .wizard-step-indicator[data-v-c02c6884] {\n    -webkit-box-sizing: content-box;\n            box-sizing: content-box;\n    display: block;\n    width: 1rem;\n    height: 1rem;\n    background-color: #ddd;\n    border-radius: 50%;\n    position: absolute;\n    left: 0;\n    top: calc(50% - 1rem/2);\n    margin-left: -7px;\n    bottom: 5px;\n    z-index: 1;\n    -webkit-transition: background-color 300ms linear;\n    transition: background-color 300ms linear;\n}\n.wizard-step .wizard-step-label[data-v-c02c6884] {\n    color: #ddd;\n    display: inline-block;\n    width: 100%;\n    font-size: 1.375rem;\n    font-weight: bold;\n    margin-left: 2rem;\n    -webkit-transition: color 300ms linear;\n    transition: color 300ms linear;\n}\n.wizard-step:first-child .wizard-step-line[data-v-c02c6884] {\n    height: calc(50% + 2.5rem);\n    top: -2.5rem;\n}\n.wizard-step:last-child .wizard-step-line[data-v-c02c6884] {\n    height: 100%;\n    top: -50%;\n}\n.wizard-step:last-child .wizard-step-line.completed-line[data-v-c02c6884] {\n      display: block;\n      top: 50%;\n      height: calc(50% + 2.5rem);\n}\n.wizard-step.active .wizard-step-indicator[data-v-c02c6884] {\n    background-color: #4ae387;\n}\n.wizard-step.active .wizard-step-line[data-v-c02c6884]:not(.completed-line), .completed .wizard-step.active .wizard-step-line[data-v-c02c6884] {\n    background-color: #4ae387;\n}\n.wizard-step.active .wizard-step-label[data-v-c02c6884] {\n    color: #4ae387;\n}\n.wizard-step.active .wizard-step-label[data-v-c02c6884], .completed .wizard-step.active.current .wizard-step-label[data-v-c02c6884] {\n    color: #4ae387;\n}\n.wizard-step.active.current .wizard-step-label[data-v-c02c6884] {\n    color: #34495e;\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
-/* 380 */
+/* 348 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -44676,7 +44305,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 381 */
+/* 349 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -44726,7 +44355,7 @@ if (false) {
 }
 
 /***/ }),
-/* 382 */
+/* 350 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -44756,7 +44385,7 @@ if (false) {
 });
 
 /***/ }),
-/* 383 */
+/* 351 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -44961,17 +44590,17 @@ if (false) {
 }
 
 /***/ }),
-/* 384 */
+/* 352 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(385);
+var content = __webpack_require__(353);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("0350b477", content, false);
+var update = __webpack_require__(3)("0350b477", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -44987,27 +44616,19 @@ if(false) {
 }
 
 /***/ }),
-/* 385 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 353 */
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.select-form-group .dropdown-menu {\n  padding: 0;\n}\n.select-form-group .dropdown-menu .vuestic-scrollbar {\n    height: 160px;\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
-/* 386 */
+/* 354 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives_Dropdown__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vuestic_scrollbar_VuesticScrollbar_vue__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives_Dropdown__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vuestic_scrollbar_VuesticScrollbar_vue__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vuestic_scrollbar_VuesticScrollbar_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__vuestic_scrollbar_VuesticScrollbar_vue__);
 
 
@@ -45087,7 +44708,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 387 */
+/* 355 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -45217,17 +44838,17 @@ if (false) {
 }
 
 /***/ }),
-/* 388 */
+/* 356 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(389);
+var content = __webpack_require__(357);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("b0e31978", content, false);
+var update = __webpack_require__(3)("b0e31978", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -45243,31 +44864,23 @@ if(false) {
 }
 
 /***/ }),
-/* 389 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 357 */
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.vuestic-chart {\n  width: 100%;\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\n.vuestic-chart > * {\n    height: 100%;\n    width: 100%;\n}\n.vuestic-chart canvas {\n    width: 100%;\n    height: auto;\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
-/* 390 */
+/* 358 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__chart_types_PieChart__ = __webpack_require__(391);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chart_types_BubbleChart__ = __webpack_require__(457);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__chart_types_DonutChart__ = __webpack_require__(458);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__chart_types_HorizontalBarChart__ = __webpack_require__(459);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__chart_types_VerticalBarChart__ = __webpack_require__(460);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__chart_types_LineChart__ = __webpack_require__(461);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__chart_types_PieChart__ = __webpack_require__(359);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chart_types_BubbleChart__ = __webpack_require__(425);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__chart_types_DonutChart__ = __webpack_require__(426);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__chart_types_HorizontalBarChart__ = __webpack_require__(427);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__chart_types_VerticalBarChart__ = __webpack_require__(428);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__chart_types_LineChart__ = __webpack_require__(429);
 
 
 
@@ -45291,15 +44904,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 391 */
+/* 359 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_chartjs__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_chartjs__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_chartjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_chartjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__DefaultOptions__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__DefaultOptions__ = __webpack_require__(18);
 
 
 
@@ -45319,7 +44932,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 }));
 
 /***/ }),
-/* 392 */
+/* 360 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45329,15 +44942,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _vue = __webpack_require__(6);
+var _vue = __webpack_require__(5);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _chart = __webpack_require__(10);
+var _chart = __webpack_require__(9);
 
 var _chart2 = _interopRequireDefault(_chart);
 
-var _options = __webpack_require__(11);
+var _options = __webpack_require__(10);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45424,13 +45037,13 @@ exports.default = _vue2.default.extend({
 });
 
 /***/ }),
-/* 393 */
+/* 361 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(5);
+var defaults = __webpack_require__(4);
 
 defaults._set('global', {
 	responsive: true,
@@ -45480,13 +45093,13 @@ module.exports = function() {
 
 
 /***/ }),
-/* 394 */
+/* 362 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var helpers = __webpack_require__(34);
+var helpers = __webpack_require__(33);
 
 /**
  * Easing functions adapted from Robert Penner's easing equations.
@@ -45737,13 +45350,13 @@ helpers.easingEffects = effects;
 
 
 /***/ }),
-/* 395 */
+/* 363 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var helpers = __webpack_require__(34);
+var helpers = __webpack_require__(33);
 
 /**
  * @namespace Chart.helpers.canvas
@@ -45958,13 +45571,13 @@ helpers.drawRoundedRectangle = function(ctx) {
 
 
 /***/ }),
-/* 396 */
+/* 364 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var helpers = __webpack_require__(34);
+var helpers = __webpack_require__(33);
 
 /**
  * @alias Chart.helpers.options
@@ -46061,7 +45674,7 @@ module.exports = {
 
 
 /***/ }),
-/* 397 */
+/* 365 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46069,9 +45682,9 @@ module.exports = {
 /* global document: false */
 
 
-var color = __webpack_require__(88);
-var defaults = __webpack_require__(5);
-var helpers = __webpack_require__(3);
+var color = __webpack_require__(84);
+var defaults = __webpack_require__(4);
+var helpers = __webpack_require__(2);
 
 module.exports = function(Chart) {
 
@@ -46671,10 +46284,10 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 398 */
+/* 366 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var conversions = __webpack_require__(399);
+var conversions = __webpack_require__(367);
 
 var convert = function() {
    return new Converter();
@@ -46768,7 +46381,7 @@ Converter.prototype.getValues = function(space) {
 module.exports = convert;
 
 /***/ }),
-/* 399 */
+/* 367 */
 /***/ (function(module, exports) {
 
 /* MIT license */
@@ -47472,11 +47085,11 @@ for (var key in cssKeywords) {
 
 
 /***/ }),
-/* 400 */
+/* 368 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* MIT license */
-var colorNames = __webpack_require__(401);
+var colorNames = __webpack_require__(369);
 
 module.exports = {
    getRgba: getRgba,
@@ -47699,7 +47312,7 @@ for (var name in colorNames) {
 
 
 /***/ }),
-/* 401 */
+/* 369 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47858,15 +47471,15 @@ module.exports = {
 
 
 /***/ }),
-/* 402 */
+/* 370 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(5);
-var Element = __webpack_require__(8);
-var helpers = __webpack_require__(3);
+var defaults = __webpack_require__(4);
+var Element = __webpack_require__(7);
+var helpers = __webpack_require__(2);
 
 defaults._set('global', {
 	elements: {
@@ -47972,15 +47585,15 @@ module.exports = Element.extend({
 
 
 /***/ }),
-/* 403 */
+/* 371 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(5);
-var Element = __webpack_require__(8);
-var helpers = __webpack_require__(3);
+var defaults = __webpack_require__(4);
+var Element = __webpack_require__(7);
+var helpers = __webpack_require__(2);
 
 var globalDefaults = defaults.global;
 
@@ -48070,15 +47683,15 @@ module.exports = Element.extend({
 
 
 /***/ }),
-/* 404 */
+/* 372 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(5);
-var Element = __webpack_require__(8);
-var helpers = __webpack_require__(3);
+var defaults = __webpack_require__(4);
+var Element = __webpack_require__(7);
+var helpers = __webpack_require__(2);
 
 var defaultColor = defaults.global.defaultColor;
 
@@ -48183,14 +47796,14 @@ module.exports = Element.extend({
 
 
 /***/ }),
-/* 405 */
+/* 373 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(5);
-var Element = __webpack_require__(8);
+var defaults = __webpack_require__(4);
+var Element = __webpack_require__(7);
 
 defaults._set('global', {
 	elements: {
@@ -48407,7 +48020,7 @@ module.exports = Element.extend({
 
 
 /***/ }),
-/* 406 */
+/* 374 */
 /***/ (function(module, exports) {
 
 /**
@@ -48428,7 +48041,7 @@ module.exports = {
 
 
 /***/ }),
-/* 407 */
+/* 375 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48438,7 +48051,7 @@ module.exports = {
 
 
 
-var helpers = __webpack_require__(3);
+var helpers = __webpack_require__(2);
 
 var EXPANDO_KEY = '$chartjs';
 var CSS_PREFIX = 'chartjs-';
@@ -48892,15 +48505,15 @@ helpers.removeEvent = removeEventListener;
 
 
 /***/ }),
-/* 408 */
+/* 376 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(5);
-var Element = __webpack_require__(8);
-var helpers = __webpack_require__(3);
+var defaults = __webpack_require__(4);
+var Element = __webpack_require__(7);
+var helpers = __webpack_require__(2);
 
 defaults._set('global', {
 	plugins: {}
@@ -49294,16 +48907,16 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 409 */
+/* 377 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* global window: false */
 
 
-var defaults = __webpack_require__(5);
-var Element = __webpack_require__(8);
-var helpers = __webpack_require__(3);
+var defaults = __webpack_require__(4);
+var Element = __webpack_require__(7);
+var helpers = __webpack_require__(2);
 
 defaults._set('global', {
 	animation: {
@@ -49473,16 +49086,16 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 410 */
+/* 378 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(5);
-var helpers = __webpack_require__(3);
-var Interaction = __webpack_require__(89);
-var platform = __webpack_require__(90);
+var defaults = __webpack_require__(4);
+var helpers = __webpack_require__(2);
+var Interaction = __webpack_require__(85);
+var platform = __webpack_require__(86);
 
 module.exports = function(Chart) {
 	var plugins = Chart.plugins;
@@ -50384,13 +49997,13 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 411 */
+/* 379 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var helpers = __webpack_require__(3);
+var helpers = __webpack_require__(2);
 
 module.exports = function(Chart) {
 
@@ -50721,13 +50334,13 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 412 */
+/* 380 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var helpers = __webpack_require__(3);
+var helpers = __webpack_require__(2);
 
 module.exports = function(Chart) {
 
@@ -51150,14 +50763,14 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 413 */
+/* 381 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(5);
-var helpers = __webpack_require__(3);
+var defaults = __webpack_require__(4);
+var helpers = __webpack_require__(2);
 
 module.exports = function(Chart) {
 
@@ -51202,16 +50815,16 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 414 */
+/* 382 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(5);
-var Element = __webpack_require__(8);
-var helpers = __webpack_require__(3);
-var Ticks = __webpack_require__(25);
+var defaults = __webpack_require__(4);
+var Element = __webpack_require__(7);
+var helpers = __webpack_require__(2);
+var Ticks = __webpack_require__(24);
 
 defaults._set('scale', {
 	display: true,
@@ -52140,15 +51753,15 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 415 */
+/* 383 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(5);
-var Element = __webpack_require__(8);
-var helpers = __webpack_require__(3);
+var defaults = __webpack_require__(4);
+var Element = __webpack_require__(7);
+var helpers = __webpack_require__(2);
 
 defaults._set('global', {
 	tooltips: {
@@ -53095,14 +52708,14 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 416 */
+/* 384 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var helpers = __webpack_require__(3);
-var Ticks = __webpack_require__(25);
+var helpers = __webpack_require__(2);
+var Ticks = __webpack_require__(24);
 
 module.exports = function(Chart) {
 
@@ -53234,7 +52847,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 417 */
+/* 385 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53374,15 +52987,15 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 418 */
+/* 386 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(5);
-var helpers = __webpack_require__(3);
-var Ticks = __webpack_require__(25);
+var defaults = __webpack_require__(4);
+var helpers = __webpack_require__(2);
+var Ticks = __webpack_require__(24);
 
 module.exports = function(Chart) {
 
@@ -53573,14 +53186,14 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 419 */
+/* 387 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var helpers = __webpack_require__(3);
-var Ticks = __webpack_require__(25);
+var helpers = __webpack_require__(2);
+var Ticks = __webpack_require__(24);
 
 module.exports = function(Chart) {
 
@@ -53824,15 +53437,15 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 420 */
+/* 388 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(5);
-var helpers = __webpack_require__(3);
-var Ticks = __webpack_require__(25);
+var defaults = __webpack_require__(4);
+var helpers = __webpack_require__(2);
+var Ticks = __webpack_require__(24);
 
 module.exports = function(Chart) {
 
@@ -54361,7 +53974,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 421 */
+/* 389 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -54371,8 +53984,8 @@ module.exports = function(Chart) {
 var moment = __webpack_require__(0);
 moment = typeof moment === 'function' ? moment : window.moment;
 
-var defaults = __webpack_require__(5);
-var helpers = __webpack_require__(3);
+var defaults = __webpack_require__(4);
+var helpers = __webpack_require__(2);
 
 // Integer constants are from the ES6 spec.
 var MIN_INTEGER = Number.MIN_SAFE_INTEGER || -9007199254740991;
@@ -55124,240 +54737,240 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 422 */
+/* 390 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 92,
-	"./af.js": 92,
-	"./ar": 93,
-	"./ar-dz": 94,
-	"./ar-dz.js": 94,
-	"./ar-kw": 95,
-	"./ar-kw.js": 95,
-	"./ar-ly": 96,
-	"./ar-ly.js": 96,
-	"./ar-ma": 97,
-	"./ar-ma.js": 97,
-	"./ar-sa": 98,
-	"./ar-sa.js": 98,
-	"./ar-tn": 99,
-	"./ar-tn.js": 99,
-	"./ar.js": 93,
-	"./az": 100,
-	"./az.js": 100,
-	"./be": 101,
-	"./be.js": 101,
-	"./bg": 102,
-	"./bg.js": 102,
-	"./bn": 103,
-	"./bn.js": 103,
-	"./bo": 104,
-	"./bo.js": 104,
-	"./br": 105,
-	"./br.js": 105,
-	"./bs": 106,
-	"./bs.js": 106,
-	"./ca": 107,
-	"./ca.js": 107,
-	"./cs": 108,
-	"./cs.js": 108,
-	"./cv": 109,
-	"./cv.js": 109,
-	"./cy": 110,
-	"./cy.js": 110,
-	"./da": 111,
-	"./da.js": 111,
-	"./de": 112,
-	"./de-at": 113,
-	"./de-at.js": 113,
-	"./de-ch": 114,
-	"./de-ch.js": 114,
-	"./de.js": 112,
-	"./dv": 115,
-	"./dv.js": 115,
-	"./el": 116,
-	"./el.js": 116,
-	"./en-au": 117,
-	"./en-au.js": 117,
-	"./en-ca": 118,
-	"./en-ca.js": 118,
-	"./en-gb": 119,
-	"./en-gb.js": 119,
-	"./en-ie": 120,
-	"./en-ie.js": 120,
-	"./en-nz": 121,
-	"./en-nz.js": 121,
-	"./eo": 122,
-	"./eo.js": 122,
-	"./es": 123,
-	"./es-do": 124,
-	"./es-do.js": 124,
-	"./es.js": 123,
-	"./et": 125,
-	"./et.js": 125,
-	"./eu": 126,
-	"./eu.js": 126,
-	"./fa": 127,
-	"./fa.js": 127,
-	"./fi": 128,
-	"./fi.js": 128,
-	"./fo": 129,
-	"./fo.js": 129,
-	"./fr": 130,
-	"./fr-ca": 131,
-	"./fr-ca.js": 131,
-	"./fr-ch": 132,
-	"./fr-ch.js": 132,
-	"./fr.js": 130,
-	"./fy": 133,
-	"./fy.js": 133,
-	"./gd": 134,
-	"./gd.js": 134,
-	"./gl": 135,
-	"./gl.js": 135,
-	"./gom-latn": 136,
-	"./gom-latn.js": 136,
-	"./he": 137,
-	"./he.js": 137,
-	"./hi": 138,
-	"./hi.js": 138,
-	"./hr": 139,
-	"./hr.js": 139,
-	"./hu": 140,
-	"./hu.js": 140,
-	"./hy-am": 141,
-	"./hy-am.js": 141,
-	"./id": 142,
-	"./id.js": 142,
-	"./is": 143,
-	"./is.js": 143,
-	"./it": 144,
-	"./it.js": 144,
-	"./ja": 145,
-	"./ja.js": 145,
-	"./jv": 146,
-	"./jv.js": 146,
-	"./ka": 147,
-	"./ka.js": 147,
-	"./kk": 148,
-	"./kk.js": 148,
-	"./km": 149,
-	"./km.js": 149,
-	"./kn": 150,
-	"./kn.js": 150,
-	"./ko": 151,
-	"./ko.js": 151,
-	"./ky": 152,
-	"./ky.js": 152,
-	"./lb": 153,
-	"./lb.js": 153,
-	"./lo": 154,
-	"./lo.js": 154,
-	"./lt": 155,
-	"./lt.js": 155,
-	"./lv": 156,
-	"./lv.js": 156,
-	"./me": 157,
-	"./me.js": 157,
-	"./mi": 158,
-	"./mi.js": 158,
-	"./mk": 159,
-	"./mk.js": 159,
-	"./ml": 160,
-	"./ml.js": 160,
-	"./mr": 161,
-	"./mr.js": 161,
-	"./ms": 162,
-	"./ms-my": 163,
-	"./ms-my.js": 163,
-	"./ms.js": 162,
-	"./my": 164,
-	"./my.js": 164,
-	"./nb": 165,
-	"./nb.js": 165,
-	"./ne": 166,
-	"./ne.js": 166,
-	"./nl": 167,
-	"./nl-be": 168,
-	"./nl-be.js": 168,
-	"./nl.js": 167,
-	"./nn": 169,
-	"./nn.js": 169,
-	"./pa-in": 170,
-	"./pa-in.js": 170,
-	"./pl": 171,
-	"./pl.js": 171,
-	"./pt": 172,
-	"./pt-br": 173,
-	"./pt-br.js": 173,
-	"./pt.js": 172,
-	"./ro": 174,
-	"./ro.js": 174,
-	"./ru": 175,
-	"./ru.js": 175,
-	"./sd": 176,
-	"./sd.js": 176,
-	"./se": 177,
-	"./se.js": 177,
-	"./si": 178,
-	"./si.js": 178,
-	"./sk": 179,
-	"./sk.js": 179,
-	"./sl": 180,
-	"./sl.js": 180,
-	"./sq": 181,
-	"./sq.js": 181,
-	"./sr": 182,
-	"./sr-cyrl": 183,
-	"./sr-cyrl.js": 183,
-	"./sr.js": 182,
-	"./ss": 184,
-	"./ss.js": 184,
-	"./sv": 185,
-	"./sv.js": 185,
-	"./sw": 186,
-	"./sw.js": 186,
-	"./ta": 187,
-	"./ta.js": 187,
-	"./te": 188,
-	"./te.js": 188,
-	"./tet": 189,
-	"./tet.js": 189,
-	"./th": 190,
-	"./th.js": 190,
-	"./tl-ph": 191,
-	"./tl-ph.js": 191,
-	"./tlh": 192,
-	"./tlh.js": 192,
-	"./tr": 193,
-	"./tr.js": 193,
-	"./tzl": 194,
-	"./tzl.js": 194,
-	"./tzm": 195,
-	"./tzm-latn": 196,
-	"./tzm-latn.js": 196,
-	"./tzm.js": 195,
-	"./uk": 197,
-	"./uk.js": 197,
-	"./ur": 198,
-	"./ur.js": 198,
-	"./uz": 199,
-	"./uz-latn": 200,
-	"./uz-latn.js": 200,
-	"./uz.js": 199,
-	"./vi": 201,
-	"./vi.js": 201,
-	"./x-pseudo": 202,
-	"./x-pseudo.js": 202,
-	"./yo": 203,
-	"./yo.js": 203,
-	"./zh-cn": 204,
-	"./zh-cn.js": 204,
-	"./zh-hk": 205,
-	"./zh-hk.js": 205,
-	"./zh-tw": 206,
-	"./zh-tw.js": 206
+	"./af": 88,
+	"./af.js": 88,
+	"./ar": 89,
+	"./ar-dz": 90,
+	"./ar-dz.js": 90,
+	"./ar-kw": 91,
+	"./ar-kw.js": 91,
+	"./ar-ly": 92,
+	"./ar-ly.js": 92,
+	"./ar-ma": 93,
+	"./ar-ma.js": 93,
+	"./ar-sa": 94,
+	"./ar-sa.js": 94,
+	"./ar-tn": 95,
+	"./ar-tn.js": 95,
+	"./ar.js": 89,
+	"./az": 96,
+	"./az.js": 96,
+	"./be": 97,
+	"./be.js": 97,
+	"./bg": 98,
+	"./bg.js": 98,
+	"./bn": 99,
+	"./bn.js": 99,
+	"./bo": 100,
+	"./bo.js": 100,
+	"./br": 101,
+	"./br.js": 101,
+	"./bs": 102,
+	"./bs.js": 102,
+	"./ca": 103,
+	"./ca.js": 103,
+	"./cs": 104,
+	"./cs.js": 104,
+	"./cv": 105,
+	"./cv.js": 105,
+	"./cy": 106,
+	"./cy.js": 106,
+	"./da": 107,
+	"./da.js": 107,
+	"./de": 108,
+	"./de-at": 109,
+	"./de-at.js": 109,
+	"./de-ch": 110,
+	"./de-ch.js": 110,
+	"./de.js": 108,
+	"./dv": 111,
+	"./dv.js": 111,
+	"./el": 112,
+	"./el.js": 112,
+	"./en-au": 113,
+	"./en-au.js": 113,
+	"./en-ca": 114,
+	"./en-ca.js": 114,
+	"./en-gb": 115,
+	"./en-gb.js": 115,
+	"./en-ie": 116,
+	"./en-ie.js": 116,
+	"./en-nz": 117,
+	"./en-nz.js": 117,
+	"./eo": 118,
+	"./eo.js": 118,
+	"./es": 119,
+	"./es-do": 120,
+	"./es-do.js": 120,
+	"./es.js": 119,
+	"./et": 121,
+	"./et.js": 121,
+	"./eu": 122,
+	"./eu.js": 122,
+	"./fa": 123,
+	"./fa.js": 123,
+	"./fi": 124,
+	"./fi.js": 124,
+	"./fo": 125,
+	"./fo.js": 125,
+	"./fr": 126,
+	"./fr-ca": 127,
+	"./fr-ca.js": 127,
+	"./fr-ch": 128,
+	"./fr-ch.js": 128,
+	"./fr.js": 126,
+	"./fy": 129,
+	"./fy.js": 129,
+	"./gd": 130,
+	"./gd.js": 130,
+	"./gl": 131,
+	"./gl.js": 131,
+	"./gom-latn": 132,
+	"./gom-latn.js": 132,
+	"./he": 133,
+	"./he.js": 133,
+	"./hi": 134,
+	"./hi.js": 134,
+	"./hr": 135,
+	"./hr.js": 135,
+	"./hu": 136,
+	"./hu.js": 136,
+	"./hy-am": 137,
+	"./hy-am.js": 137,
+	"./id": 138,
+	"./id.js": 138,
+	"./is": 139,
+	"./is.js": 139,
+	"./it": 140,
+	"./it.js": 140,
+	"./ja": 141,
+	"./ja.js": 141,
+	"./jv": 142,
+	"./jv.js": 142,
+	"./ka": 143,
+	"./ka.js": 143,
+	"./kk": 144,
+	"./kk.js": 144,
+	"./km": 145,
+	"./km.js": 145,
+	"./kn": 146,
+	"./kn.js": 146,
+	"./ko": 147,
+	"./ko.js": 147,
+	"./ky": 148,
+	"./ky.js": 148,
+	"./lb": 149,
+	"./lb.js": 149,
+	"./lo": 150,
+	"./lo.js": 150,
+	"./lt": 151,
+	"./lt.js": 151,
+	"./lv": 152,
+	"./lv.js": 152,
+	"./me": 153,
+	"./me.js": 153,
+	"./mi": 154,
+	"./mi.js": 154,
+	"./mk": 155,
+	"./mk.js": 155,
+	"./ml": 156,
+	"./ml.js": 156,
+	"./mr": 157,
+	"./mr.js": 157,
+	"./ms": 158,
+	"./ms-my": 159,
+	"./ms-my.js": 159,
+	"./ms.js": 158,
+	"./my": 160,
+	"./my.js": 160,
+	"./nb": 161,
+	"./nb.js": 161,
+	"./ne": 162,
+	"./ne.js": 162,
+	"./nl": 163,
+	"./nl-be": 164,
+	"./nl-be.js": 164,
+	"./nl.js": 163,
+	"./nn": 165,
+	"./nn.js": 165,
+	"./pa-in": 166,
+	"./pa-in.js": 166,
+	"./pl": 167,
+	"./pl.js": 167,
+	"./pt": 168,
+	"./pt-br": 169,
+	"./pt-br.js": 169,
+	"./pt.js": 168,
+	"./ro": 170,
+	"./ro.js": 170,
+	"./ru": 171,
+	"./ru.js": 171,
+	"./sd": 172,
+	"./sd.js": 172,
+	"./se": 173,
+	"./se.js": 173,
+	"./si": 174,
+	"./si.js": 174,
+	"./sk": 175,
+	"./sk.js": 175,
+	"./sl": 176,
+	"./sl.js": 176,
+	"./sq": 177,
+	"./sq.js": 177,
+	"./sr": 178,
+	"./sr-cyrl": 179,
+	"./sr-cyrl.js": 179,
+	"./sr.js": 178,
+	"./ss": 180,
+	"./ss.js": 180,
+	"./sv": 181,
+	"./sv.js": 181,
+	"./sw": 182,
+	"./sw.js": 182,
+	"./ta": 183,
+	"./ta.js": 183,
+	"./te": 184,
+	"./te.js": 184,
+	"./tet": 185,
+	"./tet.js": 185,
+	"./th": 186,
+	"./th.js": 186,
+	"./tl-ph": 187,
+	"./tl-ph.js": 187,
+	"./tlh": 188,
+	"./tlh.js": 188,
+	"./tr": 189,
+	"./tr.js": 189,
+	"./tzl": 190,
+	"./tzl.js": 190,
+	"./tzm": 191,
+	"./tzm-latn": 192,
+	"./tzm-latn.js": 192,
+	"./tzm.js": 191,
+	"./uk": 193,
+	"./uk.js": 193,
+	"./ur": 194,
+	"./ur.js": 194,
+	"./uz": 195,
+	"./uz-latn": 196,
+	"./uz-latn.js": 196,
+	"./uz.js": 195,
+	"./vi": 197,
+	"./vi.js": 197,
+	"./x-pseudo": 198,
+	"./x-pseudo.js": 198,
+	"./yo": 199,
+	"./yo.js": 199,
+	"./zh-cn": 200,
+	"./zh-cn.js": 200,
+	"./zh-hk": 201,
+	"./zh-hk.js": 201,
+	"./zh-tw": 202,
+	"./zh-tw.js": 202
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -55373,18 +54986,18 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 422;
+webpackContext.id = 390;
 
 /***/ }),
-/* 423 */
+/* 391 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(5);
-var elements = __webpack_require__(13);
-var helpers = __webpack_require__(3);
+var defaults = __webpack_require__(4);
+var elements = __webpack_require__(12);
+var helpers = __webpack_require__(2);
 
 defaults._set('bar', {
 	hover: {
@@ -55804,15 +55417,15 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 424 */
+/* 392 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(5);
-var elements = __webpack_require__(13);
-var helpers = __webpack_require__(3);
+var defaults = __webpack_require__(4);
+var elements = __webpack_require__(12);
+var helpers = __webpack_require__(2);
 
 defaults._set('bubble', {
 	hover: {
@@ -55991,15 +55604,15 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 425 */
+/* 393 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(5);
-var elements = __webpack_require__(13);
-var helpers = __webpack_require__(3);
+var defaults = __webpack_require__(4);
+var elements = __webpack_require__(12);
+var helpers = __webpack_require__(2);
 
 defaults._set('doughnut', {
 	animation: {
@@ -56297,15 +55910,15 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 426 */
+/* 394 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(5);
-var elements = __webpack_require__(13);
-var helpers = __webpack_require__(3);
+var defaults = __webpack_require__(4);
+var elements = __webpack_require__(12);
+var helpers = __webpack_require__(2);
 
 defaults._set('line', {
 	showLines: true,
@@ -56637,15 +56250,15 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 427 */
+/* 395 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(5);
-var elements = __webpack_require__(13);
-var helpers = __webpack_require__(3);
+var defaults = __webpack_require__(4);
+var elements = __webpack_require__(12);
+var helpers = __webpack_require__(2);
 
 defaults._set('polarArea', {
 	scale: {
@@ -56866,15 +56479,15 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 428 */
+/* 396 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(5);
-var elements = __webpack_require__(13);
-var helpers = __webpack_require__(3);
+var defaults = __webpack_require__(4);
+var elements = __webpack_require__(12);
+var helpers = __webpack_require__(2);
 
 defaults._set('radar', {
 	scale: {
@@ -57041,13 +56654,13 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 429 */
+/* 397 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(5);
+var defaults = __webpack_require__(4);
 
 defaults._set('scatter', {
 	hover: {
@@ -57090,7 +56703,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 430 */
+/* 398 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57108,7 +56721,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 431 */
+/* 399 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57125,7 +56738,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 432 */
+/* 400 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57143,7 +56756,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 433 */
+/* 401 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57161,7 +56774,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 434 */
+/* 402 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57179,7 +56792,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 435 */
+/* 403 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57197,7 +56810,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 436 */
+/* 404 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57212,7 +56825,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 437 */
+/* 405 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57224,9 +56837,9 @@ module.exports = function(Chart) {
 
 
 
-var defaults = __webpack_require__(5);
-var elements = __webpack_require__(13);
-var helpers = __webpack_require__(3);
+var defaults = __webpack_require__(4);
+var elements = __webpack_require__(12);
+var helpers = __webpack_require__(2);
 
 defaults._set('global', {
 	plugins: {
@@ -57540,15 +57153,15 @@ module.exports = function() {
 
 
 /***/ }),
-/* 438 */
+/* 406 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(5);
-var Element = __webpack_require__(8);
-var helpers = __webpack_require__(3);
+var defaults = __webpack_require__(4);
+var Element = __webpack_require__(7);
+var helpers = __webpack_require__(2);
 
 defaults._set('global', {
 	legend: {
@@ -58114,15 +57727,15 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 439 */
+/* 407 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(5);
-var Element = __webpack_require__(8);
-var helpers = __webpack_require__(3);
+var defaults = __webpack_require__(4);
+var Element = __webpack_require__(7);
+var helpers = __webpack_require__(2);
 
 defaults._set('global', {
 	title: {
@@ -58364,7 +57977,7 @@ module.exports = function(Chart) {
 
 
 /***/ }),
-/* 440 */
+/* 408 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {/**
@@ -60575,10 +60188,10 @@ function stubFalse() {
 
 module.exports = merge;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(30), __webpack_require__(91)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(29), __webpack_require__(87)(module)))
 
 /***/ }),
-/* 441 */
+/* 409 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -60588,15 +60201,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _vue = __webpack_require__(6);
+var _vue = __webpack_require__(5);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _chart = __webpack_require__(10);
+var _chart = __webpack_require__(9);
 
 var _chart2 = _interopRequireDefault(_chart);
 
-var _options = __webpack_require__(11);
+var _options = __webpack_require__(10);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -60685,7 +60298,7 @@ exports.default = _vue2.default.extend({
 });
 
 /***/ }),
-/* 442 */
+/* 410 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -60695,15 +60308,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _vue = __webpack_require__(6);
+var _vue = __webpack_require__(5);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _chart = __webpack_require__(10);
+var _chart = __webpack_require__(9);
 
 var _chart2 = _interopRequireDefault(_chart);
 
-var _options = __webpack_require__(11);
+var _options = __webpack_require__(10);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -60775,7 +60388,7 @@ exports.default = _vue2.default.extend({
 });
 
 /***/ }),
-/* 443 */
+/* 411 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -60785,15 +60398,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _vue = __webpack_require__(6);
+var _vue = __webpack_require__(5);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _chart = __webpack_require__(10);
+var _chart = __webpack_require__(9);
 
 var _chart2 = _interopRequireDefault(_chart);
 
-var _options = __webpack_require__(11);
+var _options = __webpack_require__(10);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -60881,7 +60494,7 @@ exports.default = _vue2.default.extend({
 });
 
 /***/ }),
-/* 444 */
+/* 412 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -60891,15 +60504,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _vue = __webpack_require__(6);
+var _vue = __webpack_require__(5);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _chart = __webpack_require__(10);
+var _chart = __webpack_require__(9);
 
 var _chart2 = _interopRequireDefault(_chart);
 
-var _options = __webpack_require__(11);
+var _options = __webpack_require__(10);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -60971,7 +60584,7 @@ exports.default = _vue2.default.extend({
 });
 
 /***/ }),
-/* 445 */
+/* 413 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -60981,15 +60594,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _vue = __webpack_require__(6);
+var _vue = __webpack_require__(5);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _chart = __webpack_require__(10);
+var _chart = __webpack_require__(9);
 
 var _chart2 = _interopRequireDefault(_chart);
 
-var _options = __webpack_require__(11);
+var _options = __webpack_require__(10);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -61061,7 +60674,7 @@ exports.default = _vue2.default.extend({
 });
 
 /***/ }),
-/* 446 */
+/* 414 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -61071,15 +60684,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _vue = __webpack_require__(6);
+var _vue = __webpack_require__(5);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _chart = __webpack_require__(10);
+var _chart = __webpack_require__(9);
 
 var _chart2 = _interopRequireDefault(_chart);
 
-var _options = __webpack_require__(11);
+var _options = __webpack_require__(10);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -61151,7 +60764,7 @@ exports.default = _vue2.default.extend({
 });
 
 /***/ }),
-/* 447 */
+/* 415 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -61161,15 +60774,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _vue = __webpack_require__(6);
+var _vue = __webpack_require__(5);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _chart = __webpack_require__(10);
+var _chart = __webpack_require__(9);
 
 var _chart2 = _interopRequireDefault(_chart);
 
-var _options = __webpack_require__(11);
+var _options = __webpack_require__(10);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -61259,7 +60872,7 @@ exports.default = _vue2.default.extend({
 });
 
 /***/ }),
-/* 448 */
+/* 416 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -61269,15 +60882,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _vue = __webpack_require__(6);
+var _vue = __webpack_require__(5);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _chart = __webpack_require__(10);
+var _chart = __webpack_require__(9);
 
 var _chart2 = _interopRequireDefault(_chart);
 
-var _options = __webpack_require__(11);
+var _options = __webpack_require__(10);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -61356,7 +60969,7 @@ exports.default = _vue2.default.extend({
 });
 
 /***/ }),
-/* 449 */
+/* 417 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -61366,11 +60979,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _reactiveData = __webpack_require__(450);
+var _reactiveData = __webpack_require__(418);
 
 var _reactiveData2 = _interopRequireDefault(_reactiveData);
 
-var _reactiveProp = __webpack_require__(455);
+var _reactiveProp = __webpack_require__(423);
 
 var _reactiveProp2 = _interopRequireDefault(_reactiveProp);
 
@@ -61382,17 +60995,17 @@ exports.default = {
 };
 
 /***/ }),
-/* 450 */
+/* 418 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _keys = __webpack_require__(207);
+var _keys = __webpack_require__(203);
 
 var _keys2 = _interopRequireDefault(_keys);
 
-var _stringify = __webpack_require__(208);
+var _stringify = __webpack_require__(204);
 
 var _stringify2 = _interopRequireDefault(_stringify);
 
@@ -61465,22 +61078,22 @@ module.exports = {
 };
 
 /***/ }),
-/* 451 */
+/* 419 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(452);
-module.exports = __webpack_require__(9).Object.keys;
+__webpack_require__(420);
+module.exports = __webpack_require__(8).Object.keys;
 
 
 /***/ }),
-/* 452 */
+/* 420 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 Object.keys(O)
-var toObject = __webpack_require__(33);
-var $keys = __webpack_require__(39);
+var toObject = __webpack_require__(32);
+var $keys = __webpack_require__(38);
 
-__webpack_require__(453)('keys', function () {
+__webpack_require__(421)('keys', function () {
   return function keys(it) {
     return $keys(toObject(it));
   };
@@ -61488,13 +61101,13 @@ __webpack_require__(453)('keys', function () {
 
 
 /***/ }),
-/* 453 */
+/* 421 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // most Object methods by ES6 should accept primitives
-var $export = __webpack_require__(16);
-var core = __webpack_require__(9);
-var fails = __webpack_require__(31);
+var $export = __webpack_require__(15);
+var core = __webpack_require__(8);
+var fails = __webpack_require__(30);
 module.exports = function (KEY, exec) {
   var fn = (core.Object || {})[KEY] || Object[KEY];
   var exp = {};
@@ -61504,10 +61117,10 @@ module.exports = function (KEY, exec) {
 
 
 /***/ }),
-/* 454 */
+/* 422 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var core = __webpack_require__(9);
+var core = __webpack_require__(8);
 var $JSON = core.JSON || (core.JSON = { stringify: JSON.stringify });
 module.exports = function stringify(it) { // eslint-disable-line no-unused-vars
   return $JSON.stringify.apply($JSON, arguments);
@@ -61515,17 +61128,17 @@ module.exports = function stringify(it) { // eslint-disable-line no-unused-vars
 
 
 /***/ }),
-/* 455 */
+/* 423 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _keys = __webpack_require__(207);
+var _keys = __webpack_require__(203);
 
 var _keys2 = _interopRequireDefault(_keys);
 
-var _stringify = __webpack_require__(208);
+var _stringify = __webpack_require__(204);
 
 var _stringify2 = _interopRequireDefault(_stringify);
 
@@ -61597,21 +61210,21 @@ module.exports = {
 };
 
 /***/ }),
-/* 456 */
+/* 424 */
 /***/ (function(module, exports) {
 
-module.exports = {"_args":[["vue-chartjs@2.8.7","/Users/cytonn/other_work/Laravel_practice/vuestic-laravel"]],"_from":"vue-chartjs@2.8.7","_id":"vue-chartjs@2.8.7","_inBundle":false,"_integrity":"sha512-XNNCQHwP1zUe739q0h0DdObx7qC+umJ50P8N4uab4N964rHSSq7sbRAdyoevObI3K2eYuCTLhnzjA1F90uQwtQ==","_location":"/vue-chartjs","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"vue-chartjs@2.8.7","name":"vue-chartjs","escapedName":"vue-chartjs","rawSpec":"2.8.7","saveSpec":null,"fetchSpec":"2.8.7"},"_requiredBy":["/"],"_resolved":"https://registry.npmjs.org/vue-chartjs/-/vue-chartjs-2.8.7.tgz","_spec":"2.8.7","_where":"/Users/cytonn/other_work/Laravel_practice/vuestic-laravel","author":{"name":"Jakub Juszczak","email":"jakub@posteo.de"},"babel":{"presets":["es2015"]},"browserify":{"transform":["babelify"]},"bugs":{"url":"https://github.com/apertureless/vue-chartjs/issues"},"contributors":[{"name":"Thorsten Lünborg","url":"https://github.com/LinusBorg"},{"name":"Juan Carlos Alonso","url":"https://github.com/jcalonso"}],"dependencies":{"lodash.merge":"^4.6.0"},"description":"Vue.js wrapper for chart.js for creating beautiful charts.","devDependencies":{"babel-cli":"^6.24.1","babel-core":"^6.25.0","babel-loader":"^7.0.0","babel-plugin-transform-object-assign":"^6.22.0","babel-plugin-transform-runtime":"^6.23.0","babel-preset-es2015":"^6.24.1","babel-preset-stage-2":"^6.24.1","babel-runtime":"^6.23.0","chai":"^3.5.0","chart.js":"^2.7.0","chromedriver":"^2.28.0","connect-history-api-fallback":"^1.1.0","cross-env":"^3.2.4","cross-spawn":"^5.1.0","css-loader":"^0.28.0","eslint":"^3.19.0","eslint-config-standard":"^10.2.1","eslint-friendly-formatter":"^2.0.7","eslint-loader":"^1.7.1","eslint-plugin-html":"^2.0.1","eslint-plugin-import":"^2.2.0","eslint-plugin-node":"^4.2.2","eslint-plugin-promise":"^3.5.0","eslint-plugin-standard":"^3.0.1","eventsource-polyfill":"^0.9.6","express":"^4.15.2","extract-text-webpack-plugin":"^1.0.1","file-loader":"^0.10.1","function-bind":"^1.0.2","html-webpack-plugin":"^2.28.0","http-proxy-middleware":"^0.17.4","inject-loader":"^3.0.0","isparta-loader":"^2.0.0","jasmine-core":"^2.5.2","json-loader":"^0.5.4","karma":"^1.5.0","karma-coverage":"^1.1.1","karma-jasmine":"^1.0.2","karma-mocha":"^1.2.0","karma-phantomjs-launcher":"^1.0.4","karma-sinon-chai":"^1.2.0","karma-sourcemap-loader":"^0.3.7","karma-spec-reporter":"0.0.30","karma-webpack":"1.8.1","lolex":"^1.6.0","mocha":"^3.1.0","nightwatch":"^0.9.14","ora":"^1.2.0","phantomjs-prebuilt":"^2.1.13","selenium-server":"^3.3.1","shelljs":"^0.7.7","sinon":"^2.1.0","sinon-chai":"^2.9.0","url-loader":"^0.5.8","vue":"^2.4.4","vue-hot-reload-api":"^2.1.0","vue-html-loader":"^1.2.4","vue-loader":"^12.2.2","vue-style-loader":"^3.0.1","vue-template-compiler":"^2.4.2","webpack":"^1.13.2","webpack-dev-middleware":"^1.10.1","webpack-hot-middleware":"^2.17.1","webpack-merge":"1.1.1"},"engines":{"node":">=6.9.0"},"files":["src","dist","es"],"greenkeeper":{"ignore":["extract-text-webpack-plugin","karma-webpack","webpack","webpack-merge"]},"homepage":"http://vue-chartjs.org","jsnext:main":"es/index.js","keywords":["ChartJs","Vue","Visualisation","Wrapper","Charts"],"license":"MIT","main":"dist/vue-chartjs.js","maintainers":[{"name":"Jakub Juszczak","email":"jakub@posteo.de","url":"http://www.jakubjuszczak.de"}],"module":"es/index.js","name":"vue-chartjs","peerDependencies":{"chart.js":"^2.7.0","vue":"^2.4.4"},"repository":{"type":"git","url":"git+ssh://git@github.com/apertureless/vue-chartjs.git"},"scripts":{"build":"yarn run release && yarn run build:es","build:es":"cross-env BABEL_ENV=es babel src --out-dir es","dev":"node build/dev-server.js","e2e":"node test/e2e/runner.js","lint":"eslint --ext .js,.vue src test/unit/specs test/e2e/specs","prepublish":"yarn run lint && yarn run test && yarn run build","release":"webpack --progress --hide-modules --config  ./build/webpack.release.js && NODE_ENV=production webpack --progress --hide-modules --config  ./build/webpack.release.min.js && webpack --progress --hide-modules --config  ./build/webpack.release.full.js && NODE_ENV=production webpack --progress --hide-modules --config  ./build/webpack.release.full.min.js","test":"npm run unit","unit":"karma start test/unit/karma.conf.js --single-run"},"unpkg":"dist/vue-chartjs.full.min.js","version":"2.8.7"}
+module.exports = {"_args":[["vue-chartjs@2.8.7","/Users/cytonn/code/Video-Streamer"]],"_from":"vue-chartjs@2.8.7","_id":"vue-chartjs@2.8.7","_inBundle":false,"_integrity":"sha512-XNNCQHwP1zUe739q0h0DdObx7qC+umJ50P8N4uab4N964rHSSq7sbRAdyoevObI3K2eYuCTLhnzjA1F90uQwtQ==","_location":"/vue-chartjs","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"vue-chartjs@2.8.7","name":"vue-chartjs","escapedName":"vue-chartjs","rawSpec":"2.8.7","saveSpec":null,"fetchSpec":"2.8.7"},"_requiredBy":["/"],"_resolved":"https://registry.npmjs.org/vue-chartjs/-/vue-chartjs-2.8.7.tgz","_spec":"2.8.7","_where":"/Users/cytonn/code/Video-Streamer","author":{"name":"Jakub Juszczak","email":"jakub@posteo.de"},"babel":{"presets":["es2015"]},"browserify":{"transform":["babelify"]},"bugs":{"url":"https://github.com/apertureless/vue-chartjs/issues"},"contributors":[{"name":"Thorsten Lünborg","url":"https://github.com/LinusBorg"},{"name":"Juan Carlos Alonso","url":"https://github.com/jcalonso"}],"dependencies":{"lodash.merge":"^4.6.0"},"description":"Vue.js wrapper for chart.js for creating beautiful charts.","devDependencies":{"babel-cli":"^6.24.1","babel-core":"^6.25.0","babel-loader":"^7.0.0","babel-plugin-transform-object-assign":"^6.22.0","babel-plugin-transform-runtime":"^6.23.0","babel-preset-es2015":"^6.24.1","babel-preset-stage-2":"^6.24.1","babel-runtime":"^6.23.0","chai":"^3.5.0","chart.js":"^2.7.0","chromedriver":"^2.28.0","connect-history-api-fallback":"^1.1.0","cross-env":"^3.2.4","cross-spawn":"^5.1.0","css-loader":"^0.28.0","eslint":"^3.19.0","eslint-config-standard":"^10.2.1","eslint-friendly-formatter":"^2.0.7","eslint-loader":"^1.7.1","eslint-plugin-html":"^2.0.1","eslint-plugin-import":"^2.2.0","eslint-plugin-node":"^4.2.2","eslint-plugin-promise":"^3.5.0","eslint-plugin-standard":"^3.0.1","eventsource-polyfill":"^0.9.6","express":"^4.15.2","extract-text-webpack-plugin":"^1.0.1","file-loader":"^0.10.1","function-bind":"^1.0.2","html-webpack-plugin":"^2.28.0","http-proxy-middleware":"^0.17.4","inject-loader":"^3.0.0","isparta-loader":"^2.0.0","jasmine-core":"^2.5.2","json-loader":"^0.5.4","karma":"^1.5.0","karma-coverage":"^1.1.1","karma-jasmine":"^1.0.2","karma-mocha":"^1.2.0","karma-phantomjs-launcher":"^1.0.4","karma-sinon-chai":"^1.2.0","karma-sourcemap-loader":"^0.3.7","karma-spec-reporter":"0.0.30","karma-webpack":"1.8.1","lolex":"^1.6.0","mocha":"^3.1.0","nightwatch":"^0.9.14","ora":"^1.2.0","phantomjs-prebuilt":"^2.1.13","selenium-server":"^3.3.1","shelljs":"^0.7.7","sinon":"^2.1.0","sinon-chai":"^2.9.0","url-loader":"^0.5.8","vue":"^2.4.4","vue-hot-reload-api":"^2.1.0","vue-html-loader":"^1.2.4","vue-loader":"^12.2.2","vue-style-loader":"^3.0.1","vue-template-compiler":"^2.4.2","webpack":"^1.13.2","webpack-dev-middleware":"^1.10.1","webpack-hot-middleware":"^2.17.1","webpack-merge":"1.1.1"},"engines":{"node":">=6.9.0"},"files":["src","dist","es"],"greenkeeper":{"ignore":["extract-text-webpack-plugin","karma-webpack","webpack","webpack-merge"]},"homepage":"http://vue-chartjs.org","jsnext:main":"es/index.js","keywords":["ChartJs","Vue","Visualisation","Wrapper","Charts"],"license":"MIT","main":"dist/vue-chartjs.js","maintainers":[{"name":"Jakub Juszczak","email":"jakub@posteo.de","url":"http://www.jakubjuszczak.de"}],"module":"es/index.js","name":"vue-chartjs","peerDependencies":{"chart.js":"^2.7.0","vue":"^2.4.4"},"repository":{"type":"git","url":"git+ssh://git@github.com/apertureless/vue-chartjs.git"},"scripts":{"build":"yarn run release && yarn run build:es","build:es":"cross-env BABEL_ENV=es babel src --out-dir es","dev":"node build/dev-server.js","e2e":"node test/e2e/runner.js","lint":"eslint --ext .js,.vue src test/unit/specs test/e2e/specs","prepublish":"yarn run lint && yarn run test && yarn run build","release":"webpack --progress --hide-modules --config  ./build/webpack.release.js && NODE_ENV=production webpack --progress --hide-modules --config  ./build/webpack.release.min.js && webpack --progress --hide-modules --config  ./build/webpack.release.full.js && NODE_ENV=production webpack --progress --hide-modules --config  ./build/webpack.release.full.min.js","test":"npm run unit","unit":"karma start test/unit/karma.conf.js --single-run"},"unpkg":"dist/vue-chartjs.full.min.js","version":"2.8.7"}
 
 /***/ }),
-/* 457 */
+/* 425 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_chartjs__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_chartjs__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_chartjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_chartjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__DefaultOptions__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__DefaultOptions__ = __webpack_require__(18);
 
 
 
@@ -61631,15 +61244,15 @@ module.exports = {"_args":[["vue-chartjs@2.8.7","/Users/cytonn/other_work/Larave
 }));
 
 /***/ }),
-/* 458 */
+/* 426 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_chartjs__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_chartjs__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_chartjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_chartjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__DefaultOptions__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__DefaultOptions__ = __webpack_require__(18);
 
 
 
@@ -61659,15 +61272,15 @@ module.exports = {"_args":[["vue-chartjs@2.8.7","/Users/cytonn/other_work/Larave
 }));
 
 /***/ }),
-/* 459 */
+/* 427 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_chartjs__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_chartjs__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_chartjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_chartjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__DefaultOptions__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__DefaultOptions__ = __webpack_require__(18);
 
 
 
@@ -61687,15 +61300,15 @@ module.exports = {"_args":[["vue-chartjs@2.8.7","/Users/cytonn/other_work/Larave
 }));
 
 /***/ }),
-/* 460 */
+/* 428 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_chartjs__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_chartjs__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_chartjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_chartjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__DefaultOptions__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__DefaultOptions__ = __webpack_require__(18);
 
 
 
@@ -61715,15 +61328,15 @@ module.exports = {"_args":[["vue-chartjs@2.8.7","/Users/cytonn/other_work/Larave
 }));
 
 /***/ }),
-/* 461 */
+/* 429 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_chartjs__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_chartjs__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_chartjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_chartjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__DefaultOptions__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__DefaultOptions__ = __webpack_require__(18);
 
 
 
@@ -61743,7 +61356,7 @@ module.exports = {"_args":[["vue-chartjs@2.8.7","/Users/cytonn/other_work/Larave
 }));
 
 /***/ }),
-/* 462 */
+/* 430 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -61798,17 +61411,17 @@ if (false) {
 }
 
 /***/ }),
-/* 463 */
+/* 431 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(464);
+var content = __webpack_require__(432);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("7b51ce4e", content, false);
+var update = __webpack_require__(3)("7b51ce4e", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -61824,37 +61437,29 @@ if(false) {
 }
 
 /***/ }),
-/* 464 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 432 */
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n@media (max-width: 1258px) {\n.pagination-link-btn:first-child, .pagination-link-btn:last-child {\n    display: none;\n}\n.pagination-link-btn:nth-child(2) {\n    border-top-left-radius: 1.875rem !important;\n    border-bottom-left-radius: 1.875rem !important;\n}\n.pagination-link-btn:nth-last-child(2) {\n    border-top-right-radius: 1.875rem !important;\n    border-bottom-right-radius: 1.875rem !important;\n}\n}\n@media (max-width: 576px) {\n.hide-not-focused-btn:not(.focus) {\n    display: none;\n}\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
-/* 465 */
+/* 433 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuetable_2_src_components_Vuetable__ = __webpack_require__(466);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuetable_2_src_components_Vuetable__ = __webpack_require__(434);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuetable_2_src_components_Vuetable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vuetable_2_src_components_Vuetable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuetable_2_src_components_VuetablePagination__ = __webpack_require__(489);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuetable_2_src_components_VuetablePagination__ = __webpack_require__(457);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuetable_2_src_components_VuetablePagination___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vuetable_2_src_components_VuetablePagination__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__datatable_components_FilterBar_vue__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__datatable_components_FilterBar_vue__ = __webpack_require__(210);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__datatable_components_FilterBar_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__datatable_components_FilterBar_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__datatable_components_ItemsPerPage_vue__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__datatable_components_ItemsPerPage_vue__ = __webpack_require__(211);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__datatable_components_ItemsPerPage_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__datatable_components_ItemsPerPage_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__data_local_data__ = __webpack_require__(221);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__vuestic_components_vuestic_datatable_data_data_table_styles__ = __webpack_require__(502);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__data_local_data__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__vuestic_components_vuestic_datatable_data_data_table_styles__ = __webpack_require__(470);
 
 
 
@@ -61984,19 +61589,19 @@ var originalData = __WEBPACK_IMPORTED_MODULE_5__data_local_data__["a" /* default
 });
 
 /***/ }),
-/* 466 */
+/* 434 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(467)
+  __webpack_require__(435)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(469)
+var __vue_script__ = __webpack_require__(437)
 /* template */
-var __vue_template__ = __webpack_require__(488)
+var __vue_template__ = __webpack_require__(456)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -62036,17 +61641,17 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 467 */
+/* 435 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(468);
+var content = __webpack_require__(436);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("c397222a", content, false);
+var update = __webpack_require__(3)("c397222a", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -62062,10 +61667,10 @@ if(false) {
 }
 
 /***/ }),
-/* 468 */
+/* 436 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
+exports = module.exports = __webpack_require__(217)(undefined);
 // imports
 
 
@@ -62076,12 +61681,12 @@ exports.push([module.i, "\n[v-cloak][data-v-15965e3b] {\n  display: none;\n}\n.v
 
 
 /***/ }),
-/* 469 */
+/* 437 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(470);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(438);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 
 
@@ -62994,22 +62599,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 470 */
+/* 438 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(471);
+module.exports = __webpack_require__(439);
 
 /***/ }),
-/* 471 */
+/* 439 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(7);
-var bind = __webpack_require__(209);
-var Axios = __webpack_require__(472);
-var defaults = __webpack_require__(45);
+var utils = __webpack_require__(6);
+var bind = __webpack_require__(205);
+var Axios = __webpack_require__(440);
+var defaults = __webpack_require__(44);
 
 /**
  * Create an instance of Axios
@@ -63042,15 +62647,15 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(213);
-axios.CancelToken = __webpack_require__(486);
-axios.isCancel = __webpack_require__(212);
+axios.Cancel = __webpack_require__(209);
+axios.CancelToken = __webpack_require__(454);
+axios.isCancel = __webpack_require__(208);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(487);
+axios.spread = __webpack_require__(455);
 
 module.exports = axios;
 
@@ -63059,18 +62664,18 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 472 */
+/* 440 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(45);
-var utils = __webpack_require__(7);
-var InterceptorManager = __webpack_require__(481);
-var dispatchRequest = __webpack_require__(482);
-var isAbsoluteURL = __webpack_require__(484);
-var combineURLs = __webpack_require__(485);
+var defaults = __webpack_require__(44);
+var utils = __webpack_require__(6);
+var InterceptorManager = __webpack_require__(449);
+var dispatchRequest = __webpack_require__(450);
+var isAbsoluteURL = __webpack_require__(452);
+var combineURLs = __webpack_require__(453);
 
 /**
  * Create a new instance of Axios
@@ -63151,13 +62756,13 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 473 */
+/* 441 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(7);
+var utils = __webpack_require__(6);
 
 module.exports = function normalizeHeaderName(headers, normalizedName) {
   utils.forEach(headers, function processHeader(value, name) {
@@ -63170,13 +62775,13 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 474 */
+/* 442 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var createError = __webpack_require__(211);
+var createError = __webpack_require__(207);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -63202,7 +62807,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 475 */
+/* 443 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63228,13 +62833,13 @@ module.exports = function enhanceError(error, config, code, response) {
 
 
 /***/ }),
-/* 476 */
+/* 444 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(7);
+var utils = __webpack_require__(6);
 
 function encode(val) {
   return encodeURIComponent(val).
@@ -63303,13 +62908,13 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 477 */
+/* 445 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(7);
+var utils = __webpack_require__(6);
 
 /**
  * Parse headers into an object
@@ -63347,13 +62952,13 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 478 */
+/* 446 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(7);
+var utils = __webpack_require__(6);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -63422,7 +63027,7 @@ module.exports = (
 
 
 /***/ }),
-/* 479 */
+/* 447 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63465,13 +63070,13 @@ module.exports = btoa;
 
 
 /***/ }),
-/* 480 */
+/* 448 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(7);
+var utils = __webpack_require__(6);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -63525,13 +63130,13 @@ module.exports = (
 
 
 /***/ }),
-/* 481 */
+/* 449 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(7);
+var utils = __webpack_require__(6);
 
 function InterceptorManager() {
   this.handlers = [];
@@ -63584,16 +63189,16 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 482 */
+/* 450 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(7);
-var transformData = __webpack_require__(483);
-var isCancel = __webpack_require__(212);
-var defaults = __webpack_require__(45);
+var utils = __webpack_require__(6);
+var transformData = __webpack_require__(451);
+var isCancel = __webpack_require__(208);
+var defaults = __webpack_require__(44);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -63670,13 +63275,13 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 483 */
+/* 451 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(7);
+var utils = __webpack_require__(6);
 
 /**
  * Transform the data for a request or a response
@@ -63697,7 +63302,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 484 */
+/* 452 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63718,7 +63323,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 485 */
+/* 453 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63737,13 +63342,13 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 486 */
+/* 454 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Cancel = __webpack_require__(213);
+var Cancel = __webpack_require__(209);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -63801,7 +63406,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 487 */
+/* 455 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63835,7 +63440,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 488 */
+/* 456 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -64770,15 +64375,15 @@ if (false) {
 }
 
 /***/ }),
-/* 489 */
+/* 457 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(490)
+var __vue_script__ = __webpack_require__(458)
 /* template */
-var __vue_template__ = __webpack_require__(493)
+var __vue_template__ = __webpack_require__(461)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -64818,12 +64423,12 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 490 */
+/* 458 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__VuetablePaginationMixin_vue__ = __webpack_require__(491);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__VuetablePaginationMixin_vue__ = __webpack_require__(459);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__VuetablePaginationMixin_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__VuetablePaginationMixin_vue__);
 
 
@@ -64834,13 +64439,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 491 */
+/* 459 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(492)
+var __vue_script__ = __webpack_require__(460)
 /* template */
 var __vue_template__ = null
 /* template functional */
@@ -64882,7 +64487,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 492 */
+/* 460 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -64967,7 +64572,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 493 */
+/* 461 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -65126,17 +64731,17 @@ if (false) {
 }
 
 /***/ }),
-/* 494 */
+/* 462 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(495);
+var content = __webpack_require__(463);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("1cca4248", content, false);
+var update = __webpack_require__(3)("1cca4248", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -65152,21 +64757,13 @@ if(false) {
 }
 
 /***/ }),
-/* 495 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 463 */
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.search-icon[data-v-68d66e08] {\n  -webkit-transform: rotate(90deg);\n          transform: rotate(90deg);\n}\n.form-group[data-v-68d66e08] {\n  min-width: 7rem;\n}\n@media (max-width: 768px) {\n.form-group[data-v-68d66e08] {\n    width: 80%;\n}\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
-/* 496 */
+/* 464 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -65189,7 +64786,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 497 */
+/* 465 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -65247,17 +64844,17 @@ if (false) {
 }
 
 /***/ }),
-/* 498 */
+/* 466 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(499);
+var content = __webpack_require__(467);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("130c7b1e", content, false);
+var update = __webpack_require__(3)("130c7b1e", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -65273,26 +64870,18 @@ if(false) {
 }
 
 /***/ }),
-/* 499 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 467 */
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.btn.dropdown-toggle[data-v-673d8a6f], .dropdown-menu[data-v-673d8a6f] {\n  min-width: 13rem;\n  max-width: 13rem;\n}\n.dropdown-item[data-v-673d8a6f], .dropdown-toggle[data-v-673d8a6f] {\n  text-transform: uppercase;\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
-/* 500 */
+/* 468 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives_Dropdown__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives_Dropdown__ = __webpack_require__(28);
 
 
 
@@ -65325,7 +64914,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 501 */
+/* 469 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -65402,7 +64991,7 @@ if (false) {
 }
 
 /***/ }),
-/* 502 */
+/* 470 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -65428,7 +65017,7 @@ if (false) {
 });
 
 /***/ }),
-/* 503 */
+/* 471 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -65501,17 +65090,17 @@ if (false) {
 }
 
 /***/ }),
-/* 504 */
+/* 472 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(505);
+var content = __webpack_require__(473);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("0c90fb06", content, false);
+var update = __webpack_require__(3)("0c90fb06", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -65527,26 +65116,18 @@ if(false) {
 }
 
 /***/ }),
-/* 505 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 473 */
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.vuestic-feed {\n  padding-top: .5rem;\n  padding-bottom: .5rem;\n  padding-left: 1.5rem;\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\n.vuestic-feed .empty {\n    text-align: center;\n}\n.vuestic-feed .post {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n.vuestic-feed .post .photo-container {\n      margin-right: 1rem;\n      border-radius: 50%;\n      border: 2px solid #ddd;\n}\n.vuestic-feed .post .photo-container .photo {\n        background-size: cover !important;\n        width: 3rem;\n        height: 3rem;\n        border-radius: 50%;\n}\n.vuestic-feed .post .underscored {\n      width: 100%;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n      -webkit-box-pack: justify;\n          -ms-flex-pack: justify;\n              justify-content: space-between;\n      border-bottom: #eff4f5 2px solid;\n      overflow: hidden;\n      padding-right: 0.7rem;\n      height: 3.5rem;\n}\n.vuestic-feed .post .underscored .text {\n        overflow: hidden;\n        white-space: nowrap;\n        text-overflow: ellipsis;\n}\n.vuestic-feed .post .underscored .text .name {\n          font-weight: 700;\n}\n.vuestic-feed .post .underscored .close-btn {\n        margin-left: 1rem;\n}\n.vuestic-feed .post .underscored .close-btn i {\n          left: 10.5px;\n}\n.vuestic-feed .post.last .underscored {\n      border-bottom: none;\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
-/* 506 */
+/* 474 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_get_iterator__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_get_iterator__ = __webpack_require__(219);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_get_iterator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_get_iterator__);
 
 
@@ -65595,23 +65176,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 507 */
+/* 475 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(508);
-__webpack_require__(218);
-module.exports = __webpack_require__(520);
+__webpack_require__(476);
+__webpack_require__(214);
+module.exports = __webpack_require__(488);
 
 
 /***/ }),
-/* 508 */
+/* 476 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(509);
-var global = __webpack_require__(17);
-var hide = __webpack_require__(20);
-var Iterators = __webpack_require__(26);
-var TO_STRING_TAG = __webpack_require__(14)('toStringTag');
+__webpack_require__(477);
+var global = __webpack_require__(16);
+var hide = __webpack_require__(19);
+var Iterators = __webpack_require__(25);
+var TO_STRING_TAG = __webpack_require__(13)('toStringTag');
 
 var DOMIterables = ('CSSRuleList,CSSStyleDeclaration,CSSValueList,ClientRectList,DOMRectList,DOMStringList,' +
   'DOMTokenList,DataTransferItemList,FileList,HTMLAllCollection,HTMLCollection,HTMLFormElement,HTMLSelectElement,' +
@@ -65629,21 +65210,21 @@ for (var i = 0; i < DOMIterables.length; i++) {
 
 
 /***/ }),
-/* 509 */
+/* 477 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var addToUnscopables = __webpack_require__(510);
-var step = __webpack_require__(511);
-var Iterators = __webpack_require__(26);
-var toIObject = __webpack_require__(40);
+var addToUnscopables = __webpack_require__(478);
+var step = __webpack_require__(479);
+var Iterators = __webpack_require__(25);
+var toIObject = __webpack_require__(39);
 
 // 22.1.3.4 Array.prototype.entries()
 // 22.1.3.13 Array.prototype.keys()
 // 22.1.3.29 Array.prototype.values()
 // 22.1.3.30 Array.prototype[@@iterator]()
-module.exports = __webpack_require__(216)(Array, 'Array', function (iterated, kind) {
+module.exports = __webpack_require__(212)(Array, 'Array', function (iterated, kind) {
   this._t = toIObject(iterated); // target
   this._i = 0;                   // next index
   this._k = kind;                // kind
@@ -65670,14 +65251,14 @@ addToUnscopables('entries');
 
 
 /***/ }),
-/* 510 */
+/* 478 */
 /***/ (function(module, exports) {
 
 module.exports = function () { /* empty */ };
 
 
 /***/ }),
-/* 511 */
+/* 479 */
 /***/ (function(module, exports) {
 
 module.exports = function (done, value) {
@@ -65686,32 +65267,32 @@ module.exports = function (done, value) {
 
 
 /***/ }),
-/* 512 */
+/* 480 */
 /***/ (function(module, exports) {
 
 module.exports = true;
 
 
 /***/ }),
-/* 513 */
+/* 481 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(20);
+module.exports = __webpack_require__(19);
 
 
 /***/ }),
-/* 514 */
+/* 482 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var create = __webpack_require__(515);
-var descriptor = __webpack_require__(38);
-var setToStringTag = __webpack_require__(217);
+var create = __webpack_require__(483);
+var descriptor = __webpack_require__(37);
+var setToStringTag = __webpack_require__(213);
 var IteratorPrototype = {};
 
 // 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
-__webpack_require__(20)(IteratorPrototype, __webpack_require__(14)('iterator'), function () { return this; });
+__webpack_require__(19)(IteratorPrototype, __webpack_require__(13)('iterator'), function () { return this; });
 
 module.exports = function (Constructor, NAME, next) {
   Constructor.prototype = create(IteratorPrototype, { next: descriptor(1, next) });
@@ -65720,27 +65301,27 @@ module.exports = function (Constructor, NAME, next) {
 
 
 /***/ }),
-/* 515 */
+/* 483 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
-var anObject = __webpack_require__(22);
-var dPs = __webpack_require__(516);
-var enumBugKeys = __webpack_require__(73);
-var IE_PROTO = __webpack_require__(43)('IE_PROTO');
+var anObject = __webpack_require__(21);
+var dPs = __webpack_require__(484);
+var enumBugKeys = __webpack_require__(69);
+var IE_PROTO = __webpack_require__(42)('IE_PROTO');
 var Empty = function () { /* empty */ };
 var PROTOTYPE = 'prototype';
 
 // Create object with fake `null` prototype: use iframe Object with cleared prototype
 var createDict = function () {
   // Thrash, waste and sodomy: IE GC bug
-  var iframe = __webpack_require__(67)('iframe');
+  var iframe = __webpack_require__(63)('iframe');
   var i = enumBugKeys.length;
   var lt = '<';
   var gt = '>';
   var iframeDocument;
   iframe.style.display = 'none';
-  __webpack_require__(517).appendChild(iframe);
+  __webpack_require__(485).appendChild(iframe);
   iframe.src = 'javascript:'; // eslint-disable-line no-script-url
   // createDict = iframe.contentWindow.Object;
   // html.removeChild(iframe);
@@ -65767,14 +65348,14 @@ module.exports = Object.create || function create(O, Properties) {
 
 
 /***/ }),
-/* 516 */
+/* 484 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var dP = __webpack_require__(21);
-var anObject = __webpack_require__(22);
-var getKeys = __webpack_require__(39);
+var dP = __webpack_require__(20);
+var anObject = __webpack_require__(21);
+var getKeys = __webpack_require__(38);
 
-module.exports = __webpack_require__(23) ? Object.defineProperties : function defineProperties(O, Properties) {
+module.exports = __webpack_require__(22) ? Object.defineProperties : function defineProperties(O, Properties) {
   anObject(O);
   var keys = getKeys(Properties);
   var length = keys.length;
@@ -65786,21 +65367,21 @@ module.exports = __webpack_require__(23) ? Object.defineProperties : function de
 
 
 /***/ }),
-/* 517 */
+/* 485 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var document = __webpack_require__(17).document;
+var document = __webpack_require__(16).document;
 module.exports = document && document.documentElement;
 
 
 /***/ }),
-/* 518 */
+/* 486 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
-var has = __webpack_require__(32);
-var toObject = __webpack_require__(33);
-var IE_PROTO = __webpack_require__(43)('IE_PROTO');
+var has = __webpack_require__(31);
+var toObject = __webpack_require__(32);
+var IE_PROTO = __webpack_require__(42)('IE_PROTO');
 var ObjectProto = Object.prototype;
 
 module.exports = Object.getPrototypeOf || function (O) {
@@ -65813,11 +65394,11 @@ module.exports = Object.getPrototypeOf || function (O) {
 
 
 /***/ }),
-/* 519 */
+/* 487 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var toInteger = __webpack_require__(42);
-var defined = __webpack_require__(41);
+var toInteger = __webpack_require__(41);
+var defined = __webpack_require__(40);
 // true  -> String#at
 // false -> String#codePointAt
 module.exports = function (TO_STRING) {
@@ -65836,12 +65417,12 @@ module.exports = function (TO_STRING) {
 
 
 /***/ }),
-/* 520 */
+/* 488 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var anObject = __webpack_require__(22);
-var get = __webpack_require__(219);
-module.exports = __webpack_require__(9).getIterator = function (it) {
+var anObject = __webpack_require__(21);
+var get = __webpack_require__(215);
+module.exports = __webpack_require__(8).getIterator = function (it) {
   var iterFn = get(it);
   if (typeof iterFn != 'function') throw TypeError(it + ' is not iterable!');
   return anObject(iterFn.call(it));
@@ -65849,12 +65430,12 @@ module.exports = __webpack_require__(9).getIterator = function (it) {
 
 
 /***/ }),
-/* 521 */
+/* 489 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // getting tag from 19.1.3.6 Object.prototype.toString()
-var cof = __webpack_require__(69);
-var TAG = __webpack_require__(14)('toStringTag');
+var cof = __webpack_require__(65);
+var TAG = __webpack_require__(13)('toStringTag');
 // ES3 wrong here
 var ARG = cof(function () { return arguments; }()) == 'Arguments';
 
@@ -65878,7 +65459,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 522 */
+/* 490 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -65948,17 +65529,17 @@ if (false) {
 }
 
 /***/ }),
-/* 523 */
+/* 491 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(524);
+var content = __webpack_require__(492);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("39527a3b", content, false);
+var update = __webpack_require__(3)("39527a3b", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -65974,21 +65555,13 @@ if(false) {
 }
 
 /***/ }),
-/* 524 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 492 */
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.business-posts .widget-body {\n  padding-left: 2rem;\n  padding-right: 0;\n}\n.business-posts .widget-body .text-w-btn {\n    padding-right: 1.3rem;\n    padding-bottom: 1.5rem;\n    overflow: hidden;\n}\n.business-posts .widget-body .text-w-btn .text {\n      font-size: 1rem;\n      overflow: hidden;\n      text-overflow: ellipsis;\n      white-space: nowrap;\n}\n.business-posts .widget-body .text-w-btn .btn {\n      margin-left: 1rem;\n      line-height: 1;\n}\n.business-posts .widget-body .photos {\n    padding-right: 2rem;\n    height: 80px;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n    overflow: hidden;\n}\n.business-posts .widget-body .photos .photo {\n      background-size: cover !important;\n      width: 80px;\n      height: 80px;\n      margin-right: 2px;\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
-/* 525 */
+/* 493 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66001,7 +65574,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 526 */
+/* 494 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -66051,17 +65624,17 @@ if (false) {
 }
 
 /***/ }),
-/* 527 */
+/* 495 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(528);
+var content = __webpack_require__(496);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("0de1a098", content, false);
+var update = __webpack_require__(3)("0de1a098", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -66077,21 +65650,13 @@ if(false) {
 }
 
 /***/ }),
-/* 528 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 496 */
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.vuestic-switch {\n  cursor: pointer;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n}\n.vuestic-switch .vuestic-switch-option {\n    padding: 0.313rem 2.375rem;\n    border-top: 0.125rem solid transparent;\n    border-bottom: 0.125rem solid #4ae387;\n    background-color: transparent;\n    -webkit-transition: all 0.15s ease;\n    transition: all 0.15s ease;\n    width: 50%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n.vuestic-switch .vuestic-switch-option.active {\n      color: #fff;\n      background-color: #4ae387;\n}\n.vuestic-switch .vuestic-switch-option:not(.active):hover {\n      color: #4ae387;\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
-/* 529 */
+/* 497 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66115,7 +65680,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 530 */
+/* 498 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -66167,17 +65732,17 @@ if (false) {
 }
 
 /***/ }),
-/* 531 */
+/* 499 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(532);
+var content = __webpack_require__(500);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("e877deba", content, false);
+var update = __webpack_require__(3)("e877deba", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -66193,27 +65758,19 @@ if(false) {
 }
 
 /***/ }),
-/* 532 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 500 */
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.multiselect-form-group .dropdown-menu {\n  padding: 0;\n}\n.multiselect-form-group .dropdown-menu .vuestic-scrollbar {\n    height: 160px;\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
-/* 533 */
+/* 501 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives_Dropdown__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vuestic_scrollbar_VuesticScrollbar_vue__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives_Dropdown__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vuestic_scrollbar_VuesticScrollbar_vue__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vuestic_scrollbar_VuesticScrollbar_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__vuestic_scrollbar_VuesticScrollbar_vue__);
 
 
@@ -66305,7 +65862,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 534 */
+/* 502 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -66416,17 +65973,17 @@ if (false) {
 }
 
 /***/ }),
-/* 535 */
+/* 503 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(536);
+var content = __webpack_require__(504);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("5115ccba", content, false);
+var update = __webpack_require__(3)("5115ccba", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -66442,21 +65999,13 @@ if(false) {
 }
 
 /***/ }),
-/* 536 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 504 */
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.auth-layout {\n  height: 100%;\n  margin: 0;\n}\n.auth-layout .nav {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    height: 5.625rem;\n    background-color: #333;\n}\n.auth-layout .nav .i-vuestic {\n      height: 1.5rem;\n      width: 100%;\n}\n.auth-layout .main {\n    margin: 0;\n    height: 100%;\n}\n.auth-layout .main .auth-content {\n      padding: 0;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n      -webkit-box-pack: center;\n          -ms-flex-pack: center;\n              justify-content: center;\n      background-color: white;\n}\n.auth-layout .main .auth-wallpaper {\n      background-color: #333;\n      overflow: hidden;\n      display: -webkit-box;\n      display: -ms-flexbox;\n      display: flex;\n      -webkit-box-align: center;\n          -ms-flex-align: center;\n              align-items: center;\n      -webkit-box-pack: center;\n          -ms-flex-pack: center;\n              justify-content: center;\n}\n.auth-layout .main .auth-wallpaper .i-vuestic {\n        z-index: 2;\n        height: 2.625rem;\n        width: 100%;\n}\n.auth-layout .main .auth-wallpaper .oblique {\n        position: absolute;\n        background-color: #282828;\n        left: calc(50% - 27%/2);\n        -webkit-transform: rotate(15deg);\n                transform: rotate(15deg);\n        width: 27%;\n        height: 115%;\n}\n@media (max-width: 991px) {\n.auth-layout .main {\n      height: calc(100% - 5.625rem);\n}\n.auth-layout .main .auth-content {\n        -webkit-box-align: start;\n            -ms-flex-align: start;\n                align-items: flex-start;\n        padding-top: 2.875rem;\n}\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
-/* 537 */
+/* 505 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66468,7 +66017,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 538 */
+/* 506 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -66523,17 +66072,17 @@ if (false) {
 }
 
 /***/ }),
-/* 539 */
+/* 507 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(540);
+var content = __webpack_require__(508);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("b423d026", content, false);
+var update = __webpack_require__(3)("b423d026", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -66549,21 +66098,13 @@ if(false) {
 }
 
 /***/ }),
-/* 540 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 508 */
+/***/ (function(module, exports) {
 
-exports = module.exports = __webpack_require__(2)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.modal[data-v-262e90c0] {\n  display: block;\n}\n.modal-dialog[data-v-262e90c0], .modal-backdrop[data-v-262e90c0] {\n  -webkit-transition: all .5s ease;\n  transition: all .5s ease;\n}\n.modal-enter .modal-dialog[data-v-262e90c0], .modal-leave-active .modal-dialog[data-v-262e90c0] {\n  opacity: 0;\n  -webkit-transform: translateY(-30%);\n          transform: translateY(-30%);\n}\n.modal-enter .modal-backdrop[data-v-262e90c0], .modal-leave-active .modal-backdrop[data-v-262e90c0] {\n  opacity: 0;\n}\n.modal-backdrop[data-v-262e90c0] {\n  opacity: 0.5;\n}\n.modal-header[data-v-262e90c0] {\n  height: 55px;\n  padding: 0 1.5625rem;\n  border-bottom: 2px solid #eee;\n  font-size: 1.2rem;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.modal-content[data-v-262e90c0] {\n  border-radius: 0;\n}\n.modal-footer[data-v-262e90c0] {\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  padding: 0 25px;\n  padding-bottom: calc(25px - 20px);\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n}\n.modal-footer .btn[data-v-262e90c0] {\n    margin: 0 10px 20px 10px;\n}\n.modal-dialog[data-v-262e90c0] {\n  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);\n          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);\n}\n", ""]);
-
-// exports
-
+throw new Error("Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)");
 
 /***/ }),
-/* 541 */
+/* 509 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66662,7 +66203,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 542 */
+/* 510 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -66780,14 +66321,14 @@ if (false) {
 }
 
 /***/ }),
-/* 543 */
+/* 511 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_kewler__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_kewler__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_kewler___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_kewler__);
 
 
@@ -66866,7 +66407,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   data: function data() {
     return {
-      points: __webpack_require__(544),
+      points: __webpack_require__(512),
       color: Object(__WEBPACK_IMPORTED_MODULE_1_kewler__["color"])(this.$store.state.app.config.palette.primary),
       mainIndex: 7,
       context: {},
@@ -66878,13 +66419,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 544 */
+/* 512 */
 /***/ (function(module, exports) {
 
 module.exports = [{"x":0,"y":0},{"x":8,"y":12},{"x":16,"y":24},{"x":24,"y":36},{"x":32,"y":48},{"x":40,"y":60},{"x":48,"y":72},{"x":60,"y":84},{"x":72,"y":72},{"x":80,"y":60},{"x":88,"y":48},{"x":96,"y":36},{"x":104,"y":24},{"x":112,"y":12},{"x":120,"y":0},{"x":104,"y":0},{"x":88,"y":0},{"x":80,"y":12},{"x":72,"y":24},{"x":60,"y":36},{"x":48,"y":24},{"x":40,"y":10},{"x":32,"y":0},{"x":16,"y":0}]
 
 /***/ }),
-/* 545 */
+/* 513 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -66906,11 +66447,11 @@ if (false) {
 }
 
 /***/ }),
-/* 546 */
+/* 514 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lazyLoading__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lazyLoading__ = __webpack_require__(11);
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -66938,11 +66479,11 @@ if (false) {
 });
 
 /***/ }),
-/* 547 */
+/* 515 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lazyLoading__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lazyLoading__ = __webpack_require__(11);
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -66957,11 +66498,11 @@ if (false) {
 });
 
 /***/ }),
-/* 548 */
+/* 516 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lazyLoading__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lazyLoading__ = __webpack_require__(11);
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -67023,11 +66564,11 @@ if (false) {
 });
 
 /***/ }),
-/* 549 */
+/* 517 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lazyLoading__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lazyLoading__ = __webpack_require__(11);
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -67070,11 +66611,11 @@ if (false) {
 });
 
 /***/ }),
-/* 550 */
+/* 518 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lazyLoading_js__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lazyLoading_js__ = __webpack_require__(11);
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -67088,11 +66629,11 @@ if (false) {
 });
 
 /***/ }),
-/* 551 */
+/* 519 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lazyLoading__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lazyLoading__ = __webpack_require__(11);
 
 
 
@@ -67123,11 +66664,11 @@ if (false) {
 });
 
 /***/ }),
-/* 552 */
+/* 520 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lazyLoading__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lazyLoading__ = __webpack_require__(11);
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -67143,13 +66684,13 @@ if (false) {
 });
 
 /***/ }),
-/* 553 */
+/* 521 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty__ = __webpack_require__(75);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_defineProperty__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mutation_types__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mutation_types__ = __webpack_require__(76);
 
 
 var _mutations;
@@ -67219,7 +66760,7 @@ var actions = {
 });
 
 /***/ }),
-/* 554 */
+/* 522 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -67252,7 +66793,7 @@ var isLoading = function isLoading(state) {
 
 
 /***/ }),
-/* 555 */
+/* 523 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -67321,7 +66862,7 @@ if (false) {
 }
 
 /***/ }),
-/* 556 */
+/* 524 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -67346,16 +66887,16 @@ if (false) {
 }
 
 /***/ }),
-/* 557 */
+/* 525 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_toConsumableArray__ = __webpack_require__(558);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_toConsumableArray__ = __webpack_require__(526);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_toConsumableArray___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_toConsumableArray__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_router__ = __webpack_require__(566);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_modules_menu__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_router__ = __webpack_require__(534);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_modules_menu__ = __webpack_require__(74);
 
 
 
@@ -67404,7 +66945,7 @@ function getDefaultRoute() {
 }
 
 /***/ }),
-/* 558 */
+/* 526 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67412,7 +66953,7 @@ function getDefaultRoute() {
 
 exports.__esModule = true;
 
-var _from = __webpack_require__(559);
+var _from = __webpack_require__(527);
 
 var _from2 = _interopRequireDefault(_from);
 
@@ -67431,36 +66972,36 @@ exports.default = function (arr) {
 };
 
 /***/ }),
-/* 559 */
+/* 527 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(560), __esModule: true };
+module.exports = { "default": __webpack_require__(528), __esModule: true };
 
 /***/ }),
-/* 560 */
+/* 528 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(218);
-__webpack_require__(561);
-module.exports = __webpack_require__(9).Array.from;
+__webpack_require__(214);
+__webpack_require__(529);
+module.exports = __webpack_require__(8).Array.from;
 
 
 /***/ }),
-/* 561 */
+/* 529 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var ctx = __webpack_require__(66);
-var $export = __webpack_require__(16);
-var toObject = __webpack_require__(33);
-var call = __webpack_require__(562);
-var isArrayIter = __webpack_require__(563);
-var toLength = __webpack_require__(70);
-var createProperty = __webpack_require__(564);
-var getIterFn = __webpack_require__(219);
+var ctx = __webpack_require__(62);
+var $export = __webpack_require__(15);
+var toObject = __webpack_require__(32);
+var call = __webpack_require__(530);
+var isArrayIter = __webpack_require__(531);
+var toLength = __webpack_require__(66);
+var createProperty = __webpack_require__(532);
+var getIterFn = __webpack_require__(215);
 
-$export($export.S + $export.F * !__webpack_require__(565)(function (iter) { Array.from(iter); }), 'Array', {
+$export($export.S + $export.F * !__webpack_require__(533)(function (iter) { Array.from(iter); }), 'Array', {
   // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
   from: function from(arrayLike /* , mapfn = undefined, thisArg = undefined */) {
     var O = toObject(arrayLike);
@@ -67490,11 +67031,11 @@ $export($export.S + $export.F * !__webpack_require__(565)(function (iter) { Arra
 
 
 /***/ }),
-/* 562 */
+/* 530 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // call something on iterator step with safe closing on error
-var anObject = __webpack_require__(22);
+var anObject = __webpack_require__(21);
 module.exports = function (iterator, fn, value, entries) {
   try {
     return entries ? fn(anObject(value)[0], value[1]) : fn(value);
@@ -67508,12 +67049,12 @@ module.exports = function (iterator, fn, value, entries) {
 
 
 /***/ }),
-/* 563 */
+/* 531 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // check on default Array iterator
-var Iterators = __webpack_require__(26);
-var ITERATOR = __webpack_require__(14)('iterator');
+var Iterators = __webpack_require__(25);
+var ITERATOR = __webpack_require__(13)('iterator');
 var ArrayProto = Array.prototype;
 
 module.exports = function (it) {
@@ -67522,13 +67063,13 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 564 */
+/* 532 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var $defineProperty = __webpack_require__(21);
-var createDesc = __webpack_require__(38);
+var $defineProperty = __webpack_require__(20);
+var createDesc = __webpack_require__(37);
 
 module.exports = function (object, index, value) {
   if (index in object) $defineProperty.f(object, index, createDesc(0, value));
@@ -67537,10 +67078,10 @@ module.exports = function (object, index, value) {
 
 
 /***/ }),
-/* 565 */
+/* 533 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ITERATOR = __webpack_require__(14)('iterator');
+var ITERATOR = __webpack_require__(13)('iterator');
 var SAFE_CLOSING = false;
 
 try {
@@ -67565,7 +67106,7 @@ module.exports = function (exec, skipClosing) {
 
 
 /***/ }),
-/* 566 */
+/* 534 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -70077,7 +69618,7 @@ if (inBrowser && window.Vue) {
 
 
 /***/ }),
-/* 567 */
+/* 535 */
 /***/ (function(module, exports) {
 
 exports.sync = function (store, router, options) {
@@ -70138,43 +69679,43 @@ function cloneRoute (to, from) {
 
 
 /***/ }),
-/* 568 */
+/* 536 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vuestic_alert_VuesticAlert_vue__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vuestic_alert_VuesticAlert_vue__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vuestic_alert_VuesticAlert_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__vuestic_alert_VuesticAlert_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vuestic_chart_VuesticChart_vue__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vuestic_chart_VuesticChart_vue__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vuestic_chart_VuesticChart_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__vuestic_chart_VuesticChart_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vuestic_chat_VuesticChat_vue__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vuestic_chat_VuesticChat_vue__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vuestic_chat_VuesticChat_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__vuestic_chat_VuesticChat_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__vuestic_datatable_VuesticDataTable_vue__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__vuestic_datatable_VuesticDataTable_vue__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__vuestic_datatable_VuesticDataTable_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__vuestic_datatable_VuesticDataTable_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__vuestic_feed_VuesticFeed_vue__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__vuestic_feed_VuesticFeed_vue__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__vuestic_feed_VuesticFeed_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__vuestic_feed_VuesticFeed_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vuestic_modal_VuesticModal_vue__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vuestic_modal_VuesticModal_vue__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vuestic_modal_VuesticModal_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__vuestic_modal_VuesticModal_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__vuestic_multi_select_VuesticMultiSelect_vue__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__vuestic_multi_select_VuesticMultiSelect_vue__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__vuestic_multi_select_VuesticMultiSelect_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__vuestic_multi_select_VuesticMultiSelect_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__vuestic_preloader_VuesticPreLoader_vue__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__vuestic_preloader_VuesticPreLoader_vue__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__vuestic_preloader_VuesticPreLoader_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__vuestic_preloader_VuesticPreLoader_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__vuestic_profile_card_VuesticProfileCard_vue__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__vuestic_profile_card_VuesticProfileCard_vue__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__vuestic_profile_card_VuesticProfileCard_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__vuestic_profile_card_VuesticProfileCard_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__vuestic_progress_bar_VuesticProgressBar_vue__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__vuestic_progress_bar_VuesticProgressBar_vue__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__vuestic_progress_bar_VuesticProgressBar_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__vuestic_progress_bar_VuesticProgressBar_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__vuestic_scrollbar_VuesticScrollbar_vue__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__vuestic_scrollbar_VuesticScrollbar_vue__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__vuestic_scrollbar_VuesticScrollbar_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__vuestic_scrollbar_VuesticScrollbar_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__vuestic_simple_select_VuesticSimpleSelect_vue__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__vuestic_simple_select_VuesticSimpleSelect_vue__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__vuestic_simple_select_VuesticSimpleSelect_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__vuestic_simple_select_VuesticSimpleSelect_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__vuestic_social_news_VuesticSocialNews_vue__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__vuestic_social_news_VuesticSocialNews_vue__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__vuestic_social_news_VuesticSocialNews_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__vuestic_social_news_VuesticSocialNews_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__vuestic_switch_VuesticSwitch_vue__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__vuestic_switch_VuesticSwitch_vue__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__vuestic_switch_VuesticSwitch_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13__vuestic_switch_VuesticSwitch_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__vuestic_tabs_VuesticTabs_vue__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__vuestic_tabs_VuesticTabs_vue__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__vuestic_tabs_VuesticTabs_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14__vuestic_tabs_VuesticTabs_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__vuestic_widget_VuesticWidget_vue__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__vuestic_widget_VuesticWidget_vue__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__vuestic_widget_VuesticWidget_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15__vuestic_widget_VuesticWidget_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__vuestic_wizard_VuesticWizard_vue__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__vuestic_wizard_VuesticWizard_vue__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__vuestic_wizard_VuesticWizard_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16__vuestic_wizard_VuesticWizard_vue__);
 
 
@@ -70219,10 +69760,10 @@ var VuesticComponentsPlugin = {
 /* harmony default export */ __webpack_exports__["a"] = (VuesticComponentsPlugin);
 
 /***/ }),
-/* 569 */
+/* 537 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed: ModuleBuildError: Module build failed: Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (64)\nFor more information on which environments are supported please see:\nhttps://github.com/sass/node-sass/releases/tag/v4.5.3\n    at module.exports (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/binding.js:13:13)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/node-sass/lib/index.js:14:35)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at Object.<anonymous> (/Users/cytonn/code/Video-Streamer/node_modules/sass-loader/lib/loader.js:3:14)\n    at Module._compile (internal/modules/cjs/loader.js:702:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:713:10)\n    at Module.load (internal/modules/cjs/loader.js:612:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:551:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:543:3)\n    at Module.require (internal/modules/cjs/loader.js:650:17)\n    at require (internal/modules/cjs/helpers.js:20:18)\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:13:17)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:195:19)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:364:11\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:170:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:27:11)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:165:10)\n    at /Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:173:18\n    at loadLoader (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/loadLoader.js:36:3)\n    at iteratePitchingLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:169:2)\n    at runLoaders (/Users/cytonn/code/Video-Streamer/node_modules/loader-runner/lib/LoaderRunner.js:362:2)\n    at NormalModule.doBuild (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:182:3)\n    at NormalModule.build (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModule.js:275:15)\n    at Compilation.buildModule (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/Compilation.js:151:10)\n    at moduleFactory.create (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/Compilation.js:456:10)\n    at factory (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModuleFactory.js:241:5)\n    at applyPluginsAsyncWaterfall (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModuleFactory.js:94:13)\n    at /Users/cytonn/code/Video-Streamer/node_modules/tapable/lib/Tapable.js:268:11\n    at NormalModuleFactory.params.normalModuleFactory.plugin (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/CompatibilityPlugin.js:52:5)\n    at NormalModuleFactory.applyPluginsAsyncWaterfall (/Users/cytonn/code/Video-Streamer/node_modules/tapable/lib/Tapable.js:272:13)\n    at resolver (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModuleFactory.js:69:10)\n    at process.nextTick (/Users/cytonn/code/Video-Streamer/node_modules/webpack/lib/NormalModuleFactory.js:194:7)\n    at process._tickCallback (internal/process/next_tick.js:61:11)");
 
 /***/ })
 /******/ ]);
