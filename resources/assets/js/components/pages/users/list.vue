@@ -26,6 +26,10 @@
                     {
                         name: 'role',
                         title: 'Role'
+                    },
+                    {
+                        name: 'Options',
+                        title: 'Options'
                     }
                 ],
                 tableState: {},
@@ -39,7 +43,7 @@
 </script>
 
 <template>
-    <div>
+    <div class="table_container">
         <vuetable ref="vuetable"
                   :api-url="apiUrl"
                   :fields="tableFields"
@@ -69,7 +73,7 @@
             <!--</template>-->
         </vuetable>
 
-        <div class="vuetable-pagination masaba_pagination">
+        <div class="vuetable-pagination table_pagination">
             <div class="items_per_page">
                 <span>Rows per Page</span>
                 <select v-model="itemsPerPage" @change="changePerPage">

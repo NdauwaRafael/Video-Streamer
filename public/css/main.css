@@ -109,10 +109,39 @@
   font-size: 16px;
 }
 
+.main_page .main_body__content {
+  padding: 10px 20px 30px 20px;
+}
+
 .main_page .main_body__footer {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+.table_container {
+  width: 100%;
+  overflow: auto;
+}
+
+.table_container .table_pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.table_container .table_pagination .items_per_page select {
+  height: 30px;
+  font-size: 12px;
+}
+
+.table_container .table_pagination .pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */

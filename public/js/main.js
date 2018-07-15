@@ -27085,31 +27085,25 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
 
 /* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
     routes: [{
-        name: 'main_page',
-        component: __WEBPACK_IMPORTED_MODULE_2__App_vue___default.a,
+        name: 'dashboard',
         path: '/',
-        children: [{
-            name: 'dashboard',
-            path: '/',
-            component: __WEBPACK_IMPORTED_MODULE_3__components_pages_dashboard___default.a
-        }, {
-            name: 'videos',
-            path: '/videos',
-            component: __WEBPACK_IMPORTED_MODULE_4__components_pages_videos_list_vue___default.a
-        }, {
-            name: 'add_vide0',
-            path: '/videos/add',
-            component: __WEBPACK_IMPORTED_MODULE_5__components_pages_videos_create_vue___default.a
-        }, {
-            name: 'users',
-            path: '/users',
-            component: __WEBPACK_IMPORTED_MODULE_6__components_pages_users_list_vue___default.a
-        }, {
-            name: 'roles',
-            path: '/roles',
-            component: __WEBPACK_IMPORTED_MODULE_7__components_pages_users_roles_vue___default.a
-        }]
-
+        component: __WEBPACK_IMPORTED_MODULE_3__components_pages_dashboard___default.a
+    }, {
+        name: 'videos',
+        path: '/videos',
+        component: __WEBPACK_IMPORTED_MODULE_4__components_pages_videos_list_vue___default.a
+    }, {
+        name: 'add_vide0',
+        path: '/videos/add',
+        component: __WEBPACK_IMPORTED_MODULE_5__components_pages_videos_create_vue___default.a
+    }, {
+        name: 'users',
+        path: '/users',
+        component: __WEBPACK_IMPORTED_MODULE_6__components_pages_users_list_vue___default.a
+    }, {
+        name: 'roles',
+        path: '/roles',
+        component: __WEBPACK_IMPORTED_MODULE_7__components_pages_users_roles_vue___default.a
     }],
     mode: 'history',
     hashbang: false,
@@ -29695,12 +29689,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "app", attrs: { id: "app" } },
-    [_c("router-view")],
-    1
-  )
+  return _c("div", [_c("router-view")], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -29778,6 +29767,8 @@ window._ = __webpack_require__(91);
 window.$ = window.jQuery = __webpack_require__(49);
 __webpack_require__(93);
 $(document).foundation();
+window.Vue = __webpack_require__(1);
+
 
 window.axios = __webpack_require__(94);
 
@@ -107096,15 +107087,20 @@ module.exports = Component.exports
 /* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(253)
+}
 var normalizeComponent = __webpack_require__(8)
 /* script */
-var __vue_script__ = null
+var __vue_script__ = __webpack_require__(255)
 /* template */
-var __vue_template__ = null
+var __vue_template__ = __webpack_require__(256)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
@@ -107119,6 +107115,22 @@ var Component = normalizeComponent(
 )
 Component.options.__file = "resources/assets/js/components/pages/users/roles.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-42a493a4", Component.options)
+  } else {
+    hotAPI.reload("data-v-42a493a4", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
 
 module.exports = Component.exports
 
@@ -107450,6 +107462,9 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.component('badge-column', __webpack_
             }, {
                 name: 'role',
                 title: 'Role'
+            }, {
+                name: 'Options',
+                title: 'Options'
             }],
             tableState: {},
             promise: true,
@@ -107566,6 +107581,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticClass: "table_container" },
     [
       _c("vuetable", {
         ref: "vuetable",
@@ -107579,7 +107595,7 @@ var render = function() {
         on: { "vuetable:pagination-data": _vm.onPaginationData }
       }),
       _vm._v(" "),
-      _c("div", { staticClass: "vuetable-pagination masaba_pagination" }, [
+      _c("div", { staticClass: "vuetable-pagination table_pagination" }, [
         _c("div", { staticClass: "items_per_page" }, [
           _c("span", [_vm._v("Rows per Page")]),
           _vm._v(" "),
@@ -110280,6 +110296,183 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-0d5bc5ee", module.exports)
+  }
+}
+
+/***/ }),
+/* 253 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(254);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(228)("fffffaf8", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-42a493a4\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/sass-loader/lib/loader.js!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./roles.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-42a493a4\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/sass-loader/lib/loader.js!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./roles.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 254 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(196)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n.add_role_row {\n  padding-bottom: 15px;\n}\n.color-icon-label-table td:first-child {\n  width: 1rem;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 255 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_vuetable_mixin__ = __webpack_require__(231);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue__);
+
+
+
+__WEBPACK_IMPORTED_MODULE_1_vue___default.a.component('badge-column', __webpack_require__(248));
+/* harmony default export */ __webpack_exports__["default"] = ({
+    mixins: [__WEBPACK_IMPORTED_MODULE_0__mixins_vuetable_mixin__["a" /* default */]],
+    name: 'roles',
+    data: function data() {
+        return {
+            apiUrl: 'api/roles',
+            tableFields: [{
+                name: '__component:badge-column',
+                title: '',
+                dataClass: 'text-center'
+            }, {
+                name: 'name',
+                sortField: 'name'
+            }],
+            tableState: {},
+            promise: true,
+            dashboardTableItemsPerPage: 5
+        };
+    }
+});
+
+/***/ }),
+/* 256 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "table_container" },
+    [
+      _c("vuetable", {
+        ref: "vuetable",
+        attrs: {
+          "api-url": _vm.apiUrl,
+          fields: _vm.tableFields,
+          "pagination-path": "",
+          "append-params": _vm.tableState,
+          "per-page": _vm.itemsPerPage
+        },
+        on: { "vuetable:pagination-data": _vm.onPaginationData }
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "vuetable-pagination table_pagination" }, [
+        _c("div", { staticClass: "items_per_page" }, [
+          _c("span", [_vm._v("Rows per Page")]),
+          _vm._v(" "),
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.itemsPerPage,
+                  expression: "itemsPerPage"
+                }
+              ],
+              on: {
+                change: [
+                  function($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function(o) {
+                        return o.selected
+                      })
+                      .map(function(o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.itemsPerPage = $event.target.multiple
+                      ? $$selectedVal
+                      : $$selectedVal[0]
+                  },
+                  _vm.changePerPage
+                ]
+              }
+            },
+            _vm._l(_vm.itemsPerPageOptions, function(option) {
+              return _c("option", { domProps: { value: option } }, [
+                _vm._v(_vm._s(option))
+              ])
+            })
+          )
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          [
+            _c("vuetable-pagination-info", {
+              ref: "paginationInfo",
+              attrs: { "info-class": "pagination-info" }
+            })
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {},
+          [
+            _c("vuetable-pagination", {
+              ref: "pagination",
+              on: { "vuetable-pagination:change-page": _vm.onChangePage }
+            })
+          ],
+          1
+        )
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-42a493a4", module.exports)
   }
 }
 

@@ -1,0 +1,21 @@
+.table_container {
+  width: 100%;
+  overflow: auto;
+
+  .table_pagination {
+    display: flex;
+    justify-content: space-between;
+
+    .items_per_page {
+      select {
+        height: 30px;
+        font-size: 12px;
+      }
+    }
+
+    .pagination {
+      display: flex;
+
+    }
+  }
+}

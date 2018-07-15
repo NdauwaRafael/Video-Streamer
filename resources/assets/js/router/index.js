@@ -11,11 +11,6 @@ Vue.use(Router);
 
 export default new Router({
     routes: [
-        {
-            name: 'main_page',
-            component: App,
-            path: '/',
-            children: [
                 {
                     name: 'dashboard',
                     path: '/',
@@ -43,11 +38,8 @@ export default new Router({
                     name: 'roles',
                     path: '/roles',
                     component: Roles
-                },
+                }
 
-            ]
-
-        }
     ],
     mode: 'history',
     hashbang: false,
