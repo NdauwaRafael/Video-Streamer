@@ -11,7 +11,7 @@
 <template>
     <div class="main_page">
 
-        <div class="side-menu">
+        <div class="side_menu">
             <side-manu></side-manu>
         </div>
 

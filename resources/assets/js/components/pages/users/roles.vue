@@ -1,7 +1,8 @@
 <script>
     import vueTableMixin from "../../../mixins/vuetable_mixin";
     import Vue from 'vue';
-    Vue.component('badge-column', require('../utils/BadgeColumn.vue'))
+    Vue.component('badge-column', require('../utils/BadgeColumn.vue'));
+    Vue.component('add-role', require('./utils/add_role.vue'))
     export default {
         mixins: [vueTableMixin],
         name: 'roles',
@@ -22,44 +23,57 @@
                 tableState: {},
                 promise: true,
                 dashboardTableItemsPerPage: 5,
+                dialogAddRoleDialog: false
             }
         }
     }
 </script>
 
 <template>
-    <div class="table_container">
-        <vuetable ref="vuetable"
-                  :api-url="apiUrl"
-                  :fields="tableFields"
-                  pagination-path=""
-                  @vuetable:pagination-data="onPaginationData"
-                  :append-params="tableState"
-                  :per-page="itemsPerPage"
-        >
-        </vuetable>
-
-        <div class="vuetable-pagination table_pagination">
-            <div class="items_per_page">
-                <span>Rows per Page</span>
-                <select v-model="itemsPerPage" @change="changePerPage">
-                    <option v-for="option in itemsPerPageOptions" :value="option">{{ option }}</option>
-                </select>
-            </div>
+    <div class="user_roles">
+        <div class="user_roles__head">
             <div>
-                <vuetable-pagination-info ref="paginationInfo"
-                                          info-class="pagination-info"
-                ></vuetable-pagination-info>
-            </div>
-
-            <div class="">
-                <vuetable-pagination ref="pagination"
-                                     @vuetable-pagination:change-page="onChangePage"
-                ></vuetable-pagination>
+                <el-button type="primary" @click="dialogAddRoleDialog = true" round>Add Role</el-button>
+                <el-dialog :modal-append-to-body="false" title="Add New Role" :visible.sync="dialogAddRoleDialog">
+                    <add-role></add-role>
+                </el-dialog>
             </div>
         </div>
+        <div class="user_roles__body">
+            <div class="table_container">
+                <vuetable ref="vuetable"
+                          :api-url="apiUrl"
+                          :fields="tableFields"
+                          pagination-path=""
+                          @vuetable:pagination-data="onPaginationData"
+                          :append-params="tableState"
+                          :per-page="itemsPerPage"
+                >
+                </vuetable>
+
+                <div class="vuetable-pagination table_pagination">
+                    <div class="items_per_page">
+                        <span>Rows per Page</span>
+                        <select v-model="itemsPerPage" @change="changePerPage">
+                            <option v-for="option in itemsPerPageOptions" :value="option">{{ option }}</option>
+                        </select>
+                    </div>
+                    <div>
+                        <vuetable-pagination-info ref="paginationInfo"
+                                                  info-class="pagination-info"
+                        ></vuetable-pagination-info>
+                    </div>
+
+                    <div class="">
+                        <vuetable-pagination ref="pagination"
+                                             @vuetable-pagination:change-page="onChangePage"
+                        ></vuetable-pagination>
+                    </div>
+                </div>
 
 
+            </div>
+        </div>
     </div>
 </template>
 

@@ -5,9 +5,10 @@
   display: flex;
   margin: 0;
   padding: 0;
+  height: auto;
 
 
-.side-menu {
+.side_menu {
   @include sidemenu;
 }
   .main_body {

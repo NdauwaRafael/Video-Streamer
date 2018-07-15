@@ -1,37 +1,13 @@
 <template>
-    <div class="form-elements">
-        <div class="row">
-            <div class="col-md-12">
-                <vuestic-widget headerText="Add New Role">
-                    <form>
-                        <div class="row">
-                            <div class="col-md-8">
-                                <fieldset>
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <input id="simple-input" v-model="role" required/>
-                                            <label class="control-label" for="simple-input">Role Name</label><i
-                                                class="bar"></i>
-                                        </div>
-                                    </div>
-
-                                </fieldset>
-                            </div>
-
-                            <div class="col-md-4">
-                                <fieldset>
-                                    <button class="btn btn-primary btn-micro hover" @click="addRole">
-                                        Add Role
-                                    </button>
-                                </fieldset>
-                            </div>
-                        </div>
-
-                    </form>
-                </vuestic-widget>
-            </div>
-        </div>
-
+    <div class="add_role">
+        <el-form :model="form" label-position="top">
+            <el-form-item label="Promotion name" >
+                <el-input v-model="form.role" auto-complete="off"></el-input>
+            </el-form-item>
+            <el-form-item>
+                <el-button type="primary" @click="addRole">Add Role</el-button>
+            </el-form-item>
+        </el-form>
     </div>
 </template>
 
@@ -41,13 +17,15 @@
         name: 'form-elements',
         data() {
             return {
-                role: ''
+                form: {}
             }
         },
         methods: {
             addRole() {
-                if(this.role !== '') {
+                if(this.form.role !== '') {
                     this.$store.commit('ADD_ROLE', this.role);
+                }else {
+                    this.$message.error('Oops, Cannot submit an empty form. Fill in the role name.');
                 }
             }
         },
