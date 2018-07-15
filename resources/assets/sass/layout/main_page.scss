@@ -26,10 +26,11 @@
 
     &__content {
       padding: 10px 20px 30px 20px;
+      flex: 10;
     }
 
     &__footer {
-      flex: 1;
+      margin-bottom: auto;
     }
   }
 }

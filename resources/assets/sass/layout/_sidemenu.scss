@@ -1,5 +1,5 @@
 @mixin sidemenu {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   //padding-top: 50px;
@@ -7,6 +7,8 @@
   min-height: 100%;
   width: 230px;
   z-index: 810;
+  height: 100%;
+  overflow-y: auto;
   transition: transform .3s ease-in-out,width .3s ease-in-out;
   background-color: #222d32;
   .menu_content {

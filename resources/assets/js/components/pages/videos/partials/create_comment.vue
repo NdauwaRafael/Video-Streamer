@@ -29,7 +29,9 @@
                 </el-form-item>
 
                 <el-form-item size="mini">
-                    <el-button type="primary" @click="create_comment">Create</el-button>
+                    <el-button type="primary" @click="create_comment">
+                        Create
+                    </el-button>
                 </el-form-item>
 
             </el-form>
