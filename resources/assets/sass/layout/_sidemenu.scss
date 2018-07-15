@@ -1,0 +1,33 @@
+@mixin sidemenu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  //padding-top: 50px;
+  min-height: 100%;
+  width: 230px;
+  z-index: 810;
+  transition: transform .3s ease-in-out,width .3s ease-in-out;
+  background-color: #222d32;
+  .menu_content {
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        list-style: none;
+        position: relative;
+        margin: 0;
+        padding: 0;
+
+        a {
+          color: #fff;
+          padding: 12px 5px 12px 15px;
+          display: block;
+
+          &.active {
+            background: #1e282c;
+          }
+        }
+      }
+    }
+  }
+}

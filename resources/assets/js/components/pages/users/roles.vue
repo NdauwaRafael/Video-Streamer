@@ -1,101 +1,74 @@
-<script>
-    import Widget from '../../vuestic-components/vuestic-widget/VuesticWidget'
-    import DataTable from '../../vuestic-components/vuestic-datatable/VuesticDataTable'
-    import BadgeColumn from './utils/BadgeColumn.vue'
-    import Vue from 'vue'
-    import FieldsDef from '../../vuestic-components/vuestic-datatable/data/fields-definition'
-    import ItemsPerPageDef from '../../vuestic-components/vuestic-datatable/data/items-per-page-definition'
-    import Modal from '../../vuestic-components/vuestic-modal/VuesticModal';
-    Vue.component('badge-column', BadgeColumn);
-    Vue.component('add-role', require('./utils/add_role.vue'))
+<!--<script>-->
 
-    export default {
-        components: {
-            DataTable,
-            Widget,
-            Modal
-        },
-        name: 'Table',
-        data () {
-            return {
-                apiUrl: 'api/roles',
-                apiMode: true,
-                itemsPerPage: ItemsPerPageDef.itemsPerPage,
-                paginationPath: '',
-                showCreateRoleModal: false,
-                tableFields:[
-                    {
-                        name: '__component:badge-column',
-                        title: '',
-                        dataClass: 'text-center'
-                    },
-                    {
-                        name: 'name',
-                        sortField: 'name'
-                    }
-                    ],
-                sortFunctions: {
-                    'name': function (item1, item2) {
-                        return item1 >= item2 ? 1 : -1
-                    },
-                    'email': function (item1, item2) {
-                        return item1 >= item2 ? 1 : -1
-                    }
-                }
+    <!--export default {-->
+        <!--name: 'roles',-->
+        <!--data () {-->
+            <!--return {-->
+                <!--apiUrl: 'api/roles',-->
+                <!--tableFields:[-->
+                    <!--{-->
+                        <!--name: '__component:badge-column',-->
+                        <!--title: '',-->
+                        <!--dataClass: 'text-center'-->
+                    <!--},-->
+                    <!--{-->
+                        <!--name: 'name',-->
+                        <!--sortField: 'name'-->
+                    <!--}-->
+                    <!--],-->
+            <!--}-->
+        <!--}-->
+    <!--}-->
+<!--</script>-->
 
-            }
-        }
-    }
-</script>
+<!--<template>-->
+    <!--<div>-->
 
-<template>
-    <div>
+        <!--<div class="row">-->
+            <!--<div class="col-md-12">-->
+                <!--<div class="row add_role_row">-->
+                    <!--<div class="col-md-8">-->
 
-        <div class="row">
-            <div class="col-md-12">
-                <div class="row add_role_row">
-                    <div class="col-md-8">
+                    <!--</div>-->
+                    <!--<div class="md-col-4 ">-->
+                        <!--<button class="btn btn-info  btn-micro" @click="showCreateRoleModal = true">-->
+                            <!--Add New Role-->
+                        <!--</button>-->
 
-                    </div>
-                    <div class="md-col-4 ">
-                        <button class="btn btn-info  btn-micro" @click="showCreateRoleModal = true">
-                            Add New Role
-                        </button>
+                        <!--<el-dialog-->
+                                <!--title=""-->
+                                <!--:visible.sync="showCreateRoleModal">-->
 
-                        <el-dialog
-                                title=""
-                                :visible.sync="showCreateRoleModal">
+                            <!--<add-role></add-role>-->
 
-                            <add-role></add-role>
+                        <!--</el-dialog>-->
 
-                        </el-dialog>
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<widget headerText="User Roles">-->
+                    <!--<data-table :apiUrl="apiUrl"-->
+                                <!--:tableFields="tableFields"-->
+                                <!--:itemsPerPage="itemsPerPage"-->
+                                <!--:sortFunctions="sortFunctions"-->
+                                <!--:apiMode="apiMode"-->
+                                <!--:paginationPath="paginationPath"></data-table>-->
+                <!--</widget>-->
+            <!--</div>-->
+        <!--</div>-->
 
-                    </div>
-                </div>
-                <widget headerText="User Roles">
-                    <data-table :apiUrl="apiUrl"
-                                :tableFields="tableFields"
-                                :itemsPerPage="itemsPerPage"
-                                :sortFunctions="sortFunctions"
-                                :apiMode="apiMode"
-                                :paginationPath="paginationPath"></data-table>
-                </widget>
-            </div>
-        </div>
-
-    </div>
-</template>
+    <!--</div>-->
+<!--</template>-->
 
 
-<style lang="scss">
+<!--<style lang="scss">-->
 
-    .add_role_row {
-        padding-bottom: 15px;
-    }
+    <!--.add_role_row {-->
+        <!--padding-bottom: 15px;-->
+    <!--}-->
 
-    .color-icon-label-table {
-        td:first-child {
-            width: 1rem;
-        }
-    }
-</style>
+    <!--.color-icon-label-table {-->
+        <!--td:first-child {-->
+            <!--width: 1rem;-->
+        <!--}-->
+    <!--}-->
+<!--</style>-->

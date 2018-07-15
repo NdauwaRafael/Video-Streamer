@@ -1,24 +1,14 @@
 <script>
-    import Widget from '../../vuestic-components/vuestic-widget/VuesticWidget'
-    import DataTable from '../../vuestic-components/vuestic-datatable/VuesticDataTable'
-    import BadgeColumn from './utils/BadgeColumn.vue'
-    import Vue from 'vue'
-    import ItemsPerPageDef from '../../vuestic-components/vuestic-datatable/data/items-per-page-definition'
-
-    Vue.component('badge-column', BadgeColumn)
-
+    import vueTableMixin from "../../../mixins/vuetable_mixin";
+    import Vue from 'vue';
+    Vue.component('badge-column', require('../utils/BadgeColumn.vue'))
     export default {
-        components: {
-            DataTable,
-            Widget
-        },
-        name: 'Table',
+        mixins: [vueTableMixin],
+        name: 'users',
         data() {
             return {
                 apiUrl: 'api/users',
                 apiMode: true,
-                itemsPerPage: ItemsPerPageDef.itemsPerPage,
-                paginationPath: '',
                 tableFields:[
                     {
                         name: '__component:badge-column',
@@ -38,14 +28,10 @@
                         title: 'Role'
                     }
                 ],
-                sortFunctions: {
-                    'name': function (item1, item2) {
-                        return item1 >= item2 ? 1 : -1
-                    },
-                    'email': function (item1, item2) {
-                        return item1 >= item2 ? 1 : -1
-                    }
-                }
+                tableState: {},
+                promise: true,
+                dashboardTableItemsPerPage: 5,
+
             }
 
     }
@@ -54,19 +40,55 @@
 
 <template>
     <div>
+        <vuetable ref="vuetable"
+                  :api-url="apiUrl"
+                  :fields="tableFields"
+                  pagination-path=""
+                  @vuetable:pagination-data="onPaginationData"
+                  :append-params="tableState"
+                  :per-page="itemsPerPage"
+        >
+            <!--<template slot="actions"  slot-scope="props">-->
+                <!--<div class="custom-actions">-->
+                    <!--<md-button class="md-icon-button" @click="onView( props.rowData, props.rowIndex)">-->
+                        <!--<md-icon>visibility</md-icon>-->
+                    <!--</md-button>-->
 
-        <div class="row">
-            <div class="col-md-12">
-                <widget headerText="All Users">
-                    <data-table :apiUrl="apiUrl"
-                                :tableFields="tableFields"
-                                :itemsPerPage="itemsPerPage"
-                                :sortFunctions="sortFunctions"
-                                :apiMode="apiMode"
-                                :paginationPath="paginationPath"></data-table>
-                </widget>
+                <!--</div>-->
+            <!--</template>-->
+            <!--<template slot="status"  slot-scope="props">-->
+                <!--<div class="label secondary"-->
+                     <!--:class="{'success': props.rowData.status.slug == 'in_progress',-->
+                                         <!--'warning': props.rowData.status.slug == 'on_hold',-->
+                                         <!--'primary': props.rowData.status.slug == 'escalated',-->
+                                           <!--'closed': props.rowData.status.slug == 'closed',-->
+                                            <!--'unassigned': props.rowData.status.slug=='unassigned'}-->
+<!--">-->
+                    <!--{{props.rowData.status.name}}-->
+                <!--</div>-->
+            <!--</template>-->
+        </vuetable>
+
+        <div class="vuetable-pagination masaba_pagination">
+            <div class="items_per_page">
+                <span>Rows per Page</span>
+                <select v-model="itemsPerPage" @change="changePerPage">
+                    <option v-for="option in itemsPerPageOptions" :value="option">{{ option }}</option>
+                </select>
+            </div>
+            <div>
+                <vuetable-pagination-info ref="paginationInfo"
+                                          info-class="pagination-info"
+                ></vuetable-pagination-info>
+            </div>
+
+            <div class="">
+                <vuetable-pagination ref="pagination"
+                                     @vuetable-pagination:change-page="onChangePage"
+                ></vuetable-pagination>
             </div>
         </div>
+
 
     </div>
 </template>

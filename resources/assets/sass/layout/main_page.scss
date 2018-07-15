@@ -1,0 +1,33 @@
+@import "sidemenu";
+@import "topbar";
+.main_page {
+  min-height: 100vh;
+  display: flex;
+  margin: 0;
+  padding: 0;
+
+
+.side-menu {
+  @include sidemenu;
+}
+  .main_body {
+    display: flex;
+    flex-direction: column;
+    transition: transform .3s ease-in-out,margin .3s ease-in-out;
+    margin-left: 230px;
+    background-color: #ecf0f5;
+    z-index: 800;
+    width: calc(100vw - 230px);
+    &__topbar {
+      flex: 1;
+      @include topbar;
+    }
+
+    &__content {
+    }
+
+    &__footer {
+      flex: 1;
+    }
+  }
+}
