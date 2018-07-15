@@ -10,16 +10,13 @@
 <body>
 <div id="app" style="height: 100%">
 
-    @if (Route::has('login'))
         @auth
-            <main-page>
                 <div style="height: 100%" v-if="$route.name">
                     <router-view></router-view>
                 </div>
                 <div style="height: 100%" v-else>
                     @yield('content')
                 </div>
-            </main-page>
             @else
 
                 <div class="top-right links">
@@ -28,8 +25,6 @@
                 </div>
                 @yield('content')
                 @endauth
-
-            @endif
 
 
 </div>

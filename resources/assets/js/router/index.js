@@ -2,20 +2,35 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 //import menuModule from 'vuex-store/modules/menu'
-import menuModule from '../store/modules/menu'
-import App from '../App.vue'
+import menuModule from '../store/modules/menu';
+import Dashboard from '../components/dashboard/Dashboard.vue'
+import App from '../App.vue';
+
 Vue.use(Router)
 
 export default new Router({
     routes: [
-        ...generateRoutesFromMenu(menuModule.state.items),
-        {path: '*', redirect: { name: getDefaultRoute(menuModule.state.items).name }},
         {
             name: 'main_page',
-            path: '/dashboard'
+            component: App,
+            path: '/',
+            children: [
+                ...generateRoutesFromMenu(menuModule.state.items),
+                {path: '*', redirect: { name: getDefaultRoute(menuModule.state.items).name }},
+                {
+                    name: 'main_page',
+                    path: '/',
+                    component: Dashboard
+
+                }
+            ]
+
         }
     ],
-    mode: 'history'
+    mode: 'history',
+    hashbang: false,
+    history: true,
+    linkActiveClass: 'active'
 })
 
 function generateRoutesFromMenu (menu = [], routes = []) {
