@@ -22,7 +22,7 @@
                 <div v-if="$route.name" style="height: auto">
                     <router-view></router-view>
                 </div>
-                <div style="height: auto">
+                <div style="height: auto" v-else>
                     <div class="top-right links">
                         <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>

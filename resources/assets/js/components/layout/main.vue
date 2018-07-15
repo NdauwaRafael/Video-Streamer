@@ -8,17 +8,18 @@
 
     }
 </script>
+
 <template>
     <div class="main_page">
+        <div class="main_page__topbar">
+            <top-bar></top-bar>
+        </div>
 
         <div class="side_menu">
             <side-manu></side-manu>
         </div>
 
         <div class="main_body">
-            <div class="main_body__topbar">
-                <top-bar></top-bar>
-            </div>
             <div class="main_body__content">
                 <slot></slot>
             </div>

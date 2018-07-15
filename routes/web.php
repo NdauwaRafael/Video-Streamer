@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('layouts.app');
 });
 
+
 Auth::routes();
 
 //Route::get('/dashboard', 'HomeController@index')->name('dashboard');

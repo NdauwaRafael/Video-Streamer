@@ -6,7 +6,7 @@ import router from './router'
 require('./bootstrap');
 require('./components')
 
-new Vue({
+const app = new Vue({
   el: '#app',
   router,
   store,
