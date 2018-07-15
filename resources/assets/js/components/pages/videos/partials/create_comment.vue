@@ -1,8 +1,14 @@
 <script>
+    import {mapGetters} from 'vuex';
     export default {
         data: ()=>({
             form: {video_id: this.$router.params.videoId}
         }),
+        computed: {
+            ...mapGetters({
+                loading: 'creating_comment'
+            })
+        },
         methods: {
             create_comment(){
                 this.$store.commit('CREATE_VIDEO_COMMENT', this.form);
