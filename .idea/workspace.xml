@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e25d19d-0584-4fe4-8430-b8737af891fd" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/main.css" afterPath="$PROJECT_DIR$/public/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/main.js" afterPath="$PROJECT_DIR$/public/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/components/pages/users/role_permission.vue" afterPath="$PROJECT_DIR$/resources/assets/js/components/pages/users/role_permission.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/store/api/user.js" afterPath="$PROJECT_DIR$/resources/assets/js/store/api/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/store/index.js" afterPath="$PROJECT_DIR$/resources/assets/js/store/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/store/modules/users/details.js" afterPath="$PROJECT_DIR$/resources/assets/js/store/modules/users/details.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/sass/pages/_roles.scss" afterPath="$PROJECT_DIR$/resources/assets/sass/pages/_roles.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/components/pages/videos/partials/videos.vue" afterPath="$PROJECT_DIR$/resources/assets/js/components/pages/videos/partials/videos.vue" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,93 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="role_permission.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/assets/js/components/pages/users/role_permission.vue">
+      <file leaf-file-name="videos.vue" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/assets/js/components/pages/videos/partials/videos.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="46" column="85" lean-forward="false" selection-start-line="46" selection-start-column="63" selection-end-line="46" selection-end-column="85" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_roles.scss" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/assets/sass/pages/_roles.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_video.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/assets/sass/pages/_video.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="details.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/assets/js/store/modules/users/details.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="104" column="0" lean-forward="true" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/assets/js/store/api/user.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="39" lean-forward="true" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/assets/js/components/pages/videos/create.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="40" lean-forward="false" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/assets/js/router/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="59" column="35" lean-forward="true" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view_role.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/assets/js/components/pages/users/view_role.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="roles.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/assets/js/components/pages/users/roles.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="46" column="28" lean-forward="false" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
+            <state relative-caret-position="135">
+              <caret line="10" column="36" lean-forward="true" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -152,7 +63,6 @@
         <option value="$PROJECT_DIR$/resources/assets/sass/utils/_table.scss" />
         <option value="$PROJECT_DIR$/resources/assets/js/components/layout/partials/footer.vue" />
         <option value="$PROJECT_DIR$/resources/assets/sass/layout/_footer.scss" />
-        <option value="$PROJECT_DIR$/resources/assets/js/components/pages/videos/partials/videos.vue" />
         <option value="$PROJECT_DIR$/resources/assets/js/components/pages/dashboard/index.vue" />
         <option value="$PROJECT_DIR$/resources/assets/sass/layout/_sidemenu.scss" />
         <option value="$PROJECT_DIR$/resources/assets/sass/layout/main_page.scss" />
@@ -188,6 +98,7 @@
         <option value="$PROJECT_DIR$/resources/assets/js/store/modules/users/details.js" />
         <option value="$PROJECT_DIR$/resources/assets/js/components/pages/users/role_permission.vue" />
         <option value="$PROJECT_DIR$/resources/assets/sass/pages/_roles.scss" />
+        <option value="$PROJECT_DIR$/resources/assets/js/components/pages/videos/partials/videos.vue" />
       </list>
     </option>
   </component>
@@ -400,7 +311,7 @@
               <item name="js" type="cbb8eebc:String" user="js" />
               <item name="components" type="cbb8eebc:String" user="components" />
               <item name="pages" type="cbb8eebc:String" user="pages" />
-              <item name="users" type="cbb8eebc:String" user="users" />
+              <item name="videos" type="cbb8eebc:String" user="videos" />
             </path>
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
@@ -408,34 +319,10 @@
               <item name="resources" type="cbb8eebc:String" user="resources" />
               <item name="assets" type="cbb8eebc:String" user="assets" />
               <item name="js" type="cbb8eebc:String" user="js" />
-              <item name="router" type="cbb8eebc:String" user="router" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="tuts-master" type="cbb8eebc:String" user="tuts-master" />
-              <item name="resources" type="cbb8eebc:String" user="resources" />
-              <item name="assets" type="cbb8eebc:String" user="assets" />
-              <item name="js" type="cbb8eebc:String" user="js" />
-              <item name="store" type="cbb8eebc:String" user="store" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="tuts-master" type="cbb8eebc:String" user="tuts-master" />
-              <item name="resources" type="cbb8eebc:String" user="resources" />
-              <item name="assets" type="cbb8eebc:String" user="assets" />
-              <item name="js" type="cbb8eebc:String" user="js" />
-              <item name="store" type="cbb8eebc:String" user="store" />
-              <item name="modules" type="cbb8eebc:String" user="modules" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="tuts-master" type="cbb8eebc:String" user="tuts-master" />
-              <item name="resources" type="cbb8eebc:String" user="resources" />
-              <item name="assets" type="cbb8eebc:String" user="assets" />
-              <item name="js" type="cbb8eebc:String" user="js" />
-              <item name="store" type="cbb8eebc:String" user="store" />
-              <item name="modules" type="cbb8eebc:String" user="modules" />
-              <item name="users" type="cbb8eebc:String" user="users" />
+              <item name="components" type="cbb8eebc:String" user="components" />
+              <item name="pages" type="cbb8eebc:String" user="pages" />
+              <item name="videos" type="cbb8eebc:String" user="videos" />
+              <item name="partials" type="cbb8eebc:String" user="partials" />
             </path>
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
@@ -537,7 +424,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51441000" />
+    <option name="totallyTimeSpent" value="51532000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -808,13 +695,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/pages/videos/partials/videos.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="47" column="16" lean-forward="true" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/assets/js/components/pages/users/utils/add_permission.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="106">
@@ -901,10 +781,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/pages/users/roles.vue">
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/store/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="46" column="28" lean-forward="false" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
+        <state relative-caret-position="150">
+          <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/sass/pages/_roles.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/pages/users/role_permission.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="46" column="85" lean-forward="false" selection-start-line="46" selection-start-column="63" selection-end-line="46" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/sass/pages/_video.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/store/modules/users/details.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="104" column="0" lean-forward="true" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/store/api/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="39" lean-forward="true" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -927,24 +849,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/js/store/api/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="39" lean-forward="true" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/js/store/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/assets/js/components/pages/users/view_role.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -953,34 +857,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/js/store/modules/users/details.js">
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/pages/users/roles.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="104" column="0" lean-forward="true" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+        <state relative-caret-position="274">
+          <caret line="46" column="28" lean-forward="false" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/pages/users/role_permission.vue">
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/pages/videos/partials/videos.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="46" column="85" lean-forward="false" selection-start-line="46" selection-start-column="63" selection-end-line="46" selection-end-column="85" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/sass/pages/_video.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/sass/pages/_roles.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="135">
+          <caret line="10" column="36" lean-forward="true" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
           <folding />
         </state>
       </provider>
