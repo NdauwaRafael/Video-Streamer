@@ -45,7 +45,7 @@
         <el-checkbox :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange">Check all</el-checkbox>
         <div style="margin: 15px 0;"></div>
         <el-checkbox-group v-model="rolePermissions" @change="handleCheckedCitiesChange">
-            <el-checkbox v-for="permission in permissions" :label="permission" :key="permission">{{permission}}</el-checkbox>
+            <el-checkbox v-for="permission in permissions" :label="permission.id" :key="permission.id">{{permission.name}}</el-checkbox>
         </el-checkbox-group>
     </div>
 </template>
