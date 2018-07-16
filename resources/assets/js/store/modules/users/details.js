@@ -14,10 +14,12 @@ const getters = {
 }
 
 const mutations = {
+
     ADD_ROLE(state, form) {
+      let vm = this;
         user_api.ADD_ROLE_API(form)
             .then(({data}) => {
-                    this.$notify({
+                vm.$notify({
                         title: 'Success',
                         message: 'Role Added Successfully',
                         type: 'success'

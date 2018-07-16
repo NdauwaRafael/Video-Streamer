@@ -3403,6 +3403,20 @@ input {
   border-top: 2px solid #006A5A;
 }
 
+.tutorial_videos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.tutorial_videos .video_card {
+  max-width: 350px;
+  min-width: 350px;
+}
+
 @font-face {
   font-family: "Material Icons";
   font-style: normal;
