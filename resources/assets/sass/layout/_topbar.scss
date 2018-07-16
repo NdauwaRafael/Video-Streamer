@@ -1,0 +1,44 @@
+@mixin topbar {
+  height: 50px;
+  -webkit-transition: margin-left .3s ease-in-out;
+  -o-transition: margin-left .3s ease-in-out;
+  transition: margin-left .3s ease-in-out;
+  margin-bottom: 0;
+  border: none;
+  min-height: 50px;
+  border-radius: 0;
+  padding: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1200;
+  background: #fff;
+  &__content {
+    height: 50px;
+    min-height: 50px;
+    margin: 0;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+
+    .title {
+      width: 230px;
+      display: flex;
+      padding: 15px;
+      background-color: rgb(20, 20, 20);
+      h3 {
+        font-size: 16px;
+        color: #fff;
+      }
+
+      a {
+        margin-right: 10px;
+      }
+    }
+
+    .content {
+      padding: 15px;
+
+    }
+  }
+}

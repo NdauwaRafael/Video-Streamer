@@ -7,12 +7,10 @@ window._ = require('lodash');
  * code may be modified to fit the specific needs of your application.
  */
 
-try {
     window.$ = window.jQuery = require('jquery');
-
-    require('bootstrap-sass');
-} catch (e) {}
-
+    require('foundation-sites');
+    $(document).foundation();
+    window.Vue = require('vue');
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the
@@ -57,3 +55,19 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 
 Vue.use(ElementUI);
+
+import VueResource from 'vue-resource';
+
+Vue.use(VueResource);
+
+//video player
+import VueVideoPlayer from 'vue-video-player'
+
+// require videojs style
+import 'video.js/dist/video-js.css'
+// import 'vue-video-player/src/custom-theme.css'
+
+Vue.use(VueVideoPlayer, /* {
+  options: global default options,
+  events: global videojs events
+} */)

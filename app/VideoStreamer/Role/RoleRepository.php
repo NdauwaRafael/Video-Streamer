@@ -9,7 +9,20 @@
 namespace App\VideoStreamer\Role;
 
 
+use App\Http\Controllers\VueTablePagination;
+
 class RoleRepository
 {
+    use VueTablePagination;
+
+    public function save($request)
+    {
+        return Role::create($request->all());
+    }
+
+    public function getAllRoles()
+    {
+        return $this->tablePaginate(new Role(), [], $this->universalTransformer());
+    }
 
 }

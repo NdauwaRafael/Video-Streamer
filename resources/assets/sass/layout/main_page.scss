@@ -1,0 +1,38 @@
+@import "sidemenu";
+@import "topbar";
+@import "footer";
+.main_page {
+  min-height: 100vh;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  &__topbar {
+    flex: 1;
+    @include topbar;
+  }
+
+.side_menu {
+  @include sidemenu;
+}
+  .main_body {
+    display: flex;
+    flex-direction: column;
+    transition: transform .3s ease-in-out,margin .3s ease-in-out;
+    margin-left: 230px;
+    background-color: #ecf0f5;
+    z-index: 800;
+    width: calc(100vw - 230px);
+    padding-top: 55px;
+
+    &__content {
+      padding: 10px 20px 30px 20px;
+      flex: 10;
+    }
+
+    &__footer {
+      margin-bottom: auto;
+      @include footer;
+    }
+  }
+}
