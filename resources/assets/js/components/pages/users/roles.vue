@@ -18,13 +18,26 @@
                     {
                         name: 'name',
                         sortField: 'name'
+                    },
+                    {
+                        name: '__slot:actions',
+                        title: 'Options',
+                        titleClass: 'center aligned',
+                        dataClass: 'center aligned'
                     }
-                    ],
+
+                ],
                 tableState: {},
                 promise: true,
                 dashboardTableItemsPerPage: 5,
                 dialogAddRoleDialog: false
             }
+        },
+        methods: {
+            onView(){
+                this.$router.push({name: 'view_role', params: { roleId: 123 }})
+            }
+
         }
     }
 </script>
@@ -49,6 +62,14 @@
                           :append-params="tableState"
                           :per-page="itemsPerPage"
                 >
+                    <template slot="actions" slot-scope="props">
+                        <div class="custom-actions">
+                            <a @click="onView( props.rowData, props.rowIndex)">
+                                <i class="material-icons">visibility</i>
+                            </a>
+                        </div>
+                    </template>
+
                 </vuetable>
 
                 <div class="vuetable-pagination table_pagination">
