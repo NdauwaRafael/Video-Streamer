@@ -1,6 +1,9 @@
 <script>
     import Vue from 'vue';
-    Vue.component('all-videos', require('./partials/videos.vue'))
+    Vue.component('all-videos', require('./partials/videos.vue'));
+    export default {
+        name: 'videos'
+    }
 </script>
 
 <template>
