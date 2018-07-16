@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\VideoStreamer;
 
+use App\VideoStreamer\Video\Video;
 use App\VideoStreamer\Video\VideoRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -22,7 +23,16 @@ class VideoController extends Controller
      */
     public function index()
     {
-        //
+        $videos = Video::all();
+
+        return $videos->map(function ($video) {
+            return [
+                'id' => $video->id,
+                'name' => $video->name,
+                'category' => $video->category,
+                'attachment' => $video->attachment,
+            ];
+        });
     }
 
     /**
