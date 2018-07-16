@@ -20,7 +20,7 @@
 <template>
     <div class="create_comments">
             <el-form v-model="form">
-                <el-form-item label="Description">
+                <el-form-item label="Add a Comment">
                     <el-input
                             type="textarea"
                             :rows="5"
