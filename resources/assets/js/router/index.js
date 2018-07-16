@@ -8,6 +8,7 @@ import Users from '../components/pages/users/list.vue';
 import Roles from '../components/pages/users/roles.vue';
 import ViewRole from '../components/pages/users/view_role.vue';
 import Permission from '../components/pages/users/permissions.vue'
+import RolePermission from '../components/pages/users/role_permission.vue'
 
 Vue.use(Router);
 
@@ -57,6 +58,11 @@ export default new Router({
                     name: 'view_role',
                     path: '/role/view:roleId',
                     component: ViewRole
+                },
+                {
+                    name: 'add_permissions_to_role',
+                    path: '/role/permission:roleId',
+                    component: RolePermission
                 }
 
     ],
