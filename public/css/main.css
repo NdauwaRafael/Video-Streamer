@@ -3415,6 +3415,7 @@ input {
 .tutorial_videos .video_card {
   max-width: 350px;
   min-width: 350px;
+  cursor: pointer;
 }
 
 @font-face {
