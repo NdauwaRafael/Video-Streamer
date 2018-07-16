@@ -38,6 +38,12 @@
                     Roles
                 </router-link>
             </li>
+            <li>
+                <router-link :to="{name: 'permission'}">
+                    <i class="material-icons">verified_user</i>
+                    Permission
+                </router-link>
+            </li>
         </ul>
     </div>
 </template>

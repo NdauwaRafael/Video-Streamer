@@ -6,6 +6,8 @@ import AddVideo from '../components/pages/videos/create.vue';
 import ViewVideo from '../components/pages/videos/view.vue';
 import Users from '../components/pages/users/list.vue';
 import Roles from '../components/pages/users/roles.vue';
+import ViewRole from '../components/pages/users/view_role.vue';
+import Permission from '../components/pages/users/permissions.vue'
 
 Vue.use(Router);
 
@@ -44,6 +46,17 @@ export default new Router({
                     name: 'roles',
                     path: '/roles',
                     component: Roles
+                },
+
+                {
+                    name: 'permission',
+                    path: '/permission',
+                    component: Permission
+                },
+                {
+                    name: 'view_role',
+                    path: '/role/view:roleId',
+                    component: ViewRole
                 }
 
     ],

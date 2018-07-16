@@ -20,7 +20,15 @@ const mutations = {
 
             })
     },
+    ADD_PERMISSION(state, form){
+        user_api.ADD_PERMISSION_API(role)
+            .then(()=>{
 
+            },
+                ()=>{
+
+                })
+    },
     VIEW_ROLES(state){
         user_api.VIEW_ROLES_API()
             .then(({data})=>{
@@ -29,6 +37,20 @@ const mutations = {
                         message: 'Role Added Successfully',
                         type: 'success'
                     });
+            },
+                ()=>{
+
+            })
+    },
+    GET_ROLE_DETAILS(state, role_id){
+        user_api.GET_ROLE_DETAILS_API(role_id)
+            .then(({data})=>{
+                    this.$notify({
+                        title: 'Success',
+                        message: 'Role Added Successfully',
+                        type: 'success'
+                    });
+                    state.role = data.data;
             },
                 ()=>{
 
