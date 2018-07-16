@@ -4,7 +4,8 @@
         data: ()=>({
             checkAll: false,
             cities: cityOptions,
-            isIndeterminate: true
+            isIndeterminate: true,
+            form: {}
 
         }),
         computed: {
@@ -32,6 +33,12 @@
                 let checkedCount = value.length;
                 this.checkAll = checkedCount === this.cities.length;
                 this.isIndeterminate = checkedCount > 0 && checkedCount < this.cities.length;
+            },
+            save_permissions(){
+                let roleId = this.$route.params.roleId;
+                this.form.permissions = this.rolePermissions;
+                this.form.roleId = roleId;
+                this.$store.commit('SAVE_ROLE_PERMISSIONS', this.form)
             }
         },
         mounted(){
@@ -47,6 +54,8 @@
         <el-checkbox-group v-model="rolePermissions" @change="handleCheckedCitiesChange">
             <el-checkbox v-for="permission in permissions" :label="permission.id" :key="permission.id">{{permission.name}}</el-checkbox>
         </el-checkbox-group>
+
+        <el-button type="primary" @click="save_permissions">Save</el-button>
     </div>
 </template>
 
