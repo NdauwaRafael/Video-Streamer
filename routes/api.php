@@ -21,4 +21,5 @@ Route::group(['namespace' => 'VideoStreamer'], function () {
     Route::get('/users', 'UserController@index');
     Route::resource('/role', 'RoleController');
     Route::resource('/permission', 'PermissionController');
+    Route::resource('/video', 'VideoController');
 });

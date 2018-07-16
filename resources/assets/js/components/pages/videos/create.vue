@@ -2,7 +2,7 @@
     export default {
         data() {
             return {
-                url: '',
+                url: '/api/video',
                 form: {},
                 submitting: false
             };
