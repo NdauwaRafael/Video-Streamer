@@ -11,7 +11,7 @@
         </div>
 
         <div class="content">
-
+            <a href="/logout">Logout</a>
         </div>
     </div>
 </template>

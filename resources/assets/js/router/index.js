@@ -56,12 +56,12 @@ export default new Router({
                 },
                 {
                     name: 'view_role',
-                    path: '/role/view:roleId',
+                    path: '/role/view/:roleId',
                     component: ViewRole
                 },
                 {
                     name: 'add_permissions_to_role',
-                    path: '/role/permission:roleId',
+                    path: '/role/permission/:roleId',
                     component: RolePermission
                 }
 
