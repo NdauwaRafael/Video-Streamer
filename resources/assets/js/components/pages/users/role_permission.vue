@@ -1,6 +1,21 @@
 <script>
-    export default {}
+    export default {
+        data: ()=>({
+
+        }),
+        computed: {},
+        methods: {
+            getPermissions(){
+
+            },
+            getAllPemissions(){
+
+            }
+        }
+    }
 </script>
 <template>
-    <div class=""></div>
+    <div class="role_permission">
+
+    </div>
 </template>

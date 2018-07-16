@@ -5,6 +5,10 @@ const state = {
     loading_users: ''
 }
 
+const getters = {
+    role: state =>state.role
+}
+
 const mutations = {
     ADD_ROLE(state, form){
         user_api.ADD_ROLE_API(form)
