@@ -3307,6 +3307,33 @@ input {
           flex: 1;
 }
 
+.role_permission {
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 10px;
+}
+
+.role_permission .individual_permissions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 10px 0;
+}
+
+.role_permission .individual_permissions .el-checkbox + .el-checkbox {
+  margin-left: 0;
+}
+
+.role_permission .individual_permissions .el-checkbox {
+  font-size: 16px;
+  margin: 15px 0;
+}
+
 .view_videos .view_videos__head {
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
           box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);

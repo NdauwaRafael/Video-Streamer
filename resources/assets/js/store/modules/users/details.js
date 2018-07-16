@@ -102,15 +102,18 @@ const mutations = {
 
             })
     },
+
     GET_ALL_PERMISSIONS(state) {
         user_api.GET_ALL_PERMISSIONS_API()
             .then(({data}) => {
-                    state.permissions = data
+                    state.permissions = data.data;
                 },
                 () => {
 
                 })
     },
+
+
     SAVE_ROLE_PERMISSIONS(state, form) {
         user_api.SAVE_ROLE_PERMISSIONS_API(form)
             .then((data) => {
@@ -124,5 +127,6 @@ const mutations = {
 
 export default {
     state,
+    getters,
     mutations
 }
