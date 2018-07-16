@@ -15,6 +15,27 @@ class RoleRepository
 {
     use VueTablePagination;
 
+    public function getRoleById($id)
+    {
+        return Role::findorFail($id);
+    }
+
+    public function getRoleDetails($id)
+    {
+        $role = $this->getRoleById($id);
+
+        $response = [
+
+            'fetched' => true,
+
+            'data' => [
+                'id' => $role->id,
+                'name' => $role->name,
+            ]
+        ];
+
+        return response()->json($response);
+    }
     public function save($request)
     {
         return Role::create($request->all());

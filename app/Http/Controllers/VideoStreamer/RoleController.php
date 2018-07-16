@@ -56,7 +56,7 @@ class RoleController extends Controller
      */
     public function show($id)
     {
-
+        return $this->roleRepository->getRoleDetails($id);
     }
 
     /**
