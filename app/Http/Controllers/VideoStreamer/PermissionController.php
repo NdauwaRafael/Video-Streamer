@@ -1,11 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\VideoStreamer;
 
+use App\VideoStreamer\Role\RoleRepository;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class VideoStreamerRoleController extends Controller
+class PermissionController extends Controller
 {
+    protected $roleRepository;
+
+   public function __construct(RoleRepository $roleRepository)
+   {
+       $this->roleRepository = $roleRepository;
+   }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +22,12 @@ class VideoStreamerRoleController extends Controller
      */
     public function index()
     {
-        //
+        $permissions = $this->roleRepository->getAllPermissions();
+
+        return [
+            'fetched' => true,
+            'data' => $permissions
+        ];
     }
 
     /**

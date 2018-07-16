@@ -10,6 +10,7 @@ namespace App\VideoStreamer\Role;
 
 
 use App\Http\Controllers\VueTablePagination;
+use App\VideoStreamer\Permissions\Permission;
 
 class RoleRepository
 {
@@ -44,6 +45,18 @@ class RoleRepository
     public function getAllRoles()
     {
         return $this->tablePaginate(new Role(), [], $this->universalTransformer());
+    }
+
+    public function getAllPermissions()
+    {
+        $permissions = Permission::all();
+
+        return $permissions->map(function ($permission){
+            return [
+                'value' => $permission->id,
+                'label' => $permission->name,
+            ];
+        });
     }
 
 }
