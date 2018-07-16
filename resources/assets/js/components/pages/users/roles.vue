@@ -8,7 +8,7 @@
         name: 'roles',
         data() {
             return {
-                apiUrl: 'api/roles',
+                apiUrl: '/api/role',
                 tableFields:[
                     {
                         name: '__component:badge-column',

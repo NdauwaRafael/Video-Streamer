@@ -6,14 +6,15 @@ const state = {
 }
 
 const mutations = {
-    ADD_ROLE(state, role){
-        user_api.ADD_ROLE_API(role)
+    ADD_ROLE(state, form){
+        user_api.ADD_ROLE_API(form)
             .then(({data})=>{
                     this.$notify({
                         title: 'Success',
                         message: 'Role Added Successfully',
                         type: 'success'
                     });
+                    window.location.reload();
             },
                 ()=>{
 

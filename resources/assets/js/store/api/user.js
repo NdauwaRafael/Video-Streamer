@@ -1,7 +1,7 @@
 import { Http } from 'vue-resource'
 
-export const ADD_ROLE_API = function (role) {
-    return Http.post('api/role', role);
+export const ADD_ROLE_API = function (form) {
+    return Http.post('/api/role', form);
 };
 
 export const ADD_PERMISSION_API = function (form) {

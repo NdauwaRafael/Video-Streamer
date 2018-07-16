@@ -2,7 +2,7 @@
     <div class="add_role">
         <el-form :model="form" label-position="top">
             <el-form-item label="Promotion name" >
-                <el-input v-model="form.role" auto-complete="off"></el-input>
+                <el-input v-model="form.name" auto-complete="off"></el-input>
             </el-form-item>
             <el-form-item>
                 <el-button type="primary" @click="addRole">Add Role</el-button>
@@ -23,7 +23,7 @@
         methods: {
             addRole() {
                 if(this.form.role !== '') {
-                    this.$store.commit('ADD_ROLE', this.role);
+                    this.$store.commit('ADD_ROLE', this.form);
                 }else {
                     this.$message.error('Oops, Cannot submit an empty form. Fill in the role name.');
                 }
