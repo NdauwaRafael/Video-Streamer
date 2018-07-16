@@ -7,7 +7,7 @@ import video from './modules/videos/index'
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
-    strict: true,
+    strict: false,
     modules: {
         user,
         video

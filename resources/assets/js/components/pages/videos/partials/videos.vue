@@ -8,7 +8,7 @@
         name: 'users',
         data() {
             return {
-                apiUrl: 'api/users',
+                apiUrl: 'api/video',
                 apiMode: true,
                 tableFields: [
                     {
