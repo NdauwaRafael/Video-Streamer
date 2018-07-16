@@ -56,7 +56,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 
 Vue.use(ElementUI);
 
-var VueResource = require('vue-resource');
+import VueResource from 'vue-resource';
 
 Vue.use(VueResource);
 
