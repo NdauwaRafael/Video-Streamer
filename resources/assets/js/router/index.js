@@ -1,6 +1,5 @@
 import Vue from 'vue'
-import Router from 'vue-router'
-import App from '../App.vue';
+import Router from 'vue-router';
 import Dashboard from '../components/pages/dashboard/index.vue';
 import Videos from '../components/pages/videos/list.vue';
 import AddVideo from '../components/pages/videos/create.vue';
