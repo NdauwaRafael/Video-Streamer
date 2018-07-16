@@ -12,7 +12,7 @@
         },
         methods: {
             loadComments(){
-                let video_id = this.$router.params.videoId;
+                let video_id = this.$route.params.videoId;
                 this.$store.commit('LOAD_COMMENTS', video_id)
             }
         },

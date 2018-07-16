@@ -1,5 +1,8 @@
 <script>
     import {mapGetters} from 'vuex';
+    import Vue from 'vue';
+    Vue.component('video-comments', require('./partials/comments.vue'));
+    Vue.component('create-comment', require('./partials/create_comment.vue'));
     export default {
         data() {
             return {
@@ -38,7 +41,7 @@
                 // player.[methods]
             },
             loadVideo(){
-                let video_id = this.$router.params.videoId;
+                let video_id = this.$route.params.videoId;
                 this.$store.commit('LOAD_VIDEO', video_id);
             }
         },
@@ -50,14 +53,29 @@
 </script>
 
 <template>
-    <video-player  class="video-player-box"
-                   ref="videoPlayer"
-                   :options="playerOptions"
-                   :playsinline="true"
-                   @play="onPlayerPlay($event)"
-                   @pause="onPlayerPause($event)"
-                   @statechanged="playerStateChanged($event)"
-                   @ready="playerReadied">
-    </video-player>
+    <div class="video_details">
+        <div class="video_details__head"></div>
+        <div class="video_details__body">
+            <div class="video_details__body__clip">
+                <video-player  class="video-player-box"
+                               ref="videoPlayer"
+                               :options="playerOptions"
+                               :playsinline="true"
+                               @play="onPlayerPlay($event)"
+                               @pause="onPlayerPause($event)"
+                               @statechanged="playerStateChanged($event)"
+                               @ready="playerReadied">
+                </video-player>
+            </div>
+            <div class="video_details__body__comments">
+                <video-comments></video-comments>
+            </div>
+            <div class="video_details__body__create-comment">
+                <create-comment></create-comment>
+            </div>
+        </div>
+    </div>
+
+
 </template>
 

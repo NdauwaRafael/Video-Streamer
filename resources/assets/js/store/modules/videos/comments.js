@@ -8,8 +8,8 @@ const state = {
 };
 
 const getters = {
-    video: state => state.video,
-    loading_video: state => state.loading_video
+    comments: state => state.comments,
+    loading_comments: state => state.loading_comments
 };
 
 const mutations = {

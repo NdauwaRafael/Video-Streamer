@@ -1,4 +1,5 @@
 import * as video_api from '../../api/video'
+import comments from './comments';
 
 const state = {
     video: '',
@@ -33,5 +34,8 @@ const mutations = {
 export default {
     state,
     getters,
-    mutations
+    mutations,
+    modules: {
+        comments
+    }
 }
