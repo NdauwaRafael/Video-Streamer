@@ -12,5 +12,12 @@
     }
 </script>
 <template>
-    <div class=""></div>
+    <div class="role_details">
+        <div class="role_details__head">
+            
+        </div>
+        <div class="role_details__body">
+
+        </div>
+    </div>
 </template>
