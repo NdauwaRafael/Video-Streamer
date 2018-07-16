@@ -22,7 +22,19 @@
     }
 </script>
 <template>
-    <div class="video_comments">
+    <div>
+        <div class="video_comments">
+            <div class="video_comments__head">
+                <div class="video_comments__head__title">
 
+                </div>
+                <div class="video_comments__head__date">
+
+                </div>
+            </div>
+            <div class="video_comments__body">
+
+            </div>
+        </div>
     </div>
 </template>

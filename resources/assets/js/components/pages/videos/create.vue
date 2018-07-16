@@ -2,19 +2,35 @@
     export default {
         data() {
             return {
-                form: {
-                }
+                url: '/api/video',
+                form: {},
+                submitting: false
             };
         },
         methods: {
             onSubmit() {
+                if (this.$refs.upload.uploadFiles[0] && this.form != {}) {
+                    this.submitting = true;
+                    this.$refs.upload.submit();
+                }
+            },
+            uploadSuccess(response, file, fileList){
+                if(response.success){
+                    this.submitting = false;
+                    this.form = {};
+                }else {
+                    this.submitting = false;
+                }
+            },
+            uploadError(){
+
             }
         }
     };
 </script>
 
 <template>
-    <div class="add_video">
+    <div class="add_video" v-loading="submitting">
         <div class="form_area">
             <el-form ref="form" :model="form" label-position="top" size="mini">
 
@@ -42,11 +58,16 @@
                 <el-form-item label="Upload File">
 
                     <el-upload
-                            class="upload-demo"
+                            class="upload-attachment"
                             drag
-                            v-model="form.video"
-                            action="https://jsonplaceholder.typicode.com/posts/"
-                    >
+                            name="attachment"
+                            :action="url"
+                            :auto-upload="false"
+                            ref="upload"
+                            :data='form'
+                            :on-success="uploadSuccess"
+                            :on-error = "uploadError"
+                            size="medium">
                         <i class="el-icon-upload"></i>
                         <div class="el-upload__text">Drop your Video here or <em>click to upload</em></div>
                         <div class="el-upload__tip" slot="tip">files with a size less than 500mb</div>
