@@ -23,7 +23,7 @@
                 }
             },
             uploadError(){
-
+                this.submitting = false;
             }
         }
     };

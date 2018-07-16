@@ -34,8 +34,8 @@
             }
         },
         methods: {
-            onView(){
-                let roleId = this.$route.params.roleId;
+            onView(rowData){
+              let roleId = rowData.id
                 this.$router.push({name: 'view_role', params: { roleId }})
             }
 
