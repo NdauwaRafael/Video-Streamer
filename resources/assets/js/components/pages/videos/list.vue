@@ -9,7 +9,7 @@
 <template>
     <div class="view_videos">
         <div class="view_videos__head">
-            <h3>All videos reroute here</h3>
+            <h3>All videos</h3>
         </div>
         <div class="view_videos__body">
             <all-videos></all-videos>

@@ -20,8 +20,14 @@ export const VIEW_ROLES_DETAILS_API = function (role_id) {
 };
 
 export const VIEW_USER_DETAILS_API = function (user_id) {
-    return Http.get('api/user/details' + user_id);
+    return Http.get('api/user/details/' + user_id);
 };
 export const GET_ROLE_DETAILS_API = function (role_id) {
-    return Http.get('api/role/details' + role_id);
+    return Http.get('api/role/details/' + role_id);
+};
+export const GET_ROLE_PERMISSIONS_API = function (role_id) {
+    return Http.get('api/role/permissions/' + role_id);
+};
+export const GET_ALL_PERMISSIONS_API = function () {
+    return Http.get('api/permissions');
 };

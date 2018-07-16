@@ -1,15 +1,21 @@
 <script>
+    import { mapGetters } from 'vuex';
     export default {
         data:()=>({
 
         }),
+        computed: {
+            ...mapGetters({
+                role: 'role'
+            })
+        },
         methods: {
             getRole(){
                 let role_id = this.$route.params.roleId;
                 this.$store.commi('GET_ROLE_DETAILS', role_id)
             },
             addPermission(){
-                let role_id = this.$route.params.roleId;
+                let roleId = this.$route.params.roleId;
                 this.$router.push({name: 'add_permissions_to_role', params: { roleId }})
             }
         }
