@@ -24,23 +24,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//Route::get('storage/{filename}', function ($filename)
-//{
-//    $path = storage_path(  $filename);
-//
-//    if(!File::exists($path)){
-////        abort(404);
-//        dd($path);
-//    }
-//
-//    $file = File::get($path);
-//    $type = File::mineType($path);
-//
-//    $response = Response::make($file, 200);
-//    $response -> header("Content-Type", $type);
-//
-//    return $response;
-//});
+Route::group(['namespace' => 'VideoStreamer'], function () {
+    Route::get('/play-video{id}', 'VideoController@getVideo');
+});
 
 Route::get('{vue_capture?}', function () {
     if (!\Illuminate\Support\Facades\Auth::user()) {

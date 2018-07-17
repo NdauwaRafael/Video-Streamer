@@ -58,6 +58,11 @@ class VideoController extends Controller
         return response()->json($videoStreamDetails);
     }
 
+    public function getVideo($url)
+    {
+        return $this->videoRepository->getPlayVideo($url);
+    }
+
     /**
      * Display the specified resource.
      *

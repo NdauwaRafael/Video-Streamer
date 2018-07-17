@@ -32,5 +32,5 @@ export const GET_ALL_PERMISSIONS_API = function () {
     return Http.get('/api/permission');
 };
 export const SAVE_ROLE_PERMISSIONS_API = function (form) {
-    return Http.post('/api/role/permissions/save', form);
+    return Http.post('/api/role-permission/' +form.role_id, form);
 };
