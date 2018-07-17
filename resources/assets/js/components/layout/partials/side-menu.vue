@@ -1,11 +1,11 @@
 <script>
     export default {
-
+        props: ['authenticate']
     }
 </script>
 <template>
     <div class="menu_content">
-        <ul>
+        <ul v-if="authenticate">
             <li>
                 <router-link :to="{name: 'dashboard'}">
                     <i class="material-icons">

@@ -10,15 +10,20 @@
 </head>
 <body style="height: auto">
 <div id="app" style="height: auto">
-    <main-page>
+
         @auth
+        <main-page :authenticate="true">
             <div v-if="$route.name" style="height: auto">
                 <router-view></router-view>
             </div>
             <div  v-else style="height: auto">
                 @yield('content')
             </div>
+        </main-page>
+
             @else
+
+            <main-page :authenticate="false">
                 <div v-if="$route.name" style="height: auto">
                     <router-view></router-view>
                 </div>
@@ -29,8 +34,10 @@
                     </div>
                     @yield('content')
                 </div>
+            </main-page>
+
                 @endauth
-    </main-page>
+
 
 
 </div>

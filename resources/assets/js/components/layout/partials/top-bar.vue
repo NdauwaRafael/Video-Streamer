@@ -1,5 +1,7 @@
 <script>
-    export default {}
+    export default {
+      props: ['authenticate']
+    }
 </script>
 <template>
     <div class="main_page__topbar__content">
@@ -11,7 +13,7 @@
         </div>
 
         <div class="content">
-            <a href="/logout">Logout</a>
+            <a v-if="authenticate" href="/logout">Logout</a>
         </div>
     </div>
 </template>

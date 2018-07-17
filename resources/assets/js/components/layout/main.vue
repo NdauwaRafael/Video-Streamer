@@ -5,18 +5,18 @@
     Vue.component('page-footer', require('./partials/footer.vue'));
 
     export default  {
-
+        props: ['authenticate']
     }
 </script>
 
 <template>
     <div class="main_page">
         <div class="main_page__topbar">
-            <top-bar></top-bar>
+            <top-bar :authenticate="authenticate"></top-bar>
         </div>
 
         <div class="side_menu">
-            <side-manu></side-manu>
+            <side-manu :authenticate="authenticate"></side-manu>
         </div>
 
         <div class="main_body">
