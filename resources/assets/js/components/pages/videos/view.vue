@@ -31,7 +31,7 @@
     watch: {
       video: {
         handler: function () {
-          this.playerOptions.sources[0].src = '/storage/documents/' + this.video.attachment;
+          this.playerOptions.sources[0].src = '/play-video/' + this.video.attachment;
           console.log(this.video, 'video');
         }
       }
@@ -77,8 +77,8 @@
                 </video-player>
             </div>
             <div class="video_details__body__comments">
-                <video :src="'/storage/'+video.attachment"></video>
-                <!--<video-comments></video-comments>-->
+                <video :src="'/play-video/' + this.video.attachment"></video>
+                <video-comments></video-comments>
             </div>
             <div class="video_details__body__create-comment">
                 <h3>Doug</h3>
