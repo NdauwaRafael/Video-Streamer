@@ -40,9 +40,10 @@ const mutations = {
                 })
     },
     VIEW_ROLES(state) {
+      let vm = this;
         user_api.VIEW_ROLES_API()
             .then(({data}) => {
-                    this.$notify({
+                vm.$notify({
                         title: 'Success',
                         message: 'Role Added Successfully',
                         type: 'success'
@@ -53,9 +54,10 @@ const mutations = {
                 })
     },
     GET_ROLE_DETAILS(state, role_id) {
+      let vm = this;
         user_api.GET_ROLE_DETAILS_API(role_id)
             .then(({data}) => {
-                    this.$notify({
+                vm.$notify({
                         title: 'Success',
                         message: 'Role Added Successfully',
                         type: 'success'
@@ -67,9 +69,10 @@ const mutations = {
                 })
     },
     VIEW_ROLE_DETAILS(state) {
+      let vm = this;
         user_api.VIEW_ROLES_DETAILS_API(role)
             .then(({data}) => {
-                    this.$notify({
+                vm.$notify({
                         title: 'Success',
                         message: 'Role Added Successfully',
                         type: 'success'
