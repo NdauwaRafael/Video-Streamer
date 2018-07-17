@@ -4,11 +4,14 @@ namespace App\Http\Controllers\VideoStreamer;
 
 use App\VideoStreamer\Video\Video;
 use App\VideoStreamer\Video\VideoRepository;
+use App\VideoStreamer\Video\VideoRules;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class VideoController extends Controller
 {
+    use VideoRules;
+
     protected $videoRepository;
 
     public function __construct(VideoRepository $videoRepository)
@@ -53,6 +56,15 @@ class VideoController extends Controller
      */
     public function store(Request $request)
     {
+        $validation = $this->validateVideo($request);
+
+        if ($validation) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Form Validation Failed',
+                'errors'  => $validation->messages()->getMessages(),
+            ]);
+        }
         $this->videoRepository->save($request);
 
         return response()->json([
