@@ -54,7 +54,8 @@ class CommentController extends Controller
      */
     public function show($id)
     {
-        //
+        $videoDetails = $this->commentRepository->getVideoDetails($id);
+        return response()->json($videoDetails);
     }
 
     /**

@@ -53,9 +53,12 @@ class VideoController extends Controller
      */
     public function store(Request $request)
     {
-        $videoStreamDetails = $this->videoRepository->save($request);
+        $this->videoRepository->save($request);
 
-        return response()->json($videoStreamDetails);
+        return response()->json([
+            'success' => true,
+            'message' => 'Created successfully.',
+        ]);
     }
 
     public function getVideo($url)
