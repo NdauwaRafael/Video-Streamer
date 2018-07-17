@@ -53,3 +53,13 @@
   padding: 10px;
   border-top: 2px solid #006A5A;
 }
+
+.tutorial_videos {
+  display: flex;
+  justify-content: space-between;
+
+  .video_card {
+    max-width: 350px;
+    min-width: 350px;
+  }
+}

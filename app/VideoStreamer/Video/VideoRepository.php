@@ -10,6 +10,8 @@ namespace App\VideoStreamer\Video;
 
 
 use App\VideoStreamer\VideoManager;
+use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Storage;
 
 class VideoRepository
 {
@@ -67,5 +69,19 @@ class VideoRepository
 
             ],
         ];
+    }
+
+    public function getPlayVideo($fileName)
+    {
+        if (Storage::has($fileName)) {
+            $file = Storage::get($fileName);
+            $headers = [
+                'Content-Type' => Storage::mimeType($fileName),
+                'Content-Length' => Storage::size($fileName),
+                'Content-Disposition' => "inline; filename={$fileName}",
+            ];
+
+            return Response::make($file, 200, $headers);
+        }
     }
 }

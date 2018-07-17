@@ -24,6 +24,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::group(['namespace' => 'VideoStreamer'], function () {
+    Route::get('/play-video{id}', 'VideoController@getVideo');
+});
+
 Route::get('{vue_capture?}', function () {
     if (!\Illuminate\Support\Facades\Auth::user()) {
         return redirect('/login');

@@ -22,5 +22,6 @@ Route::group(['namespace' => 'VideoStreamer'], function () {
     Route::resource('/role', 'RoleController');
     Route::resource('/permission', 'PermissionController');
     Route::post('/role-permission/{id}', 'RolePermissionController@store');
+    Route::post('/comment/{id}', 'CommentController@store');
     Route::resource('/video', 'VideoController');
 });

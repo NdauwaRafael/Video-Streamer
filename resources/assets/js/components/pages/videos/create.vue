@@ -1,32 +1,55 @@
 <script>
-    export default {
-        data() {
-            return {
-                url: '/api/video',
-                form: {},
-                submitting: false
-            };
-        },
-        methods: {
-            onSubmit() {
-                if (this.$refs.upload.uploadFiles[0] && this.form != {}) {
-                    this.submitting = true;
-                    this.$refs.upload.submit();
-                }
-            },
-            uploadSuccess(response, file, fileList){
-                if(response.success){
-                    this.submitting = false;
-                    this.form = {};
-                }else {
-                    this.submitting = false;
-                }
-            },
-            uploadError(){
-                this.submitting = false;
-            }
+  export default {
+    data () {
+      return {
+        url: '/api/video',
+        form: {},
+        submitting: false
+      }
+    },
+    methods: {
+      onSubmit () {
+        if (this.$refs.upload.uploadFiles[0] && this.form != {}) {
+          this.submitting = true
+          this.$refs.upload.submit()
         }
-    };
+        else {
+          this.$notify({
+            title: 'Empty Field',
+            message: 'I am sorry but you cannot upload an empty clip',
+            type: 'warning'
+          });
+        }
+      },
+      uploadSuccess (response, file, fileList) {
+        if (response.success) {
+          this.submitting = false
+          this.form = {}
+
+          this.$notify({
+            title: 'Success',
+            message: 'Video Uploaded Successfully',
+            type: 'success'
+          })
+
+        } else {
+          this.submitting = false
+          this.$notify({
+            title: 'Upload Error',
+            message: 'An Errorr occurred wile uploading the file, try again',
+            type: 'warning'
+          })
+        }
+      },
+      uploadError () {
+        this.submitting = false
+        this.$notify.error({
+          title: 'Server Error',
+          message: 'Video could not be uploaded at the moment. '
+        })
+      }
+    }
+  }
 </script>
 
 <template>
@@ -66,7 +89,7 @@
                             ref="upload"
                             :data='form'
                             :on-success="uploadSuccess"
-                            :on-error = "uploadError"
+                            :on-error="uploadError"
                             size="medium">
                         <i class="el-icon-upload"></i>
                         <div class="el-upload__text">Drop your Video here or <em>click to upload</em></div>
