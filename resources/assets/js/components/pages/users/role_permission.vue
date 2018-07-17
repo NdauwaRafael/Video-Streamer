@@ -6,7 +6,8 @@
     data: () => ({
       checkAll: false,
       isIndeterminate: true,
-      form: {},
+      form: {
+      },
       checkedPermissions: []
 
     }),
@@ -29,9 +30,9 @@
       },
 
       save_permissions () {
-        let roleId = this.$route.params.roleId
-        this.form.permissions = this.rolePermissions
-        this.form.roleId = roleId
+        let role_id = this.$route.params.roleId
+        this.form.permissions = this.checkedPermissions
+        this.form.role_id = role_id
         this.$store.commit('SAVE_ROLE_PERMISSIONS', this.form)
       }
     },
