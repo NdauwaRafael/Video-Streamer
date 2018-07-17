@@ -17,6 +17,6 @@ class CommentRepository
     }
     public function save($request)
     {
-
+        return Comment::create($request->all());
     }
 }
