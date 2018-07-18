@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\VideoStreamer;
 
+use App\VideoStreamer\Comments\Comment;
 use App\VideoStreamer\Comments\CommentRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -22,7 +23,14 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //
+        $comments = Comment::orderBy('comment')->get();
+
+        return $comments->map(function ($comment){
+           return [
+              'id' =>$comment->id,
+              'comment' =>$comment->comment,
+           ] ;
+        });
     }
 
     /**
@@ -52,11 +60,11 @@ class CommentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        $videoDetails = $this->commentRepository->getVideoDetails($id);
-        return response()->json($videoDetails);
-    }
+//    public function show($id)
+//    {
+//        $videoDetails = $this->commentRepository->getVideoDetails($id);
+//        return response()->json($videoDetails);
+//    }
 
     /**
      * Show the form for editing the specified resource.
