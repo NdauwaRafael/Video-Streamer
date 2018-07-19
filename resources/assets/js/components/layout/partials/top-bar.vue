@@ -15,10 +15,10 @@
         <div class="content">
             <a v-if="authenticate" href="/logout">Logout</a>
             <a v-if="!authenticate" href="/login">
-                <el-button type="success" plain>Login</el-button>
+                <el-button type="success" plain size="mini">Login</el-button>
             </a>
             <a v-if="!authenticate" href="/register">
-                <el-button type="danger" plain>Register</el-button>
+                <el-button type="danger" plain size="mini">Register</el-button>
             </a>
         </div>
     </div>
