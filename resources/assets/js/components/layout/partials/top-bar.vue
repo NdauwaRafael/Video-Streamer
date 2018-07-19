@@ -14,6 +14,12 @@
 
         <div class="content">
             <a v-if="authenticate" href="/logout">Logout</a>
+            <a v-if="!authenticate" href="/login">
+                <el-button type="success" plain>Login</el-button>
+            </a>
+            <a v-if="!authenticate" href="/register">
+                <el-button type="danger" plain>Register</el-button>
+            </a>
         </div>
     </div>
 </template>

@@ -12,7 +12,7 @@
 <template>
     <div class="main_page">
         <div class="main_page__topbar">
-            <top-bar :authenticate="authenticate"></top-bar>
+            <top-bar :authenticate="authenticate" ></top-bar>
         </div>
 
         <div class="side_menu">

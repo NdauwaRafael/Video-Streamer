@@ -24,10 +24,7 @@
             @else
 
             <main-page :authenticate="false">
-                <div v-if="$route.name" style="height: auto">
-                    <router-view></router-view>
-                </div>
-                <div style="height: auto" v-else>
+                <div style="height: auto">
                     <div class="top-right links">
                         <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>
