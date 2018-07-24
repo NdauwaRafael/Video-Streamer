@@ -65,8 +65,6 @@ class VideoRepository
                 'id' => $videoDetails->id,
                 'name' => $videoDetails->name,
                 'category' => $videoDetails->category,
-                'attachment' => $videoDetails->attachment,
-
             ],
         ];
     }
