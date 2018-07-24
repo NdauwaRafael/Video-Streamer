@@ -31,7 +31,7 @@
     watch: {
       video: {
         handler: function () {
-          this.playerOptions.sources[0].src = '/play-video/' + this.video.attachment;
+          this.playerOptions.sources[0].src =  this.video.name;
           console.log(this.video, 'video');
         }
       }
