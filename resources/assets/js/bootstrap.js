@@ -61,13 +61,9 @@ import VueResource from 'vue-resource';
 Vue.use(VueResource);
 
 //video player
-import VueVideoPlayer from 'vue-video-player'
-
-// require videojs style
-import 'video.js/dist/video-js.css'
-// import 'vue-video-player/src/custom-theme.css'
-
-Vue.use(VueVideoPlayer, /* {
-  options: global default options,
-  events: global videojs events
-} */)
+import VueYouTubeEmbed from 'vue-youtube-embed'
+Vue.use(VueYouTubeEmbed)
+// if you don't want install the component globally
+Vue.use(VueYouTubeEmbed, { global: false })
+// if you want to install the component globally with a different name
+Vue.use(VueYouTubeEmbed, { global: true, componentId: "youtube-media" })

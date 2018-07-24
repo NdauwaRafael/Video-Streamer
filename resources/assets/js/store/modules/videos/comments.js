@@ -9,7 +9,8 @@ const state = {
 
 const getters = {
     comments: state => state.comments,
-    loading_comments: state => state.loading_comments
+    loading_comments: state => state.loading_comments,
+    creating_comment: state => state.creating_comment
 };
 
 const mutations = {
@@ -34,10 +35,10 @@ const mutations = {
         comments_api.LOAD_COMMENTS_API(video_id)
             .then(({data})=>{
                 state.loading_comments = false;
-                state.comments = data.data
+                state.comments = data
             },
                 ()=>{
-            state.loading_comments=false
+                state.loading_comments=false
                 })
     }
 };

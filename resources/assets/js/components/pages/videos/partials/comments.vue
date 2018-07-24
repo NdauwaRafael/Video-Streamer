@@ -22,13 +22,13 @@
 </script>
 <template>
     <div>
-        <div class="video_comments" v-for="comment in comments">
+        <div class="video_comments" v-for="comment in comments" v-loading="loading_comments">
             <div class="video_comments__head">
                 <div class="video_comments__head__title">
 
                 </div>
                 <div class="video_comments__head__date">
-                    <h4>{{comment.created_at}}</h4>
+                    <h4>{{comment.created_at.date}}</h4>
                 </div>
             </div>
             <div class="video_comments__body">

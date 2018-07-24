@@ -18,7 +18,7 @@
     }
 </script>
 <template>
-    <div class="create_comments">
+    <div class="create_comments" v-loading="loading">
             <el-form v-model="form">
                 <el-form-item label="Add a Comment">
                     <el-input

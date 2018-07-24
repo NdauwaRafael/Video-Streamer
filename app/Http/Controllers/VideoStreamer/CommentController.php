@@ -21,14 +21,15 @@ class CommentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        $comments = Comment::orderBy('comment')->get();
+        $comments = Comment::where('video_id', $id)->get();
 
         return $comments->map(function ($comment){
            return [
               'id' =>$comment->id,
               'comment' =>$comment->comment,
+              'created_at' =>$comment->created_at,
            ] ;
         });
     }

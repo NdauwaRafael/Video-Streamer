@@ -1,21 +1,24 @@
 <script>
   import { mapGetters } from 'vuex'
   import Vue from 'vue'
+  import { getIdFromURL, getTimeFromURL } from 'vue-youtube-embed'
 
   Vue.component('video-comments', require('./partials/comments.vue'))
   Vue.component('create-comment', require('./partials/create_comment.vue'))
   export default {
     data () {
       return {
-        playerOptions: {
-          muted: true,
-          language: 'en',
-          playbackRates: [0.7, 1.0, 1.5, 2.0],
-          sources: [{
-            type: 'video/mp4',
-            src: ''
-          }],
-          poster: '/static/images/author.jpg',
+        url: '',
+        video_id: ''
+      }
+    },
+    watch: {
+      video: {
+        handler: function () {
+          this.url = this.video.name;
+          let videoId = getIdFromURL(this.url);
+          let startTime = getTimeFromURL(this.url);
+          this.video_id = videoId;
         }
       }
     },
@@ -28,27 +31,7 @@
         loading_video: 'loading_video'
       })
     },
-    watch: {
-      video: {
-        handler: function () {
-          this.playerOptions.sources[0].src =  this.video.name;
-          console.log(this.video, 'video');
-        }
-      }
-    },
     methods: {
-      onPlayerPlay (player) {
-      },
-      onPlayerPause (player) {
-      },
-      playerStateChanged (playerCurrentState) {
-      },
-      // player is ready
-      playerReadied (player) {
-        console.log('the player is readied', player)
-        // you can use it to do something...
-        // player.[methods]
-      },
       loadVideo () {
         let video_id = this.$route.params.videoId
         this.$store.commit('LOAD_VIDEO', video_id)
@@ -66,18 +49,9 @@
         <div class="video_details__head"></div>
         <div class="video_details__body">
             <div class="video_details__body__clip">
-                <video-player class="video-player-box"
-                              ref="videoPlayer"
-                              :options="playerOptions"
-                              :playsinline="true"
-                              @play="onPlayerPlay($event)"
-                              @pause="onPlayerPause($event)"
-                              @statechanged="playerStateChanged($event)"
-                              @ready="playerReadied">
-                </video-player>
+                <youtube :video-id="video_id" player-width="95%" :player-vars="{ autoplay: 1 }"></youtube>
             </div>
             <div class="video_details__body__comments">
-                <video :src="'/play-video/' + this.video.attachment"></video>
                 <video-comments></video-comments>
             </div>
             <div class="video_details__body__create-comment">
