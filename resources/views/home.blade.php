@@ -25,6 +25,9 @@
                             </form>
                         </div>
                 </div>
+                <div class="dashboard">
+                    <all-videos></all-videos>
+                </div>
             </div>
         </div>
     </div>
