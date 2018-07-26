@@ -14,8 +14,9 @@
                   if(response.status == 200)
                   {
                       var data = response.body;
-                      if(data.created)
+                      if(data.success)
                       {
+                          this.$router.push("/videos");
                       }
                       else
                       {
@@ -29,7 +30,7 @@
 </script>
 
 <template>
-    <div class="add_video" v-loading="submitting">
+    <div class="add_video" v-loading="submitting" >
         <div class="form_area">
             <el-form ref="form" :model="form" label-position="top" size="mini">
 
