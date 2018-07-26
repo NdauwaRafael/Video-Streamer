@@ -16,7 +16,7 @@ export default new Router({
     routes: [
                 {
                     name: 'dashboard',
-                    path: '/',
+                    path: '/home',
                     component: Dashboard
                 },
                 {

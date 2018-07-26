@@ -18,6 +18,12 @@ Route::get('/', function () {
 Route::group(['namespace' => 'VideoStreamer'], function () {
     Route::get('/play-video{id}', 'VideoController@getVideo');
 });
+Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 
 Route::get('{vue_capture?}', function () {
     if (!\Illuminate\Support\Facades\Auth::user()) {
@@ -26,10 +32,5 @@ Route::get('{vue_capture?}', function () {
     return view('layouts.app');
 })->where('vue_capture', '[\/\w\.-]*');
 
-Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 
