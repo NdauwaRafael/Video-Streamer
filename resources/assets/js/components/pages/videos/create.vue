@@ -38,7 +38,7 @@
                 </el-form-item>
 
                 <el-form-item label="Video Youtube Link">
-                    <el-input v-model="form.link"  :rows="5" clearable></el-input>
+                    <el-input v-model="form.attachment"  :rows="5" clearable></el-input>
                 </el-form-item>
 
                 <el-form-item label="Activity zone">

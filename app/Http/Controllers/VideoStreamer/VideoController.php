@@ -34,6 +34,7 @@ class VideoController extends Controller
                 'name' => $video->name,
                 'category' => $video->category,
                 'attachment' => $video->attachment,
+                'description' => $video->description,
             ];
         });
     }

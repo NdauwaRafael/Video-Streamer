@@ -39,7 +39,8 @@ class VideoRepository
         $videoDetails = [
             'name' => $request->get('name'),
             'category' => $request->get('category'),
-            'attachment' => $path,
+            'attachment' => $request->get('attachment'),
+            'description' => $request->get('description'),
         ];
 
         return Video::create($videoDetails);
@@ -65,6 +66,8 @@ class VideoRepository
                 'id' => $videoDetails->id,
                 'name' => $videoDetails->name,
                 'category' => $videoDetails->category,
+                'description' => $videoDetails->description,
+                'attachment' => $videoDetails->attachment,
             ],
         ];
     }

@@ -10,5 +10,5 @@ class Video extends Model
 
     protected $guarded = array('id','created_at','updated_at');
 
-    protected $fillable =['name','category'];
+    protected $fillable =['name','category','attachment','description'];
 }
