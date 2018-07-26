@@ -33217,11 +33217,11 @@ var render = function() {
                   _c("el-input", {
                     attrs: { rows: 5, clearable: "" },
                     model: {
-                      value: _vm.form.link,
+                      value: _vm.form.attachment,
                       callback: function($$v) {
-                        _vm.$set(_vm.form, "link", $$v)
+                        _vm.$set(_vm.form, "attachment", $$v)
                       },
-                      expression: "form.link"
+                      expression: "form.attachment"
                     }
                   })
                 ],
@@ -113544,55 +113544,23 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "main_page__topbar__content" }, [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", { staticClass: "content" }, [
-      _vm.authenticate
-        ? _c("a", { attrs: { href: "/logout" } }, [_vm._v("Logout")])
-        : _vm._e(),
-      _vm._v(" "),
-      !_vm.authenticate
-        ? _c(
-            "a",
-            { attrs: { href: "/login" } },
-            [
-              _c(
-                "el-button",
-                { attrs: { type: "success", plain: "", size: "mini" } },
-                [_vm._v("Login")]
-              )
-            ],
-            1
-          )
-        : _vm._e(),
-      _vm._v(" "),
-      !_vm.authenticate
-        ? _c(
-            "a",
-            { attrs: { href: "/register" } },
-            [
-              _c(
-                "el-button",
-                { attrs: { type: "danger", plain: "", size: "mini" } },
-                [_vm._v("Register")]
-              )
-            ],
-            1
-          )
-        : _vm._e()
-    ])
-  ])
+  return _vm._m(0)
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "title" }, [
-      _c("a", [_c("i", { staticClass: "material-icons" }, [_vm._v(" menu")])]),
+    return _c("div", { staticClass: "main_page__topbar__content" }, [
+      _c("div", { staticClass: "title" }, [
+        _c("a", [
+          _c("i", { staticClass: "material-icons" }, [_vm._v(" menu")])
+        ]),
+        _vm._v(" "),
+        _c("h3", [_vm._v("Tutorials Master")])
+      ]),
       _vm._v(" "),
-      _c("h3", [_vm._v("Tutorials Master")])
+      _c("div", { staticClass: "content" })
     ])
   }
 ]
