@@ -16,3 +16,14 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group(['namespace' => 'VideoStreamer'], function () {
+    Route::get('/users', 'UserController@index');
+    Route::resource('/role', 'RoleController');
+    Route::resource('/permission', 'PermissionController');
+    Route::post('/role-permission/{id}', 'RolePermissionController@store');
+    Route::post('/comment/{id?}', 'CommentController@store');
+//    Route::get('/comment/{id?}', 'CommentController@show');
+    Route::get('/comment/{id}', 'CommentController@index');
+    Route::resource('/video', 'VideoController');
+});
