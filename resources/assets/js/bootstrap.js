@@ -1,6 +1,5 @@
 
 window._ = require('lodash');
-window.Popper = require('popper.js').default;
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -8,12 +7,10 @@ window.Popper = require('popper.js').default;
  * code may be modified to fit the specific needs of your application.
  */
 
-try {
     window.$ = window.jQuery = require('jquery');
-
-    require('bootstrap');
-} catch (e) {}
-
+    require('foundation-sites');
+    $(document).foundation();
+    window.Vue = require('vue');
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the
@@ -50,7 +47,23 @@ if (token) {
 
 // window.Echo = new Echo({
 //     broadcaster: 'pusher',
-//     key: process.env.MIX_PUSHER_APP_KEY,
-//     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
-//     encrypted: true
+//     key: 'your-pusher-key'
 // });
+
+import Vue from 'vue';
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+
+Vue.use(ElementUI);
+
+import VueResource from 'vue-resource';
+
+Vue.use(VueResource);
+
+//video player
+import VueYouTubeEmbed from 'vue-youtube-embed'
+Vue.use(VueYouTubeEmbed)
+// if you don't want install the component globally
+Vue.use(VueYouTubeEmbed, { global: false })
+// if you want to install the component globally with a different name
+Vue.use(VueYouTubeEmbed, { global: true, componentId: "youtube-media" })

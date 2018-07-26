@@ -1,0 +1,13 @@
+
+@import '../../../node_modules/font-awesome/scss/font-awesome';
+
+@import "~foundation-sites/scss/foundation.scss";
+@import "./layout/main_page";
+@import "utils/table";
+@import "pages/pages";
+
+$material-icons-font-path: '~material-icons/iconfont/';
+
+@import '~material-icons/iconfont/material-icons.scss';
+
+@include foundation-everything(true);

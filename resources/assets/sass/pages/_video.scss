@@ -1,0 +1,66 @@
+.view_videos {
+
+  .view_videos__head {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    background-color: #fff;
+    padding: 10px;
+    h3 {
+      font-size: 16px;
+    }
+    > {
+      flex: 1;
+    }
+  }
+}
+
+.video_comments {
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px 3px 0 0;
+  border: 1px solid #f2f2f2;
+  background-color: #ffffff;
+
+  &__head {
+    display: flex;
+    border-radius: 2px 2px 0 0;
+    background-color: #fbfbfb;
+
+    &__title {
+      font-size: 12px;
+      font-weight: 500;
+      color: #9b9b9b;
+      flex: 1;
+    }
+
+    &__date {
+      color: #9b9b9b;
+      font-size: 12px;
+      font-weight: 400;
+      flex: 1;
+    }
+  }
+
+  &__body {
+    color: #626262;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 15px;
+  }
+}
+
+.create_comments {
+  padding: 10px;
+  border-top: 2px solid #006A5A;
+}
+
+.tutorial_videos {
+  display: flex;
+  justify-content: space-between;
+
+  .video_card {
+    max-width: 350px;
+    min-width: 350px;
+    cursor: pointer;
+  }
+}
