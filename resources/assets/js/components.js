@@ -5,3 +5,5 @@ import Vue from  'vue';
 Vue.component('main-page', require('./components/layout/main.vue'))
 
 Vue.component('default-page', require('./components/pages/default.vue'));
+
+Vue.component('all-videos', require('./components/pages/videos/partials/videos.vue'));

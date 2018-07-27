@@ -7,12 +7,12 @@
     <div class="menu_content">
         <ul v-if="authenticate">
             <li>
-                <router-link :to="{name: 'dashboard'}">
+                <a v-bind:href="'/home'">
                     <i class="material-icons">
                         dashboard
                     </i>
                     Dashboard
-                </router-link>
+                </a>
             </li>
             <li>
                 <router-link :to="{name: 'videos'}">
