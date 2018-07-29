@@ -1,5 +1,5 @@
 import * as comments_api from '../../api/comments'
-
+import events from '../../../events';
 const state = {
     comments: '',
     loading_video: false,
@@ -25,6 +25,7 @@ const mutations = {
                         message: 'Comment created Successfully',
                         type: 'success'
                     });
+                events.bus.$emit('load_comments')
                 },
                 ()=>{
                     state.creating_comment = false

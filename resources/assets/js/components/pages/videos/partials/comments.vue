@@ -1,5 +1,6 @@
 <script>
-  import { mapGetters } from 'vuex'
+  import { mapGetters } from 'vuex';
+  import events from '../../../../events';
 
   export default {
     data: () => ({}),
@@ -16,7 +17,13 @@
       }
     },
     mounted () {
-      this.loadComments()
+      this.loadComments();
+    },
+    created(){
+      let vm = this;
+      events.bus.$on('load_comments', function () {
+        vm.loadComments();
+      })
     }
   }
 </script>

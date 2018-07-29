@@ -30054,6 +30054,7 @@ var LOAD_VIDEOS_API = function LOAD_VIDEOS_API() {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_comments__ = __webpack_require__(96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__events__ = __webpack_require__(311);
 
 
 var state = {
@@ -30087,6 +30088,7 @@ var mutations = {
                 message: 'Comment created Successfully',
                 type: 'success'
             });
+            __WEBPACK_IMPORTED_MODULE_1__events__["a" /* default */].bus.$emit('load_comments');
         }, function () {
             state.creating_comment = false;
         });
@@ -33474,7 +33476,9 @@ module.exports = Component.exports
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__events__ = __webpack_require__(311);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 
 
 
@@ -33494,6 +33498,12 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
   },
   mounted: function mounted() {
     this.loadComments();
+  },
+  created: function created() {
+    var vm = this;
+    __WEBPACK_IMPORTED_MODULE_1__events__["a" /* default */].bus.$on('load_comments', function () {
+      vm.loadComments();
+    });
   }
 });
 
@@ -114003,6 +114013,31 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 301 */,
+/* 302 */,
+/* 303 */,
+/* 304 */,
+/* 305 */,
+/* 306 */,
+/* 307 */,
+/* 308 */,
+/* 309 */,
+/* 310 */,
+/* 311 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+
+
+var bus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  bus: bus
+});
 
 /***/ })
 /******/ ]);
