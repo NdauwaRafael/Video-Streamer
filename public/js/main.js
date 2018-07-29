@@ -29999,15 +29999,14 @@ var mutations = {
         });
     },
     ALL_VIDEOS: function ALL_VIDEOS(state) {
-        var _this = this;
-
         state.loading_videos = true;
+        var vm = this;
         __WEBPACK_IMPORTED_MODULE_0__api_video__["a" /* LOAD_VIDEOS_API */]().then(function (_ref2) {
             var data = _ref2.data;
 
             state.loading_videos = false;
             state.videos = data;
-            _this.$notify({
+            vm.$notify({
                 title: 'Success',
                 message: 'Videos loaded Successfully',
                 type: 'success'
@@ -33137,28 +33136,30 @@ module.exports = Component.exports
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            form: {},
-            submitting: false
-        };
-    },
+  data: function data() {
+    return {
+      form: {},
+      submitting: false
+    };
+  },
 
-    methods: {
-        onSubmit: function onSubmit() {
-            var _this = this;
-
-            this.$http.post('/api/video', this.form).then(function (response) {
-                _this.loading = false;
-                if (response.status == 200) {
-                    var data = response.body;
-                    if (data.success) {
-                        _this.$router.push("/videos");
-                    } else {}
-                }
-            }, function () {});
+  methods: {
+    onSubmit: function onSubmit() {
+      this.submitting = true;
+      var vm = this;
+      this.$http.post('/api/video', this.form).then(function (response) {
+        vm.submitting = false;
+        if (response.status == 200) {
+          var data = response.body;
+          if (data.success) {
+            vm.$router.push("/videos");
+          } else {}
         }
+      }, function () {
+        vm.submitting = false;
+      });
     }
+  }
 });
 
 /***/ }),
@@ -33744,7 +33745,7 @@ var render = function() {
       _c(
         "div",
         { staticClass: "video_details__body__create-comment" },
-        [_c("h3", [_vm._v("Doug")]), _vm._v(" "), _c("create-comment")],
+        [_c("create-comment")],
         1
       )
     ])

@@ -8,21 +8,24 @@
     },
     methods: {
       onSubmit () {
+        this.submitting = true;
+        let vm = this;
           this.$http.post('/api/video', this.form)
               .then((response) => {
-                  this.loading = false;
+                  vm.submitting = false;
                   if(response.status == 200)
                   {
                       var data = response.body;
                       if(data.success)
                       {
-                          this.$router.push("/videos");
+                        vm.$router.push("/videos");
                       }
                       else
                       {
                       }
                   }
               }, () => {
+          vm.submitting = false
               });
       },
     }

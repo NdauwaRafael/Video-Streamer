@@ -38,11 +38,12 @@ const mutations = {
 
     ALL_VIDEOS(state){
         state.loading_videos = true;
+        let vm = this;
         video_api.LOAD_VIDEOS_API()
             .then(({data})=>{
                     state.loading_videos = false
                     state.videos = data
-                    this.$notify({
+                vm.$notify({
                         title: 'Success',
                         message: 'Videos loaded Successfully',
                         type: 'success'
