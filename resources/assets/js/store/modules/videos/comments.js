@@ -1,5 +1,7 @@
 import * as comments_api from '../../api/comments'
 import events from '../../../events';
+import { Notification, Message } from 'element-ui';
+
 const state = {
     comments: '',
     loading_video: false,

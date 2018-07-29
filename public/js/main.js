@@ -29778,6 +29778,9 @@ var store = new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_user__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_element_ui__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_element_ui___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_element_ui__);
+
 
 
 var state = {
@@ -29805,7 +29808,7 @@ var mutations = {
         __WEBPACK_IMPORTED_MODULE_0__api_user__["b" /* ADD_ROLE_API */](form).then(function (_ref) {
             var data = _ref.data;
 
-            Notification.success({
+            __WEBPACK_IMPORTED_MODULE_1_element_ui__["Notification"].success({
                 title: 'Success',
                 message: 'Role Added Successfully',
                 type: 'success'
@@ -29820,7 +29823,7 @@ var mutations = {
         __WEBPACK_IMPORTED_MODULE_0__api_user__["g" /* VIEW_ROLES_API */]().then(function (_ref2) {
             var data = _ref2.data;
 
-            Notification.success({
+            __WEBPACK_IMPORTED_MODULE_1_element_ui__["Notification"].success({
                 title: 'Success',
                 message: 'Role Added Successfully',
                 type: 'success'
@@ -29832,7 +29835,7 @@ var mutations = {
         __WEBPACK_IMPORTED_MODULE_0__api_user__["d" /* GET_ROLE_DETAILS_API */](role_id).then(function (_ref3) {
             var data = _ref3.data;
 
-            Notification.success({
+            __WEBPACK_IMPORTED_MODULE_1_element_ui__["Notification"].success({
                 title: 'Success',
                 message: 'Role Added Successfully',
                 type: 'success'
@@ -29846,7 +29849,7 @@ var mutations = {
             var data = _ref4.data;
 
 
-            Notification.success({
+            __WEBPACK_IMPORTED_MODULE_1_element_ui__["Notification"].success({
                 title: 'Success',
                 message: 'Role Added Successfully',
                 type: 'success'
@@ -30055,6 +30058,10 @@ var LOAD_VIDEOS_API = function LOAD_VIDEOS_API() {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_comments__ = __webpack_require__(96);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__events__ = __webpack_require__(311);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_element_ui__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_element_ui___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_element_ui__);
+
+
 
 
 var state = {
@@ -30083,7 +30090,7 @@ var mutations = {
             var data = _ref.data;
 
             state.creating_comment = false;
-            Notification.success({
+            __WEBPACK_IMPORTED_MODULE_2_element_ui__["Notification"].success({
                 title: 'Success',
                 message: 'Comment created Successfully',
                 type: 'success'
@@ -33529,7 +33536,8 @@ var render = function() {
               expression: "loading"
             }
           ],
-          staticClass: "video_comments"
+          staticClass: "video_comments",
+          attrs: { "element-loading-text": "Loading comments..." }
         },
         [
           _c("div", { staticClass: "video_comments__head" }, [

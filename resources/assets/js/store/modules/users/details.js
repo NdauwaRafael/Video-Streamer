@@ -1,4 +1,5 @@
 import * as user_api from '../../api/user'
+import { Notification, Message } from 'element-ui';
 
 const state = {
     role: '',

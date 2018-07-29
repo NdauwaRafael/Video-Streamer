@@ -29,7 +29,7 @@
 </script>
 <template>
     <div>
-        <div class="video_comments" v-for="comment in comments" v-loading="loading">
+        <div class="video_comments" v-for="comment in comments" v-loading="loading" element-loading-text="Loading comments...">
             <div class="video_comments__head">
                 <div class="video_comments__head__title">
 
