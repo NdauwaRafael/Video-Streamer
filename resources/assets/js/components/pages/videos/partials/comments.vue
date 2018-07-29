@@ -41,6 +41,28 @@
             <div class="video_comments__body">
                 {{comment.comment}}
             </div>
+            <div class="video_comments__foot">
+                <button>
+                    <a >
+                        <i class="material-icons">thumb_up</i>
+                    </a>
+                </button>
+                <button>
+                    <a>
+                        <i class="material-icons">thumb_down</i>
+                    </a>
+                </button>
+                <button>
+                    <a>
+                        <i class="material-icons">reply</i>
+                    </a>
+                </button>
+                <button>
+                    <a>
+                        <i class="material-icons">delete</i>
+                    </a>
+                </button>
+            </div>
         </div>
     </div>
 </template>

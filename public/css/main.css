@@ -3334,21 +3334,38 @@ input {
   margin: 15px 0;
 }
 
-.view_videos .view_videos__head {
+.video_details__head {
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
           box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   background-color: #fff;
   padding: 10px;
 }
 
-.view_videos .view_videos__head h3 {
+.video_details__head h3 {
   font-size: 16px;
 }
 
-.view_videos .view_videos__head > {
+.video_details__head > {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+.video_details__body__actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px;
+}
+
+.video_details__body__actions button {
+  width: 50px;
 }
 
 .video_comments {
@@ -3401,6 +3418,27 @@ input {
   font-size: 14px;
   font-weight: 400;
   padding: 15px;
+}
+
+.video_comments__foot {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px;
+}
+
+.video_comments__foot a {
+  margin-right: 20px;
+}
+
+.video_comments__foot a i {
+  font-size: 15px !important;
 }
 
 .create_comments {

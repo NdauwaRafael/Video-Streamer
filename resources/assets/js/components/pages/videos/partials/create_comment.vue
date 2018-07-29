@@ -14,7 +14,14 @@
                 this.form.video_id = this.$route.params.videoId;
                 this.$store.commit('CREATE_VIDEO_COMMENT', this.form);
             }
-        }
+        },
+      created(){
+        let vm = this;
+        events.bus.$on('load_comments', function () {
+          vm.form = {};
+        })
+      }
+
     }
 </script>
 <template>

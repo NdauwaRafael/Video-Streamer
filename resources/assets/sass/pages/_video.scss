@@ -1,6 +1,5 @@
-.view_videos {
-
-  .view_videos__head {
+.video_details {
+  &__head {
     box-shadow: 0 1px 1px rgba(0,0,0,0.1);
     background-color: #fff;
     padding: 10px;
@@ -11,7 +10,25 @@
       flex: 1;
     }
   }
+
+  &__body {
+    &__description {
+
+    }
+
+    &__actions {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 15px;
+      button {
+        width: 50px;
+      }
+    }
+  }
+
 }
+
 
 .video_comments {
   margin: 15px 0;
@@ -50,6 +67,19 @@
     font-size: 14px;
     font-weight: 400;
     padding: 15px;
+  }
+
+  &__foot {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px;
+    a {
+      margin-right: 20px;
+      i {
+        font-size: 15px !important;
+      }
+    }
   }
 }
 
