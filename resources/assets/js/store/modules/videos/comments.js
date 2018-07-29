@@ -20,7 +20,7 @@ const mutations = {
         comments_api.CREATE_VIDEO_COMMENT_API(form)
             .then(({data})=>{
                     state.creating_comment = false;
-                    this.$notify({
+                Notification.success({
                         title: 'Success',
                         message: 'Comment created Successfully',
                         type: 'success'

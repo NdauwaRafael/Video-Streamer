@@ -29805,7 +29805,7 @@ var mutations = {
         __WEBPACK_IMPORTED_MODULE_0__api_user__["b" /* ADD_ROLE_API */](form).then(function (_ref) {
             var data = _ref.data;
 
-            vm.$notify({
+            Notification.success({
                 title: 'Success',
                 message: 'Role Added Successfully',
                 type: 'success'
@@ -29817,11 +29817,10 @@ var mutations = {
         __WEBPACK_IMPORTED_MODULE_0__api_user__["a" /* ADD_PERMISSION_API */](role).then(function () {}, function () {});
     },
     VIEW_ROLES: function VIEW_ROLES(state) {
-        var vm = this;
         __WEBPACK_IMPORTED_MODULE_0__api_user__["g" /* VIEW_ROLES_API */]().then(function (_ref2) {
             var data = _ref2.data;
 
-            vm.$notify({
+            Notification.success({
                 title: 'Success',
                 message: 'Role Added Successfully',
                 type: 'success'
@@ -29833,7 +29832,7 @@ var mutations = {
         __WEBPACK_IMPORTED_MODULE_0__api_user__["d" /* GET_ROLE_DETAILS_API */](role_id).then(function (_ref3) {
             var data = _ref3.data;
 
-            vm.$notify({
+            Notification.success({
                 title: 'Success',
                 message: 'Role Added Successfully',
                 type: 'success'
@@ -29846,7 +29845,8 @@ var mutations = {
         __WEBPACK_IMPORTED_MODULE_0__api_user__["h" /* VIEW_ROLES_DETAILS_API */](role).then(function (_ref4) {
             var data = _ref4.data;
 
-            vm.$notify({
+
+            Notification.success({
                 title: 'Success',
                 message: 'Role Added Successfully',
                 type: 'success'
@@ -30077,14 +30077,12 @@ var getters = {
 
 var mutations = {
     CREATE_VIDEO_COMMENT: function CREATE_VIDEO_COMMENT(state, form) {
-        var _this = this;
-
         state.creating_comment = true;
         __WEBPACK_IMPORTED_MODULE_0__api_comments__["a" /* CREATE_VIDEO_COMMENT_API */](form).then(function (_ref) {
             var data = _ref.data;
 
             state.creating_comment = false;
-            _this.$notify({
+            Notification.success({
                 title: 'Success',
                 message: 'Comment created Successfully',
                 type: 'success'
