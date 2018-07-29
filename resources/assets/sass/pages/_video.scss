@@ -57,10 +57,13 @@
 .tutorial_videos {
   display: flex;
   justify-content: space-between;
+  max-width: 100%;
+  flex-wrap: wrap;
 
   .video_card {
     max-width: 350px;
     min-width: 350px;
     cursor: pointer;
+    margin: 15px;
   }
 }
