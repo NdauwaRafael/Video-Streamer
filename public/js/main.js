@@ -32849,7 +32849,7 @@ var render = function() {
             [
               _c("img", {
                 staticClass: "image",
-                attrs: { src: "/img/banner.jpg" }
+                attrs: { src: "/img/banner_l.jpg" }
               }),
               _vm._v(" "),
               _c("div", { staticStyle: { padding: "14px" } }, [

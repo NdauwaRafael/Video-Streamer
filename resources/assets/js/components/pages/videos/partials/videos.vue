@@ -34,7 +34,7 @@
     <div class="tutorial_videos">
         <div class="video_card" v-for="(video, index) in videos" @click="viewClip(video)">
             <el-card shadow="hover" :body-style="{ padding: '0px' }">
-                <img src="/img/banner.jpg" class="image">
+                <img src="/img/banner_l.jpg" class="image">
                 <div style="padding: 14px;">
                     <span>{{video.name}}</span>
                     <span>{{video.category}}</span>
