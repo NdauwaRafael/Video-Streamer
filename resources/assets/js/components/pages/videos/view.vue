@@ -15,7 +15,7 @@
     watch: {
       video: {
         handler: function () {
-          this.url = this.video.name;
+          this.url = this.video.attachment;
           let videoId = getIdFromURL(this.url);
           let startTime = getTimeFromURL(this.url);
           this.video_id = videoId;
@@ -48,7 +48,7 @@
     <div class="video_details">
         <div class="video_details__head"></div>
         <div class="video_details__body">
-            <div class="video_details__body__clip">
+            <div class="video_details__body__clip" v-loading="loading_video">
                 <youtube :video-id="video_id" player-width="95%" :player-vars="{ autoplay: 1 }"></youtube>
             </div>
             <div class="video_details__body__comments">

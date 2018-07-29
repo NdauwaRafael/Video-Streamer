@@ -1,5 +1,6 @@
 import * as video_api from '../../api/video'
 import comments from './comments';
+import { Notification, Message } from 'element-ui';
 
 const state = {
     video: [],
@@ -25,11 +26,13 @@ const mutations = {
             .then(({data})=>{
                     state.loading_video = false
                     state.video = data.data
-                vm.$notify({
+                Notification.success({
                         title: 'Success',
                         message: 'Video file loaded Successfully',
                         type: 'success'
                     });
+                    console.log(state.video, 'video')
+
                 },
                 ()=>{
                     state.loading_video = false
@@ -43,7 +46,7 @@ const mutations = {
             .then(({data})=>{
                     state.loading_videos = false
                     state.videos = data
-                vm.$notify({
+                Notification.success({
                         title: 'Success',
                         message: 'Videos loaded Successfully',
                         type: 'success'

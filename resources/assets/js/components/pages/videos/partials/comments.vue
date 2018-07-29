@@ -22,7 +22,7 @@
 </script>
 <template>
     <div>
-        <div class="video_comments" v-for="comment in comments" v-loading="loading_comments">
+        <div class="video_comments" v-for="comment in comments" v-loading="loading">
             <div class="video_comments__head">
                 <div class="video_comments__head__title">
 

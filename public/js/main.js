@@ -29954,6 +29954,9 @@ var SAVE_ROLE_PERMISSIONS_API = function SAVE_ROLE_PERMISSIONS_API(form) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_video__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__comments__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_element_ui__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_element_ui___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_element_ui__);
+
 
 
 
@@ -29989,11 +29992,12 @@ var mutations = {
 
             state.loading_video = false;
             state.video = data.data;
-            vm.$notify({
+            __WEBPACK_IMPORTED_MODULE_2_element_ui__["Notification"].success({
                 title: 'Success',
                 message: 'Video file loaded Successfully',
                 type: 'success'
             });
+            console.log(state.video, 'video');
         }, function () {
             state.loading_video = false;
         });
@@ -30006,7 +30010,7 @@ var mutations = {
 
             state.loading_videos = false;
             state.videos = data;
-            vm.$notify({
+            __WEBPACK_IMPORTED_MODULE_2_element_ui__["Notification"].success({
                 title: 'Success',
                 message: 'Videos loaded Successfully',
                 type: 'success'
@@ -33392,7 +33396,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.component('create-comment', __webpac
   watch: {
     video: {
       handler: function handler() {
-        this.url = this.video.name;
+        this.url = this.video.attachment;
         var videoId = Object(__WEBPACK_IMPORTED_MODULE_2_vue_youtube_embed__["b" /* getIdFromURL */])(this.url);
         var startTime = Object(__WEBPACK_IMPORTED_MODULE_2_vue_youtube_embed__["c" /* getTimeFromURL */])(this.url);
         this.video_id = videoId;
@@ -33513,8 +33517,8 @@ var render = function() {
             {
               name: "loading",
               rawName: "v-loading",
-              value: _vm.loading_comments,
-              expression: "loading_comments"
+              value: _vm.loading,
+              expression: "loading"
             }
           ],
           staticClass: "video_comments"
@@ -33722,7 +33726,17 @@ var render = function() {
     _c("div", { staticClass: "video_details__body" }, [
       _c(
         "div",
-        { staticClass: "video_details__body__clip" },
+        {
+          directives: [
+            {
+              name: "loading",
+              rawName: "v-loading",
+              value: _vm.loading_video,
+              expression: "loading_video"
+            }
+          ],
+          staticClass: "video_details__body__clip"
+        },
         [
           _c("youtube", {
             attrs: {
