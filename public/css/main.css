@@ -3236,6 +3236,23 @@
           justify-content: flex-end;
 }
 
+@media screen and (max-width: 1024px) {
+  .main_page .side_menu {
+    width: 0;
+    overflow-x: hidden;
+  }
+
+  .main_page .side_menu.toggled {
+    width: 230px;
+    position: absolute;
+  }
+
+  .main_page .main_body {
+    width: 100vw;
+    margin-left: 0;
+  }
+}
+
 .table_container {
   width: 100%;
   overflow: auto;

@@ -1,12 +1,23 @@
 <script>
+    import events from '../../../events'
     export default {
-      props: ['authenticate']
+      props: ['authenticate'],
+      data: ()=>({
+
+      }),
+
+      methods:{
+        toggleMenu(){
+          events.bus.$emit('menu-toggle');
+        }
+      }
+
     }
 </script>
 <template>
     <div class="main_page__topbar__content">
         <div class="title">
-            <a>
+            <a @click="toggleMenu">
                 <i class="material-icons"> menu</i>
             </a>
             <h3>Tutorials Master</h3>

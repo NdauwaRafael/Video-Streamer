@@ -25,6 +25,7 @@
     width: calc(100vw - 230px);
     padding-top: 55px;
 
+
     &__content {
       padding: 10px 20px 30px 20px;
       flex: 10;
@@ -33,6 +34,25 @@
     &__footer {
       margin-bottom: auto;
       @include footer;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px){
+  .main_page {
+    .side_menu {
+      width: 0;
+      overflow-x: hidden;
+
+      &.toggled {
+        width: 230px;
+        position: absolute;
+      }
+    }
+
+    .main_body {
+      width: 100vw;
+      margin-left: 0;
     }
   }
 }
